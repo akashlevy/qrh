@@ -503,3 +503,12 @@ Files: `agents/cB-theory/{NOTES.md, local_fe.py(.out), orient_check.py(.out), ff
     with a single cubic theta row. It is rigorous by P78's j_p = 2 case and has a full-index dual, but A enters both Poisson moduli.
     P2 shape provably gives θ ≥ 7/6. The P78 shape is unmodelled; the expected cost is about Z^{1/2}.
 - Confirms coordinator prediction §28.
+
+## 30. SOTA scan 10:30 UTC (coordinator) + Lean build done
+
+- Tracker main moved to 932620c (merged PR #3, an independent verification of Liu, and PR #2). New PR #8 (HaileyStorm) adds a
+  "Single compensating prime · 29/33 (non-record)" entry: 0.8788 > 7/8, a non-record.
+- Best framework-verified entries are unchanged: 0.874957019… (Nielstron, ProofCouncil) and Liu 0.874957069799. Our PR #6 (10499/12000) is still open.
+- openai/math HEAD is still fd4aeeb. Web search finds nothing new. **No result below 0.8749.** Next scan no earlier than ~12:30 UTC.
+- Lean: `/home/user/leanbuild` built the full OAI library (akashlevy/math c388e88e6, Mathlib d13f23b, PNT+ patched) from source.
+  6817 jobs, no errors, finished 10:29 UTC. The formalization environment is ready.
