@@ -355,3 +355,10 @@ Any meaningful improvement must break this chain somewhere. The candidates:
 - (b) a way to make the quadratic residual twist "full" (e.g. average it into a full family without losing the signal);
 - (c) solve the affine edge problem (power-saving second moments of quadratic twists) for theta-type coefficients;
 - (d) a high-side (count) breakthrough, i.e. "Ingham below 7/10" for the sextic family.
+
+## 23. SOTA scan 07:57 UTC (coordinator)
+
+- Tracker refs: main 40844a7 (unchanged), PRs #1–#7 only.
+- openai/math HEAD: fd4aeeb (unchanged).
+- Web: only Liu 2610.12234 (0.874957069799) and spin-offs, e.g. DrMurphyIsIn/qrh-debruijn-newman (Λ ≤ 9/32, irrelevant here).
+- Nothing below 0.8749. Next scan no earlier than ~10:00 UTC.
