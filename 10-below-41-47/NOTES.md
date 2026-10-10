@@ -159,3 +159,32 @@ yet to formalize; the Lean environment build (Mathlib + OAI + WeightedQRH) was s
   (with the 2r+8z cap kept, even mk = 1 leaves +0.0043).
 - Explicit-formula rigidity needs o(log U) zeros near a per unit window; Jensen gives only ≲ log U.
 - Reference: capping amplitude at x ≤ 0.255, or DH counts for rows with x ≥ 0.255, would close 41/47.
+
+## 12. Agent `plain-cap` (finished; `agents/plain-cap/NOTES.md`) — negative, optimality theorem
+- Source of 6κ: κ from the pointwise slot bound |Q|² ≤ Z^{κz} on eligible rows (zero-free line
+  Re s = (1+κ)/2, l.12876); 6 from the amplified main norm (rows h → hp⁶ gain Z^{−ℓ} against child
+  allowance ℓ, l.13448–90: the sixth-power copy ratio); exchange l.14276.
+- **Theorem G (PROVED for the proof's move set; exact DP in `game.py`):** for symmetric products (n, n)
+  a slot of length z can be carried iff κz ≤ V₀ + (M − 2n)/6. P78's region is optimal; asymmetric
+  products allow (M − 2n_min)/(6κ), but both uses (S_m², S_u(n₀)²) are symmetric.
+- Joint lever (an improved lem:plain raises cP and the numerator capacity cN together): c* ≈ 0.73 alone,
+  ≈ 0.37 with mk = 0.75. Equivalent conditional WR(λ): Σ|S(n₁)S(n₂)Q_z|² ≪ Z^{M+λz} for n₁+n₂ ≤ M;
+  λ = κ proved; 41/47 needs λ ≤ 0.238 (alone) — a twisted fourth moment at the edge, out of reach.
+- Small proved items: sextic large sieve gives Σ|S_m²Q|² ≪ U^{1+ε} for 2m + z ≤ 1/2 (payoff 0);
+  κ = 35/47 at the target: −0.00002.
+
+## 13. Round summary (six agents, all negative)
+Every route to 41/47 in the weighted architecture needs one of these open inputs (minimal forms):
+| input | requirement |
+|---|---|
+| marked capacity, arbitrary bounded slot coefficients, no 2r+8z cap (with slot powers) | mk ≥ 0.744 |
+| cross-mark decorrelation (H2-mk) for lem:marked + plain capacity / slope | + cP ≥ 0.45 or α ≤ 0.78 |
+| twisted fourth moment WR(λ) (joint plain and numerator capacity) | λ ≤ 0.238 (c ≈ 0.73) |
+| numerator sixth moment | excess η ≤ 0.088 |
+| restricted large sieve on the bad rows | Σ_C|S̃|² ≪ U^{0.770} at the worst bin |
+| lossless energy wall | W(≈0.037–0.045) |
+| family zero density | A ≤ 2.125 on σ ∈ [0.59, 0.80] (better than known for ζ) |
+| DH counts for rows with amplitude x ≥ 0.255 | — |
+Two new proved lemmas came out (Lemma D: tuple-diagonal part of lem:marked is mark-free for
+r + z < 1; slot powers in lem:marked via elementary symmetric polarization), plus optimality results
+(numerator barrier; Theorem G for lem:plain; count LP completeness). None moves θ.
