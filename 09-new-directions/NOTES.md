@@ -467,3 +467,17 @@ Files: `agents/alt-detect/{NOTES.md, p2_orbit.py, p78_cubic_lp.py, model_cubic.p
 
 **Coordinator decision (09:10):** settle c_B with two round-4 agents: theory (exact FE, p-part polynomials, orientation)
 and numerics (fast Z[ω] Gauss sums, AFE-consistency conductor test).
+
+## 28. Coordinator prediction on c_B (09:45 UTC, before the round-4 agents report)
+
+- Using γ³ = μλ (from G̃(π)³ = −λ(π)), B_h(s) = Σ_n λ(n)ν(n)·conj(g̃(h,n))²·N(n)^{−s}. This is the square of the h-shifted Gauss sum:
+  "θ_h ⊗ θ_h", both factors shifted, as alt-detect says.
+- **Degree heuristic.** θ₃ is degree 2 over F (P78's reflection kernel R(t) = Π_± Γ(1+t±1/6)/Γ(1−t±1/6) has two Γ_C factors, and the dual length
+  involves q_c² for a twist of conductor c). θ⊗θ is degree 4, and a cubic twist of conductor h on a degree-4 object gives conductor h⁴.
+  In the sextic picture the Kubota series of order k has gamma factor of degree k−1. That would suggest degree up to 5,
+  but Kubota's rank-one FE gives N(h)⁴.
+- So the expected answer is **c_B = 4** (dead), unless the coprime-part local polynomials absorb a factor (unlikely: on the critical line
+  each P_p ≈ 1 ± N(p)^{−1/2}, so dividing by them does not change the AFE length).
+- **Dichotomy (if confirmed).** Single-Gauss-sum rows give degree 2 but a thin (quadratic-residual) family. Double-Gauss-sum rows give a full family
+  but degree 4. Both lose against the family/conductor balance. The metaplectic μ-absorption method would then appear capped near 7/8
+  with current mean-value technology.
