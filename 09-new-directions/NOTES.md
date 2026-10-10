@@ -659,7 +659,7 @@ Files: `agents/hls/{HLS.md, hls_lib.py, gram_scan.py, sextic_kubota.c, block_dec
 for characters (HLS) and once for theta coefficients (H2). Numerically each is exactly random-matrix-like. A proof needs a
 freeness/uncertainty principle for structured subspaces, which nothing in the literature supplies.
 
-## 38. Agent report: radical (round 7, finished ~13:50 UTC) — 24 strategies triaged; none gives any half-plane on its own
+## 38. Agent report: radical (round 7, finished ~13:05 UTC) — 24 strategies triaged; none gives any half-plane on its own
 
 Files: `agents/radical/{RADICAL.md, dictionary.py, model_radical.py, run_ceiling.sh, runs/}`. The ext/ snapshot of qrh-debruijn-newman is not committed.
 - **Strategies triaged.**
