@@ -1,0 +1,6 @@
+cols 848 rows 1129 3.1s
+beta max diff vs edge_lib: 1.2846273511950504e-13  w diff: 0.0
+rowsums vs direct sextic-symbol evaluation on 398 rows (98 with inert/conjugate-pair factors): max |diff| = 2.84e-13
+chi_P^-2 max diff: 0.0
+gamma_2 / gamma_1 at a prime vs edge_lib: 7.51843163430666e-15 5.089573435171982e-15
+total 4.7s

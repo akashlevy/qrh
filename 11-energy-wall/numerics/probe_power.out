@@ -1,0 +1,21 @@
+   E table (22980, 3529) (81 MB)  40.6s
+   A(Y=32768): 4638 moduli s  40.7s
+   A(Y=65536): 9251 moduli s  41.0s
+   A(Y=131072): 18491 moduli s  41.7s
+   A(Y=262144): 36992 moduli s  42.9s
+class  0: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:   -0.77    -0.63     0.36     5.86   (f at Y=2^16..2^18: [0.113, 0.146, 0.228])
+class  1: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:    0.61     0.60     1.07     4.64   (f at Y=2^16..2^18: [0.129, 0.143, 0.185])
+class  2: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:   -0.39    -0.09     1.19     7.25   (f at Y=2^16..2^18: [0.084, 0.155, 0.21])
+class  3: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:    0.61     0.60     1.07     4.64   (f at Y=2^16..2^18: [0.129, 0.143, 0.185])
+class  4: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:    0.02     0.05     1.08     7.80   (f at Y=2^16..2^18: [0.128, 0.138, 0.252])
+class  5: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:    1.76     2.09     3.38     9.25   (f at Y=2^16..2^18: [0.11, 0.139, 0.179])
+class  6: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:    1.76     2.09     3.38     9.25   (f at Y=2^16..2^18: [0.11, 0.139, 0.179])
+class  7: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:    0.57     0.35     0.58     4.56   (f at Y=2^16..2^18: [0.099, 0.203, 0.218])
+class  8: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:    0.59     0.27     0.38     4.29   (f at Y=2^16..2^18: [0.106, 0.219, 0.23])
+class  9: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:    0.57     0.35     0.58     4.56   (f at Y=2^16..2^18: [0.099, 0.203, 0.218])
+class 10: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:    0.02     0.05     1.08     7.80   (f at Y=2^16..2^18: [0.128, 0.138, 0.252])
+class 11: lambda_sigma0(rho) for eps = 0, 0.1, 0.3, 1:   -0.77    -0.63     0.36     5.86   (f at Y=2^16..2^18: [0.113, 0.146, 0.228])
+eps=0   : mean over classes    0.38  median    0.57   (random level 1; need-violation level ~ n_eff = 1180)
+eps=0.1 : mean over classes    0.42  median    0.31   (random level 1; need-violation level ~ n_eff = 1180)
+eps=0.3 : mean over classes    1.21  median    1.07   (random level 1; need-violation level ~ n_eff = 1180)
+eps=1.0 : mean over classes    6.31  median    5.86   (random level 1; need-violation level ~ n_eff = 1180)

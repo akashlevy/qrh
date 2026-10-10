@@ -1,0 +1,45 @@
+rank-one pairing T(u) = sum_k V u(k) S_k over 12 row ray classes mod 4; R = |T|^2 / random-model size (mean 1 if u is unrelated to S)
+lambda = cross-scale estimate (pairs of Y in [2^16, 2^18], disjoint s) of |T(rho)|^2 / random size; need: R <~ R_CS = n_eff/C (Cauchy-Schwarz with W)
+
+N0=50000: windows F = [1, 2, 4, 8, 16, 32], direct kernel check 2.2e-16
+  F=1    rows=7058   f_sig(Y=2^18)=0.147  theta: R[A]=0.95 R[A zeta]=1.09 lambda(rho)=1.22 lambda(pi)=1.19 R[zeta]=0.95 | ctrl lambda(rho)=1.20 | R_CS=197.6
+  F=2    rows=3534   f_sig(Y=2^18)=0.204  theta: R[A]=1.06 R[A zeta]=0.97 lambda(rho)=0.86 lambda(pi)=0.78 R[zeta]=0.86 | ctrl lambda(rho)=1.33 | R_CS=100.3
+  F=4    rows=1760   f_sig(Y=2^18)=0.214  theta: R[A]=0.97 R[A zeta]=1.00 lambda(rho)=0.93 lambda(pi)=1.00 R[zeta]=0.97 | ctrl lambda(rho)=1.11 | R_CS=51.1
+  F=8    rows=886    f_sig(Y=2^18)=0.200  theta: R[A]=0.95 R[A zeta]=1.04 lambda(rho)=1.15 lambda(pi)=1.07 R[zeta]=1.07 | ctrl lambda(rho)=1.14 | R_CS=24.7
+  F=16   rows=443    f_sig(Y=2^18)=0.216  theta: R[A]=0.98 R[A zeta]=0.95 lambda(rho)=1.06 lambda(pi)=0.91 R[zeta]=0.81 | ctrl lambda(rho)=0.72 | R_CS=12.5
+  F=32   rows=218    f_sig(Y=2^18)=0.277  theta: R[A]=0.93 R[A zeta]=1.00 lambda(rho)=0.72 lambda(pi)=0.55 R[zeta]=0.89 | ctrl lambda(rho)=0.86 | R_CS=6.5
+
+N0=100000: windows F = [2, 4, 8, 16, 32, 64], direct kernel check 2.2e-16
+  F=2    rows=7058   f_sig(Y=2^18)=0.147  theta: R[A]=1.04 R[A zeta]=1.02 lambda(rho)=1.50 lambda(pi)=0.90 R[zeta]=1.11 | ctrl lambda(rho)=0.91 | R_CS=193.1
+  F=4    rows=3534   f_sig(Y=2^18)=0.204  theta: R[A]=0.97 R[A zeta]=1.01 lambda(rho)=0.69 lambda(pi)=0.89 R[zeta]=0.77 | ctrl lambda(rho)=0.86 | R_CS=97.1
+  F=8    rows=1760   f_sig(Y=2^18)=0.214  theta: R[A]=0.99 R[A zeta]=1.03 lambda(rho)=0.95 lambda(pi)=1.02 R[zeta]=1.05 | ctrl lambda(rho)=1.23 | R_CS=50.9
+  F=16   rows=886    f_sig(Y=2^18)=0.200  theta: R[A]=0.98 R[A zeta]=0.99 lambda(rho)=0.96 lambda(pi)=0.79 R[zeta]=0.78 | ctrl lambda(rho)=0.63 | R_CS=24.2
+  F=32   rows=443    f_sig(Y=2^18)=0.216  theta: R[A]=1.01 R[A zeta]=0.98 lambda(rho)=0.86 lambda(pi)=0.95 R[zeta]=0.95 | ctrl lambda(rho)=0.98 | R_CS=13.0
+  F=64   rows=218    f_sig(Y=2^18)=0.277  theta: R[A]=1.03 R[A zeta]=1.05 lambda(rho)=0.86 lambda(pi)=0.78 R[zeta]=1.18 | ctrl lambda(rho)=0.79 | R_CS=6.6
+
+N0=200000: windows F = [4, 8, 16, 32, 64, 128], direct kernel check 2.2e-16
+  F=4    rows=7058   f_sig(Y=2^18)=0.147  theta: R[A]=0.97 R[A zeta]=0.97 lambda(rho)=1.08 lambda(pi)=1.01 R[zeta]=1.10 | ctrl lambda(rho)=1.20 | R_CS=196.4
+  F=8    rows=3534   f_sig(Y=2^18)=0.204  theta: R[A]=0.96 R[A zeta]=1.00 lambda(rho)=0.93 lambda(pi)=0.74 R[zeta]=0.99 | ctrl lambda(rho)=0.69 | R_CS=97.6
+  F=16   rows=1760   f_sig(Y=2^18)=0.214  theta: R[A]=0.99 R[A zeta]=1.02 lambda(rho)=0.98 lambda(pi)=1.28 R[zeta]=1.00 | ctrl lambda(rho)=1.15 | R_CS=48.4
+  F=32   rows=886    f_sig(Y=2^18)=0.200  theta: R[A]=1.05 R[A zeta]=0.98 lambda(rho)=1.08 lambda(pi)=1.13 R[zeta]=1.16 | ctrl lambda(rho)=0.95 | R_CS=25.4
+  F=64   rows=443    f_sig(Y=2^18)=0.216  theta: R[A]=1.05 R[A zeta]=1.02 lambda(rho)=1.21 lambda(pi)=0.98 R[zeta]=0.96 | ctrl lambda(rho)=0.78 | R_CS=13.3
+  F=128  rows=218    f_sig(Y=2^18)=0.277  theta: R[A]=0.97 R[A zeta]=1.06 lambda(rho)=0.70 lambda(pi)=0.79 R[zeta]=1.16 | ctrl lambda(rho)=0.47 | R_CS=6.9
+
+pooled over all windows and N0 (mean ± s.e.; s.e. from the scatter, windows/designs treated as independent):
+  ctrl  A(Y=big)                             1.004 ± 0.016   (max 1.19, n=36)
+  ctrl  A*zeta(Y=big)                        1.003 ± 0.015   (max 1.19, n=36)
+  ctrl  adversary conj(S)                   64.553 ± 10.930   (max 202.57, n=36)
+  ctrl  cross-scale lambda(pi=rho*zeta)      0.926 ± 0.049   (max 1.40, n=36)
+  ctrl  cross-scale lambda(rho)              0.943 ± 0.051   (max 1.60, n=36)
+  ctrl  random                               0.992 ± 0.007   (max 1.08, n=36)
+  ctrl  zeta                                 0.961 ± 0.045   (max 1.55, n=36)
+  theta A(Y=big)                             0.992 ± 0.009   (max 1.37, n=144)
+  theta A*zeta(Y=big)                        1.011 ± 0.010   (max 1.33, n=144)
+  theta adversary conj(S)                   64.756 ± 5.507   (max 201.65, n=144)
+  theta cross-scale lambda(pi=rho*zeta)      0.931 ± 0.033   (max 2.14, n=144)
+  theta cross-scale lambda(rho)              0.986 ± 0.031   (max 2.24, n=144)
+  theta random                               0.994 ± 0.004   (max 1.19, n=144)
+  theta zeta                                 0.986 ± 0.031   (max 2.11, n=144)
+
+Cauchy-Schwarz level R_CS ~ rows^0.975±0.006 (expected 1: need/truth for |T|^2 grows like K)
+extrapolation: |T|/need ~ sqrt(lambda / R_CS) ~ sqrt(lambda C / n_eff) ~ K^(-0.487); at Q = K = Z^0.851: Z^(-0.415)  (lambda <= 1.05 at 2 s.e.)
