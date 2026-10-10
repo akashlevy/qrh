@@ -208,3 +208,19 @@ The optimum sits exactly on the wall (M+ℓ = 1.000). Every step beyond it costs
 gains less than that, unless η ≳ 0.85. So a cubic-first-moment-style "tiny ineffective saving beyond the sharp
 sieve" is useless here. W(w) needs the energy to be **diagonal up to Z^ε** on a range of width w ≈ 0.07
 beyond the wall (Lindelöf-on-average strength for a thin family of twisted theta rows).
+
+## 15. Agent report: theta-pairing (finished ~06:50 UTC) — NEGATIVE, obstruction quantified
+
+Files: `agents/theta-pairing/{THETA_PAIRING.md, model_ext.py (knobs gram_s, gram_sQ, gram_ls), model_summary.txt, *.log, kp_forced_zero_density.py}`.
+- **Every LP optimum has M + ℓ = 1.0000.** This holds for the paper, Gram halved, Gram removed, and uniform savings up to 0.0127. The marked reflected dual length is
+  L = Q·Z^{M+ℓ−1}, so at the binding geometry **L = Q**: the pairing T is a square Q×Q quadratic-symbol bilinear form exactly
+  at the large-sieve edge.
+- **Uniform saving s on T at the wall (Z-units):** s = 0.002/0.004/0.005 → 0.87333/0.87171/0.87090. The **threshold for 27/31 is s ≈ 0.0049**.
+  A mean-square saving that vanishes on the wall (a fraction η of the random rate) needs η > 0.15 to help at all and η ≈ 0.277 for 27/31.
+- **Obstructions:**
+  - The Gram excess is a fixed finite-rank positive form in c, while the signal is linear in c. No s-weighting gains a power.
+  - Inequalities that see only |π|, |β| and the kernel are capped at Q^{11/12}.
+  - A restricted operator norm stays ≥ L = Q for every row set, so sparsity arguments are dead. Kazhdan–Patterson forced zeros cover ≤ 5.95% of rows.
+  - Petersson projection onto θ₆ is Bessel = Cauchy–Schwarz. The z = 5/6 residue *is* the signal.
+- **Precise obstruction:** a saving must come from the joint phases of π = ρ·conj(γ₂)⁴ and Patterson's column coefficients.
+  That is a first moment of the A₂/4-node series. Evaluating it exposes the Möbius signal (circular), and its functional-equation images do no better than Cauchy–Schwarz.
