@@ -433,3 +433,37 @@ Files: `agents/counts-new/{notes.md, counts_lab.py, diag_cf.py, count_curves.out
 - **Conditional payoffs** (open sixth/eighth-moment Lindelöf-on-average for the sextic family, beyond the edge):
   - plain sixth moment for all m ≤ 1/2: **0.8727074** (paper), **0.8694441** (with DIAG);
   - plain eighth moment: 0.8713661 (paper).
+
+## 27. Agent report: alt-detect (round 3, finished ~09:05 UTC) — FIRST NEW STRUCTURE: the cubic θ₃⊗θ₃ architecture
+
+Files: `agents/alt-detect/{NOTES.md, p2_orbit.py, p78_cubic_lp.py, model_cubic.py, conductor_test*.py, check_gauss.py, runs/}`.
+- **The quadratic residual is forced (PROVED).**
+  - Stickelberger gives μ·Hecke = γ_aγ_bγ_c for a+b+c ≡ 0 (mod N).
+  - For single-Gauss-sum rows, Poisson supplies γ_a and the row γ_b, so γ_c must be a ray quantity. Then c ≡ N/2 (c ≡ 0 detects L, not 1/L), and the residual twist has order exactly 2, for every N, field and Kazhdan–Patterson theta.
+  - Finite type (conductor exponent 1) is incompatible with μ-absorption for single-Gauss-sum rows. The Cartan matrix is [[2,0,−1],[0,2,−1],[−c_B,−c_B,2]], with det = 8 − 4c_B.
+- **New: double-Gauss-sum rows.** The only new case is N = 3, triple (1,1,1).
+  - The row coefficients are γ₁², the coefficients of θ₃⊗θ₃ (equivalently the cubic A₂ WMDS residue, or by Davenport–Hasse a sextic Gauss sum).
+  - Numerically checked: G̃(π)³ = −π/|π|, so μ = λ̄γ³ and μγ̄ = λ̄γ².
+  - The twist is absorbed into both theta factors, so the low-side dual is FULL-INDEX (Kubota index h, no residual twist), with copies u = a³ (copy exponent 1/3).
+- **The decisive open number is c_B, the conductor exponent in h of the dual**
+  B_h(s) = Σ_{n sf,(n,h)=1} μ(n)ν(n) g̃(χ_n) χ̄_n(h) N(n)^{−s}
+  (the coprime part of a twisted sextic Kubota series at index h⁴).
+  - Kubota's rank-one theory proves c_B ≤ 4. Heuristics give 3; c_B = 2 is "optimistic".
+  - Numerics up to X ≤ 6·10⁴ were inconclusive.
+
+  | c_B | 1 | 2 | 3 | 4 |
+  |---|---|---|---|---|
+  | P2 shape | 5/6 | 37/42 | 23/24 | 1 |
+  | P78 shape, GRH-rows floor | — | 13/17 = 0.765 | 0.8596 | 10/11 |
+  | P78 shape, r4 counts transplanted (HEUR) | — | **0.797** | 10/11 | 10/11 |
+
+  - At c_B = 2, sensitivity: without the prime-gain lemmas 0.798; with h_min = 1.25 0.819; with h_min = 1.5 0.872.
+- **Normaliser trap.** Small-conductor completions equal B·L(3s−1,(αν)³); used naively, this gives a bootstrap fixed point of exactly 7/8 in P78 shape.
+  It is bypassed because B is holomorphic in Re s > 1/2 (sextic representation), but that only matters if c_B ≤ 2.
+- **Dead (with proofs or structural arguments):** quartic/quintic/sextic double rows; Λ / log L / L′/L; |θ|², θ³ and Shintani zeta
+  (full families give congruences, never γ(A)).
+- **Single sufficient new input:** a conductor-N(h)² functional equation (with polynomial growth) for h ↦ B_h(s).
+  Then cubic analogues of the count lemmas are needed.
+
+**Coordinator decision (09:10):** settle c_B with two round-4 agents: theory (exact FE, p-part polynomials, orientation)
+and numerics (fast Z[ω] Gauss sums, AFE-consistency conductor test).
