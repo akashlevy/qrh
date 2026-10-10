@@ -33,28 +33,30 @@ Empirically θ(wE) = 0.874957 − wE/16 on [0, 0.1]. So 27/31 needs **wE ≥ 0.0
 
 ## 2. Sharp quantitative obstruction: only an *offset* helps, never a slope
 
-The shadow price of the wall is 1/16: crossing it by t gains t/16 on the high side. Cauchy–Schwarz
-charges half the energy excess on the low side. Hence an energy bound of the form
+Near the wall the shadow price of the wall constraint is 1/16, since θ(wE) = θ₀ − wE/16. Cauchy–Schwarz
+charges half the energy excess on the low side. Consider an energy bound whose excess grows at rate f
+beyond the wall:
 
-    E ≪ Z^{M + f·(M+ℓ−1)+ε}    (excess growing at rate f beyond the wall)
+    E ≪ Z^{M + f·(M+ℓ−1)+ε}.
 
-improves θ only if f < 1/8. This is checked with `model_wall.py` (`wall_factor` = f):
+Locally such a bound pays only if f/2 < 1/16, that is f < 1/8. Globally the LP can jump to a far
+vertex (ℓ ≈ 0.29, M + ℓ ≈ 1.19). Checked with `model_wall.py` (`wall_factor` = f, wE = 0):
 
-| f | θ |
-|---|---|
-| 0.5 | 0.874957 (no gain) |
-| 0.25 | 0.874957 |
-| 0.14 | 0.874957 |
-| 0.12 | 0.874848 |
-| 0.10 | 0.874392 |
-| 0 (W(∞) for this piece) | 0.857929 |
+| f | θ | optimum (l_x, l_y, ℓ) |
+|---|---|---|
+| 0.50, 0.25, 0.22, 0.20, 0.18, 0.16 | 0.874957 (no gain) | paper vertex |
+| 0.14 | 0.873822 | (0.384, 0.522, 0.295) |
+| 0.12 | 0.872232 | (0.384, 0.522, 0.291) |
+| 0.105 | 0.871070 | (0.385, 0.522, 0.289) |
+| 0.10 | 0.870689 < 27/31 | (0.385, 0.522, 0.288) |
+| 0 (wall piece deleted) | 0.863636 = 19/22 | (0.400, 0.509, 0.273) |
 
-Interpolation-type bounds between the diagonal K and the column term N, of the form K^{1−f}N^f,
-are therefore worthless unless f < 1/8. Every "transfer" mechanism in §3 gives f ≥ 1/2 at best,
-including the hypothetical one. What is needed is an **offset**: full diagonality
-E ≪ (K + N^{1−η})Z^ε with η ≥ w/(2M+ℓ−1) ≈ 0.068 at the target geometry. That is Lindelöf on
-average for a family of twisted cubic-theta sums of length N = K·Z^{0.064}. This size of saving is
-a GRH-type (Lindelöf-on-average) statement, not a technical loss.
+So a slope-type bound K^{1−f}N^f is worthless unless f ≲ 0.15, and 27/31 needs f ≲ 0.103.
+Every transfer or interpolation mechanism in §3 gives f ≥ 1/2, including the hypothetical
+decoupled one. What is needed is an **offset**: full diagonality E ≪ (K + N^{1−η})Z^ε with
+η ≥ w/(2M+ℓ−1) ≈ 0.068 at the target geometry. That is Lindelöf on average for a family of
+twisted cubic-theta sums of length N = K·Z^{0.064}. This size of saving is a GRH-type
+(Lindelöf-on-average) statement, not a technical loss.
 
 ## 3. Mechanisms tried, and exactly where each fails
 
@@ -87,9 +89,10 @@ All transfers satisfy excess ≥ w as soon as ℓ ≥ w, which is equivalent to 
 example n prime or n = (large prime)·(small), has density ≫ 1, not a power of Z. Bounding it needs
 Type-I information: twisted theta sums at conductor ≫ length, where even convexity is worse than
 trivial (N < K√L, the effective AFE point). A partial positive fact, also proved: for each single
-row k₀, the part of S(k₀) supported on n with a divisor in [N^{0.3}, N^{0.7}] is ≪ (L N^{2/3})^{1/2},
-by TM, Cauchy–Schwarz over P and the cubic large sieve. At the optimum L N^{2/3} ≤ K, since
-M + 5ℓ ≤ 2. This excludes "one row carries the column term" on that part. It does nothing against
+row k₀, the prime-weighted part Σ_n β(n)X(n)ψ_{k₀}(n)Λ_I(n), with Λ_I(n) = Σ_{p|n, p∈I} log p and
+I = [N^{0.3}, N^{0.7}], is ≪ (L N^{0.7})^{1/2} Z^ε. The proof writes n = pm, applies TM,
+Cauchy–Schwarz over P (cost L) and the cubic large sieve in (p, m). At the optimum L N^{0.7} ≤ K
+(0.860 ≤ 0.862). This excludes "one row carries the column term" on that part. It does nothing against
 the generic bad configuration, in which K rows each have |S|² ≈ N/K.
 
 **(O4) The a-priori zero-free half-plane β* ≤ 0.8749 does not help.**
@@ -122,7 +125,7 @@ of the quadratic characters; nothing of the kind is visible.
 
 ## 5. Status
 
-- PROVED: (O1); the bookkeeping in (O2); the partial single-row bound in (O3); the model thresholds (wE ≥ 0.0638; slope f < 1/8).
+- PROVED: (O1); the bookkeeping in (O2); the partial single-row bound in (O3); the model thresholds (wE ≥ 0.0638; slope f ≲ 0.15 for any gain, ≲ 0.103 for 27/31).
 - HEURISTIC/NUMERICAL: W(w) is true.
 - OPEN (and needed): a Lindelöf-on-average offset for quadratic twists of the marked cubic theta beyond the diagonal, E ≪ (K + N^{1−η})Z^ε with η ≈ 0.07. Within {R, P, TM, cubic/quadratic/hybrid large sieves, Cauchy–Schwarz, Hölder} this is unreachable by (O1)–(O3).
 - A route would need a genuinely spectral input, such as amplification plus Kuznetsov on the cubic cover (Proskurin/Louvel), giving individual-twist savings for theta, uniformly in the level K²L. Even that must be upgraded to an average statement, because of the generic K-row configuration.

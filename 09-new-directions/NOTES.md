@@ -258,3 +258,20 @@ Files: `agents/lit-combos/{LIT.md, COMBOS.md, combo.py, runs/}`.
     reflected recursion (P78 invariant 3M + 6z₀ ≤ 4F₀). In the primal picture DIAG is "within the diagonal"
     (product length ≤ family), but there the sextic large sieve's theta term U^{1/3}N^{5/6} exceeds U for N > U^{4/5}.
     So DIAG needs a coefficient-sensitive sextic sieve for Möbius × prime-slot coefficients, which is unproved.
+
+## 18. Agent report: energy-wall (finished ~07:00 UTC) — NEGATIVE, sharp obstruction plus numerics
+
+Files: `agents/energy-wall/{ENERGY_WALL.md, dual_energy.py (+json), exchange_rate.py (+out), model_wall.py, mw_*.json}`.
+- θ(wE) ≈ 0.874957 − wE/16 on [0, 0.1]. 27/31 needs wE ≥ 0.0638, at (l_x, l_y, ℓ) = (0.366, 0.494, 0.204).
+- **Only an offset helps.** If the excess grows at rate f past the wall, there is no gain unless f ≲ 0.15, and 27/31 needs f ≲ 0.103.
+  This agrees with §14. Every transfer mechanism found gives f ≥ 1/2.
+- **Obstructions:**
+  - O1 (proved): phase-blind arguments cannot beat the column term. This kills Hölder with slot moments and dual.tex's moments-of-different-lengths applied to X.
+  - O2: exchange-rate bookkeeping. Every Cauchy–Schwarz transfer of a variable into the rows leaves excess ≥ w when ℓ ≥ w.
+  - O3: the "rough" part (n prime, or a large prime times something small) needs Type-I twisted theta sums at conductor ≫ length.
+  - O4: β* does not help.
+  - O5: every mark redesign fails.
+- **Numerics:** per-row energy divided by its diagonal stays between 0.7 and 1.17 up to N/K ≈ 5700, with Gaussian-like maxima. W is numerically true.
+- **The missing estimate:** Σ_{k≤K}|Σ_{n~N} c(n)ψ_k(n)|² ≪ (K + N^{1−η})Z^ε with η ≥ 0.068, for c = β·X.
+  It needs a spectral input (amplification plus Kuznetsov on the cubic cover, uniform, upgraded to an average).
+  The round-2 agent `wall-spectral` is pursuing this.
