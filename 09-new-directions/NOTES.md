@@ -406,3 +406,30 @@ Files: `agents/edge-theta/{EDGE_THETA.md, edge_lib.py, primal_energy.py, dual_mo
 - **Lemma M(w)** (open, Euler-product form, as hard as (H2)): for P₁ ≠ P₂ ~ L and Z^{1−w}L³ ≤ H ≤ ZL³,
   Σ_{h~H} ψ_{P₁}(h)conj ψ_{P₂}(h)|Σ_{n~Z} a(n)(h/n)₆|² = C(P₁,P₂) + O(Z^{2+ε}). It implies W(w).
 - Function fields: affine moments have power-saving truth (DGH secondary terms), but proofs need family-level inputs (DPP functional equation, homological stability).
+
+## 26. Agent report: counts-new (round 3, finished ~08:50 UTC) — NEGATIVE, thresholds sharpened
+
+Files: `agents/counts-new/{notes.md, counts_lab.py, diag_cf.py, count_curves.out, runs/}`.
+- **Large-values methods with copies** (thresholds proved by exponent algebra; validity for this family heuristic):
+  - Guth–Maynard + copies wins only for δ ≥ 0.41 (x = 0) and δ ≥ 0.42 (x = 1/2).
+  - Huxley needs δ ≥ 0.51.
+  - Halász–Montgomery: the copies form a rank-one Gram block, so it needs δ > 1/2.
+  - Heath-Brown, Jutila, Bourgain: only σ ≥ 3/4.
+  - Model payoff 0 (to 1e-9).
+- **Copies are exactly u·(F^×)^6** (Kummer theory). Conjugation, units and ray classes add at most a factor 12; subfamilies and base change do not change the ratio.
+  - Quadratic-twist copies would have density 1/2, but their Poisson dual is circular (θ = 3/4 sanity check).
+  - Higher Möbius moments are worse: count 1/6 + kr(5/6−δ).
+- **Theta-based large values: no-go.** Over sparse row sets, C–S and duality see μ only through |μ|², and the theta kernel needs smooth lattice sums.
+- **Detector:** the adversary can place r+m anywhere in [t, t+1/2]. At x = 0, R = 1 − 2δλ/(3λ−δ), with
+  λ = min(α_long-Möbius, λ_joint(M·S), λ_plain-cubes). So a better joint or plain-cube count would also work at t = 1.
+  - Obstruction configuration: U^{R0} rows with Möbius saturated at U^{2t*/3} and U^{t*}, and plain blocks saturated at U^{t*/3}.
+    It is consistent with all proved inputs.
+- **What 27/31 needs with DIAG** (any one):
+  - M_κ with κ = 0.9637;
+  - a diagonal Möbius mean square up to length U^{1.043};
+  - a joint Σ|M_r S_m|² ≪ U up to r+m = 1.066;
+  - a plain sixth moment up to 3m ≈ 1.22.
+  In slope form the long-witness slope must drop from 5/6 to 0.616.
+- **Conditional payoffs** (open sixth/eighth-moment Lindelöf-on-average for the sextic family, beyond the edge):
+  - plain sixth moment for all m ≤ 1/2: **0.8727074** (paper), **0.8694441** (with DIAG);
+  - plain eighth moment: 0.8713661 (paper).
