@@ -1,0 +1,4 @@
+primes: 295890 (split 295734, inert 156)  [0.1s]
+max |g(pi) - conj g(pibar)| on first 2000 split: 1.801561903052454e-15
+gauss sums done [2907.0s]  max||g|-1| = 1.55e-15
+saved /Users/akashlevy/Documents/riemann/gram_split/vls/data/primes_X4194304.npz

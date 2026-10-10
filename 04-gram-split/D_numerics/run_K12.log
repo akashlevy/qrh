@@ -1,0 +1,10 @@
+primes 82058 t=0.9
+gauss sums done t=197.8  max||g|-1|=1.55e-15
+squarefree s: 295963 t=197.9
+s weights done: 295067 t=214.5
+Q=1500 rows 1248, symbol table t=217.6
+Q=1500 A built t=220.8
+Q=3000 rows 2526, symbol table t=225.9
+Q=3000 A built t=231.2
+Q=6000 rows 5052, symbol table t=242.3
+Q=6000 A built t=250.7

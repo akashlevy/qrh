@@ -1,0 +1,12 @@
+k=1, 24 group elements
+c=0.51 (Re u = 1.01): smallest reachable a = b = -3.0000  (Re z' = -2.5000)
+c=1.00 (Re u = 1.50): smallest reachable a = b = -3.0000  (Re z' = -2.5000)
+c=2.00 (Re u = 2.50): smallest reachable a = b = -3.0000  (Re z' = -2.5000)
+k=2, 209 group elements
+c=0.51 (Re u = 1.01): smallest reachable a = b = 0.4950  (Re z' = 0.9950)
+c=1.00 (Re u = 1.50): smallest reachable a = b = 0.2500  (Re z' = 0.7500)
+c=2.00 (Re u = 2.50): smallest reachable a = b = -0.2500  (Re z' = 0.2500)
+k=3, 1085 group elements
+c=0.51 (Re u = 1.01): smallest reachable a = b = 0.4967  (Re z' = 0.9967)
+c=1.00 (Re u = 1.50): smallest reachable a = b = 0.3333  (Re z' = 0.8333)
+c=2.00 (Re u = 2.50): smallest reachable a = b = -0.0000  (Re z' = 0.5000)

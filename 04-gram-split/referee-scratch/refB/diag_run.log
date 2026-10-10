@@ -1,0 +1,8 @@
+Q=20000 L=2499 (ell=0.79): rows=6036 cols=712  [1s]
+   R[true] = 0.960
+   R[conj_gamma2] = 0.939
+   R[coherent |beta|] = 2.064
+   R[random phase 0] = 0.900
+   R[random phase 1] = 0.940
+   R[random phase 2] = 0.906
+Q=20000 ell=0.79: E|B0|/sqrt(E|B0|^2) = 0.884 (Gaussian 0.886);  E|B0|^4/(E|B0|^2)^2 = 2.062 (Gaussian 2)

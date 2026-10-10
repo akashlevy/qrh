@@ -1,0 +1,17 @@
+Q=3000 rows 2526; primes up to 40000: 4201  [1s]
+gauss sums done [41s]
+symbols done [62s]
+
+Z=3000: 846 moduli c; L = Q^2/Z = 3000
+  true <rho,B>                               R_rand per twist:  0.40  0.34  2.80  1.56  1.04  3.04  1.56  0.45 -0.36  1.13
+                                             mean R_rand = 1.195 (s.e. over twists 0.325; typical jackknife s.e. 1.48);  mean R_CS = 1.59e-03 ;  1/#rows = 3.96e-04
+  zeta-free <rho, conj(zeta) B> (sf rows)    R_rand per twist:  4.01  0.11 -0.39  0.55 -0.40  0.28  0.86  1.22  1.91  2.54
+                                             mean R_rand = 1.072 (s.e. over twists 0.421; typical jackknife s.e. 1.15);  mean R_CS = 1.52e-03 ;  1/#rows = 3.96e-04
+[63s]
+
+Z=20000: 5622 moduli c; L = Q^2/Z = 450
+  true <rho,B>                               R_rand per twist:  1.77  0.26  0.99  2.78  1.46  1.68  2.78  1.29  0.57 -0.61
+                                             mean R_rand = 1.295 (s.e. over twists 0.318; typical jackknife s.e. 1.44);  mean R_CS = 1.65e-03 ;  1/#rows = 3.96e-04
+  zeta-free <rho, conj(zeta) B> (sf rows)    R_rand per twist: -0.16 -0.26  1.15 -0.19  1.84  0.79  0.45  1.14  0.61  1.90
+                                             mean R_rand = 0.726 (s.e. over twists 0.238; typical jackknife s.e. 0.93);  mean R_CS = 1.04e-03 ;  1/#rows = 3.96e-04
+[66s]

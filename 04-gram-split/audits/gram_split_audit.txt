@@ -1,0 +1,220 @@
+Independent audit of the Gram-split route, 9 October 2026
+
+Scope
+-----
+This audit concerns gram_split/note/theta_split_note.tex and its stated
+dependencies. It does not claim a new zero-free half-plane theorem. The
+underlying 7/8 manuscript is formalize_11_12/papers/paper78.tex.
+
+1. The claimed 0.8665 improvement is not a proved theorem
+-------------------------------------------------------
+The final note explicitly makes its improvement conditional on a bound for
+the theta pairing. Earlier working files that claim 0.8665, 0.871 or 0.864
+are superseded by their own retraction. Their old Voronoi input controls
+rho(m), whereas the actual reflected pairing involves rho(m) zeta_m.
+The remaining functional-equation/Gram claims also still depend on an
+unwritten general-cusp constant-term calculation. Calling these claims
+"proved modulo routine lemmas" does not turn them into an unconditional
+proof. In particular an exact exponent certificate only establishes the
+consequence of its analytic inputs.
+
+2. Independent algebra check of the missing reflection scalar
+-------------------------------------------------------------
+The source manuscript's eq. reflection has a scalar zeta outside the
+dual sum; eq. reflection-row-phase gives its moving-prime dependence.
+For a squarefree good row m, every moving exponent is j_p=1, hence
+the dual column factor is chi_p(x)^(-3)=chi_p(x)^3, a quadratic symbol.
+However the row scalar does not disappear.
+
+Ignoring fixed ray factors only (which can be tracked without altering
+the following conclusion), the local factor is
+
+  tau^-_{p,1} tau^+_{p,3} = -alpha(p) conjugate(chi_p(4))
+                                      conjugate(gamma_2(p)).
+
+Indeed tau^-_{p,1}=chi_p(-1) gamma_1(p), tau^+_{p,3}=gamma_3(p),
+gamma_1(p) gamma_2(p)=-alpha(p) conjugate(chi_p(4)) gamma_3(p),
+and gamma_3(p)^2=chi_p(-1). These are precisely the prime-Gauss and
+signal identities in the source.
+
+The reflection cross-prime factor is
+
+  product_{p|m} chi_p(m/p)^4.
+
+Twisted multiplicativity gives
+
+  product_{p|m} conjugate(gamma_2(p))
+   = conjugate(gamma_2(m))
+     product_{p<q, p q|m} [chi_p(q) chi_q(p)]^2.
+
+The two cross-prime factors cancel because their product has exponent
+six. Including the outer conjugate(alpha(m))^2 therefore yields
+
+  zeta_m = (fixed ray factor) mu(m) conjugate(alpha(m))
+                                          conjugate(gamma_2(m))
+         = (fixed ray factor) conjugate(gamma_2(m))^4,
+
+using gamma_2(m)^3=mu(m) alpha(m). The fixed ray factor includes the
+fixed branch amplitude; it need not have modulus one before normalizing
+that branch. The m-dependent Gauss factor is the essential issue.
+
+Thus the relevant coefficients are pi(m)=rho(m) zeta_m. A theorem for
+quadratic twists of rho does not, merely by its statement, give the
+corresponding theorem for pi. This is an unsupported implication, not
+a proof that the desired estimate for pi is false.
+
+3. A precise obstruction for all arguments using only these two norms
+-------------------------------------------------------------------
+Write the unweighted form for clarity; bounded positive weights and
+unit phases can be incorporated into the vectors. The available sizes are
+
+  ||rho||_2^2 <= Q^(5/6+epsilon),   ||B||_2^2 <= Q^(1+epsilon).
+
+They imply |sum_m rho(m) B_m| <= Q^(11/12+epsilon). They cannot imply
+any uniform power saving on their own. To see this, take any unit vector
+u and set rho=Q^(5/12) u and B=Q^(1/2) conjugate(u). Both norm bounds
+hold with equality, while the pairing equals Q^(11/12). This is a
+sharp logical obstruction for norm-only arguments; it does not assert
+that the actual arithmetic B has this adversarial alignment.
+
+After multiplication by the probe prefactor Q^(-1/2) Y^(-1/3), the
+theta contribution is bounded at the scale
+
+  Q^(5/12) Y^(-1/3)
+    = X^(1/2) (Y^2/Q)^(1/12),    Q=XY.
+
+Squaring the excess gives exactly the old P_a^(1/6) Gram loss.
+Therefore splitting out rho and applying Cauchy-Schwarz to it again
+does not remove that loss. Removing P_a^2/Y alone cannot improve a
+parameter optimum where that term is inactive.
+
+4. Exact 5/6 barrier for the residual-Cauchy-Schwarz template
+----------------------------------------------------------
+This is a limited no-go theorem, proved directly from the source
+normalizations. It continues to apply even if a future estimate makes
+the theta pairing arbitrarily small.
+
+Assumptions defining the template:
+  (i) The high-side signal has exponent
+      C(s)=s+l_x/2-1+h/6,
+      h=1-l_x+ell, as in source eq. stage-mellin-exponent.
+  (ii) l_x>ell>=0, so every rescaled X'=Z^(l_x-d), 0<=d<=ell,
+       grows as a positive power.
+  (iii) The residual contribution is estimated only by
+      ||A_rest||_2^2 <= (Q/Y) Z^epsilon,
+      ||B||_2^2 <= Q Z^epsilon,
+      followed by Cauchy-Schwarz and triangle inequalities.
+  (iv) The unrescaled block is retained (d=0), as in the given
+       compensated probe, and the available block estimates are used
+       separately, without cancellation between residual blocks.
+
+The resulting estimate is |I_rest| <= X^(1/2) Z^epsilon. In the
+general loss notation it is Z^(l_x/2+(g+e)/2+epsilon), with g,e>=0.
+To use this estimate uniformly for zeros arbitrarily close to a
+claimed boundary sigma_0, the low-side contract requires
+
+  l_x/2+(g+e)/2 <= C(sigma_0),
+
+equivalently
+
+  sigma_0 >= 1-h/6+(g+e)/2
+           = 5/6+(l_x-ell)/6+(g+e)/2
+           > 5/6.
+
+This also follows by taking d=0 in the exact checker, whose other
+blocks have an additional -d. The contract allows omega>0, but that
+does not bypass this floor: omega must be smaller than beta_*-sigma_0,
+and beta_* may be arbitrarily close to sigma_0. The supplied upper
+bound must consequently work with arbitrarily small exponent slack.
+
+Even allowing l_x-ell to tend to zero gives infimum 5/6, still far
+above 1/2. The necessary way around this obstruction is to change
+at least one defining assumption: prove cancellation in the residual
+pairing or between blocks, change the row moment scale, change the
+signal geometry, or use a different probe. This theorem does NOT
+prove that every future development of the metaplectic method fails.
+
+5. The weight-cancellation obstruction is exact within its stated scope
+---------------------------------------------------------------------
+For fixed Q and a fixed arithmetic probe, put
+
+  K(x)=integral W_1(t) t^(1/6) W_0(x/t) dt/t.
+
+Mellin convolution gives Khat(s)=W_1hat(s+1/6) W_0hat(s), hence
+
+  Khat(5/6)=W_1hat(1) W_0hat(5/6).
+
+The right side is the high-side signal coefficient. Thus a finite
+linear combination that makes the combined K vanish identically
+also makes the combined signal coefficient vanish. This proves the
+note's stated result. It does not classify all Q-dependent weights,
+all arithmetic changes of probe, or cancellation estimates that do
+not make K identically zero.
+
+6. Status of the analytic split
+-------------------------------
+The contour-shift implication itself is correct, conditional on the
+stated analytic information about
+
+  D_c(w;m)=sum_s c(s) g_tilde(s,-m) N(s)^(-w).
+
+If its only possible pole in Re(w)>1/2 is the simple theta pole 2/3,
+and if a mean square of size Q^(1+epsilon) holds on 1/2+epsilon with
+polynomial vertical growth, then Mellin inversion and a contour shift
+give
+
+  A_sig(m)=Y^(-1/3) W_1hat(1/6+iv) rho_c(m),
+  sum_m Omega |A-A_sig|^2 <= (Q/Y) Z^epsilon.
+
+The file wf/FE_LoA6_proof.md supplies a substantial proof framework,
+but its general-cusp constant terms, isotypic transfer, and finite-order
+input are not fully written out. The first of these is substantive:
+it supplies the continued scattering matrix and control on the far
+left line needed for the proposed approximate functional equation.
+I found no reason to call this mean square false, but the supplied
+note is not a complete proof of it. None of this closes the pi-pairing
+gap even if all these tasks are finished.
+
+7. Public improvement and novelty boundary
+-----------------------------------------
+Independently checked primary source on 9 October 2026:
+https://arxiv.org/abs/2610.12234
+Baiying Liu, "Slightly improved zero-free half-planes for the
+quasi-Riemann hypothesis", submitted 8 October 2026.
+
+Its abstract states both 34999/40000=0.874975 and
+(1507-2 sqrt(921))/1653=0.874957069799..., together with a Lean
+formalization claim. The presence of the paper and the statements
+are verified. Their full analytic proof and Lean dependency closure
+are separate audits, not established merely from this abstract.
+Consequently reproducing one of these bounds is not a new improvement
+over the public record, although it does satisfy theta<7/8 literally.
+
+8. Audit evidence
+-----------------
+Inspected the source manuscript's continuation-criterion,
+stage-mellin-exponent, prime-Gauss identities, signal identity,
+reflection, reflection-row-phase, reflection-cross-prime-phase,
+and its completed-row and Gram norm application.
+Inspected the final note, REPORT, AUDIT_chain, FE_LoA6_proof,
+PARTII_slotfree, D_derivation, theta_split_model and exact_cert_theta.
+
+New verification: research_audit/check_conditional_slotfree.py is an
+independent pure-rational certificate for the note's conditional
+sigma_0=1733/2000 geometry. It uses the exact zero-slot row count and
+reduces each continuous high-side inequality to a concave quadratic,
+so it needs neither floating-point optimization nor a sampled grid.
+It passes: the low-side margin is -1/5000, the conservative detector
+floor margin is -827/3000000, and both high-side endpoint numerators
+are strictly negative throughout the full delta interval. These
+checks confirm the bookkeeping, not the missing analytic estimate.
+
+The original purported "stdlib Fraction" checker also imports NumPy
+and SciPy to choose a witness t. Those imports failed in the available
+Python environments; this is why the independent exact calculation
+was used. Its result does not rely on rerunning the old optimizer.
+
+All no-go assertions above have deliberately explicit scope. A failure
+to find a power saving, a finite search of functional-equation chambers,
+or the present lack of an applicable spectral formula is not a proof
+of impossibility for unrestricted future methods.

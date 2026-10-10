@@ -1,0 +1,8 @@
+first moment, reflected (s,m,mu), mu = cubic theta [M=5]                         finite=True  bases=24     objects=4   nonadmissible_seen=True
+first moment, unreflected (s,m,A), A = gamma2*abar [M=5]                         finite=True  bases=24     objects=4   nonadmissible_seen=True
+first moment, faithful 4-node (t,A,m,s)                                          finite=True  bases=336    objects=7   nonadmissible_seen=False
+first moment, mu UNWEIGHTED (s,m,mu), mu Dirichlet [M=0]                         finite=False bases=3716   objects=1   nonadmissible_seen=False
+first moment, conjugate column orientation (s,m,A) M_AA=1 (control)              finite=True  bases=48     objects=3   nonadmissible_seen=False
+second moment (s1,m1,mu,m2,s2), true pi                                          finite=False bases=73     objects=1   nonadmissible_seen=False
+second moment reduced (m1,mu,m2), true pi (m-nodes gamma1*gamma3 [4] / conj [2]) finite=False bases=50     objects=1   nonadmissible_seen=False
+second moment, zeta-free model (m-nodes plain [0])                               finite=True  bases=24     objects=1   nonadmissible_seen=False

@@ -1,0 +1,313 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumitem}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\tg}{\widetilde{g}}
+\newcommand{\Asig}{A^{\mathrm{sig}}}
+\newcommand{\Arest}{A^{\mathrm{rest}}}
+
+\title{Removing the $P_a^{1/6}$ Gram loss in the $7/8$ argument:\\
+a conditional improvement and the obstructions}
+\author{Working note}
+\date{9 October 2026}
+
+\begin{document}
+\sloppy
+\setlength{\emergencystretch}{3em}
+\maketitle
+
+\begin{abstract}
+This note concerns the $P_a^{1/6}$ term in the additive Gram bound of the $7/8$
+zero-free-half-plane argument over $K=\Q(\sqrt{-3})$. The aim was to go below
+Liu's exponent $\theta_{\rm L}=(1507-2\sqrt{921})/1653\approx0.874957$.
+
+The excess is the energy of a single vector: the $w=2/3$ residue of the sextic
+Kubota series, i.e.\ the sextic theta coefficients $\rho$. This component cannot
+be cancelled without also cancelling the zero-detecting signal; it can only be
+bounded.
+
+Removing it from the Gram bound is proved, modulo three unwritten lemmas of
+known type from metaplectic Eisenstein series theory, and the $P_a^2/Y$ term
+goes with it. On its own this gains nothing: with Cauchy--Schwarz on the theta
+part, the LP returns exactly $0.874957$.
+
+Any improvement therefore needs a power saving for the \emph{theta pairing}. That
+pairing carries the paper's reflection scalar
+$\zeta_m=(\mathrm{ray})\cdot\mu(m)\bar\alpha(m)\overline{\gamma_2(m)}$. With
+that scalar, every route we found needs a ``beyond the edge'' mean value. One
+sufficient form is a central mean-value bound below the large-sieve exponent,
+for a family of size $L$ with heuristic conductor about $L^3$. Five independent
+attacks, each refereed, gave no saving. In a simplified model, with
+$Q\le9.6\cdot10^4$, the twisted sums are at the random level, but such data are
+expected whether or not the estimate is provable.
+\end{abstract}
+
+\section{Setting}
+
+\textbf{Notation.}
+\begin{itemize}[leftmargin=*]
+\item $\cO=\mathbb Z[\omega]$, $q_x=N(x)$, and ``primary'' means $\equiv1\bmod3$.
+\item $\chi_n(u)=(u/n)_6$, extended by zero.
+\item $g(s,h)=\sum_{d\bmod s}\chi_s(d)e(hd/s)$ and $\tg=g/\sqrt{q_s}$.
+\item $\gamma_j(c)$ is the normalised Gauss sum of $\chi_c^j$, and $\alpha(a)=a/|a|$.
+\end{itemize}
+
+\textbf{The low side.} Part~II of the $7/8$ paper separates the probe as
+\[
+I=\frac{Q^{-1/2}}{2\pi}\sum_\sigma\int\widehat W_0(iv)\sum_{m}\Omega(q_m/Q)\,\xi(m)\,(q_m/Q)^{-iv}A_m(Y)\,B_m(Z)\,dv .
+\]
+Here $A_m(Y)=Y^{-3/2}\sum_{s\in\sigma}c(s)W_1(r_s)r_s^{-1+iv}g(s,-m)$, with $r_s=q_s/Y$, is the additive polynomial, and $B_m$ is the completed cubic-theta row.
+
+The paper applies Cauchy--Schwarz (CS) in $m$, using
+\[
+\sum_m\Omega|A_m|^2\ll\frac QY\Bigl(1+P_a^{1/6}+\frac{P_a^2}{Y}\Bigr)Z^\eps,
+\qquad P_a=Y^2/Q,
+\]
+and a row-norm bound for $B$.
+
+\textbf{Bookkeeping.} We use an LP model of Part~II in the geometry $(l_x,l_y,\ell)$, with $M=l_x+l_y$ and $b=l_y-l_x$.
+\begin{itemize}[leftmargin=*]
+\item Its high-side row counts are checked exactly by a rational branch-and-bound certificate.
+\item It reproduces $7/8$ and Liu's barrier.
+\item Deleting the $P_a^{1/6}$ term and changing nothing else gives $0.8598$.
+\end{itemize}
+
+\section{The excess is a theta vector}
+
+Let $D_c(w;m)=\sum_s c(s)\tg(s,-m)q_s^{-w}$. Its only pole in $\Re w>1/2$ is simple and sits at $w=2/3$ (Theorem~A of \texttt{wf/FE\_LoA6\_proof.md}; same status as Proposition~\ref{prop:theta}). Put
+\[
+\rho(m)=\operatorname{Res}_{w=2/3}D_c(w;m),\qquad
+\Asig_m=Y^{-1/3}\widehat W_1(\tfrac16+iv)\rho(m),\qquad
+\Arest=A-\Asig.
+\]
+
+\begin{proposition}[Theta component]\label{prop:theta}
+Let $N_0$ be divisible by $72\,\mathfrak m_Tb_*\mathfrak f_S$ and by every prime of $S$. Use Kubota 1969 and Selberg/EGM theory on $\Gamma(N_0)$. Modulo the lemmas listed under \emph{Status} below:
+\begin{enumerate}[label=(\alph*)]
+\item\label{LoA} $\sum_{q_m\le Q}|D_c(\tfrac12+\eps+it;m)|^2\ll Q^{1+\eps}(1+|t|)^{R}$. The proof uses an approximate functional equation and the paper's planar additive large sieve.
+\item\label{clean} $\sum_m\Omega|\Arest_m|^2\ll(1+|v|)^{B}(Q/Y)Z^\eps$ for all $Y$. This removes both the $P_a^{1/6}$ and the $P_a^2/Y$ terms.
+\item For $\sqrt Q\lesssim Y_1\asymp Y_2\le Q$, the exceptional frequencies $k=\eps_0C^5a^6$ give the cross-Gram main term
+\[
+Q^{5/6}(Y_1Y_2)^{-1/3}\,\widehat W_1(\tfrac16+iv_1)\,\overline{\widehat W_1(\tfrac16+iv_2)}\,K_0,
+\]
+up to $O((1+|v|)^B(Q/Y)(1+P_a^2/Y)Z^\eps)$. This term is rank one in the scale, with an explicit convergent constant $K_0$. Under \ref{LoA}, also $\sum\Omega|\rho|^2=K_0Q^{5/6}(1+O(Q^{-1/36+\eps}))$.
+\end{enumerate}
+\end{proposition}
+
+\noindent\emph{Status.}
+\begin{itemize}[leftmargin=*]
+\item Parts (a) and (b), and the pole statement, are proved in \texttt{wf/FE\_LoA6\_proof.md} modulo three unwritten lemmas:
+  \begin{itemize}
+  \item constant terms at general pairs of essential cusps. This is the most substantive item; it gives the holomorphy and growth of the scattering matrix;
+  \item the isotypic transfer;
+  \item finite order in vertical strips.
+  \end{itemize}
+\item No GRH is needed.
+\item Brubaker--Bump does \emph{not} apply, because it needs $\mu_{12}\subset K$.
+\item Part (c) is Lemma~D1 of \texttt{D\_derivation.md}. Its $n$-sum mean values and partial-frequency bound are only sketched. $K_0$ has been evaluated only in a model with $c(s)=\mu^2(s)$, where $K_0=6.594\cdot10^{-3}$.
+\end{itemize}
+
+\noindent\emph{Numerics.} We used a simplified model: $c=\mu^2$, rows prime to $6$, exact sextic Gauss sums for $q_s\le2^{20}$, and $Q\in\{1500,3000,6000\}$.
+\begin{itemize}[leftmargin=*]
+\item At large scales, the off-diagonal cross-Grams between disjoint dyadic $s$-ranges are about $0.8\,K_0Q^{5/6}$, and they scale like $Q^{5/6}$.
+\item After a common rank-one component is removed, the residual is flat at $0.95$--$0.97\times$ the exact diagonal, out to $P_a\sim10^8$.
+\item The fitted surviving excess is $(-0.2\pm8)\%$, $(-3\pm6)\%$ and $(+4\pm5)\%$ at the three values of $Q$.
+\end{itemize}
+
+\begin{proposition}[The excess cannot be cancelled]\label{prop:nocancel}
+At fixed $Q$, the principal-row signal on the high side scales like $X^{1/3}=(Q/Y)^{1/3}$, the same as the theta term. More precisely, the theta term's weight is
+\[
+K(x)=\int W_1(t)\,t^{1/6}\,W_0(x/t)\,dt/t ,
+\]
+and the signal's coefficient is $\widehat W_1(1)\widehat W_0(5/6)=\widehat K(5/6)$.
+
+Hence take any linear combination of base probes $I(X,Y,Z)$ with different smooth weights and scales, at fixed $Q$ and $Z$. If its combined theta weight vanishes identically, its signal coefficient is zero too. Changing the probe's arithmetic is a separate question; see Obstruction~2.
+\end{proposition}
+
+\section{Conditional result}
+
+Write $L=Q^2/Z$, $Q=Z^M$, and $\pi(m)=\rho(m)\zeta_m$ (Lemma~\ref{lem:Z}). The \emph{theta pairing} is
+\[
+T=\sum_m\Omega(q_m/Q)\,\xi(m)\,(q_m/Q)^{-iv}\rho(m)\,B_m .
+\]
+Cauchy--Schwarz gives $|T|\ll Q^{11/12+\eps}$.
+
+\begin{hypothesis}[$V'$]
+For some fixed $s_0>0$, uniformly in $|v|\le Z^\eps$ and over the finitely many ray data, and for $M$ at the LP optimum used:
+\[
+|T|\ll Q^{11/12}Z^{-s_0+\eps}.
+\]
+\end{hypothesis}
+
+\begin{theorem}[Conditional improvement]\label{thm:cond}
+Assume:
+\begin{itemize}[leftmargin=*]
+\item Proposition~\ref{prop:theta}\ref{clean};
+\item the routine restatements for $\sigma_0<7/8$ listed below;
+\item a saving $s_0$ over Cauchy--Schwarz for the theta pairing in every low-side block of the probe used.
+\end{itemize}
+Then the LP model of Part~II closes with theta Gram exponent $g=\max(0,\,b/6-2s_0)$. Every finite-order Hecke $L$-function over $K$, in particular $\zeta$, is then zero-free in $\Re s>\theta(s_0)$, with these values:
+\begin{center}
+\begin{tabular}{lcccccc}
+\toprule
+$s_0$ & $0$ & $0.002$ & $0.005$ & $0.01$ & $0.02$ & $0.04$\\
+\midrule
+slot-free ($\ell=0$, base probe) & $0.8947$ & $0.8929$ & $0.8902$ & $0.8858$ & $0.8775$ & $0.8635$\\
+slotted (LP optimum) & $0.874957$ & $0.8733$ & $0.8709$ & $0.8668$ & $0.8615$ & $0.8532$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{theorem}
+
+\noindent\emph{Reading the table.}
+\begin{itemize}[leftmargin=*]
+\item With $(V')$ for the base-probe pairing $T$ alone, only the slot-free row is available. It beats Liu only for $s_0\gtrsim0.023$, with break-even at $M\approx0.78$.
+\item The slotted row is attained at $\ell\approx0.09$--$0.17$, $M\approx0.835$--$0.906$, $M+\ell=1$. There the binding block pairs $\rho$ with marked rows of reflected length about $Q$, whose row scalar also carries the marked primes' Gauss sums. That needs a separate hypothesis, and the slotted high side below $7/8$ has not been checked.
+\end{itemize}
+
+\noindent\emph{Large-sieve-shaped saving.} Suppose $(V')$ holds with
+\[
+s_0=s(M)=-\tfrac12\max\bigl(M-1,\ \tfrac73M-2,\ -\tfrac M6\bigr).
+\]
+Then the slot-free probe closes at $123/142\approx0.86620$, at geometry $(14/71,134/213,0)$.
+\begin{itemize}[leftmargin=*]
+\item Proposition~\ref{prop:theta}\ref{clean} is essential here: with $P_a^2/Y$ kept, the slot-free optimum is $0.8763$.
+\item The exact certificate, run with $P_a^2/Y$ dropped, passes at $\sigma_0=1733/2000$ with the paper's detector floor $\delta_0=1/50$.
+\item It also passes at $\sigma_0=108/125$ with the floor lowered to $\delta_0=1/200$, at geometry $(1817/10000,3213/5000,0)$. That changes the paper's detector proof, which uses $\delta\ge1/50$, and this change has not been verified.
+\end{itemize}
+
+\noindent\emph{Random-rate saving.} Suppose the saving holds at the random rate $s_0=(1-M)/2$. Then the LP gives:
+\begin{itemize}[leftmargin=*]
+\item about $0.852$ if marked rows are given the unmarked reflected length (slotted optimum, $M\approx0.914$);
+\item $0.8548$ with the marked rows' longer length (slot-free optimum, $M\approx0.89$).
+\end{itemize}
+Both lie outside the range of $M$ where $(V')$ was tested.
+
+\noindent\emph{Restatements at $\ell=0$} (routine, labelled [R$-$]; these are hypotheses of the theorem):
+\begin{itemize}[leftmargin=*]
+\item the shared lemmas \texttt{fixed-bin-contour}, \texttt{bin-contour-accounting}, \texttt{principal-residue-interface} and \texttt{outer-row-tails}, for $\sigma_0\in(401/600,1)$;
+\item the second Euler region of \texttt{local-euler}, and the principal non-vanishing, on $\Re s>\sigma_0$;
+\item the zero-slot count of Prop.~\texttt{detector-counts} for every $t\in[1,3/2]$. This gives
+\[
+R_0(\delta)=\min_t\max\bigl(L(t),\,1-\tfrac{2\delta t}{3}\bigr)=\frac{15-16\delta}{15-6\delta},
+\]
+which follows from the paper's own witness and no-slot lemmas.
+\end{itemize}
+
+\noindent\emph{A sufficient form of $(V')$.} This implication runs one way only.
+\begin{itemize}[leftmargin=*]
+\item $(V')$ follows from a central mean-value bound
+\[
+\sum_{N(\mu)\asymp L}|\Pi(\tfrac5{12}+it;\mu)|^2\ll L^{\theta_\pi+\eps},\qquad
+\Pi(z;\mu)=\sum_m\pi(m)(\lambda^4\mu/m)_2\,q_m^{-z},
+\]
+with $\theta_\pi<M/(2M-1)$. This is about $1.27$ at $M=0.826$, and the LP break-even is $\theta_\pi\approx1.31$, reached at $M\approx0.78$.
+\item The reduction itself needs $\Pi$ continued to $\Re z=5/12$, which has not been written.
+\item The only provable exponent is $\theta_\pi=M/(2M-1)$, which is exactly Cauchy--Schwarz. The large-sieve value $3/2$ is heuristic.
+\end{itemize}
+
+\begin{remark}[Retraction]
+An earlier version claimed $0.8665$ (also $0.871$ with slots and $0.864$ with a lowered detector floor). That claim assumed (LoA6) and a Voronoi hypothesis $(V)$ for quadratic twists of $\theta_6$. It applied Voronoi plus Heath-Brown's cubic large sieve to $\sum_m\rho(m)(\mu/m)_2$. That is the wrong sum, because it ignores the reflection scalar of Lemma~\ref{lem:Z}. The certificates had verified only the bookkeeping.
+\end{remark}
+
+\section{Obstructions}
+
+\begin{lemma}[Reflection scalar; F1]\label{lem:Z}
+Use the reflected row of paper eq.\ \emph{reflection}, with the scalar $\zeta$ of eq.\ \emph{reflection-row-phase}. Then $B_m=\zeta_m B^0_m$, where
+\[
+B^0_m=\sum_{\mu\lesssim L}\beta_\mu(\lambda^4\mu/m)_2+\cdots,
+\]
+and $\beta_\mu$ are cubic-theta coefficients. For squarefree $m$,
+\[
+\zeta_m=\kappa_0\psi_1(m)\,\overline{\gamma_2(m)}^{\,4}=(\mathrm{ray})\cdot\mu(m)\bar\alpha(m)\overline{\gamma_2(m)} .
+\]
+This closed form agrees with the paper's product formula to about $10^{-14}$ on all squarefree rows tested. Hence $T=\sum_m\pi(m)B^0_m$ with $\pi=\rho\zeta$, and $\pi$ is not the automorphic sequence $\rho$.
+\end{lemma}
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{$A_2$ structure.}
+  \begin{itemize}[leftmargin=*]
+  \item On squarefree coprime terms, $\pi$ matches the theta residue of the sextic twisted $A_2$ multiple Dirichlet series. That series' continuation over $\Q(\omega)$ is not in the literature.
+  \item The quadratic twist enters as the twisting parameter $\mu^3$.
+  \item The surviving functional equation is $z\leftrightarrow\frac56-z$, with factor $N(\mu)^{3(1/2-z)}$. Heuristically (the effective conductor is not proved), this gives a dual of length about $L^3/Q=Z^{1.13}>Q$.
+  \item The dual coefficients $\rho(s\mu^3)$ couple $s$ and $\mu$, so no large sieve applies. Without a $\mu$-independent character kernel, even a dual of length $L^2/Q$ would not save; a saving needs conductor exponent $k<1.53$.
+  \end{itemize}
+\item \textbf{Rigidity of the probe.}
+  \begin{itemize}[leftmargin=*]
+  \item For a uniform row twist $\chi_A(m)^j$ with $j\notin\{0,4\}$, the paper's reflection formulas give $\zeta_R\propto\bar\alpha(R)^2\gamma_j(R)\gamma_{j+2}(R)$.
+  \item M\"obius absorption into the high-side signal needs $j=1$.
+  \item A row scalar of ray-times-Hecke type needs $j\in\{2,5\}$. Even then $\bar\alpha^2$ remains and the kernel is not quadratic.
+  \item So, within the paper's template (an $s$-slot carrying a theta pole, a row twist, a Gauss-index column, and a decoupled Poisson detector), and relative to the known reflection formulas, the only admissible probes are the paper's and its conjugate. F1 is intrinsic to both. Probes outside this template are not classified.
+  \end{itemize}
+\item \textbf{Functional-equation geometry.}
+  \begin{itemize}[leftmargin=*]
+  \item We searched the exact 3-node model $(s,m,A)$ completely, within the Sawin--Whitehead model: 24 chambers, of which 4 types are residue-adapted.
+  \item The best bounds, as $Z$-exponents beyond $Q^{5/12}$ at $M=0.826$, are:
+    \begin{itemize}
+    \item $0.554$;
+    \item $0.413$, which equals CS;
+    \item $0.891$, using the heuristic conductor;
+    \item $0.587$, a random-size normalisation of a form that contains the signal.
+    \end{itemize}
+  \item None of these beats CS.
+  \item The faithful 4-node object is of infinite type. A search of $10{,}476$ chambers found the same four forms. This corrects an earlier finite object, which encoded the conjugate, non-zero-detecting pairing.
+  \end{itemize}
+\item \textbf{Weights, moments, spectral methods.}
+  \begin{itemize}[leftmargin=*]
+  \item Any argument that sees $\pi$ only through its size, however it uses the structure of $\beta$, is capped near $0.89\,Q^{11/12}$.
+  \item The twisted second moment's functional-equation group is hyperbolic, of type $(2,6,6)$ in the Sawin--Whitehead model. Bochner plus Phragm\'en--Lindel\"of give only the trivial bound; hybrid arguments are not excluded.
+  \item Kuznetsov does not apply. An $SL_2$ sum formula on the sextic cover exists in principle, but the modulus weights $\mu(A)\cdot(\theta_6\text{-pairing})$ are not smooth and the Kloosterman sums are degenerate. No $GL_3^{(6)}$ Kuznetsov formula and no metaplectic spectral large sieve are known.
+  \item $T$ contains the full zero-detecting M\"obius signal. Bounding $T$ by evaluating its signal through a known zero-free region just returns that region, and bounds on $T-S$ carry no zero information. So $(V')$ must be proved by a signal-blind mean-value inequality. Since $\pi=\mu\cdot(\cdots)$, any such proof is itself a M\"obius-randomness statement.
+  \end{itemize}
+\item \textbf{The other three ideas.} These were: (2) Kuznetsov on the dual form; (3) proving the energy wall $W(w)$ directly; (4) other twist orders and fields.
+  \begin{itemize}[leftmargin=*]
+  \item Ideas (2) and (3) need beyond-the-edge mean values of the same type.
+  \item For (4): by Davenport--Hasse, a twist of order $2m$ collapses M\"obius times a Gauss sum linearly to one Gauss sum only when $m$ is odd. Among such orders, $m=3$ is the only one whose theta function is fully known.
+  \item Larger fields containing $\mu_6$ give the same exponents.
+  \item The quartic case over $\Q(i)$ has conductor $N(h)^3$ and is dead.
+  \end{itemize}
+\end{enumerate}
+
+\noindent\emph{Numerics on $(V')$.} We used a stripped model ($c\equiv1$, $\xi\equiv1$, $v=0$, squarefree rows and columns) with $Q\le9.6\cdot10^4$.
+\begin{itemize}[leftmargin=*]
+\item The twisted mean square of $\pi$ is at the random level: $R_{\rm rand}=1$ within $\pm5\%$ for $L\ge Q^{0.7}$, and within $\pm20\%$ below that.
+\item A dyadic-bin fit gives slope $0.000\pm0.004$.
+\item Saturation is excluded by a factor of $30$--$50$ at $L=Q^{0.79}$.
+\item The bilinear form with Patterson's coefficients is also at the random level.
+\item The conductor exponent cannot be resolved at these sizes.
+\end{itemize}
+Random-level data are expected whether or not $(V')$ is provable.
+
+\section{Summary}
+
+The $P_a^{1/6}$ loss survives only through the theta pairing. Everything else in the low side can be made loss-free, including the $P_a^2/Y$ term (Proposition~\ref{prop:theta}); for savings above about $0.023$ the slots can be dropped as well.
+
+Within this LP model, getting below $0.874957$ requires a power saving for the theta pairing:
+\begin{itemize}[leftmargin=*]
+\item For the slot-free probe, $s_0\gtrsim0.023$ in $T$ is enough.
+\item Smaller savings help only if they also hold for the marked-row pairings of the slotted probe.
+\end{itemize}
+
+The saving is consistent with the numerics. It would follow from a beyond-the-edge central mean-value estimate with exponent below about $1.31$. Any proof must be signal-blind, so it is a zero-free-region statement in disguise. No current technique supplies it.
+
+\medskip
+\noindent\emph{Files} (all in \texttt{gram\_split/}):
+\begin{itemize}[leftmargin=*]
+\item \texttt{REPORT.md}, \texttt{TARGET\_VLS.md};
+\item \texttt{wf/}: audit, slot-free Part~II, $FE$/$LoA6$, Voronoi gaps;
+\item \texttt{wf2/}: the $A_2$ lead;
+\item \texttt{vls/}: five attacks on $(V')$;
+\item \texttt{exact\_cert\_theta.py}.
+\end{itemize}
+
+\end{document}

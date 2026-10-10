@@ -1,0 +1,11 @@
+Q=1500 done
+Q=3000 done
+Q=6000 done
+sf    x=rho: 156 cells; at Q=6000 z>3 in 11; replicated (z>2 at all Q): ['j=2 e=-1 k=+4 f=12: [np.float64(1.29), np.float64(1.59), np.float64(1.57)]', 'j=3 e=-1 k=+0 f=3: [np.float64(3.92), np.float64(8.2), np.float64(6.05)]', 'j=3 e=-1 k=+0 f=12: [np.float64(2.55), np.float64(3.05), np.float64(3.66)]', 'j=3 e=+1 k=+0 f=3: [np.float64(5.94), np.float64(4.55), np.float64(6.46)]', 'j=3 e=+1 k=+0 f=12: [np.float64(2.55), np.float64(3.05), np.float64(3.66)]']
+        top-3 z at Q=6000: j=3 e=-1 k=+0 f=12 Rat=3.66 z=13.6; j=3 e=+1 k=+0 f=12 Rat=3.66 z=13.6; j=3 e=+1 k=+0 f=3 Rat=6.46 z=9.6
+sf    x=pi : 156 cells; at Q=6000 z>3 in 1; replicated (z>2 at all Q): []
+        top-3 z at Q=6000: j=2 e=+1 k=-4 f=12 Rat=2.03 z=5.0; j=2 e=-1 k=-5 f=12 Rat=1.54 z=2.6; j=1 e=-1 k=-3 f=12 Rat=1.51 z=2.4
+prime x=rho: 156 cells; at Q=6000 z>3 in 10; replicated (z>2 at all Q): ['j=3 e=-1 k=+0 f=3: [np.float64(3.09), np.float64(5.81), np.float64(3.91)]', 'j=3 e=-1 k=+0 f=12: [np.float64(1.73), np.float64(1.94), np.float64(2.11)]', 'j=3 e=+1 k=+0 f=12: [np.float64(1.73), np.float64(1.94), np.float64(2.11)]']
+        top-3 z at Q=6000: j=3 e=+1 k=+0 f=12 Rat=2.11 z=6.7; j=3 e=-1 k=+0 f=12 Rat=2.11 z=6.7; j=1 e=+1 k=-2 f=3 Rat=4.17 z=6.2
+prime x=pi : 156 cells; at Q=6000 z>3 in 3; replicated (z>2 at all Q): []
+        top-3 z at Q=6000: j=1 e=-1 k=-1 f=3 Rat=2.70 z=4.3; j=1 e=-1 k=-3 f=12 Rat=1.72 z=3.6; j=2 e=+1 k=-4 f=12 Rat=1.72 z=3.6

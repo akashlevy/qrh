@@ -1,0 +1,5 @@
+check: constant saving s0=0 -> theta=0.874957 {'lx': np.float64(0.3549), 'ly': np.float64(0.4783), 'ell': np.float64(0.1668), 'h': np.float64(0.812), 'S': np.float64(0.2055), 'M': np.float64(0.8332), 'b': np.float64(0.1234)}
+loa th=1.00: theta=0.851918  geometry {'lx': np.float64(0.1978), 'ly': np.float64(0.7158), 'ell': np.float64(0.0863), 'h': np.float64(0.8885), 'S': np.float64(0.0972), 'M': np.float64(0.9137), 'b': np.float64(0.518)}
+loa th=1.30: theta=0.873800  geometry {'lx': np.float64(0.2518), 'ly': np.float64(0.5316), 'ell': np.float64(0.009), 'h': np.float64(0.7572), 'S': np.float64(0.0119), 'M': np.float64(0.7834), 'b': np.float64(0.2798)}
+loa th=1.32: theta=0.875256  geometry {'lx': np.float64(0.2519), 'ly': np.float64(0.5252), 'ell': np.float64(0.0004), 'h': np.float64(0.7485), 'S': np.float64(0.0005), 'M': np.float64(0.7771), 'b': np.float64(0.2733)}
+loa th=1.35: theta=0.877460  geometry {'lx': np.float64(0.2651), 'ly': np.float64(0.5054), 'ell': np.float64(0.0004), 'h': np.float64(0.7352), 'S': np.float64(0.0005), 'M': np.float64(0.7706), 'b': np.float64(0.2403)}
