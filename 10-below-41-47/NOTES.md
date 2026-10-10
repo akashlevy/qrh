@@ -91,3 +91,13 @@ yet to formalize; the Lean environment build (Mathlib + OAI + WeightedQRH) was s
   g = 0.9 → 0.8741, 0.85 → 0.8734, 0.8 → 0.8728, **0.75 → 0.87221 < 41/47** (coarse grid; b ≈ 0.19).
   The 04/07 analyses show the Gram term's Mellin coefficient Ŵ₁(1)Ŵ₀(5/6) equals the signal's, so
   reducing it is equivalent to the (V′) pairing problem, which is signal-circular.
+
+## 7. Literature agent `lit2` (finished; `agents/lit2/LIT.md`)
+- Tracker: **our PR #6 (10499/12000) was merged at 14:08 UTC; the catalogue on main lists
+  `akashlevy-20261009-weighted-numerator` as framework-verified, the best verified record** (checked).
+  No bound below 0.8748 claimed anywhere; no 41/47 claim.
+- Calibrations at ℓ = 0.1773: a family zero-density N(σ) ≪ U^{A(1−σ)} closes 41/47 only with A ≲ 2.125 on
+  σ ∈ [0.59, 0.80] — better than the best known exponent for ζ itself (2.308 at σ = 0.7); P78's counts
+  already beat Ingham and Guth–Maynard at the binding bin. Numerator sixth moment needs excess λ ≲ 0.09;
+  available routes give 0.34 (perfect sextic sieve), 0.45 (de Faveri), 0.37 (4th moment × Burgess).
+- No published or preprint tool supplies any input of the BRIEF table (details and citations in LIT.md).
