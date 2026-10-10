@@ -1,0 +1,55 @@
+[
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"kA": 0.9627,
+"_duals": true,
+"_tag": "DIAG+kA0.9627"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"w1": 0.3,
+"_tag": "DIAG+w1=0.3"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 0.7,
+"cP": 0.75,
+"_duals": true,
+"_tag": "partial P1 (mk.7,cP.75,cap)"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 0.8,
+"w2scale": 10.0,
+"cP": 0.6,
+"_duals": true,
+"_tag": "partial P2 (mk.8,cP.6,nocap)"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 0.7,
+"cP": 0.75,
+"kA": 0.9627,
+"_tag": "partial P1+kA0.9627"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"wE": 0.0196,
+"_tag": "DIAG+wE0.0196"
+}
+]

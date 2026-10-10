@@ -362,3 +362,27 @@ Any meaningful improvement must break this chain somewhere. The candidates:
 - openai/math HEAD: fd4aeeb (unchanged).
 - Web: only Liu 2610.12234 (0.874957069799) and spin-offs, e.g. DrMurphyIsIn/qrh-debruijn-newman (Λ ≤ 9/32, irrelevant here).
 - Nothing below 0.8749. Next scan no earlier than ~10:00 UTC.
+
+## 24. Agent report: slack-audit (round 2, finished ~08:05 UTC) — no within-edge path to 27/31
+
+Files: `agents/slack-audit/{AUDIT.md, model_sa.py, batch.py, diag_closed.py, frontier*.py, slackmap.py, runs/SUMMARY.txt}`.
+- **Best type-(A) (within-edge) value is 0.8725498**, attained by DIAG. Closed form agrees with the LP to 1e-7.
+  - At the DIAG optimum the low side is loss-free (b = 0, M+ℓ = 1, θ = 1 − h/6), at l_x = l_y = 0.4118, ℓ = 0.1765.
+  - The only binding high bin is δ ≈ 0.33, x = 0, where the count is the slot-free Ingham-type R0 = 1 − 2δα/(3α−δ), α = 5/6.
+  - All its inputs are at the diagonal, so beating it is "Ingham below 7/10" (type B).
+- **Model discrepancy found.** r4 drops the paper's intermediate-row constraint (eq. adaptive-intermediate, l.16161).
+  - It binds at the DIAG geometry: DIAG with the literal paper treatment gives 0.873815.
+  - Fix: apply detector-counts with zero slots at t = α/(α−δ/3) for d ≤ 1/2. This restores 0.8725498.
+  - No modelling error that understates the paper was found.
+- **Zero-payoff (A) items:** refined case A, floor 1/2+η, plain sixth moment, optimal cubic sieve, dropping P_a²/Y, t < 1, dynamic κ, bin ceiling.
+  **Already optimal:** detector t ∈ [1,3/2], m ≤ 1/2, zero bins, x ≤ 1/2, w = 1−a contour, H ≥ D^{1+c}, amplification, d = ℓ branch.
+- **Cheapest partial DIAG reaching 0.87255:** Lemma marked at r + 1.33z ≤ 1 together with Lemma plain at 2m + 1.43z ≤ 1, among other pairs.
+- **Residual for 27/31 on top of DIAG** (any one):
+  - M_κ with κ ≈ 0.964 (D = U^{1.17}, H ≈ U^{1.13}: family 3.6% shorter than the polynomial);
+  - W(0.0196);
+  - Gram factor 0.674;
+  - w1 = 0.222.
+  - DIAG + DH counts gives 0.866826.
+  - Coordinator check: M_{0.966} at σ ≈ 0.635 is marginally FALSE in a DH-world (U^{2.31} > D^{1+κ} = U^{2.30}). It is stronger than needed: only counts are needed there.
+
+**Round 2 summary:** all three agents negative. Cheapest known requirement for 27/31: DIAG (coefficient-sensitive sextic sieve for Möbius × Hecke-structured prime slots; a 1.33z partial version suffices) plus a count improvement at δ ≈ 0.27–0.33 below Ingham-with-copies. Both are open.
