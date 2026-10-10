@@ -1,7 +1,7 @@
 # 09 — Session summary: pushing QRH below 7/8 (10 Oct 2026)
 
-**Status: no improvement yet.** The best public bound is still ≈ 0.874957 (tracker), and ours is 10499/12000 ≈ 0.874917
-(tracker PR #6). This session mapped *why* every lever of OpenAI's 7/8 architecture is blocked, and found exactly one
+**Status: no improvement yet.** Best framework-verified public bound: ≈ 0.874957. Ours is 10499/12000 ≈ 0.874917 (tracker PR #6).
+The new pending record is 0.874887 (tracker PR #9, Hailey Collet), a re-tuning that reuses our weighted-numerator construction. This session mapped *why* every lever of OpenAI's 7/8 architecture is blocked, and found exactly one
 genuinely new architecture, which turned out to be dead (c_B = 4). Details are in `NOTES.md` (§1–§31), with agent work under `agents/`.
 
 ## What a meaningful improvement would need (r4 exponent model, all numbers re-verified)
@@ -72,6 +72,15 @@ So P78's split is the unique viable member. Literature (NOTES §33): beyond-edge
 character groups on powerful moduli or for full spectral families; μ-absorption forces squarefree, one-character-per-modulus
 families. (H1) ⇔ a subconvex bound C^{0.202} on the cubic cover, where no subconvexity is known. W(w) is a Conrey–Rodgers "2-swap"
 statement, uncontrolled for any thin family.
+
+## Rounds 5–6: the 19/22 conditional theorem dissected (NOTES §34–§37)
+- (H1) can be replaced by its mark-average, which follows from a theta-free hybrid large sieve (HLS) for {ψ_kχ_P^{−2}}.
+- (HLS) is numerically true (random-matrix size), but unproved at its edge N ≈ KL. The Poisson involutions in n and in k
+  share the fixed point N = KL, and a sextic cocycle blocks Heath-Brown-style recursions. Alone it gains nothing.
+- (H2) cross-mark decorrelation is pure random-matrix cancellation (no main term, no structure across 54 phases). Alone it gains nothing.
+- Both reduce to one "freeness / uncertainty principle": ‖Π_VΠ_X‖² ≲ K/N for the quadratic-row and mark subspaces.
+  - A partial sieve KL + N·L^a with perfect (H2) gives 27/31 at a ≈ 0.687 and 19/22 at a ≤ 1/3.
+- Mark design cannot dodge this: amplification and the conductor P² come from the same cubic symbol (lemma L2).
 
 ## Open leads, ranked
 1. A lossless 2-swap or energy bound beyond the wall (W(0.064)) exploiting the theta coefficients' self-duality: the closest lever to
