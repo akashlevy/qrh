@@ -1,0 +1,9 @@
+N0=10000: cols 2816, rows 2831, marks 8 {np.int64(1000): np.int64(8)}  4.3s
+row symbols for 1234 primes  5.4s
+rows done 6.4s
+N0=10000 cols N=2816, window K=2048: K'=294 rows, mean diag weight 137.25  10.8s
+Gamma: rank-deficiency 2522 (N-K' = 2522); Q eigenvalues in [-145.3, 3540.8], 91.4% negative, median negative -141.8 (mean diag 137.2); mark mass in ker: 0.892 (1-K'/N = 0.896)
+  iter 0: modulus deviation (before re-flattening) 3.55e-01, constraint residual (flat y) 7.61e+00
+  iter 500: modulus deviation (before re-flattening) 1.09e-16, constraint residual (flat y) 2.41e-15
+  iter 600: modulus deviation (before re-flattening) 1.13e-16, constraint residual (flat y) 2.39e-15
+certificate: |x2|/|x1| deviation max 4.96e-05 rms 1.16e-16; G11 146432.7 G22 146432.7 |G12| 146432.7; Delta11 145250.5 |Delta12| 1.96e-12; O11 1182.2 O22 1182.2 |O12| 146432.7; |O12|/sqrt|O11 O22| = 123.9, |O12|/Delta11 = 1.008

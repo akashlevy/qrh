@@ -603,3 +603,25 @@ Files: `agents/mark-design/{MARK_DESIGN.md, gram_design.py, gram_*.{out,json}, m
 
 **Status after 5 rounds (18 agents):** every within-architecture lever and every μ-absorbing alternative is closed. The minimal open
 inputs are (HLS) + (H2) (→ 19/22), W(0.064) (→ 27/31), or Ingham-beating counts. All are frontier problems.
+
+## 35. Agent report: h2 (round 6, finished ~12:20 UTC) — NEGATIVE: the cancellation is pure random-matrix
+
+Files: `agents/h2/{H2.md, model_h2.py, h2_kernel.py, h2_poisson_Z.py, h2_struct.py, h2_dft.py, h2_coh.py, h2_bias.py, h2_conjfrac.py, runs/summary.txt}`.
+- **Payoff:** θ ≈ 0.86338 + 0.110(1−θ₂). Partial (H2) gives nothing unless θ₂ > 0.895; 27/31 needs θ₂ ≥ 0.931.
+- **Diagonal-free structure.**
+  - Mixed diagonal Δ12 ≪ K(NL)^{1/2}Z^ε (proved).
+  - There is no "(off-diagonal)^{1/2}" inequality (proved, numerical certificate). Beyond the wall the row Gram has a kernel of dimension ≥ N−K′, on which the off-diagonal form equals −diag, so it is indefinite.
+  - The Poisson involution with exact weights squares to the identity: no contraction. The earlier inconsistent identity came from a positive-bump error.
+- **Cocycle.** Exact identity: D_P(k) = conj β(P)ψ_k(P)·U_PΘ_k, a progression piece of one unmarked theta sum at length NL.
+  - The cross term is a mixed moment of the product mark P₁P₂. Pair averaging is rank one or diagonal.
+  - The (k,P₁,P₂) family is beyond its edge by Z^{3M−2}.
+  - New symmetry: β(n̄) = conj β(n), so D_{P̄}(k̄) = conj D_P(k).
+- **β*:** gives nothing (the primal side has no Euler product; on the dual, GRH misses by Z^{0.67}).
+- **Structure hunt (exact Z[ω], up to 500 marks):** the off-diagonal rms is ≈ 1.2·rows^{−1/2}, identical to random.
+  - It is not governed by N(P₁P₂) or (P₁/P₂)₃, and shows no bias along 54 phases and no persistence across windows.
+  - The apparent structure is explained by the finite-size mixed diagonal, the conjugation symmetry, and the Patterson bias of Kubota-aligned slots.
+- **New sufficient condition (proved): (H2-ms).** Σ_{P₁≠P₂}|G₁₂|² ≪ (KN)²Z^ε, i.e. "second-order freeness" of the quadratic-row and mark subspaces.
+  - W uniform in the marks ⇔ an uncertainty principle ‖Π_VΠ_X‖² ≲ K/N.
+  - The random model satisfies it iff L′² ≤ K.
+  - Evaluating it needs (H1) asymptotically to relative error 1/L′, so the wall returns as a precision requirement.
+- **Conclusion:** a proof must supply a freeness/uncertainty statement; there is no main term to identify and cancel.
