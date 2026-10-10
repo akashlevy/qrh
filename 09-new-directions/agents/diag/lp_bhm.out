@@ -1,0 +1,4 @@
+n=3: theta profile consistent with all LS constraints: True; violates diagonal for z > 1/2: True; BHM(true Gram) excludes it for z in (1.0001, 1.9999); BHM(R-restricted sqrt Gram) excludes for z in (0.0001, 1.9999)
+n=4: theta profile consistent with all LS constraints: True; violates diagonal for z > 1/2: True; BHM(true Gram) excludes it for z in None; BHM(R-restricted sqrt Gram) excludes for z in None
+n=6: theta profile consistent with all LS constraints: True; violates diagonal for z > 1/2: True; BHM(true Gram) excludes it for z in None; BHM(R-restricted sqrt Gram) excludes for z in None
+General: exclusion needs slope s = 1/n > 1/4 (BHM with g = 1 + z needs z(2s - 1/2) > s/2).

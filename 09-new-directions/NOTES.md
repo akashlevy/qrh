@@ -275,3 +275,24 @@ Files: `agents/energy-wall/{ENERGY_WALL.md, dual_energy.py (+json), exchange_rat
 - **The missing estimate:** Σ_{k≤K}|Σ_{n~N} c(n)ψ_k(n)|² ≪ (K + N^{1−η})Z^ε with η ≥ 0.068, for c = β·X.
   It needs a spectral input (amplification plus Kuznetsov on the cubic cover, uniform, upgraded to an average).
   The round-2 agent `wall-spectral` is pursuing this.
+
+## 19. Agent report: diag (round 2, finished ~07:35 UTC) — NEGATIVE
+
+Files: `agents/diag/{DIAG_NOTES.md, model.py (+wz), verify.jsonl, sweep_*.jsonl, diag_anatomy.py, xcap0.py, theta_slot_test.py, lp_bhm.py}`.
+- **Re-verified** (refined case A, δ0 = 10⁻³): DIAG 0.8725498; mk = 0.75 0.8734852; cP = 1 0.8734526; DIAG + wE 0.0196 0.8709686.
+  Partial versions: mk 0.6/0.7 give 0.87399/0.87349; cP 0.3/0.4/0.5 give 0.87479/0.87452/0.87418.
+- **Ceiling for all slot levers: 0.8725498.** At the DIAG optimum every binding bin has mark amplitude x = 0
+  (DIAG, mk = cP = 5 and x ≡ 0 give bit-identical θ).
+- **Where the losses are.**
+  - Lemma marked: the second z is paid once, at the final marked theta reflection. A marked prime enters the conductor squared (l.7374–7383, old-eq:4.4),
+    and the quadratic sieve needs rows·marks ≤ columns (old-eq:4.10, l.9910), i.e. r + 2z ≤ m. The 2r+8z cap is the cubic (NL)^{2/3} branch.
+    This is the energy-wall mechanism again.
+  - Lemma plain: no conductor effect. The slots are bounded pointwise through β*, |Q|² ≤ Z^{κz} with κ = 2β*−1 (l.12876), and the slot removal
+    exchange rate is 6:1 (l.14236–14276). So cP = 1/(6(2β*−1)); cP = 1 would need β* = 7/12 (circular).
+- **Rigorous negative result.** DIAG stated uniformly over all bounded slot coefficients is FALSE for z > m/2. Take a(p) = conj(sextic Gauss sum);
+  then Σ_u|Q_u|² ≫ U^{5/6}P^{1/3}, attaining the sieve's theta term. The paper's own hypothesis r + 2z ≤ m keeps z < m/2, so the paper is unaffected.
+  A DIAG proof would have to use the Hecke structure of the actual slots.
+- de Faveri's sieve gives Lemma marked for r + z ≤ m/2 (zero payoff).
+- OpenAI's moments-of-different-lengths technique cannot work for n = 6. Theta profiles satisfy every power and BHM constraint;
+  near-orthogonality excludes them only when 1/n > 1/4, i.e. only for n = 3.
+- The β* bootstrap costs κ = 3/4 per unit of slot length against a gain ≤ 0.39.
