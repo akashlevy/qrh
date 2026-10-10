@@ -1,0 +1,154 @@
+Independent signed-dual audit -- 9 October 2026
+
+Scope and status
+----------------
+This investigation uses the original OpenAI papers/formalization and the user's earlier R1 notes. No Li Xiang argument or code was read or copied for this investigation. I derive an exact signed reorganization, a conductor-uniform large-j bound, and a precise short-j obstruction to this particular approach. I do NOT obtain M_kappa for any kappa<1, a new zero-free exponent, or a proof that every version of the method is incapable of improvement.
+
+Notation: N denotes the Eisenstein norm. Stars mean squarefree primary elements prime to the fixed bad set S. Put H=D^kappa, and let S(H,D) denote the original unnormalized row mean square. The paper's M_D and S_xi are normalized by 1/D. Constants may depend on fixed characters and smooth profiles, never on moving characters or their conductors. Throughout, arbitrarily small positive powers of D are displayed as D^epsilon.
+
+1. Starting exact identity
+-------------------------
+Use paper2, equation initial-column-output (formalize_11_12/papers/paper2.tex):
+
+ S_xi = H/D^2 sum_{(b,f)=1}^* mu(f) N(b)
+        sum_{k != 0} sum_{(m1 m2,b)=1}^*
+        a(m1) conjugate(a(m2))
+        chi_m1(k f^4) conjugate(chi_m2(k f^4))
+        W0(N(b f m1)/D) conjugate(W0(N(b f m2)/D))
+        PhiHat(H N(k)/(N(f)^2 N(m1) N(m2))).                 (1)
+
+Here W0(x)=x^(-1/2) conjugate(W(x)), |a(m)|=1 on its support, and
+ a(r n)=a(r)a(n)chi_n(r)^4 when (r,n)=1.
+All rearrangements below are finite: the column weights and compact Fourier support bound every norm.
+
+2. Exact common-divisor cancellation
+-----------------------------------
+Write m1=r n1, m2=r n2, with (n1,n2)=1. Squarefreeness and the character zeros force (r,n1 n2 f)=1. Set j=f r. The two CRT phases combine with f^4 into j^4. The common r-character contributes exactly 1_{(r,k)=1}. For fixed squarefree j,
+
+ sum_{r|j} mu(j/r) 1_{(r,k)=1}
+   = product_{p|j} (-1 + 1_{p does not divide k})
+   = mu(j) 1_{j|k}.                                      (2)
+
+Thus set k=j h. Identity (1) becomes exactly
+
+ S_xi = H/D^2 sum_{(b,j)=1}^* mu(j) N(b)
+        sum_{h != 0} sum_{(n1,n2)=1, (n1 n2,bj)=1}^*
+        a(n1) conjugate(a(n2))
+        chi_n1(h j^5) conjugate(chi_n2(h j^5))
+        W0(N(b j n1)/D) conjugate(W0(N(b j n2)/D))
+        PhiHat(H N(h)/(N(j) N(n1) N(n2))).                 (3)
+
+This reorganization retains the signs rather than replacing mu by |mu|. It is also closely related to undoing the paper's coprimality insertion; the identity by itself is not a new estimate.
+
+On dyadic blocks N(b)~B, N(j)~J,
+
+ X = D/(B J),             K = D^2/(H B^2 J) = J X^2/H,   (4)
+
+are the column length and nonzero h-row length. In particular K/X=D/(H B), independent of J.
+
+3. The apparent column diagonal can be removed exactly
+-----------------------------------------------------
+The diagonal n1=n2 in (3) is just n1=n2=1, since (n1,n2)=1. Equivalently, directly summing the old m1=m2 diagonal over f,m with j=fm gives (2).
+Its normalized contribution is
+
+ (H/D) sum_{(b,j)=1}^* mu(j)/N(j) |W(N(bj)/D)|^2
+                       sum_{h != 0} PhiHat(H N(h)/N(j)). (5)
+
+Since PhiHat is bounded and compactly supported, lattice counting gives
+ sum_{h != 0}|PhiHat(H N(h)/N(j))| <= C_Phi N(j)/H.
+This inequality is uniform even when N(j)/H<1: if the support radius is too small there is no nonzero lattice point; otherwise the usual O(1+R) count is O(R).
+Consequently (5) is bounded by
+
+ C/D sum_{b,j: N(bj)~D} |W(N(bj)/D)|^2 << D^epsilon.
+
+Here a squarefree element n has at most 2^omega(n)<<N(n)^epsilon coprime factorizations n=bj, and lattice/ideal counting supplies O(D) elements. Restoring the factor D, the entire fake diagonal is O(D^(1+epsilon)). This conclusion needs neither GRH nor a zero-free theorem. The paper's original zero-frequency term Z remains O(H) in normalized units, hence O(HD) in the original mean square.
+
+This is a direct, elementary cancellation identity. It does not bound the remaining coprime off-diagonal.
+
+4. Growing-conductor control is available, and why
+------------------------------------------------
+For a finite-order Hecke character psi of conductor norm Q, a fixed smooth compactly supported U, and theta0=7/8, the existing global zero-free theorem plus logarithmic control gives
+
+ sum_{(j,R)=1} mu(j) psi(j) U(N(j)/J)
+       <<_{delta,epsilon,U} J^(theta0+delta) (Q N(R))^epsilon,
+       J>=1.                                            (6)
+
+This does NOT follow just by applying a fixed-character big-O estimate to moving psi. The uniform input is explicitly present in the original formalization:
+
+ OAI.SevenEighths.HeckeReciprocalGrowth.reciprocal_subpower
+ formalize_11_12/math/lean/OAI/NumberTheory/DirichletL/Hecke/ReciprocalGrowth.lean:12
+
+Its quantifiers are: for fixed e,epsilon>0 there exists D0>0, then FOR EVERY character chi and s with Re(s)>=beta_*+8e,
+
+ |reciprocal(chi,s)| <= D0 * presentationComplexity(chi,Im(s))^epsilon,
+ presentationComplexity = N(rad(modulus)) * 2 N(modulus) * (3+|Im(s)|)^2.
+
+The constant comes before the character quantifier. The corresponding paper proof is paper78's logarithmic-control lemma, lines 1536-1605: a conductor-polynomial upper bound, Borel--Caratheodory for log L, then Hadamard three-circles gives |log L|<< (log C)^a with a<1, hence |1/L|<<C^epsilon. The principal L-function is regularized at its pole. Deleted Euler factors have a separate uniform N(R)^epsilon bound.
+
+To obtain (6), take the Mellin transform of U on Re(s)>1, shift to Re(s)=7/8+delta, and use rapid vertical decay of Mellin(U) together with that uniform subpower reciprocal bound. No residue is crossed; 1/L has a zero, not a pole, at the principal pole. The ideal/Mellin Dirichlet series is 1/L times the deleted local factors. One can shrink the epsilon in the reciprocal theorem to absorb fixed polynomial powers of conductor and height. Fixed primary/ray restrictions are expanded in finitely many fixed ray characters; their conductor cost is fixed.
+
+5. A genuine signed large-j estimate
+-----------------------------------
+Fix b,n1,n2,h in (3). The j-character is
+
+ psi_{n1,n2}(j)=chi_n1(j)^5 conjugate(chi_n2(j)^5).
+
+After the fixed primary/ray convention, this is a finite-order Hecke character of conductor norm Q <<_S N(n1 n2) << X^2. It is independent of h. The restriction (j,b n1 n2)=1 is a deleted Euler mask, of norm at most a fixed polynomial in D.
+
+Use a smooth dyadic partition in J. The remaining j-weight is
+ U_{b,n1,n2,h}(t)
+   = W0(N(b) J t N(n1)/D)
+     conjugate(W0(N(b) J t N(n2)/D))
+     PhiHat(H N(h)/(J t N(n1) N(n2)))
+     times the fixed dyadic cutoff.
+On its support t is in a fixed positive compact interval, n_i~X and N(h)<=C K. Every required smooth seminorm of U is uniformly bounded. Thus (6) applies uniformly, not with a separate uncontrolled constant for every quadruple.
+
+Counting b, h, and the ordered column pairs absolutely AFTER the j cancellation gives
+
+ |S_xi;B,J| << D^epsilon (H/D^2) B^2 K X^2 J^(theta0+delta)
+             = D^(2+epsilon) / (B^2 J^(3-theta0-delta)).
+
+Restoring the factor D, this block's contribution to the original mean square is
+
+       << D^(3+epsilon) / (B^2 J^(17/8-delta)).           (7)
+
+This is a rigorously justified conductor-uniform signed-tail estimate. It has no unproved fourth-moment or growing-conductor hypothesis. It applies to the off-diagonal as well as the complete block. If K is too small for a nonzero h, the block vanishes.
+
+For the desired M_kappa bound O(D^(1+kappa+epsilon)), (7) suffices when
+
+       B^2 J^(17/8-delta) >= D^(2-kappa).                (8)
+
+Writing B=D^b,J=D^j, and ignoring arbitrarily small losses, this is
+       2b+(17/8)j >= 2-kappa.
+
+The benchmark theta=0.874957019420098946 corresponds, for integer-row extraction theta=1/2+5kappa/12, to
+       kappa=0.8998968466082374704.
+At B=1 the large-j estimate only controls
+       J >= D^0.517695601596123543341176470588... .
+It therefore leaves a substantial short-j region. It is an improvement over applying the same Mellin shift directly to the unregrouped f-sum in (1), whose crude block bound is D^3/(B^2 F^(9/8-delta)).
+
+6. Precise remaining obstruction: the unit j-block
+------------------------------------------------
+At B=J=1, j is the unit 1 and mu(j)=1. There is no oscillation in the variable to which (6) applies. No improvement in the exponent theta0 of (6), even theta0=1/2, changes that fact.
+The remaining core is the signed/non-positive coprime-pair form
+
+ sum_{0<N(h)<=D^2/H}
+ sum_{n1,n2~D, (n1,n2)=1}
+   a(n1) conjugate(a(n2)) chi_n1(h) conjugate(chi_n2(h))
+   times the coupled smooth kernel.                     (9)
+
+The required bound is O(D^(2+epsilon)) for (9). Its positive completion has a diagonal of size roughly
+       (D^2/H) D = D^3/H,
+which exceeds D^2 by D/H when H<D. Bounding the completed positive form, or discarding the coprimality signs by a triangle inequality, restores precisely that obstruction. Re-inserting the Mobius identity for (n1,n2)=1 returns to the starting signed form rather than producing a new saving.
+
+A hard truncation of Mobius inversion is not an exact substitute: for a common divisor g equal to a prime p with N(p)>V,
+       sum_{d|g, N(d)<=V} mu(d)=1,
+whereas 1_{g=1}=0. The omitted tail has to be controlled as a correlated arithmetic form. The large-j estimate above supplies one legitimate tail treatment, but says nothing adequate about (9).
+
+I therefore cannot deduce M_kappa for any kappa<1 by this signed-j Mellin-shift/small-large split. The missing input is a coefficient-sensitive O(D^(2+epsilon)) estimate for the coprime-pair form (9), uniformly for H=D^kappa near kappa=0.8998968 or below. It is NOT a missing conductor-uniform reciprocal bound: that bound is already proved and was used correctly in (7).
+
+7. Limits of the obstruction
+----------------------------
+This is an obstruction to the specific plan "regroup the gcd, use global zero-freeness to save in the Mobius divisor variable, and bound all remaining variables absolutely or by a positive large sieve." It is not a lower bound on the true signed form (9), and it is not a proof that all coefficient-sensitive, spectral, bilinear, or alternative methods fail. The signs may well provide the needed cancellation; this computation has not supplied an estimate for it.
+
+No claim is made here to beat the public benchmark. What is added is an explicit exact cancellation, a valid growing-conductor treatment, a quantitative signed-tail estimate, and a sharply isolated remaining short-divisor problem.

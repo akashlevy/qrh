@@ -1,0 +1,330 @@
+Independent low-side investigations, 9 October 2026
+
+Task and result
+---------------
+Seek an improvement beyond the public benchmark 0.874957019420098946 by
+changing the low-side probe, its projection, or combinations of its scales.
+I used the original local manuscript and existing Gram-split calculations,
+not Li Xiang's construction. No new positive power saving has been proved.
+The following are precise failures or scoped obstructions, rather than a
+claim that all future low-side approaches are impossible.
+
+The source is formalize_11_12/papers/paper78.tex. Important labels are
+general-probe, low-separated, probe-poisson-identity, reflection-row-phase,
+signal, probe-gram, and the proof of probe-row-norm.
+
+1. A promising-looking arithmetic twist fails for an exact reason
+----------------------------------------------------------------
+Candidate: replace the auxiliary residue character xi by one whose order
+does not divide six. A sextic Kubota series twisted by such a character
+might have its theta residue removed, potentially removing the Gram loss
+without estimating the difficult phased pairing.
+
+The original source explicitly chooses xi^6=1 at lines 3350--3355.
+This is not a convenience that can be removed while keeping the same
+high-side signal. The exact Poisson derivation at lines 3944--3946 uses
+
+  conjugate(xi(H/s)) = conjugate(xi(u)) xi(s),
+
+because the nonzero frequency is written H=u a^6 and xi(a)^6=1.
+For a general xi the correct factor has the additional term
+
+  conjugate(xi(a))^6.
+
+Thus, after the same sixth-power completion, the scalar factor
+zeta_F^S(6z) is replaced by
+
+  L_F^S(6z, conjugate(xi)^6).
+
+If the induced finite-order Hecke character conjugate(xi)^6 is
+nonprincipal, it has no pole at 6z=1. The z=1/6 residue that creates
+the principal signal is absent. The remaining fixed finite Euler
+corrections cannot restore that pole. This is an exact obstruction
+within this auxiliary-character modification, even if one grants its
+desired cancellation on the Gram side. No hypothetical theta functional
+equation is needed to identify the missing high-side pole.
+
+It is important to phrase this in terms of the induced character, not
+just the raw residue character's order: a component living entirely on
+the units need not remain nonprincipal on the normalized ideal variables.
+The conclusion applies precisely when xi^6 induces a nonprincipal
+character on the good primary ideals.
+
+2. The weight-cancellation obstruction extends to varying Q
+----------------------------------------------------------
+The earlier note states its obstruction at a fixed Q. The following
+calculation removes that restriction for the same fixed arithmetic data,
+same completed-row scale Z, and linear combinations of base probes.
+
+Suppose the theta decomposition is available, with common rho_sigma(m)
+and B_{m,sigma}(Z). For probe j let
+
+  Q_j=q_b X_j Y_j,
+  K_j(x)=integral W_{1,j}(t)t^(1/6)W_{0,j}(x/t) dt/t.
+
+Combining the central Mellin integral gives its theta contribution
+
+  I_theta,j = Q_j^(-1/2) Y_j^(-1/3)
+      sum_{sigma,m} xi(m) rho_sigma(m) B_{m,sigma}(Z) K_j(Nm/Q_j).
+
+The auxiliary majorant Omega can be omitted here because it is one
+on the support of the Mellin convolution K_j. Fixed normalization
+constants are common and do not affect the calculation.
+
+For arbitrary coefficients a_j (including ones depending on Z), define
+
+  H_Z(r)=sum_j a_j Q_j^(-1/2)Y_j^(-1/3) K_j(r/Q_j).
+
+The combined theta contribution uses exactly this one radial kernel.
+Its Mellin moment is
+
+  integral H_Z(r) r^(5/6) dr/r
+    = sum_j a_j Q_j^(1/3)Y_j^(-1/3) Khat_j(5/6)
+    = q_b^(1/3) sum_j a_j X_j^(1/3)
+                              W1hat_j(1) W0hat_j(5/6).
+
+The final sum is precisely the combined principal-signal coefficient,
+up to the common nonzero source normalization. Therefore
+
+  H_Z identically zero  ==>  combined principal signal identically zero.
+
+This allows different Q_j, different Y_j, different radial test weights,
+and arbitrary finite coefficients. It is a stronger scope than the
+fixed-Q cancellation statement in the old note. Its proof is only Mellin
+convolution and a change of variable; it does not assume cancellation of
+the difficult pi-pairing.
+
+What this does NOT rule out: cancellation only after summing against the
+actual arithmetic rho B; kernels tailored to a specific finite row set;
+arithmetic changes of the probe; or different completed-row scales Z_j.
+Those operations require new identities or correlation estimates. The
+identity above rules out a universal radial-kernel annihilation as a
+signal-preserving way to remove the theta component.
+
+3. An exponent obstruction for sums of separately bounded probes
+---------------------------------------------------------------
+Lemma (finite/subpower superposition with triangle bounds).
+Suppose constituent j has a supplied low bound Z^(L_j+o(1)) and a
+zero-detecting signal of exponent beta+c_j. Multiply it by a coefficient
+of size Z^(p_j+o(1)). For a fixed number of terms, or a uniformly
+subpower number with corresponding uniform bounds, estimate the sum by
+the triangle inequality or by Cauchy--Schwarz over the constituent index.
+Assume the surviving combined signal has exponent beta+c_*.
+Then the resulting zero-free threshold cannot be lower than
+min_j(L_j-c_j).
+
+Proof. The supplied low exponent is max_j(p_j+L_j). The signal exponent
+satisfies c_*<=max_j(p_j+c_j), including the possibility of exact
+leading-signal cancellations. Choose a j attaining the latter maximum.
+Then
+
+  max_i(p_i+L_i)-c_*
+    >= (L_j-c_j)+(p_j+c_j-c_*)
+    >= min_i(L_i-c_i).
+
+A subpower number of terms changes neither maximum at the power level.
+Cauchy--Schwarz in that index has the same maximal exponent. QED.
+
+Consequently, taking several individually certified geometries does not
+create a better exponent through averaging their existing bounds. One
+must prove a cross-correlation or a cancellation estimate for the sum
+itself. This is not a prohibition on such an estimate.
+
+The same simple obstruction holds at the exponent-model level for
+products with positive integer powers: if their signal and low exponents
+add, the resulting boundary is a weighted average of constituent
+boundaries. This latter observation assumes that the product is a valid
+detector; it is not itself a construction of a nonlinear detector.
+
+4. Orthogonal projection is a reformulation, not an estimate
+-----------------------------------------------------------
+At one fixed row block, write A=a rho+R and use the Hermitian pairing
+so the physical bilinear sum is <A, conjugate(B)>. Let P be the
+orthogonal projection onto rho. Then
+
+  <(1-P)A, conjugate(B)> = <(1-P)R, conjugate(B)>.
+
+The norm of this expression can indeed be estimated by the clean
+residual bound. Equivalently one may project conjugate(B) instead.
+However the physical probe has changed by exactly
+
+  <P A, conjugate(B)>.
+
+Writing down P does not estimate this subtracted arithmetic quantity or
+supply a new high-side identity. The corrected reflection formula makes
+its leading term involve pi(m)=rho(m) zeta_m, with
+
+  zeta_m=(fixed ray factor) mu(m) conjugate(alpha(m))
+                                      conjugate(gamma_2(m)).
+
+Thus importing the old high-side signal after projection, without
+accounting for this subtracted term, assumes the missing conclusion.
+The elementary projection is well-defined; the proposed proof shortcut
+is not established. This failure is distinct from the universal-kernel
+annihilation theorem in section 2.
+
+As a scale check, at the previously audited rational geometry
+theta=0.87495702, b=24681137/200000000, h=324784289/400000000,
+the clean residual threshold is
+
+  1-h/6 = 2075215711/2400000000 = 0.86467321291666...,
+
+whereas the retained theta Cauchy--Schwarz term increases it by
+b/12=0.01028380708333.... The residual is therefore already smaller
+by a fixed power. Improving or even discarding it alone cannot improve
+the overall exponent while the theta pairing keeps its old estimate.
+
+5. Angular modulation: a candidate, not a completed replacement
+---------------------------------------------------------------
+Another possible modification is a nonradial smooth weight in the m
+variable, intended to cancel the angular part of zeta_m. This does not
+by itself help the Gram norm, since multiplying rows by a unimodular
+angular phase leaves that norm unchanged. It can change the arithmetic
+pairing, which is the potentially useful feature.
+
+But Fourier transformation preserves the angular harmonic while moving
+its scale factors onto the dual frequency and the other arithmetic
+variables. In the source Poisson setup this would put additional angular
+characters on the s and completed-index sums. Consequently the w=1
+principal numerator pole and the finite-order target character cannot
+be assumed unchanged. Compensating those characters would in turn change
+the completed theta row and its reflection law.
+
+I have not derived the full nonradial high identity and the matching
+reflected row. Therefore this is not an unconditional replacement lemma
+and no improved exponent follows from it here. In particular the formal
+identity alpha(m)^2 conjugate(gamma_2(m))^4=gamma_2(m)^2 for squarefree
+m is insufficient: it concerns the desired row phase, not the rest of
+the modified physical probe.
+
+6. Precise current status
+------------------------
+Proved scoped obstructions: section 1's missing sixth-power-completion
+pole; section 2's varying-Q kernel cancellation identity; section 3's
+superposition exponent lemma.
+
+Failed shortcut: projecting away the theta vector and reusing the old
+high-side identity without estimating the removed pairing.
+
+Unfinished candidate: a fully nonradial probe with compensated angular
+characters. It needs a newly derived high identity and reflection law;
+no saving is asserted.
+
+No new theorem beating the public benchmark was obtained in this
+low-side investigation. These results do not prove an unrestricted
+optimality theorem for the method. They identify exactly which proposed
+algebraic operations fail to create a power saving and where genuine
+new arithmetic information would still be required.
+
+7. Can rho cancel the reflected Gauss phase and expose Mobius?
+------------------------------------------------------------
+This is a more promising question than treating pi as an arbitrary
+sequence, but its first algebraic simplification does not evaluate pi.
+
+Primary source checked directly: Bröker--Hoffstein, Fourier coefficients
+of sextic theta series, https://arxiv.org/html/1312.0568v1, equations in
+the introduction immediately following the Hecke relation. Its stated
+normalization gives tau_6(p)=G_2(1,p) tau_6(p^3). Their introduction
+explicitly suppresses bad-prime and reciprocity details, so transporting
+the following scalar formula to every cusp of our rho vector requires
+those finite local conventions. The discussion below does not silently
+claim that transport has been proved.
+
+In compatible good-primary conventions, the local Hecke relation is
+
+  tau_6(a p)=G_2(a,p) tau_6(a p^3),  (a,p)=1,
+  G_2(a,p)=chi_p(a)^(-2) gamma_2(p).
+
+Let m=p_1...p_k be squarefree. Apply the relation successively at p_i,
+turning its exponent from 1 to 3. At step i, the other prime factors
+already transformed to exponent 3 contribute trivially to G_2, whereas
+the later primes contribute chi_(p_i)(p_j)^(-2). Therefore
+
+  tau_6(m) = [product_i gamma_2(p_i)]
+             [product_(i<j) chi_(p_i)(p_j)^(-2)] tau_6(m^3).
+
+Cubic reciprocity identifies the displayed bracket with gamma_2(m):
+gamma_2's twisted multiplicativity contributes
+chi_(p_i)(p_j)^2 chi_(p_j)(p_i)^2
+ = chi_(p_i)(p_j)^4 = chi_(p_i)(p_j)^(-2).
+Finite ray corrections can be carried as a class vector if the primary
+conventions have not made this identity scalar.
+
+Using tau_6(m)=Nm^(1/12) rho(m), the idealized scalar identity is
+
+  rho(m) conjugate(gamma_2(m)) = Nm^(-1/12) tau_6(m^3),
+  pi(m) = (ray factor) mu(m) conjugate(alpha(m))
+                              Nm^(-1/12) tau_6(m^3).
+
+Equivalently pi(m)=(ray factor) mu(m) conjugate(alpha(m))
+Nm^(1/6) rho(m^3). Thus there IS a formal cancellation of one cubic
+Gauss factor. The remaining coefficient tau_6(m^3) is not thereby
+computed, nor is it known from these relations to be multiplicative or
+constant. The inverse local relation is tau_6(a p^3)=G_4(a,p)tau_6(a p),
+with G_2(a,p)G_4(a,p)=1. It just inverts the same transport.
+
+This limitation can be seen algebraically without invoking numerical
+unpredictability: the good-prime exponent involution j -> 4-j modulo
+the period six has orbit {1,3}. Neither exponent in this orbit is
+connected to exponent 0 by the local Hecke relations. Consequently the
+relations leave a free base coefficient for each squarefree index;
+replacing exponents 1 by 3 does not reduce the number of free data.
+Other analytic or global identities might constrain these data. The
+local relations alone do not.
+
+The blanket statement in some old notes that using row mu(m) would
+automatically be circular is too strong. This is a different variable
+from the detector's completed-index Mobius factor. A proved estimate
+using its sign changes would be legitimate. The missing ingredient is
+an estimate for the remaining theta coefficient, not a logical ban on
+Mobius cancellation.
+
+8. Exact power cost of a direct reciprocal-L strategy
+----------------------------------------------------
+Even grant the substantially stronger fictitious simplification
+
+  pi(m) = mu(m) omega(m) Nm^(-1/12),
+
+with omega a finite-order Hecke character, and retain the actual
+quadratic kernel and column normalization. Suppose that zero-freeness
+and reciprocal bounds give, for every finite-order chi of polynomial
+conductor and every fixed smooth dyadic W,
+
+  sum_m mu(m)chi(m)W(Nm/Q) << Q^(B+epsilon).
+
+This implication follows by Mellin inversion from the conductor-uniform
+subpower bound for 1/L on Re s>B, including the standard deleted Euler
+factors. In the model above it yields, for each column n,
+
+  F(n) = sum_m pi(m)(n/m)_2 W(Nm/Q)
+       << Q^(B-1/12+epsilon).
+
+The actual reflected column has sum_(n~L)|beta_n|^2 << Q^epsilon.
+Applying the per-column estimate followed by Cauchy--Schwarz in n gives
+
+  |T| <= sum_n |beta_n F(n)|
+      << Q^(B-1/12+epsilon) L^(1/2).
+
+Write L=Q^lambda. This beats the existing Q^(11/12+epsilon)
+estimate precisely if
+
+  lambda < 2(1-B).
+
+At B=0.874957019420098946 the right side is
+0.250085961159802108. At the relevant unmarked geometry M about 5/6,
+Q=Z^M and L=Q^2/Z give lambda=2-1/M about 4/5. Marked rows may have
+L about Q. Thus this direct strategy does not give a better exponent
+even under the fictitious removal of the unknown theta coefficient.
+
+Scope: this is an obstruction to the displayed per-column bound plus
+absolute summation/Cauchy--Schwarz in columns, not to all averaged
+Mobius estimates. For example, a new mean-square saving simultaneously
+using beta's phases and the actual tau_6(m^3) sequence could evade it.
+
+The real arithmetic has two further unresolved inputs: tau_6(m^3)
+cannot be dropped, and conjugate(alpha(m)) is an infinite-order angular
+Hecke factor. The source logarithmic-control lemma at paper78.tex
+lines 1532--1552 concerns finite-order Hecke characters. Its global
+zero-free conclusion therefore cannot simply be quoted for this
+angular twist. No unrestricted impossibility is inferred from either
+observation.

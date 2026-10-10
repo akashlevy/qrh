@@ -1,0 +1,224 @@
+EXACT LOWER BOUND FOR THE UNCHANGED EXPONENT SYSTEM WITH KAPPA FEEDBACK
+9 October 2026
+
+Result. Within the explicitly specified exponent package below, no target
+smaller than
+
+  theta_* = 0.874957019420098946...
+
+can be certified, even with arbitrary admissible geometry and repeated
+feedback of previously proved zero-free bounds into the fourth moment.
+An exact specification is
+
+  theta_* = 11/12 - lambda_*/4,
+  657 lambda_*^3 - 954 lambda_*^2 + 21 lambda_* + 20 = 0,
+  1/6 < lambda_* < 1/5.
+
+Equivalently theta_* is the unique root in [13/15,7/8] of
+
+  7884 theta^3 - 18819 theta^2 + 14643 theta - 3686 = 0.
+
+Exact rational sign evaluation gives
+
+  0.87495701942009894 < theta_* < 0.87495701942009895.
+
+This is a lower bound on what the stated sufficient estimates can prove,
+not a lower bound on actual zero locations. The lower bound is sharp for
+the three-constraint relaxation used in the proof. No sufficiency theorem
+for every constraint of the full package is asserted in this note.
+
+1. PRECISE SCOPE
+
+Let theta be a proposed target no larger than 7/8. The geometry satisfies
+
+  M=lx+ly, b=ly-lx, h=1-lx+ell>0.
+
+Keep the source's direct majorant:
+
+  theta >= 5/6+lx/6-ell/6+g/2+e/2,
+  g >= b/6,
+  e >= 0,
+  e >= (1+3ell-2M)/4,
+  e >= M+ell-1.
+
+Additional source Gram or energy terms may be retained; discarding them
+only relaxes the system and therefore cannot invalidate this lower bound.
+
+Keep the source's high exponent for every permitted zero/amplitude class:
+
+  theta >= (1+delta)(1-ly)/2 - ell/2 + x delta ell
+           + h(R(delta,x)+delta/2-1/6).
+
+Here the retained cardinality estimate has exponent at least the optimized
+combination of the same marked inverse second moment, unweighted fourth
+moment with selected primes, and sixth-power amplification:
+
+  R(delta,x) >= R_*(delta,x;c),
+  R_* = 1-delta + (alpha-delta) delta P/(2J),
+  alpha=5/6,
+  D=3-(1+4c)x,
+  P=(2-4cx)(1-x),
+  J=(alpha-delta)D+delta P,
+  c=1/(6 kappa).
+
+Restricting prime supply or inserting strict reserves can only weaken this
+count and increase R. The formula corresponds to unlimited supply and
+optimizing the standard detector cutoff 1<=t<=3/2. Improvements to the
+count formula, a simultaneous use of several witnesses that genuinely
+beats this formula, or an assumption that removes a critical zero class
+are outside this package.
+
+The moment is available either at kappa=1 by absolute prime counting or
+with its actual analytic hypothesis beta_* <= (1+kappa)/2. In a proof by
+contradiction beta_*>theta, any such admissible kappa necessarily obeys
+
+  kappa > 2theta-1,  hence c < 1/[6(2theta-1)].
+
+For a lower bound we grant the more favorable limiting capacity
+
+  C(theta)=1/[6(2theta-1)].
+
+This includes finite feedback from a previously proved boundary as well as
+the optimistic limiting choice. We allow c to vary by class if desired;
+the pointwise inequality c<=C(theta) suffices. The high inequality is
+required uniformly in the possible classes, as in the existing exponent
+certificates; this is not a claim that a critical class contains actual
+zeros.
+
+2. FIRST REDUCTION: THETA >= 13/15
+
+The Gram inequality cancels b and gives
+
+  theta >= 5/6+M/12-ell/6+e/2.
+
+The exact identity
+
+  M/12-ell/6+e/2-1/30
+    = (1/5)[e-(1+3ell-2M)/4]
+      +(1/60)[e-(M+ell-1)] +(17/60)e >= 0
+
+therefore yields theta>=13/15. Thus only theta in [13/15,7/8] needs
+analysis. On this interval
+
+  2/9 <= C(theta) <= 5/22.
+
+3. THE CRITICAL CLASS R=2/3
+
+Set x=1/2. Then
+
+  D=5/2-2c, P=1-c, J=alpha D-delta(3/2-c).
+
+For fixed 0<delta<alpha, R_*(delta,1/2;c) strictly decreases with c.
+Indeed u=P/D has derivative -1/(2D^2)<0, while
+
+  R_*=1-delta+(alpha-delta)delta u/[2(alpha-delta+delta u)]
+
+increases with u. Consequently the optimistic capacity C(theta) gives
+the smallest (best) available count exponent at each fixed delta.
+
+A direct expansion gives
+
+  R_*(delta,1/2;c)-2/3 = Q_c(delta)/(36J),
+
+  Q_c(delta)=(36-18c)delta^2+(57c-78)delta+25-20c.
+
+For 2/9<=c<=5/22:
+
+  Q_c(1/3)=3(1-c)>0,
+  Q_c(1/2)=4c-5<0,
+  Q_c'(delta)<0 for 1/3<=delta<=1/2.
+
+The last assertion follows from
+Q_c'(delta)<=Q_c'(1/2)=39c-42<0.
+Thus Q_c has exactly one root delta(c) in (1/3,1/2).
+Take delta=delta(C(theta)). This class lies above the detector floor and
+below every admissible kappa, since kappa>=2theta-1>=11/15>1/2.
+At this class the optimistic exponent is exactly 2/3 and every allowed
+weaker capacity gives R>=2/3.
+
+4. ELIMINATING EVERY GEOMETRY VARIABLE
+
+Since h>0, the high inequality at this class implies
+
+  theta >= H_delta := 1+delta-(1+delta)M/2+delta ell.
+
+This follows by substituting x=1/2, R=2/3 and h=1-lx+ell;
+the coefficient of b cancels exactly.
+
+The direct inequality with e>=0 and e>=M+ell-1 gives the two constraints
+
+  theta >= L_0 := 5/6+M/12-ell/6,
+  theta >= L_K := 1/3+7M/12+ell/3.
+
+The positive weights
+
+  w_0=(4+18delta)/(9+18delta),
+  w_K=2/(9+18delta),
+  w_H=3/(9+18delta)
+
+sum to one. Their combination cancels both M and ell, giving the necessary
+condition
+
+  theta >= w_0 L_0+w_K L_K+w_H H_delta
+        = (7+18delta)/(9+18delta),
+  delta=delta(C(theta)).
+
+This proof places no condition M+ell=1 on the geometry. Hence the barrier
+holds also for unbalanced total length, assuming the same explicit
+majorant and count package.
+
+5. THE CUBIC AND ITS UNIQUE RELEVANT ROOT
+
+The function f(delta)=(7+18delta)/(9+18delta) is strictly increasing.
+Its inverse at theta is
+
+  d(theta)=(9theta-7)/[18(1-theta)].
+
+For theta in [13/15,7/8], this lies in [1/3,7/18], within the interval
+on which Q_C is strictly decreasing. Therefore the necessary condition
+in section 4 is equivalent to
+
+  d(theta)>=delta(C(theta)), equivalently
+  Q_{C(theta)}(d(theta))<=0.
+
+Introduce lambda=11/3-4theta, which is a new scalar determined by the
+target and is not the free geometric amplifier length ell. Then
+
+  1/6<=lambda<=1/5,
+  C(theta)=1/(5-3lambda),
+  d(theta)=(5-9lambda)/[6(1+3lambda)].
+
+Direct substitution gives the exact identity
+
+  Q_{C(theta)}(d(theta))
+    = -3 P(lambda)/[(5-3lambda)(1+3lambda)^2],
+  P(lambda)=657lambda^3-954lambda^2+21lambda+20.
+
+The denominator is positive, so the necessary inequality is P(lambda)>=0.
+Now
+
+  P(1/6)=1/24>0,
+  P(1/5)=-1088/125<0,
+  P'(lambda)=1971lambda^2-1908lambda+21<0 on [1/6,1/5].
+
+For example an upper bound for the derivative on that interval is
+1971/25-1908/6+21=-5454/25<0.
+There is exactly one root lambda_* in the interval. Therefore
+P(lambda)>=0 iff lambda<=lambda_*, or theta>=theta_*.
+This proves the result.
+
+At the limiting capacity c=C(theta_*), the critical-class relaxation has
+equality when ell=lambda_* and M=1-lambda_*. Then L_0=L_K=H_delta=theta_*.
+The difference b is absent from these three constraints. This establishes
+sharpness for the relaxation, without claiming that equality proves a
+complete analytic endpoint theorem.
+
+6. WHAT WOULD EVADE THIS BARRIER
+
+It is enough to alter a premise of the explicit exponent package: improve
+the direct energy/Gram treatment; obtain genuinely better row counts;
+keep cancellation among physical rows instead of applying this uniform
+absolute envelope; use a different probe; or prove an independent input
+that removes a critical class. The calculation rules out reparametrization
+and kappa-feedback alone. It does not rule out these other analytic changes
+and does not establish the impossibility of GRH by any broader method.
