@@ -559,3 +559,25 @@ Files: `agents/twovar/{NOTES.md, kvar_lp.py, validate.py, variants.py, closed_fo
 - higher-rank Kazhdan–Patterson thetas: worse walls.
 
 P78's sextic k = 1 split is the unique viable member. Improving it requires one of the open edge problems (SUMMARY.md).
+
+## 33. Agent report: lit-edge (round 5, finished ~11:20 UTC) — no published input; levers calibrated
+
+Files: `agents/lit-edge/{LIT_EDGE.md, calib.py, calib.out, scratch/}`. Full texts were reached via GitHub: teorth/expdb (ANTEDB), a CC-BY LaTeX sample (Conrey–Rodgers), and the local openai/math preprints.
+- **Beyond-edge Lindelöf on average exists only with:**
+  - a full character group on POWERFUL moduli (Petrow–Young, Dasgupta, Garcia–Young FoM Σ 2025, cosets with d > q^{2/5}); or
+  - a full spectral family with positivity (Conrey–Iwaniec, Hu–Petrow–Young 2506.14741).
+  μ-absorption forces squarefree moduli with one character per modulus, so both are excluded structurally.
+- **Quadratic twists:** Li (Invent 2024), Kumar–Mallesham–Sharma–Singh, Jiang–Shen–Tang 2603.21739 and Shen–Stucky have log savings only.
+  Li's large sieve via d ↦ dp² inflation loses (1+N/M)^A beyond the edge. No level-uniform result exists.
+- **Calibration:** (H1) at the 27/31 geometry ⇔ a subconvex bound D_P(½,k) ≪ C^{0.202} on the cubic cover (convexity 0.25, Burgess-strength 0.1875).
+  No subconvexity of any strength is known there.
+- **W(w)** is a first moment of length K^{2.149} at w = 0.064, the "2-swap" regime of Conrey–Rodgers.
+  Even under Lindelöf, their error exceeds the main term by D^{0.037}. No paper controls 2-swap terms for any thin family.
+  This is still the closest lever to existing technology.
+- **Asymptotic large sieve** (Conrey–Iwaniec–Soundararajan; Chandee–Li–Matomäki–Radziwiłł 8th moment) stops at the edge (N ≤ Q^{2−ε}); there is no one-character-per-modulus version.
+- **Metaplectic spectral theory:** only Louvel's fixed-level Kuznetsov on the cubic cover. No level aspect, no 6-fold cover, no spectral large sieve.
+  Half-integral weight has these tools because Salié sums evaluate explicitly; cubic Kloosterman sums do not.
+- **Zero density:** for ζ, Ingham's 3/(2−σ) is still best on [1/2, 7/10] (ANTEDB). Family results are Ingham-type or weaker below 7/10.
+  Sixth moments are open for every cubic or sextic family.
+- **SOTA:** tracker main c480675 (merged PR #4); no record change (best 0.874957019420). PR #8 (29/33, Hailey Collet) has no new mechanism.
+  Rubinstein's reading notes: "7/8 appears close to the limit of this design". Nothing below 0.8749.

@@ -1,0 +1,54 @@
+\begin{proposition}[Logarithmic second moments]\label{analytic:moment}
+There are fixed positive integers $A,B$ such that, for every dyadic
+$M\geq1$, every $F\in\mathcal F$, every $t\in\mathbb R$, and
+$1/2\leq\sigma\leq2$,
+\begin{equation}\label{analytic:L-moment}
+ \frac1M\sum_{\substack{d\ \mathrm{admissible}\\M\leq|d|<2M}}
+ |L_{F^{(d)}}(\sigma+it)|^2
+ \ll_{\mathcal F}\log^B(3M)(1+|t|)^A.
+\end{equation}
+For arbitrary signed squarefree twisting parameters and $H\geq1$,
+\begin{equation}\label{analytic:prefix-moment}
+ \sum_{\substack{0<|h|\leq H\\h\ \mathrm{squarefree}}}
+ |L_{F^{(h)}}(\sigma+it)|^2
+ \ll_{\mathcal F}H\log^B(3H)(1+|t|)^A.
+\end{equation}
+\end{proposition}
+
+\begin{proposition}[Dirichlet-polynomial second moments]
+\label{analytic:polynomial-moment}
+With the same fixed integers $A,B$, every fixed smooth $G$ of compact
+support in $(0,\infty)$ satisfies
+\begin{equation}\label{analytic:polynomial-bound}
+ \frac1M\sum_{\substack{d\ \mathrm{admissible}\\M\leq|d|<2M}}
+ |P_d(N,t;G)|^2
+ \ll_{\mathcal F,G}
+ \log^B(3M)(1+|t|)^A(1+N/M)^A
+ \qquad(N>0).
+\end{equation}
+The bound is uniform for fixed uniformly smooth families of weights
+with common compact support.
+\end{proposition}
+
+We prove these estimates by induction on the twisting height $M$.
+Poisson summation turns a polynomial mean square into a sum of products
+of twist $L$-functions at dual squarefree parameters. To put those
+parameters below the current height, we first enlarge the family by
+replacing $d$ with $dp^2$, where $p\asymp P$. The new averaging height is
+$U=MP^2$. A weight with compact Fourier support then restricts the dual
+parameters to size $O(N^2/(MP^2))$, which is at most $M/2$ for a
+sufficiently large $P$. Recovering the original squarefree average costs
+$O(P\log(2P))$. The nonzero-frequency estimate gains $P^{-2}$, so after
+recovery its recursive coefficient contains $N\log(2P)/(MP)$.
+We choose $P$ as a sufficiently large fixed power of
+$\log(3M)(1+N/M)(1+|t|)$, with a large fixed leading constant, to make
+this coefficient small. The approximate functional equation and a strip
+estimate then close the induction for the $L$-functions themselves.
+The compact Fourier support construction and prime-square inflation
+are related to Li's treatment of quadratic twists \cite{Li2022}.
+
+The arithmetic preparation below keeps its arithmetic exponents independent of the
+number of weight derivatives. Once the induction is closed, we sum all
+dual frequencies to compare short polynomial averages with the integer
+model. The polynomial moment bound will also control the unmollified
+terminal series in Section~\ref{sec:weights}.

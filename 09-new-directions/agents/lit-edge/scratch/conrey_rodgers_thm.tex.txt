@@ -1,0 +1,43 @@
+	In this paper we will focus on the family $\mathcal D$ of Soundarajan's paper \cite{Sou} on quadratic non-vanishing, namely the family of positive discriminants divisible which are  divisible by $8$. This family $\mathcal{D}$ can be written $\mathcal{D} = \{8d:\; 2d \; \textrm{is squarefree and positive}\}$.  The reason for choosing this family is only ease of explication.
+	For $8d \in \mathcal{D}$, define
+	$$P_A(\chi_{8d};\ell) := \sum_{n}W\left(\frac n N\right)\frac{\tau_A(n) \chi_{8d}(n\ell)}{\sqrt{n}}$$
+	where $\ell$ is odd. (Because $\chi_{8d}(m) = 0$ if $m$ is even, we have that if $\ell$ is even, then $P_A(\chi_{8d};\ell) = 0$. For the same reason the sum above can be restricted to odd $n$.)
+	
+	Let
+	$$\mathcal S_A(D;\ell):=\sum_{d}\mu^2(2d) \Psi\left(\frac d {D}\right) P_A(\chi_{8d};\ell).$$
+	Our main result is the following:
+	\begin{theorem}
+		\label{thm:main} 
+		Assume the Lindel\"{o}f Hypothesis for the functions $L(s,\chi_d)$. Let $a$ be a small fixed constant (e.g. $a = 1/10)$. Given a set $A$ of complex numbers with positive real parts $\ll 1/\log D$ and imaginary parts $\ll 1$, we have for any $\epsilon > 0$, 
+		\begin{eqnarray*}  \mathcal S_A(D;\ell)
+			&=&
+			\sum_{(d,\ell)=1 } \mu^2(2d) \Psi\left(\frac d{D}\right) 
+			\frac{1}{2\pi i}\int_{(a)}\breve W(s) N^s 
+			\sum_{U\subset A_s\atop |U|\le 1} \prod_{u\in U} X_{8d}(1/2 +u) \mathcal B^{(2d)}(A_s-U+U^-;\ell) ~ds\\
+			&&\qquad +O(N^{1/4}D^{1/2+\epsilon} \ell^{1/4+\epsilon}).
+		\end{eqnarray*}
+	\end{theorem}
+	
+	In this theorem we have adopted the convention that $D$ is sufficiently large, so that the shifts of size $\ll 1/\log D$ will be smaller than given small constants like $a$. The rest of the paper should be read with this convention in mind. It should be possible with more book-keeping to prove this theorem where shifts have imaginary part $\ll D$, but we have focused on the range above for ease of explication.
+	
+	One expects that $P_A(\chi_{8d}; \ell)$ is of size $O(N^{\epsilon})$ so that one expects $S_A(D; \ell)$ to be of size $O(D N^\epsilon)$. Thus the error term is a power savings for $N = D^\eta$ as long as $\eta < 2$. For $\eta > 2$ the error term will be larger than the main term.
+	
+	\begin{remark}
+	In Theorem \ref{thm:main}, we have restricted to a set $A$ of complex numbers with real parts which are positive to allow for a proof which is slightly easier to keep track of. It is likely that with a little more bookkeeping the proof will allow for a set $A$ of complex numbers with real parts of arbitrary sign (still with real parts $\ll 1/\log D$ and imaginary parts $\ll 1$). Indeed such a result was proved using different methods while this paper was in press in \cite{Ce}.
+	\end{remark}
+	
+	Note that the sum over $U$ in this theorem is restricted  to $|U|\le 1$.  As the $\eta$ in $N=D^\eta$ gets larger we would expect more terms to enter into the formula; namely all the terms $U$ with $|U| \leq \eta$. Indeed, one may show that terms with $|U| > \eta$ will make no contribution if added in:
+	
+	\begin{prop}
+		\label{prop:swap_dropping}
+		Let $a$ be a small fixed constant (e.g. $a = 1/10$). For any fixed positive integer $j$ and any fixed positive number $\eta < j$, consider $D \geq 1$ and $N = D^\eta$ and a set $A$ of complex numbers as in Theorem \ref{thm:main}. If $d \asymp D$, then
+		\begin{equation}
+			\label{eq:swap_drop}
+			\frac{1}{2\pi i} \int_{(a)} \breve{W}(s) N^s \sum_{U \subset A_s \atop |U| = j} \prod_{u\in U} X_d(1/2+u) \mathcal{B}^{(d)}(A_s - U + U^{-};\ell)\,ds \ll D^{-\epsilon}
+		\end{equation}
+		for some constant $\epsilon > 0$ (depending on $j$ and $\eta$).
+	\end{prop}
+	
+	Thus combining this Proposition with the Theorem above, we see the Lindel\"of Hypothesis implies Conjecture \ref{conj: dirichpoly} for the family of Soundararajan when $\eta < 2$. We give the proof of Proposition \ref{prop:swap_dropping} in Section \ref{subsec:B_cont} below.
+	
+	\section{Preliminaries} 
