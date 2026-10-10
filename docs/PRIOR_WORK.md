@@ -39,8 +39,9 @@ The public leaderboard is the [QRH Bounds tracker](https://gtimg.github.io/Quasi
 | Khamzat Chakhkiev | 10937/12500 (conditional) | [Zenodo 23221313](https://zenodo.org/records/23221313) |
 | Li Xiang (lixiang90) | cubic σ\* = 11/12 − e\*/4; the Lean theorem is conditional on `ArithmeticProbeObligation` | [lixiang90/RH-Zero-Free-Formalization](https://github.com/lixiang90/RH-Zero-Free-Formalization) (metadata only) |
 | Shiva Kintali | 47/48 (short proof) | [*A Short Proof of the Quasi-Riemann Hypothesis*](https://shivakintali.github.io/papers/QRH.pdf), 7 Oct 2026 |
-| tomoto0 | Lean rebuild of the 7/8 proof; heuristic figures 0.87496, 0.87451, 0.86979, 13/15 | [tomoto0/quasi-riemann-hypothesis-7-8-verification](https://github.com/tomoto0/quasi-riemann-hypothesis-7-8-verification) |
-| **This project (Akash Levy)** | **10499/12000 ≈ 0.8749166** | [PR #6](https://github.com/GTimG/QuasiRiemannTracker/pull/6) (open). If merged, it would be the best listed entry by about 4·10⁻⁵. |
+| tomoto0 | Lean rebuild of the 7/8 proof; heuristic figures 0.87496, 0.87451, 0.86979, 13/15 | [tomoto0/quasi-riemann-hypothesis-7-8-verification](https://github.com/tomoto0/quasi-riemann-hypothesis-7-8-verification). Checked on 10 Oct: its obstructions are all known here, and its "bootstrap saturation 0.8745" is an error. It substitutes 2β\* − 1 for the amplification slope α = 5/6; the correct κ-feedback limit is 0.874957. |
+| Hailey Collet | 0.87488664704 ("quartic boundary"); also 29/33 (non-record) | Tracker [PR #9](https://github.com/GTimG/QuasiRiemannTracker/pull/9) (pending as of 10 Oct): our weighted numerator, `lem:plain` with variable κ ∈ [7/10, 3/4], and a completed zero-slot moment. Our exponent model reproduces its endpoint to 10⁻⁹ and finds it is the optimum of the proved inputs. |
+| **This project (Akash Levy)** | **10499/12000 ≈ 0.8749166** | [PR #6](https://github.com/GTimG/QuasiRiemannTracker/pull/6), merged 10 Oct (14:08 UTC): the tracker's best framework-verified entry. |
 
 Recorded as non-comparable (applications, conditional work or different statements):
 - Puglisi, arXiv:2210.03121;
@@ -101,6 +102,9 @@ Recorded as non-comparable (applications, conditional work or different statemen
 - A. Diaconu, B. Ion, V. Paşol, A. Popa, twisted moments of r-th order Hecke L-functions, [arXiv:2607.27131](https://arxiv.org/abs/2607.27131).
 - S. Friedberg, J. Hoffstein, Ann. of Math. 142 (1995). B. Brubaker, S. Friedberg, J. Hoffstein, *Cubic twists of GL(2) automorphic L-functions*, Invent. Math. 160 (2005). S. Friedberg, J. Hoffstein, D. Lieman, Math. Ann. 327 (2003). A. Diaconu, D. Goldfeld, J. Hoffstein, Compositio 139 (2003).
 - A. Bucur, A. Diaconu, *Moments of quadratic Dirichlet L-functions over rational function fields*, Moscow Math. J. 10 (2010) (an affine D₄^{(1)} example).
+- A. Diaconu, V. Paşol, A. Popa, the axiomatic quadratic D₄^{(1)} series over F_q(t): meromorphic continuation into the interior of the Tits cone and an exact weighted fourth moment, via a functional equation outside the Weyl group (Amer. J. Math.). Cited in `11-energy-wall/function-field/` §5.
+- I. Whitehead, *Multiple Dirichlet series for affine Weyl groups*, [arXiv:1406.0573](https://arxiv.org/abs/1406.0573); type Ã over F_q(t) in Compositio Math. (2016).
+- J. Bergström, A. Diaconu, D. Petersen, C. Westerland, *Hyperelliptic curves, the scanning map, and moments of families of quadratic L-functions*, [arXiv:2302.07664](https://arxiv.org/abs/2302.07664); with J. Miller, P. Patzt, D. Petersen, O. Randal-Williams, *Uniform twisted homological stability*, [arXiv:2402.00354](https://arxiv.org/abs/2402.00354): all moments of quadratic L-functions over F_q(t) for large q. In session 11 these served as the model of "control along the imaginary root" that has no number-field analogue.
 
 ### Spectral and bilinear methods
 - B. Louvel, *On the distribution of cubic exponential sums*, Forum Math. 26 (2014), [arXiv:1107.0197](https://arxiv.org/abs/1107.0197).

@@ -7,7 +7,7 @@
 | [akashlevy/math](https://github.com/akashlevy/math), branch `qrh-23-24-pruned` @ `c388e88e6519d139ad2ca5571ef0c7fbf0e245b5` | Fork of openai/math. It holds the 23/24 Dirichlet proof, the paper2 → 23/24 conversion and the in-place pruning. Tag `qrh-weighted-10499-12000-base` points at `c388e88e6`, the base of the weighted proof. **This is not an OpenAI commit.** |
 | [akashlevy/math#1](https://github.com/akashlevy/math/pull/1) | "QRH: a 23/24 Lean proof matched step by step to paper2 (converted in place), plus in-place pruning". Open, for discussion. It was opened on the fork because openai/math does not accept outside PRs. Upstream compare: <https://github.com/openai/math/compare/main...akashlevy:math:qrh-23-24-pruned> |
 | [akashlevy/QuasiRiemannTracker](https://github.com/akashlevy/QuasiRiemannTracker), branch `akashlevy-weighted-numerator-20261009` @ `2fd60c0` | Tracker fork carrying the 10499/12000 package (`proofs/akashlevy-20261009-weighted-numerator/`, commit `ec626ec`) |
-| [GTimG/QuasiRiemannTracker#6](https://github.com/GTimG/QuasiRiemannTracker/pull/6) | "Add 10499/12000 weighted-numerator QRH result (Akash Levy)", open |
+| [GTimG/QuasiRiemannTracker#6](https://github.com/GTimG/QuasiRiemannTracker/pull/6) | "Add 10499/12000 weighted-numerator QRH result (Akash Levy)", merged 10 Oct 2026 (14:08 UTC) |
 
 ## Upstream sources
 
