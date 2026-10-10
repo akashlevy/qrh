@@ -1,0 +1,8 @@
+z, N(z): ratio  mu*gamma_{-1}*chi_z(h) / (conj(alpha) * G(r)) for r=h^3 (should be h-independent) and r=h
+(-1, -2) 5  r=h^3: Phi=(-1+0j) spread=6.1e-14 |  r=h: spread=2.00
+(3, 2) 13  r=h^3: Phi=(-1+0j) spread=4.4e-14 |  r=h: spread=2.00
+(1, 4) 17  r=h^3: Phi=(1+0j) spread=5.1e-14 |  r=h: spread=2.00
+(-5, -2) 29  r=h^3: Phi=(-1+0j) spread=4.1e-14 |  r=h: spread=2.00
+(-3, 0) 9  r=h^3: Phi=(1-0j) spread=7.8e-14 |  r=h: spread=2.00
+(-1, -6) 37  r=h^3: Phi=(-1-0j) spread=1.2e-13 |  r=h: spread=2.00
+(1, -8) 65  r=h^3: Phi=(1-0j) spread=3.1e-14 |  r=h: spread=2.00

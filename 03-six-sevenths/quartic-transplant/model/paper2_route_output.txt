@@ -1,0 +1,10 @@
+PAPER2 ROUTE, quartic, derived geometry
+  deFaveri n=4 (proved, 2610.04045)                                 : dual rows calH <= X^7/11 (= 0.63636) -> H >= D^15/11 (= 1.36364);  extraction exponent theta = 89/88 = 1.01136  (trivial, no zero-free half-plane)
+  BGL (AB)^{2/3} (proved)                                           : dual rows calH <= X^5/8 (= 0.62500) -> H >= D^11/8 (= 1.37500);  extraction exponent theta = 65/64 = 1.01562  (trivial, no zero-free half-plane)
+  perfect quartic sieve A+B (conjectural, false in general by dFDH) : dual rows calH <= X^1 (= 1.00000) -> H >= D^1 (= 1.00000);  extraction exponent theta = 7/8 = 0.87500
+  LoA in cube-shift aspect (rows only)                              : dual rows calH <= X^1 (= 1.00000) -> H >= D^1 (= 1.00000);  extraction exponent theta = 7/8 = 0.87500
+  6/7 would need H = D^20/21 (theta_ext(20/21) = 6/7), i.e. calH = D^22/21 > X = D: a below-diagonal (rows > columns) dual mean square, i.e. a quasi-RH-strength input (R5 obstruction O1).
+  best possible from extraction alone: kappa = 4/5 -> theta = 4/5 (needs H = D^(4/5) < D)
+  sextic check: theta_ext(1, n=6) = 11/12 (= 11/12, paper2)
+  combined bound |A_1|^2 << H^{-1/4}[D H + H F] + D^2 H^{-1/2}, F = min(direct, reflected) sieve, dF:
+    min over kappa of the |A_1|^2 exponent = 2.000000 at kappa = 1.00000  (>= 2 means trivial)

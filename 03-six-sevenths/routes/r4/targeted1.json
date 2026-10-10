@@ -1,0 +1,16 @@
+[
+ {"gram_b": 0.0, "delta0": 0.0},
+ {"gram_b": 0.0, "delta0": 0.0, "kA": 0.95},
+ {"gram_b": 0.0, "delta0": 0.0, "kA": 0.9},
+ {"gram_b": 0.0, "delta0": 0.0, "kA": 0.8888888889},
+ {"gram_b": 0.0, "delta0": 0.0, "kA": 0.88},
+ {"gram_b": 0.0, "delta0": 0.0, "kA": 0.857142857143},
+ {"gram_b": 0.0, "delta0": 0.0, "kA": 0.8},
+ {"gram_b": 0.0, "delta0": 0.0, "perfect": true},
+ {"caseA": "refined", "wE": 0.142857142857, "delta0": 0.0, "perfect": true},
+ {"caseA": "refined", "wE": 0.142857142857, "delta0": 0.0, "kA": 0.7},
+ {"caseA": "refined", "wE": 0.142857142857, "delta0": 0.0, "kA": 0.6},
+ {"caseA": "refined", "wE": 0.27},
+ {"caseA": "refined", "wE": 0.28},
+ {"caseA": "refined", "wE": 0.2857142857}
+]

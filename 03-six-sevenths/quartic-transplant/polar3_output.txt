@@ -1,0 +1,31 @@
+tau(lambda^-2; 1) ~ (0.18516631253945373+4.94817077847214e-18j)  tau(lambda^-2; 1+l3) ~ (0.07397604257331197+2.74297024958477e-18j)
+pi0 (-1, -2) q 5 pi0 class1: False
+  k=0: class1: est  0.184+0.000i  0.184+0.000i  0.186+0.000i pred None | classL: est  0.078+0.000i  0.075+0.000i  0.073+0.000i pred None
+  k=1: class1: est  0.014-0.002i -0.002+0.003i -0.007+0.005i pred None | classL: est  0.003+0.005i -0.006-0.004i  0.005+0.005i pred None
+  k=2: class1: est  0.047-0.027i  0.047-0.028i  0.042-0.029i pred  0.042+0.026i | classL: est -0.098+0.067i -0.095+0.068i -0.110+0.063i pred -0.105-0.065i
+  k=3: class1: est  0.010-0.001i -0.006+0.011i -0.010+0.005i pred 0 | classL: est -0.010-0.010i -0.002+0.012i  0.009+0.008i pred 0
+pi0 (-1, 2) q 5 pi0 class1: False
+  k=0: class1: est  0.184+0.000i  0.184+0.000i  0.186+0.000i pred None | classL: est  0.078+0.000i  0.075+0.000i  0.073+0.000i pred None
+  k=1: class1: est  0.014+0.002i -0.002-0.003i -0.007-0.005i pred None | classL: est  0.003-0.005i -0.006+0.004i  0.005-0.005i pred None
+  k=2: class1: est  0.047+0.027i  0.047+0.028i  0.042+0.029i pred  0.042-0.026i | classL: est -0.098-0.067i -0.095-0.068i -0.110-0.063i pred -0.105+0.065i
+  k=3: class1: est  0.010+0.001i -0.006-0.011i -0.010-0.005i pred 0 | classL: est -0.010+0.010i -0.002-0.012i  0.009-0.008i pred 0
+pi0 (3, 2) q 13 pi0 class1: False
+  k=0: class1: est  0.184-0.000i  0.184-0.000i  0.186-0.000i pred None | classL: est  0.078-0.000i  0.075-0.000i  0.073-0.000i pred None
+  k=1: class1: est -0.003-0.006i  0.015-0.000i  0.010+0.007i pred None | classL: est  0.001-0.006i  0.004+0.002i -0.007+0.006i pred None
+  k=2: class1: est  0.004+0.030i  0.016+0.034i  0.008+0.044i pred  0.011-0.037i | classL: est -0.034-0.089i -0.026-0.089i -0.022-0.094i pred -0.028+0.093i
+  k=3: class1: est -0.028+0.004i -0.020+0.007i  0.008-0.001i pred 0 | classL: est -0.007-0.006i -0.005-0.001i -0.001+0.010i pred 0
+pi0 (3, -2) q 13 pi0 class1: False
+  k=0: class1: est  0.184+0.000i  0.184-0.000i  0.186-0.000i pred None | classL: est  0.078-0.000i  0.075-0.000i  0.073+0.000i pred None
+  k=1: class1: est -0.003+0.006i  0.015+0.000i  0.010-0.007i pred None | classL: est  0.001+0.006i  0.004-0.002i -0.007-0.006i pred None
+  k=2: class1: est  0.004-0.030i  0.016-0.034i  0.008-0.044i pred  0.011+0.037i | classL: est -0.034+0.089i -0.026+0.089i -0.022+0.094i pred -0.028-0.093i
+  k=3: class1: est -0.028-0.004i -0.020-0.007i  0.008+0.001i pred 0 | classL: est -0.007+0.006i -0.005+0.001i -0.001-0.010i pred 0
+pi0 (1, 4) q 17 pi0 class1: True
+  k=0: class1: est  0.184-0.000i  0.184-0.000i  0.186-0.000i pred None | classL: est  0.078-0.000i  0.075-0.000i  0.073+0.000i pred None
+  k=1: class1: est  0.070+0.035i  0.068+0.035i  0.061+0.034i pred None | classL: est -0.154-0.079i -0.170-0.081i -0.166-0.079i pred None
+  k=2: class1: est  0.052+0.067i  0.070+0.072i  0.061+0.073i pred  0.056-0.072i | classL: est  0.029+0.036i  0.029+0.029i  0.026+0.034i pred  0.022-0.029i
+  k=3: class1: est -0.010+0.010i  0.005+0.001i  0.015-0.014i pred 0 | classL: est -0.010+0.003i  0.011+0.009i  0.014+0.003i pred 0
+pi0 (-5, -2) q 29 pi0 class1: False
+  k=0: class1: est  0.184+0.000i  0.184+0.000i  0.186+0.000i pred None | classL: est  0.078+0.000i  0.075+0.000i  0.073+0.000i pred None
+  k=1: class1: est -0.017+0.009i -0.002-0.002i  0.010-0.003i pred None | classL: est -0.002+0.010i  0.002+0.001i  0.000-0.005i pred None
+  k=2: class1: est -0.034+0.003i -0.045+0.002i -0.035+0.006i pred -0.031-0.006i | classL: est  0.091-0.008i  0.086-0.021i  0.072-0.020i pred  0.078+0.015i
+  k=3: class1: est -0.007+0.015i -0.027+0.009i -0.021-0.006i pred 0 | classL: est  0.008+0.004i  0.006-0.019i  0.005-0.027i pred 0

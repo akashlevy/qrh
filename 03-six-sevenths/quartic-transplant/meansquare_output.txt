@@ -1,0 +1,7 @@
+ratios (1/X sum_h|B_h|^2)/diag ;  columns: (a) actual cube+angular, (b) first-power shift (biased), (c) cube spherical, (d) random
+X= 1000 H=  250 #h=   74 :  a=1.017  b=2.836  c=0.953  d=0.831
+X= 1000 H= 1000 #h=  298 :  a=1.050  b=2.498  c=0.880  d=0.852
+X= 1000 H= 4000 #h= 1210 :  a=0.931  b=2.207  c=0.897  d=0.881
+X= 4000 H=  250 #h=   74 :  a=1.096  b=3.385  c=0.670  d=0.999
+X= 4000 H= 1000 #h=  298 :  a=0.975  b=3.271  c=0.837  d=0.897
+X= 4000 H= 4000 #h= 1210 :  a=0.976  b=3.277  c=0.915  d=0.931

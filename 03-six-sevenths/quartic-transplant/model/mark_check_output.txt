@@ -1,0 +1,12 @@
+p=(-1, -2) c'=(-5, -2) :  k=1: ratio=(1+0j) spread=3.8e-15 | k=2: ratio=(-1+0j) spread=2.3e-15 | k=3: ratio=(1-0j) spread=6.0e-15
+p=(-1, -2) c'=(-3, 0) :  k=1: ratio=-1j spread=2.1e-15 | k=2: ratio=(1-0j) spread=6.5e-15 | k=3: ratio=(-0+1j) spread=1.2e-14
+p=(-1, -2) c'=(-1, -6) :  k=1: ratio=(-0-1j) spread=6.6e-15 | k=2: ratio=(-1+0j) spread=7.1e-15 | k=3: ratio=1j spread=1.6e-14
+p=(-1, -2) c'=(5, 4) :  k=1: ratio=(-0+1j) spread=3.7e-15 | k=2: ratio=(1+0j) spread=6.8e-15 | k=3: ratio=-1j spread=1.4e-14
+p=(3, 2) c'=(-5, -2) :  k=1: ratio=(-0-1j) spread=2.9e-15 | k=2: ratio=(-1+0j) spread=5.4e-15 | k=3: ratio=(-0+1j) spread=3.1e-14
+p=(3, 2) c'=(-3, 0) :  k=1: ratio=(-1+0j) spread=3.3e-15 | k=2: ratio=(1+0j) spread=9.3e-15 | k=3: ratio=(-1-0j) spread=6.5e-14
+p=(3, 2) c'=(-1, -6) :  k=1: ratio=-1j spread=7.7e-15 | k=2: ratio=(-1+0j) spread=1.6e-14 | k=3: ratio=(-0+1j) spread=5.7e-14
+p=(3, 2) c'=(5, 4) :  k=1: ratio=(-1-0j) spread=3.2e-15 | k=2: ratio=(1+0j) spread=1.7e-14 | k=3: ratio=(-1+0j) spread=3.6e-14
+p=(1, 4) c'=(-5, -2) :  k=1: ratio=(1+0j) spread=8.6e-15 | k=2: ratio=(1-0j) spread=1.8e-14 | k=3: ratio=(1+0j) spread=8.0e-14
+p=(1, 4) c'=(-3, 0) :  k=1: ratio=(-0+1j) spread=7.2e-15 | k=2: ratio=(1+0j) spread=2.1e-14 | k=3: ratio=(-0-1j) spread=1.4e-13
+p=(1, 4) c'=(-1, -6) :  k=1: ratio=(-1+0j) spread=1.2e-14 | k=2: ratio=(1+0j) spread=2.3e-14 | k=3: ratio=(-1-0j) spread=8.0e-14
+p=(1, 4) c'=(5, 4) :  k=1: ratio=(1-0j) spread=4.7e-15 | k=2: ratio=(1+0j) spread=2.1e-14 | k=3: ratio=(1+0j) spread=8.2e-14

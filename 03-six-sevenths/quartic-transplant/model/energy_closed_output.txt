@@ -1,0 +1,5 @@
+quartic dF       refined-count LP vs closed form: max|diff| = 4.13e-02  (0.178, 0.4936, 0.40458894929109857, 0.3633115727646344)
+quartic perfect  refined-count LP vs closed form: max|diff| = 3.25e-02  (0.1366, 0.4967, 0.4284150942846221, 0.3958980934765877)
+quartic LoA      refined-count LP vs closed form: max|diff| = 6.11e-16  (0.1841, 0.4854, 0.35461396678132995, 0.35461396678133056)
+quartic BGL      refined-count LP vs closed form: max|diff| = 4.48e-02  (0.181, 0.499, 0.40849297329370415, 0.3637328040786737)
+cubic paper-count LP vs closed form (dual nonempty): max|diff| = 6.66e-16

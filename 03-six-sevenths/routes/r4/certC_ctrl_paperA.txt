@@ -1,0 +1,8 @@
+{"lx": "3/7", "ly": "3/7", "ell": "2/7", "sigma0": "6007/7000", "wE": "1/7", "wM": "0", "caseA": "paper", "gram_b": "1", "kA": "2/3", "D0": "1/1000", "DMAX": "5/6", "CP": "2/9", "Z0": "17/50", "DMIN": "1/100", "ZETA": "1/10000"}
+h = 6/7, supply S = 20000/60007 ~ 0.3333, low = 7/8 ~ 0.875000
+FAIL low side <= sigma0   [0.875]
+PASS geometry: M-2ell>0, ly-ell>0, lx-ell>0
+PASS small rows exponent < 0   [-0.0531143]
+PASS floor bin E(h+zeta) < 0   [-5.94738e-05]
+PASS high side E<0 on [D0,DMAX]x[0,1/2], all d in [d_min,h+zeta] (95435 boxes)   [-4.13289e-08]
+SOME CHECK FAILED (224s)

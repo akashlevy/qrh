@@ -1,0 +1,56 @@
+X=2000: 561 columns, 351 primes in support, 725 divisors v; setup 0.7s
+  rows 8000/324522  1s
+  rows 16000/324522  1s
+  rows 24000/324522  1s
+  rows 32000/324522  2s
+  rows 40000/324522  2s
+  rows 48000/324522  2s
+  rows 56000/324522  2s
+  rows 64000/324522  2s
+  rows 72000/324522  3s
+  rows 80000/324522  3s
+  rows 88000/324522  3s
+  rows 96000/324522  3s
+  rows 104000/324522  3s
+  rows 112000/324522  4s
+  rows 120000/324522  4s
+  rows 128000/324522  4s
+  rows 136000/324522  4s
+  rows 144000/324522  4s
+  rows 152000/324522  5s
+  rows 160000/324522  5s
+  rows 168000/324522  5s
+  rows 176000/324522  5s
+  rows 184000/324522  5s
+  rows 192000/324522  6s
+  rows 200000/324522  6s
+  rows 208000/324522  6s
+  rows 216000/324522  6s
+  rows 224000/324522  6s
+  rows 232000/324522  7s
+  rows 240000/324522  7s
+  rows 248000/324522  7s
+  rows 256000/324522  7s
+  rows 264000/324522  7s
+  rows 272000/324522  8s
+  rows 280000/324522  8s
+  rows 288000/324522  8s
+  rows 296000/324522  8s
+  rows 304000/324522  9s
+  rows 312000/324522  9s
+  rows 320000/324522  9s
+  rows 324522/324522  9s
+  kappa=0.5000 calH=X^1.500=    89443 rows= 324510 | Q1/diag=0.997  Q1/X^2=   16.26  sum|Q_v|/X^2=   55.10  Q_cop/X^2=-0.049  Q_cop/Q1=-0.0030
+  kappa=0.6000 calH=X^1.400=    41826 rows= 151728 | Q1/diag=0.995  Q1/X^2=    7.59  sum|Q_v|/X^2=   25.74  Q_cop/X^2=-0.037  Q_cop/Q1=-0.0049
+  kappa=0.7000 calH=X^1.300=    19559 rows=  70962 | Q1/diag=0.992  Q1/X^2=    3.54  sum|Q_v|/X^2=   12.03  Q_cop/X^2=-0.030  Q_cop/Q1=-0.0084
+  kappa=0.8571 calH=X^1.143=     5924 rows=  21468 | Q1/diag=0.981  Q1/X^2=    1.06  sum|Q_v|/X^2=    3.63  Q_cop/X^2=-0.020  Q_cop/Q1=-0.0186
+  kappa=0.9500 calH=X^1.050=     2925 rows=  10626 | Q1/diag=0.986  Q1/X^2=    0.53  sum|Q_v|/X^2=    1.80  Q_cop/X^2=-0.007  Q_cop/Q1=-0.0124
+  kappa=1.0000 calH=X^1.000=     2000 rows=   7266 | Q1/diag=0.989  Q1/X^2=    0.36  sum|Q_v|/X^2=    1.23  Q_cop/X^2=-0.003  Q_cop/Q1=-0.0086
+  kappa=1.2000 calH=X^0.800=      437 rows=   1584 | Q1/diag=0.995  Q1/X^2=    0.08  sum|Q_v|/X^2=    0.27  Q_cop/X^2=-0.001  Q_cop/Q1=-0.0142
+  A-level kappa=0.5000: rows=   162  S(H)/diag = 0.947   S(H)/X^2 = 0.008   S(H)/(H X) = 0.349
+  A-level kappa=0.6000: rows=   348  S(H)/diag = 0.921   S(H)/X^2 = 0.016   S(H)/(H X) = 0.336
+  A-level kappa=0.7000: rows=   744  S(H)/diag = 0.928   S(H)/X^2 = 0.035   S(H)/(H X) = 0.340
+  A-level kappa=0.8571: rows=  2436  S(H)/diag = 0.959   S(H)/X^2 = 0.117   S(H)/(H X) = 0.348
+  A-level kappa=0.9500: rows=  4938  S(H)/diag = 0.994   S(H)/X^2 = 0.247   S(H)/(H X) = 0.361
+  A-level kappa=1.0000: rows=  7266  S(H)/diag = 1.003   S(H)/X^2 = 0.366   S(H)/(H X) = 0.366
+  A-level kappa=1.2000: rows= 33192  S(H)/diag = 1.003   S(H)/X^2 = 1.672   S(H)/(H X) = 0.366

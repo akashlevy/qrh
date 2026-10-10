@@ -1,0 +1,11 @@
+[
+ {"wE": 0.1}, {"wE": 0.142857142857}, {"wE": 0.2}, {"wE": 0.3},
+ {"wE": 0.1, "caseA": "refined"}, {"wE": 0.142857142857, "caseA": "refined"}, {"wE": 0.2, "caseA": "refined"}, {"wE": 0.3, "caseA": "refined"}, {"wE": 0.5, "caseA": "refined"},
+ {"wE": 100, "caseA": "refined"},
+ {"w1": 0.1}, {"w1": 0.3}, {"w1": 0.3, "w2": 0.9},
+ {"kA": 0.857142857143}, {"kA": 0.6},
+ {"gram_b": 0.0}, {"gram_q": 0.0}, {"gram_b": 0.0, "gram_q": 0.0},
+ {"cP": 0.233333333333}, {"cP": 0.3333333333}, {"cP": 10.0},
+ {"perfect": true}, {"delta0": 0.0}, {"perfect": true, "delta0": 0.0},
+ {"tmax": 2.0}, {"grh": true}
+]

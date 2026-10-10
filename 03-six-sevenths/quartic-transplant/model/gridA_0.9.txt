@@ -1,0 +1,4 @@
+/private/tmp/claude-501/-Users-akashlevy-Documents-riemann/eab6979c-f095-4107-a475-7e51d88a9fe7/scratchpad/wf67q/bk/qmodel.py:227: RuntimeWarning: invalid value encountered in scalar divide
+  S = ell / h
+kappa 0.9 grid min theta: 0.9999999999999998 at (np.float64(0.47500000000000003), np.float64(1.0750000000000002), 0.05) parts(low,high,floor,small) [ 1.      0.3681  0.3742 -0.5192]
+{"theta": 0.9999999999999998, "theta_interp": 0.9999999999999998, "lx": 0.47500000000000003, "ly": 1.0750000000000002, "ell": 0.05, "h": 0.575, "M": 1.5500000000000003, "low": 0.9999999999999998, "high": 0.3680908887924553, "floor": 0.37424999999999986, "small": -0.51915}

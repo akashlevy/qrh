@@ -1,0 +1,9 @@
+FAILED near delta=0.37313 x=0.5000 ub=8.1e-08
+{"lx": "11489/28328", "ly": "14840/27149", "ell": "32673/97961", "sigma0": "6/7", "wE": "2/7", "wM": "0", "caseA": "refined", "gram_b": "1", "kA": "1", "D0": "1/50", "DMAX": "5/6", "CP": "2/9", "Z0": "17/50", "DMIN": "1/100", "ZETA": "1/10000"}
+h = 2575126023/2775039208, supply S = 1156950930000/3219254408651 ~ 0.3594, low = 1808044865642583/2109507104823776 ~ 0.857094
+PASS low side <= sigma0   [0.857094]
+PASS geometry: M-2ell>0, ly-ell>0, lx-ell>0
+PASS small rows exponent < 0   [-0.0998601]
+PASS floor bin E(h+zeta) < 0   [-0.00668147]
+FAIL high side E<0 on [D0,DMAX]x[0,1/2], all d in [d_min,h+zeta] (41369 boxes)   [-7.27343e-10]
+SOME CHECK FAILED (114s)
