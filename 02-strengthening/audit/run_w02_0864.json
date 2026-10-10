@@ -1,0 +1,2 @@
+{"params": {"w": "1/5", "lx": "91/200", "ly": "93/200", "ell": "7/25", "sigma0": "108/125"}, "low": 0.8633333333333333, "low_ok": true, "other_checks_ok": true, "high_certified": true, "boxes": 2181, "worst_box_upper": -2.0062589186814055e-05, "seconds": 111, "ALL_PASS": true}
+done
