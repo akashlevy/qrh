@@ -532,3 +532,30 @@ Files: `agents/cB-numerics/{cubic_data.c, verify.py, onset*.py, groups.py, fit_h
   - So the orientation forced by detection has conductor N⁴, and the non-detecting orientation N².
 
 **Verdict on the cubic θ₃⊗θ₃ architecture:** dead (c_B = 4, proved modulo standard Kubota theory, consistent with numerics). Remaining: the two-/three-variable split (agent `twovar`).
+
+## 32. Agent report: twovar (round 4, finished ~11:30 UTC) — multi-variable cubic splits DEAD
+
+Files: `agents/twovar/{NOTES.md, kvar_lp.py, validate.py, variants.py, closed_forms.py, binding_k2.py, runs/}`.
+- **Structure (proved).** κ_A is completely multiplicative, so a k-Poisson split factors as I_k = Σ_A b(A)q_A^{−1/2}Π_i S_i(A).
+  Absorption needs b·γ^k = μ·Hecke: k = 1 gives b = γ₁² (θ⊗θ), k = 2 gives b = γ₁ (θ₃), k = 3 gives b = λ̄ (a Hecke row).
+- **Cost.** Each Poisson variable costs (ZP)^{c−1/2} = Z^{−1/6} on signal/low, whatever the other bounds. So β > 1/2 + k/6, and the
+  GRH floor ≥ 1/2 + 5k/18 even with perfect energy. Validated at k = 1 against 13/15, W(0.1) and the cubic template (to 1e−9).
+
+  | k | row (c_B) | GRH floor |
+  |---|---|---|
+  | 1 | θ⊗θ (4) | 10/11 |
+  | 2 | θ₃ (2) | **13/12** |
+  | 3 | Hecke (1) | **4/3** |
+
+- k = 2 would need the Gram cube term cut to 13% of its size, which is impossible (it is the signal's shadow). Marks hurt (signal P^{1/2−k/6} against rows P^{k/2}).
+- **Variants, all > 1:** unequal Y 13/12; short second variable 1.10–1.18; smooth m₂ 11/10 (or no detection); Poisson + orthogonality 47/40.
+  Sextic three-Poisson: (1,1,4) 1.505, (2,2,2) 4/3, (1,2,3) 37/30; (1,2)+ray 1.118; thin (1,3|θ₃) 1.016.
+- **Bottom line:** the second Poisson step only manufactures θ⊗θ's second Gauss sum inside the row. No cubic split goes below 10/11.
+
+**Conclusion of rounds 1–4 (16 agents):** the entire space of μ-absorbing Gauss-sum probes is now mapped:
+- P78 (sextic, k = 1, θ₃ row + quadratic ray): thin family, the 7/8 architecture;
+- cubic k = 1/2/3: ≥ 10/11, 13/12, 4/3;
+- sextic multi-Poisson splits: > 1;
+- higher-rank Kazhdan–Patterson thetas: worse walls.
+
+P78's sextic k = 1 split is the unique viable member. Improving it requires one of the open edge problems (SUMMARY.md).
