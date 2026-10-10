@@ -581,3 +581,25 @@ Files: `agents/lit-edge/{LIT_EDGE.md, calib.py, calib.out, scratch/}`. Full text
   Sixth moments are open for every cubic or sextic family.
 - **SOTA:** tracker main c480675 (merged PR #4); no record change (best 0.874957019420). PR #8 (29/33, Hailey Collet) has no new mechanism.
   Rubinstein's reading notes: "7/8 appears close to the limit of this design". Nothing below 0.8749.
+
+## 34. Agent report: mark-design (round 5, finished ~11:40 UTC) — no mark design moves the wall
+
+Files: `agents/mark-design/{MARK_DESIGN.md, gram_design.py, gram_*.{out,json}, model_md.py, run_scan.py, runs/}`.
+- **Five proved lemmas:**
+  - L1: Cauchy–Schwarz separation. The wall depends only on ‖B‖.
+  - L2: amplification and conductor are one symbol. χ_P⁴(A′) from twisted multiplicativity times the Poisson Gauss sum's χ_P²(A′) equals 1, so P^{1/6} needs χ_P(m) in the m-sum, and that same symbol costs P².
+  - L3: no coherent finite labels. A label twists the target η → ηΨ unless it is trivial. Only archimedean labels are coherent, and they are dead.
+  - L4: cubic clique bound. Pairwise (P₁/P₂)₃ = 1 allows ≤ L^{2/3+ε} primes, so cliques amplify nothing.
+  - L5: optimal weights c* = G^{−1}loc. An adversarial G = KN·I + (N²−KN)ûû* is consistent with every proved lemma.
+- Restricted prime sets, structured weights, multi-scale slots (the dual carries the theta cocycle Π conj(P_i/P_j)₃, not a tensor product),
+  marks on both sides, and labels: all dead. A label of conductor ≥ L gives M + 2ℓ ≤ 1, θ = 0.8817.
+- **Numerics (exact Z[ω], 184 marks):** the θ-Gram spectrum matches the random control. G−D is not low rank (top eigenvalue 2.7% of the Frobenius mass, stable rank ≈ 37/184).
+  The coherent vector's Rayleigh quotient is 1.019 vs 1.001 ± 0.016 for random vectors. Optimal weights gain only ×1.04–1.09.
+- **Model:** 27/31 needs the marks' dual conductor ≤ P^{1.69} per length P (wall_l ≤ 0.687). L2 shows P² is forced in this mark class.
+- **By-products:**
+  1. (H1) can be replaced by its average over marks, which follows from a theta-blind large sieve (HLS) for {ψ_kχ_P^{−2}} at its own edge (N ≤ KL).
+     So (H2) is the only theta-specific input. (HLS) itself is unproved.
+  2. Energy-wall's O2 "break-even" silently assumed (HLS). With proved tools the slot transfer is a strict loss.
+
+**Status after 5 rounds (18 agents):** every within-architecture lever and every μ-absorbing alternative is closed. The minimal open
+inputs are (HLS) + (H2) (→ 19/22), W(0.064) (→ 27/31), or Ingham-beating counts. All are frontier problems.
