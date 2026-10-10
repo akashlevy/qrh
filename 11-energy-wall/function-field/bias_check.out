@@ -1,0 +1,12 @@
+q=7 lam=0 nu=1: count=      7 |B|^2/q^nu=    7.000  |B|/q^(5nu/6)=1.3831
+q=7 lam=0 nu=2: count=     42 |B|^2/q^nu=    0.000  |B|/q^(5nu/6)=0.0000
+q=7 lam=0 nu=3: count=    294 |B|^2/q^nu=   36.000  |B|/q^(5nu/6)=0.8571
+q=7 lam=0 nu=4: count=   2058 |B|^2/q^nu=  252.000  |B|/q^(5nu/6)=1.1855
+q=7 lam=0 nu=5: count=  14406 |B|^2/q^nu=    0.000  |B|/q^(5nu/6)=0.0000
+q=7 lam=0 nu=6: count= 100842 |B|^2/q^nu= 1764.000  |B|/q^(5nu/6)=0.8571
+q=7 lam=1 nu=1: count=      6 |B|^2/q^nu=    0.000  |B|/q^(5nu/6)=0.0000
+q=7 lam=1 nu=2: count=     36 |B|^2/q^nu=    5.143  |B|/q^(5nu/6)=0.6197
+q=7 lam=1 nu=3: count=    258 |B|^2/q^nu=   26.449  |B|/q^(5nu/6)=0.7347
+q=7 lam=1 nu=4: count=   1800 |B|^2/q^nu=    0.000  |B|/q^(5nu/6)=0.0000
+q=7 lam=1 nu=5: count=  12606 |B|^2/q^nu=  194.064  |B|/q^(5nu/6)=0.5438
+q=7 lam=1 nu=6: count=  88236 |B|^2/q^nu= 1349.438  |B|/q^(5nu/6)=0.7497

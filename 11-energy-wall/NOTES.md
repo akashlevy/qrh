@@ -50,3 +50,46 @@ partner, identity (∗): 540/540; independent brute-force check to ≤ 1.4e-13).
   sums arise (every Gauss sum is a character); θ⊗χ_P^{−2} is residual spectrum.
 - **Minimal missing input:** ‖Π_V b_P‖² ≪ K Z^ε for b_P = βχ_P^{−2}W and V = span{ψ_k} — Lindelöf on average for K
   quadratic twists of one fixed theta of large level (theta analogue of an open GL(2) problem). True numerically (step 1).
+
+## Step 3 — function-field analogue (finished; `function-field/NOTES.md`) — W true with random-matrix margin, no transferable mechanism
+- **Dictionary [P]** (A = F_q[T], q ≡ 1 mod 6; brute-force checked at q = 7, 13, 19, 0 failures): for squarefree n,
+  γ_j(n) = μ(n)(−τ_j/√q)^{deg n}(n′/n)₆^j (Hasse–Davenport + residue formula), hence **β = γ₂ᾱ = c_{deg n}·χ̄₆(disc n)**;
+  ψ_k(n) = χ₂(Res(k,n)), χ_P(n)^{−2} = χ̄₃(Res(P,n)); identity (∗) holds with G, 𝔯 → degree constants; ᾱ is a degree
+  character. E_P and 𝒩 are exact integers (exact Z[ω] engine `ffenergy.c`, validated against brute force); κ = Mg, λ = ℓg, ν = κ + wg.
+- **Faithfulness [N/P]:** the twisted series has effective degree D = 2κ + λ − 2 (κ ≥ 3), i.e. conductor K²L — exactly P78's
+  reflection N ↔ K²L/N. **Correction to BRIEF/wall-spectral:** θ⊗ψ_k⊗χ_P^{−2} has conductor K²L (self-dual point KL^{1/2}),
+  not (q_k q_P)²; the hard window is N ∈ (K, KL) (both N and its reflection beyond the wall). Over F_q[T]: κ < ν < κ + λ − 2,
+  nonempty iff λ ≥ 4; empty for λ = 0 (the FF form of Proposition U).
+- **Numerics [N]:**
+  - large q = 7…43, fixed degrees: ρ = E_P/Diag − 1 → 0 by a deterministic O(1/q) term (ρq = 0.917 … 0.999 at (κ,λ,ν) = (2,2,3);
+    ρq ≈ −1.2 at (3,2,4)); ρ → −1 for ν > D; fourth moment → 2.
+  - fixed q = 7, 13, 19 configurations **in the hard window** (λ = 4–6, κ = 4–7, ν = κ+1, κ+2): |ρ| ∝ rows^{−0.503}, median
+    |ρ|√rows = 0.86 (random-phase control 1.0), i.e. |ρ| ≈ 0.9·q^{−κ/2}, independent of ν − κ and λ; m4 ≈ 2.03; max E_P/Diag 1.13;
+    4-mark coherent 𝒩 within ±0.08.
+  - all 588 quartic marks at q = 7: every ρ_P ∈ [−0.13, 0.12]; random-weight 𝒩 within ±0.03; structured weights (a ≡ 1,
+    a = conj γ₂(P)) deviate by O(1) in both signs (−0.58 … +0.22) along Aff(F_q)-invariant directions; one Aff-isotypic
+    operator-norm outlier, 3.53 vs control 2.45 (κ = 4) and 3.94 vs 3.38 (κ = 5, row subset) — bounded at the three sizes testable.
+    Coordinator check: T ↦ aT + b splits the 588 marks into exactly 16 orbits (12 × 42 + 4 × 21), matching the 16 distinct ρ_P.
+  - extrapolated to the weighted geometry: ρ ≈ Z^{−M/2} ≈ Z^{−0.43}, the same margin as step 1 over Q(ω).
+  - side result: the Patterson bias (size q^{5ν/6}) survives on the principal row k = 1 only (ᾱ is a degree character in FF).
+- **Large q [C on (T1) no classes of weight > ν, (T2) geometric irreducibility]:** Proposition A: E_P = τ_F q^{κ+ν} + O(q^{κ+ν−1/2}),
+  τ_F = trace of Frobenius on the commutant of the geometric monodromy of F = Gr^W_ν R^ν f_!L (numerically τ_F = 1 for ν ≤ D).
+  Mechanism: Deligne for the family sheaf End F + Schur ("Lindelöf on average" in the q-aspect). Constants e^{O(degree)}: nothing
+  at fixed q; the full coherent mark family needs generic vanishing for F_{P₁}⊗F_{P₂}^∨ (open).
+- **Fixed q [P/L]:** Σ_k x^{deg k}D_{k,P}(y₁)D̄_{k,P}(y₂) has the affine C̃₂ FE group with invariant I = ã + b̃₁ + b̃₂; all linear parts fix
+  δ = (1,1,1) = the wall direction. W sits at I = ½; every Weyl-group FE preserves I, so FEs + Bochner stop at I ≥ 3/2 — over
+  F_q[T] exactly as over Q(ω) (first moment: finite C₂, rational, no wall). The FF theorems that enter the Tits cone
+  (Bucur–Diaconu; Diaconu–Paşol–Popa; Whitehead; Bergström–Diaconu–Petersen–Westerland + Miller–Patzt–Petersen–Randal-Williams)
+  all use an input along δ (extra FE, rationality, homological stability); none covers this cubic-metaplectic C̃₂ series.
+  [C]: a DPP-type continuation uniform in P would give SM(w) with a power saving for every w in the window.
+- **Mechanism [H]:** control along δ from the geometry of configuration spaces (Deligne + big monodromy at large q; homological
+  stability at fixed q ≥ q₀). Both need Spec F_q[T] to be a curve over a finite field; no number-field substitute is known
+  (reciprocity, Rankin–Selberg, Kuznetsov and the move calculus act as finite FEs and preserve I). **Exponent payoff: 0.**
+
+## Program status (steps 1–3 complete) — negative for θ
+- W(w) and SM(w) are true numerically over Q(ω) (margin ≈ Z^{0.41}) and over F_q[T] (random-matrix law, margin q^{κ/2} ↔ Z^{0.43}).
+- No proof. Single-mark failing step: the quadratic-sieve column term at reflected length K²L/Z > K; minimal missing input
+  ‖Π_V b_P‖² ≪ K Z^ε (Lindelöf on average for K quadratic twists of one theta of large level). In multiple-Dirichlet-series
+  terms: W needs I = ½, every finite functional equation preserves I, and the missing input is control along the imaginary
+  root δ, which function fields get from geometry with no known number-field analogue.
+- Payoff for θ: 0. θ < 41/47 remains open; the proved-input frontier is still 0.8748866.
