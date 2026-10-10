@@ -1,0 +1,51 @@
+QRH research repository — provenance and licensing notice
+Author: Akash Levy (GitHub: akashlevy)
+
+AI assistance
+-------------
+The work was carried out with AI assistants: Claude (Opus 5.5) sessions throughout, and one
+GPT-6 Astra (Ultra) research session on 2026-10-09.
+
+For the weighted-numerator result (08-weighted-numerator-10499-12000):
+"GPT-6 Astra (Ultra) was used to discover the proof and perform partial formalization;
+Opus 5.5 Ultracode was used to complete the formalization and submit the result."
+
+The kappa-bootstrap note (06-kappa-bootstrap) was produced in the same GPT-6 Astra session.
+Its author line reads "Research note prepared with OpenAI Codex".
+
+Derived material (Apache License 2.0; full text in LICENSE-APACHE-2.0.txt)
+---------------------------------------------------------------------------
+Several parts of this repository are modified derivatives of OpenAI's openai/math repository
+(https://github.com/openai/math, Apache-2.0). The commits used were
+adc7f1241b42e322a6451854ab7e4b4c146bf78a and fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb.
+Those parts remain subject to the Apache-2.0 terms. They are:
+
+  05-lean-23-24/lean/QRH/, QRH.lean, ComparatorChallenges/
+      Tree-shaken and hand-edited copy of the 23/24 closure of openai/math lean/ (via
+      CoolRmal/quasi-riemann-seven-eighths@6ff3bd5), plus the new spine QRH/Spine/*.
+  05-lean-23-24/lean/patches/
+      Unmodified copies of openai/math lean/patches/*-lean4341.patch.
+  05-lean-23-24/paper/, 05-lean-23-24/paper2-conversion/
+      Exposition and converted paper derived from OpenAI's "The Quasi-Riemann Hypothesis"
+      (paper2, 5 Oct 2026); large parts of the text are taken from it.
+  06-kappa-bootstrap/lean/KappaFormal/
+      Modified copies of openai/math lean/OAI/NumberTheory/DirichletL/Energy/* modules.
+      They have no per-file "adapted" headers; this notice marks them as modified.
+  08-weighted-numerator-10499-12000/lean/
+      The submitted package. 48 of its modules are adaptations of openai/math modules and
+      are marked as such. See 08-.../submission/NOTICE, UPSTREAM-NOTICE and
+      third-party-notices/.
+
+Third-party material NOT included
+---------------------------------
+- Other people's papers and their text extractions. These are cited and linked in
+  docs/PRIOR_WORK.md: OpenAI's preprints, Liu, de Faveri, de Faveri–Dunn–Hoffstein,
+  Blomer–Goldmakher–Louvel, Baier–Young, Gao–Zhao, Kintali, etc.
+- Clones of openai/math, CoolRmal/quasi-riemann-seven-eighths, Mathlib and the Lean
+  toolchains, Comparator, NanoDa and con-ron.
+- Raw API dumps from public searches. These contained third-party e-mail addresses.
+- Li Xiang's work. By the project's standing rule, nothing of Li Xiang's was copied; his
+  public repository is cited as metadata only.
+
+No upstream author, checker project or tracker maintainer is represented as endorsing any
+result here.

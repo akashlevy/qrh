@@ -1,0 +1,22 @@
+# Lean / Lake build outputs
+.lake/
+*.olean
+*.ilean
+*.trace
+*.hash
+lake-packages/
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# Large regenerable numerics (see per-workstream READMEs for how to rebuild)
+*.npy
+*.npz
+*.bin
+# TeX intermediates
+*.aux
+*.toc
+*.synctex.gz
+# OS
+.DS_Store

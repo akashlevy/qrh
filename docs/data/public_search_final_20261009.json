@@ -1,0 +1,629 @@
+{
+ "as_of_utc": "2026-10-10T00:16:22Z",
+ "search_window_utc": {
+  "start": "2026-10-09T23:53:34Z",
+  "end": "2026-10-10T00:16:22Z"
+ },
+ "purpose": "Dated final refresh of public unconditional fixed zero-free half-plane claims improving the OpenAI quasi-Riemann bound Re s > 7/8, for comparison with the local candidate theta = 10499/12000. Benchmark metadata only; no outside refinement proof code was fetched, imported, executed or reproduced.",
+ "candidate": {
+  "exact": "10499/12000",
+  "decimal": "0.8749166666666666666666666666666666666666666666666666666666666666666667",
+  "note": "Local candidate under formal audit; this file does not certify it."
+ },
+ "previous_search": {
+  "files": [
+   {
+    "path": "research_audit/public_search_formalization_20261009.txt",
+    "sha256": "16e1fa564abb50286eae370853f96fdd23785a9be1064869bbf89e05e8b9d41f"
+   },
+   {
+    "path": "research_audit/public_search_formalization_20261009.json",
+    "sha256": "ac00410ac718ac107333b3e7350b7ea7b387000002a0fbb41738d849cbce0d90",
+    "as_of_utc": "2026-10-09T22:04:32Z"
+   },
+   {
+    "path": "research_audit/public_search_refresh_20261009.json",
+    "sha256": "d3386ebb378bd4f33e93a06998d87d0db4c6882dad220c52d336984a3ff1c8eb",
+    "last_refresh_utc": "2026-10-09T23:06:33Z"
+   }
+  ],
+  "strongest_then": "Unique root in (0.8749570194,0.8749570195) of 7884 s^3 - 18819 s^2 + 14643 s - 3686 (Shunia and Guo written work; Nielstron QuasiRiemannTracker PR #2 seven-target report)."
+ },
+ "conclusion": "No public unconditional claim with theta <= 10499/12000 for zeta, Dirichlet or Q(sqrt(-3)) Hecke L-functions was found in the sources checked. The strongest comparable public unconditional claim is unchanged: the cubic-root endpoint 0.874957019420098946128603850561452982307..., which is 0.0000403527534322794619371838947863156 above 10499/12000. The only public value found below 10499/12000 is Guo's 328/375, which the source states is conditional on an unproved Hypothesis 11.1. This is a dated search result, not an exhaustive novelty, priority or correctness certificate.",
+ "anything_at_or_below_10499_12000_unconditional": false,
+ "strongest_comparable_unconditional_claim": {
+  "exact": "theta* = unique root in (0.8749570194, 0.8749570195) of 7884 s^3 - 18819 s^2 + 14643 s - 3686 = 0; equivalently 11/12 - e*/4, e* the unique root of 657 e^3 - 954 e^2 + 21 e + 20 = 0 in [1/6, 1/5]",
+  "decimal": "0.874957019420098946128603850561452982307151874187",
+  "minus_candidate": "0.0000403527534322794619371838947863156",
+  "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+  "claimants": [
+   {
+    "who": "GPT-6 Astra and Joseph M. Shunia",
+    "form": "written manuscript (relative to the OpenAI inputs)",
+    "url": "https://github.com/jshunia/rhtm/blob/c3abed0cae8fdb0090c12b0e4d20aea68b6e067d/compensated_half_plane_refinement.pdf",
+    "status_now": "repo head unchanged at c3abed0cae8f (2026-10-08T01:40:48Z)"
+   },
+   {
+    "who": "Jizhou Guo",
+    "form": "written manuscript plus exact-arithmetic certificates",
+    "url": "https://github.com/aster2024/openai-math-followups/blob/5750cc81e489729a2111d6c9c073f4adecdb9de7/zero-free-beyond-7-8/README.md",
+    "status_now": "zero-free-beyond-7-8/ unchanged since 5750cc81 (2026-10-09T05:35:33Z); later repo commits touch other papers and the root README only"
+   },
+   {
+    "who": "Nielstron (QuasiRiemannTracker PR #2)",
+    "form": "Lean package; author reports local Comparator plus Lean/NanoDa/con-ron PASS on seven targets, standard axioms only; also states a literal rational upper bound 874957019420098946128603850561452983/10^36",
+    "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/2",
+    "pinned_report": "https://github.com/nielstron/QuasiRiemannTracker/blob/0284b10d3c8c92b4d8995c36f24728be03815b4a/public/proofs/nielstron-algebraic-20261009-kernels/result.json",
+    "status_now": "PR #2 still open, head 0284b10d3c8c, last updated 2026-10-09T19:55:26Z, 0 reviews, 0 comments, not merged. The PR body says these are local mechanical checks, not Palomar registration. A tracker CI run 'Trusted project checks' on 0284b10d concluded success (website checks, not an independent proof check)."
+   }
+  ],
+  "verification_status_as_reported": "Mechanical Lean verification is reported by the PR author, but it has not been merged into the tracker catalogue. This search read the reports and did not rerun them."
+ },
+ "tracker_state": {
+  "GTimG/QuasiRiemannTracker_main": "40844a7614b6 (2026-10-09T19:16:07Z, merge of PR #1); no newer commits.",
+  "catalogue": "catalogue/results.json on main is byte-identical (sha256 cd71263206b81fd225c0bfc4820f690967c40492bdab8318289882fe545a74b4) to local public_catalogue_snapshot_20261009.json. The deployed site https://gtimg.github.io/QuasiRiemannTracker/catalogue.json (sha256 26a1cc74...) parses to the same JSON object.",
+  "deployed_entries": [
+   "openai-baseline 7/8 framework-verified",
+   "argonaut-20261008 3499999/4000000 verification-pending",
+   "liu-20261008 (1507-2sqrt921)/1653 verification-pending",
+   "proofcouncil-20261009 874957019421/10^12 framework-verified",
+   "nielstron-20261009-tightening 874957019420098946128604623/10^27 framework-verified"
+  ],
+  "best_catalogued_rational": "874957019420098946128604623/10^27 = 0.874957019420098946128604623 (Nielstron, merged PR #1; tracker status framework-verified)",
+  "registry.json": "verification_policy comparator-and-nanoda-v1, events [], active_ids [], baseline_status infrastructure-blocked",
+  "nielstron_fork": "main 290d9c546334; branches nielstron-algebraic-endpoint-20261009 at 0284b10d3c8c and nielstron-compression-tightening-20261009 at f0ca8b48ad46; no new branches."
+ },
+ "records": [
+  {
+   "id": "openai",
+   "who": "OpenAI",
+   "exact": "7/8",
+   "decimal": "0.875",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Official Lean formalization; tracker reports Comparator, Lean, NanoDa and con-ron PASS.",
+   "url": "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/docs/003.md",
+   "change_since_previous": "openai/math head still fd4aeeb2ee4f (2026-10-08T05:20:00Z); only PR #1 exists; issues are disabled."
+  },
+  {
+   "id": "argonaut",
+   "who": "Argonaut Math",
+   "exact": "3499999/4000000",
+   "decimal": "0.87499975",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Authors report Lean and Comparator; tracker says independent verification pending.",
+   "url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary/tree/5971383edcb0b1cf863927eed3b359d2d3ba346e",
+   "change_since_previous": "None (head 5971383edcb0; latest release v0.1.8 2026-10-08T11:09:37Z; ArgonautMath0 URL redirects to the same repository)."
+  },
+  {
+   "id": "liu",
+   "who": "Baiying Liu",
+   "exact": "(1507 - 2 sqrt(921))/1653; also 34999/40000",
+   "decimal": "0.874957069799168740018340006959",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "arXiv abstract says the result has been formalized in Lean; tracker says independent verification pending.",
+   "url": "https://arxiv.org/abs/2610.12234v1",
+   "change_since_previous": "Still v1 only (abs page and API); GitHub repo head 7d10420de90e (2026-10-08T16:43:30Z) unchanged."
+  },
+  {
+   "id": "gao",
+   "who": "Zhongpai Gao",
+   "exact": "20999/24000",
+   "decimal": "0.874958333333...",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Draft with exact arithmetic certificates; no Lean claimed.",
+   "url": "https://github.com/Gaozhongpai/seven-eighths-refinement-certificates/blob/309a757ea539e2bf11558d8b5539e1269b792386/README.md",
+   "change_since_previous": "None (head 309a757ea539)."
+  },
+  {
+   "id": "crossnox",
+   "who": "CrossNox",
+   "exact": "4374785349/5000000000",
+   "decimal": "0.8749570698",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Author reports full Lean build, axiom audit and Comparator replay.",
+   "url": "https://github.com/CrossNox/quasi-riemann-hypothesis-extension/blob/f677cc0a820bb2aff86bb4cbe783d076f5c097db/README.md",
+   "change_since_previous": "None (head f677cc0a820b)."
+  },
+  {
+   "id": "lw56e2",
+   "who": "LW56e2",
+   "exact": "4374785349/5000000000",
+   "decimal": "0.8749570698",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Author reports a complete Lean theorem with standard axioms; says no independent expert review.",
+   "url": "https://github.com/LW56e2/quasi-riemann-improved/blob/b83dbbd914c5751acf9bc3389cde58970437278f/README.md",
+   "change_since_previous": "None (head b83dbbd914c5)."
+  },
+  {
+   "id": "shunia",
+   "who": "GPT-6 Astra and Joseph M. Shunia",
+   "exact": "cubic root of 7884 s^3 - 18819 s^2 + 14643 s - 3686 in (0.8749570194,0.8749570195); weaker corollary 162861/186136",
+   "decimal": "0.874957019420098946128603850561...",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Written manuscript relative to the OpenAI inputs; no complete Lean verification report inspected.",
+   "url": "https://github.com/jshunia/rhtm/blob/c3abed0cae8fdb0090c12b0e4d20aea68b6e067d/compensated_half_plane_refinement.pdf",
+   "change_since_previous": "None (head c3abed0cae8f); no Shunia arXiv submission on this topic found."
+  },
+  {
+   "id": "guo",
+   "who": "Jizhou Guo",
+   "exact": "same cubic root; weaker rational 43747851/50000000",
+   "decimal": "0.874957019420098946128603850561...",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Written proof with exact-arithmetic ancillary certificates; analytic proof not Lean-checked.",
+   "url": "https://github.com/aster2024/openai-math-followups/blob/5750cc81e489729a2111d6c9c073f4adecdb9de7/zero-free-beyond-7-8/README.md",
+   "change_since_previous": "zero-free-beyond-7-8/ unchanged; root README (head 0f3d628ee477, 2026-10-09T15:51:32Z) still states sigma-dagger = 0.8749570194... and 43747851/50000000."
+  },
+  {
+   "id": "proofcouncil",
+   "who": "Tim Gehrunger / ProofCouncil",
+   "exact": "874957019421/1000000000000",
+   "decimal": "0.874957019421",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Tracker reports Comparator and three independent kernels PASS (framework-verified).",
+   "url": "https://github.com/GTimG/QuasiRiemannTracker/blob/40844a7614b67840801e65b836b3da2e1f7ff029/catalogue/results.json",
+   "change_since_previous": "None."
+  },
+  {
+   "id": "nielstron_n27",
+   "who": "Nielstron",
+   "exact": "874957019420098946128604623/10^27",
+   "decimal": "0.874957019420098946128604623",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Tracker catalogue status framework-verified; independent Comparator and Lean/NanoDa/con-ron report.",
+   "url": "https://github.com/nielstron/QuasiRiemannTracker/blob/e6c0cd91e7ff3cf17315f1f63d7d480f575dfa28/public/proofs/nielstron-20261009-kernels/result.json",
+   "change_since_previous": "None; still the best entry in the deployed tracker."
+  },
+  {
+   "id": "nielstron_algebraic",
+   "who": "Nielstron",
+   "exact": "11/12 - e*/4, 657 e^3 - 954 e^2 + 21 e + 20 = 0, e* in [1/6,1/5] (= the cubic root above); literal rational upper bound 874957019420098946128603850561452983/10^36",
+   "decimal": "0.874957019420098946128603850561452982307...",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "PR author reports local Comparator plus Lean/NanoDa/con-ron PASS on seven targets, standard axioms only; says these are not Palomar registration.",
+   "url": "https://github.com/GTimG/QuasiRiemannTracker/pull/2",
+   "change_since_previous": "None. PR still open and unmerged, no reviews."
+  },
+  {
+   "id": "creech",
+   "who": "Steven E. Creech",
+   "exact": "437479/500000",
+   "decimal": "0.874958",
+   "unconditional": true,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "Proposal/draft; full dependency build and final axiom checks pending; default exported theorems remain 7/8.",
+   "url": "https://github.com/stevenecreech/math/blob/b1ebd8d8661538992cbc2f27f97f0aa37a15525c/README.md",
+   "change_since_previous": "None (head b1ebd8d86615)."
+  },
+  {
+   "id": "chakhkiev",
+   "who": "Khamzat Chakhkiev",
+   "exact": "10937/12500",
+   "decimal": "0.87496",
+   "unconditional": false,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3)) (per OpenAI framework)",
+   "verification_reported": "Zenodo preprint; no formal verification stated. Abstract says it is a 'conditional parameter refinement': it assumes the analytic inputs and baseline family bound of the OpenAI work.",
+   "url": "https://zenodo.org/records/23221313",
+   "date": "2026-10-07T19:33:26Z",
+   "change_since_previous": "NEW TO THIS RECORD (not in earlier lists). Weaker than the cubic root whether or not it is counted as conditional."
+  },
+  {
+   "id": "lixiang",
+   "who": "Li Xiang (lixiang90)",
+   "exact": "sigma* = 11/12 - e*/4, 657 e^3 - 954 e^2 + 21 e + 20 = 0 (= the same cubic root); companion RH-Weil papers also give 69999/80000 and (1507-2sqrt921)/1653",
+   "decimal": "0.874957019420098946...",
+   "unconditional": false,
+   "families": "zeta + all Dirichlet L-functions + finite-order Hecke L-functions over Q(sqrt(-3))",
+   "verification_reported": "README says the boundary certificate, feedback, height closure and zeta inverse-Mellin signal are formalized, but the sharpest zeta theorem has an explicit ZetaInverse.ArithmeticProbeObligation hypothesis. It says an unconditional Lean proof is still pending. RH-Weil labels the papers 'cited-input derivation'.",
+   "url": "https://github.com/lixiang90/RH-Zero-Free-Formalization",
+   "date": "repo created 2026-10-09T02:43:03Z; head ebf33a7da377 at 2026-10-09T15:32:07Z",
+   "change_since_previous": "NEW TO THIS RECORD. Same value as the strongest claim, not stronger. Only README and repository metadata were read; no proof code was fetched or reused, per the user's prohibition."
+  },
+  {
+   "id": "kintali",
+   "who": "Shiva Kintali",
+   "exact": "47/48",
+   "decimal": "0.979166...",
+   "unconditional": true,
+   "families": "zeta and related L-functions (weaker)",
+   "verification_reported": "Written shorter proof; weaker boundary.",
+   "url": "https://shivakintali.github.io/papers/QRH.pdf",
+   "change_since_previous": "None."
+  }
+ ],
+ "conditional_or_noncomparable": [
+  {
+   "item": "Jizhou Guo 328/375 = 0.874666...",
+   "why": "Below 10499/12000, but the source states it is conditional on unproved Hypothesis 11.1 (a mean-square estimate). It is excluded from the unconditional comparison.",
+   "url": "https://github.com/aster2024/openai-math-followups/blob/5750cc81e489729a2111d6c9c073f4adecdb9de7/zero-free-beyond-7-8/README.md"
+  },
+  {
+   "item": "Khamzat Chakhkiev 10937/12500 = 0.87496",
+   "why": "Self-described conditional parameter refinement; weaker than the cubic root anyway.",
+   "url": "https://zenodo.org/records/23221313"
+  },
+  {
+   "item": "Li Xiang RH-Zero-Free-Formalization (cubic sigma*)",
+   "why": "Lean theorem carries an explicit analytic hypothesis; paper relative to an imported analytic package; equal to the cubic root, not below it.",
+   "url": "https://github.com/lixiang90/RH-Zero-Free-Formalization"
+  },
+  {
+   "item": "Michael Rubinstein working notes (created 2026-10-09T23:25Z)",
+   "why": "Expository guides to the 11/12 and 7/8 arguments, plus a CM-curve note whose 7/8 part is an outline conditional on listed statements. No sub-7/8 Dirichlet bound.",
+   "url": "https://github.com/mrubinst/L-function_zero_free_strips"
+  },
+  {
+   "item": "Brandon Yates, Hecke L-functions of nonzero infinity type over Q(sqrt(-3))",
+   "why": "Different family; 11/12; conditional on the OpenAI argument being correct.",
+   "url": "https://zenodo.org/records/23228131"
+  },
+  {
+   "item": "Mehmet Akif Oltulu, per-zero exclusion bounds",
+   "why": "Uses the 7/8 half-plane as an input; no new half-plane.",
+   "url": "https://zenodo.org/records/23248611"
+  },
+  {
+   "item": "Manvir Jaswal, class numbers up to 3000",
+   "why": "Assumes a 7/8 real-zero-free interval; application, not a new bound.",
+   "url": "https://zenodo.org/records/23269461"
+  },
+  {
+   "item": "DrMurphyIsIn de Bruijn-Newman Lambda <= 9/32",
+   "why": "Bound on a different constant, derived from 7/8.",
+   "url": "https://zenodo.org/records/23269135"
+  },
+  {
+   "item": "GettysburgResearch/riemann PR #909",
+   "why": "Discusses OpenAI family 029 (cyclotomic fields containing the twelfth roots of unity, Re s > 1 - 10^-6). Says it does not improve the zeta boundary and claims no new zero-free region.",
+   "url": "https://github.com/GettysburgResearch/riemann/pull/909"
+  },
+  {
+   "item": "OVVO-Financial/RH_Lean PR #919",
+   "why": "Conditional bridge work; explicitly no new zero-free theorem; numeric model 0.8745 stated as not a rigorous theorem.",
+   "url": "https://github.com/OVVO-Financial/RH_Lean/pull/919"
+  },
+  {
+   "item": "Previously excluded items (Puglisi arXiv 2210.03121 v9; arXiv 2606.16097; arXiv 2605.24363 v1; Kintali arXiv 2610.08965; teal-sea/zeta-lab; ebbaker/shifted-zeta-positivity; tarikskalic33 drafts)",
+   "why": "Unchanged classification; not comparable fixed unconditional all-Dirichlet thresholds.",
+   "url": "https://arxiv.org/abs/2210.03121"
+  }
+ ],
+ "new_since_previous_search": [
+  "Zenodo 23221313 (Chakhkiev, 2026-10-07): conditional 10937/12500 = 0.87496; newly recorded, weaker than the cubic root.",
+  "lixiang90/RH-Zero-Free-Formalization (created 2026-10-09T02:43Z): same cubic sigma*; Lean theorem conditional; unconditional Lean proof stated as pending. Newly recorded; metadata only.",
+  "mrubinst/L-function_zero_free_strips (created 2026-10-09T23:25Z): expository and conditional CM notes; no improvement on 7/8.",
+  "Zenodo 23228131, 23248611, 23269461, 23269135: applications, other families or conditional work; none gives a new Dirichlet/zeta threshold.",
+  "No change to any previously recorded comparable claim: tracker main, catalogue, deployed site and PR #2 are unchanged; arXiv 2610.12234 is still v1; Shunia, Guo (zero-free dir), Argonaut, CrossNox, LW56e2, Gao, Liu and Creech repositories have no new commits."
+ ],
+ "queries_run": [
+  {
+   "tool": "gh api",
+   "query": "repos/nielstron/QuasiRiemannTracker commits, repo metadata, branches, pulls",
+   "result": "main 290d9c5; branches algebraic-endpoint 0284b10d and compression-tightening f0ca8b48; pushed_at 2026-10-09T19:55:04Z"
+  },
+  {
+   "tool": "gh api",
+   "query": "repos/GTimG/QuasiRiemannTracker commits, pulls, issues, issue comments since 2026-10-09T12:00Z, branches, pages, actions runs, forks",
+   "result": "head 40844a76; PR #2 open/unmerged; one fork (nielstron)"
+  },
+  {
+   "tool": "gh api",
+   "query": "repos/GTimG/QuasiRiemannTracker/contents/catalogue/results.json",
+   "result": "byte-identical to local snapshot"
+  },
+  {
+   "tool": "curl",
+   "query": "https://gtimg.github.io/QuasiRiemannTracker/ (+ registry.json, catalogue.json, site.json, JS bundle)",
+   "result": "5 entries; best 874957019420098946128604623/10^27"
+  },
+  {
+   "tool": "WebFetch",
+   "query": "https://gtimg.github.io/QuasiRiemannTracker/",
+   "result": "JS app; no content extracted (resolved via curl)"
+  },
+  {
+   "tool": "gh api",
+   "query": "commits/compare for jshunia/rhtm, aster2024/openai-math-followups (path zero-free-beyond-7-8 and compare 5750cc81...main), openai/math, Argonaut-Math, CrossNox, LW56e2, stevenecreech/math, Gaozhongpai, liubaiying101",
+   "result": "no relevant changes"
+  },
+  {
+   "tool": "gh api",
+   "query": "repos/openai/math issues/PRs (state=all)",
+   "result": "only PR #1; head fd4aeeb"
+  },
+  {
+   "tool": "gh api",
+   "query": "repos/openai/math/forks (all 1409, paginated); latest commits of 14 forks pushed after 2026-10-09T12:00Z",
+   "result": "no QRH improvement commits"
+  },
+  {
+   "tool": "gh search repositories",
+   "query": "quasi-riemann",
+   "result": "18; new: mrubinst/L-function_zero_free_strips"
+  },
+  {
+   "tool": "gh search repositories",
+   "query": "quasi-riemann fork:true pushed:>=2026-10-09",
+   "result": "6"
+  },
+  {
+   "tool": "gh search repositories",
+   "query": "quasi riemann in:name,description,readme pushed:>=2026-10-09",
+   "result": "38; mahrud/openai-math-comments (no QRH comments), CiangCing14 translation"
+  },
+  {
+   "tool": "gh search repositories",
+   "query": "QRH in:name,description pushed:>=2026-10-09",
+   "result": "spam/unrelated plus known"
+  },
+  {
+   "tool": "gh search repositories",
+   "query": "zero-free half-plane pushed:>=2026-10-09",
+   "result": "1 (Rubinstein)"
+  },
+  {
+   "tool": "gh search repositories",
+   "query": "seven-eighths | zero-free created:>=2026-10-06 | riemann created:>=2026-10-09T12:00:00Z | zeta lean created:>=2026-10-09 | half-plane riemann | quasi-RH",
+   "result": "found lixiang90 repo (also via web); humanaiconvention/rh irrelevant"
+  },
+  {
+   "tool": "gh search issues",
+   "query": "\"quasi-Riemann\" updated:>=2026-10-09T20:00:00Z",
+   "result": "4: arXiv digest (Liu v1), GettysburgResearch PR 909, akashlevy/math PR 1, tauceti blueprint"
+  },
+  {
+   "tool": "gh search issues",
+   "query": "\"quasi Riemann\" updated:>=2026-10-09T20:00:00Z",
+   "result": "same 4"
+  },
+  {
+   "tool": "gh search issues",
+   "query": "\"0.8749\" updated:>=2026-10-09",
+   "result": "1 unrelated"
+  },
+  {
+   "tool": "gh search issues",
+   "query": "\"7/8\" zeta zero-free updated:>=2026-10-09",
+   "result": "15; OVVO RH_Lean PR 919 (no new theorem)"
+  },
+  {
+   "tool": "gh search issues",
+   "query": "QRH theta Lean updated:>=2026-10-09T18:00:00Z",
+   "result": "2 known"
+  },
+  {
+   "tool": "gh search commits",
+   "query": "\"quasi-Riemann\" committer-date:>=2026-10-09T18:00:00Z",
+   "result": "4; catalog/explainer/de Bruijn-Newman; no new bound"
+  },
+  {
+   "tool": "gh search commits",
+   "query": "zero-free | QRH | \"7/8\" Riemann committer-date:>=2026-10-09T20:00:00Z; theta Dirichlet committer-date:>=2026-10-09T18:00:00Z",
+   "result": "noise or 0"
+  },
+  {
+   "tool": "gh search code",
+   "query": "\"quasi-Riemann\" language:Lean | LFunction_ne_zero_of language:Lean | \"zero-free\" \"7/8\" extension:md",
+   "result": "no new sub-7/8 claims in hits checked (only file paths and README text read)"
+  },
+  {
+   "tool": "gh api",
+   "query": "mahrud/openai-math-comments PR #3 comments",
+   "result": "0 comments"
+  },
+  {
+   "tool": "gh api",
+   "query": "PalomarRegistry repos/commits/PRs",
+   "result": "no QRH registration found"
+  },
+  {
+   "tool": "arXiv API",
+   "query": "all:\"quasi-Riemann\"",
+   "result": "7; newest 2610.12234v1"
+  },
+  {
+   "tool": "arXiv API",
+   "query": "all:\"quasi Riemann hypothesis\"",
+   "result": "6"
+  },
+  {
+   "tool": "arXiv API",
+   "query": "abs:\"zero-free half-plane\" OR abs:\"zero-free half-planes\"",
+   "result": "3"
+  },
+  {
+   "tool": "arXiv API",
+   "query": "abs:\"7/8\" AND abs:zero-free",
+   "result": "5; only 2610.12234 relevant"
+  },
+  {
+   "tool": "arXiv API",
+   "query": "cat:math.NT AND abs:\"zero-free\"",
+   "result": "118; newest relevant 2610.12234v1"
+  },
+  {
+   "tool": "arXiv API",
+   "query": "id_list=2610.12234",
+   "result": "v1 only"
+  },
+  {
+   "tool": "arXiv API",
+   "query": "au:Shunia | au:Guo_Jizhou | au:Gao_Zhongpai AND cat:math.NT | au:Kintali | abs:\"seven-eighths\" | abs:OpenAI AND cat:math.NT",
+   "result": "no new QRH refinement submission"
+  },
+  {
+   "tool": "curl",
+   "query": "https://arxiv.org/list/math.NT/new (Fri 9 Oct 2026) and /recent (5-9 Oct)",
+   "result": "only 2610.12234 on topic"
+  },
+  {
+   "tool": "curl",
+   "query": "arxiv.org/list/{math.GM,math.CV,math.LO,cs.LO}/recent",
+   "result": "nothing on topic"
+  },
+  {
+   "tool": "curl",
+   "query": "https://arxiv.org/abs/2610.12234",
+   "result": "submission history v1 only"
+  },
+  {
+   "tool": "Zenodo API",
+   "query": "\"quasi-Riemann\" | \"zero-free half-plane\" | \"seven-eighths\" zeta | zero-free threshold | \"zero-free\" Hecke \"Q(sqrt(-3))\" | compensated probe | quasi-Riemann hypothesis improvement | \"seven-eighths\" | title:\"zero-free\" | \"zero-free\" AND \"7/8\" AND Dirichlet | title:\"quasi-Riemann\" | title:\"zero-free region\" AND zeta",
+   "result": "found 23221313 (conditional 10937/12500) and noncomparable 23228131, 23248611, 23269461, 23269135; 'quasi Riemann 7/8' returned HTTP 500"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "quasi-Riemann hypothesis 7/8 improvement zero-free half-plane",
+   "result": "known items"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "\"quasi-Riemann\" improved bound below 7/8 Lean",
+   "result": "known items"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "\"Re s > 7/8\" zeta zero-free improvement 0.8749",
+   "result": "lixiang90/RH-Zero-Free-Formalization (new to record)"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "QuasiRiemannTracker leaderboard theta",
+   "result": "known tracker items"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "\"10499/12000\"",
+   "result": "no relevant hits"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "quasi-Riemann hypothesis new record zero-free boundary October 9 2026",
+   "result": "news/explainers; no new bound"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "\"657e^3\" OR \"657 e^3\" quasi-Riemann cubic endpoint 0.8749570194",
+   "result": "Guo README"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "Palomar registry quasi-Riemann Comparator theta Dirichlet nonvanishing",
+   "result": "none"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "准黎曼猜想 7/8 改进 零点自由半平面",
+   "result": "none relevant"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "\"zero-free\" \"Q(sqrt(-3))\" Hecke refinement 7/8 GitHub Lean Comparator 2026",
+   "result": "known items; vibemathed page"
+  },
+  {
+   "tool": "WebFetch",
+   "query": "https://vibemathed.com/problem/quasi-riemann-hypothesis",
+   "result": "lists 7/8 as current best; no sub-7/8 entries"
+  },
+  {
+   "tool": "WebFetch",
+   "query": "https://www.emergentmind.com/openai-math-explorer/results/003",
+   "result": "no values below 7/8"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "OpenAI 7/8 quasi-Riemann bound improved by researchers Lean verified new constant",
+   "result": "known (CrossNox/LW56e2 0.8749570698)"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "site:zenodo.org quasi-Riemann zero-free half-plane 7/8",
+   "result": "no Zenodo hit (API used instead)"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "\"zero-free half-plane\" \"0.8749\"",
+   "result": "none relevant"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "reddit OR \"news.ycombinator\" quasi-Riemann 7/8 improved 0.87495",
+   "result": "none relevant"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "\"zero-free\" \"Re(s) >\" 0.87491 OR 0.87492 OR 0.87493 OR 0.87494 Dirichlet L-functions",
+   "result": "none relevant"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "nielstron QuasiRiemannTracker algebraic endpoint pull request",
+   "result": "none (GitHub API used)"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "quasi-Riemann hypothesis follow-up improvement \"Comparator\" Lean \"theta\" October 2026 x.com",
+   "result": "none relevant"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "\"quasi-Riemann\" \"unconditional\" improvement 7/8 Dirichlet Hecke preprint new bound smaller",
+   "result": "known items"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "\"0.874916\" OR \"0.8749166\" OR \"0.87491\" zeta zero-free",
+   "result": "none relevant"
+  },
+  {
+   "tool": "WebSearch",
+   "query": "Li Xiang RH-Zero-Free-Formalization cubic boundary sigma star",
+   "result": "none indexed"
+  }
+ ],
+ "limitations": [
+  "This is a dated search of indexed and directly queried public sources, not an exhaustive novelty or priority guarantee. New, unindexed, private, deleted or differently worded results, and work in non-English venues, may be missed.",
+  "arXiv items submitted after the 2026-10-09 announcement cutoff are not yet public; the next math.NT announcement may contain new submissions.",
+  "No outside proof, Lean package or certificate was rerun or validated. Verification statuses are as reported by authors or the tracker. 'Unconditional' follows each source's own framing; written refinements that take the OpenAI inputs as given are treated as unconditional, as in the previous record.",
+  "GitHub code search covered only three queries and its index can lag. Fork scans checked only default-branch heads of recently pushed forks.",
+  "WebFetch could not render the JS tracker page; its data files were read directly instead. One Zenodo query returned HTTP 500.",
+  "The user's prohibition on copying Li Xiang's refinement work was respected: only README and repository metadata were read, and no proof code was fetched, imported or reproduced. No other outside refinement code was fetched or executed."
+ ],
+ "raw_evidence_scratch": {
+  "note": "Transient copies in the session scratchpad; hashes recorded for traceability.",
+  "files": [
+   {
+    "what": "GTimG catalogue/results.json (main)",
+    "sha256": "cd71263206b81fd225c0bfc4820f690967c40492bdab8318289882fe545a74b4"
+   },
+   {
+    "what": "deployed tracker catalogue.json",
+    "sha256": "26a1cc74ffce5fc19fc98bf0a0f75891d87994c6977abd4bc46daef62e4d325d"
+   },
+   {
+    "what": "lixiang90/RH-Zero-Free-Formalization README.md",
+    "sha256": "cee78c28abb41a35dd3d86eff924f00e0152f03798a65d5f424064d122111ec9"
+   },
+   {
+    "what": "arXiv math.NT new listing (Fri 9 Oct 2026)",
+    "sha256": "7ce5fb8056261dd42710002cbdcda979965f61f47b4b93335f32ed054e25c812"
+   },
+   {
+    "what": "arXiv math.NT recent listing",
+    "sha256": "39c907ab6019bad22a7b4864a3440bdd8ef3df3eb73f6893289da11fb9e82430"
+   }
+  ]
+ }
+}

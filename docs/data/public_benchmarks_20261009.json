@@ -1,0 +1,197 @@
+{
+  "retrieved_utc": "2026-10-09 21:23:15 UTC",
+  "scope": "Public benchmark metadata only; no proof code or mechanism copied from these refinements.",
+  "catalogue_source": "https://github.com/GTimG/QuasiRiemannTracker/blob/main/catalogue/results.json",
+  "records": [
+    {
+      "id": "openai-baseline",
+      "title": "OpenAI · seven eighths",
+      "theta": {
+        "numerator": "7",
+        "denominator": "8"
+      },
+      "status": "framework-verified",
+      "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "references": [
+        {
+          "label": "Independent kernel verification report",
+          "url": "proofs/palomar-20261009/openai/result.json"
+        },
+        {
+          "label": "Comparator and kernel acceptance log",
+          "url": "proofs/palomar-20261009/openai/judge.log"
+        },
+        {
+          "label": "Exact checked statements",
+          "url": "proofs/palomar-20261009/openai/src/Challenge.lean"
+        },
+        {
+          "label": "Checking method and reproduction details",
+          "url": "proofs/palomar-20261009/README.txt"
+        },
+        {
+          "label": "Original source and scope",
+          "url": "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/docs/003.md"
+        },
+        {
+          "label": "Our verification evidence",
+          "url": "proofs/qrh-20261009/verification.json"
+        }
+      ]
+    },
+    {
+      "id": "argonaut-20261008",
+      "title": "Argonaut · perturbed boundary",
+      "theta": {
+        "numerator": "3499999",
+        "denominator": "4000000"
+      },
+      "status": "verification-pending",
+      "source_commit": "5971383edcb0b1cf863927eed3b359d2d3ba346e",
+      "references": [
+        {
+          "label": "Argonaut source and release",
+          "url": "https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary"
+        }
+      ]
+    },
+    {
+      "id": "liu-20261008",
+      "title": "Baiying Liu · optimized parameters",
+      "theta": {
+        "numerator": "874957069799168740018340006959",
+        "denominator": "1000000000000000000000000000000"
+      },
+      "exact_bound": "(1507 − 2√921) / 1653",
+      "status": "verification-pending",
+      "source_commit": "",
+      "references": [
+        {
+          "label": "Paper · arXiv:2610.12234",
+          "url": "https://arxiv.org/abs/2610.12234"
+        },
+        {
+          "label": "Reported Lean formalization",
+          "url": "https://github.com/liubaiying101/Slightly-improved-zero-free-half-planes-for-the-quasi-Riemann-hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "proofcouncil-20261009",
+      "title": "ProofCouncil · certified uniform descent",
+      "theta": {
+        "numerator": "874957019421",
+        "denominator": "1000000000000"
+      },
+      "status": "framework-verified",
+      "source_commit": "",
+      "references": [
+        {
+          "label": "Independent kernel verification report",
+          "url": "proofs/palomar-20261009/qrh/result.json"
+        },
+        {
+          "label": "Comparator and kernel acceptance log",
+          "url": "proofs/palomar-20261009/qrh/judge.log"
+        },
+        {
+          "label": "Exact checked statements",
+          "url": "proofs/palomar-20261009/qrh/src/Challenge.lean"
+        },
+        {
+          "label": "Checking method and reproduction details",
+          "url": "proofs/palomar-20261009/README.txt"
+        },
+        {
+          "label": "Lean proof source",
+          "url": "proofs/qrh-20261009/Nonvanishing.lean"
+        },
+        {
+          "label": "Final verification report",
+          "url": "proofs/qrh-20261009/FINAL_STATUS.txt"
+        },
+        {
+          "label": "Statement and axiom checks",
+          "url": "proofs/qrh-20261009/verification.json"
+        },
+        {
+          "label": "Coordinator recheck",
+          "url": "proofs/qrh-20261009/operator-recheck.json"
+        },
+        {
+          "label": "Complete proof source, inputs and logs",
+          "url": "proofs/qrh-20261009/source-public.tar.gz"
+        },
+        {
+          "label": "Accepted manuscript (TeX)",
+          "url": "proofs/qrh-20261009/accepted-answer.tex"
+        }
+      ]
+    },
+    {
+      "id": "nielstron-20261009-tightening",
+      "title": "Nielstron · compressed rational refinement",
+      "theta": {
+        "numerator": "874957019420098946128604623",
+        "denominator": "1000000000000000000000000000"
+      },
+      "status": "framework-verified",
+      "source_commit": "49331e02e2c04bb2388ae9c6e9ea424c23b96ac6",
+      "references": [
+        {
+          "label": "Independent Comparator and three-kernel report",
+          "url": "proofs/nielstron-20261009-kernels/result.json"
+        },
+        {
+          "label": "Independent checker method and reproduction",
+          "url": "proofs/nielstron-20261009-kernels/README.txt"
+        },
+        {
+          "label": "Independent three-kernel acceptance log",
+          "url": "proofs/nielstron-20261009-kernels/judge.log"
+        },
+        {
+          "label": "Exact independent checker statements",
+          "url": "proofs/nielstron-20261009-kernels/src/PalomarCanonical852af299eac8f1607f3d35b3/Challenge.lean"
+        },
+        {
+          "label": "Positive and negative checker controls",
+          "url": "proofs/nielstron-20261009-kernels/control-results.json"
+        },
+        {
+          "label": "Scope, attribution and reproduction",
+          "url": "proofs/nielstron-20261009-tightening/README.txt"
+        },
+        {
+          "label": "Native Lean result and exact improvement",
+          "url": "proofs/nielstron-20261009-tightening/result.json"
+        },
+        {
+          "label": "Native Lean target and axiom checks",
+          "url": "proofs/nielstron-20261009-tightening/native-lean-verification.json"
+        },
+        {
+          "label": "Exact independent target statements",
+          "url": "proofs/nielstron-20261009-tightening/TightIndependentTargets.lean"
+        },
+        {
+          "label": "Tighter Lean proof source",
+          "url": "proofs/nielstron-20261009-tightening/TighterNonvanishing.lean"
+        },
+        {
+          "label": "Per-file source token counts",
+          "url": "proofs/nielstron-20261009-tightening/token-counts.json"
+        },
+        {
+          "label": "Historical checker setup report",
+          "url": "proofs/nielstron-20261009-tightening/external-checker-status.json"
+        },
+        {
+          "label": "Complete reproducible source and evidence",
+          "url": "proofs/nielstron-20261009-tightening/source-public.tar.gz"
+        }
+      ]
+    }
+  ],
+  "working_target": "Strictly smaller than 874957019420098946128604623/1000000000000000000000000000, by a genuinely different analytic improvement; a later literature check is required before any record claim."
+}

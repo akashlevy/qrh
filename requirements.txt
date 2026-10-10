@@ -1,0 +1,6 @@
+# Most exact certificates are stdlib-only (Python >= 3.10; 3.13 was used).
+# Numerics, LP models and some referee scripts need:
+numpy>=2.0
+scipy>=1.11
+sympy>=1.12
+mpmath>=1.3

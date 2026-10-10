@@ -1,0 +1,44 @@
+{
+  "checked_utc": "2026-10-09T22:53:36.129033+00:00",
+  "queries": [
+    "\"quasi Riemann\" \"0.874\" October 2026",
+    "\"quasi-Riemann\" \"10499\"",
+    "site:arxiv.org quasi Riemann 2026 7/8 theta"
+  ],
+  "query_result": "No additional comparable new result; many irrelevant Riemann-theta results.",
+  "primary_refresh": [
+    {
+      "url": "https://arxiv.org/abs/2610.12234",
+      "result": "Still v1, submitted 2026-10-08 16:18:53 UTC; bound (1507-2sqrt921)/1653 = .874957069799...; author reports Lean formalization."
+    },
+    {
+      "url": "https://github.com/aster2024/openai-math-followups",
+      "result": "README still lists cubic-root endpoint .8749570194...; no new smaller unconditional bound shown."
+    }
+  ],
+  "unavailable": [
+    "https://github.com/nielstron/QuasiRiemannTracker",
+    "https://raw.githubusercontent.com/nielstron/QuasiRiemannTracker/main/public/proofs/nielstron-algebraic-20261009-kernels/result.json",
+    "https://raw.githubusercontent.com/nielstron/QuasiRiemannTracker/main/README.md"
+  ],
+  "limits": "Unavailable URLs returned web-tool cache misses. Earlier pinned reports remain in dated evidence log. No external proof was rerun in this refresh.",
+  "further_refresh": {
+    "checked_utc": "2026-10-09T23:06:33Z",
+    "queries": [
+      "\"quasi Riemann\" \"0.8749\"",
+      "\"Quasi-Riemann\" \"weighted\" numerator",
+      "site:arxiv.org \"quasi-Riemann\" 2026",
+      "\"10499/12000\" Riemann"
+    ],
+    "outcome": "No new comparable result in these queries. Puglisi arXiv2210.03121 remains v9 (2024); Dong et al. arXiv2605.24363 remains v1 (2026). Both were already recorded and are not established comparable unconditional all-Dirichlet bounds.",
+    "primary_urls": [
+      "https://arxiv.org/abs/2210.03121",
+      "https://arxiv.org/abs/2605.24363"
+    ],
+    "unavailable": [
+      "https://github.com/nielstron/QuasiRiemannTracker",
+      "https://github.com/aster2024/openai-math-followups/blob/main/zero-free-beyond-7-8/README.md"
+    ],
+    "limits": "These GitHub URLs returned cache misses; their current live state was not verified by this refresh."
+  }
+}

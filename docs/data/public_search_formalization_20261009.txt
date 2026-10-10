@@ -1,0 +1,121 @@
+PUBLIC QRH BOUND SEARCH — 2026-10-09T22:04:32.544314+00:00
+
+Conclusion: No credible comparable unconditional fixed all-height threshold below10499/12000 was found in the checked sources. This is a search conclusion, not an exhaustive novelty or correctness certificate.
+
+Strongest comparable public claim found: Unique root in (0.8749570194,0.8749570195) of 7884*s^3-18819*s^2+14643*s-3686=0
+theta = 0.8749570194200989461286038505614529823071518741876328101025713448658021
+Our proposed10499/12000 is lower by 0.0000403527534322794619371838947863156404852075209661434359046781991354.
+The exact endpoint already appears in Shunia and Guo written manuscripts; the new Nielstron PR#2 supplies reported seven-target mechanical verification. This search read those reports, not reran them.
+
+Comparable primary claims (smaller theta is stronger):
+
+- OpenAI: 7/8
+  Date: 2026-10-06
+  Status: Official formalization; tracker reports independent Comparator, Lean, NanoDa and con-ron PASS.
+  https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/docs/003.md
+
+- OpenAI: 11/12
+  Date: 2026-10-06
+  Status: Written alternate argument; weaker than baseline.
+  https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf
+
+- Argonaut Math: 3499999/4000000
+  Date: 2026-10-08
+  Status: Author reports Lean and Comparator; tracker independent verification pending.
+  https://github.com/Argonaut-Math/argonaut-math-quasi-riemann-boundary/tree/5971383edcb0b1cf863927eed3b359d2d3ba346e
+
+- Baiying Liu: (1507-2*sqrt(921))/1653
+  Date: 2026-10-08T16:18:53Z
+  Status: arXiv preprint; author reports Lean; tracker independent verification pending.
+  https://arxiv.org/abs/2610.12234v1
+  Note: Also gives34999/40000=.874975. Only v1 was listed when checked.
+
+- Zhongpai Gao: 20999/24000
+  Date: Manuscript 2026-10-07; pinned revision 2026-10-08T02:01:02Z
+  Status: Unsubmitted draft; exact arithmetic certificates; no Lean or independent analytic verification claimed.
+  https://github.com/Gaozhongpai/seven-eighths-refinement-certificates/blob/309a757ea539e2bf11558d8b5539e1269b792386/README.md
+
+- CrossNox: 4374785349/5000000000
+  Date: 2026-10-08T23:33:38Z
+  Status: Author reports full Lean build, axiom audit and Comparator replay.
+  https://github.com/CrossNox/quasi-riemann-hypothesis-extension/blob/f677cc0a820bb2aff86bb4cbe783d076f5c097db/README.md
+
+- LW56e2: 4374785349/5000000000
+  Date: 2026-10-08T19:25:46Z
+  Status: Author reports complete Lean theorem with only standard axioms; explicitly no independent expert review.
+  https://github.com/LW56e2/quasi-riemann-improved/blob/b83dbbd914c5751acf9bc3389cde58970437278f/README.md
+
+- GPT-6 Astra and Joseph M. Shunia: Unique root in (0.8749570194,0.8749570195) of 7884*s^3-18819*s^2+14643*s-3686=0
+  Date: Manuscript 2026-10-07; public commit 2026-10-08T01:40:48Z
+  Status: Source-relative manuscript; no complete Lean verification report inspected.
+  https://github.com/jshunia/rhtm/blob/c3abed0cae8fdb0090c12b0e4d20aea68b6e067d/compensated_half_plane_refinement.pdf
+  Note: Abstract itself claims exact cubic endpoint, not merely weaker162861/186136=.8749570206730563 corollary.
+
+- Jizhou Guo: Unique root in (0.8749570194,0.8749570195) of 7884*s^3-18819*s^2+14643*s-3686=0
+  Date: Manuscript 2026-10-08; latest relevant metadata revision2026-10-09T05:35:33Z
+  Status: Source-relative written proof with exact arithmetic ancillary certificates; analytic proof not Lean-checked by this search.
+  https://github.com/aster2024/openai-math-followups/blob/5750cc81e489729a2111d6c9c073f4adecdb9de7/zero-free-beyond-7-8/README.md
+  Note: Weaker rational43747851/50000000. Stronger328/375 is explicitly conditional on unproved Hypothesis11.1 and excluded from unconditional comparison.
+
+- Tim Gehrunger / ProofCouncil: 874957019421/1000000000000
+  Date: 2026-10-09T11:37:19Z
+  Status: Tracker reports Comparator and three independent kernels PASS.
+  https://github.com/GTimG/QuasiRiemannTracker/blob/40844a7614b67840801e65b836b3da2e1f7ff029/catalogue/results.json
+
+- Nielstron: 874957019420098946128604623/10^27
+  Date: 2026-10-09T18:25:39.673785Z
+  Status: Read PASS report for all-Dirichlet,zeta,Hecke; Comparator and Lean/NanoDa/con-ron; only standard axioms.
+  https://github.com/nielstron/QuasiRiemannTracker/blob/e6c0cd91e7ff3cf17315f1f63d7d480f575dfa28/public/proofs/nielstron-20261009-kernels/result.json
+
+- Nielstron: Unique root in (0.8749570194,0.8749570195) of 7884*s^3-18819*s^2+14643*s-3686=0
+  Date: 2026-10-09T19:51:12.662842Z; PR posted19:55:25Z
+  Status: Read seven-target PASS report and positive/negative control statuses; local Comparator, Lean/NanoDa/con-ron; only standard axioms. PR#2 open at search time.
+  https://github.com/nielstron/QuasiRiemannTracker/blob/0284b10d3c8c92b4d8995c36f24728be03815b4a/public/proofs/nielstron-algebraic-20261009-kernels/result.json
+  Note: Exact form11/12-e/4,657e^3-954e^2+21e+20=0,e in[1/6,1/5]. Also rational upper874957019420098946128603850561452983/10^36. Local mechanical verification, not Palomar registration/editorial approval.
+
+- Steven E. Creech: 437479/500000
+  Date: 2026-10-09T15:45:50Z
+  Status: Proposal/draft; full dependency build and final axiom checks pending; default exported theorems remain7/8.
+  https://github.com/stevenecreech/math/blob/b1ebd8d8661538992cbc2f27f97f0aa37a15525c/README.md
+
+- Shiva Kintali: 47/48
+  Date: 2026-10-07
+  Status: Written shorter proof; weaker boundary; abstract and theorem read.
+  https://shivakintali.github.io/papers/QRH.pdf
+
+Scope: Fixed conductor-independent boundary at every height, for all Dirichlet L-functions (including zeta) and finite-order Hecke L-functions over Q(sqrt(-3)); principal poles excluded/allowed as poles.
+
+Excluded conditional/lower-scope claims:
+- Guo conditional improvement: Explicitly assumes an unproved mean-square estimate; not unconditional.
+  https://github.com/aster2024/openai-math-followups/blob/5750cc81e489729a2111d6c9c073f4adecdb9de7/zero-free-beyond-7-8/README.md
+- Puglisi On the complex zeros of the Riemann Zeta-function: Older unverified claim QRH implies RH for zeta; not established comparable all-Dirichlet threshold.
+  https://arxiv.org/abs/2210.03121v9
+- A Hardy space approximation supporting zero-free half-planes: Approximation criterion and numerical support, not proved fixed all-height boundary.
+  https://arxiv.org/abs/2606.16097
+- The theta=infinity conjecture and RH for automorphic L-functions: Conditional criterion, not established unconditional fixed boundary.
+  https://arxiv.org/abs/2605.24363
+- Kintali other paper distinct/simple/on-line zeros; recent arXiv2610.08965: Proportion/distinctness of zeros, not exclusion of all zeros in a fixed half-plane.
+  https://arxiv.org/abs/2610.08965
+- teal-sea/zeta-lab QRH consequences: Applications retain7/8; no stronger boundary.
+  https://github.com/teal-sea/zeta-lab
+- DrMurphyIsIn de Bruijn-Newman9/32: Bound is on a different constant, not theta.
+  https://github.com/DrMurphyIsIn/qrh-debruijn-newman
+- ebbaker shifted-zeta-positivity: README explicitly disclaims new zero-free region.
+  https://github.com/ebbaker/shifted-zeta-positivity
+- tarikskalic33 RH replay draft: Evidence-only draft; explicitly no RH promotion, not an established competing result.
+  https://github.com/tarikskalic33/formal-conjectures/pull/3
+
+Coverage:
+arxiv: API quasi-Riemann:7 records; zero-free half-plane/halfplane:19 records; Riemann or Dirichlet submitted2026-10-06 through2026-10-10:62 records,all returned; direct current2610.12234 page onlyv1.
+github: Repository quasi-riemann:17, fork:true20; QRH riemann2; zero-free riemann fork:true6. Commit quasi-Riemann35; zero-free sinceOct6 all165 across2pages; theta+Riemann10. Issues quasi-Riemann58; Riemann+bound sinceOct8 all107 across2pages. Tracker all issues/PRs and head commits; targeted README/theorem metadata and verification reports.
+web: Broad English queries on generalized/quasi RH, fixed zero-free half-planes, improvement, exact decimals/fractions, arXiv, GitHub and Chinese准黎曼/拟黎曼 variants; author homepageKintali; officialOpenAI repo/history/scope.
+
+Limits:
+- No proof-kernel reruns or independent mathematical validation of outside papers in this search.
+- Search indexes can omit new, unindexed, deleted, private or differently described results; no global priority guarantee.
+- GitHub code search was not used; repository, issue, commit and primary-page metadata were checked.
+- Zenodo public API requests returned406/400; web search forquasi-Riemann site:zenodo.org did not reveal a stronger comparable claim.
+- Some web-tool GitHub pages were cache misses; direct read-only GitHub API recovered metadata.
+- The user prohibition on copying refinement work was respected: no outside refinement Lean/code was imported or executed; abstracts/README claim and verification metadata were read.
+
+Detailed queries, exact fractions, commit IDs and evidence hashes: public_search_formalization_20261009.json.
