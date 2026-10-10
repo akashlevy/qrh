@@ -387,7 +387,7 @@ Files: `agents/slack-audit/{AUDIT.md, model_sa.py, batch.py, diag_closed.py, fro
 
 **Round 2 summary:** all three agents negative. Cheapest known requirement for 27/31: DIAG (coefficient-sensitive sextic sieve for Möbius × Hecke-structured prime slots; a 1.33z partial version suffices) plus a count improvement at δ ≈ 0.27–0.33 below Ingham-with-copies. Both are open.
 
-## 25. Agent report: edge-theta (round 3, finished ~08:55 UTC) — truth has big margin, no proof route
+## 25. Agent report: edge-theta (round 3, finished ~08:40 UTC) — truth has big margin, no proof route
 
 Files: `agents/edge-theta/{EDGE_THETA.md, edge_lib.py, primal_energy.py, dual_mobius.py, pairs_mobius.py, bias_check.py, analyze.py, model_et.py}`.
 - **NUMERICAL truth** (exact Z[ω] computations, 12 angular sectors for repeated samples):
