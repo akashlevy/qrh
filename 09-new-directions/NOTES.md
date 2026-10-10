@@ -386,3 +386,23 @@ Files: `agents/slack-audit/{AUDIT.md, model_sa.py, batch.py, diag_closed.py, fro
   - Coordinator check: M_{0.966} at σ ≈ 0.635 is marginally FALSE in a DH-world (U^{2.31} > D^{1+κ} = U^{2.30}). It is stronger than needed: only counts are needed there.
 
 **Round 2 summary:** all three agents negative. Cheapest known requirement for 27/31: DIAG (coefficient-sensitive sextic sieve for Möbius × Hecke-structured prime slots; a 1.33z partial version suffices) plus a count improvement at δ ≈ 0.27–0.33 below Ingham-with-copies. Both are open.
+
+## 25. Agent report: edge-theta (round 3, finished ~08:55 UTC) — truth has big margin, no proof route
+
+Files: `agents/edge-theta/{EDGE_THETA.md, edge_lib.py, primal_energy.py, dual_mobius.py, pairs_mobius.py, bias_check.py, analyze.py, model_et.py}`.
+- **NUMERICAL truth** (exact Z[ω] computations, 12 angular sectors for repeated samples):
+  - Primal relative off-diagonal ~ rows^{−0.50±0.08} (theta) and rows^{−0.57±0.07} (marked), with no F = N/K dependence over F = 1.2–312.
+  - (H2) cross-mark correlation 1.43·rows^{−0.500±0.012}, the same as random.
+  - Dual Möbius-sextic family ~ (#h)^{−0.53±0.02}, beyond the wall too.
+  - Extrapolated: W(0.064) holds with margin about Z^{0.43}; (H2) truth ~Z^{−0.45} against a need of Z^{−0.27}.
+  - **The needed statements are true with lots of room.** If true as measured: θ = 19/22.
+- **Proposition U (CONDITIONAL on P78's energy lemma):** the UNMARKED Möbius-sextic family has a power-saving asymptotic for
+  Z ≤ H ≤ Z^{3/2}, with relative error Z^{1+ε}/H. Generic coefficients give none there, so theta beats "affine ⇒ logs" without marks.
+- **Precise obstruction.** W sits at F_m ≈ L², deep inside the diagonal regime, not at the SY/Li edge fixed point.
+  - For GL2 Hecke-eigenvalue coefficients this regime is unconditional (Perron + edge moments of L-values).
+  - For theta coefficients the only tool is the reflection R, which stops at the wall.
+  - β* and GRH reproduce exactly the large sieve. Theta structure (twisted multiplicativity, Kazhdan–Patterson periodicity, Kubota residue) generates nothing beyond R.
+  - Mark choices (coherent, random, Kubota-aligned) all give random-size cross-correlations.
+- **Lemma M(w)** (open, Euler-product form, as hard as (H2)): for P₁ ≠ P₂ ~ L and Z^{1−w}L³ ≤ H ≤ ZL³,
+  Σ_{h~H} ψ_{P₁}(h)conj ψ_{P₂}(h)|Σ_{n~Z} a(n)(h/n)₆|² = C(P₁,P₂) + O(Z^{2+ε}). It implies W(w).
+- Function fields: affine moments have power-saving truth (DGH secondary terms), but proofs need family-level inputs (DPP functional equation, homological stability).

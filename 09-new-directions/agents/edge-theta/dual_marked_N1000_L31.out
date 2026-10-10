@@ -1,0 +1,50 @@
+N0=1000 L0=31 cols=286 family h<= 992000: 399856  0.6s
+marks 8 in [31,62)
+cross coincidences 172
+  block 0-20000 1.7s
+  block 20000-40000 2.7s
+  block 40000-60000 4.1s
+  block 60000-80000 5.2s
+  block 80000-100000 6.3s
+  block 100000-120000 7.2s
+  block 120000-140000 8.4s
+  block 140000-160000 9.3s
+  block 160000-180000 10.0s
+  block 180000-200000 11.5s
+  block 200000-220000 12.8s
+  block 220000-240000 14.1s
+  block 240000-260000 15.4s
+  block 260000-280000 16.5s
+  block 280000-300000 17.7s
+  block 300000-320000 19.0s
+  block 320000-340000 20.2s
+  block 340000-360000 21.7s
+  block 360000-380000 23.1s
+  block 380000-399856 24.1s
+-- marks: coherent
+F=0.25    H=7750      #h~781       thetaP:+0.0462  g2P:+0.0786  mu:+0.1378  random rms 0.0944  1/Fc=2.9298 | sector rms theta 0.1323 rand 0.2100
+F=0.5     H=15500     #h~1562      thetaP:+0.0132  g2P:+0.0138  mu:+0.0414  random rms 0.0439  1/Fc=1.4649 | sector rms theta 0.0962 rand 0.1479
+F=1       H=31000     #h~3124      thetaP:-0.0293  g2P:+0.0390  mu:-0.0058  random rms 0.0252  1/Fc=0.7324 | sector rms theta 0.0991 rand 0.0723
+F=2       H=62000     #h~6248      thetaP:-0.0366  g2P:+0.0118  mu:-0.0043  random rms 0.0123  1/Fc=0.3662 | sector rms theta 0.0594 rand 0.0559
+F=4       H=124000    #h~12495     thetaP:-0.0141  g2P:+0.0154  mu:+0.0144  random rms 0.0136  1/Fc=0.1831 | sector rms theta 0.0238 rand 0.0400
+F=8       H=248000    #h~24990     thetaP:+0.0273  g2P:-0.0053  mu:+0.0047  random rms 0.0039  1/Fc=0.0916 | sector rms theta 0.0305 rand 0.0223
+F=16      H=496000    #h~49980     thetaP:-0.0190  g2P:-0.0029  mu:+0.0145  random rms 0.0064  1/Fc=0.0458 | sector rms theta 0.0198 rand 0.0177
+F=32      H=992000    #h~99960     thetaP:+0.0034  g2P:+0.0019  mu:+0.0012  random rms 0.0041  1/Fc=0.0229 | sector rms theta 0.0088 rand 0.0136
+-- marks: random
+F=0.25    H=7750      #h~781       thetaP:-0.0383  g2P:+0.0856  mu:+0.0168  random rms 0.0349  1/Fc=2.9298 | sector rms theta 0.1125 rand 0.1499
+F=0.5     H=15500     #h~1562      thetaP:+0.0448  g2P:-0.0137  mu:+0.0770  random rms 0.0282  1/Fc=1.4649 | sector rms theta 0.1692 rand 0.1349
+F=1       H=31000     #h~3124      thetaP:-0.0294  g2P:-0.0205  mu:-0.0057  random rms 0.0156  1/Fc=0.7324 | sector rms theta 0.0837 rand 0.0936
+F=2       H=62000     #h~6248      thetaP:-0.0252  g2P:+0.0011  mu:+0.0135  random rms 0.0219  1/Fc=0.3662 | sector rms theta 0.0615 rand 0.0645
+F=4       H=124000    #h~12495     thetaP:-0.0164  g2P:+0.0153  mu:+0.0053  random rms 0.0138  1/Fc=0.1831 | sector rms theta 0.0372 rand 0.0412
+F=8       H=248000    #h~24990     thetaP:+0.0210  g2P:+0.0025  mu:-0.0003  random rms 0.0080  1/Fc=0.0916 | sector rms theta 0.0276 rand 0.0249
+F=16      H=496000    #h~49980     thetaP:-0.0054  g2P:-0.0003  mu:+0.0090  random rms 0.0027  1/Fc=0.0458 | sector rms theta 0.0192 rand 0.0160
+F=32      H=992000    #h~99960     thetaP:+0.0027  g2P:+0.0029  mu:-0.0054  random rms 0.0055  1/Fc=0.0229 | sector rms theta 0.0189 rand 0.0141
+-- marks: conj gamma1 (Kubota-aligned)
+F=0.25    H=7750      #h~781       thetaP:-0.0230  g2P:+0.1057  mu:+0.0125  random rms 0.0481  1/Fc=2.9298 | sector rms theta 0.2245 rand 0.1700
+F=0.5     H=15500     #h~1562      thetaP:-0.0656  g2P:-0.0520  mu:-0.0255  random rms 0.0359  1/Fc=1.4649 | sector rms theta 0.1524 rand 0.1338
+F=1       H=31000     #h~3124      thetaP:-0.0353  g2P:+0.0685  mu:+0.0550  random rms 0.0374  1/Fc=0.7324 | sector rms theta 0.0787 rand 0.0858
+F=2       H=62000     #h~6248      thetaP:-0.0435  g2P:+0.0262  mu:-0.0143  random rms 0.0114  1/Fc=0.3662 | sector rms theta 0.0501 rand 0.0544
+F=4       H=124000    #h~12495     thetaP:-0.0077  g2P:+0.0012  mu:-0.0207  random rms 0.0108  1/Fc=0.1831 | sector rms theta 0.0445 rand 0.0403
+F=8       H=248000    #h~24990     thetaP:+0.0208  g2P:+0.0070  mu:+0.0039  random rms 0.0081  1/Fc=0.0916 | sector rms theta 0.0294 rand 0.0248
+F=16      H=496000    #h~49980     thetaP:-0.0139  g2P:-0.0026  mu:+0.0142  random rms 0.0056  1/Fc=0.0458 | sector rms theta 0.0174 rand 0.0204
+F=32      H=992000    #h~99960     thetaP:+0.0047  g2P:-0.0048  mu:-0.0006  random rms 0.0047  1/Fc=0.0229 | sector rms theta 0.0149 rand 0.0149

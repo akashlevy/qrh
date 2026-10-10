@@ -1,0 +1,6 @@
+F=1    #h~2620     |T-C| in random units: theta 0.406  g2 0.322  mu 0.293  random 0.246 | |T-C|/cols^2: theta 0.037 (coincidence term/cols^2 0.04) | rel. to diag: theta 0.0234 need 0.2141
+F=2    #h~5240     |T-C| in random units: theta 0.323  g2 0.348  mu 0.338  random 0.257 | |T-C|/cols^2: theta 0.042 (coincidence term/cols^2 0.08) | rel. to diag: theta 0.0134 need 0.1071
+F=4    #h~10480    |T-C| in random units: theta 0.277  g2 0.243  mu 0.224  random 0.317 | |T-C|/cols^2: theta 0.051 (coincidence term/cols^2 0.16) | rel. to diag: theta 0.0080 need 0.0535
+F=8    #h~20959    |T-C| in random units: theta 0.349  g2 0.351  mu 0.398  random 0.333 | |T-C|/cols^2: theta 0.090 (coincidence term/cols^2 0.33) | rel. to diag: theta 0.0072 need 0.0268
+F=16   #h~41919    |T-C| in random units: theta 0.288  g2 0.333  mu 0.351  random 0.267 | |T-C|/cols^2: theta 0.105 (coincidence term/cols^2 0.66) | rel. to diag: theta 0.0042 need 0.0134
+F=32   #h~83838    |T-C| in random units: theta 0.430  g2 0.332  mu 0.256  random 0.251 | |T-C|/cols^2: theta 0.222 (coincidence term/cols^2 1.31) | rel. to diag: theta 0.0044 need 0.0067
