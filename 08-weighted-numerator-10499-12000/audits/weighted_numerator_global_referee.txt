@@ -1,0 +1,316 @@
+GLOBAL REFEREE AUDIT: WEIGHTED NUMERATOR PROOF
+2026-10-09. Review performed with AI assistance.
+
+Reviewed:
+ research_audit/weighted_numerator_proof.tex
+ research_audit/weighted_numerator_lemma.tex
+ research_audit/weighted_numerator_certificate.py
+ research_audit/weighted_numerator_certificate.json
+against formalize_11_12/papers/paper78.tex.
+
+VERDICT
+
+No mathematical obstruction was found in the new theorem's global
+assembly, conditional only on the original analytic theorems explicitly
+imported in the manuscript. The geometry changes, fixed kappa=3/4 premise,
+actual bin ceiling delta<=3/4, residue extraction, row ranges and loss
+choices are compatible with those inputs. The new all-error numerator
+lemma passed the separate audit weighted_numerator_referee.txt.
+
+The finite certificate was executed independently and passed: the original
+numerator branch uses one rational Bernstein rectangle, the weighted
+branch uses nine, and all 32 auxiliary checks pass. The Bernstein routine
+was read: affine monomial substitution and power-to-Bernstein conversion
+are the standard exact formulas, and recursive subdivision covers the
+parent rectangles without overlap except at boundaries. I also checked
+the polynomial transcription against the displayed endpoint formulas.
+No floating-point sign decision is part of that certificate.
+
+The requested global contour clarification has now been incorporated
+and re-read: the updated manuscript explicitly retains the entire w line
+for reconstruction using the valid order detailed in section 5 below.
+The probe and normalization definitions have also been incorporated and
+checked. No required mathematical fix remains from this audit. Additional
+source-bound verification is recorded in sections 6 and 8. No manuscript
+was edited by this reviewing agent.
+
+This verdict does not claim independent verification of all original
+analytic theorems, end-to-end Lean verification of the new amendment, or
+external human peer review.
+
+1. SCOPE AND NONCIRCULAR STARTING INPUT
+
+The source beta_* is the supremum of 1/2 and actual zero real parts in
+[1/2,1] for primitive finite-order Hecke characters over Q(sqrt(-3));
+principal poles are excluded. The new statement matches that family.
+Restoring finite Euler factors causes no new positive-real-part zeros.
+The original norm-pullback factorization transfers the result to every
+Dirichlet character, with principal poles treated as in the source.
+
+The known source theorem beta_*<=7/8 is used ONCE. It gives
+beta_*<=(1+3/4)/2, exactly the original positive-slot plain-moment premise.
+No lower-kappa extension or feedback theorem is needed. Under the new
+contradiction beta_*>10499/12000, beta_*>.51, so the original detector
+construction is available. Every rounded bin has a<=beta_* exactly,
+therefore delta=2a-1<=3/4 exactly. This bound is independent of contour
+buffer e; the latter changes contours, not bin labels. The floor bin is
+handled without demanding a zero witness. Physical unit rows are in the
+small-norm range for sufficiently large Z and do not enter the positive-
+slot moment argument for moderate dyads.
+
+2. LOW GEOMETRY AND THE PHYSICAL EXPRESSION
+
+The new numbers satisfy exactly
+ M=lx+ly=833/1000=1-ell,
+ b=ly-lx=43/500,
+ h=1-lx+ell=1587/2000,
+ C(s)=s+lx/2-1+h/6=s-(4+b)/6.
+The normalized direct exponent is
+ lx/2+b/12=C(B), B=11/12-ell/4=10499/12000.
+
+The finite compensated physical operation is the original operation with
+these scale parameters. Its exact low separation and high selected-tuple
+identity are scale identities; they do not depend on the old numerical
+geometry. Rescaled subset length v gives
+ M'=M-2v, ell'=ell-v, M'+ell'-1=-3v.
+
+I traced the source low-row proof, especially lines 8225--8330.
+The source energy argument before substituting the old geometry gives
+ E_ref <= M'+max(0,(1+3ell'-2M')/4)+small losses.
+Its proof uses T_d<=H-3v+small losses, 2A0<=O+small losses,
+N0<=A0, and za<=ell'. These remain valid for the changed geometry.
+The powerful-row count is already included in E_ref and is not counted
+a second time. Substituting gives the new excess
+ (5ell-1+v)_+/4. Gram/Cauchy halves that excess, and the exact tuple
+normalization yields -v+(5ell-1+v)_+/8. This function starts at zero
+and is decreasing, so every rescaled contribution is bounded by the
+unrescaled one. At the extreme v=ell the energy estimate is deliberately
+loose but still sufficient after the negative tuple factor.
+
+The minimum M' is 499/1000, slightly below the old value 1/2. No underlying
+source reflection theorem requires M'>=1/2; it needs a fixed positive
+bounded row width. Thus this small change is harmless. The other strict
+minimum lengths are lx-ell=413/2000 and ly-ell=117/400.
+The Gram parameter is P_a=Y'^2/Q=q_b*^(-1)Z^b. The needed domination
+P_a^2/Y'<=P_a^(1/6) follows from
+ ly-ell-11b/6=809/6000>0.
+All fixed multiplicative tuple ratios are covered at a target-dependent
+large threshold, just as in the source.
+
+3. ROW-COUNT FORMULA AND CAPACITY
+
+The source inverse amplification exponent retains alpha=5/6; kappa does
+not replace alpha. At fixed kappa=3/4 the actual plain capacity is
+2(1-2m)/9, so the original baseline count is now exact up to the ordinary
+arbitrarily small losses. There is no old Delta/4 capacity-replacement
+loss to carry over.
+
+For fixed x in [0,1/2], the short inverse/plain exponents are precisely
+those displayed in the manuscript. Their crossing retains r_*>=23/37
+and 1/3<=t-r_*<=1/2. Consequently the inverse capacity is <=7/37
+and the relevant plain capacity <=2/27, and the marked inverse's second
+strict width condition retains margin >=9/37. The common optimal
+ t=1+delta*P_x/(2J)
+lies in [1,3/2], because J=(alpha-delta)D_x+delta P_x and
+alpha-delta>=1/12 on the actual bin range. The resulting R formula is
+correct and R>=1-delta. The known source zero-capacity cases remain
+applicable, including r near 1 and m near 1/2.
+
+At d=h, ell/h-7/37=1249/58719>0. A fixed extension satisfying
+zeta<5ell-h=83/2000 retains supply >1/5>7/37. The numerator capacity
+is largest in physical base-Z length at d=1/2, and its supply margin is
+ ell-(2ly-1/2)/(6kappa)=133/1800>0.
+For d in [1/2,h], ly<d and d<2ly, so the reflected numerator is
+strictly shorter than half the row length in exponent coordinates.
+The positivity 2ly-h=251/2000 persists on a sufficiently small extension.
+A common sufficiently fine mesh works for both source moments and the
+new numerator moment; the original plain theorem's mesh is independent
+of the eventual fixed slot count. Slot coefficients remain fixed ray
+combinations and the same original zero extensions are used.
+
+4. ENDPOINT CERTIFICATE AND ALL ROW RANGES
+
+Writing RJ=(1-delta)J+(alpha-delta)delta P_x/2, direct algebra gives
+exactly the old and weighted polynomial numerators used by the script.
+The certificate proves J>0 and E<=-1/10000 on the stated rectangles.
+The strategy depends only on the zero-bin delta: old at delta<=1/3,
+weighted at delta>=1/3. It does not illegitimately interchange a minimum
+and a supremum over a pointwise amplitude label.
+
+For moderate d the old slope is at least 33/50-delta/2>=57/200>0.
+The weighted slope is at least 7/16-17/50=39/400>0.
+Both slopes are bounded above uniformly on the compact parameter range,
+so the same negative endpoint margins persist on a sufficiently small
+fixed extension d<=h+zeta. Count capacities and numerator capacities
+retain the strict supply margins just checked. All O(1/log U) annular
+length changes can be absorbed uniformly after the mesh and losses are
+fixed.
+
+On d in [1/100,1/2], the no-slot R=76/75-2delta/3 covers the actual
+witness count and the floor. Its d slope is 101/150-delta/6>0.
+The exponent at d=1/2 is affine in delta after q<=delta/2; the two
+certified endpoints delta=1/50 and 3/4 therefore suffice. For the floor
+on larger dyads R=1,q<=1/100 gives the separately negative bound at h.
+All moderate rows, including bins straddling the branch choice at 1/3,
+are covered; either estimate applies at their common endpoint.
+
+For d<=1/100 the source absolute small-row exponent relative to C(beta_*)
+is h(17/50-1/6)-ly/2+63/5000=-7961/100000, before small losses.
+This covers nonprincipal unit rows as well. Large rows above Z^(h+zeta)
+are controlled on (s,w,z)=(2,2,v). The same source formula is valid with
+new B0=lx/2+1+ly=1317/800. Its total tail exponent is
+ B0+(h+zeta)(1+epsilon)-zeta*v+epsilon.
+A fixed sufficiently large v, chosen before the target and height orders,
+makes this arbitrarily negative. The absolute starting row series and
+uniform final geometric tail justify summing the individual dyad contour
+identities.
+
+5. FULL w CONTOUR: EXPLICIT VALID ORDER
+
+The original fixed-bin contour lemma outputs retained segments in ALL
+three heights. Its printed conclusion alone does not justify extending
+w to the whole axis for exact numerator reconstruction. The following
+modification proves exactly what the new argument needs.
+
+For a fixed finite physical dynamic-bin row sum on the absolute lines:
+ (i) Move z from 2 to 17/50, retain w=3, and move s from 3 to
+     beta_*+20e. The reciprocal is global and no scalar poles are crossed.
+ (ii) Discard only the tails of the s,z heights outside the assigned
+      retained box; integrate w on its full vertical line. Global bounds
+      for the reciprocal and numerator, the all-height Euler majorant,
+      the Gaussian/M(z) decay, and W1hat decay prove an error
+      O_eta,N(Z^B_eta*T1^(-N)).
+ (iii) With w=3, move only the retained s segment to a+16e. The reciprocal
+       depends only on s, remains in the zero-free buffer throughout,
+       and the whole path lies in the first Euler region. On the s joins
+       the z and w axes can be extended using global bounds for all other
+       factors; the buffered reciprocal's height is not changed.
+ (iv) For these retained s,z, move the ENTIRE w line from 3 to 1/2.
+      Throughout, Re(s+w)>=1+delta/2+16e. Every moderate numerator is
+      nonprincipal, so there is no pole. The reciprocal is independent
+      of w. Global numerator strip bounds and the all-height correction
+      majorant, multiplied by W1hat's arbitrary decay, justify the
+      horizontal limits without any buffered estimate on the numerator.
+
+Now carry out the quotient-free error expansion and coefficient-wise
+full-w reconstruction. The pointwise amplitude sets depend on z and the
+row but not w. They are introduced only to estimate the already continued
+bin; they are not analytically continued in s or z. This order yields the
+weighted high estimate with the advertised arbitrary external tails.
+No forbidden extension of a buffered reciprocal to unbounded height
+occurs. The new method actually does not need a buffered numerator bound
+on the w line, since it uses reflection of an entire smoothed polynomial.
+
+Update: the final manuscript now explicitly includes this four-step
+contour order, and its revised paragraph has been checked against this
+argument. The previously compressed contour detail is resolved.
+
+6. PRINCIPAL REGION AND RESIDUES BELOW 7/8
+
+The source statements with sigma0>=7/8 are not invoked unchanged.
+Their proofs need holomorphy/all-height bounds in the relevant Euler
+regions. At the new B, these persist with ample margins.
+
+At s_r>=B,w_r>=19/20,z_r>=33/200, the unramified correction's R and
+mixed defects have exponents 4-6s_r-6z_r and 1-s_r-w_r-6z_r, at most
+-1-2479/2000 and -1-9779/12000 respectively. The remaining visible
+terms have exponents -s_r-w_r, -s_r-6z_r and -w_r-6z_r, all strictly
+below -1 as well. Ramified boundary terms also have negative powers;
+for example 1-s_r-w_r<=1-B-19/20<0 and
+3/2-3s_r<=3/2-3B<0. Thus the full high correction has the required
+normal convergence/all-height polynomial majorant for all physical rows.
+For the principal row u=1 there are no ramified good primes.
+
+The four principal multiplier error exponents are at most -B, as exactly
+checked. Hence at the double residue (w,z)=(1,1/6) its slot multiplier
+is -1+O(p^(-B)). The source fixed-ray prime normalizer is unchanged except
+for slot lengths. With nonnegative fixed window profiles,
+ S_i(Z)=sum_{p in slot i} W_i(Np/P_i)*(Np)^(-5/6)
+has a positive fixed-ray prime-asymptotic main term; no growing ray
+conductor is involved. Define
+ A_T(Z)=(-1)^K Z^(-ell/6) product_i S_i(Z),
+ J_eta(Z)=I_modified(Z)/(c_S A_T(Z)).
+Then A_T^(-1)<<Z^epsilon and the principal residue correction is
+H_eta(s) Z^(ell/6) A_T(Z)(1+O(Z^(-mu))) for any fixed
+0<mu<B*min_i ell_i. These are exactly the source residue interface
+hypotheses. The final manuscript now explicitly states these definitions,
+using the name A_eta for the same normalizer, and defines H_eta at the
+double residue. The reviewed normalization is identical in both bounds.
+
+The w=1 and z=1/6 scalar residues are the only crossed poles. Their
+Jacobians and factors c_S are unchanged. The principal leftovers retain
+the strictly positive margins ly/20=919/40000 and h/600=529/400000.
+The final error is bounded on its original global line and is not
+continued through zeros. Only the main signal integral is shifted right
+to Re(s)=2, where the reciprocal is holomorphic and Gaussian decay applies.
+
+At fixed (w,z)=(1,1/6), uniform absolute convergence of the local defect
+series for ALL Re(s)>=B lets the excluded-prime cutoff make
+sup_{Re(s)>B}|H_eta(s)-1|<=1/2. Thus H_eta is both holomorphic and
+nonzero on the entire required half-plane, not merely along one contour.
+
+7. SMALL-LINE EXTENSION BELOW 7/8
+
+The source small-row proof used a printed first-region buffer 3/8,
+which fails if beta_* is only slightly below 7/8. The manuscript correctly
+replaces it by a positive constant smaller than B-1/2. The rest of the
+source proof survives. To check the local tuple bound directly at
+s_r>=B,w_r=1/2,z_r=17/50:
+- unramified G_p is O(1), since all four error exponents remain negative;
+- the strict ramified term is at most p^(1/2);
+- the other ramified exponents are -1/2, 3/2-2s_r,
+  2-3s_r, and 3-5s_r, all strictly less than 1/2 at s_r=B;
+- the common R contribution is 4-5s_r-51/25<0.
+Thus G_p<<p^(1/2) on the row support exactly as required; divisor
+counting and the unselected-product bound give the unchanged positive
+slot majorant. The coarse numerator growth U^(3/5+epsilon), used by the
+outer lemma, does not require beta_*>7/8. It is an independent strip
+bound at w=1/2. No hidden old threshold survives this check.
+
+8. QUANTIFIER ORDER, HEIGHTS, AND CONTINUATION
+
+Under the contradiction Delta=beta_*-B>0, geometry, row extension,
+finite exponent margins, small moment losses, capacity decrements, mesh,
+slot count and fixed window shapes are chosen independently of the target.
+The common mesh exists by the original uniform statement. Only after
+slot lengths are fixed can one choose mu<B*min ell_i. Remaining detector
+and contour losses can then be chosen below both the high margins and
+mu, and the low loss can be chosen below Delta. The actual target then
+supplies its finite arithmetic data, fixed cutoff and finite internal
+profile/height orders. The positive height exponent may depend on that
+target, while its product with those orders is made smaller than a fixed
+reserved exponent. The external integration-by-parts order is chosen
+last and raises only external test requirements, not an already fixed
+internal height cost.
+
+For maximal precision, choose the large-row absolute contour height v
+immediately after the row extension zeta and before fixing internal
+seminorm orders; v is a fixed real parameter in the resulting finite
+range list. This is possible independently of the target. The manuscript's
+reference to the unchanged large-row contour is consistent with this
+choice but could state it explicitly.
+
+All error estimates then have target-independent positive exponent
+margins; constants and sufficiently large thresholds may depend on the
+target. In particular, the high comparison may use the minimum of the
+fixed endpoint/small-row margins, principal residue margins and mu,
+after reserving losses. The low exponent satisfies omega<Delta. Both
+functions J_eta and f_eta remain independent of the chosen analysis
+height. They therefore satisfy the original continuation criterion with
+sigma0=B and C(s)=s-(4+b)/6. That criterion is stated for arbitrary
+sigma0 in (1/2,1), so its conclusion requires no threshold extension.
+
+The claimed 13/15 barrier is an obstruction of the stated low inequalities
+only. Its displayed positive linear combination is algebraically correct.
+It does not purport to rule out an arithmetic improvement of those input
+bounds or a different method reaching 1/2.
+
+FINAL REVIEW STATUS
+
+Analytic/global audit: PASS relative to the cited original theorem package.
+The final full-w contour and probe-definition revisions have been checked;
+no required fix remains from this audit. Exact finite certificate: PASS
+on rerun.
+No missing uniform-conductor hypothesis, extra moving mask, kappa feedback,
+wrong bin ceiling, uncovered dyad range or principal residue was found.
+No end-to-end formal verification or outside peer review is asserted.

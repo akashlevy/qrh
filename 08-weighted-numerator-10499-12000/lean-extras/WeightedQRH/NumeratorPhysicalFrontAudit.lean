@@ -1,0 +1,8 @@
+import WeightedQRH.NumeratorPhysicalFront
+#print axioms WeightedQRH.Numerator.physicalMainPool_sum
+#print axioms WeightedQRH.Numerator.physicalMainPool_product
+#print axioms WeightedQRH.Numerator.source_prime_reconstruction_geometry
+#print axioms WeightedQRH.Numerator.source_main_product_norm
+#print axioms WeightedQRH.Numerator.physicalMainPool_product_bound
+#print axioms WeightedQRH.Numerator.error_main_source_scale
+#print axioms WeightedQRH.Numerator.frequencyWeight_source_conductor_bound

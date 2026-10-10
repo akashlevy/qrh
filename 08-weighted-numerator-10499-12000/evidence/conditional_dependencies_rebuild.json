@@ -1,0 +1,1150 @@
+{
+  "started_utc": "2026-10-09T23:09:38.275895+00:00",
+  "targets": [
+    "WeightedQRH.HighRows.ConditionalFinal"
+  ],
+  "environment": {
+    "lean": "/Users/akashlevy/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean",
+    "LEAN_PATH": "/Users/akashlevy/Documents/riemann/research_audit/weighted_formal:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/Cli/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/batteries/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/Qq/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/aesop/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/importGraph/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/plausible/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/rellich-kondrachov/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/LeanArchitect/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/checkdecls/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/leancert/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/PrimeCert/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/mathlib/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/.lake/build/lib/lean:/Users/akashlevy/.elan/toolchains/leanprover--lean4---v4.34.1/lib/lean"
+  },
+  "output_root": "/Users/akashlevy/Documents/riemann/research_audit/weighted_formal/.verification/conditional",
+  "external_imports": [
+    "Mathlib",
+    "OAI.NumberTheory.DirichletL.Detector.CentralClassArithmetic",
+    "OAI.NumberTheory.DirichletL.Detector.CentralCubeNorm",
+    "OAI.NumberTheory.DirichletL.Detector.CentralDyadicWeight",
+    "OAI.NumberTheory.DirichletL.Detector.CentralExponent",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorBatch",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseFields",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseMarkedField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorInverseRawField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorMomentFiberGates",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorMomentPrimeGeometry",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainMarkedFineField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedField",
+    "OAI.NumberTheory.DirichletL.Detector.DetectorPlainUnmarkedRestrictedField",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyArithmetic",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCertifiedBands",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyChosenData",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyClass",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyCountParameters",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyData",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyIntegral",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentInput",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyMomentMono",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyNormalized",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySource",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblySourceCount",
+    "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional",
+    "OAI.NumberTheory.DirichletL.Detector.FiniteProductBounds",
+    "OAI.NumberTheory.DirichletL.Detector.FiniteProductX",
+    "OAI.NumberTheory.DirichletL.Detector.GlobalCorrection",
+    "OAI.NumberTheory.DirichletL.Detector.LowCentralGeometry",
+    "OAI.NumberTheory.DirichletL.Detector.LowCentralTuple",
+    "OAI.NumberTheory.DirichletL.Detector.LowCommonBound",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianCentral",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianDyad",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianRemote",
+    "OAI.NumberTheory.DirichletL.Detector.LowGaussianSum",
+    "OAI.NumberTheory.DirichletL.Detector.LowGramScale",
+    "OAI.NumberTheory.DirichletL.Detector.LowInverseNormalize",
+    "OAI.NumberTheory.DirichletL.Detector.LowNominalEnergy",
+    "OAI.NumberTheory.DirichletL.Detector.LowNominalGeometry",
+    "OAI.NumberTheory.DirichletL.Detector.LowNormalized",
+    "OAI.NumberTheory.DirichletL.Detector.LowOriginalPools",
+    "OAI.NumberTheory.DirichletL.Detector.LowPhysicalInverseBound",
+    "OAI.NumberTheory.DirichletL.Detector.LowReflectedLength",
+    "OAI.NumberTheory.DirichletL.Detector.LowRemoteMass",
+    "OAI.NumberTheory.DirichletL.Detector.LowSelectedBound",
+    "OAI.NumberTheory.DirichletL.Detector.LowSlotScales",
+    "OAI.NumberTheory.DirichletL.Detector.LowSourceScales",
+    "OAI.NumberTheory.DirichletL.Detector.LowUnselectedMass",
+    "OAI.NumberTheory.DirichletL.Detector.LowWindowBound",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalContours",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalNormalized",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysical",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalPhysicalRemainder",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalRemainderBounds",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalResidueActual",
+    "OAI.NumberTheory.DirichletL.Detector.PrincipalTransport",
+    "OAI.NumberTheory.DirichletL.Detector.RayCharacterFamily",
+    "OAI.NumberTheory.DirichletL.Detector.RayPoolDisjoint",
+    "OAI.NumberTheory.DirichletL.Detector.RayPoolThresholds",
+    "OAI.NumberTheory.DirichletL.Detector.SourceAmplitudeClasses",
+    "OAI.NumberTheory.DirichletL.Detector.SourceBatch",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedPhysicalRows",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceDeleted",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceDeletedEnergy",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceFiberEnergy",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferencePaddedEnergy",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferencePrimeGates",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedReferenceShift",
+    "OAI.NumberTheory.DirichletL.Dictionary.InverseMarkedUniform",
+    "OAI.NumberTheory.DirichletL.Endpoint",
+    "OAI.NumberTheory.DirichletL.Energy.Bands",
+    "OAI.NumberTheory.DirichletL.Energy.CappedWidthInduction",
+    "OAI.NumberTheory.DirichletL.Energy.State",
+    "OAI.NumberTheory.DirichletL.Hecke.CommonProbe",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorAmplitudeFirst",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorDyadicGeometry",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorPhysicalSelection",
+    "OAI.NumberTheory.DirichletL.Hecke.DetectorRawBranches",
+    "OAI.NumberTheory.DirichletL.Hecke.Dirichlet",
+    "OAI.NumberTheory.DirichletL.Hecke.ExceptionalRows",
+    "OAI.NumberTheory.DirichletL.Hecke.ModulusRefinement",
+    "OAI.NumberTheory.DirichletL.Hecke.PrimitiveSupremum",
+    "OAI.NumberTheory.DirichletL.Hecke.SignalBounds",
+    "OAI.NumberTheory.DirichletL.Hecke.SignalIdentity",
+    "OAI.NumberTheory.DirichletL.Inversion.InitialPhysicalSlots",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorDictionarySlots",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorDictionaryUniformHeight",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorDictionaryUniformTests",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorEnergyInitialState",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainCapacity",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainExceptional",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainFiberSource",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainMarkedState",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainMomentParameters",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainProfileControl",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainRelativeClass",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainSlotProfile",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainStateDictionary",
+    "OAI.NumberTheory.DirichletL.Moments.DetectorPlainUnmarkedState",
+    "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFiber",
+    "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFixedIdeal",
+    "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceFreeExceptional",
+    "OAI.NumberTheory.DirichletL.Moments.NaturalFixedRaySourceInternal",
+    "OAI.NumberTheory.DirichletL.Moments.RelativeCapacityRemoval",
+    "OAI.NumberTheory.DirichletL.Moments.RetainedEnergy",
+    "OAI.NumberTheory.DirichletL.ParametersDetectorScales",
+    "OAI.NumberTheory.DirichletL.ParametersFixedSource",
+    "OAI.NumberTheory.DirichletL.ParametersHighData",
+    "OAI.NumberTheory.DirichletL.ParametersHighDataFine",
+    "OAI.NumberTheory.DirichletL.ParametersSlotLengths",
+    "OAI.NumberTheory.DirichletL.PrimeRows.BufferedIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeBins",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeChoice",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalCubeReduction",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalRayCube",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalReduction",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CanonicalTails",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralCube",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralErrorSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralFiniteError",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralRectangle",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CentralSupportedSplit",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeBinPartition",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeErrorSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteError",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFiniteIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFixedPrimes",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorArithmetic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorCollected",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorDyadic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobal",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorGlobalIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorNormalized",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeFloorSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeNormalizer",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeSlotExponent",
+    "OAI.NumberTheory.DirichletL.PrimeRows.CubeSupportedWitness",
+    "OAI.NumberTheory.DirichletL.PrimeRows.DyadIntegral",
+    "OAI.NumberTheory.DirichletL.PrimeRows.GeometricTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.LargeDyad",
+    "OAI.NumberTheory.DirichletL.PrimeRows.LargeSaving",
+    "OAI.NumberTheory.DirichletL.PrimeRows.LargeTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorArithmetic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorClass",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorDyadic",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonfloorSourceCount",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NonprincipalBoundary",
+    "OAI.NumberTheory.DirichletL.PrimeRows.NormalizedTransport",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalDyad",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalLargeTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalPartition",
+    "OAI.NumberTheory.DirichletL.PrimeRows.PhysicalSmallTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.SmallDyad",
+    "OAI.NumberTheory.DirichletL.PrimeRows.SmallSum",
+    "OAI.NumberTheory.DirichletL.PrimeRows.SmallTail",
+    "OAI.NumberTheory.DirichletL.PrimeRows.TailScales",
+    "OAI.NumberTheory.DirichletL.PrincipalSignalComparison",
+    "OAI.NumberTheory.DirichletL.PrincipalSlotEstimate",
+    "OAI.NumberTheory.DirichletL.Reflection.LowBranchSum",
+    "OAI.NumberTheory.DirichletL.Reflection.LowCaps",
+    "OAI.NumberTheory.DirichletL.Reflection.LowChoiceEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowCompletedFiber",
+    "OAI.NumberTheory.DirichletL.Reflection.LowCompletedRows",
+    "OAI.NumberTheory.DirichletL.Reflection.LowDyads",
+    "OAI.NumberTheory.DirichletL.Reflection.LowExponent",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFixedMember",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFrozenEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFull",
+    "OAI.NumberTheory.DirichletL.Reflection.LowFullBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowGlobalBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowInactiveEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowMemberBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowMemberGeometry",
+    "OAI.NumberTheory.DirichletL.Reflection.LowOriginalEnergy",
+    "OAI.NumberTheory.DirichletL.Reflection.LowRetained",
+    "OAI.NumberTheory.DirichletL.Reflection.LowRetainedBudget",
+    "OAI.NumberTheory.DirichletL.Reflection.LowSector"
+  ],
+  "modules": [
+    {
+      "module": "WeightedQRH.HighRows.CentralErrorSaving",
+      "source_sha256": "155fba923de9524dbf4c00bf8faccf525e2e082a6e60145b3b7ed6a7fe37cb43",
+      "log": "logs/WeightedQRH.HighRows.CentralErrorSaving.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeErrorSaving",
+      "source_sha256": "caec07391f76b0bfe98c1a43a90ca536c8428abf7b3dfa00d9a9f533dc198319",
+      "log": "logs/WeightedQRH.HighRows.CubeErrorSaving.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CentralFiniteError",
+      "source_sha256": "d212544f480deef0fcd8e672202eb89cee71a51ed821b19c582f9dfa7bbbfa79",
+      "log": "logs/WeightedQRH.HighRows.CentralFiniteError.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeFiniteError",
+      "source_sha256": "7f32be26543ceecf7ddd88eb0b7ca627b502e8db1fb3f360c418f10a4cd2ccad",
+      "log": "logs/WeightedQRH.HighRows.CubeFiniteError.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.TailScales",
+      "source_sha256": "f57c1b35f98be19c413941f719ab01e2dda114ffc73e8177058627b8a39e9dd6",
+      "log": "logs/WeightedQRH.HighRows.TailScales.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.LargeDyad",
+      "source_sha256": "cef111c9efed0c53edef359e24ea1346c8ef8f22d4056db6c22e4a3d35ca0801",
+      "log": "logs/WeightedQRH.HighRows.LargeDyad.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.GeometricTail",
+      "source_sha256": "bdba15491c9fe1829d112d04978c16439787065ee4e25637f7edec2e84bd9367",
+      "log": "logs/WeightedQRH.HighRows.GeometricTail.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.LargeTail",
+      "source_sha256": "5fa9c70d35810c1b8ba178c288a04a88176783dca0239fc812184f8d1b01a3a3",
+      "log": "logs/WeightedQRH.HighRows.LargeTail.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.LargeSaving",
+      "source_sha256": "7287476850652590b886f2d76333bcc8e84914dc9f4bb56ae3c52aaaf2baaba9",
+      "log": "logs/WeightedQRH.HighRows.LargeSaving.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.PhysicalLargeTail",
+      "source_sha256": "a649e9e8b585e6eed6e0f547f41afb62ddea90d63f2c7d6a262c7360fde072c6",
+      "log": "logs/WeightedQRH.HighRows.PhysicalLargeTail.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.SmallTail",
+      "source_sha256": "a390440f364429aec5e5f3964988f7db103a1f6ca14a05469bc33fba944cc02e",
+      "log": "logs/WeightedQRH.HighRows.SmallTail.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.PhysicalSmallTail",
+      "source_sha256": "cede4e961ca68ed3ca483638926fb25053311144d3a2110eb21afb3f862cf323",
+      "log": "logs/WeightedQRH.HighRows.PhysicalSmallTail.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CanonicalTails",
+      "source_sha256": "498f522a54f52bbd16b191c332d412af9d1d71a8f5b48c58508044fe4cf113d4",
+      "log": "logs/WeightedQRH.HighRows.CanonicalTails.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CanonicalReduction",
+      "source_sha256": "c37772aa2dc70226955131f630e827c2b70f25fca1f5cbd043797ceb4eed3106",
+      "log": "logs/WeightedQRH.HighRows.CanonicalReduction.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CanonicalCubeReduction",
+      "source_sha256": "aa4afdb763d4449505380fc8eba6e572dc063c93c46308f862d474412a264500",
+      "log": "logs/WeightedQRH.HighRows.CanonicalCubeReduction.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CanonicalCubeChoice",
+      "source_sha256": "53696a05ce2d1c4f4b31a8a7c26fbc085a3d12c590812d719f8a4fc591b4e3b1",
+      "log": "logs/WeightedQRH.HighRows.CanonicalCubeChoice.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CanonicalRayCube",
+      "source_sha256": "03b2b08bfc8e507ce7c226d1accf3d64dceea35a9dd59afe079aea4f36efcabe",
+      "log": "logs/WeightedQRH.HighRows.CanonicalRayCube.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowNormalizer",
+      "source_sha256": "f65e2e67533fbfb1505123814baa7c1a63373d81e3dd3eafcaf3cd6de9833859",
+      "log": "logs/WeightedQRH.LowNormalizer.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.Parameters",
+      "source_sha256": "723b5d351e2cf83fb3464e4136ae9e4f63fcb6d1977b48ef0b191714ac9e30c6",
+      "log": "logs/WeightedQRH.Parameters.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderRegion",
+      "source_sha256": "94750ef8501185fa903d4b4146f9bfeddb1c1c56350c5662f2290addf59dc0d0",
+      "log": "logs/WeightedQRH.PrincipalRemainderRegion.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.RegionalCorrection",
+      "source_sha256": "b7641cebd1d28616f250ba415a05c30e50cd5eb6511280567b47a61aa782f8e6",
+      "log": "logs/WeightedQRH.RegionalCorrection.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalSlots",
+      "source_sha256": "888363ec963110452e81b700e4284f8b5e201ed26511cb638c8ed2ff01628038",
+      "log": "logs/WeightedQRH.PrincipalSlots.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderFiniteProduct",
+      "source_sha256": "0c8c80bd4cb31e2a9229b6bfb97d34a76411704a26cc088dded439c24118ced2",
+      "log": "logs/WeightedQRH.PrincipalRemainderFiniteProduct.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderFiniteProductX",
+      "source_sha256": "25b07ab1c6d2e1188e5c346aa6090aa397f451b63826bf0beb006ad07140b679",
+      "log": "logs/WeightedQRH.PrincipalRemainderFiniteProductX.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderContours",
+      "source_sha256": "6df5434d2898713f9c1bc8ed52f3f063bdd9e6a39c12d6c154981eca1fc5447b",
+      "log": "logs/WeightedQRH.PrincipalRemainderContours.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderTransport",
+      "source_sha256": "5e6a77edfdeda0ec6dc758eeced25c40a4c67490d46b40c44463355ac751a94f",
+      "log": "logs/WeightedQRH.PrincipalRemainderTransport.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderPhysical",
+      "source_sha256": "8019f19a27fbe597c2cfaa87e7e0685d75d8a277740af4b92b49ecf62747d298",
+      "log": "logs/WeightedQRH.PrincipalRemainderPhysical.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.SignalShift",
+      "source_sha256": "dde4680dc47d31215db5a5e53fabfcf9b4ca6c8d3bbabb23e1d1e977cace785f",
+      "log": "logs/WeightedQRH.SignalShift.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalSignal",
+      "source_sha256": "ba4c37883b567befd71a1ca83ffedf262805caa8ff73ef15544abcdaa3c5fead",
+      "log": "logs/WeightedQRH.PrincipalSignal.verify.log",
+      "log_sha256": "6906697b3e7c40a72dacdaeac35e2db5235ee4cb128e8642259b612d045df54f",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderBounds",
+      "source_sha256": "d30f9487b19e35c4e1968fec02a3573e6507fc4bd942834b3abffc14e33649c3",
+      "log": "logs/WeightedQRH.PrincipalRemainderBounds.verify.log",
+      "log_sha256": "5a0c2c7f743a80f04d7a9a5ec537751a1978cab2229e412fb2e4af272e5c4d10",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderPhysicalBounds",
+      "source_sha256": "60b108ba567ddaa2d84e575a0c15ebef06e9f4490e15b4cd2e56dd4983af035a",
+      "log": "logs/WeightedQRH.PrincipalRemainderPhysicalBounds.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderResidueActual",
+      "source_sha256": "896d0fca467c0197d195aba5664cffc8bf9fdd2feacca22c4ac7281f45c84b6c",
+      "log": "logs/WeightedQRH.PrincipalRemainderResidueActual.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderRayThresholds",
+      "source_sha256": "0301408e4c5f840e71f2b15059309bc844d11d14390879d7aed639de89e1dedc",
+      "log": "logs/WeightedQRH.PrincipalRemainderRayThresholds.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.PrincipalRemainderNormalized",
+      "source_sha256": "ed7d93cf1be07ee145c1f73db95a3784bb3ddb1dec0a036289f1ad7ce2e3ff28",
+      "log": "logs/WeightedQRH.PrincipalRemainderNormalized.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.NormalizedTransport",
+      "source_sha256": "b7dd45028ca069ef03d267f54eb0af9daa74af526306fa61c64e49a3194e420e",
+      "log": "logs/WeightedQRH.HighRows.NormalizedTransport.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.NormalizedTransportSaving",
+      "source_sha256": "9897b5ad1228b23eab9acd4e8e0e4565e649a0bc303a774187ef651bf0e90b06",
+      "log": "logs/WeightedQRH.HighRows.NormalizedTransportSaving.verify.log",
+      "log_sha256": "a286cb87c32ef44805ce77e2d0a374e4e9b8a3106c1396c78cce6e855fa500c7",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.CertificateBernstein",
+      "source_sha256": "f40605e43d2e781a7160c1484ae4589952e4c72fa4a3d2b71613aea6d071b9f9",
+      "log": "logs/WeightedQRH.CertificateBernstein.verify.log",
+      "log_sha256": "cf26420690030ce19e2e23a5322bdcc7d1f1075542cfffb79fd7377afd3c5684",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.ExponentCertificate",
+      "source_sha256": "c54fb2e42cbb4b2fe60fd38f9d728930b2972a0adf00019d878a96bcaa348873",
+      "log": "logs/WeightedQRH.ExponentCertificate.verify.log",
+      "log_sha256": "bba5f10b45c6c2f08cbd43463a31cd8bd141be04e1ca030590a05f7cf1b137f4",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CountIdentity",
+      "source_sha256": "6c69b779b1943703bb77404700a9213f56c6c5c881b91f3fb0836ab25c778a21",
+      "log": "logs/WeightedQRH.HighRows.CountIdentity.verify.log",
+      "log_sha256": "b92269170bc2c9caa33a3a4db6c1a28937e061bf080915ae884dc3b42803127e",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CentralExponent",
+      "source_sha256": "61b617bb356af9fd8156ed221a323f4ddb7494e923f0cc2e0240a16c9820d4e2",
+      "log": "logs/WeightedQRH.HighRows.CentralExponent.verify.log",
+      "log_sha256": "4ab91efab4badc8054b18e656d0283fbf915c776af413093d06bc0cce80fd291",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeSlotExponent",
+      "source_sha256": "33a84cb5f9c1c0fcbb425514217ebc0e40d39ee60262c1f7d44492bfd5cd1219",
+      "log": "logs/WeightedQRH.HighRows.CubeSlotExponent.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeFloorArithmetic",
+      "source_sha256": "dbf2521abeb0c6f8406556cbf0e91fd5eb5431bc9a223a82d71d14a499eea851",
+      "log": "logs/WeightedQRH.HighRows.CubeFloorArithmetic.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeFloorGlobal",
+      "source_sha256": "1735a0974a5e907e74c27e6bc25323b33bf746d7ba6907bd06aef544d10bbe29",
+      "log": "logs/WeightedQRH.HighRows.CubeFloorGlobal.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeFloorGlobalIntegral",
+      "source_sha256": "2a09988401e6026c09a4e8982c558d23394c2e70ab4f2667d35618bfe683c892",
+      "log": "logs/WeightedQRH.HighRows.CubeFloorGlobalIntegral.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeFloorNormalized",
+      "source_sha256": "764c9fbeb7c849d06d974f482b6600311183c3a6b01f69c2b3fa8ada5333ed2d",
+      "log": "logs/WeightedQRH.HighRows.CubeFloorNormalized.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeFloorSaving",
+      "source_sha256": "52d0d70d7c87dd735325c076949c0d100812c65eca50f4e89572303519d45c15",
+      "log": "logs/WeightedQRH.HighRows.CubeFloorSaving.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeFloorCollected",
+      "source_sha256": "74fec0e015e39f848c7a728f99d34d73b6e00f85a5390e4dd4ed806c44f9957d",
+      "log": "logs/WeightedQRH.HighRows.CubeFloorCollected.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.NonfloorTransport",
+      "source_sha256": "2507ad03bc2b3649f16d02f1f47558c982e0f76db55e8b92060b4ccc769566e1",
+      "log": "logs/WeightedQRH.HighRows.NonfloorTransport.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.SlotWidths",
+      "source_sha256": "12707a0cf0159bb1ade42b1534faf2a0d2c6c7bd74a3598c5a9473febb038d4f",
+      "log": "logs/WeightedQRH.HighRows.SlotWidths.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.SourceBatch",
+      "source_sha256": "629803432d27af3199a813ed3cffd57b0dda530dcc9ed9060ec8ba7b8631d9f8",
+      "log": "logs/WeightedQRH.HighRows.SourceBatch.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.SourceAmplitudeClasses",
+      "source_sha256": "7aa859d67900c42dff071eb5d6e4a410207a66644ee558af812da774f99103bf",
+      "log": "logs/WeightedQRH.HighRows.SourceAmplitudeClasses.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CentralClassArithmetic",
+      "source_sha256": "4e0ab5c71cd479c782f3538eed61a8be8746b21bbd8c56cbc75052b6f6298457",
+      "log": "logs/WeightedQRH.HighRows.CentralClassArithmetic.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.NonfloorClass",
+      "source_sha256": "9d1bc4e83c1330098ac9e94220c087d720288c53a7800da243e5f1c76dfc4468",
+      "log": "logs/WeightedQRH.HighRows.NonfloorClass.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.NonfloorArithmetic",
+      "source_sha256": "ba9b510b8ca7558fc0e073c08b91c541250fd242b1176afd57bf6c902d991493",
+      "log": "logs/WeightedQRH.HighRows.NonfloorArithmetic.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.NonfloorIntegral",
+      "source_sha256": "afe84c1124e6196b883aa4fc9dfbb96984ced570931cbf92fff9260273515cd9",
+      "log": "logs/WeightedQRH.HighRows.NonfloorIntegral.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.NonfloorNormalized",
+      "source_sha256": "ab578794f5ba07683b7ecbd0cf09005fa090af8f25b3d8a02075a00809c0e325",
+      "log": "logs/WeightedQRH.HighRows.NonfloorNormalized.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.NonfloorCollected",
+      "source_sha256": "67425fbff9956e85046e3a94bf6147141c12c175fd5e9a89073e433631e2313a",
+      "log": "logs/WeightedQRH.HighRows.NonfloorCollected.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.FullWContour",
+      "source_sha256": "a8efcba933c7da648c866cf29b87b352f3ae2a90ca3ac4e42404ca331dd93335",
+      "log": "logs/WeightedQRH.FullWContour.verify.log",
+      "log_sha256": "45a3d5dc916f014ef8ca0a4a5787fddc4e1fbfac354fa22e79be5e00a32637e2",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.FullWTransport",
+      "source_sha256": "cdc7cda3a8437b7e0f5c73bf81cd7550bd1413e44ad4d4b317ec341602652c02",
+      "log": "logs/WeightedQRH.FullWTransport.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.FullWFiniteError",
+      "source_sha256": "ee9ab2bc51950807913cc82c4c917d97bc915c8d1e067454e3afc9d25a177b4c",
+      "log": "logs/WeightedQRH.FullWFiniteError.verify.log",
+      "log_sha256": "fda224bd516476659f85654717d9ffcd8c82a4eb08f9524715eb2ea725d0f1ec",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeFullWTransfer",
+      "source_sha256": "6a5cf9a4a6d7f7a5c4215e6238412dadf3cf5c0bceea9ea410d107d2f69875ec",
+      "log": "logs/WeightedQRH.HighRows.CubeFullWTransfer.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.CubeFullWNormalized",
+      "source_sha256": "c7f4732c4edbb853d4cf5493b308e540de0174e9c8b1718e53a52b6c8e2281b0",
+      "log": "logs/WeightedQRH.HighRows.CubeFullWNormalized.verify.log",
+      "log_sha256": "904141c988dbacba1619a29a37b447c91b56756adbbce36ce3b898d63788449c",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.MixedFullWCollected",
+      "source_sha256": "47834ee6840bc4a317420e3adcf3a9d88590d3b20a126b800cf5b124a2fc58b3",
+      "log": "logs/WeightedQRH.HighRows.MixedFullWCollected.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.HighAssembly",
+      "source_sha256": "22d0f0ef2cec958bf46111619459090a43c39e08872c02373b58450f5c5fcb43",
+      "log": "logs/WeightedQRH.HighRows.HighAssembly.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowReflectedLength",
+      "source_sha256": "fb5803c53b702e3f97e42b1406200babf8b4b0ba5267b27a0e659a535bec68da",
+      "log": "logs/WeightedQRH.LowDetector.LowReflectedLength.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowExponent",
+      "source_sha256": "991969e276ff7ff5e4945a5e4259859ffda656167c3812caf02a982d2db4b7b4",
+      "log": "logs/WeightedQRH.LowReflection.LowExponent.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowBranchSum",
+      "source_sha256": "e49b27fa27f6b6250668933698c0f8c98b0ac7f2a5ab7e4b436ebfcc06a5bb1e",
+      "log": "logs/WeightedQRH.LowReflection.LowBranchSum.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowSector",
+      "source_sha256": "5fd9f0ee42e12bf378f802f493a2978f7dfa8269603fc45a1176f9cc77b16e6c",
+      "log": "logs/WeightedQRH.LowReflection.LowSector.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowRetained",
+      "source_sha256": "839f20581aa874a3628e620f9827497eb060716d14f91866b4023a4df9153121",
+      "log": "logs/WeightedQRH.LowReflection.LowRetained.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowRetainedBudget",
+      "source_sha256": "997a60d091419d35b383b29b8f5aa1269a1002938d5d8c004d565fb6a34c7029",
+      "log": "logs/WeightedQRH.LowReflection.LowRetainedBudget.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowFull",
+      "source_sha256": "2cc0d714d603c5b75dedb13cb1bf39ad74142c075eb9ecc019983500230618a5",
+      "log": "logs/WeightedQRH.LowReflection.LowFull.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowFullBudget",
+      "source_sha256": "68b18df2ff8d6167a30b3da6b9aff71224b6b471d7ed6546b6e42be5c80bb184",
+      "log": "logs/WeightedQRH.LowReflection.LowFullBudget.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowGlobalBudget",
+      "source_sha256": "0b93d5519a7a2ce58605ab98e44b9a496008e5985d994dadc5c28bbc202d802d",
+      "log": "logs/WeightedQRH.LowReflection.LowGlobalBudget.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowMemberBudget",
+      "source_sha256": "8052d6a78ce0b972bfdab121ea4531796d2f2770861dd2fed0c7554d058c7063",
+      "log": "logs/WeightedQRH.LowReflection.LowMemberBudget.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowMemberGeometry",
+      "source_sha256": "e969710f1a7b15e63fd6a4c8fb93622576f501684eb8e7f8edc6f29c19faa996",
+      "log": "logs/WeightedQRH.LowReflection.LowMemberGeometry.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowCaps",
+      "source_sha256": "d00d4fbc3af94f727d986ceacc8bdb1e026af4dee94aa586276ced510393807c",
+      "log": "logs/WeightedQRH.LowReflection.LowCaps.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowFixedMember",
+      "source_sha256": "83a3ba66c7d554cd528739a8a8951960c0b74d6c278d9a5db01b13f01a79cc06",
+      "log": "logs/WeightedQRH.LowReflection.LowFixedMember.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowDyads",
+      "source_sha256": "5219c76d10eeff7949ca299a67e8c3cadf88c437a617b5af581c3ab37f7c36a1",
+      "log": "logs/WeightedQRH.LowReflection.LowDyads.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowChoiceEnergy",
+      "source_sha256": "211be8595a5a229f67809facfea8a591587704512f234c22a67980581f46026f",
+      "log": "logs/WeightedQRH.LowReflection.LowChoiceEnergy.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowInactiveEnergy",
+      "source_sha256": "edd72b63dcf0c4d74050a5af9113eed3314052ae47e5df703f2aa977619f3d30",
+      "log": "logs/WeightedQRH.LowReflection.LowInactiveEnergy.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowFrozenEnergy",
+      "source_sha256": "183cab31054da22d6b8e615978866157d23cd39a65203a4968dec7b214646ed3",
+      "log": "logs/WeightedQRH.LowReflection.LowFrozenEnergy.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowCompletedFiber",
+      "source_sha256": "9d6331e673a0618bc1ebd18f156d539e443cc2f5c71f9e562ca407f4892c3dd4",
+      "log": "logs/WeightedQRH.LowReflection.LowCompletedFiber.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowCompletedRows",
+      "source_sha256": "3b7f080f655eb427bcb105fac5f101b120deccc9f0cd64a947084224799b5026",
+      "log": "logs/WeightedQRH.LowReflection.LowCompletedRows.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowReflection.LowOriginalEnergy",
+      "source_sha256": "1bb9b199a18a07a8cfc01cd3f10c9243b322d20aec91b4b8eefe655b03ac8211",
+      "log": "logs/WeightedQRH.LowReflection.LowOriginalEnergy.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowSelectedBound",
+      "source_sha256": "4d25c44a72adef1d9556f1781430ddcf996e27b968f8006421e0553ec03a3bf9",
+      "log": "logs/WeightedQRH.LowDetector.LowSelectedBound.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowGramScale",
+      "source_sha256": "5d96efcbd0c6fdc1052cdbb3943f0a6320e0bc2f2f4f23660adab310059dc6d0",
+      "log": "logs/WeightedQRH.LowDetector.LowGramScale.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowSourceScales",
+      "source_sha256": "9820318e83b039f06d8f2e0b13b04d887912ed912f7079ca979898ba27adedb4",
+      "log": "logs/WeightedQRH.LowDetector.LowSourceScales.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowSlotScales",
+      "source_sha256": "9504f83b553e0bb37ac211949a87db0cabbf0ab7ab4c716bb5fe4e3418275ee4",
+      "log": "logs/WeightedQRH.LowDetector.LowSlotScales.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowOriginalPools",
+      "source_sha256": "09fdf27b1ce2e3d741590352c5416585cff7e643ae5856868c4f408ca4d67c20",
+      "log": "logs/WeightedQRH.LowDetector.LowOriginalPools.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowNominalGeometry",
+      "source_sha256": "73b9764b657315a7826e3c8dfa10ed8fd5f6ecb3c55089930dee91e1a7268def",
+      "log": "logs/WeightedQRH.LowDetector.LowNominalGeometry.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowCentralGeometry",
+      "source_sha256": "b07121fc6207e539749791013803dc57a0ea52ae0fbf712f43bdfec26d2505cc",
+      "log": "logs/WeightedQRH.LowDetector.LowCentralGeometry.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowNominalEnergy",
+      "source_sha256": "e6ee9e10404d7c02a3e61f65f203e7396c7e6b3eafb229441465692bbb311554",
+      "log": "logs/WeightedQRH.LowDetector.LowNominalEnergy.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowInverseNormalize",
+      "source_sha256": "bb124e55219e5e101a3fb77f467cebd8780c59d1310cb111f855ec6a92c01248",
+      "log": "logs/WeightedQRH.LowDetector.LowInverseNormalize.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowPhysicalInverseBound",
+      "source_sha256": "03265cc20407ba3da89a47eebf5ee702deaf751fc37c4dadb23b908690445f82",
+      "log": "logs/WeightedQRH.LowDetector.LowPhysicalInverseBound.verify.log",
+      "log_sha256": "28ebab7a66edf36de784d6c982ef93de87a0d1a59bdf974bf96b9bd762850e2f",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowUnselectedMass",
+      "source_sha256": "2f986b8dd11d777833b71c8cb5c03b61a872c28c103cb0cd308986aff5498452",
+      "log": "logs/WeightedQRH.LowDetector.LowUnselectedMass.verify.log",
+      "log_sha256": "66ceed6bd3b365862c16b5764ae961ac3b4b42ad369dfaf000a24e2a89c96736",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowCentralTuple",
+      "source_sha256": "723dc8f70be68ddd8d35b547d8c001758c7ebaf59f84118f5103699ed64ba2af",
+      "log": "logs/WeightedQRH.LowDetector.LowCentralTuple.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowRemoteMass",
+      "source_sha256": "bd7c42786b375c4a1553cdc6abcdb59f329253d71555eb62a5c5cc938d039fe3",
+      "log": "logs/WeightedQRH.LowDetector.LowRemoteMass.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowGaussianDyad",
+      "source_sha256": "4c86abeb572a00bc11d40374963d35d8b4ba06611e230eea1f08d4fa01d6965f",
+      "log": "logs/WeightedQRH.LowDetector.LowGaussianDyad.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowGaussianRemote",
+      "source_sha256": "e3199d648d86afced60329f4a37dc2c94be232e84a29b2c97b430689a25a8f7b",
+      "log": "logs/WeightedQRH.LowDetector.LowGaussianRemote.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowGaussianCentral",
+      "source_sha256": "9135028a3c413ea1ad51e5d2951cc7989ed0d8b1605f12689352083858b671d4",
+      "log": "logs/WeightedQRH.LowDetector.LowGaussianCentral.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowGaussianSum",
+      "source_sha256": "c424a1867bde15f31ed4b54af16b87243104a6a3d8344b7ad8d349715d378a88",
+      "log": "logs/WeightedQRH.LowDetector.LowGaussianSum.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowCommonBound",
+      "source_sha256": "5739aab6978c8600dc8fa963fa88dbe004c815f805dd0f6f6d11fe2b38e3384b",
+      "log": "logs/WeightedQRH.LowDetector.LowCommonBound.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowWindowBound",
+      "source_sha256": "b97374d819370571f4ce8681a6559392cbb7952579c5071f5772262aba6c358f",
+      "log": "logs/WeightedQRH.LowDetector.LowWindowBound.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.LowDetector.LowNormalized",
+      "source_sha256": "b71d6d677735e1d17e2cf04179e0e0934900f8aa948c95ff376695438fd92985",
+      "log": "logs/WeightedQRH.LowDetector.LowNormalized.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentData",
+      "source_sha256": "ae84b2c827dd5094c6a3c5cf00d91ca0e199a9dee34e98cddd91392244e97c0c",
+      "log": "logs/WeightedQRH.MomentData.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.SlotLengths",
+      "source_sha256": "01f5e56175d7b5d48544ab18558ea62936cfcadf8754e356cee6b82132a627b5",
+      "log": "logs/WeightedQRH.HighRows.SlotLengths.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.HighData",
+      "source_sha256": "e39c175c357e6d94c6e933232e11ddeeab872cb360fc6fc9870dc703463a0fa3",
+      "log": "logs/WeightedQRH.HighRows.HighData.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.HighDataFine",
+      "source_sha256": "d22a5c8587e21dd377b18e3212d5356347107ca90368466304b36bd0a67183a8",
+      "log": "logs/WeightedQRH.HighRows.HighDataFine.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentFinalAssemblyData",
+      "source_sha256": "d4aea49dfd8da435fa135553e7743f6a122a7fd4862faf4714f68f3283f0136a",
+      "log": "logs/WeightedQRH.MomentFinalAssemblyData.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.SourceProbe",
+      "source_sha256": "5024a391bae373a9f84e72a619e22c34b22bfdaa4a80e196c3ba1b7ccf82b7e3",
+      "log": "logs/WeightedQRH.HighRows.SourceProbe.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentNaturalFixedRaySourceFixedIdeal",
+      "source_sha256": "d8edc22cea906926a67f414191563533d3c0b9445959c960f675de5305e7b921",
+      "log": "logs/WeightedQRH.MomentNaturalFixedRaySourceFixedIdeal.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentNaturalFixedRaySourceFreeExceptional",
+      "source_sha256": "4e1494c68cc1e9f150b25343aca286e9c5d8fce415fb990b56521c6362792710",
+      "log": "logs/WeightedQRH.MomentNaturalFixedRaySourceFreeExceptional.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorEnergyInitialState",
+      "source_sha256": "1d2ead23b9c179f10eb66331d0cfdd3b1a8f75747f6d6f53740cf15e83bb939d",
+      "log": "logs/WeightedQRH.MomentDetectorEnergyInitialState.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorPlainSlotProfile",
+      "source_sha256": "0f2eb8a783b4ea6658785a95921b5a4f60626be99a1c8c148ef16c2b1c3dcbcc",
+      "log": "logs/WeightedQRH.MomentDetectorPlainSlotProfile.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorPlainCapacity",
+      "source_sha256": "8b9fc67fc619858949ce12abcc11ef847fb9dfd207438d9913ab71a24924ae1c",
+      "log": "logs/WeightedQRH.MomentDetectorPlainCapacity.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorPlainExceptional",
+      "source_sha256": "36f590903330964849110425ef5f51b31c5233e823158a04977add31701ead63",
+      "log": "logs/WeightedQRH.MomentDetectorPlainExceptional.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorPlainMarkedState",
+      "source_sha256": "9865f130d6848d7516c21515c456b677036f5bc81dbdb269742beb1efc0eafaa",
+      "log": "logs/WeightedQRH.MomentDetectorPlainMarkedState.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorPlainMomentParameters",
+      "source_sha256": "09b24f3536a1cfa0e0307e3a902024538a311ffce6e31d883fa5eee303082321",
+      "log": "logs/WeightedQRH.MomentDetectorPlainMomentParameters.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentParametersHighDataFine",
+      "source_sha256": "77bfca642e859eced9bf6fb088fe8b8bc4ea9b4372855ba63fc152acf4287b33",
+      "log": "logs/WeightedQRH.MomentParametersHighDataFine.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorMomentPrimeGeometry",
+      "source_sha256": "e438406e3858e26938dc719ae502f1611f558a0b65e5e072893a08f8dd2269d6",
+      "log": "logs/WeightedQRH.MomentDetectorMomentPrimeGeometry.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentInverseMarkedReferencePrimeGates",
+      "source_sha256": "090f381d9db099a938fb448f876059043ea9e67b96065daa06f59ed65918178f",
+      "log": "logs/WeightedQRH.MomentInverseMarkedReferencePrimeGates.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentInverseMarkedReferenceDeletedEnergy",
+      "source_sha256": "28f02cec57056cca4991701e1040f668b5c4ebd5a103b792f7b4b60c571bf7a2",
+      "log": "logs/WeightedQRH.MomentInverseMarkedReferenceDeletedEnergy.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentInverseMarkedReferenceFiberEnergy",
+      "source_sha256": "28dd63100671adb67777fac544fec6f76b1e71c7817a65acf23e96c425092e17",
+      "log": "logs/WeightedQRH.MomentInverseMarkedReferenceFiberEnergy.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorInverseMarkedField",
+      "source_sha256": "dc82744103fc57e353b955f8ba5190778354d93af93da3668e7f3f5b4bdb47c0",
+      "log": "logs/WeightedQRH.MomentDetectorInverseMarkedField.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorInverseFields",
+      "source_sha256": "90f4eb2c7292bab21afbff972224b5450a51c75fdc46bba4a74bc6a04d41e7be",
+      "log": "logs/WeightedQRH.MomentDetectorInverseFields.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorPlainUnmarkedField",
+      "source_sha256": "9ca3250119f98bc2adac31eba1057a28a825c653f31f3b65cba9831f4704f9ea",
+      "log": "logs/WeightedQRH.MomentDetectorPlainUnmarkedField.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorPlainUnmarkedRestrictedField",
+      "source_sha256": "c0f0b82358ef7bd0a98de19ac244f216974572392f44ee9c043a154e2105f389",
+      "log": "logs/WeightedQRH.MomentDetectorPlainUnmarkedRestrictedField.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentDetectorPlainMarkedFineField",
+      "source_sha256": "b34019ae5c585919ac751b0936f288f9d983736404832675c44e54f2845fec8b",
+      "log": "logs/WeightedQRH.MomentDetectorPlainMarkedFineField.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentFinalAssemblyMomentInput",
+      "source_sha256": "993c4455e8185c996f65631de16c315869ab71f6bb20d2d60a5a9db131db1782",
+      "log": "logs/WeightedQRH.MomentFinalAssemblyMomentInput.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentFinalAssemblyCertifiedBands",
+      "source_sha256": "bffe3e73e6385d4ec43a13b971c98d835eaae4a118d0443b19d5d474eeb4771a",
+      "log": "logs/WeightedQRH.MomentFinalAssemblyCertifiedBands.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentTerminalInput",
+      "source_sha256": "7302b88bb6e50de6a2a1ae4c9d7a10ffec5be58dc0a15716ee2be8b8b9867787",
+      "log": "logs/WeightedQRH.MomentTerminalInput.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.MomentSourceMoments",
+      "source_sha256": "beea6533f55cafcd0e1a7b15edc835cd2d2b1d2aeee2198eefef2523f7c9c8af",
+      "log": "logs/WeightedQRH.MomentSourceMoments.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.FullWCellInput",
+      "source_sha256": "f4673f8bed797382acb9b0b3c0dc69d95913e14acad90b710c616b966de80ec8",
+      "log": "logs/WeightedQRH.HighRows.FullWCellInput.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.FixedHigh",
+      "source_sha256": "4c1dc3ee0bf7f4f194cca63144a88057fcea8f98b93308dea6463c5311b94785",
+      "log": "logs/WeightedQRH.HighRows.FixedHigh.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.Continuation",
+      "source_sha256": "b0faf515f3d290eb3fdf911a860f0eb470c1bb0f6def4cc3f078a8a2bf9d14bd",
+      "log": "logs/WeightedQRH.Continuation.verify.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0
+    },
+    {
+      "module": "WeightedQRH.HighRows.ConditionalFinal",
+      "source_sha256": "e4b2aeb1454cf970d143a2b83d9dd0f63b0c2b9f2118b32e15662d41bc8302b7",
+      "log": "logs/WeightedQRH.HighRows.ConditionalFinal.verify.log",
+      "log_sha256": "b569b93347ab99222c3c30352b974e328b3aad3c3a49859878df9cfffc9651b5",
+      "exit_code": 0
+    }
+  ],
+  "status": "compiled",
+  "scope": "Compilation against supplied external object caches; inspect theorem assumptions separately.",
+  "changed_modules": [],
+  "finished_utc": "2026-10-09T23:19:13.193971+00:00"
+}

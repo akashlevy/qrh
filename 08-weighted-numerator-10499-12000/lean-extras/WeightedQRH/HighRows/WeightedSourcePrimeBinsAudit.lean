@@ -1,0 +1,2 @@
+import WeightedQRH.HighRows.WeightedSourcePrimeBins
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_prime_bins

@@ -1,0 +1,4 @@
+import WeightedQRH.NumeratorSourceClass
+#print axioms WeightedQRH.Numerator.source_packet_selected_bin
+#print axioms WeightedQRH.Numerator.source_box_capacity_eq
+#print axioms WeightedQRH.Numerator.source_packet_amplitude_class

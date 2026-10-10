@@ -1,0 +1,364 @@
+{
+  "created_utc": "2026-10-09T21:41:19.047683+00:00",
+  "updated_utc": "2026-10-10T01:12:00Z",
+  "result": {
+    "theta": "10499/12000",
+    "decimal": "0.874916666666666666...",
+    "scope": "The Riemann zeta function and every Dirichlet L-function (Mathlib definitions), and every finite-order residue Hecke L-function over Q(zeta_3) = Q(sqrt(-3)) in the original OpenAI HeckeFamily definition; strict half-plane Re s > 10499/12000; the trivial-character pole at s = 1 excluded. Not general GRH."
+  },
+  "method": "Weighted fourth moment of the reconstructed and reflected physical numerator, with selected prime factors and joint Euler coefficient bounds. Original kappa=3/4 throughout. No lower-kappa feedback or Li Xiang refinement is an input.",
+  "analytic_status": "Written analytic argument (research_audit/weighted_numerator_proof.tex and weighted_numerator_lemma.tex) with an end-to-end Lean formalization. The Lean development proves WeightedQRH.beta_le_theta : HeckeZeroSupremum.beta <= 10499/12000 and the zeta, Dirichlet and Hecke nonvanishing endpoints; every endpoint depends only on propext, Classical.choice and Quot.sound, on top of the imported original development (akashlevy/math@c388e88e6, pruned from openai/math fd4aeeb2e) and Mathlib. The former remaining input FullWAnalyticInput is proved (WeightedQRH.fullW_analytic_input := fullW_input_of_raw_source Numerator.actual_raw_fullW_input). Isolated rebuild and local Comparator checks pass (see lean_verification). No external human peer review. The manuscript (weighted_numerator_proof.tex, weighted_numerator_lemma.tex) has been revised to this status, recompiled and fully re-rendered (see pdf_review).",
+  "verification_limits": [
+    "No external human peer review; checking is mechanical (Lean kernel) plus AI-assisted reading.",
+    "The original analytic inputs are imported as compiled Lean from akashlevy/math@c388e88e6 (openai/math fd4aeeb2e pruned in place), not re-proved here; the written proof cites the September-30 paper's lemmas.",
+    "The isolated rebuild recompiled the 228 local WeightedQRH modules in the endpoints' import closure and the 3 challenge modules; the original-development, Mathlib and dependency objects were supplied prebuilt, not rebuilt in this run. The source hashes in the Lake build traces of the original-development objects were compared with the c388e88e6 sources and agree (reimplemented Lake hash; that comparison is not recorded in an evidence file). The same object directory also holds stale objects of 253 modules deleted by the prune; verify_parallel.py admits an external OAI import only if its module is tracked at c388e88e6, which excludes them.",
+    "WeightedQRH/ has 252 .lean files; 24 of them (audit/*Axioms modules, CertificateBenchmark, FullWAnalyticAudit, HighRows.MixedCollected and others) lie outside the endpoints' import closure and were not part of the isolated rebuild. WeightedQRH.theta_lt_public_cubic_lower (CertificateBenchmark.lean) was compiled only in the live development tree.",
+    "FinalAxioms.log prints axioms for 10 declarations (source_integrated_amplitude_classes, actual_raw_fullW_input, fullW_analytic_input, the four Final endpoints, the three Statements theorems); every theorem on their proof paths is covered transitively. physical_low_barrier is off the proof path and not covered by that log.",
+    "Comparator ran locally on macOS with an unsandboxed Landrun stand-in and a lake-build shim that only confirms prebuilt isolated objects exist; export, statement/definition comparison, axiom check and full kernel replay ran unchanged. Default Lean kernel only; NanoDa and con-ron second kernels have not been run.",
+    "Scope: zeta and all Dirichlet L-functions (Mathlib definitions) and finite-order residue Hecke characters of Q(zeta_3) in the original OpenAI definition; not general GRH. The half-plane is strict (Re s > 10499/12000) and the trivial-character pole at s = 1 is excluded.",
+    "The 13/15 barrier is a limitation of the stated low estimates only.",
+    "The public comparison is dated (as_of_utc) and is not an exhaustive novelty proof; outside claims and their verification reports were read, not rerun.",
+    "No unconditional priority claim."
+  ],
+  "original_source": {
+    "repository": "https://github.com/openai/math",
+    "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+    "path": "preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex",
+    "git_blob": "268c4e3206d460c617d3d2129742a72b831b3def",
+    "pinned_pdf": "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf",
+    "local_copy": "formalize_11_12/papers/paper78.tex",
+    "local_copy_byte_identical_to_pinned_original": true,
+    "note": "The same paper.tex blob is present at fork commit akashlevy/math@c388e88e6. The earlier value of this field named c388e88e6 as an openai/math commit; that was wrong."
+  },
+  "lean_source": {
+    "repository": "https://github.com/akashlevy/math",
+    "commit": "c388e88e6519d139ad2ca5571ef0c7fbf0e245b5",
+    "branch": "qrh-23-24-pruned",
+    "relation_to_openai_math": "openai/math fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb with declarations no QRH result uses pruned in place (prune commit 817ddb5e6), plus 23/24 modules (OAI.NumberTheory.DirichletL.QRH*) that the weighted proof does not import. Not an openai/math commit.",
+    "local_checkout": "formalize_11_12/math",
+    "compiled_objects": "formalize_11_12/upstream/.lake/build/lib/lean (Lake trace source hashes compared with the c388e88e6 sources and agree; the directory also holds stale objects of 253 modules deleted by the prune commit 817ddb5e6, which the isolated rebuild's tracked-import check excludes)",
+    "lean": "v4.34.1",
+    "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "PrimeNumberTheoremAnd": "c39a751132c88b6e8080b74c74023fd95b3d8be0 with the fork's lean/patches/PrimeNumberTheoremAnd-lean4341.patch (sha256 0890432340c0025973bcfe070b634355fa366cc831595f68526e4c73c8903d82)",
+    "rellich-kondrachov": "70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23 with the fork's lean/patches/rellich-kondrachov-lean4341.patch (sha256 0c121d8517dfeadc93ef24fe2deb56beec7cb3998e2552dee8f61c780b1408c8)",
+    "low_detector_ports": "The 41 low-detector ports were adapted from openai/math fd4aeeb2e (byte-identical to the lean-base copies named in weighted_formal/low_port_manifest.json). WeightedQRH/LowDetector/LowOriginalPools.lean was re-pointed on 2026-10-09 from the original module (deleted by the prune) to that module's own imports, Detector.LowSlotScales and Detector.RayPoolGood. See provenance_note in low_port_manifest.json."
+  },
+  "lean_verification": {
+    "recorded_utc": "2026-10-10T00:47:07Z",
+    "development": "research_audit/weighted_formal (sources WeightedQRH/ and ComparatorChallenges/)",
+    "theta": "10499/12000",
+    "endpoint_closure_local_modules": 228,
+    "endpoints": [
+      {
+        "name": "WeightedQRH.beta_le_theta",
+        "file": "WeightedQRH/Final.lean",
+        "statement": "HeckeZeroSupremum.beta \u2264 10499 / 12000"
+      },
+      {
+        "name": "WeightedQRH.hecke_nonzero",
+        "file": "WeightedQRH/Final.lean",
+        "statement": "\u2200 (\u03c7 : HeckeFamily.Character) (s : \u2102), 10499 / 12000 < s.re \u2192 s \u2260 1 \u2228 \u03c7.residue \u2260 1 \u2192 HeckeFamily.LFunction \u03c7 s \u2260 0"
+      },
+      {
+        "name": "WeightedQRH.dirichlet_nonzero",
+        "file": "WeightedQRH/Final.lean",
+        "statement": "\u2200 {q : \u2115} [inst : NeZero q] (\u03c7 : DirichletCharacter \u2102 q) (s : \u2102), 10499 / 12000 < s.re \u2192 \u00ac(\u03c7 = 1 \u2227 s = 1) \u2192 DirichletCharacter.LFunction \u03c7 s \u2260 0"
+      },
+      {
+        "name": "WeightedQRH.zeta_nonzero",
+        "file": "WeightedQRH/Final.lean",
+        "statement": "\u2200 (s : \u2102), 10499 / 12000 < s.re \u2192 s \u2260 1 \u2192 AnalyticAt \u2102 riemannZeta s \u2227 riemannZeta s \u2260 0"
+      }
+    ],
+    "comparator_form_statements": [
+      {
+        "name": "OAI.riemannZeta_ne_zero_of_10499_12000_lt_re",
+        "file": "WeightedQRH/Statements.lean",
+        "statement": "\u2200 {s : \u2102}, 10499 / 12000 < s.re \u2192 riemannZeta s \u2260 0",
+        "note": "No s \u2260 1 hypothesis, exactly like OpenAI's upstream 7/8 challenge: Mathlib's total riemannZeta takes a nonzero assigned value at s = 1."
+      },
+      {
+        "name": "OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re",
+        "file": "WeightedQRH/Statements.lean",
+        "statement": "\u2200 {q : \u2115} [inst : NeZero q] (\u03c7 : DirichletCharacter \u2102 q) {s : \u2102}, 10499 / 12000 < s.re \u2192 \u00ac(\u03c7 = 1 \u2227 s = 1) \u2192 DirichletCharacter.LFunction \u03c7 s \u2260 0",
+        "note": "Mathlib's _root_.DirichletCharacter.LFunction."
+      },
+      {
+        "name": "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_10499_12000_lt_re",
+        "file": "WeightedQRH/Statements.lean",
+        "statement": "\u2200 (\u03c7 : HeckeFamily.Character) {s : \u2102}, 10499 / 12000 < s.re \u2192 \u00ac(\u03c7.residue = 1 \u2227 s = 1) \u2192 HeckeFamily.LFunction \u03c7 s \u2260 0",
+        "note": "Original OpenAI HeckeFamily definitions, as restated in the upstream HeckeSevenEighths challenge."
+      }
+    ],
+    "final_step": {
+      "raw_input": "WeightedQRH.Numerator.actual_raw_fullW_input : OAI.SevenEighths.WeightedHighFinalAssembly.RawFullWAnalyticInput (WeightedQRH/NumeratorActualSource.lean)",
+      "input": "WeightedQRH.fullW_analytic_input : FullWAnalyticInput := fullW_input_of_raw_source Numerator.actual_raw_fullW_input (WeightedQRH/Final.lean; fullW_input_of_raw_source in WeightedQRH/HighRows/WeightedSourceRawCells.lean)",
+      "implications": "WeightedQRH/HighRows/ConditionalFinal.lean: beta_le_theta_of_fullW_input, hecke_of_fullW_input, dirichlet_of_fullW_input, zeta_of_fullW_input",
+      "low_original_pools_repoint": "WeightedQRH/LowDetector/LowOriginalPools.lean now imports Detector.LowSlotScales and Detector.RayPoolGood instead of the original module deleted by the fork's prune.",
+      "theorem_map": "research_audit/weighted_formal/final_assembly_theorem_map.txt"
+    },
+    "axioms": {
+      "audit_module": "research_audit/weighted_formal/WeightedQRH/FinalAxioms.lean",
+      "log": "research_audit/weighted_formal/.verification/final2_20261009/lib/logs/WeightedQRH.FinalAxioms.log",
+      "log_sha256": "e9788e6c2adbc6919bf4e37afe5cd9fd0b21429896dea3b77c9ac9c874d6eccc",
+      "declarations": [
+        "WeightedQRH.Numerator.source_integrated_amplitude_classes",
+        "WeightedQRH.Numerator.actual_raw_fullW_input",
+        "WeightedQRH.fullW_analytic_input",
+        "WeightedQRH.beta_le_theta",
+        "WeightedQRH.hecke_nonzero",
+        "WeightedQRH.dirichlet_nonzero",
+        "WeightedQRH.zeta_nonzero",
+        "OAI.riemannZeta_ne_zero_of_10499_12000_lt_re",
+        "OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re",
+        "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_10499_12000_lt_re"
+      ],
+      "axioms_used": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "source_scan": "All 228 closure modules: no sorry, admit, axiom, unsafe, implemented_by, extern, native_decide, skipKernelTC, elab, macro or run_cmd; the only set_options are maxHeartbeats and maxRecDepth. The challenge files contain sorry by design.",
+    "isolated_rebuild": {
+      "script": "research_audit/weighted_formal/verify_parallel.py",
+      "report": "research_audit/weighted_formal/final_rebuild_verification.json",
+      "report_sha256": "2a3faedaa36d9e806eba03214e73f0a15f257c288183843d1f3f56deceec0ef0",
+      "status": "compiled",
+      "targets": [
+        "ComparatorChallenges.WeightedQRHZeta",
+        "ComparatorChallenges.WeightedQRHDirichlet",
+        "ComparatorChallenges.WeightedQRHHecke",
+        "WeightedQRH.FinalAxioms"
+      ],
+      "modules": 231,
+      "local_lean_modules": 228,
+      "challenge_modules": 3,
+      "all_exit_codes_zero": true,
+      "failed": [],
+      "changed_modules": [],
+      "started_utc": "2026-10-10T00:21:47.866894+00:00",
+      "finished_utc": "2026-10-10T00:28:17.257990+00:00",
+      "lean": "/Users/akashlevy/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean",
+      "flags": [
+        "-DautoImplicit=false",
+        "-M",
+        "8192",
+        "-j",
+        "2",
+        "-R",
+        "/Users/akashlevy/Documents/riemann/research_audit/weighted_formal"
+      ],
+      "output_root": "research_audit/weighted_formal/.verification/final2_20261009/lib/lean",
+      "challenge_root": "research_audit/weighted_formal/.verification/final2_20261009/lib/challenges",
+      "live_development_directory_excluded_from_LEAN_PATH": true,
+      "external_imports": "229 (217 OAI, 12 Mathlib); every external OAI import checked to be tracked at source commit c388e88e6519d139ad2ca5571ef0c7fbf0e245b5",
+      "challenge_modules_compiled_against": "Mathlib and its dependencies only, before the solution modules"
+    },
+    "comparator": {
+      "tool": "Lean FRO comparator",
+      "comparator_commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+      "lean4export_commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+      "lean": "v4.34.1",
+      "kernel": "Lean default kernel",
+      "nanoda": "disabled (enable_nanoda false); NanoDa and con-ron second kernels not run",
+      "runner": "research_audit/weighted_formal/run_comparator.sh",
+      "object_root": "research_audit/weighted_formal/.verification/final2_20261009/lib/lean",
+      "results": [
+        {
+          "challenge": "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHZeta.lean",
+          "config": "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHZeta.json",
+          "solution_module": "WeightedQRH.Statements",
+          "theorem": "OAI.riemannZeta_ne_zero_of_10499_12000_lt_re",
+          "permitted_axioms": [
+            "propext",
+            "Quot.sound",
+            "Classical.choice"
+          ],
+          "enable_nanoda": false,
+          "log": "research_audit/weighted_formal/logs/comparator-WeightedQRHZeta.log",
+          "log_sha256": "c31980be663b125a7f7e3e07cdcc2e85d89eb1c26f68e77291af7f5bedb189cb",
+          "result": "Lean default kernel accepts the solution / Your solution is okay!"
+        },
+        {
+          "challenge": "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHDirichlet.lean",
+          "config": "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHDirichlet.json",
+          "solution_module": "WeightedQRH.Statements",
+          "theorem": "OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re",
+          "permitted_axioms": [
+            "propext",
+            "Quot.sound",
+            "Classical.choice"
+          ],
+          "enable_nanoda": false,
+          "log": "research_audit/weighted_formal/logs/comparator-WeightedQRHDirichlet.log",
+          "log_sha256": "6bf5b8045806e110e0cdbe4484411a3a2e1b03accd77a32176407f47b2cf3ded",
+          "result": "Lean default kernel accepts the solution / Your solution is okay!"
+        },
+        {
+          "challenge": "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHHecke.lean",
+          "config": "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHHecke.json",
+          "solution_module": "WeightedQRH.Statements",
+          "theorem": "OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_10499_12000_lt_re",
+          "permitted_axioms": [
+            "propext",
+            "Quot.sound",
+            "Classical.choice"
+          ],
+          "enable_nanoda": false,
+          "log": "research_audit/weighted_formal/logs/comparator-WeightedQRHHecke.log",
+          "log_sha256": "489266f8c6baaa1ae15019ac885f070e7cf3763cea645d562f1b3d517bc5677c",
+          "result": "Lean default kernel accepts the solution / Your solution is okay!"
+        }
+      ],
+      "negative_control": {
+        "challenge": "research_audit/weighted_formal/.verification/negcontrol_20261009/src/ComparatorChallenges/WeightedQRHNegControl.lean",
+        "description": "Zeta challenge with 1/2 in place of 10499/12000, same solution module",
+        "result": "rejected: Challenge and solution theorem statement do not match",
+        "log": "research_audit/weighted_formal/logs/comparator-NegControl.log",
+        "log_sha256": "39763e98b480d91df7231b36bfdac8e48bcfe5c72f39a40536e84be2d2beff9d"
+      },
+      "challenge_provenance": "Zeta and Dirichlet challenges import Mathlib only and use only Mathlib definitions. The Hecke challenge is OpenAI's upstream ComparatorChallenges/HeckeSevenEighths.lean with only the theorem name and the constant changed.",
+      "trust_caveats": [
+        "Run locally on macOS, not in the tracker's Linux sandbox.",
+        "Landrun (Linux Landlock) replaced by an unsandboxed stand-in.",
+        "Comparator's lake build step replaced by a shim that only confirms the prebuilt isolated objects exist.",
+        "Export, statement/definition comparison, axiom check and full kernel replay ran unchanged.",
+        "Default Lean kernel only; NanoDa and con-ron have not been run.",
+        "Comparator's lean-toolchain set to v4.34.1 (pinned v4.34.0); source otherwise unchanged."
+      ],
+      "comparator_toolchain_note": "The comparator checkout (HEAD d03acab154d2...) has one local change: lean-toolchain set to leanprover/lean4:v4.34.1 (pinned v4.34.0) to match the objects; its source is otherwise unchanged. lean4export is clean at 076e8e57707e."
+    },
+    "reproduce": [
+      "cd research_audit/weighted_formal",
+      "python3 verify_parallel.py ComparatorChallenges.WeightedQRHZeta ComparatorChallenges.WeightedQRHDirichlet ComparatorChallenges.WeightedQRHHecke WeightedQRH.FinalAxioms --report <report.json> --output-root <fresh>/lib/lean",
+      "OBJROOT=<fresh>/lib/lean bash run_comparator.sh Zeta   (likewise Dirichlet, Hecke)",
+      "Required next to WeightedQRH/ and ComparatorChallenges/: verify_parallel.py, verify.py (imported by it), run_comparator.sh and lean_environment.json. verify_parallel.py hardcodes the original-development object directory as ../../formalize_11_12/upstream relative to its own directory (stripped from the challenges' LEAN_PATH) and defaults --source-checkout to ../../formalize_11_12/math; adapt these on another machine."
+    ]
+  },
+  "formal_status": {
+    "unconditional_improved_endpoint": true,
+    "former_remaining_input": "OAI.SevenEighths.WeightedHighFinalAssembly.FullWAnalyticInput, now proved as WeightedQRH.fullW_analytic_input (Final.lean)",
+    "final_endpoints": "WeightedQRH/Final.lean and WeightedQRH/Statements.lean",
+    "endpoint_audit": "WeightedQRH/FinalAxioms.lean",
+    "conditional_endpoints": "WeightedQRH/HighRows/ConditionalFinal.lean (implications from FullWAnalyticInput, used unchanged by Final.lean)",
+    "new_reconstruction_audit": "WeightedQRH/FullWAnalyticAudit.lean (component audit, outside the endpoint closure)",
+    "axioms_observed_in_audit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "added_analytic_axioms": false,
+    "height_quantifiers": "A fixed weighted height degree is chosen before tau; all Fourier frequencies use direct certified PositiveAt / ZeroAt, not a finite-height moment extrapolation.",
+    "original_numerator_moment": "WeightedQRH.Numerator.certified_original_numerator_fourth: compiled and standard-foundational-axiom audited; no added analytic hypothesis replaces the proved original-numerator moment.",
+    "isolated_dependency_rebuild": "PASS (final): research_audit/weighted_formal/final_rebuild_verification.json, 231 modules (228 local + 3 challenge), all exit 0. Earlier component rebuilds weighted_formal/fullw_rebuild_verification.json (80 modules) and weighted_formal/conditional_dependencies_rebuild.json (136 modules, completed) are superseded."
+  },
+  "public_comparison": {
+    "as_of_utc": "2026-10-10T00:16:22Z",
+    "search_record": "research_audit/public_search_final_20261009.json",
+    "search_record_sha256": "e8d77654b621505d661ff479f60753dbcdce59959933f4f03c30fb8575cc30c5",
+    "best_comparable_bound_found": "unique real root in (0.8749570194,0.8749570195) of 7884*s^3-18819*s^2+14643*s-3686, approximately 0.87495701942009894613",
+    "claimants": "Written: GPT-6 Astra and Joseph M. Shunia; Jizhou Guo. Lean package: Nielstron, in the open, unmerged GTimG/QuasiRiemannTracker PR #2 (checks reported by the PR author).",
+    "source": "https://github.com/nielstron/QuasiRiemannTracker/blob/0284b10d3c8c92b4d8995c36f24728be03815b4a/public/proofs/nielstron-algebraic-20261009-kernels/result.json",
+    "tracker_listed_best": "874957019420098946128604623/10^27 (Nielstron, merged PR #1; tracker status framework-verified)",
+    "exact_improvement": "10499/12000 is smaller than the cubic root by about 4.0353e-5 (0.0000403527534322794619...). The Lean lemma WeightedQRH.theta_lt_public_cubic_lower (CertificateBenchmark.lean) proves theta < 8749570194/10^10, the lower end of the cubic-root bracket. CertificateBenchmark.lean is a stand-alone module outside the endpoints' import closure and the isolated rebuild (compiled in the live development tree only). WeightedQRH.theta_lt_public (Parameters.lean, inside the closure and the isolated rebuild) proves theta < 874957019420098946128604623/10^27, the tracker's listed rational.",
+    "conditional_or_excluded": "Guo 328/375 = 0.874666... is below 10499/12000 but is stated by its source to be conditional on unproved Hypothesis 11.1; it is excluded from the unconditional comparison. Chakhkiev 10937/12500 is self-described as conditional. Li Xiang's cubic sigma* Lean theorem carries an explicit hypothesis (README and metadata only were read; no proof code was fetched or reused).",
+    "coverage": "Dated search, not an exhaustive novelty proof. Outside claims and their verification reports were read, not rerun. No outside refinement proof code was fetched, imported, executed or reproduced."
+  },
+  "exact_verification": {
+    "rational_bernstein_rectangles": [
+      1,
+      9
+    ],
+    "auxiliary_checks": 32,
+    "uniform_high_margin": "1/10000",
+    "negative_control": "Margin 1/1000 rejected at delta=7/16,x=1/2",
+    "reproduce": "python3 research_audit/weighted_numerator_certificate.py --output research_audit/weighted_numerator_certificate.json",
+    "standalone_standard_library_only": true
+  },
+  "barrier": {
+    "value": "13/15",
+    "scope": "Unchanged stated Gram and reflected-row low majorants; not a lower bound on actual zeros and not a no-go theorem for different estimates or probes."
+  },
+  "pdf_review": {
+    "status": "complete",
+    "pdf": "output/pdf/weighted_numerator_proof.pdf",
+    "pdf_sha256": "7ea0493e5f1d6b5f552ec64bc368740dcd8451815e015dc1158bcd19caaaf3e3",
+    "pages": 16,
+    "all_pages_rendered_and_visually_inspected": true,
+    "pages_directory": "output/pdf/pages_final_20261009",
+    "page_files": "page-01.png to page-16.png (909x1286 px, 110 dpi A4), one per PDF page",
+    "compiled_utc": "2026-10-10T01:09:13Z",
+    "rendered_utc": "2026-10-10T01:09:13Z",
+    "visually_inspected": "2026-10-09 (PDT); final recheck completed 2026-10-10T01:18Z",
+    "sources_at_inspection_sha256": {
+      "research_audit/weighted_numerator_proof.tex": "0ab9e231b5bc26a78649ee6c6eb358126c309f14e216900e2df33a79ec1391ef",
+      "research_audit/weighted_numerator_lemma.tex": "01018c660f039a29796732f2258c3c34ab04b6f9d3b6768ad3bfd97ab273389f"
+    },
+    "tex_log": "output/pdf/weighted_numerator_proof.log: 16 pages; no overfull or underfull boxes, no undefined references or citations, no rerun request",
+    "pdf_metadata": "Title 'Weighted numerator moments in the quasi-Riemann argument', Author 'Akash Levy'",
+    "note": "Final recheck after fixes: every one of the 16 rendered pages of the PDF with the sha256 above was viewed again, and the abstract, Theorem 1, the Lean statements, the public comparison (Section 7), the Lean correspondence (Section 8) and the verification section (Section 9) were re-read against the Lean sources, final_rebuild_verification.json, FinalAxioms.log, the Comparator logs, the certificate JSON and public_search_final_20261009.json. Evidence digests printed on page 15 match the files. The footnote on page 1 carries the attribution required by the user. No layout defect, mathematical error or overstatement was found. The bibliography continues onto page 16 (references 3-8).",
+    "open_issues": [
+      "nit (abstract, weighted_numerator_proof.tex line 41): 'all 228 modules in the dependency closure of the endpoints'. The import closure of Final.lean and Statements.lean is 227 local modules; the 228th is the audit module FinalAxioms.lean. Section 9 states the rebuilt set correctly.",
+      "nit (Section 8, lines 593-597): FinalAxioms.lean is said to print the statements and the axioms of source_integrated_amplitude_classes and the other nine declarations; it has no #check of source_integrated_amplitude_classes, only #print axioms (final_assembly_theorem_map.txt step 10 states this correctly).",
+      "nit (Section 8, line 600): 'outside the endpoint's import closure' should read 'endpoints''.",
+      "nit (Section 9, Reproduction block): verify_parallel.py and run_comparator.sh sit beside WeightedQRH/, but weighted_numerator_certificate.py is in evidence/; the block gives no working directory for the last command."
+    ],
+    "superseded_record": {
+      "pages": 12,
+      "all_pages_rendered_and_visually_inspected": false,
+      "status": "All twelve pages of the proposition/correspondence revision were inspected. Subsequent masked-amplitude-count explanation compiles without TeX warnings; affected-page rendering review pending."
+    }
+  },
+  "sha256": {
+    "output/pdf/weighted_numerator_proof.pdf": "7ea0493e5f1d6b5f552ec64bc368740dcd8451815e015dc1158bcd19caaaf3e3",
+    "research_audit/weighted_numerator_proof.tex": "0ab9e231b5bc26a78649ee6c6eb358126c309f14e216900e2df33a79ec1391ef",
+    "research_audit/weighted_numerator_lemma.tex": "01018c660f039a29796732f2258c3c34ab04b6f9d3b6768ad3bfd97ab273389f",
+    "research_audit/weighted_numerator_certificate.py": "d82213a96c033933435a7bcf70afb8c1b80f9b7b49a17615ea34ee27a6f40112",
+    "research_audit/weighted_numerator_certificate.json": "86499d6f7640488afa6762da6ebaba8dba84aabd49b2f8c16803e63c517bd509",
+    "research_audit/weighted_numerator_global_referee.txt": "1b1abcaf39ed1bbb13c48b276db245f3f4e1d039bcc840ffa90d34aec338de44",
+    "research_audit/weighted_numerator_complete_referee.txt": "6a90ae1f9f0ba18bc04075e2236adc1cb4980202b304aa7f05d3ef94a774e548",
+    "research_audit/weighted_numerator_assembly_referee.txt": "de0f2b3c3f1e99fde66e44d0e0bb71a5671d684258f3380a4a5fb1f56463ae91",
+    "research_audit/weighted_numerator_referee.txt": "b42bbca5c6bf1062f35c8cf3d208488d16fa282dcddec7852a5b64985d724208",
+    "research_audit/weighted_holder_referee.txt": "5afd832c7c4c8de4cde9ee8d0ccde915b2121e79130000e0d173143b7baec91e",
+    "research_audit/public_benchmarks_20261009.json": "7890a5bdb54eb4526cb64e81024f1722b2eabba0c7c6a19adf784cb6a6e3fc55",
+    "formalize_11_12/papers/paper78.tex": "42a5ee0febca59fd1def55cfd6c6808c322ef4237d7726303ea52f711deac6a3",
+    "research_audit/public_search_formalization_20261009.json": "ac00410ac718ac107333b3e7350b7ea7b387000002a0fbb41738d849cbce0d90",
+    "research_audit/weighted_formal/WeightedQRH/FullWAnalyticAudit.lean": "2bb9f13c481f2b41e803a77cd4c8be3ed3dd49526615e9a97013b90bec1c2a37",
+    "research_audit/weighted_formal/logs/WeightedQRH.FullWAnalyticAudit.log": "dbd2e61d7bdc8bc34b178bb57c65efb53e9accf48aec49f2f0d29d6eb536295f",
+    "research_audit/weighted_formal/WeightedQRH/NumeratorOriginalFourth.lean": "60ed9d8bc612fd9bc4951c7eccd526513f62d64642a38b538c54092b7d40ec7f",
+    "research_audit/weighted_formal/WeightedQRH/NumeratorReflectionData.lean": "6aef5609672710f6084f5d28bfa06aec3c167540af40a0393b96fab6610da44a",
+    "research_audit/weighted_formal/WeightedQRH/NumeratorDiscarded.lean": "1a61deb60de1b63d0319e6ae75d8b899f4ae7277efe72bc0928aa4562ada5c3b",
+    "research_audit/public_search_refresh_20261009.json": "d3386ebb378bd4f33e93a06998d87d0db4c6882dad220c52d336984a3ff1c8eb",
+    "research_audit/public_search_final_20261009.json": "e8d77654b621505d661ff479f60753dbcdce59959933f4f03c30fb8575cc30c5",
+    "research_audit/HANDOFF_ROOT_20261009.txt": "44809c3d2f236137049c053d6580771050bed5abd7b6e58e0bcde24e631dda29",
+    "research_audit/weighted_formal/WeightedQRH/Final.lean": "4b1722e34bf07a8b36caf90d9bda0c79f85a578e638ab7f08b190a8305bd0c33",
+    "research_audit/weighted_formal/WeightedQRH/Statements.lean": "371bb603fbbfa26c84afce9547b04cc58c54aaf4849a184422b84b2307a33ab9",
+    "research_audit/weighted_formal/WeightedQRH/FinalAxioms.lean": "b79e8bb88f1aae73b102019cf07a250eff05683cf0d9838a8dec043fcd7f09d1",
+    "research_audit/weighted_formal/WeightedQRH/NumeratorActualSource.lean": "03f14a1688d1b458ac918d2267bfa9f559653f782f2d413a79345c60df9ae694",
+    "research_audit/weighted_formal/WeightedQRH/NumeratorActualSourceHelpers.lean": "2fd61e7b90265209743bdc640ae6a814f0ecd0155021c2a0ab5c7f69879d1039",
+    "research_audit/weighted_formal/WeightedQRH/NumeratorSourceCollect.lean": "db4f4ef2ef8132b130504fd63c3d8d802abe8e9b4315e91d40d63d35ca5627ab",
+    "research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceRawCells.lean": "3ee1772ff16a4af8eda9b83c8cd1ef10baecfcdc6e0534ae842d6673eba991f3",
+    "research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceFinalAssembly.lean": "78fed4a17d98a059d0f634f51744ae3a069f149ec24574e47c89d4103e41959e",
+    "research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceFinish.lean": "c8b7e7bf64aa095ebdd787beb6a5ea62549654a8da65c8d94666bf8f9bb7ec34",
+    "research_audit/weighted_formal/WeightedQRH/HighRows/ConditionalFinal.lean": "e4b2aeb1454cf970d143a2b83d9dd0f63b0c2b9f2118b32e15662d41bc8302b7",
+    "research_audit/weighted_formal/WeightedQRH/LowDetector/LowOriginalPools.lean": "6e04a774f5eed412ffafe9d7d7f65a8105c57a4d7d3e1586bbb804a56a8e60f9",
+    "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHZeta.lean": "3e7bee511711a0eac5f10b95f76beddd3a60b299631afe4fd8f8d138d9f0cf12",
+    "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHDirichlet.lean": "7a963f76b42ad2591683d518028df422acef135c25f80c5f920e6227b2498cdc",
+    "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHHecke.lean": "62c18a33a7c09506095af70b1aa9a0cb5b136b8c695d5b721bcfc8475f921fd3",
+    "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHZeta.json": "eb1f2d365bc0647c74cfbd17fb818b8c88f1fa10511320881a5e1eb2f54c772f",
+    "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHDirichlet.json": "66cf28f483a9ac3fc615ee51d79b3c1c8d61288d6ae18dba20f3f3ca617670c5",
+    "research_audit/weighted_formal/ComparatorChallenges/WeightedQRHHecke.json": "b51efcca9ca44ffc9a573ee58213b215614e7de5baa4fa59ece5183aabf7f9d0",
+    "research_audit/weighted_formal/final_rebuild_verification.json": "2a3faedaa36d9e806eba03214e73f0a15f257c288183843d1f3f56deceec0ef0",
+    "research_audit/weighted_formal/.verification/final2_20261009/lib/logs/WeightedQRH.FinalAxioms.log": "e9788e6c2adbc6919bf4e37afe5cd9fd0b21429896dea3b77c9ac9c874d6eccc",
+    "research_audit/weighted_formal/logs/comparator-WeightedQRHZeta.log": "c31980be663b125a7f7e3e07cdcc2e85d89eb1c26f68e77291af7f5bedb189cb",
+    "research_audit/weighted_formal/logs/comparator-WeightedQRHDirichlet.log": "6bf5b8045806e110e0cdbe4484411a3a2e1b03accd77a32176407f47b2cf3ded",
+    "research_audit/weighted_formal/logs/comparator-WeightedQRHHecke.log": "489266f8c6baaa1ae15019ac885f070e7cf3763cea645d562f1b3d517bc5677c",
+    "research_audit/weighted_formal/logs/comparator-NegControl.log": "39763e98b480d91df7231b36bfdac8e48bcfe5c72f39a40536e84be2d2beff9d",
+    "research_audit/weighted_formal/run_comparator.sh": "76469230a5bd4a0a420424d431cd9d011deedb9157d1db2473fccb40a2930f28",
+    "research_audit/weighted_formal/verify_parallel.py": "6fb6515d41051a67a51be4c3c676a7a67ed8afa8a14d9f53943bcfa5302c712a",
+    "research_audit/weighted_formal/final_assembly_theorem_map.txt": "1ed2d42093bdd2c7a42e4ec37b091c3cb5c39a77b38e6299dd197e7e6fc5def8",
+    "research_audit/weighted_formal/low_port_manifest.json": "5e37935b6feee8dbc5fcfe97b46fd9399c2d3e7f6b46751558a414558abdd15b"
+  },
+  "sha256_note": "Recomputed with SHA-256 at 2026-10-10T01:12:00Z after the final manuscript pass; the .tex, lemma, PDF and final_assembly_theorem_map.txt entries were refreshed then, the others re-verified unchanged."
+}

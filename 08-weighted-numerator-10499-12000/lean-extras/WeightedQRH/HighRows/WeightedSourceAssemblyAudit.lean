@@ -1,0 +1,11 @@
+import WeightedQRH.HighRows.WeightedSourceCount
+import WeightedQRH.HighRows.WeightedSourceFinish
+#print axioms WeightedQRH.rowCount_antitone
+#print axioms WeightedQRH.masked_amplitude_class_count
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_amplitude_count
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_normalizer_bound
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_integrated_certificate
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_fixed_budget
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_height_absorption
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_normalized_fullW_of_integrated
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.fullWCellsAt_of_integrated

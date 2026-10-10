@@ -1,0 +1,3 @@
+import WeightedQRH.NumeratorFreeScalarBound
+#print axioms WeightedQRH.Numerator.numeratorFreeRowScalar_bound
+#print axioms WeightedQRH.Numerator.numeratorFreeRowScalar_arithmetic_bound

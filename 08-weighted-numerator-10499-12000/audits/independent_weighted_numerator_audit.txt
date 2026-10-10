@@ -1,0 +1,228 @@
+INDEPENDENT WEIGHTED PHYSICAL NUMERATOR AUDIT
+2026-10-09. Sources: original local paper78.tex only; no Li Xiang proof.
+Scope: proves a main-slot weighted-numerator estimate from the original
+fourth-moment lemma and explicit original Euler identities. It does not by
+itself establish the full modified-probe theorem: error-slot subsets,
+outer row ranges, low geometry and principal continuation remain required.
+
+1. PRECISE CLAIM
+
+Let U=Z^d, Y=Z^ly=U^y, 1/2 <= y <= 1. Work in a fixed dynamic
+bin a=(1+delta)/2 with delta>=1/50, and on one main-slot amplitude
+set C with #C << U^(R+epsilon). Fix the external s,z parameters,
+Re(s)=a+16e, Re(z)=17/50. Write L=ell/d for the total slot length.
+Assume 3/4<=kappa<=1 and beta_* <=(1+kappa)/2 whenever kappa<1.
+The physical rows u are sixth-power-free, prime to the fixed set S,
+and induce outside the fixed ray family Theta. All slots retain their
+original disjoint prime supports and zero extensions. Let
+
+  n0=1-y,   z0=min(L,(1-2n0)/(6kappa)),   0<=q<=delta/2.
+
+For the term in which every slot is its main prime sum, the full w
+integral (including the ORIGINAL Euler correction H_u) satisfies the
+following row-sum bound, with fixed seminorm/height factors understood:
+
+  sum_{u in C} | (1/2pi i) int Y^(w-1) W1hat(w)
+                       L^S(w,chi_u) H_u(s,w,z) dw |
+                   product_i |Q_i(u;z)|
+  << Y^(-1/2) U^((3R+1)/4+qL-q z0/2+epsilon).
+
+There is the usual arbitrarily small capacity/mesh loss. The row set C
+may depend on the retained s,z parameters; no separate meromorphic
+continuation of C is needed. The assertion is applied pointwise in those
+parameters after moving the original fixed dynamic-bin sum.
+
+2. EXACT w-COEFFICIENT STRUCTURE
+
+Paper78 lines 4010-4057 gives, with T=Q^(-w),
+
+ P_p^*=(1-Rp)^(-1) [ Rp(1-Q^(-1))/(1-V)
+          -eta(p)(Q-1) Q^(-s) T V^(1_{j<=1})/(1-V) + J_j(T) ],
+
+where every J_j is a polynomial of degree <=1 in T; Rp and V are
+independent of w. Its normalized H_p is a polynomial of degree <=2
+in T. At a ramified prime j>0, W=D=0, so its degree is <=1.
+Consequently there are exact coefficients h_k(u;s,z), indexed by
+integral ideals k with local exponents at most two, for which
+
+ H_u(s,w,z)=sum_k h_k(u;s,z) (Nk)^(-w).
+
+These coefficients depend on the varying row. They must NOT be inserted
+as arbitrary coefficients in the fourth-moment theorem. The following
+rowwise coefficient norm eliminates them first.
+
+Set rho=delta/4 and w0=1/2-rho. Then
+
+ s_r+w0 = 1+delta/4+16e >1,
+ w0>=1/4 (if delta<=1),
+ s_r>=51/100,
+ z_r=17/50.
+
+At p not dividing u, put E_p=P_p^*+D. The cancellation of the
+constant coefficient is exact before taking coefficient absolute values:
+
+ E_p= [ Rp(1-Q^(-1))/(1-V) -D Rp
+        +T {chi_p(u) Rp-eta(p)(Q-1)Q^(-s)V/(1-V)} ]/(1-Rp).
+
+The original defect identity is
+
+ H_p-1=[D(V+W-VW)-VW+(1-V)(1-W)E_p]/(1-D).
+
+Taking the weighted l1 norm of this POLYNOMIAL in T, at |T|=Q^(-w0),
+therefore has exactly the same monomial upper bounds as the source's
+local-defect proof, without relying on cancellation between distinct
+powers of T. In particular
+
+ |h_{p,0}-1| + |h_{p,1}| Q^(-w0)+|h_{p,2}| Q^(-2w0)
+    << Q^(-1-epsilon_H)             (p not dividing u),
+ |h_{p,0}-1| + |h_{p,1}| Q^(-w0)
+    << Q^(-epsilon_H)               (p dividing u),
+
+where one may reduce epsilon_H to min(delta/4,1/50); a further fixed
+factor reduction safely covers a bounded positive e range. The strict
+ramified term has exponent 1-s_r-w0=-delta/4-16e; the other ramified
+terms are smaller by the source's six-valuation table. All unit phases
+are bounded uniformly. Hence, by multiplication and the divisor-product
+bound,
+
+  sum_k |h_k(u;s,z)| (Nk)^(-1/2+rho) <<_epsilon U^epsilon.       (A)
+
+This bound is uniform in all imaginary parts of s,z and in the physical
+row; constants may depend on fixed bin buffers and arithmetic data.
+The fact that ramified local majorants are not summable over ALL primes
+is harmless: only primes dividing this row u occur in that finite product.
+One should not replace (A) by sum_k sup_u |h_k(u)|..., which is stronger
+and is not proved.
+
+3. EXACT NUMERATOR RECONSTRUCTION AND POSITIVE ENLARGEMENT
+
+Define S_u(X)=X^(-1/2) sum_n chi_n(u) W1(Nn/X), with the original S
+exclusions. On an absolute w line, Mellin inversion and the preceding
+Euler series give
+
+ B_u := (1/2pi i) int Y^(w-1) W1hat(w)L^S(w,chi_u)H_u(s,w,z) dw
+      = Y^(-1/2) sum_k h_k(u;s,z)(Nk)^(-1/2) S_u(Y/Nk).        (B)
+
+The sign of the scale shift is Y/Nk, not Y Nk. W1 has compact support
+in (0,infinity), so in (B) only Nk<=C_W Y can occur. Since the
+numerator is nonprincipal and H is holomorphic from an absolute line
+to w0, the same identity represents the shifted w integral. Horizontal
+joins are justified by the original polynomial strip bounds and arbitrary
+Mellin decay. The denominator L^S(s,eta conjugate(chi_u)) is independent
+of w and remains outside this inversion.
+
+By (A),
+
+ |B_u| <= Y^(-1/2) U^epsilon
+           sup_{1<=K<=C_W Y} K^(-rho) |S_u(Y/K)|.             (C)
+
+This is the key legitimate positive enlargement: all row-dependent
+arithmetic coefficients have disappeared into a uniform scalar. What
+remains is only a rowwise SCALE supremum in an allowed plain polynomial,
+not a rowwise coefficient choice. A logarithmic scale partition plus the
+parameter Sobolev lemma bounds the supremum by finitely many profile
+derivative integrals, costing U^epsilon. The K range is polynomial, so
+there are O(log U) unit boxes in log K.
+
+4. REFLECTION, CONDUCTOR, AND MASKS
+
+For a physical sixth-power-free u, every good prime dividing u has
+primitive conductor exponent exactly one (paper78 lines 8960-9010).
+There is no additional moving redundant prime mask: the character is
+already zero precisely at those good conductor primes, together with
+fixed S. Its primitive conductor scale C_u satisfies C_u<<_S U.
+The fixed S omissions may be dealt with by the source's natural
+reflection identity, with bounded or subpower total coefficient mass.
+
+At K=U^v, the original plain scale is X=Y/K=U^(y-v). Reflection
+therefore produces scales <=U^(1-y+v+xi)=U^(n0+v+xi), with the
+conjugate natural row character. This inequality remains useful even
+when the actual conductor is much smaller than U. Small actual
+conductor only makes the reflected scales shorter. Coefficient mass,
+subunit scales, large transformed annuli and row-dependent scales are
+handled exactly as in paper78 lines 12720-12820: summable annular
+weights followed by a rowwise scale supremum and Sobolev. Errors can
+be made an arbitrary negative power, uniformly after finite derivative
+orders are fixed. A possible root number has modulus one and is removed
+only in the absolute value.
+
+The reflected numerator has character conjugate(chi_u), the SAME
+orientation as each physical main slot Q_i. Conjugating the entire
+product gives positive orientation chi_u, which is the orientation of
+Lemma plain. Every Q_i coefficient is 1_{p in 1_T}, a fixed finite
+combination of the allowed ray characters; no growing conductor is
+hidden in it. Common masks and original nonunit zeros remain intact.
+Row restrictions may be removed from the resulting nonnegative moment.
+Physical large rows ramify outside S, so they induce outside Theta,
+as required by the positive-slot case.
+
+5. WEIGHTED HOLDER ESTIMATE
+
+For a reflected scale of length n<=n0+v+xi, select whole positive slots
+of total length <=
+
+ z(v)=min(L, max(0,(1-2(n0+v))/(6kappa)))
+
+with a small capacity decrement and mesh loss. The original amplitude
+selection proof gives |Qsel|^2>=U^(2q z(v)-epsilon).
+The original fourth moment, with two copies of the same reflected plain
+polynomial and the selected slots, gives
+
+ sum_u |S_n(u)|^4 |Qsel(u)|^2 << U^(1+epsilon).
+
+Holder on the particular amplitude set C then gives
+
+ sum_C |S_n(u)|
+   <= U^(-q z(v)/2+epsilon) (#C)^(3/4)
+             (sum_u |S_n(u)|^4 |Qsel(u)|^2)^(1/4)
+   << U^((3R+1)/4-q z(v)/2+epsilon).
+
+The full main-slot product is <=U^(qL+epsilon). Importantly, the slots
+selected to prove the moment are NOT additionally removed from that
+physical product; the gain has already come from their lower bound
+inside the fourth moment. This avoids either missing or double-counting
+a half-amplitude factor.
+
+Since
+
+ z(v)>=max(0,z0-v/(3kappa)),
+ rho=delta/4 > q/(6kappa)       (q<=delta/2, kappa>=3/4),
+
+we obtain for every v>=0
+
+ -rho v -q z(v)/2 <= -q z0/2.
+
+In fact rho-q/(6kappa)>=5delta/36 when kappa>=3/4.
+Insert this uniform inequality into (C), use the scale-Sobolev bound,
+and sum the logarithmic scale boxes. This proves the claim in Section1.
+The zero-capacity branch uses the unrestricted zero-slot fourth moment;
+there is no division by a vanished prime factor.
+
+6. CORRECTION TO THE HIGH EXPONENT
+
+The old all-main estimate bounds the w part rowwise by
+Y^(-a) U^(R+delta/2), apart from the same main-slot product U^(qL).
+The new estimate replaces that part by
+Y^(-1/2) U^((3R+1)/4-qz0/2).
+Thus the base-Z change to the OLD high exponent is exactly
+
+  ly*delta/2 + d*((1-R)/4-delta/2-qz0/2).
+
+For a reference theta, the resulting all-main high exponent is
+
+ E_weighted = a-theta + h*(17/50-1/6) -ly/2-ell/2+qell
+              +d*((3R+1)/4-17/50-qz0/2).
+
+It is valid to take the minimum of this and the old all-main estimate.
+It is NOT yet valid to apply this formula to every error-slot subset
+without an additional analysis of its w-dependent factors and ramified
+conductor savings. That separate issue is material for a full proof.
+
+7. AUDIT STATUS
+
+Established analytically from the explicit original identities and the
+original plain-moment theorem: the entire all-main weighted-numerator
+route, including row-dependent Euler coefficients and conductor scales.
+This is a derived lemma, not a kernel-checked Lean theorem. It does not
+claim an unconditional improved theta until the other physical-probe
+pieces and global exponent optimization have been proved.

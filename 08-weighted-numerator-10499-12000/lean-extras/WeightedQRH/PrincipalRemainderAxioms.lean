@@ -1,0 +1,9 @@
+import WeightedQRH.PrincipalRemainderNormalized
+
+#print axioms WeightedQRH.remainder_globalClosedCorrection_analytic_x
+#print axioms WeightedQRH.PrincipalFiniteProduct.combined_slot_bound_sharp
+#print axioms WeightedQRH.PrincipalTransport.source_initial_ordered_at_a
+#print axioms WeightedQRH.PrincipalRemainderBounds.source_remainders_strict_saving
+#print axioms WeightedQRH.PrincipalPhysical.physical_principal_residue_remainder
+#print axioms WeightedQRH.PrincipalResidueActual.normalized_actual_window_residue
+#print axioms WeightedQRH.PrincipalNormalized.actual_ray_principal_comparison

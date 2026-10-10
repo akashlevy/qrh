@@ -1,0 +1,458 @@
+{
+  "provenance_note": {
+    "recorded": "2026-10-09 (PDT) / 2026-10-10 (UTC)",
+    "lean_base_sources": "All 41 'source' files listed below (formalize_11_12/lean-base/OAI/...) are byte-identical to openai/math commit fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb at lean/OAI/... (checked with git show against the local checkout formalize_11_12/math; the recorded source_sha256 values still match). The ports were therefore adapted from openai/math fd4aeeb2e. The Lean development they are compiled against is the pruned fork akashlevy/math@c388e88e6519d139ad2ca5571ef0c7fbf0e245b5 (branch qrh-23-24-pruned), where 40 of these 41 originals are present in their pruned form (their bytes differ from fd4aeeb2e) and one (Detector/LowOriginalPools) was deleted by prune commit 817ddb5e6. formalize_11_12/lean-base is not on the LEAN_PATH of build.py, verify.py, verify_parallel.py, run_comparator.sh or the final rebuild report.",
+    "low_original_pools": "On 2026-10-09 research_audit/weighted_formal/WeightedQRH/LowDetector/LowOriginalPools.lean was re-pointed: its import of OAI.NumberTheory.DirichletL.Detector.LowOriginalPools (deleted by the fork's prune commit 817ddb5e6) was replaced by that module's own imports, OAI.NumberTheory.DirichletL.Detector.LowSlotScales and OAI.NumberTheory.DirichletL.Detector.RayPoolGood. The entry below for WeightedQRH.LowDetector.LowOriginalPools predates this change: its 'sha256' and 'olean_sha256' fields describe the earlier file (its local 'deps' are unchanged). The current source has sha256 6e04a774f5eed412ffafe9d7d7f65a8105c57a4d7d3e1586bbb804a56a8e60f9 and was compiled in the isolated rebuild recorded in final_rebuild_verification.json.",
+    "entries_not_rewritten": "Module entries are left as originally recorded."
+  },
+  "WeightedQRH.LowReflection.LowInactiveEnergy": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowInactiveEnergy.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowInactiveEnergy.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowChoiceEnergy"
+    ],
+    "sha256": "edd72b63dcf0c4d74050a5af9113eed3314052ae47e5df703f2aa977619f3d30",
+    "source_sha256": "ba399931005e1a226c95d5d8700eaf38a3e699c98c8222c742b76ce9b0c049bc",
+    "compiled": true,
+    "olean_sha256": "1c008fee5c99ec7c9cfb32110469360dab9d2448056f7a4b66fca35dd7d4e2cc"
+  },
+  "WeightedQRH.LowReflection.LowGlobalBudget": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowGlobalBudget.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowGlobalBudget.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowFullBudget"
+    ],
+    "sha256": "0b93d5519a7a2ce58605ab98e44b9a496008e5985d994dadc5c28bbc202d802d",
+    "source_sha256": "3f906eb418d730b374f2ef7911edae2ef71e0a507ec6f6e75877f2af05e8742f",
+    "compiled": true,
+    "olean_sha256": "e45356529816dfcaf99cde630829f197122d9a137687689d462093c3cbaf4f18"
+  },
+  "WeightedQRH.LowReflection.LowBranchSum": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowBranchSum.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowBranchSum.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowExponent"
+    ],
+    "sha256": "e49b27fa27f6b6250668933698c0f8c98b0ac7f2a5ab7e4b436ebfcc06a5bb1e",
+    "source_sha256": "375f53ce006acaa55fc5aea985804beaa9abe61868ad2978f59ebe5755380ced",
+    "compiled": true,
+    "olean_sha256": "282d97d42b33e57652d1f84de9d73a747ff3cf5d23e15ad7a20d00e030cd943e"
+  },
+  "WeightedQRH.LowReflection.LowCompletedRows": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowCompletedRows.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowCompletedRows.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowCompletedFiber"
+    ],
+    "sha256": "3b7f080f655eb427bcb105fac5f101b120deccc9f0cd64a947084224799b5026",
+    "source_sha256": "1d0865cdb4a4434c447b3562d8419353acbd8953868d3b4307a8fea982402bb3",
+    "compiled": true,
+    "olean_sha256": "ba6f632ba72e17bdb3ac180868dafe26f4ce19a07d326bfb14a67fa5474f4565"
+  },
+  "WeightedQRH.LowReflection.LowFull": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowFull.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowFull.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowRetainedBudget"
+    ],
+    "sha256": "2cc0d714d603c5b75dedb13cb1bf39ad74142c075eb9ecc019983500230618a5",
+    "source_sha256": "a1227e6f139a2100457ab74e43b3e0df2e501207110e36c8f6bd65a8612719a5",
+    "compiled": true,
+    "olean_sha256": "0dbfde218c305fcd0758394af13bbe2f4265d44d9befaea4197615d92c51910b"
+  },
+  "WeightedQRH.LowReflection.LowOriginalEnergy": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowOriginalEnergy.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowOriginalEnergy.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowCompletedRows"
+    ],
+    "sha256": "1bb9b199a18a07a8cfc01cd3f10c9243b322d20aec91b4b8eefe655b03ac8211",
+    "source_sha256": "9b79212ff72aeaa4d246d59c03194c6772d55dc528b9bcbadb62c5d0a1d27b09",
+    "compiled": true,
+    "olean_sha256": "dd42e468fc52a5771e43cb9eea32eed3c7241b041a5c2d9f774a76a1103512d3"
+  },
+  "WeightedQRH.LowReflection.LowRetainedBudget": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowRetainedBudget.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowRetainedBudget.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowRetained"
+    ],
+    "sha256": "997a60d091419d35b383b29b8f5aa1269a1002938d5d8c004d565fb6a34c7029",
+    "source_sha256": "3e1ae97732f7abcda593c77e2042c0fc9de68bad7a90a680f75a1bb26fb6a6be",
+    "compiled": true,
+    "olean_sha256": "2a9509e4aa84b7208cbad49d9ed44921d48f5b5f3608f218b6c6114515ac7584"
+  },
+  "WeightedQRH.LowReflection.LowFixedMember": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowFixedMember.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowFixedMember.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowMemberGeometry",
+      "WeightedQRH.LowReflection.LowCaps"
+    ],
+    "sha256": "83a3ba66c7d554cd528739a8a8951960c0b74d6c278d9a5db01b13f01a79cc06",
+    "source_sha256": "db4c0a89f2fe817bb22b1eaf32829a5a72becd3702c1c8384b06c3e9d2a712a6",
+    "compiled": true,
+    "olean_sha256": "490c3de29c21f751e12260bc909c69c727449f072a15597f0bdc10e20deede01"
+  },
+  "WeightedQRH.LowReflection.LowFrozenEnergy": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowFrozenEnergy.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowFrozenEnergy.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowInactiveEnergy"
+    ],
+    "sha256": "183cab31054da22d6b8e615978866157d23cd39a65203a4968dec7b214646ed3",
+    "source_sha256": "3e02d4e496947aba21a963cb85e491bc7e4a79f5e7c6de52a03c95776db5619c",
+    "compiled": true,
+    "olean_sha256": "7ea6bd11e652e4a4657ce424e54d962f62647ff13fd44b0f47b3ff0e3aec00cc"
+  },
+  "WeightedQRH.LowReflection.LowCompletedFiber": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowCompletedFiber.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowCompletedFiber.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowFrozenEnergy"
+    ],
+    "sha256": "9d6331e673a0618bc1ebd18f156d539e443cc2f5c71f9e562ca407f4892c3dd4",
+    "source_sha256": "b0df9532dc3b031cf34afb7b2cd75cae80025aaad3745ce2a84b4a3ede50b9b9",
+    "compiled": true,
+    "olean_sha256": "28c47afb90eff227a33080b519256ecfd7c3b3d3c2d9baa36e66644e08a9d6df"
+  },
+  "WeightedQRH.LowReflection.LowCaps": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowCaps.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowCaps.lean",
+    "deps": [],
+    "sha256": "d00d4fbc3af94f727d986ceacc8bdb1e026af4dee94aa586276ced510393807c",
+    "source_sha256": "949078e29d58b7e74bbc23ee7e14ecb999f2c76b11f1eb27f7a2b8e9d2943f15",
+    "compiled": true,
+    "olean_sha256": "7f1f4b863d5c4b26e872a9b827c7c977dd8d33ab6d1c1f1c987837cafb99859d"
+  },
+  "WeightedQRH.LowReflection.LowChoiceEnergy": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowChoiceEnergy.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowChoiceEnergy.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowDyads"
+    ],
+    "sha256": "211be8595a5a229f67809facfea8a591587704512f234c22a67980581f46026f",
+    "source_sha256": "e33e38b31854ac98b71c736e1e81b33cac598149c5fc4891376725ce7eafaeb3",
+    "compiled": true,
+    "olean_sha256": "8a2e0bb84bf3c98169930a26dfe1cf462057c00a10a3b04a13d1221d9fae331e"
+  },
+  "WeightedQRH.LowReflection.LowRetained": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowRetained.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowRetained.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowSector"
+    ],
+    "sha256": "839f20581aa874a3628e620f9827497eb060716d14f91866b4023a4df9153121",
+    "source_sha256": "b3f20434fcc87452fa309242939476dddff72e2c79aba07f5657513df5939fb4",
+    "compiled": true,
+    "olean_sha256": "9cd0552dd5cc16566a5a31609852a4c5dc6ab9170c2e7b1632a950032c571416"
+  },
+  "WeightedQRH.LowReflection.LowMemberBudget": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowMemberBudget.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowMemberBudget.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowGlobalBudget"
+    ],
+    "sha256": "8052d6a78ce0b972bfdab121ea4531796d2f2770861dd2fed0c7554d058c7063",
+    "source_sha256": "00b880e032afc93b380daf839b84e3679d3b7df0dc2ac7ddc1119f2337ed7197",
+    "compiled": true,
+    "olean_sha256": "57677fd785786ad7f0e0e78d2acfcca5fbc1177784b29234bc087c19d864999e"
+  },
+  "WeightedQRH.LowReflection.LowMemberGeometry": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowMemberGeometry.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowMemberGeometry.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowMemberBudget"
+    ],
+    "sha256": "e969710f1a7b15e63fd6a4c8fb93622576f501684eb8e7f8edc6f29c19faa996",
+    "source_sha256": "2db3174d00ef320ffa37d18178ad41dd3be0a8dbcdc3781852979ea85ed52ba7",
+    "compiled": true,
+    "olean_sha256": "93a10db6c9636d136be23235b01f7c5d0902d7f7c220314094778ac806a84108"
+  },
+  "WeightedQRH.LowReflection.LowFullBudget": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowFullBudget.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowFullBudget.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowFull"
+    ],
+    "sha256": "68b18df2ff8d6167a30b3da6b9aff71224b6b471d7ed6546b6e42be5c80bb184",
+    "source_sha256": "a1ac56a2ebbdca9acdbdfdc73a3edc7b08521ae74e03b3c7f0654bf53b098c5f",
+    "compiled": true,
+    "olean_sha256": "e5e49f047fe572319bed2fab92cf9b0a578dc557c60ee861734f352a1fdea91f"
+  },
+  "WeightedQRH.LowReflection.LowDyads": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowDyads.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowDyads.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowFixedMember"
+    ],
+    "sha256": "5219c76d10eeff7949ca299a67e8c3cadf88c437a617b5af581c3ab37f7c36a1",
+    "source_sha256": "69b1e6526f6e3589bccb9d7cd5b7bd7b209046c40ae600dbf1af48b8edcca83d",
+    "compiled": true,
+    "olean_sha256": "8fb6756d95b48c3a2357a01f4351e32cc8f57c86b9f8ee43533b9b456254e9db"
+  },
+  "WeightedQRH.LowReflection.LowExponent": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowExponent.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowExponent.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowReflectedLength"
+    ],
+    "sha256": "991969e276ff7ff5e4945a5e4259859ffda656167c3812caf02a982d2db4b7b4",
+    "source_sha256": "b8cc04e4b29696f52681680fb29b8fff946e7079fd05cab7b1e80c48111d2f08",
+    "compiled": true,
+    "olean_sha256": "9407b226953a97af17c7002382f6d6fe2694101be43ec291ba727ea54b89361a"
+  },
+  "WeightedQRH.LowReflection.LowSector": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Reflection/LowSector.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowReflection/LowSector.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowBranchSum"
+    ],
+    "sha256": "5fd9f0ee42e12bf378f802f493a2978f7dfa8269603fc45a1176f9cc77b16e6c",
+    "source_sha256": "f2e33ab2c7627f3d8c59ff129b0eda04cf8d509f420e3d548fc94ce1bf51e7bf",
+    "compiled": true,
+    "olean_sha256": "91e13ed475e2541a99e9e9059984d88ca868227ead85eabfb6ec59936224b40e"
+  },
+  "WeightedQRH.LowDetector.LowReflectedLength": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowReflectedLength.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowReflectedLength.lean",
+    "deps": [],
+    "sha256": "fb5803c53b702e3f97e42b1406200babf8b4b0ba5267b27a0e659a535bec68da",
+    "source_sha256": "4b78ca2d011881e543b7f2d9feb1e4de13b9cc61aba98524561a84dcc549908c",
+    "compiled": true,
+    "olean_sha256": "96831e769c465589c389d5349689cbcd1ae5a25d57f5525bebc826b3b0e4b387"
+  },
+  "WeightedQRH.LowDetector.LowGramScale": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowGramScale.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowGramScale.lean",
+    "deps": [],
+    "sha256": "5d96efcbd0c6fdc1052cdbb3943f0a6320e0bc2f2f4f23660adab310059dc6d0",
+    "source_sha256": "ca46b12dad51371b9b2c15393d6aa5d5a1d6c0586a2402ebc5bf7332e7435e90",
+    "compiled": true,
+    "olean_sha256": "6d01eb5b5e0211c88a419349abbd60634bcfb800f351eb22adbe2e60ff869d03"
+  },
+  "WeightedQRH.LowDetector.LowSourceScales": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowSourceScales.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowSourceScales.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowGramScale"
+    ],
+    "sha256": "9820318e83b039f06d8f2e0b13b04d887912ed912f7079ca979898ba27adedb4",
+    "source_sha256": "6151ef7adff228aba72f9c7b85eab4d31a7ac3d76d85cd156227a4e935e94de2",
+    "compiled": true,
+    "olean_sha256": "7e2a740f5aeb6636deabe0c1bc84530be7c5318a6108f15c6024f2f19e91abda"
+  },
+  "WeightedQRH.LowDetector.LowSlotScales": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowSlotScales.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowSlotScales.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowSourceScales"
+    ],
+    "sha256": "9504f83b553e0bb37ac211949a87db0cabbf0ab7ab4c716bb5fe4e3418275ee4",
+    "source_sha256": "31f477ed5ee42505a53ea82aea9f7f982933f4ac4386adb232e82ad402e7fc3a",
+    "compiled": true,
+    "olean_sha256": "8bc97466a107a9bb35a9cc7ca6a243ba63cf879beb3e6dc91031dfaaf2875a83"
+  },
+  "WeightedQRH.LowDetector.LowOriginalPools": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowOriginalPools.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowOriginalPools.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowSlotScales"
+    ],
+    "sha256": "09fdf27b1ce2e3d741590352c5416585cff7e643ae5856868c4f408ca4d67c20",
+    "source_sha256": "a60bcbebdc46f6d24901d4e9a510d803ef52bf1f04c832885e6f348517820efe",
+    "compiled": true,
+    "olean_sha256": "ad18e1b758a8520bf262d2d1bdfa0f43971519b1ca0e6346021615b0aad3d73b"
+  },
+  "WeightedQRH.LowDetector.LowNominalGeometry": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowNominalGeometry.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowNominalGeometry.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowOriginalPools"
+    ],
+    "sha256": "73b9764b657315a7826e3c8dfa10ed8fd5f6ecb3c55089930dee91e1a7268def",
+    "source_sha256": "83f5fbf5452eed0fef0955a2a8da86a08060ffdcd16d7c9736159dd88e77064d",
+    "compiled": true,
+    "olean_sha256": "a76ead341ab06f563e5d2d47bd74e56014437a9a844107a99ee1b233a6b3c956"
+  },
+  "WeightedQRH.LowDetector.LowCentralGeometry": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowCentralGeometry.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowCentralGeometry.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowNominalGeometry"
+    ],
+    "sha256": "b07121fc6207e539749791013803dc57a0ea52ae0fbf712f43bdfec26d2505cc",
+    "source_sha256": "c2b8de59af37fc88f509f02fdcf6608f1b91c848dbe1a5b74b83b1eb70850ef4",
+    "compiled": true,
+    "olean_sha256": "496085467934d23af4cfbe29be482af6f72508790a59c5b9f08c4ea23b0692e0"
+  },
+  "WeightedQRH.LowDetector.LowInverseNormalize": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowInverseNormalize.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowInverseNormalize.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowCentralGeometry"
+    ],
+    "sha256": "bb124e55219e5e101a3fb77f467cebd8780c59d1310cb111f855ec6a92c01248",
+    "source_sha256": "384124deace73ecac59856f5d39090e5df9aed167825adf29728f68e83152648",
+    "compiled": true,
+    "olean_sha256": "78419e16950c6a9b532c5a3f74e0acd3710dc3d0d5b1c15f8bc8c4a2b8190bc1"
+  },
+  "WeightedQRH.LowDetector.LowSelectedBound": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowSelectedBound.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowSelectedBound.lean",
+    "deps": [
+      "WeightedQRH.LowReflection.LowOriginalEnergy"
+    ],
+    "sha256": "4d25c44a72adef1d9556f1781430ddcf996e27b968f8006421e0553ec03a3bf9",
+    "source_sha256": "766514b55a0c29c78f12dbf72bea2f35289a772f2fd36ac7f24c0410dcda4161",
+    "compiled": true,
+    "olean_sha256": "3fc6627d64f935a1a05f6ef837f97d5533d968dd05b7d6c2f5b58bb0d76cc006"
+  },
+  "WeightedQRH.LowDetector.LowNominalEnergy": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowNominalEnergy.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowNominalEnergy.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowSelectedBound",
+      "WeightedQRH.LowDetector.LowCentralGeometry"
+    ],
+    "sha256": "e6ee9e10404d7c02a3e61f65f203e7396c7e6b3eafb229441465692bbb311554",
+    "source_sha256": "f3ebfbc28c9d50e097c63c44214fda22391890846cb42d614d9e62420955d6e0",
+    "compiled": true,
+    "olean_sha256": "06d6ec2905ee5cfdbf4042e0855dd2ab8340f36eac8b0351418e5473bdea4fee"
+  },
+  "WeightedQRH.LowDetector.LowPhysicalInverseBound": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowPhysicalInverseBound.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowPhysicalInverseBound.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowNominalEnergy",
+      "WeightedQRH.LowDetector.LowInverseNormalize"
+    ],
+    "sha256": "03265cc20407ba3da89a47eebf5ee702deaf751fc37c4dadb23b908690445f82",
+    "source_sha256": "9991e2ce061afdfdeb0e12439364f38ac1bc3a734fcaa0b19905674563f14797",
+    "compiled": true,
+    "olean_sha256": "ea01f59cb41b2e6331519efdc2dbb9a378a7ffd5882abda62b4037559b503ef6"
+  },
+  "WeightedQRH.LowDetector.LowUnselectedMass": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowUnselectedMass.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowUnselectedMass.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowSlotScales",
+      "WeightedQRH.LowDetector.LowNominalGeometry"
+    ],
+    "sha256": "2f986b8dd11d777833b71c8cb5c03b61a872c28c103cb0cd308986aff5498452",
+    "source_sha256": "f990fd7ad91c20736be9c1a43719301b46b7cf3ed3efff33950b4c833327a879",
+    "compiled": true,
+    "olean_sha256": "a8fbdb1bf54ca159e5cf4394ad37e9deb8d33948de195cdc64a310e8764ce2f8"
+  },
+  "WeightedQRH.LowDetector.LowCentralTuple": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowCentralTuple.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowCentralTuple.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowPhysicalInverseBound",
+      "WeightedQRH.LowDetector.LowUnselectedMass"
+    ],
+    "sha256": "723dc8f70be68ddd8d35b547d8c001758c7ebaf59f84118f5103699ed64ba2af",
+    "source_sha256": "874b63c1d6d28a956d7448a1a14d9ebbef2835c98fe43840f0cc7a895cae610c",
+    "compiled": true,
+    "olean_sha256": "8e7006a6594757b4b28c37f708658150ce0d8b193f4f2ff55f2a1803b1895045"
+  },
+  "WeightedQRH.LowDetector.LowRemoteMass": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowRemoteMass.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowRemoteMass.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowCentralGeometry"
+    ],
+    "sha256": "bd7c42786b375c4a1553cdc6abcdb59f329253d71555eb62a5c5cc938d039fe3",
+    "source_sha256": "8b864da5b8e13e548474693eaf72cd29ab0eca3d5bb970bf878613573da64043",
+    "compiled": true,
+    "olean_sha256": "190fecac294e7171f44040d81d3e10b91776105a166ef19a6c47eb0e55620f7c"
+  },
+  "WeightedQRH.LowDetector.LowGaussianDyad": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowGaussianDyad.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowGaussianDyad.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowCentralTuple",
+      "WeightedQRH.LowDetector.LowRemoteMass"
+    ],
+    "sha256": "4c86abeb572a00bc11d40374963d35d8b4ba06611e230eea1f08d4fa01d6965f",
+    "source_sha256": "75b6ef5ee30a137c9ac18aff9807ca36657f33c8f868fc1e996ff02ffafeaf12",
+    "compiled": true,
+    "olean_sha256": "7282096b09f470e379ceb3ab2bfc0cd8e3048b396e92a5d0d7595d234609e6a5"
+  },
+  "WeightedQRH.LowDetector.LowGaussianRemote": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowGaussianRemote.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowGaussianRemote.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowGaussianDyad"
+    ],
+    "sha256": "e3199d648d86afced60329f4a37dc2c94be232e84a29b2c97b430689a25a8f7b",
+    "source_sha256": "1b8a49cf92868a2f64269607d0ef7edb1df20a04da83c27cd1a1985523987e42",
+    "compiled": true,
+    "olean_sha256": "1385d29a488ec9881f00b01994fc865ab1a194f26a1016a801a907dedcadd805"
+  },
+  "WeightedQRH.LowDetector.LowGaussianCentral": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowGaussianCentral.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowGaussianCentral.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowGaussianRemote"
+    ],
+    "sha256": "9135028a3c413ea1ad51e5d2951cc7989ed0d8b1605f12689352083858b671d4",
+    "source_sha256": "b283aa6bede21f0852977afe3fa894e9cff05b628c59abae4075efeb90c2f9b8",
+    "compiled": true,
+    "olean_sha256": "56ca2fc32fdf262724111238b4592b790793939fc627fd875ba258ea498a21a1"
+  },
+  "WeightedQRH.LowDetector.LowGaussianSum": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowGaussianSum.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowGaussianSum.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowGaussianCentral"
+    ],
+    "sha256": "c424a1867bde15f31ed4b54af16b87243104a6a3d8344b7ad8d349715d378a88",
+    "source_sha256": "49657baf6a90f26fc2fda8654c53a3a65786030125130f0ede2c5fced7f12573",
+    "compiled": true,
+    "olean_sha256": "6b8d2db5a43c3aab302d903ed01e181644a28564d07a36fb726bb9c5817b402b"
+  },
+  "WeightedQRH.LowDetector.LowCommonBound": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowCommonBound.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowCommonBound.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowGaussianSum"
+    ],
+    "sha256": "5739aab6978c8600dc8fa963fa88dbe004c815f805dd0f6f6d11fe2b38e3384b",
+    "source_sha256": "ea03172e8ef66b2fbd0ba0526704dbdfee44c241906d8c9bace5f3b84d636c22",
+    "compiled": true,
+    "olean_sha256": "df4fcfed49318df8b151a461011799d47d96b7d6ad7ad8e8b0ce583c443b3eda"
+  },
+  "WeightedQRH.LowDetector.LowWindowBound": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowWindowBound.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowWindowBound.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowCommonBound"
+    ],
+    "sha256": "b97374d819370571f4ce8681a6559392cbb7952579c5071f5772262aba6c358f",
+    "source_sha256": "680f8b3f8c85f574ba13982ea4962491fc47d163a0f10fb795aff7db948e3e18",
+    "compiled": true,
+    "olean_sha256": "d3986acad883d4ba230de3a4e2587af84f17e12249d3f843e8dbc66381f90d72"
+  },
+  "WeightedQRH.LowDetector.LowNormalized": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/Detector/LowNormalized.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowDetector/LowNormalized.lean",
+    "deps": [
+      "WeightedQRH.LowDetector.LowWindowBound",
+      "WeightedQRH.LowNormalizer"
+    ],
+    "sha256": "b71d6d677735e1d17e2cf04179e0e0934900f8aa948c95ff376695438fd92985",
+    "source_sha256": "0c6c90b0ffd370ef8a1b0bcf8b39d92950e45248d448ff0360e2be607faaade0",
+    "compiled": true,
+    "olean_sha256": "2831eb75da6bb6d0e7eae79d5625516b7e71d16c48f7b5144d9ac58fc6941ad0"
+  },
+  "WeightedQRH.LowNormalizer": {
+    "source": "formalize_11_12/lean-base/OAI/NumberTheory/DirichletL/PrimeRows/CubeNormalizer.lean",
+    "output": "research_audit/weighted_formal/WeightedQRH/LowNormalizer.lean",
+    "deps": [],
+    "sha256": "f65e2e67533fbfb1505123814baa7c1a63373d81e3dd3eafcaf3cd6de9833859",
+    "source_sha256": "d57811850ecae40246f331be0fe5bf0ce0aca3cd0ab9e27f980d28907046529b",
+    "compiled": true,
+    "olean_sha256": "25685ff322dc0aab7ebda9d952baa0547f35e5627b522843183cfd76bece73ab"
+  }
+}

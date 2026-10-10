@@ -1,0 +1,231 @@
+ASSEMBLY AUDIT: weighted_numerator_proof.tex
+2026-10-09
+
+Scope of audit
+--------------
+I read the complete assembled manuscript, its included
+weighted_numerator_lemma.tex, the exact certificate implementation, and
+the relevant source proofs in formalize_11_12/papers/paper78.tex.  I also
+reran weighted_numerator_certificate.py successfully.  I authored the
+new numerator fragment, so this report is an assembly/hypothesis audit,
+not an independent discovery or wholly independent review of that
+fragment.  The separate formal_audit agent reviewed that fragment.
+
+Verdict
+-------
+I found no material missing hypothesis or invalid inference in the
+assembled implication
+
+   original analytic package, including beta_*<=7/8
+          => beta_*<=10499/12000.
+
+The scope is primitive finite-order Hecke L-functions over
+Q(sqrt(-3)), then all finite-order Hecke L-functions there and all
+Dirichlet L-functions by the imported transfer theorem.  The conclusion
+is NOT general GRH over arbitrary number fields, and is NOT an
+end-to-end Lean theorem.  The manuscript states these limitations.
+
+This verdict accepts the original analytic package as imported results.
+It does not certify their internal correctness, the existing Lean proof
+of 7/8, the external public benchmark's verification, or the entire new
+proof in a proof assistant.  Exact exponent arithmetic establishes only
+the inequalities to which the analytic estimates reduce the argument.
+
+1. Low estimate and changed geometry
+------------------------------------
+The source reflected-energy lemma is stated for general bounded
+log-lengths, not only ell=1/6.  Its concrete probe-row proof uses
+M'+ell'-1=-3v to control the maximum involving the dual row length.
+That identity remains exact here because M=1-ell.  The two branch
+bounds before specialization become
+
+  M'-Delta_H,
+  M'+(1+3ell'-2M'-2Delta_H)/4,
+
+up to the permitted small errors.  They are nonincreasing in Delta_H;
+the actual residual-row condition Delta_H>=-o(1) thus gives the stated
+M'+(5ell-1+v)_+/4 bound.  The argument retains the actual row support
+and the kernel saving before any positive enlargement, as required by
+the source lemma.  No optimistic replacement of an actual residual
+row dyad by a larger ideal length is introduced.
+
+The additive Gram theorem is stated for arbitrary polynomial scales
+with P_a=Y'^2/Q>=1.  Here P_a is a fixed constant times Z^b and b>0.
+Its nonexceptional term P_a^2/Y' is dominated by P_a^(1/6) because
+ly-ell-11b/6=809/6000>0.  The smallest rescaled X and Y exponents are
+413/2000 and 117/400 respectively; M'>0 throughout.
+
+Tuple counting and the compensation coefficient give precisely -v;
+the energy excess adds (5ell-1+v)_+/8.  Its maximum on [0,ell] is zero,
+because ell<1/5 and both slopes are negative.  Thus the low estimate
+uses the same physical probe and normalizer as the high estimate.
+Its exponent equals C(B) for B=11/12-ell/4=10499/12000.
+
+2. Row counts and their hypotheses
+----------------------------------
+The original fixed-parameter moment is available at kappa=3/4 by the
+already established global beta_*<=7/8.  Nothing in the rederived row
+count requires beta_*>7/8: that was the source application's setting,
+but the actual estimates need kappa admissibility and delta<=alpha.
+Both hold here, with delta<=3/4<5/6.  There is no capacity-replacement
+loss at fixed kappa=3/4.
+
+The rederived crossing parameter t lies in [1,3/2].  The source's
+crossing estimates r_*(t)>=23/37 and t-r_*(t)>=1/3 therefore give
+capacities at most 7/37 and 2/27.  Supply holds with
+ell/h-7/37=1249/58719>0.  Positive whole slots, zero-amplitude slots,
+small-capacity neighborhoods, and the original natural zero masks are
+treated exactly as in the source selection argument.
+
+The reconstructed numerator does not need to furnish another detector
+witness.  The existing count is for the same amplitude/witness set;
+the extra moment is a separate Hölder bound on that set.  Reusing the
+same physical prime polynomials in these two valid bounds is legitimate
+and does not require a joint inverse/plain moment.  They remain in the
+physical correction throughout.
+
+3. New numerator estimate and contour order
+-------------------------------------------
+For the new branch, delta>=1/3 and a>=2/3.  On w=1/2 and on the
+coefficient-norm line w=1/2-delta/4, the first Euler region has the
+uniform margin s_r+w_r-1>=delta/4>=1/12.  Thus all local identities
+and all-height correction bounds apply with ample room.  The scalar
+denominator remains buffered only in the s variable; no buffered
+bound for the numerator at arbitrarily large w-height is used.
+
+The source fixed-bin contour proof can be modified explicitly as follows:
+  (a) Move z to17/50 and s to beta_*+20e on global contours.
+  (b) Move w to1/2, keeping its full vertical line.
+  (c) Discard only the s,z height tails while s remains global.
+  (d) Move the retained s segment to a+16e.
+  (e) Estimate its horizontal joins using the buffered reciprocal,
+      the global polynomial numerator bound on the whole w axis, and
+      the all-height correction bound.
+  (f) Integrate w exactly before subdividing amplitudes at fixed s,z.
+
+These are the same operations as the source proof with the harmless
+replacement of its old w-line by1/2.  The source proof explicitly notes
+that on an s-join the w and z axes may be extended completely because
+the reciprocal depends only on s.  Thus completing the w integration
+does not accidentally continue an amplitude indicator or move a
+buffered reciprocal outside its valid height rectangle.
+
+The Euler coefficient argument is stronger than a pointwise bound and
+retains the cancellation G_p+bar(chi_p(u))H_p before taking absolute
+coefficients.  The local formulas are polynomials in Np^(-w) after
+their w-independent denominators are simplified.  Their products form
+an absolutely convergent coefficient series on both required lines.
+No arbitrary row-dependent coefficients are inserted into lem:plain:
+the weighted l1 coefficient norm removes them before the moment.
+
+For strict ramified errors, the distinct forced prime dilations are
+absorbed once by C_u<=C U product p^{-(j_p-1)}.  Non-strict errors are
+already dominated by their main-slot normalization.  The quotient-free
+expansion excludes only error labels from the Euler product and leaves
+every main-slot coefficient and zero mask unchanged.
+
+The Mellin inversion formula is valid on w=1/2 by absolute coefficient
+norm plus polynomial L-growth.  For each coefficient one can identify
+the inverse Mellin transform on a right half-plane and shift back,
+since the physical numerator is nonprincipal.  Compact support of W1
+gives the exact k<=C Y cutoff before reflection.  Consequently reflected
+plain lengths remain bounded, and the source scale-supremum/reflection
+lemma applies without an unbounded-length moment assertion.
+
+Natural good-prime conductors are exactly rad(u); only fixed S factors
+remain to be restored.  Reflection changes chi to bar(chi), matching
+the main slots; conjugating the entire product supplies the positive
+orientation in the imported moment statement.  Moderate rows outside
+the bounded unit range induce outside Theta because they ramify at a
+good prime.  No exceptional family has been silently included in a
+positive-slot moment.
+
+For d in[1/2,h], ly<d<2ly, so n0=1-ly/d is positive and below1/2.
+The capacity is supplied with base-Z margin
+ell-(2ly-1/2)/(6kappa)=133/1800>0.  The dilation cost beats the capacity
+loss by at least5delta/36.  Thus dyadic scales, annular decompositions,
+and the small loss used to create capacity slack can all be paid for
+without changing the ideal exponent.
+
+4. Exact comparison and all row ranges
+--------------------------------------
+I reran the certificate.  It returns:
+  * old branch:1 exact Bernstein rectangle;
+  * weighted branch:9 exact Bernstein rectangles;
+  * endpoint margin1/10000 throughout both full amplitude rectangles;
+  *32 auxiliary rational comparisons.
+
+The polynomial formulas agree algebraically with the displayed high
+exponents.  The certified denominator J has lower bound163/216.
+The choice of estimate is by delta alone, before amplitude subdivision,
+so the proof needs no unjustified interchange of min and max.
+
+Both main row slopes are positive.  For the new slope the stated lower
+bound is7/16-17/50=39/400>0.  A small extension above h preserves the
+strict margins, supply, and d<2ly, since 2ly-h=251/2000>0 and
+5ell-h=83/2000>0.  This covers the entire moderate upper endpoint.
+
+The intermediate no-slot exponent is affine in delta at d=1/2;
+the endpoint savings certified are125131/600000 and4459/400000.
+Its frequency slope is positive, so it also controls all smaller d
+down to the absolute small-row cutoff.  The floor-bin saving at h is
+893/75000.  The absolute small-row saving relative to C(beta_*) is
+7961/100000, using d_min=1/100.  Thus there is no uncovered row gap.
+
+The large-row estimate uses the full correction on absolute contours.
+Its exponent contains -zeta v, so an arbitrarily large fixed real
+z contour gives the required uniform saving.  Its constants remain
+independent of the dyadic row norm when summing the tail, exactly as
+in the source outer-row proof.
+
+5. Principal term and continuation quantifiers
+----------------------------------------------
+The new B remains well inside the explicit second Euler region after
+the local exponents are checked.  Good-prime defects are summable
+uniformly for Re s>=B; every ramified local defect still decays by a
+fixed positive power.  The principal slot approximation is therefore
+-1+O(p^{-B}).  Increasing the fixed prime cutoff makes the unmodified
+principal correction H_eta uniformly within1/2 of1 on Re s>B.
+Additional excluded target primes preserve this positive majorant.
+
+The source residue-interface proof then applies with the same two
+scalar poles, at w=1 and z=1/6, and no extra pole.  The principal
+remainder margins are ly/20=919/40000 and h/600=529/400000, plus a
+positive slot-approximation margin chosen after the slot system.
+The principal target itself causes no problem: its reciprocal has a
+zero at its pole, not an extra residue in the s move.
+
+Under Delta=beta_*-B>0, the low exponent has marginDelta and the
+nonprincipal main estimate has a fixed1/10000 margin even relative
+to C(B).  All required real losses, the slot count, their minimum
+length, the principal approximation power, and contour buffers can
+therefore be chosen before the target.  Constants and finite seminorm
+orders may depend on the target.  The late-height-closure lemma then
+chooses the target-dependent height exponent and external tail order
+without changing the common positive saving sigma.  The functions
+J_eta and f_eta themselves are independent of the analysis height.
+
+The continuation criterion requires precisely these quantifiers and
+the uniform nonvanishing contraction for H_eta.  Choosing
+omega=Delta/2 and a common remaining sigma>0 gives its contradiction
+for a zero arbitrarily close to the family supremum; no zero is assumed
+to attain that supremum.  Deleted finite Euler factors have no zeros
+in Re s>0.  The imported norm-pullback transfer gives the Dirichlet
+claim, with the usual principal-pole case handled by that theorem.
+
+6. Latest-revision check and minor precision recommendation
+------------------------------------------------------------
+The final inspected revision adds the explicit definitions of J_eta and
+A_T and specifies the complete w-axis contour order.  Those changes are
+correct.  Its chosen order moves the retained s segment while w=3 and
+then moves the complete w line to1/2; this is an equally valid, slightly
+simpler implementation of the contour argument in section3 above.
+
+One optional precision recommendation remains: state an upper range
+a<=7/8 in the new lemma's application (or a<=1
+   in a generalized standalone statement).  Its current phrase a>=.51
+   relies on the preceding dynamic-bin context for the upper bound
+   needed by rho<1/2 and sigma_->0.  The actual application is safely
+   a in[2/3,7/8].
+
+No manuscript edits were made in this audit.

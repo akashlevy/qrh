@@ -1,0 +1,104 @@
+Certified moment bridge for the weighted numerator QRH proposal
+=============================================================
+Status: isolated additions only; upstream files are unchanged relative to fork commit
+c388e88e6, whose retained declarations come from openai/math fd4aeeb2e. See individual build logs.
+This bridge does not prove the final QRH theorem. It provides actual certified energies
+and actual SourceMomentsAt for the new probe, without using the old FineMomentInput.
+
+New independent geometry
+------------------------
+WeightedQRH.MomentData (MomentData.lean) contains N, ell, t, epsilon, e,
+positive/injective slot lengths, t>0 and t<=1e-8, 0<epsilon<=1/1000, e>0.
+No slot total, no beta-dependent HighData, and no beta>7/8 premise occur.
+ProbeFinalAssembly.WeightedSourceData D (MomentFinalAssemblyData.lean) contains
+an actual finite exclusion set, original SourceExclusions and FirstTail,
+and the actual fixed smooth source window. Existence is proved by the original
+fixed-source/window constructions. Its modulus is the actual product of exclusions.
+
+Certified energy interface (MomentTerminalInput.lean)
+---------------------------------------------------
+Namespace OAI.SevenEighths.ProbeFinalAssemblyCertifiedBands:
+  weighted_background_beta : HeckeZeroSupremum.beta <= 7/8
+    Composes original unconditional certified bands, chosen common probe,
+    and original HeckeCommonProbe.beta_le_seven_eighths.
+  weighted_terminal_certificate F hbeta bPhi hbPhi
+    Exact kappa=3/4, stageError=t/4, certified terminal width cap2.
+    hbeta is only 51/100<=beta, supplied by contradiction beta>newtheta.
+    Slot profile is conjugate of the actual source W, annular exponent33/50.
+  weighted_terminal_energy F hbeta bPhi hbPhi
+    Actual upstream PositiveAt and ZeroAt, with arbitrary two plain profiles,
+    all character parameters, fixed source ideal, uniform height/seminorm controls.
+    Fine slot mesh=fineMesh 2 0 1 (3/4) (t/4)
+    (OAI.SevenEighths.CenteredMomentEnergyWidthRanges.fineMesh).
+    The weighted numerator uses X1=X2=X, giving the fourth power of its plain sum.
+
+Actual row-moment interface (MomentSourceMoments.lean)
+----------------------------------------------------
+Same namespace:
+  weighted_actual_positive_fine_input F hbeta
+    Genuine PositiveFineSourceInput equivalent for the arbitrary new geometry.
+  weighted_actual_source_moments F hbeta counts hfine
+    J>=0 exists, for each character C>0 exists, uniformly in0<tau<=1 and eventuallyZ,
+    ProbeFinalAssembly.weighted_SourceMomentBound F counts eta Z tau
+      (C*(1+Z^(2*tau))^J) (Z^(2*tau)).
+    Requires explicit existing ProbeFinalAssembly.CountParameters and
+    each ell_j<=weighted_detectorMesh(t)/200.
+
+The bound unfolds to the unchanged ProbeHighRowFamily.SourceMomentsAt with Delta=0,
+plain capacity2m+6*(3/4)*sum(selected widths)<=1, original inverse capacities,
+original actual sourceMomentData, sourceMomentReverse, fiber rows, physicalProduct,
+and logarithmic test profiles. dmax=7/8, d>=1/200, a>51/100, a<=1.
+This exactly matches the new class-count ports. The parameter dmax=7/8 is
+admissible because the new actual dyads lie below h+rowExtension<7/8.
+The marked/four-tuple endpoint in PositiveAt permits general profiles; the
+SourceMomentsAt wrapper specializes to the detector profiles required for counts.
+
+Assembly dependencies and proof transfer
+---------------------------------------
+MomentNaturalFixedRaySourceFixedIdeal / FreeExceptional preserve the actual
+fixed ideal and exclusion of the finite exceptional source rows.
+MomentDetectorEnergyInitialState / PlainExceptional / PlainMarkedState preserve
+the row-to-energy identity; functions with a weighted_ prefix have the same
+coefficient and state bodies where their old definitions were geometry independent.
+MomentDetectorMomentPrimeGeometry and MomentInverseMarkedReference* preserve
+prime disjointness, masks, and the actual inverse reference-energy estimates.
+MomentDetectorInverseFields combines actual raw and marked inverse moments.
+MomentDetectorPlainMarkedFineField applies the certified positive energy;
+MomentDetectorPlainUnmarkedRestrictedField applies the actual zero-slot energy.
+MomentFinalAssemblyCertifiedBands.weighted_source_moments combines these four
+fields into the unchanged SourceMomentsAt structure with Delta=0.
+
+Axiom checks
+------------
+MomentTerminalAxioms.lean: weighted_background_beta, weighted_terminal_certificate,
+weighted_terminal_energy use only propext, Classical.choice, Quot.sound.
+MomentSourceAxioms.lean checks the final source moments and actual marked/inverse
+fields; its log is authoritative for the completed endpoint compilation.
+No axioms, sorry, admit, or native_decide are introduced by this work.
+
+Scope limitation
+----------------
+This certifies the analytic moment/count input, not the new complete nonvanishing
+argument. The weighted reflected-numerator coefficient expansion, Holder step,
+dyadic error assembly, geometry selection and common-probe closure are separate
+modules being assembled by the other agents. The numerical exponent improvement
+is not certified as a complete QRH theorem until those actual objects connect.
+
+STATUS UPDATE 2026-10-09 (supersedes conditional wording above)
+--------------------------------------------------------------
+The input this map calls unproved or conditional is now proved.
+WeightedQRH.Numerator.actual_raw_fullW_input : RawFullWAnalyticInput
+(NumeratorActualSource.lean) and WeightedQRH.fullW_analytic_input :=
+fullW_input_of_raw_source Numerator.actual_raw_fullW_input (Final.lean) discharge
+FullWAnalyticInput. Final.lean proves WeightedQRH.beta_le_theta :
+HeckeZeroSupremum.beta <= 10499/12000 and hecke_nonzero, dirichlet_nonzero and
+zeta_nonzero; Statements.lean gives the three Comparator-form statements. FinalAxioms
+(isolated log .verification/final2_20261009/lib/logs/WeightedQRH.FinalAxioms.log) shows
+only propext, Classical.choice and Quot.sound. Isolated rebuild:
+final_rebuild_verification.json (231 modules, all exit 0). Comparator (local macOS run,
+unsandboxed Landrun stand-in, lake-build shim, default Lean kernel only; no NanoDa or
+con-ron) accepts all three challenges. No external human peer review. The exact final
+step chain, files and caveats are in final_assembly_theorem_map.txt.
+In this map: the separately assembled modules named under "Scope limitation" now
+connect; weighted_actual_source_moments is used by common_probe_of_fullW_input on the
+path to WeightedQRH.beta_le_theta.

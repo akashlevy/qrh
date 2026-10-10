@@ -1,0 +1,70 @@
+Audit: NumeratorSourceBin and NumeratorSourceClass (2026-10-09)
+
+Verdict: the compiled source packet/class interfaces preserve the required
+uniformity and actual rowwise choices. No additional analytic premise or
+vacuous beta>7/8 assumption occurs. The retained finite count and physical
+amplitude/geometry premises still need actual source-cell specialization.
+
+Order of choices:
+- Fixed D, F, beta>=51/100, source fine mesh and error mask J precede the
+  existence of degree, positive C and the eventual U threshold.
+- Every U above that threshold allows arbitrary Z,d with U=Z^d, all physical
+  target characters eta, retained contours x,z and height, finite physical rows,
+  actual full amplitude bin, R and Ccount.
+- The moment used by SourceBin is uniform over all rowwise LabelPacketIndex
+  choices, all coefficient boxes and selected subsets. It is an actual original
+  physical polynomial moment, not a profile-dependent coefficient shortcut.
+- The per-row reflection data are chosen once from the proved actual
+  nonprincipal reflection existence theorem, and the same combined conductor
+  enters the packet mass and moment dilation.
+- Moment constants do not depend on Ccount or on any of those rowwise choices.
+  The class count enters only the final Holder/count stage.
+
+Actual scales and masks:
+- Y=U^(ly/d). The support cutoff is N<=2Y, since F.W is supported in [1,2].
+- Fine source widths D.ell_j/d satisfy the certified moment mesh by the fixed
+  weighted_detectorMesh/200 choice and d>=1/2.
+- Original source prime lengths Z^(D.ell_j) equal U^(D.ell_j/d) exactly.
+  The explicit product dictionary also resolves the dependent selected subtype.
+- SourceBin uses box width=annular slack=extra moment loss=t. Its resulting
+  fourth moment exponent is 1+2t.
+- SourceClass chooses common selected subsets for each box at v=j*t+2t.
+  This exactly equals selectedCapacity(zbase-4t/9)(j*t+t); both small length
+  deductions are present. If capacity is exhausted, strict positivity of the
+  source widths forces selected empty and the certified zero-slot moment applies.
+- Error slots have zero gain in q but all slot widths stay in its denominator.
+  The actual full amplitude class is never replaced by a main-slot projection.
+  Its explicit count premise remains the count of that same full class.
+- The selected squared spike is square-rooted with positive U. The actual
+  selected canonical product has the proved crude bound <=U. The main-product
+  upper slack t*ell/d is divided out before the packet bound and exactly restored
+  afterward; it is visible in the final exponent.
+
+Constants:
+- SourceBin sets Cr'=max(1,Cr); Cmoment=Cr'*(1+height)^degree is >=1.
+  The fixed coefficient-box count ceil(1/t)+1 is absorbed into C.
+- The coefficient packet mass has loss t, the numerator fourth moment has 2t,
+  and selected-slot mesh loss is delta*weighted_detectorMesh(t)/2 before the
+  Holder half-power. The final class exponent records each contribution.
+- All finite error masks can be collected with NumeratorFiniteHeight without
+  choosing the contour height first. It supplies a common real degree and
+  positive constant, including a bound for the entire sum of height terms.
+
+Empty-family cases:
+- SourceClass explicitly assumes the actual amplitude class is nonempty only to
+  read its amplitude-bin labels. An empty class contributes zero. The separate
+  reconstructedDyadValue_class_uniform theorem already handles that case.
+- SourceBin/SourceClass require a prime-label choice Pbase for the error subset J.
+  For J=empty this is the unique empty tuple; no nonexistent prime is requested.
+  If a physical prime pool is empty, the original full tuple numerator is zero;
+  integratedDyadValue_zero_of_no_labels proves this separately. The final finite
+  collection must perform that split or obtain a full tuple witness first.
+- An empty selected family is allowed and controlled by the actual ZeroAt input.
+- The moment finite row set may be empty: all sums vanish and all rowwise choice
+  types are harmless. SourceClass's nonempty premise is used only for selection,
+  not to disguise a missing moment for actual nonempty classes.
+
+Audit evidence:
+NumeratorSourceClassAxioms.lean checks source_packet_selected_bin,
+source_box_capacity_eq, source_packet_amplitude_class. Each depends only on
+propext, Classical.choice and Quot.sound. No sorry, admit or extra analytic axiom.

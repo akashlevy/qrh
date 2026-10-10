@@ -1,0 +1,14 @@
+import WeightedQRH.HighRows.ConditionalFinal
+
+#print axioms WeightedQRH.HighParameters.exists_high_data_fine
+#print axioms OAI.SevenEighths.WeightedHighRowFamily.actual_normalized_cube_fullW_arbitrary_saving
+#print axioms OAI.SevenEighths.WeightedHighRowFamily.actual_mixed_fullW_nonfloor_rows_saving
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.sourceProbe_low
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.fixed_high_bound_of_fullW
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.common_probe_of_fullW_input
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.beta_le_theta_of_fullW_input
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.dirichlet_of_fullW_input
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.zeta_of_fullW_input
+#check OAI.SevenEighths.WeightedHighFinalAssembly.FullWAnalyticInput
+#check OAI.SevenEighths.WeightedHighFinalAssembly.beta_le_theta_of_fullW_input
+#print OAI.SevenEighths.WeightedHighFinalAssembly.FullWAnalyticInput

@@ -1,0 +1,72 @@
+Audit of checked-original-fourth proposition (2026-10-09)
+
+Scope checked:
+- research_audit/weighted_numerator_lemma.tex, proposition labelled
+  prop:checked-original-fourth and the following proof.
+- WeightedQRH/NumeratorOriginalFourth.lean,
+  NumeratorActiveFourth.lean, NumeratorBoxGeometry.lean,
+  NumeratorRetainedFixed.lean, NumeratorCertifiedFourier.lean,
+  NumeratorCertifiedZero.lean, and NumeratorReflectionData.lean.
+
+Verdict: the proposition accurately specializes the compiled original fourth
+moment. No correction is required for this proposition. This audit is not a
+claim that the full improved QRH theorem has been assembled.
+
+Matching hypotheses:
+1. beta >= 51/100 is explicit. The certified source endpoint uses the established
+   original beta <= 7/8, not any proposed improved theorem as an input.
+2. The fixed source data, profile G, moment loss t, extra loss lambda, annular
+   slack xi and cutoff b precede all rows and rowwise scale choices. Both the
+   height degree and the eventual threshold precede these choices.
+3. Rows are in [U^(1/100),U]. The statement does not silently replace an upper
+   dyad edge 2U by U. The later cell specialization must use its enlarged moment
+   base, as the source geometry module explicitly does.
+4. The actual combined conductor is primitive conductor norm times the full
+   redundant ideal norm, attached to the coefficient-preserving reflection data.
+   These data also prove C_u <= C_S rad(q_u) <= C_S q_u. That automatic second
+   bound is used by the discarded-tail proof, and is explained before the
+   proposition. It is not an extra conjectural conductor assertion.
+5. The displayed selected mesh, real contour 17/50, height bound, nonnegative
+   widths, selected capacity OR empty family, length cap m+xi<=2, active
+   N_u<=bY, and combined-scale inequality all match the Lean endpoint.
+6. The selected-product bound specializes general Cslot*U^qtail to Cslot=qtail=1.
+7. The result concerns the original physical polynomial, including its natural
+   zeros. The unit phase is preserved. It is not merely a reflected model sum.
+
+Tail and degree checks:
+- The natural smooth reflection cutoff is U^(xi/4). The discarded endpoint uses
+  its parameter xi/2 to obtain this exact cutoff.
+- Active N_u<=bY and C_u<=C_S U bound every dual scale by b*C_S*U uniformly.
+- Arbitrary-order discarded decay, the actual <=128U free-row count and the
+  selected product <=U give a bounded weighted fourth tail independent of C0.
+- The retained moment uses the genuine zero-slot endpoint if capacity is empty;
+  bounded plain lengths up to 2 are permitted there without a capacity condition.
+- Fourier profile frequencies are unrestricted: direct certified PositiveAt
+  and ZeroAt estimates carry polynomial source-control factors. The fixed
+  Fourier/height degrees are selected before the final contour height parameter.
+  No inference from a merely bounded-height SourceMomentsAt is used.
+
+Finite coefficient box geometry:
+NumeratorBoxGeometry uses n=ceil(1/boxWidth), so 1<=n*boxWidth<1+boxWidth.
+Every selected index lies in [0,1+boxWidth] after multiplication by boxWidth.
+On the full moderate range .5<=d<=h+rowExtension, ly/d>.5 and ly/d<1.
+Thus m=1-ly/d+j*boxWidth+boxWidth is nonnegative, and m+annulusSlack<=2
+whenever 2*boxWidth+annulusSlack<=.5.
+The selected base capacity explicitly subtracts 4*annulusSlack/9; the box then
+subtracts 4*(j*boxWidth+boxWidth)/9. With positive source widths this implies
+exactly 2*(m+annulusSlack)+(9/2)*sum(width)<=1 OR selected is empty.
+The annular cost is not omitted. Taking boxWidth=annulusSlack=t is admissible
+under the source's quantitative t_small bound.
+
+Checked active-box endpoint:
+NumeratorActiveFourth.certified_active_box_fourth is compiled and audited. It
+applies the preceding theorem to arbitrary rowwise coefficient choices on a
+literal cutoff-and-dilation mask. Inactive scales are replaced by a proved
+positive admissible fallback, then their nonnegative contributions are dropped.
+Its constants and degree remain independent of the rowwise coefficient choices,
+selected box and all height choices.
+
+Axiom audit:
+NumeratorReflectionAxioms.lean includes the original and active-box endpoints.
+Only propext, Classical.choice and Quot.sound appear. No new analytic axiom,
+sorry, admit or native_decide occurs in the new bridge.

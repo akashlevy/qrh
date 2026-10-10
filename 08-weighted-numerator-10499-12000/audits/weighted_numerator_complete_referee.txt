@@ -1,0 +1,299 @@
+AI-ASSISTED COMPLETE-MANUSCRIPT REFEREE CHECK
+9 October 2026. Subagent gram_audit.
+
+Reviewed: research_audit/weighted_numerator_proof.tex and its included
+weighted_numerator_lemma.tex; the exact rational certificate and output;
+the corresponding original paper78.tex lemmas and proofs.
+
+VERDICT
+
+No fatal analytic gap was found in the assembled argument relative to
+the explicitly imported original analytic theorems. The new weighted
+numerator lemma is proved, rather than left as an extra hypothesis, and
+the global exponent comparison closes by citation to the original
+contour, residue, low-side and continuation results with the specified
+local amendments. This is an AI-assisted mathematical audit. It is not
+independent human peer review or end-to-end Lean verification.
+
+One definition should be made explicit before delivery: J_eta must be
+defined as the changed-geometry compensated physical probe, divided by
+the SAME c_S A_eta(Z) principal normalizer used in the high comparison.
+The manuscript currently calls it the normalized physical probe but
+does not display that definition. Refer directly to source equation
+eq:compensated-probe-definition and the source principal normalizer.
+This is a repairable definition omission; the surrounding construction
+clearly supplies the intended object. No additional estimate is needed.
+
+For clarity in the final barrier section, define g as the extra Gram
+exponent and e as the extra completed-row energy exponent. They are not
+the small contour buffer also denoted e elsewhere.
+
+1. LOW-SIDE GEOMETRY AND RESCALING
+
+The geometry satisfies
+
+  M=833/1000, ell=167/1000, b=43/500,
+  lx=747/2000, ly=919/2000, h=1587/2000,
+  C(s)=s-(4+b)/6, B=11/12-ell/4=10499/12000.
+
+For a rescaled subset of length v, M'=M-2v and ell'=ell-v give
+M'+ell'-1=-3v. I checked the actual source proof of the compensated
+row norm (not merely its specialized statement). Its estimate
+T_d<=H-3v+small loss still holds. Hence max(H,v_dual+ell_b)=H+small
+loss, and its two energy branches are bounded by
+
+  M'+small loss,
+  M'+(1+3ell'-2M')/4+small loss.
+
+The resulting upper bound is precisely
+M'+(5ell-1+v)_+/4+small loss. The displayed source endpoint formula
+(v-1/6)_+/4 was the specialization to ell=1/6, not an independent
+hypothesis imposed by the underlying reflected-energy theorem.
+
+The smallest rescaled M' is 499/1000, slightly BELOW 1/2. I checked
+this specifically as a possible hidden obstruction: the imported
+reflected-energy lemma requires log-lengths in bounded sets and the
+actual support/cutoff conditions, not M'>=1/2. The source's use of
+M'>=1/2 in the physical application establishes positivity/thresholds;
+here M'>=499/1000 supplies the same property. No estimate breaks at
+that minor numerical change.
+
+The additive Gram hypotheses hold:
+
+  min(lx-v)=413/2000 >0,
+  min(ly-v)=117/400 >0,
+  min(M-2v)=499/1000 >0,
+  ly-ell-11b/6=809/6000 >0,
+  Pa=Y'^2/Q is a fixed factor times Z^b, with b>0.
+
+Thus the Gram term Pa^2/Y' is dominated by Pa^(1/6) uniformly after
+increasing the target-dependent threshold. Fixed tuple ratios and
+the fixed q_b normalization affect constants only.
+
+Tuple counting contributes +v, the rescaling coefficient -3v/2,
+the X' square root -v/2, and the extra energy + (5ell-1+v)_+/8.
+Their sum is
+
+  f(v)=-v+(5ell-1+v)_+/8 <=0.
+
+It is zero at v=0, then has slopes -1 and -7/8. At v=ell it equals
+-667/4000. Consequently every subset obeys the claimed common low
+bound lx/2+b/12=C(B). Division by the principal normalizer costs an
+arbitrarily small power, as required by the continuation criterion.
+
+2. THE FIXED-kappa ROW COUNT
+
+At kappa=3/4 the original plain capacity is exactly 2(1-2m)/9.
+The two short witness counts are the displayed inverse and plain
+exponents. Balancing their crossing gives
+
+  R_short(t)=1-delta+delta P_x(3/2-t)/D_x.
+
+Its intersection with the original long-witness exponent
+1-delta+(5/6-delta)(t-1) occurs at
+
+  t=1+delta P_x/(2J),
+  J=(5/6-delta)D_x+delta P_x.
+
+For delta<=3/4, J>0 and 1<=t<3/2. Thus the stated R follows.
+There is no lower-kappa extension, nor a hidden replacement loss:
+the original theorem beta_*<=7/8 supplies the positive-slot moment
+premise exactly at kappa=3/4.
+
+The largest selected inverse capacity 7/37 and plain capacity 2/27
+are covered, since ell/h-7/37=1249/58719>0. Counts remain available
+on a small extension above h. The old zero-capacity arguments are
+preserved. Selection for the numerator and selection for the count
+are simultaneous uses of estimates, so reusing slots is permissible.
+
+3. COVERAGE OF ALL ROW RANGES
+
+(i) Principal u=1: treated separately by the source double residue,
+with the extended local region and the same normalizer; see section 5.
+
+(ii) Small nonprincipal rows, d<=1/100: the unchanged absolute row
+bound has exponent relative to C(beta_*) equal to
+h(17/50-1/6)-ly/2+(63/50)(1/100), whose negative is 7961/100000.
+This includes nontrivial unit rows and permits a principal denominator.
+It does not require a witness or the new moment.
+
+(iii) Intermediate rows, 1/100<=d<=1/2: the old no-slot envelope
+R=76/75-2delta/3 and q<=delta/2 give an exponent affine in delta.
+At d=1/2 the savings at delta=1/50 and delta=3/4 are respectively
+125131/600000 and 4459/400000. The coefficient of d is positive,
+so the endpoint controls every smaller d in this range.
+
+(iv) Floor bin, delta=1/50: R=1 and q<=1/100 give saving
+893/75000 at d=h. Its frequency slope is positive, so this covers
+the floor bin throughout the moderate range and a small extension.
+
+(v) Moderate nonfloor bins, 1/2<=d<=h: choose the old branch for
+delta<=1/3 and the weighted numerator branch for delta>=1/3.
+The choice is independent of x and of pointwise amplitude classes.
+The exact certificate bounds each selected endpoint exponent by
+-1/10000 on the full corresponding delta,x rectangle.
+
+Both branches increase with d. For the new branch its slope is
+(3R+1)/4-17/50+q/(12kappa)>=39/400. For the old branch, use
+R>=1-delta and delta<=3/4 to obtain a positive lower bound.
+Hence checking d=h controls the whole interval.
+
+The weighted numerator's hypotheses hold throughout that interval:
+ly<1/2<=d and d<=h<2ly. Its capacity is
+(2ly-d)/(6kappa d), and supply follows from
+ell-(2ly-1/2)/(6kappa)=133/1800>0. The reflected numerator's
+positive capacity reserve at the upper endpoint is 2ly-h=251/2000.
+
+(vi) The extension h<d<=h+zeta: all relevant slopes are bounded
+above on compact parameter ranges, and the endpoint, supply and
+positive-capacity inequalities have strict margins. A sufficiently
+small fixed zeta therefore retains the estimates. The explicit
+reserve 5ell-h=83/2000 also preserves the stronger supply ell/d>1/5.
+
+(vii) Large rows d>h+zeta: the original absolute large-row formula
+is valid at general lx,ly,ell and gives exponent
+B0+(h+zeta)(1+epsilon)-zeta*z_infty+epsilon. Choosing a fixed
+large z_infty makes it smaller than any prescribed power. The
+absolute G_p estimate on s=w=2 is independent of the changed geometry.
+
+These ranges leave no uncovered physical row norms.
+
+4. NUMERICAL FALSIFICATION CHECKS
+
+I independently reran weighted_numerator_certificate.py and audited
+its transcription from the direct formulas. At d=h the difference
+between the new and old exponent numerators is J times
+
+  h(1-R)/4+(ly-h)delta/2-q(2ly-h)/(12kappa),
+
+which is the analytically derived replacement. J has certified lower
+bound 163/216>0 on the full domain. The rational Bernstein conversion
+is the standard exact power-to-Bernstein formula after affine rectangle
+substitution; its recursive subdivisions cover the entire domains.
+
+The rerun passed all 32 auxiliary comparisons and the 1+9 branch
+rectangles. An enlarged margin 1/1000 was deliberately tested and
+correctly rejected at delta=7/16,x=1/2. Thus the proof does not merely
+accept every parameter choice.
+
+The rational improvement over the cited benchmark is
+121058260296838385813869/3000000000000000000000000000>0.
+This verifies the numerical comparison with that stated benchmark,
+not an independent claim about exhaustive public novelty.
+
+5. SOURCE CONTOUR TRANSFER BELOW THE PRINTED 7/8 ENDPOINT
+
+I checked the source stage-data definition, fixed-bin accounting,
+principal residue interface and outer-row proof. Their printed
+sigma0>=7/8 condition is used to place the principal/small contours
+inside the old stated Euler regions. Their contour algebra and
+exponent formulas have no further threshold singularity at 7/8.
+
+The manuscript's local amendment is sufficient. At s_r>=B,
+w_r>=19/20,z_r>=33/200, the good-prime defect exponents are strictly
+less than -1. The four principal approximation exponents are at most
+-B. The w-independent local denominators remain uniformly separated
+from zero. Hence the full holomorphic correction and all-height
+majorants extend to this slightly larger region, and the principal
+slot multiplier is -1+O(p^(-B)).
+
+On the small-row s=beta_*+e,w=1/2 line choose a first-region buffer
+less than B-1/2. The selected good-prime G_p remains O(1); for p|u,
+the strict term is still at most p^(1/2) and the other local terms
+are smaller. Thus the original positive tuple bound and small-row
+estimate extend as asserted, not only the principal Euler product.
+
+The principal residue saves ly/20=919/40000 and h/600=529/400000.
+At w=1,z=1/6 its normalized Euler correction is holomorphic and
+within 1/2 of one on Re s>B after a fixed prime cutoff. Choosing
+mu<B min_i ell_i only AFTER the slot lengths are fixed correctly
+gives a uniform positive principal-approximation saving.
+
+The new weighted lemma's full-line w inversion is compatible with
+the remaining buffered reciprocal: that reciprocal depends on s,
+not w. On the extended w tails use the global polynomial numerator
+bound and coefficient/all-height local bounds, not the old buffered
+pointwise numerator estimate. The Gaussian/Mellin tests supply the
+required trace and integrated decay. The amplitude sets are used
+only after the original fixed-bin contour operations.
+
+6. PARAMETER ORDER, CONTINUATION, AND DIRICHLET TRANSFER
+
+The stated order avoids the earlier possible mesh/principal-error
+circularity: choose fixed margins and moment losses, then a common
+mesh and finite slot system, then mu, then the remaining contour and
+normalization losses. For each target the finite arithmetic data and
+internal height orders are fixed before choosing the final height
+exponent and external tail order. A common positive final saving can
+therefore be kept independent of the target; constants and thresholds
+may depend on it, exactly as permitted by the source criterion.
+
+Under beta_*>B, take 0<omega<beta_*-B for the low estimate. The new
+moderate-row estimate is stronger than C(B), while the principal and
+small-row errors have their stated fixed savings directly relative to
+C(beta_*). Their minimum supplies a positive sigma. The same physical
+normalizer must be used throughout (the explicit definition requested
+above). These are the source continuation criterion's two estimates,
+and its nonvanishing Euler correction excludes zeros arbitrarily near
+the global supremum. This closes the Hecke argument.
+
+The Dirichlet transfer is exactly the source proposition, including
+its treatment of a possible principal factor at s=1. Finite deleted
+Euler factors have no zeros in Re s>0. No stronger unproved transfer
+principle is needed.
+
+7. THE SCOPED 13/15 LOW-SIDE BARRIER
+
+The algebraic identity in the manuscript is exact. If g and e denote
+the extra Gram and row-energy exponents, the direct low estimate is
+lx/2+g/2+e/2. Comparison with the signal and g>=b/6 yields
+
+  B>=5/6+M/12-ell/6+e/2.
+
+The three assumed inequalities on e imply, by the displayed positive
+linear combination, M/12-ell/6+e/2>=1/30, hence B>=13/15.
+The coefficients in that identity sum to e/2, M/12 and -ell/6,
+with constant -1/30, as required.
+
+This is a valid obstruction for the stated direct majorants. It is
+not a statement about actual zero locations or about all possible
+low-side estimates. The manuscript correctly retains this limitation
+of scope. It should define g,e explicitly to make the scope transparent.
+
+FINAL REVIEW STATUS
+
+The assembled proof appears complete by citation to the stated
+original analytic inputs, after the normalization definition is made
+explicit. I did not locate an additional unproved analytic premise
+hidden in the new lemma or global assembly. This finding is the result
+of AI-assisted adversarial review; it must not be represented as human
+peer review or as a Lean-kernel certificate of the new theorem.
+
+POST-FIX REVIEW
+
+The revised manuscript now explicitly defines
+
+  A_eta(Z)=(-1)^K Z^(-ell/6) product_i
+              sum_(p in P_i(Z)) W_i(Np/P_i) Np^(-5/6),
+  J_eta(Z)=I_(eta,modified)(Z)/(c_S A_eta(Z)),
+
+and references the original finite compensated-probe definition. These
+match the source normalizer exactly. The shared-probe definition issue
+is resolved.
+
+I also checked the added full-w contour order. Moving z to 17/50 and
+s to beta_*+20e while retaining w=3 crosses no numerator or scalar pole
+for a nonprincipal row. Discarding only the s,z tails there uses global
+reciprocal bounds and the complete rapidly decaying w axis. The retained
+s move to a+16e stays buffered, independently of w. Finally the complete
+w move from 3 to 1/2 stays in the first Euler region and crosses no
+numerator pole; the reciprocal remains independent of w. Thus the
+Mellin reconstruction legitimately uses a full vertical w integral,+rather than silently replacing a truncated physical integral.
+
+Final verdict on the revised manuscript: no unresolved blocking gap
+found. It is a complete analytic proof by citation to the expressly
+stated original inputs, with a derived new numerator estimate and exact
+finite inequality certificate. This remains an AI-assisted review, with
+no claim of external human review or end-to-end Lean verification.
+Defining the barrier symbols g,e is a clarity improvement, not a missing
+analytic premise; its displayed implication is algebraically correct.

@@ -1,0 +1,282 @@
+STOP-POINT HANDOFF — gram_audit — 2026-10-09
+====================================================
+
+READ THIS FIRST
+The user explicitly requested STOP HERE and a detailed handoff. I stopped all new proof edits/builds. This report is a status artifact, not a claim that the final unconditional theorem has compiled.
+
+The target is theta = 10499/12000 = 0.874916666666..., using an independently developed weighted-numerator improvement at fixed original kappa_plain=3/4. Physical parameters: ell=167/1000, b=43/500, lx=747/2000, ly=919/2000, h=1587/2000. User forbids copying Li Xiang proof mechanisms/code; public metadata and benchmark comparisons are allowed. Root and other agents own the core numerator proof. I own low-side/original-high ports, source glue, final assumption audit, and the pending final endpoint file.
+
+MOST RECENT EXACT STATUS
+1. My completed source-assembly modules, including WeightedSourceRawCells and its fullW_input_of_raw_source, have current .olean files and standard-only axiom audits.
+2. Root's NumeratorSourceCollect.lean was repaired and COMPILED by formal_audit after root experienced a transient stream error. Disk confirms SourceCollect.olean exists and is newer than SourceCollect.lean. The standard logs/WeightedQRH.NumeratorSourceCollect.log is STALE and still displays the old simp failure; do not infer failure from that log. formal_audit has the latest direct compilation evidence.
+3. NumeratorActualSource.lean exists and is NOT COMPILED. Its .olean is absent. formal_audit reports session96321 completed with exit1, sole reported error at line59: `dsimp made no progress`. This is the second `dsimp only` in the count adapter after `intro J bin`; likely fix is simply deleting the redundant second dsimp, but this fix has NOT been made because of STOP. Do not treat the likely fix as a verified theorem.
+4. Final.lean and FinalAxioms.lean DO NOT EXIST. They were deliberately held until actual_raw_fullW_input compiled. The desired exact signatures were tested successfully against the already compiled conditional endpoint in a temporary smoke file, but no unconditional endpoint has been written or compiled.
+5. Parent reports separate coherent 80-module analytic/source and 136-module old-tail/source rebuilds succeeded earlier. These are parent-reported validation, not a full final dependency rebuild after the last ActualSource edit. A new final source-coherent rebuild and final axiom audit remain necessary before announcing completion.
+
+PROCESSES / SESSIONS
+- My smoke compile session79725 completed, exit0 at shell/Python level but Lean reported one namespace error in the first smoke. Superseded by session43970.
+- My smoke compile session43970 completed successfully; Lean exit0. It tested literal rational endpoint signatures with FullWAnalyticInput as an explicit hypothesis.
+- No gram_audit-owned Lean/build/exec process is known running.
+- formal_audit session96321 completed with Lean exit1 as described above; formal confirmed stopped and no new builds/edits launched.
+- Root was observed in errored state from a stream disconnect before STOP. formal took the small SourceCollect repair. Root subsequently resumed and issued STOP.
+- OS process listing was denied by sandbox (`ps: operation not permitted`); no escalation was sought. Thus no global OS PID inventory is claimed. The session IDs above are tool sessions, not OS PIDs.
+
+IMMEDIATE NEXT STEPS FOR THE NEXT AI, ONLY IF AUTHORIZED TO RESUME
+A. Read formal_audit's handoff and verify its latest ActualSource compile output.
+B. In NumeratorActualSource.lean line59, remove the redundant second `dsimp only` (the first one before intro J bin appears necessary), then compile that module. There may be further errors; none are assumed absent merely because this is the only current reported error.
+C. Audit actual_raw_fullW_input with #print axioms and inspect its theorem type. It should have NO added analytic hypothesis and conclude RawFullWAnalyticInput directly.
+D. Write Final.lean and FinalAxioms.lean using the exact construction below. Compile and inspect types and axioms.
+E. Rebuild the complete reachable new source closure against the intended pinned original source/cache; do not rely only on old .olean files or the final wrapper compiling against stale dependencies. Root owns the full coherent rebuild script/workflow.
+F. Reconcile the manuscript and public-search record with the final actual statement. No independent human mathematical review has occurred. Do not claim general number-field GRH, a closed half-plane, or analyticity at the zeta pole.
+
+EXACT FINAL CONSTRUCTION AND TARGET SIGNATURES
+The following final names are proposed; they do not yet exist. Open `OAI.SevenEighths` as well as `OAI.SevenEighths.WeightedHighFinalAssembly`. Opening only OAI does NOT resolve HeckeZeroSupremum.beta.
+
+import WeightedQRH.NumeratorActualSource
+import WeightedQRH.HighRows.WeightedSourceRawCells
+namespace WeightedQRH
+open OAI.SevenEighths OAI.SevenEighths.WeightedHighFinalAssembly
+
+theorem fullW_analytic_input : FullWAnalyticInput :=
+  fullW_input_of_raw_source Numerator.actual_raw_fullW_input
+
+theorem beta_le_theta : HeckeZeroSupremum.beta ≤ (10499/12000:ℝ) :=
+  beta_le_theta_of_fullW_input fullW_analytic_input
+
+theorem hecke_nonzero (χ : HeckeFamily.Character) (s : ℂ)
+    (hs : (10499/12000:ℝ) < s.re) (hpole : s ≠ 1 ∨ χ.residue ≠ 1) :
+    HeckeFamily.LFunction χ s ≠ 0 :=
+  hecke_of_fullW_input fullW_analytic_input χ s hs hpole
+
+theorem dirichlet_nonzero {q : ℕ} [NeZero q]
+    (χ : DirichletCharacter ℂ q) (s : ℂ)
+    (hs : (10499/12000:ℝ) < s.re) (hpole : ¬(χ = 1 ∧ s = 1)) :
+    χ.LFunction s ≠ 0 :=
+  dirichlet_of_fullW_input fullW_analytic_input χ s hs hpole
+
+theorem zeta_nonzero (s : ℂ) (hs : (10499/12000:ℝ) < s.re)
+    (h1 : s ≠ 1) : riemannZeta s ≠ 0 :=
+  zeta_of_fullW_input fullW_analytic_input s hs
+
+theorem zeta_analytic_nonzero (s : ℂ)
+    (hs : (10499/12000:ℝ) < s.re) (h1 : s ≠ 1) :
+    AnalyticAt ℂ riemannZeta s ∧ riemannZeta s ≠ 0 :=
+  ⟨analyticOn_riemannZeta s h1,zeta_of_fullW_input fullW_analytic_input s hs⟩
+end WeightedQRH
+
+FinalAxioms should import Final, #print each final declaration/type, and #print axioms each. Standard-only target list is [propext, Classical.choice, Quot.sound]. The h1 on zeta_nonzero is deliberately explicit for publication even though the existing library endpoint also proves nonzero at Mathlib's assigned total-function value at 1. It may be unused in that proof term; this is not a mathematical claim of analyticity at 1.
+
+SCOPE / FINAL ASSUMPTION AUDIT
+See research_audit/final_assumption_audit.txt for the full audit. Findings:
+- No contradictory, strengthened, or circular analytic assumption was found in the completed RawFullW -> IntegratedFullW -> FullW -> common-probe -> beta -> actual L-function chain.
+- At STOP its actual RawFullWAnalyticInput premise still has to be discharged by a successfully compiled NumeratorActualSource. The theorem is currently a draft, not a completed Lean result.
+- HighDataFine constructs data for EVERY positive beta-theta gap, and source/count data are constructed. No beta>7/8 premise or HighData(beta-7/8) is imported into the new path.
+- Original beta<=7/8 is obtained separately from the original certified theorem. The new path only needs beta>=.51, implied by theta<beta. Fixed kappa_plain=.75 is separate from small detector D.kappa.
+- Old source-moment height degree J and weighted numerator Jw are chosen before tau. chosen_data_height uses J+Jw. n is chosen later, and the weighted input quantifies over all n. Cw is before C0 and linearity in C0 is preserved. Eta-dependent constants and thresholds are allowed. Common positive savings are chosen before eta.
+- The count remains on original full amplitude classes. Masked mean is diluted over ALL slot lengths, with zero error-slot gains, and antitonic rowCount permits weakening from full to masked mean. No fake count for a new partition is assumed.
+- All actual row geometry, phase upper bounds, principal exclusions, conductor ranges, frequency lower edge, pool nonemptiness, and normalizer conditions are discharged by compiled wrappers.
+- Original branches cover d<=.5 or delta<=1/3; weighted branch covers the remainder; floor/small/large rows are treated separately. Low and high sides concern the identical normalized compensated physical probe.
+- Continuation uses a primitive zero near the actual supremum, checked finite-prime deletion, and analytic source correction within 1/2 of1 on the target region. The source identity starts in the already established >7/8 region and is continued.
+- Exact Hecke scope is the original HeckeFamily.Character: finite residue characters over Q(zeta_3), trivial on global units. It is NOT arbitrary Hecke characters over arbitrary number fields or an automorphic family. Exact base-change factorization transfers to every Dirichlet character modulo every positive integer and all complex heights.
+- Region is STRICT Re(s)>10499/12000. Principal pole at1 must be excluded in mathematical prose. Zeta's library total value at1 is not its meromorphic pole value.
+- Original method barrier statements elsewhere are scoped to specified low-side architecture/inequalities; they do not prove every possible extension cannot reach1/2.
+- AI-assisted review is not independent human review.
+
+MY MAIN COMPLETED MODULES AND INTERFACES
+All paths below are under research_audit/weighted_formal/WeightedQRH unless stated otherwise.
+
+Low side and original high branches:
+- LowReflection/* and LowDetector/* port actual physical low estimate to ell=.167,lx=.3735,ly=.4595; LowNormalizer.lean, LowAudit.lean. Actual endpoint: OAI.SevenEighths.WeightedProbeLow.original_normalized_compensatedPhysicalProbe_low. Low signal exponent 2327/12000 equals signal theta.
+- HighRows/* original moderate/intermediate/floor/small/large arithmetic, finite error, normalization and transport at newgeometry. HighAudit, TailAssemblyAudit, ConditionalFinalAudit expose checked endpoints.
+- ConditionalFinal.lean supplies common_probe_of_fullW_input, beta_le_theta_of_fullW_input, hecke_of_fullW_input, dirichlet_of_fullW_input, zeta_of_fullW_input. These remain explicitly conditional until actual input is compiled.
+- Continuation.lean supplies generic analytic continuation and exact actual Dirichlet/zeta transfer.
+
+Source and weighted glue:
+- HighRows/WeightedSlotSelection: capacity selection with error amplitudes zero, diluted mean denominator ALL slots, capacity allowed above main length, and correct spike/mesh loss.
+- NumeratorFreeScalarBound + Audit: actual numerator-free scalar (calibration * fixed principal L(6z) * reciprocal target) bounded without importing obsolete correction factors.
+- NumeratorPhysicalFront + Audit: exact canonical prime amplitude front identity and actual frequency normalization; original physical product fronts are retained.
+- HighRows/MaskedCount: rowCount antitone, masked means, same-class transfer.
+- HighRows/WeightedSourceCount: original actual source full-amplitude count, constant K*C0*Z^(3t), exponent rowCount+159ε+9t.
+- HighRows/WeightedSourceMaskedCount: same source count already converted to canonical Q and masked mean; final assembly avoids dependent physical/canonical class rewrites.
+- HighRows/WeightedSourcePrimeBins: actual prime amplitude bins, upper/lower physical estimates on external rectangle.
+- HighRows/WeightedSourceSelection: source_count_physical_eq; source_class_main_selection; squared_selected_lower; amplitude_class_main_upper; source_selected_product_crude. Common selected subset works for the entire original amplitude class and each fixed dilation box.
+- HighRows/WeightedSourceCellGeometry: weightedCellRows, WeightedCellRowData, weighted_source_cell_geometry; actual nonprincipality, U^.01<=Nu<=U; frequency edge Z^(d-2t); current/next detector; eventually_uniform_source_conductor; height <=Z^(2tau); pool nonempty from nonzero source normalizer.
+- HighRows/WeightedSourceScalar: weighted_source_scalar_on_rows supplies exact external-rectangle scalar/frequency bound uniformly with constant beforetau.
+- HighRows/WeightedSourceLoss: full explicit ledger, mesh<=t, ledger<=120ε+2eps+13t, exact packet exponent identity, parameter budget and certificate.
+- HighRows/WeightedSourceFinish: literal source normalizer bound/inverse costt/8, remaining SZ integral, weighted_source_height_absorption, integrated target->literalFullWCellsAt.
+- HighRows/WeightedSourceFinalAssembly: IntegratedFullWAnalyticInput and fullW_input_of_integrated_input.
+- HighRows/WeightedSourceRawCells: RawSourceDyadBound, RawFullWAnalyticInput, integrated_cells_of_raw_source, integrated_input_of_raw_source, fullW_input_of_raw_source.
+- HighRows/WeightedSourceCompletionAudit: latest audit of these source endpoints, all only standard three axioms.
+
+RAW TARGET / LOSS BUDGET TO PRESERVE
+Actual literal integratedDyadValue must obey:
+ ||value|| <= Cw*C0*Norm(eta)^(2eps)*(3+H)^Jw *
+   Z^(signal(theta)-1/40000-weightedSourceSZExponent(a,e)-t),
+where weightedSourceSZExponent(a,e)=lx*(.5-.34)+a+16e+.34-1.
+Jw is beforetau. Cw may depend ontau,n,eta but NOT C0,Z,d,a or the cell frequencies. Actual H=(3i+1)Z^tau, i<=n; 2tau*(1+Jw)<=t absorbs the height factor. The inverse normalizer costs t/8 afterward.
+The full loss ledger includes: 3t count prefactor, .68t frequency penalty, scalar2eps*d, coefficient mass t*d, Holder count loss3d(159ε+9t)/4, fourth-moment loss2td/4, selected meshdelta*mesh*d/4, boxdelta*t*d/4, annular padding2qtd/9, and main upper-bin restoration .167t. Ledger <=120ε+2eps+13t; checked HighData budget gives16e+ledger+t<=1/40000.
+
+OWNERSHIP / DO NOT DUPLICATE
+- Root: exact quotient-free full-w reconstruction, finite collection originally, exponent identity, full coherent rebuild, manuscript, final user response.
+- formal_audit: coefficient packet chain, weighted Holder, source masks, ActualSource. At STOP formal also performed final SourceCollect repair.
+- six_sevenths: certified moments, reflection/Fourier/fourth moments, actual source class, finite height envelope. Parent said original fixed-scale moment chain compiled and audited.
+- gram_audit: modules enumerated above, low/high/source glue, final assumption audit, pending Final/FinalAxioms. No edits to other agents' proof files were made in this last turn.
+
+RESEARCH / EVIDENCE FILES FROM EARLIER WORK
+- research_audit/gram_split_audit.txt: phase/correlation obstruction audit of earlier Gram splitting.
+- research_audit/independent_low.txt and independent_weighted_numerator_audit.txt: independent low/probe alternatives, candidate/failure distinctions.
+- research_audit/public_search_formalization_20261009.json and .txt: dated primary-source benchmark search. Additional public_search_*json files preserve fetched evidence. Do not treat search as proof of no other public result; coverage limits are explicit. Strongest earlier metadata benchmark approximately.874957019420098946; target.8749166667 is numerically smaller. No LiXiang mechanism imported.
+- research_audit/weighted_numerator_reflection_audit.txt, weighted_numerator_gram_referee.json, bootstrap_stage1_gram_referee.json: earlier adversarial checkpoints, some superseded by later reconstruction/formal work; retain dates/status distinctions.
+- research_audit/source_assembly_status.txt: older source assembly checkpoint; this handoff supersedes its ownership/pending-status prose.
+- research_audit/final_assumption_audit.txt: detailed final source-to-endpoint scope audit; its pending-input caution remains accurate atSTOP.
+
+BUILD ENVIRONMENT / COMMANDS FOR A FUTURE RESUMPTION
+cwd=/Users/akashlevy/Documents/riemann
+New Lean root=research_audit/weighted_formal
+Build command examples (NOT RUN afterSTOP):
+  python research_audit/weighted_formal/build.py WeightedQRH.NumeratorActualSource
+  python research_audit/weighted_formal/build.py WeightedQRH.Final WeightedQRH.FinalAxioms
+  python research_audit/weighted_formal/build.py WeightedQRH.HighRows.WeightedSourceCompletionAudit
+Pinned Lean=/Users/akashlevy/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean
+Flags=-DautoImplicit=false -M8192 -j2
+build.py writes sibling .olean and logs/WeightedQRH.MOD.log. It does NOT recursively build dependencies. It may consume stale dependent .olean files, which is why the root coherent closure rebuild is required.
+Use actual original source formalize_11_12/math/lean at the pinned c388e88... source, matching formalize_11_12/upstream/.lake/build/lib/lean. DO NOT use lean-base (older pre-prune source).
+Environment config is research_audit/weighted_formal/lean_environment.json; full config follows below.
+Cwd is not a git repository. No commits or external publications/messages were made.
+
+LEAN ELABORATION PITFALLS
+- D.N vs D.toMomentData.N are definitionally equal but semireducible dependent Fin/Fintype expressions can defeat rw/simpa. Use a direct exact/calc equality or explicitly unfold; printed-identical types can still have instance mismatch.
+- SourceCollect old failure `D.toMomentData.N=D.N or A=0` was resolved by formal in the current compiled source.
+- RawCells source-profile equality: `rw [source_real_profile_eq F]; exact hs` worked where `simpa only [...] using hs` did not.
+- PrimeIdeal can be ambiguous; qualify ProbePhysical.PrimeIdeal.
+- Use spaces around `< mesh`; local notation otherwise can trigger a parser conflict.
+- add_le_add_right may be shadowed; small linarith steps avoided that issue.
+- The final public endpoint smoke file is /private/tmp/weighted_qrh_endpoint_smoke.lean. It explicitly assumes FullWAnalyticInput and therefore proves NO unconditional new QRH statement.
+
+LEAN ENVIRONMENT JSON
+{
+  "lean": "/Users/akashlevy/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean",
+  "LEAN_PATH": "/Users/akashlevy/Documents/riemann/research_audit/weighted_formal:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/Cli/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/batteries/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/Qq/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/aesop/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/importGraph/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/plausible/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/PrimeNumberTheoremAnd/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/rellich-kondrachov/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/LeanArchitect/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/checkdecls/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/leancert/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/PrimeCert/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/.lake/packages/mathlib/.lake/build/lib/lean:/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/.lake/build/lib/lean:/Users/akashlevy/.elan/toolchains/leanprover--lean4---v4.34.1/lib/lean"
+}
+
+
+OWNED / CLOSELY RELATED MODULE FILE INVENTORY AT STOP
+mtime status is only a disk freshness check, not an independent semantic proof or full rebuild.
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowCentralGeometry.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowCentralTuple.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowCommonBound.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowGaussianCentral.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowGaussianDyad.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowGaussianRemote.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowGaussianSum.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowGramScale.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowInverseNormalize.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowNominalEnergy.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowNominalGeometry.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowNormalized.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowOriginalPools.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowPhysicalInverseBound.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowReflectedLength.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowRemoteMass.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowSelectedBound.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowSlotScales.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowSourceScales.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowUnselectedMass.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowDetector/LowWindowBound.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowBranchSum.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowCaps.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowChoiceEnergy.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowCompletedFiber.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowCompletedRows.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowDyads.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowExponent.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowFixedMember.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowFrozenEnergy.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowFull.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowFullBudget.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowGlobalBudget.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowInactiveEnergy.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowMemberBudget.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowMemberGeometry.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowOriginalEnergy.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowRetained.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowRetainedBudget.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowReflection/LowSector.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CanonicalCubeChoice.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CanonicalCubeReduction.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CanonicalRayCube.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CanonicalReduction.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CanonicalTails.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CentralClassArithmetic.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CentralErrorSaving.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CentralExponent.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CentralFiniteError.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/ConditionalFinal.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/ConditionalFinalAudit.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CountIdentity.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeErrorSaving.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeFiniteError.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeFloorArithmetic.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeFloorCollected.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeFloorGlobal.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeFloorGlobalIntegral.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeFloorNormalized.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeFloorSaving.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeFullWNormalized.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeFullWTransfer.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/CubeSlotExponent.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/FixedHigh.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/FullWCellInput.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/GeometricTail.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/HighAssembly.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/HighData.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/HighDataFine.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/LargeDyad.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/LargeSaving.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/LargeTail.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/MaskedCount.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/MixedCollected.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/MixedFullWCollected.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/NonfloorArithmetic.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/NonfloorClass.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/NonfloorCollected.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/NonfloorIntegral.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/NonfloorNormalized.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/NonfloorTransport.lean
+OLDER .olean; inspect/rebuild: research_audit/weighted_formal/WeightedQRH/HighRows/NormalizedTransport.lean
+OLDER .olean; inspect/rebuild: research_audit/weighted_formal/WeightedQRH/HighRows/NormalizedTransportSaving.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/PhysicalLargeTail.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/PhysicalSmallTail.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/SlotLengths.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/SlotWidths.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/SmallTail.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/SourceAmplitudeClasses.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/SourceBatch.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/SourceProbe.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/TailAssemblyAudit.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/TailScales.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSlotSelection.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSlotSelectionAudit.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceAssemblyAudit.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceCellGeometry.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceCompletionAudit.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceCount.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceFinalAssembly.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceFinish.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceLoss.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceMaskedCount.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourcePrimeBins.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourcePrimeBinsAudit.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceRawCells.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceScalar.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighRows/WeightedSourceSelection.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowNormalizer.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/LowAudit.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/HighAudit.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/Continuation.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/NumeratorFreeScalarBound.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/NumeratorFreeScalarBoundAudit.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/NumeratorPhysicalFront.lean
+current .olean: research_audit/weighted_formal/WeightedQRH/NumeratorPhysicalFrontAudit.lean
+
+Two old transport sources had older sibling .olean timestamps in the inventory: HighRows/NormalizedTransport.lean and NormalizedTransportSaving.lean. Parent reported coherent rebuilds elsewhere; do not silently treat sibling freshness as resolved. Check the intended full dependency rebuild output on resumption.

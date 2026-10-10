@@ -1,0 +1,6 @@
+import WeightedQRH.RowConductor
+
+#print axioms WeightedQRH.RowConductor.exists_row_small_presentation
+#print axioms WeightedQRH.RowConductor.reflected_scale_selected_deficit_real
+#print axioms WeightedQRH.RowConductor.row_original_split
+#print axioms WeightedQRH.RowConductor.LFunction_eq_of_elementCoeff_eq

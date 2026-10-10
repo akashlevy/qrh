@@ -1,0 +1,23 @@
+{
+  "status": "PASS: actual low-side analytic estimate compiled",
+  "time_utc": "2026-10-09T22:13:15.621409+00:00",
+  "theorem": "OAI.SevenEighths.WeightedProbeLow.original_normalized_compensatedPhysicalProbe_low",
+  "entrypoint": "WeightedQRH.LowDetector.LowNormalized",
+  "audit": "WeightedQRH.LowAudit",
+  "geometry": {
+    "total_slot": "167/1000",
+    "X_exponent": "747/2000",
+    "Y_exponent": "919/2000",
+    "bound_exponent": "2327/12000 + arbitrary positive loss"
+  },
+  "meaning": "Bounds the original literal compensatedPhysicalProbe, divided by sourceResidueConstant times principalScalar at the new slot total. Includes eventual nonvanishing of that normalizer. No new analytic assumption supplied.",
+  "method": "Physical row widthM-2d withM=.833; reflected energy allowedM-d+epsilon; after square root extra d/2 is exactly canceled by the unselected prime mass decayZ^(-d/2), using summability of norm^(-3/2). All arithmetic and actual branch/error/fiber/Gaussian aggregation remain genuine original-input deductions.",
+  "limitations": [
+    "This establishes the low side only, not the full10499/12000 zero-free theorem.",
+    "Imports original OpenAI analytic proof dependencies and standard Mathlib; no external refinement code used.",
+    "AI-assisted port and audit, not expert human review."
+  ],
+  "module_count": 41,
+  "all_modules_compiled": true,
+  "manifest_sha256": "e2cd4d895134f18b085672edd0f056d6d886139e2dc6bdcd7745330509ac9453"
+}

@@ -1,0 +1,167 @@
+Actual old-branch, tail, and central-collection port for weighted QRH geometry
+============================================================================
+AI-assisted formal work; not a claim that the final improved QRH theorem is complete.
+All source additions are isolated under WeightedQRH/HighRows. No upstream source was edited:
+upstream files are unchanged relative to fork commit c388e88e6, whose retained declarations
+come from openai/math fd4aeeb2e.
+The upstream source tree is formalize_11_12/math/lean and matches the pinned cached build.
+
+Geometry
+--------
+theta=10499/12000; slot total=167/1000; X=Z^(747/2000); Y=Z^(919/2000);
+h=1587/2000; rowExtension=1/1000000; signal(s)=s-681/1000.
+The literal original finiteCentralCubeRows, compensatedPhysicalProbe, ray characters,
+prime pools, source weights, and sourceResidueConstant/principalScalar normalizer are used.
+
+Old moderate/intermediate branches
+---------------------------------
+Namespace OAI.SevenEighths.WeightedHighRowFamily:
+HighRows.NonfloorNormalized.actual_normalized_nonfloor_cube:
+  actual central-cube bound at signal(theta)-1/40000+nu, with explicit original
+  SourceMomentsAt (Delta=0) and actual CountParameters.
+HighRows.NonfloorCollected.actual_nonfloor_rows_saving:
+  collects dyads, zero bins, and height bins at cost Z^dyadCost. Its branch condition is
+  OriginalBranch(d,a): d<=h+rowExtension and (2a-1<=1/3 or d<=1/2).
+The count identity agrees exactly with original adaptiveRowExponent. It introduces no
+new CountParameters assumptions beyond the actual original structure. No beta>7/8 or
+old HighData/FineMomentInput premise is used.
+
+Floor
+-----
+HighRows.CubeFloorCollected.actual_floor_rows_saving:
+  actual full finite floor collection <=C*N(eta)^(2eps)*Z^(signal(theta)-saving),
+  for row top v<=h+rowExtension and
+  26e+(N+8)eps+loss+(167/1000)mesh+nu+saving<=1/100.
+
+Small and large rows
+-------------------
+TailScales, SmallTail, PhysicalSmallTail:
+  The old generic analytic theorem requires sigma>=7/8. We keep sigma=7/8+8e,
+  using the already-established beta<=7/8, instead of imposing beta>=7/8.
+  Actual small-row error exponent is 7/8-681/1000-7221/100000+8e.
+LargeDyad, GeometricTail, LargeTail, LargeSaving, PhysicalLargeTail:
+  Actual rows above Z^(1587/2000+zeta) have arbitrary polynomial saving.
+  Fixed contour sigma=upsilon=2 and arbitrary row decay order are reused exactly.
+CentralErrorSaving, CentralFiniteError, CubeErrorSaving, CubeFiniteError:
+  Actual rectangular truncation errors are controlled at the new lengths.
+  The crude arithmetic scale is Z^(6+3ell)=Z^6.501; height truncation absorbs it.
+CanonicalTails, CanonicalReduction, CanonicalCubeReduction, CanonicalCubeChoice,
+CanonicalRayCube preserve the exact original partition and finite-cube identities.
+
+Actual normalized physical transport
+------------------------------------
+HighRows.NormalizedTransport.actual_normalized_probe_transport:
+  Imports WeightedQRH.PrincipalNormalized.actual_ray_principal_comparison
+  (module WeightedQRH.PrincipalRemainderNormalized).
+  Hypotheses theta<=beta<=7/8. It obtains actual height/zero bin functions and
+  strengthens every zero bin to a<=7/8 via an actual zero witness and zero_re_le_beta.
+HighRows.NormalizedTransportSaving.actual_normalized_probe_transport_saving:
+  normalized physical probe - HeckeSignal(shift=-681/1000) - all central rows
+  <= C*Z^(beta-681/1000-sigma).
+  Sufficient error budgets: sigma+8e+nu<=1/20; sigma+nu<=1/4000;
+  sigma+e<=theta*ellMin; sigma+nu<=saving+2327/12000.
+HighRows.NonfloorTransport.actual_nonfloor_probe_transport:
+  Same actual transport after removing supported floor rows; only actual supported
+  nonfloor central rows remain. Requires zeta<=rowExtension and the floor budget.
+  This endpoint proves the tail and principal comparison; it assumes no weighted bound.
+
+Precise remaining weighted analytic input and collection
+-------------------------------------------------------
+HighRows.MixedCollected.actual_mixed_nonfloor_rows_saving:
+  Requires top+2margin<=h+rowExtension. For nonempty cells R_ijk it takes the literal
+  normalized actual central-cube estimate only when
+    d=sourceDyadConductor(Z,margin,k)>1/2,
+    2a-1>1/3, a=51/100+e*j,
+    d<=h+rowExtension.
+  Required bound:
+    norm(finiteCentralCubeRows(R_ijk)/actual normalizer)
+       <= weightedC*C0*N(eta)^(2eps)*Z^(signal(theta)-1/40000+nu).
+  This is explicitly a premise. Its analytic derivation is still being developed by
+  the weighted-numerator team. The theorem covers all other cells by the proved
+  original branch, and concludes for the full supported nonfloor collection:
+    <= C*(1+weightedC)*C0*N(eta)^(2eps)
+             *Z^(signal(theta)-1/40000+nu+dyadCost).
+  SourceMomentsAt remains explicit and can be supplied by
+  ProbeFinalAssemblyCertifiedBands.weighted_actual_source_moments with Delta=0.
+  Constants are uniform in all cells; the estimate is not a rowwise existential
+  or an assumption about the final QRH conclusion.
+
+Dependency audits
+-----------------
+WeightedQRH.HighAudit and WeightedQRH.HighRows.TailAssemblyAudit both compile.
+The latter prints the axioms of normalized transport, saving, nonfloor transport,
+and mixed collection: ONLY propext, Classical.choice, Quot.sound.
+All HighRows .lean files have been checked for sorry, axiom, unsafe; none are present.
+The final improved QRH theorem still requires the weighted cell premise to be proved,
+source moments and admissible parameters instantiated, and the final continuation
+argument composed. These modules must not be described as the completed GRH/QRH proof.
+
+Full-w transfer and conditional completion (completed later in this audit)
+-------------------------------------------------------------------------
+CubeFullWTransfer.finite_cube_fullW_arbitrary_saving compares the two literal
+central finite sums through the same original finitePhysicalRows, with arbitrary
+polynomial saving. CubeFullWNormalized.actual_normalized_cube_fullW_arbitrary_saving
+divides by the actual normalizer, retaining arbitrary saving.
+MixedFullWCollected.actual_mixed_fullW_nonfloor_rows_saving accepts the literal
+finiteCentralFullWRows cell estimate instead of the cube estimate. It requires C0>=1;
+after an eta-dependent threshold the transfer error contributes at most one unit.
+The final constant is C*(2+weightedC)*C0*N(eta)^(2eps), with the same exponent.
+
+HighRows.HighDataFine.exists_high_data_fine constructs actual finite distinct slots
+with sum167/1000, arbitrary prescribed fine mesh, and all new exponent budgets.
+HighData.toMomentData connects directly to the independently certified moments.
+SourceProbe.sourceProbe is the literal new physical normalized probe, with its proved
+low bound. HighAssembly and FixedHigh compose all actual high estimates, given the
+literal FullWCellsAt premise.
+
+HighRows.ConditionalFinal constructs the actual parameters, source windows/exclusions,
+CountParameters, certified source moments, and height choice. It proves:
+  common_probe_of_fullW_input,
+  beta_le_theta_of_fullW_input,
+  hecke_of_fullW_input, dirichlet_of_fullW_input, zeta_of_fullW_input.
+All depend explicitly on FullWAnalyticInput, which supplies only uniform literal
+full-w cell bounds in the specified critical range. FullWAnalyticInput is a definition
+of a proposition, not an axiom, and has NOT been proved. Thus these are conditional
+endpoints and must not be presented as an unconditional new QRH theorem.
+
+ConditionalFinalAudit compiles and checks the entire actual parameter/probe/transfer/
+conditional-final chain. Every listed theorem uses only propext, Classical.choice,
+Quot.sound. Its #print output records the exact remaining FullWAnalyticInput.
+
+Height quantifier correction and weighted greedy selection
+---------------------------------------------------------
+FullWAnalyticInput now chooses a nonnegative fixed height degree Jw after D/F/counts
+and before tau, and requires 2*tau*(1+Jw)<=D.t. The common-probe proof chooses tau
+using the sum of the original source moment degree and Jw; both absorptions follow.
+This is sufficient for the independently controlled Fourier/profile moments and
+avoids claiming bounded-height SourceMomentsAt at arbitrary Fourier frequencies.
+
+HighRows.WeightedSlotSelection.highData_weighted_selection proves exact finite
+selection at capacity max(0,(2*ly/d-1)/(6*kappa)-4*v/9). Error slots have zero gains,
+but retain their lengths in the definition q=(sum ALL widths*gain)/(ell/d).
+It proves q in [0,delta/2], selection contained in the main mask, total selected
+length<=capacity, gain>=q*capacity-delta*mesh/2, and squared selected product
+>=U^(2*q*capacity-delta*mesh), given only the individual positive-bin lower bounds.
+There is no hypothesis capacity<=main-slot length and no assumed amplitude frontier.
+The zero-slot certified energy supplies the analytic capacity-zero case separately;
+this finite selection theorem does not claim a moment estimate.
+WeightedSlotSelectionAudit uses only propext, Classical.choice, Quot.sound.
+
+STATUS UPDATE 2026-10-09 (supersedes conditional wording above)
+--------------------------------------------------------------
+The input this map calls unproved or conditional is now proved.
+WeightedQRH.Numerator.actual_raw_fullW_input : RawFullWAnalyticInput
+(NumeratorActualSource.lean) and WeightedQRH.fullW_analytic_input :=
+fullW_input_of_raw_source Numerator.actual_raw_fullW_input (Final.lean) discharge
+FullWAnalyticInput. Final.lean proves WeightedQRH.beta_le_theta :
+HeckeZeroSupremum.beta <= 10499/12000 and hecke_nonzero, dirichlet_nonzero and
+zeta_nonzero; Statements.lean gives the three Comparator-form statements. FinalAxioms
+(isolated log .verification/final2_20261009/lib/logs/WeightedQRH.FinalAxioms.log) shows
+only propext, Classical.choice and Quot.sound. Isolated rebuild:
+final_rebuild_verification.json (231 modules, all exit 0). Comparator (local macOS run,
+unsandboxed Landrun stand-in, lake-build shim, default Lean kernel only; no NanoDa or
+con-ron) accepts all three challenges. No external human peer review. The exact final
+step chain, files and caveats are in final_assembly_theorem_map.txt.
+In this map: the weighted cell premise of MixedCollected and the FullWAnalyticInput
+hypothesis of the ConditionalFinal endpoints are the input discharged above; the
+ConditionalFinal implications are used unchanged in Final.lean.

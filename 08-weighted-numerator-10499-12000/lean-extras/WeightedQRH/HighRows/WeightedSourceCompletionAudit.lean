@@ -1,0 +1,27 @@
+import WeightedQRH.HighRows.WeightedSourceFinalAssembly
+import WeightedQRH.HighRows.WeightedSourceCellGeometry
+import WeightedQRH.HighRows.WeightedSourceMaskedCount
+import WeightedQRH.HighRows.WeightedSourceScalar
+import WeightedQRH.HighRows.WeightedSourceRawCells
+
+#print axioms WeightedQRH.source_class_main_selection
+#print axioms WeightedQRH.squared_selected_lower
+#print axioms WeightedQRH.amplitude_class_main_upper
+#print axioms WeightedQRH.source_selected_product_crude
+#print axioms WeightedQRH.weighted_detectorMesh_le
+#print axioms WeightedQRH.weightedSourceLoss_le
+#print axioms WeightedQRH.weighted_source_packet_fixed_budget
+#print axioms WeightedQRH.weighted_source_packet_exponent
+#print axioms WeightedQRH.weighted_source_uniform_packet_budget
+#print axioms WeightedQRH.weighted_source_packet_certificate
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.eventually_uniform_source_conductor
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_height_le
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_cell_geometry
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_pools_nonempty
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_absorb_height
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_masked_amplitude_count
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.fullW_input_of_integrated_input
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.weighted_source_scalar_on_rows
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.integrated_cells_of_raw_source
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.integrated_input_of_raw_source
+#print axioms OAI.SevenEighths.WeightedHighFinalAssembly.fullW_input_of_raw_source

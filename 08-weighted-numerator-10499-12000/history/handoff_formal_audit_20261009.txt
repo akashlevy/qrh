@@ -1,0 +1,451 @@
+FORMAL_AUDIT HANDOFF — 2026-10-09 — USER REQUESTED STOP
+
+Status at handoff
+=================
+The user explicitly asked to STOP HERE. No new proof edits or builds were
+started after that instruction. I only polled the already-running session
+96321, inspected the saved state, and wrote this handoff. The root reports
+get_goal now returns goal:null. Do not autonomously resume proof work without
+a new instruction from the user/root.
+
+The unconditional theta=10499/12000 theorem IS NOT YET COMPILED. The last
+missing source-input module has a small reported elaboration error, but that
+is not equivalent to a completed proof. No NumeratorActualSource.olean,
+Final.olean, or FinalAxioms.olean exists at this snapshot.
+
+The new coefficient/numerator/reflection/source-class chain is real Lean
+proof work, not assumption-only replacement definitions. It uses the
+original upstream kappa=3/4 moment theorem, original row characters,
+original Hecke polynomials, original Euler correction, and literal source
+integrals. The changed numerator estimate has been connected through a
+compiled finite-class collection theorem to the actual integratedDyadValue.
+The final discharge of that theorem's source predicates is written but not
+yet successfully compiled.
+
+Latest exact build result
+=========================
+Session 96321 (our last active exec session) FINISHED before handoff.
+It compiled NumeratorActualSource.lean and returned Lean exit code 1:
+
+  NumeratorActualSource.lean:59:6: error: `dsimp` made no progress
+
+The Python command wrapper itself exited 0 because it printed Lean's return
+code instead of propagating it. The relevant Lean result is FAILURE (1).
+The log is:
+  research_audit/weighted_formal/logs/NumeratorActualSource.log
+
+No other error is reported in this latest log. This does not guarantee no
+further errors will be exposed after the current one is removed.
+
+Current final lines (UNCHANGED under STOP):
+  52  exact hc.2 Z d hZ hd hdmax rfl eta
+      ...
+  56    Cs K C0 hCs.le hK hC0 (by
+  57      dsimp only
+  58      intro J bin
+  59      dsimp only
+  60      intro hne
+  61      simpa only [add_assoc] using
+            (hcounts (Finset.univ\J) bin hne).2.2) hscalar' hupper'
+
+The likely next local repair is to remove the redundant SECOND `dsimp only`
+at line 59. The first one appears to have reduced the internal let bindings
+already. I have NOT made that change and have NOT tested that diagnosis.
+
+Immediately preceding successful build
+======================================
+NumeratorSourceCollect.lean COMPILED successfully, in session 91776.
+The same script then tried ActualSource. Its first ActualSource error was
+that `intro J bin hne` introduced an internal let-bound rows' as hne, so hne
+had type Finset FreeRow rather than the required Nonempty proposition.
+I inserted the two dsimp lines shown above; session 96321 is the resulting
+failure at the now-redundant second dsimp.
+
+SourceCollect had been root-owned. When root temporarily errored from a
+stream disconnect, I took over its one remaining finite-cardinality proof,
+notified root/gram, and root subsequently explicitly confirmed that ownership
+for completion. The only edit I made there was its maskFactor equality:
+
+  _ = maskFactor*A := by
+    simp only [Finset.sum_const, Finset.card_powerset,
+      Finset.card_univ, Fintype.card_fin, nsmul_eq_mul,
+      Nat.cast_pow, Nat.cast_ofNat]
+    rfl
+
+That proof replaced a broad simp leaving D.toMomentData.N=D.N or a residual
+univ.card=D.N disjunction. SourceCollect.olean now exists and matches this
+successfully compiled source. Its successful log is:
+  research_audit/weighted_formal/logs/NumeratorSourceCollect.log
+Root's older failed log is separately named:
+  research_audit/weighted_formal/logs/WeightedQRH.NumeratorSourceCollect.log
+Do not mistake the older prefixed log for the final successful result.
+
+Files and ownership
+===================
+All paths below are relative to /Users/akashlevy/Documents/riemann unless
+stated otherwise. I edited only research_audit overlay/support files, never
+the original upstream files during this numerator task.
+
+Latest files I authored/changed:
+  research_audit/weighted_formal/WeightedQRH/NumeratorSourceBin.lean
+  research_audit/weighted_formal/WeightedQRH/NumeratorSourceMask.lean
+  research_audit/weighted_formal/WeightedQRH/NumeratorSourceMaskAxioms.lean
+  research_audit/weighted_formal/WeightedQRH/NumeratorActualSourceHelpers.lean
+  research_audit/weighted_formal/WeightedQRH/NumeratorActualSource.lean
+  research_audit/weighted_formal/WeightedQRH/NumeratorSourceCollect.lean
+    (root authored; my final small cardinality repair described above)
+  research_audit/weighted_formal/numerator_theorem_map.txt
+  research_audit/handoff_formal_audit_20261009.txt (this handoff)
+
+Existing coefficient/packet/finite-collection modules I owned or developed
+through the preceding work are under the same WeightedQRH directory:
+  NumeratorHolder
+  NumeratorDamping
+  NumeratorLocalCoefficients
+  NumeratorPolynomialMass
+  NumeratorRamifiedMass
+  NumeratorUnramifiedMass
+  NumeratorActualError
+  NumeratorEulerExpansion
+  NumeratorPrimeExpansion
+  NumeratorRamifiedProduct
+  NumeratorCorrectionExpansion
+  NumeratorFinitePacket
+  NumeratorErrorPacket
+  NumeratorDeficit
+  NumeratorMassDamping
+  NumeratorErrorPrimeSum
+  NumeratorPacketMellin
+  NumeratorIntegral
+  NumeratorPacketFourth
+  NumeratorAmplitudeHolder
+  NumeratorErrorLabels
+  NumeratorLabelPacket
+  NumeratorDilationBoxes
+  NumeratorPacketBoxes
+  NumeratorLabelPrimeBound
+  NumeratorPhysicalPacketMass
+  NumeratorFiniteBins
+  NumeratorBoxReconstruction
+  NumeratorPacketBinBound
+  NumeratorAmplitudeLoss
+  NumeratorActualBin
+  NumeratorFiniteCollect
+  NumeratorPhysicalCollect
+  NumeratorSourceParameters
+  NumeratorAxioms
+These are compiled component modules. See numerator_theorem_map.txt for
+individual content and the latest appended status, which supersedes old
+remaining-work paragraphs earlier in that file.
+
+Other agents' relevant ownership:
+  root:
+    full-w contour transport, exact Mellin reconstruction and literal finite
+    reconstruction; original-polynomial fourth moment composition;
+    NumeratorSourceScalar, NumeratorSourceExponent; finite collection
+    (SourceCollect except my final repair); reproducibility and manuscript.
+  six_sevenths:
+    radical conductor/presentation, certified direct physical moments,
+    retained/reflection transfer, NumeratorActiveFourth,
+    NumeratorSourceClass, NumeratorFiniteHeight, related axiom audits.
+    At STOP was producing a delivery/manuscript checklist, not altering our
+    source proof files.
+  gram_audit:
+    actual source counts, masks, prime bins, greedy selection, row geometry,
+    exact loss budget, actual-cell/height/source-SZ/normalizer assembly.
+    Owns HighRows/WeightedSourceRawCells and planned Final/FinalAxioms.
+    The endpoint smoke test elaborated against the conditional theorem;
+    unconditional Final and its axiom audit are NOT compiled at snapshot.
+
+Key compiled theorem chain
+==========================
+Unless stated otherwise, namespace is WeightedQRH.Numerator.
+
+1. NumeratorPhysicalPacketMass.actual_physical_label_mass
+   Proves the actual complete physical error-label coefficient mass:
+     sum_e |A_e| N_e^(-1/2) max(1,Cu*N_e/(Ccond*Nu))^rho
+       <= Cmass*Nu^massEps * product_error Y_j^(-4/25).
+   Any massEps>0. Cu is the actual combined primitive/redundant conductor
+   scale and is bounded by Ccond*radical(rowNorm). Exact original Euler
+   coefficients, absolute summability, and prime-label sums are proved.
+   Cmass is chosen before target eta, rows, heights, and C0.
+
+2. NumeratorActualBin.actual_label_packet_bin_bound
+   Converts the literal coefficient packet into a finite exponent-box bound
+   using actual original-row-character polynomial fourth moments, full-class
+   cardinality, selected-prime lower bounds, and main-product upper bounds.
+   At this intermediate module the fourth moment remains a displayed input;
+   it is fully discharged in SourceBin (see below).
+   Crucially the coefficient mass and count/moment constants are linear.
+   No second factor of the external source C0 is introduced.
+
+3. NumeratorActualBin.errorLabelNumerator_eq_packet
+   Exact identity from the literal full-w error-label numerator to the
+   packet of original HeckeDyadic.polynomial values at Y/N_e.
+   Conditions are original FirstTail, source-prime coprimality/disjointness,
+   nonprincipal row, exact lines, compact smooth W, and Y>0.
+   All of these are source conditions discharged later.
+
+4. NumeratorSourceBin.source_packet_selected_bin — COMPILED
+   Actual physical packet estimate with certified_active_box_fourth fully
+   instantiated. No analytic fourth-moment hypothesis remains.
+   Uses the SAME chosen PhysicalReflectionData.combinedConductor both for
+   coefficient damping and reflection scale. Certified original kappa=.75.
+   Concrete choices:
+     coefficient mass exponent = D.t
+     polynomial moment exponent loss = 2*D.t
+     coefficient exponent-box width = D.t
+     reflection annulus slack = D.t
+     number of boxes = ceil(1/D.t).
+   Constants and height degree precede U, eta, C0, heights, rows.
+
+5. NumeratorSourceClass.source_packet_amplitude_class — COMPILED (six)
+   Discharges selected-capacity, selected spikes, crude selected product,
+   and main upper product using actual original full amplitude classes.
+   q is the masked lower-bin mean OVER ALL ORIGINAL SLOT WIDTHS; errors
+   receive zero gain and the denominator remains ell/d.
+   Restores the upper-bin loss t*ell/d explicitly.
+   Remaining premises are actual full-class cardinality, actual phase upper
+   bounds, and source row/pool geometry. No new moment assumption.
+
+6. NumeratorPhysicalCollect.source_mask_physical_front — COMPILED
+   Bounds the literal sourceMaskContribution using actual frequency/free
+   scalar, errorLabelNumerator, and canonical main-prime products.
+   Keeps the exact physical front Z^(-4/25 * sum_main ell_j).
+   source_reconstructed_sum_masks is exact literal reconstruction as a sum
+   over all error subsets. Natural zeros and source characters are retained.
+
+7. NumeratorSourceScalar.source_frequency_scalar_bound — COMPILED (root)
+   Actual calibrated scalar times physical frequency is bounded by
+     Cs * Neta^(2eps) * (3+H)^(2eps)
+        * U^(2eps) * U^(-17/50) * Z^((17/25)*t).
+   The final Z^(.68t) is essential: enlarged moment base U=Z^d differs
+   from the dyadic lower edge Z^(d-2t). It must not be dropped.
+
+8. NumeratorSourceExponent.source_packet_multiplicative_identity
+   COMPILED (root). Exact equality collapsing all scalar, frequency, source
+   count, error/main normalization and packet powers to
+     numeratorExponent d delta (q/delta) + weightedSourceLoss(...).
+   Includes the source-count prefactor Z^(3t), upper-bin t*ell, and annular
+   capacity padding 2*q*t/9.
+
+9. NumeratorSourceMask.source_mask_amplitude_class — COMPILED + AXIOM AUDIT
+   Literal sourceMaskContribution F eta rows' J Z x z (Z^ly) satisfies
+     norm <= (C*Cs*K)*C0*Neta^(2eps)*(3+H)^(degree+2eps)
+             * Z^(signal(theta)-1/40000-sourceSZExponent(a,e)-t).
+   Applies the exact coefficient reconstruction, physical front, exact
+   multiplicative identity, and certified numerical exponent budget.
+   Input count is the ORIGINAL full amplitude-class cardinality at the
+   diluted masked q, not an error-dependent repartitioned class.
+   Inputs for scalar/count/phase/row geometry have separate compiled actual
+   source theorems. Their complete discharge is the uncompiled ActualSource.
+
+10. NumeratorSourceCollect.source_integrated_amplitude_classes — COMPILED
+    ∃Jw:Real≥0, ∃C>0, eventually U, then uniformly in Z,d,eta,x,z,a,H,rows,
+    all physical source geometry, all-mask/full-tuple injectivity, a full
+    physical prime tuple witness, Cs,K,C0, all-mask original amplitude counts,
+    actual scalar and prime-amplitude uppers imply
+      norm(actual FullWContour.integratedDyadValue)
+        <= (C*Cs*K)*C0*Neta^(2eps)*(3+H)^Jw
+            *Z^(signal(theta)-1/40000-sourceSZExponent(a,e)-t).
+    Finite mask degree/constant envelope is chosen BEFORE U and tau.
+    Empty amplitude classes are treated as zero, via finite-class collection.
+    Error masks cost 2^D.N, full amplitude classes cost alphabetBound(t)^D.N;
+    these are fixed constants. Original normalized full-w integral brings
+    the exact factor 2*pi.
+    This theorem still has explicit source count/scalar/phase/geometry
+    premises, all intended to be discharged by ActualSource. It is not the
+    final QRH theorem.
+
+11. NumeratorActualSourceHelpers.actual_source_prime_upper — COMPILED
+    Literal external rectangle specialization of the original source prime
+    phase bins, with cap a-1/2 rewritten to (2a-1)/2. Proves actual canonical
+    Q upper bounds directly from next-detector/source row hypotheses.
+
+12. NumeratorActualSource.actual_raw_fullW_input — WRITTEN, NOT COMPILED
+    Intended type:
+      OAI.SevenEighths.WeightedHighFinalAssembly.RawFullWAnalyticInput.
+    No added analytic premise in its statement. The proof obtains:
+      - baseline beta>=.51 from theta<beta (contradiction premise),
+      - Jw and collection C before tau,
+      - actual scalar Cs before tau,
+      - original masked count K after tau,n,
+      - uniform eventual U=Z^d threshold for every d>=.5,
+      - actual source prime geometry and pool nonemptiness,
+      - literal source rectangle scalar and amplitude uppers,
+      - original weighted_SourceMomentBound to actual masked class counts.
+    Chooses Cw=C*Cs*K, independent of C0. Its only reported current compile
+    error is the redundant dsimp line described at the top of this handoff.
+
+RawFullWAnalyticInput's exact role
+================================
+Defined in HighRows/WeightedSourceRawCells.lean (gram, compiled).
+Its quantifiers are:
+  for theta<beta, actual HighData(beta-theta), fine source slots, F, counts,
+  exists Jw>=0 BEFORE tau;
+  for positive sufficiently small tau satisfying original cost/t/eps bounds
+  and 2*tau*(1+Jw)<=t, all n and eta, exists Cw>=0 BEFORE Z,C0;
+  eventually Z, for C0>=1 and the original weighted source moment bound,
+  RawSourceDyadBound on all actual source rows/rectangle points.
+
+RawSourceDyadBound requires source row conditions, moment row conditions,
+row nonprincipality, the enlarged dyad lower bound Z^(d-2t), actual current
+and next detector bins, d in [.5,h+rowExtension], a in (.51,7/8], delta>=1/3,
+and i<=n. Its conclusion is the literal integratedDyadValue bound above.
+It does not redefine the L-function or source integral.
+
+Compiled gram adapters:
+  integrated_cells_of_raw_source
+  integrated_input_of_raw_source
+  fullW_input_of_raw_source
+These remove the height degree and connect raw input to actual FullWCellsAt,
+remaining source Mellin integration, normalizer, and the existing conditional
+zero-free contradiction. They DO NOT assert raw input on their own.
+
+Axiom checks and audit limits
+============================
+NumeratorSourceMaskAxioms.lean compiled successfully and printed exactly
+  [propext, Classical.choice, Quot.sound]
+for:
+  source_packet_selected_bin
+  source_packet_amplitude_class
+  source_mask_amplitude_class
+  reconstructedDyadValue_class_uniform
+  source_mask_physical_front
+  source_frequency_scalar_bound
+  source_packet_multiplicative_identity.
+Log: research_audit/weighted_formal/logs/NumeratorSourceMaskAxioms.log.
+
+six's NumeratorSourceClassAxioms also printed only those standard axioms.
+Its detailed review is source_class_quantifier_audit.txt, with moment
+constant ordering, common conductor choice, no empty-family vacuity, exact
+selection/damping/upper-bin costs checked. This was AI-assisted review;
+do not call it human review.
+
+SourceCollect compiled after these axiom-print modules and has not had its
+own final #print axioms audit in my work. Its dependencies are the audited
+SourceMask and finite combinatorial envelope, but a direct final audit is
+still required. ActualSource cannot be axiom-audited until it compiles.
+No final new-theta theorem has yet been axiom-audited.
+
+Root reports isolated clean rebuilds of 80 numerator modules and 136
+source/contour modules passed earlier. Those successes do not certify the
+subsequently edited/uncompiled ActualSource or the future Final module.
+Root owns the exact reproducibility manifest and isolated output directories;
+use its handoff for those paths rather than inferring them from this report.
+
+Mathematical/formal cautions for resumption
+=========================================
+- Keep original kappa=3/4. Do not include the old kappa_formal feedback overlay
+  in LEAN_PATH or import its modified energy theorem.
+- q must be diluted over ALL original slot widths. Do not normalize only
+  over main/nonerror slots, and do not replace the original full amplitude
+  class with a different error-masked physical family.
+- The moment constant is independent of target eta and external C0. Only
+  the count carries C0; final bounds must stay linear in C0.
+- Preserve the +.68t dyadic frequency loss, the +t*ell upper-bin loss, and
+  the annular capacity padding. They are all in weightedSourceLoss.
+- Preserve the actual SAME combined conductor used for coefficient damping
+  and reflection. This includes primitive and redundant-ideal scale.
+- Empty error J and empty selected family are legitimate and supported.
+  A full prime tuple witness supplies the coefficient-index basepoint;
+  ActualSource obtains it eventually from proved pool nonemptiness.
+  Do not infer an analytic moment from a vacuous forall-choice premise.
+- The original ZeroAt endpoint is strong enough for empty selected slots
+  and bounded plain length up to 2. Earlier discussion alleging a mandatory
+  short-primal switch once reflected n>.5 was mistaken and corrected. Do not
+  reintroduce that false gap from stale notes.
+- The original unconditional beta<=7/8 is used to control the contradiction
+  regime; beta>=.51 follows from assumed beta>theta. No use of the desired
+  improved theorem is hidden in the new moment input.
+- Many rewriting failures come from semireducible D.N vs D.toMomentData.N,
+  or subtype Fintype proof instances. Direct theorem terms/congrArg often
+  work where rw/simp matching does not. Do not replace legitimate objects to
+  evade these elaboration issues.
+- A successful component or a single nearly-fixed compile error is not an
+  end-to-end proof. Do not describe theta=10499/12000 as kernel-checked until
+  ActualSource, Final, the final axiom audit and clean closure rebuild pass.
+
+Environment and exact build commands
+====================================
+Working directory:
+  /Users/akashlevy/Documents/riemann
+Lean executable:
+  /Users/akashlevy/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean
+Primary environment JSON used for these builds:
+  research_audit/weighted_formal/numerator_environment.json
+Also available:
+  research_audit/weighted_formal/lean_environment.json
+
+LEAN_PATH starts with research_audit/weighted_formal, followed by the
+original formalize_11_12 package caches and original upstream .olean cache,
+then the Lean v4.34.1 library. It DOES NOT include research_audit/kappa_formal.
+Build flags: -DautoImplicit=false -M8192. Individual source modules set
+maxHeartbeats appropriate to their proof. Compile imports must already have
+.olean files in the overlay/original cache.
+
+For the next operator AFTER user authorization to resume, a build command
+that also propagates Lean failure correctly is:
+
+  python3 - <<'PY'
+  from pathlib import Path
+  import json, subprocess, os
+  r = Path('research_audit/weighted_formal').resolve()
+  e = json.loads((r/'numerator_environment.json').read_text())
+  n = 'NumeratorActualSource'
+  p = subprocess.run(
+      [e['lean'], '-DautoImplicit=false', '-M8192', '-o',
+       str(r/f'WeightedQRH/{n}.olean'), str(r/f'WeightedQRH/{n}.lean')],
+      env={**os.environ, 'LEAN_PATH':e['LEAN_PATH']},
+      capture_output=True, text=True)
+  (r/f'logs/{n}.log').write_text(p.stdout+p.stderr)
+  print(p.stdout+p.stderr)
+  raise SystemExit(p.returncode)
+  PY
+
+This handoff only records the command; it has NOT been run since STOP.
+
+Recommended resumption order (not executed)
+===========================================
+1. Re-read current ActualSource lines 56-61. Remove redundant line59 dsimp
+   if still present, then compile ActualSource. Handle any newly exposed
+   genuine errors without weakening statements.
+2. Print axioms for source_integrated_amplitude_classes and
+   actual_raw_fullW_input; require standard three only, no sorryAx/new axioms.
+3. Notify gram/root. Gram's prepared Final endpoint applies
+   fullW_input_of_raw_source actual_raw_fullW_input to ConditionalFinal.
+   Expected outputs are literal rational 10499/12000, Hecke beta/nonvanishing,
+   all positive-modulus Dirichlet characters, and zeta with s!=1 and the
+   appropriate principal-character pole exception.
+4. Compile Final and FinalAxioms, inspect exact declarations for remaining
+   premises and ordinary actual L-function definitions.
+5. Run root's clean isolated closure rebuild against original upstream caches,
+   ensure current sources match successful outputs and audit current hashes.
+6. Update matching LaTeX/prose status and theorem-to-Lean map, rebuild/render
+   final manuscript if requested, and deliver only accurately verified claims.
+   Root/six handoffs cover manuscript status and remaining delivery artifacts.
+
+Process status at STOP
+======================
+All sessions I owned are completed, not left running:
+  68170  SourceBin, success
+  94251  initial SourceMask, failure (repaired later)
+  74737  SourceMask intermediate, failure (repaired later)
+  93641  SourceMask, success
+  18130  SourceMask axiom audit, success
+  76253  ActualSourceHelpers, success
+  6068   SourceCollect first takeover attempt, failure
+  91776  SourceCollect success, first ActualSource attempt failure
+  96321  latest ActualSource attempt FAILURE, exact error line59 above
+I did not terminate or modify any other agent's processes.
+
+Final snapshot of relevant .olean existence (read-only checked at STOP):
+  NumeratorSourceBin              exists
+  NumeratorSourceClass            exists
+  NumeratorSourceMask             exists
+  NumeratorSourceMaskAxioms       exists
+  NumeratorSourceCollect          exists
+  NumeratorActualSourceHelpers    exists
+  NumeratorActualSource           DOES NOT EXIST
+  Final                          DOES NOT EXIST
+  FinalAxioms                    DOES NOT EXIST

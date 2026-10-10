@@ -1,0 +1,4 @@
+import WeightedQRH.NumeratorFiniteHeight
+#print axioms WeightedQRH.Numerator.finite_height_envelope
+#print axioms WeightedQRH.Numerator.eventually_finite_all
+#print axioms WeightedQRH.Numerator.finite_height_eventual_envelope

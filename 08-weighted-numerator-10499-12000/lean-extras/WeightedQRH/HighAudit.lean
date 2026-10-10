@@ -1,0 +1,9 @@
+import WeightedQRH.HighRows.NonfloorCollected
+import WeightedQRH.HighRows.CubeFloorCollected
+
+#check OAI.SevenEighths.WeightedHighRowFamily.actual_nonfloor_rows_saving
+#check OAI.SevenEighths.WeightedHighRowFamily.actual_floor_rows_saving
+#print axioms OAI.SevenEighths.WeightedHighRowFamily.actual_nonfloor_rows_saving
+#print axioms OAI.SevenEighths.WeightedHighRowFamily.actual_floor_rows_saving
+#print axioms WeightedQRH.balanced_count_identity
+#print axioms WeightedQRH.actual_central_class_saving

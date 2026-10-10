@@ -1,0 +1,346 @@
+WEIGHTING THE RECONSTRUCTED PHYSICAL NUMERATOR
+Research derivation, 2026-10-09.  This is a new analytic amendment to the
+imported paper78.tex package, not a Lean verification and not an independent
+verification of that package.  All statements below retain its physical
+sixth-power-free rows and original zero extensions.
+
+Main conclusion.
+---------------
+Fix kappa=3/4, using the already established beta_* <= 7/8.  For a retained
+nonprincipal dynamic bin with a >= .51, delta=2a-1, row scale U=Z^d,
+numerator scale Y=Z^ly, total physical slot length ell, amplitude q in
+[0,delta/2], and a proved cardinality exponent R, the existing high bound
+can be supplemented by
+
+ E_W(d) = a-theta + h(z0-1/6) - ly/2 - ell/2 + q ell
+          + d(3R/4+1/4-z0) - q(2ly-d)/(12 kappa),                 (W)
+
+provided d/2 < ly < d and
+
+       0 <= (2ly-d)/(6 kappa) <= ell.                            (S)
+
+All statements have arbitrarily small exponent losses for mesh, smooth
+scale boxes, and preliminary powers, and the fixed polynomial height
+losses of the original package.  At endpoints in (S), one can use a small
+capacity loss.  If the first quantity is negative, replace it by zero;
+the formula as displayed is only claimed in the positive-capacity range.
+
+This differs from merely applying the global fourth moment to L(1/2).
+The w integral reconstructs an actual smooth sum of length Y.  Functional
+equation reflection makes its length at most U/Y, leaving prime capacity
+z_P=(1-2(1-ly/d))/(6 kappa).  The same physical prime factors can be used
+inside this fourth moment, without removing them from the correction.
+Hölder extracts half of their selected amplitude.  The Euler correction
+and its error slots do not spoil this capacity: their long dilation tails
+are paid for by absolute convergence and conductor deficits, as proved
+below.  No new inverse or plain moment theorem is assumed.
+
+The old exponent and (W) may be compared after choosing a whole dynamic
+bin's contour strategy.  Without a further argument the safe operation is
+min(max_q E_old, max_q E_W) at each fixed delta, not max_q min(E_old,E_W).
+Amplitude sets are formed only after contour deformation; they are not
+individually analytically continued.  The new argument integrates w
+completely before making the pointwise amplitude partition in z.
+
+1. Precise imported inputs.
+---------------------------
+All references are to formalize_11_12/papers/paper78.tex.
+
+* The exact high representation and its Mellin weight, lines 5468--5486:
+  Y^(w-1) W1hat(w) L^S(w,chi_bullet(u)) times the correction, with all
+  remaining factors independent of w.
+* The holomorphic local factors H_p and G_p and the quotient-free full
+  selected-tuple correction, labels eq:local-H-definition,
+  old-eq:5.13c, eq:holomorphic-selected-tuple (lines 4036 and 8688--8744).
+* The exact cancellation for the local error E_p=G_p+bar(chi_p(u))H_p,
+  old-eq:5.13b, lines 8803--8837, and the six-valuation local table.
+* The conductor assertion old-eq:5.13d, lines 8987--9000:
+       C_u <= C_S rad(u) <= C'_S U product_{p in J} Np^(-(j_p-1)),
+  for every set J of distinct ramified error labels; C_u is the fixed
+  functional-equation conductor scale.  A good prime of u has conductor
+  exponent exactly one.  The remaining deleted factors lie in fixed S.
+* Smooth reflection, annular decomposition, and rowwise scale supremum
+  bounds, lines 12680--12810.  These give the normalized reflected sum
+  with conjugate character and length C_u/X.  Its profile and all finite
+  derivative orders are uniform; upper tails decay arbitrarily and lower
+  annuli carry summable central-normalization factors.
+* lem:plain, lines 12531--12588, at kappa=3/4, with two equal plain lengths
+  n and selected total prime length z satisfying 2n+6 kappa z <= 1:
+       sum_{u~U} |S_{bar chi(u)}(n)^2 Q_selected(u)|^2 <= U^(1+eps).
+  Its row/scale derivative and height versions are included in the lemma.
+* The original amplitude-selection lemma, bin-prime bound, and original
+  selected count R.  The latter is used unchanged.  The main slots are
+  exactly bar(chi_p(u)), hence have the same orientation as the reflected
+  numerator.  Fixed identity-ray phases and all masks remain unchanged.
+
+2. The absolute coefficient norm of the correction.
+---------------------------------------------------
+Keep s and z fixed with Re s=a+16e and Re z=z0=17/50.  Set rho=delta/4,
+and sigma_-=1/2-rho.  This is positive, and
+
+     Re s + sigma_- - 1 >= delta/4 >= 1/200.
+
+Thus the first Euler region holds on both Re w=1/2 and Re w=sigma_-.
+All estimates in this section concern the sum of absolute coefficients
+in the polynomial variable Np^(-w), not just its value at a particular
+imaginary part.  This stronger claim follows from the displayed local
+formulas by taking absolute values after their exact cancellations.
+The denominators 1-D, 1-R and 1-V are independent of w and bounded away
+from zero.  H_p is a polynomial of degree at most two in Np^(-w) at
+p not dividing u, and at most one at p dividing u.
+
+The identity eq:local-H-defect and Ecal_p=P_p^*+D give
+
+    ||H_p-1||_{sigma_-} <= C Np^(-1-epsilon_H),  p not dividing u,
+    ||H_p-1||_{sigma_-} <= C Np^(-epsilon_H),    p dividing u,
+
+with epsilon_H>0 uniform on a in [.51,1] and the fixed buffer range.
+Here ||sum b_j Np^(-jw)||_sigma = sum |b_j| Np^(-j sigma).
+In particular any product excluding an arbitrary fixed tuple of slot
+primes has absolute coefficient norm <= U^eps on both lines.  This is
+the same convergent-prime-product/divisor-product argument as in the
+original unselected-local-product estimate.  Exact simplification before
+the coefficient norm is essential; a triangle bound on the uncancelled
+P_p would not give this assertion.
+
+For a subset I of error slots, use the quotient-free expansion
+
+  F_I(u;s,w,z) = sum_{(p_i)_{i in I}}
+       product_i [W_i(Np_i/P_i) Np_i^(z-1) E_{p_i}]
+       product_{p not in S or {p_i}} H_p,
+
+where the last product means p outside S and outside the selected tuple.
+The other, main slots stay outside F_I as their actual polynomials
+-P_i^(z-1/2)Q_i(u;z).  This identity follows by expanding each selected
+local factor as -bar(chi_p(u))H_p + E_p.  It never divides by H_p.
+
+At p not dividing u, old-eq:5.13b gives the coefficient-norm bound
+
+ ||E_p||_sigma <= C( Np^(-s_r) + Np^(-6z0)
+                     + Np^(4-5s_r-6z0)
+                     + Np^(1-sigma-6z0) ).
+
+For sigma=1/2 or sigma_-, every exponent is at most -1/2 with a fixed
+margin (the closest is -a <= -.51).  Summing the O(P_i) primes in that
+slot, including Np^(z-1), costs at most P_i^(z0-1/2).  Norm twists and
+slot profiles have only their specified finite-seminorm/height costs.
+
+At p dividing u, E_p=G_p and
+
+     G_p = bar(eta(p)) Np^s (1-V) Ecal_p - Np^(-w) H_p.
+
+After dividing its slot factor Np^(z-1) by Np^(z0-1/2), the non-tail
+boundary terms from the local table have the following real exponents
+at s_r=a and sigma=sigma_-:
+
+  j=1: -1+rho;
+  j=2: -delta;
+  j=3: -delta+rho and -3delta/2;
+  j=4: -3delta/2+rho;
+  j=5: -5delta/2.
+
+All are negative.  The R and V tails and -Np^(-w)H_p are smaller.
+The one exception is the strict j>=2 term
+  -eta(p)(Np-1) Np^(-s-w),
+whose normalized slot factor costs at most Np^rho.  At sigma=1/2
+it costs at most one.  Terms with positive e only improve these bounds.
+There are divisor-many ramified labels.  For a fixed triangle-expanded
+tuple let J be exactly its strict ramified labels.  They are distinct
+because the physical prime supports are disjoint.  The conductor bound
+gives
+
+      (C_u/(C'_S U))^rho product_{p in J} Np^rho <= 1.
+
+Expand F_I as sum_k A_{I,u}(k) Nk^(-w).  Absolute convergence and the
+preceding bounds therefore prove simultaneously
+
+  sum_k |A_{I,u}(k)| Nk^(-1/2) <= U^eps B_I,
+
+  (C_u/(C'_S U))^rho
+       sum_k |A_{I,u}(k)| Nk^(-1/2+rho) <= U^eps B_I,            (A)
+
+where B_I=product_{i in I}P_i^(z0-1/2), up to harmless fixed profile
+constants.  The second estimate applies the conductor inequality once
+to the entire strict-label tuple.  It does not spend the same deficit
+separately for different labels.  Combining the two gives
+
+ sum_k |A_{I,u}(k)| Nk^(-1/2)
+       max(1,C_u Nk/(C'_S U))^rho <= U^eps B_I.                (A')
+
+This is the needed weighted coefficient assertion.  It is stronger than
+an estimate |F_I(1/2+it)| <= U^eps B_I and is the reason w-Mellin
+reconstruction remains valid with the actual correction.
+
+3. Exact Mellin reconstruction and reflection.
+-----------------------------------------------
+For each fixed nonprincipal physical row move w from its starting line
+to Re w=1/2, keeping the whole row's holomorphic correction.  No pole is
+crossed: the physical numerator is nonprincipal and the Euler region
+holds throughout.  W1hat has arbitrary decay.  The row set defining the
+dynamic bin is independent of w.  One may then integrate the full w
+line before estimating or making the amplitude partition in z.
+
+Absolute convergence of the coefficient series on Re w=1/2 and the
+usual polynomial strip growth justify termwise integration.  Mellin
+inversion gives exactly
+
+ (1/(2pi i)) int_(1/2) Y^(w-1) W1hat(w) L^S(w,chi_u) F_I(w) dw
+   = Y^(-1/2) sum_k A_{I,u}(k) Nk^(-1/2)
+                    S_{chi_u}(Y/Nk; W1).                    (M)
+
+The plain sum S is centrally normalized.  Smooth reflection replaces
+S_{chi_u}(X) by a unit root number times S_{bar chi_u}(C_u/X;W1sharp),
+with the original natural zeros restored exactly as in the source.
+All redundant factors here lie at fixed S.  Their deletion/restoration
+has bounded weighted coefficient mass for rho<1/2, and their fixed
+scale factors are absorbed into C'_S.  In particular, no new moving
+radical or new row mask is created.  Annular decomposition and scale
+boxes, as in the source reflection proof, give arbitrarily small
+length losses and polynomial height/seminorm losses.
+
+For T=max(1,C_u Nk/(C'_S U)), (A') bounds (M) by a weighted rowwise
+supremum of reflected sums of scales at most C'_S (U/Y)T, with weight
+T^(-rho), times Y^(-1/2) U^eps B_I.  The profile is fixed; only its
+scale is row-dependent.  Thus the smooth-calculus scale-supremum lemma
+applies directly.  The original W1 is compactly supported, say in [r_-,r_+].
+Before reflection, (M) is identically zero for Nk>r_+Y, since every
+nonzero ideal has norm at least one.  Thus the coefficient sum relevant
+to (M) may be truncated exactly at Nk<=r_+Y.  Consequently T is in a
+fixed polynomial range and every reflected scale is at most a fixed
+multiple of U.  The source's smooth scale-supremum and bounded-length
+moment assertions therefore apply directly.  Reflected-profile upper
+annuli are handled by its ordinary arbitrarily decaying annular tail;
+no moment with unbounded declared length is needed.
+
+4. Weighted fourth moment and the dilation tails.
+-------------------------------------------------
+Fix a pointwise amplitude set C at one retained tuple (s,z) and its
+original witness subdivision, with #C <= U^(R+eps).  The cardinality
+bound was established by the original detector; no new large-value
+witness for the reconstructed numerator is needed.  Write
+
+ L=ell/d, n0=1-ly/d, z_P=(1-2n0)/(6 kappa).
+
+For T=U^v let n(v)=n0+v, and
+
+     z(v)=max(0,z_P-2v/(6 kappa)).
+
+Condition (S) ensures z_P<=L.  Choose the largest-amplitude main slots
+up to this total length, with mesh loss.  If there are too few main
+slots, select all of them; the remaining physical slots have assigned
+amplitude zero.  The selection lemma then gives
+
+     |Q_selected| >= U^(q z(v)-O(mesh))
+
+on C, while |Q_all| <= U^(qL+O(mesh)).  Every actual selected length
+is no larger than z(v).  The reflected numerator and these slots both
+use bar(chi_p(u)); the fixed phases and natural zero extensions match.
+Conjugating the whole product within its absolute value gives the
+positive row orientation in the imported plain-moment statement, while
+only conjugating the profiles and fixed finite-ray coefficients.  For
+large U in the moderate dyads, every physical row has a good ramified
+prime, so its inducing character is outside the fixed group Theta.
+Unit and fixed-prime-supported exceptions belong to the small-row bound.
+No selected prime is removed from Q_all.
+
+Hölder and lem:plain yield
+
+ sum_{u in C} |S_{bar chi_u}(n(v)) Q_all(u)|
+   <= U^(qL-qz(v)/2+eps) (#C)^(3/4)
+         (sum_u |S_{bar chi_u}(n(v))|^4 |Q_selected(u)|^2)^(1/4)
+   <= U^(qL-qz(v)/2+3R/4+1/4+eps).                         (H)
+
+For z(v)>0 its capacity condition is 2n(v)+6 kappa z(v)=1.
+For z(v)=0 the source's zero-slot assertion has no restriction on the
+bounded nonnegative plain length.  Smooth derivatives and supremum
+boxes are taken before this application, exactly as in the source.
+
+The coefficient weight T^(-rho) adds -rho v.  Until the capacity is
+exhausted, the exponent relative to v=0 is
+
+            (q/(6 kappa)-rho)v.
+
+Since kappa=3/4, q<=delta/2, and rho=delta/4,
+
+       rho-q/(6 kappa) >= delta(1/4-1/9)=5delta/36>0.
+
+After the capacity is exhausted the exponent continues decreasing
+with slope -rho.  Thus all dilation dyads are bounded by the v=0
+exponent, with room for the mesh, annular, and smooth supremum losses.
+The same argument also treats the actual conductor C_u smaller than U:
+it only reduces the reflected length, and was already accounted for
+in (A').  All error subsets I satisfy the same estimate.
+
+Combining (M), (H), and the normalization of the main slots gives the
+whole w-integrated bin contribution, before the other Mellin weights,
+
+      Y^(-1/2) Z^(ell(z0-1/2)+q ell)
+          U^(3R/4+1/4 - qz_P/2 + eps).
+
+The factor U^(-z0), reciprocal denominator bound U^eps, and remaining
+X,Z Mellin weights are exactly those in the original high-bin proof.
+Their combination is (W).  All amplitude partitions are made at this
+point and are used only to bound the already continued full bin.
+
+5. Endpoint in the row scale and compatibility with the old bound.
+-----------------------------------------------------------------
+Within the positive-capacity range, the coefficient of d in (W) is
+
+          3R/4+1/4-z0 + q/(12 kappa).
+
+Since R>=1-delta and delta<=5/6, it is at least
+          3(1/6)/4+1/4-.34 = .035>0.
+Thus the largest moderate row scale d=h controls (W), just as it does
+the original high exponent.  The physical small-row and far-row
+estimates can be retained from the original proof.  Any use at a
+different range of d must check (S); no capacity is silently requested
+when its right side is negative or exceeds the physical supply.
+
+The difference from the old high exponent at fixed R,q is
+
+ E_W-E_old = delta ly/2
+             + d[(1-R)/4-delta/2] - q(2ly-d)/(12 kappa).
+
+At q=delta/2, d=h, R=2/3 and M=lx+ly=1-ell, this becomes
+
+       h/12-delta ell-delta(2ly-h)/(24 kappa).
+
+The last term is the additional saving beyond vanilla central L4.
+It is obtained from a physical plain sum already present in the probe,
+not from a stronger zero-free premise or a feedback optimization.
+
+6. Status and remaining integration work.
+-----------------------------------------
+The above is an analytic lemma derivation relative to the explicitly
+listed source lemmas.  The parent task is independently certifying the
+full exponent rectangle with proposed rational geometry
+
+   ell=167/1000, b=43/500, h=1587/2000, ly=919/2000,
+   theta=11/12-ell/4=10499/12000=0.8749166666666666... .
+
+Numerical exploration is not an exact proof of the full rectangle.
+Until an exact certificate, all unchanged small/large-row margins,
+principal comparison and low energy conditions, and a second audit of
+this new lemma are supplied, this file does not claim a completed QRH
+theorem.  The new lemma is not part of the known Lean formalization.
+
+Earlier avenues that did not yield an improvement:
+-------------------------------------------------
+1. Replacing global kappa in the plain moment by the physical parent
+   zero-bin delta is invalid: Poisson-transformed child rows need not
+   inherit that bin.  Keeping an arbitrary bin mask destroys the
+   complete Gauss transforms used in the proof.  A new conditional
+   child-row moment would be required.
+2. Hölder combinations of already proved inverse and plain moments
+   alone yield convex combinations of their savings.  Reusing prime
+   slots in both moments without a genuine mixed moment is not free.
+3. Applying only the unweighted global fourth moment to L(1/2) changes
+   E_old by delta ly/2+d[(1-R)/4-delta/2].  Numerical optimization of
+   that bound alone did not beat the public feedback limit.  The
+   weighted reconstructed numerator supplies the extra term in (W).
+4. One can factor the leading row-independent Euler term
+   D W=eta(p)Np^(-s-w) to extract L_F^S(s+w,eta), extending the Euler
+   region across s+w=1.  For principal eta its residue simplifies by
+   the numerator functional equation.  This is a separate possible
+   lever, but no improvement from it is asserted here and it is not
+   needed in the weighted reconstruction argument.

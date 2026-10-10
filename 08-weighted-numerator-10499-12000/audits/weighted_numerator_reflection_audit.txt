@@ -1,0 +1,46 @@
+Independent reflection audit, 2026-10-09
+
+Zero-slot audit resolved: the original claim is supported
+---------------------------------------------------------
+An initial audit mistakenly substituted the weaker detector unmarked wrapper,
+whose convenient exponent is max(1,2m), for the full imported plain moment.
+The exact paper78.tex Lemma plain (starting line12531), item1, states the
+U^(M+epsilon) bound for empty slots with NO restriction on bounded n1,n2.
+The actual certified ZeroAt definition has the same strength, with no length
+capacity hypothesis. Consequently the manuscript's use of U^1 after capacity
+exhaustion is justified; there is no missing deduction at this point.
+
+Optional valid alternative
+--------------------------
+One may instead branch before reflection at
+T=max(1,C_u*N/(C_*U))=U^v and v*=y-1/2. For v>=v*, C_u<=C_*U and N>=1
+give T<=N and Y/N<=U^(y-v)<=U^1/2. Then use the original short zero-slot
+moment with no selected factors. Its orientation is immaterial. Damping still
+controls the same v=0 exponent, since rho=delta/4>=q/(6kappa).
+This alternative is formally checked in NumeratorReflectionGeometry.lean,
+but the strong original empty-slot theorem makes it optional.
+
+Conductor wording should also be strengthened to match the formal proof
+----------------------------------------------------------------------
+Replace the unsupported statement 'remaining redundant factors are supported
+on fixed S' by the proved combined-scale assertion:
+Choose the actual small-presentation character tau with all ideal coefficients
+identical to the physical row. The primitive character psi and redundant
+Euler restoration in original_split satisfy C_u=norm(psi.modulus)*
+norm(redundantIdeal(tau.modulus,psi.modulus)) <= norm(tau.modulus)
+<= C_S*rad(norm u). Every restoration subset has norm at most the full
+redundant product and every smooth-ideal denominator decreases the reflected
+scale. Its coefficient mass is subpower in the original small modulus by the
+upstream ReflectionMass/ReflectionWeightedEnergy theorem. Hence all restoration
+terms have scale at most C_u*N/Y, without assuming fixed redundant support.
+No extra rho weight on restoration coefficients is needed if their scales are
+majorized by this combined C_u before the external coefficient dilation is formed.
+
+Formal progress
+---------------
+NumeratorReflectionGeometry.lean formalizes T<=N, original shortness beyond the
+capacity threshold, reflected capacity identity and saturated damping.
+NumeratorReflectionProfiles.lean and NumeratorReflectionRetained.lean now
+compile actual rowwise-scale/fourth-moment transport, including natural primitive
+restoration and all annular coefficients. They require uniform fixed-scale
+physical-row moments as input. These steps are not yet the complete theorem.

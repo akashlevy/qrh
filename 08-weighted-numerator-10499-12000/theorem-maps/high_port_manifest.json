@@ -1,0 +1,293 @@
+{
+  "timestamp_utc": "2026-10-09T22:44:49.428947+00:00",
+  "source_upstream": "formalize_11_12/math/lean/OAI/NumberTheory/DirichletL (matches pinned upstream cached build)",
+  "geometry": {
+    "theta": "10499/12000",
+    "ell": "167/1000",
+    "lx": "747/2000",
+    "ly": "919/2000",
+    "h": "1587/2000",
+    "rowExtension": "1/1000000"
+  },
+  "status": "Actual old branches, tails, principal/physical transport, full-w transfer, all row collection, parameter existence, actual certified source moment instantiation, and conditional QRH endpoint compiled. Sole remaining analytic input FullWAnalyticInput is explicit and unproved.",
+  "modules": [
+    {
+      "path": "WeightedQRH/HighRows/CanonicalCubeChoice.lean",
+      "sha256": "53696a05ce2d1c4f4b31a8a7c26fbc085a3d12c590812d719f8a4fc591b4e3b1",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CanonicalCubeReduction.lean",
+      "sha256": "aa4afdb763d4449505380fc8eba6e572dc063c93c46308f862d474412a264500",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CanonicalRayCube.lean",
+      "sha256": "03b2b08bfc8e507ce7c226d1accf3d64dceea35a9dd59afe079aea4f36efcabe",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CanonicalReduction.lean",
+      "sha256": "c37772aa2dc70226955131f630e827c2b70f25fca1f5cbd043797ceb4eed3106",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CanonicalTails.lean",
+      "sha256": "498f522a54f52bbd16b191c332d412af9d1d71a8f5b48c58508044fe4cf113d4",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CentralClassArithmetic.lean",
+      "sha256": "4e0ab5c71cd479c782f3538eed61a8be8746b21bbd8c56cbc75052b6f6298457",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CentralErrorSaving.lean",
+      "sha256": "155fba923de9524dbf4c00bf8faccf525e2e082a6e60145b3b7ed6a7fe37cb43",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CentralExponent.lean",
+      "sha256": "61b617bb356af9fd8156ed221a323f4ddb7494e923f0cc2e0240a16c9820d4e2",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CentralFiniteError.lean",
+      "sha256": "d212544f480deef0fcd8e672202eb89cee71a51ed821b19c582f9dfa7bbbfa79",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/ConditionalFinal.lean",
+      "sha256": "e4b2aeb1454cf970d143a2b83d9dd0f63b0c2b9f2118b32e15662d41bc8302b7",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/ConditionalFinalAudit.lean",
+      "sha256": "36f509eebf72905156e5cd0939e87cd33dd927c9d58f8284135d898a0887f378",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CountIdentity.lean",
+      "sha256": "6c69b779b1943703bb77404700a9213f56c6c5c881b91f3fb0836ab25c778a21",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeErrorSaving.lean",
+      "sha256": "caec07391f76b0bfe98c1a43a90ca536c8428abf7b3dfa00d9a9f533dc198319",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeFiniteError.lean",
+      "sha256": "7f32be26543ceecf7ddd88eb0b7ca627b502e8db1fb3f360c418f10a4cd2ccad",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeFloorArithmetic.lean",
+      "sha256": "dbf2521abeb0c6f8406556cbf0e91fd5eb5431bc9a223a82d71d14a499eea851",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeFloorCollected.lean",
+      "sha256": "74fec0e015e39f848c7a728f99d34d73b6e00f85a5390e4dd4ed806c44f9957d",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeFloorGlobal.lean",
+      "sha256": "1735a0974a5e907e74c27e6bc25323b33bf746d7ba6907bd06aef544d10bbe29",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeFloorGlobalIntegral.lean",
+      "sha256": "2a09988401e6026c09a4e8982c558d23394c2e70ab4f2667d35618bfe683c892",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeFloorNormalized.lean",
+      "sha256": "764c9fbeb7c849d06d974f482b6600311183c3a6b01f69c2b3fa8ada5333ed2d",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeFloorSaving.lean",
+      "sha256": "52d0d70d7c87dd735325c076949c0d100812c65eca50f4e89572303519d45c15",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeFullWNormalized.lean",
+      "sha256": "c7f4732c4edbb853d4cf5493b308e540de0174e9c8b1718e53a52b6c8e2281b0",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeFullWTransfer.lean",
+      "sha256": "6a5cf9a4a6d7f7a5c4215e6238412dadf3cf5c0bceea9ea410d107d2f69875ec",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/CubeSlotExponent.lean",
+      "sha256": "33a84cb5f9c1c0fcbb425514217ebc0e40d39ee60262c1f7d44492bfd5cd1219",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/FixedHigh.lean",
+      "sha256": "4c1dc3ee0bf7f4f194cca63144a88057fcea8f98b93308dea6463c5311b94785",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/FullWCellInput.lean",
+      "sha256": "f4673f8bed797382acb9b0b3c0dc69d95913e14acad90b710c616b966de80ec8",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/GeometricTail.lean",
+      "sha256": "bdba15491c9fe1829d112d04978c16439787065ee4e25637f7edec2e84bd9367",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/HighAssembly.lean",
+      "sha256": "22d0f0ef2cec958bf46111619459090a43c39e08872c02373b58450f5c5fcb43",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/HighData.lean",
+      "sha256": "e39c175c357e6d94c6e933232e11ddeeab872cb360fc6fc9870dc703463a0fa3",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/HighDataFine.lean",
+      "sha256": "d22a5c8587e21dd377b18e3212d5356347107ca90368466304b36bd0a67183a8",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/LargeDyad.lean",
+      "sha256": "cef111c9efed0c53edef359e24ea1346c8ef8f22d4056db6c22e4a3d35ca0801",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/LargeSaving.lean",
+      "sha256": "7287476850652590b886f2d76333bcc8e84914dc9f4bb56ae3c52aaaf2baaba9",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/LargeTail.lean",
+      "sha256": "5fa9c70d35810c1b8ba178c288a04a88176783dca0239fc812184f8d1b01a3a3",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/MixedCollected.lean",
+      "sha256": "8c11eb972d47661eb8c072d1fec2b55e30bee45f1c873978f3190a16b1f86696",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/MixedFullWCollected.lean",
+      "sha256": "47834ee6840bc4a317420e3adcf3a9d88590d3b20a126b800cf5b124a2fc58b3",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/NonfloorArithmetic.lean",
+      "sha256": "ba9b510b8ca7558fc0e073c08b91c541250fd242b1176afd57bf6c902d991493",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/NonfloorClass.lean",
+      "sha256": "9d1bc4e83c1330098ac9e94220c087d720288c53a7800da243e5f1c76dfc4468",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/NonfloorCollected.lean",
+      "sha256": "67425fbff9956e85046e3a94bf6147141c12c175fd5e9a89073e433631e2313a",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/NonfloorIntegral.lean",
+      "sha256": "afe84c1124e6196b883aa4fc9dfbb96984ced570931cbf92fff9260273515cd9",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/NonfloorNormalized.lean",
+      "sha256": "ab578794f5ba07683b7ecbd0cf09005fa090af8f25b3d8a02075a00809c0e325",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/NonfloorTransport.lean",
+      "sha256": "2507ad03bc2b3649f16d02f1f47558c982e0f76db55e8b92060b4ccc769566e1",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/NormalizedTransport.lean",
+      "sha256": "b7dd45028ca069ef03d267f54eb0af9daa74af526306fa61c64e49a3194e420e",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/NormalizedTransportSaving.lean",
+      "sha256": "9897b5ad1228b23eab9acd4e8e0e4565e649a0bc303a774187ef651bf0e90b06",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/PhysicalLargeTail.lean",
+      "sha256": "a649e9e8b585e6eed6e0f547f41afb62ddea90d63f2c7d6a262c7360fde072c6",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/PhysicalSmallTail.lean",
+      "sha256": "cede4e961ca68ed3ca483638926fb25053311144d3a2110eb21afb3f862cf323",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/SlotLengths.lean",
+      "sha256": "01f5e56175d7b5d48544ab18558ea62936cfcadf8754e356cee6b82132a627b5",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/SlotWidths.lean",
+      "sha256": "12707a0cf0159bb1ade42b1534faf2a0d2c6c7bd74a3598c5a9473febb038d4f",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/SmallTail.lean",
+      "sha256": "a390440f364429aec5e5f3964988f7db103a1f6ca14a05469bc33fba944cc02e",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/SourceAmplitudeClasses.lean",
+      "sha256": "7aa859d67900c42dff071eb5d6e4a410207a66644ee558af812da774f99103bf",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/SourceBatch.lean",
+      "sha256": "629803432d27af3199a813ed3cffd57b0dda530dcc9ed9060ec8ba7b8631d9f8",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/SourceProbe.lean",
+      "sha256": "5024a391bae373a9f84e72a619e22c34b22bfdaa4a80e196c3ba1b7ccf82b7e3",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/TailAssemblyAudit.lean",
+      "sha256": "f68357d89e1b0bc360c1dc46b7fb2ec7f82328e8d540dcc3ff9bc7b3ed8e0ea8",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/TailScales.lean",
+      "sha256": "f57c1b35f98be19c413941f719ab01e2dda114ffc73e8177058627b8a39e9dd6",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/WeightedSlotSelection.lean",
+      "sha256": "c493ba7d8e642f8df0f5c6ded3480e3a238bc2938de4631e07878761b0692c8f",
+      "compiled_object_exists": true
+    },
+    {
+      "path": "WeightedQRH/HighRows/WeightedSlotSelectionAudit.lean",
+      "sha256": "41f639500db16970b161d65094170cfac49a4a788f2ac201db737d5f85506aed",
+      "compiled_object_exists": true
+    }
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "audit": "logs/WeightedQRH.HighRows.ConditionalFinalAudit.log",
+  "weighted_height_quantifier": "exists Jw>=0 before tau; 2*tau*(1+Jw)<=t; choose tau with originalJ+Jw",
+  "selection_audit": "logs/WeightedQRH.HighRows.WeightedSlotSelectionAudit.log"
+}

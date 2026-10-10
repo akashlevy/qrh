@@ -1,0 +1,250 @@
+Independent referee note: weighted numerator and selected-prime Holder
+9 October 2026. Author: gram_audit subagent.
+
+This note audits the main (no local-error slot) numerator replacement
+and its exponent certificate. It does not by itself certify the error
+slots, principal residue, or complete new theorem. Those require their
+separate proofs. No feedback reduction of kappa is used here.
+
+1. The weighted Holder step
+
+Fix a dynamic zero bin delta, physical Mellin parameters s,z, an
+amplitude vector (g_i), and one row set C of cardinality at most U^(R+e).
+Let q be the mean prime amplitude. Select a fixed subcollection of the
+positive-amplitude slots, of total requested length z_sel, as in the
+original selection argument. Its spike is
+
+  |Q_sel(u)| >= U^(q z_sel - e)  for u in C.
+
+The original plain fourth moment, with two copies of S and kappa=3/4,
+gives
+
+  sum_rows |S(u)|^4 |Q_sel(u)|^2 << U^(1+e)
+
+provided 2n+6 kappa z_sel <= 1 (with the usual small strict reserve).
+Holder with powers 4 and 4/3 therefore gives
+
+  sum_(u in C) |S(u)|
+   <= (sum_C |S(u)|^4 |Q_sel(u)|^2)^(1/4)
+      (sum_C |Q_sel(u)|^(-2/3))^(3/4)
+   << U^((1+3R)/4 - q z_sel/2 + O(e)).
+
+It is legal to reuse prime slots already employed to prove the row
+cardinality. These are simultaneous inequalities about the same set;
+neither argument requires probabilistic independence or disjointness
+between the two uses. Within each amplitude vector the selected subset
+is fixed, independently of the individual row.
+
+2. Row-dependent Euler coefficients: obstacle and repair
+
+A rowwise coefficient-mass estimate is NOT enough for a direct exchange
+of the Euler expansion with a fourth-moment row sum: the coefficients
+depend on u, particularly at p|u. A common coefficient majorant was not
+established. The following supremum method avoids that exchange.
+
+Write H_u(s,w,z)=sum_k h_k(u;s,z) Nk^(-w), with s,z fixed. For
+
+  a=(1+delta)/2,  Re s=a+16e,  Re z=17/50,
+  rho=delta/4,   sigma=1/2-rho,
+
+the coefficient l1 norm satisfies
+
+  sum_k |h_k(u;s,z)| Nk^(-1/2+rho) << U^e.
+
+Reason: the original local proof may be conducted in the coefficient
+l1 algebra at w=sigma. The denominators R,V,D are w-independent. The
+already-cancelled defect formula (paper78.tex equation local-H-defect)
+is polynomial in p^(-w), with the original convergent w-independent
+geometric denominators. Apply its triangle inequalities termwise in
+that algebra. The good-prime defect is O(p^(-1-c)) and the ramified
+defect O(p^(-c)) for a fixed c>0, because
+
+  Re s+sigma = 1+delta/4+16e,
+
+uniformly inside local region one for delta>=1/50. The good-prime
+positive product converges; the product over p|u is U^e by the source
+divisor-product estimate. No common coefficient majorant is needed.
+
+Start w on an absolute line, expand H and L, and invert the W1 Mellin
+transform. For the centrally normalized plain sum
+S_chi(X)=X^(-1/2)sum_n chi(n)W1(Nn/X), the exact main reconstruction is
+
+  (1/(2pi i)) integral Y^(w-1) W1hat(w) H_u(w)L_u(w) dw
+   = Y^(-1/2) sum_k h_k(u) Nk^(-1/2) S_chi(Y/Nk).
+
+All rows under consideration are nonprincipal. Analytic continuation
+and the source all-height bounds identify this with the w=1/2 integral;
+the discarded w tails are negligible after choosing sufficient decay.
+Compact support of W1 implies the summand vanishes unless Nk<<Y.
+In particular the auxiliary scales occupy a bounded logarithmic range
+when d is bounded below.
+
+By the coefficient-mass bound, the reconstruction is at most
+
+  Y^(-1/2) U^e sup_k [Nk^(-rho) |S_chi(Y/Nk)|].
+
+For Nk about U^v, use functional-equation reflection and then the
+source's scale Sobolev method. The original moment proof already
+performs coefficient mass -> rowwise scale supremum -> Sobolev for
+conductor-dependent scales (paper78.tex lines12735--12822). The
+primitive conductor times the natural redundant radical is O(U), so
+every retained reflected length is at most
+
+  n(v)=max(1-ly/d+v,0)+arbitrarily small loss.
+
+Dyadic boxes in the bounded logarithmic scale range cost only U^e.
+Differentiating the scale changes only the smooth profile, leaving the
+row character and selected prime product unchanged. The primitive root
+number has modulus one. The source reflection restores the natural
+zero extensions, so no new row-dependent coefficient class is inserted
+into the plain moment.
+
+For d>=1/2>ly, the baseline n=1-ly/d is positive and below 1/2 in the
+proposed geometry. Its selected capacity is
+
+  z_sel(0)=(2ly/d-1)/(6 kappa).
+
+At v>0, decrease the capacity to
+max(z_sel(0)-v/(3 kappa),0). Relative to the v=0 bound this loses at
+most qv/(6 kappa) after Holder. The coefficient weight gains rho v.
+Since q<=delta/2,
+
+  rho - q/(6 kappa)
+   >= delta(1/4 - 1/(12 kappa)) = 5delta/36 > 0
+
+at kappa=3/4. Therefore v=0 supplies a valid exponent bound after the
+sum or supremum over v. For zero remaining capacity, the zero-slot
+plain moment has no length restriction. This covers the rest of the
+v range as well.
+
+3. Contour and amplitude quantifiers
+
+Physical main factors Q_i(u;z_phys) do not depend on w. Consequently
+they can be retained in the amplitude classification while w is
+inverted. This assertion alone does not cover the local-error factors.
+
+A contour branch may depend on the fixed dynamic bin delta. It must
+not be chosen separately for pointwise amplitude sets inside that bin.
+The proposed certificate obeys this requirement: it chooses the old
+branch for delta<=1/3 and the weighted reflected branch for delta>=1/3,
+then bounds all x=q/delta in [0,1/2] within the chosen branch.
+The original full bin is continued before those amplitude subdivisions.
+
+4. Independently rerun exact arithmetic
+
+The file weighted_numerator_certificate.py was rerun with its output
+stored as weighted_numerator_gram_referee.json. It passed:
+
+  theta=10499/12000, ell=167/1000, b=43/500,
+  lx=747/2000, ly=919/2000, h=1587/2000,
+  kappa=3/4, margin=1/10000,
+  1 old-branch and 9 weighted-branch Bernstein rectangles,
+  32 auxiliary rational checks.
+
+I independently matched the polynomial numerator with the direct
+exponent expressions. At row norm U=Z^d the replacement of the old
+high exponent is
+
+  d[(1-R)/4-delta/2] + ly delta/2
+     -q(2ly-d)/(12 kappa).
+
+The displayed polynomial uses d=h, as required. Its common denominator
+J is certified positive on the full rectangle. The branch choice is by
+delta only. The Bernstein conversion and rectangular subdivision use
+exact Fraction arithmetic.
+
+For d in [1/2,h], prime supply z_sel(d)<=ell/d is equivalent to
+ell>=(2ly-d)/(6 kappa), whose strongest endpoint is d=1/2. This is
+exactly one of the checked rational inequalities. The weighted slope
+in d is (1+3R)/4-17/50+q/(12 kappa), positive because R>=1-delta
+and delta<=3/4. The maximum therefore occurs at h. A sufficiently
+small extension above h is allowed by the strict endpoint margin.
+
+As a negative control, raising the claimed uniform margin from 1/10000
+to 1/1000 was correctly rejected at delta=7/16, x=1/2.
+
+5. Current referee verdict
+
+The main reconstruction, weighted Holder extraction, capacity loss,
+row-dependent scale handling, and exact exponent certificate have no
+unresolved blocker identified in this review. The coefficient-mass
+supremum repair is essential; omitting it would leave a real gap.
+
+This is not yet a verdict on the complete theorem. In particular, the
+full local-error product must be reconstructed with equally strong
+weighted control, and the complete contour/residue proof must combine
+that error estimate with this main estimate. The amplitude assignment
+g_i=0 on error slots cannot on its own supply the needed numerator
+fourth moment for their w-dependent factors.
+
+6. Subsequent adversarial review of the complete local-error lemma
+
+I subsequently read weighted_numerator_lemma.tex in full. Its weighted
+coefficient-norm argument resolves the local-error issue just identified.
+The following are independently checked points, rather than an appeal
+to its author's conclusion.
+
+(a) Quotient-free expansion. Define E_p=G_p+bar(chi_p(u))H_p. In a term
+of the selected-tuple expansion with error slots I, every main-selected
+prime contributes -bar(chi_p(u))H_p. Its H_p rejoins the unselected
+product. Thus the Euler product excludes precisely the error labels,
+and every remaining main slot is the original w-independent Q_i(u;z).
+This proves the claimed F_I identity without dividing by H_p or P_p.
+
+(b) Good-prime coefficient estimates. At w=1/2-rho, the local error's
+four exponents are -a, -6z0, 4-5a-6z0, and 1-(1/2-rho)-6z0, up to
+favorable e terms. For a>=.51, delta<=.75, rho=delta/4 and z0=.34,
+each is strictly below -1/2. Summing the slot's O(P_i) labels with
+their P_i^(z0-1) normalizer gives at most P_i^(z0-1/2).
+
+(c) Ramified coefficient estimates. After dividing by P_i^(z0-1/2),
+the non-strict boundary exponents at e=0 recompute to
+
+  j=1: -1+rho;
+  j=2: -delta;
+  j=3: -delta+rho and -3delta/2;
+  j=4: -3delta/2+rho;
+  j=5: -5delta/2.
+
+All are negative. The R,V tails and the explicit -Q^(-w)H_p term are
+smaller. The sole strict j>=2 term has normalized cost Q^rho on the
+left coefficient line and at most 1 on the central line.
+
+(d) One conductor deficit for the entire tuple. At a good prime of a
+physical row, the primitive conductor exponent is exactly one. If J
+is the set of strict ramified error labels, disjointness of slot
+supports therefore gives
+
+  C_u <= C_* U product_(p in J) Q^(-(j_p-1)).
+
+Hence (C_u/(C_*U))^rho product_J Q^rho <=1. This is applied once to
+the whole tuple before summing the divisor-many labels. It does not
+reuse a single conductor saving for several different slot primes.
+
+(e) Resulting coefficient mass. If F_I=sum_k A_(I,u)(k)Nk^(-w) and
+B_I=product_(i in I)P_i^(z0-1/2), the two local coefficient bounds give
+
+  sum_k |A_(I,u)(k)|Nk^(-1/2) << U^e B_I,
+  (C_u/(C_*U))^rho
+  sum_k |A_(I,u)(k)|Nk^(-1/2+rho) << U^e B_I.
+
+Adding them bounds the same sum weighted by
+max(1,C_u Nk/(C_*U))^rho. This is exactly the weight needed after
+reflection, whose scale is C_u Nk/Y. Thus the row-dependent
+coefficient supremum loses no power from a strict ramified error.
+
+(f) Mask restoration. All good primes dividing the physical u already
+have conductor exponent one, so additional redundant factors of this
+particular numerator are supported in fixed S. Their reflection
+coefficient mass remains summable with rho<1/2. They create only fixed
+constants and the same permitted scale suprema. This is stronger than
+the generic masked-row situation and justifies using C_u, rather than
+a larger moving redundant conductor, in the weighted mass.
+
+Current verdict after this additional review: the complete new weighted
+numerator lemma, including every local-error subset, has no unresolved
+analytic blocker identified here, conditional only on its expressly
+imported original analytic lemmas. This is an AI-assisted mathematical
+review, not human peer review or Lean verification. The complete theorem still needs the parent
+proof to assemble its contour, residue, low-side and count interfaces;
+the lemma and numerical certificate alone are not that assembly.

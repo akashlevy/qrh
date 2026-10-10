@@ -1,0 +1,37 @@
+AI-assisted final assumption audit — gram_audit — 2026-10-09
+
+Scope: adversarial examination of RawFullWAnalyticInput -> IntegratedFullWAnalyticInput -> FullWAnalyticInput -> common probe -> beta bound -> actual Hecke/Dirichlet/zeta L-functions. This is not independent human mathematical review. At this checkpoint the actual RawFullWAnalyticInput theorem is drafted by formal_audit and awaits root's finite collection module; the final endpoint must not yet be called unconditional.
+
+Findings: no strengthened, contradictory, or circular analytic assumption found in the completed source-to-endpoint chain. Its explicit remaining input is RawFullWAnalyticInput, to be discharged by NumeratorActualSource.actual_raw_fullW_input once that module compiles.
+
+1. Nonvacuity and the contradiction hypothesis.
+   HighRows/HighDataFine.exists_high_data_fine constructs HighData for every positive gap and every positive mesh. Weighted source data and CountParameters are constructed, not assumed. The only contradiction hypothesis is theta<beta with theta=10499/12000; this is compatible with the separately established beta<=7/8. No beta>7/8 premise or HighData(beta-7/8) is imported into the new moment path.
+
+2. Moment inputs and background.
+   MomentTerminalInput.weighted_background_beta derives the old 7/8 bound from the original certified OpenAI band theorem. weighted_terminal_certificate then uses beta>=.51 and kappa_plain=3/4; the .51 lower bound follows from theta<beta. The new physical slot data have no old total-length=1/6 restriction. The separate small detector parameter D.kappa must not be confused with fixed kappa_plain=3/4.
+
+3. Quantifier order.
+   Both the source-moment degree J and weighted numerator degree Jw are fixed before tau. chosen_data_height applies the explicit positive height choice to J+Jw. This gives all old and new height inequalities simultaneously. The finite height index budget n is chosen afterward, and the weighted input holds for every n. Cw is chosen after tau,n,eta but before Z and C0; all bounds remain linear in C0. Thresholds may depend on fixed eta, which is permitted by the common-probe contract. The common positive savings omega=(beta-theta)/2 and sigma=D.sigma precede eta.
+
+4. Source identity and geometry.
+   RawSourceDyadBound uses the literal integratedDyadValue with actual ray-prime pools, canonical source W, X/Y geometry .3735/.4595, and original row characters. WeightedCellRowData discharges actual supported rows, calibration, nonprincipality, U^.01<=Nu<=U, frequency lower edge Z^(d-2t), and current/next detector bins. Source real profile equals complex W by the explicit source-data identity. The count is on the original full amplitude class; masking changes only the weaker mean used in its bound. All slots remain in the mean denominator. The .68t frequency penalty, annular capacity padding, upper-bin slack, and inverse-normalizer t/8 penalty are accounted for.
+
+5. Coverage.
+   FullWCellsAt covers d>1/2 and delta>1/3 up to h+rowExtension. Mixed collection routes the complementary moderate/intermediate cells through the original numerator bounds, with floor/small/large rows treated separately. The actual dyadic conductor upper extension is supplied by D.weighted_top. The final low and high estimates concern the identical normalized compensated physical probe.
+
+6. Continuation and finite deletion.
+   Continuation.beta_le_of_common_probe uses a primitive zero within the strictly positive continuation margin of the actual Hecke zero supremum. The finite prime deletion preserves the zero in Re(s)>0 and preserves principal/nonprincipal pole status. The source correction is analytic and within 1/2 of 1 on Re(s)>theta by checked local/global Euler estimates; its nonvanishing is not assumed as a new input. The Hecke signal identity initially uses the established region Re(s)>7/8 and is continued using the improved probe growth.
+
+7. Exact family scope and poles.
+   Upstream HeckeFamily.Character is a finite residue character over K=Q(zeta_3), trivial on global units. It is not an arbitrary number-field Hecke character or automorphic family. The exact base-change factorization implies the target for every Dirichlet character modulo every positive integer, at all complex heights. Hecke and Dirichlet endpoints explicitly exclude the principal pole at s=1. The zeta endpoint additionally handles Mathlib's total-function value at 1 via riemannZeta_one_ne_zero; mathematical prose should describe the meromorphic zero-free region away from that pole.
+
+8. Exact final construction once ActualSource is compiled.
+   hraw := WeightedQRH.Numerator.actual_raw_fullW_input
+   hfull := OAI.SevenEighths.WeightedHighFinalAssembly.fullW_input_of_raw_source hraw
+   beta endpoint := beta_le_theta_of_fullW_input hfull
+   Hecke endpoint := hecke_of_fullW_input hfull
+   Dirichlet endpoint := dirichlet_of_fullW_input hfull
+   zeta endpoint := zeta_of_fullW_input hfull
+   No extra analytic bridge belongs in these signatures. Print axioms on all final declarations and rebuild their exact source dependency closure before announcing completion.
+
+Completed source assembly axioms were audited in HighRows/WeightedSourceCompletionAudit and are only propext, Classical.choice, Quot.sound. Parent root reports independent 80-module analytic and 136-module old-tail/source rebuilds succeeded. This audit does not substitute for the final unconditional theorem's own compilation and axiom audit.

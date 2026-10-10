@@ -1,0 +1,82 @@
+Principal finite-product, contour, and normalization formalization
+==============================================================
+
+All files below are in WeightedQRH/. They use the upstream (unchanged relative to
+fork commit c388e88e6, whose retained declarations come from openai/math fd4aeeb2e)
+localMultiplier, slotMultiplier, windowMultiplier, continuedSourceMultiplier,
+sourceMultiplier, sourceResidueIntegral, principalRowIntegral, and Hecke signal
+objects. The proofs are parameter extensions of the corresponding upstream
+Detector modules; they do not postulate an arithmetic/probe obligation.
+
+PrincipalRemainderRegion.lean (namespace WeightedQRH): remainder_* lemmas
+extend the actual Euler correction to x.re >= theta, w.re >= 9/10,
+z.re >= 4/25, retaining the summable 240 Q^(-17/10) defect bound.
+The broader region provides analytic neighborhoods of the actual integration
+lines w=19/20 and z=33/200. It imports the original CorrectionTail structure.
+
+PrincipalRemainderFiniteProduct.lean (namespace PrincipalFiniteProduct):
+local/slot/combined analyticity and norm bounds. In particular
+combined_slot_bound_sharp gives the original finite multiplier with the
+new local error factor 1+1440 Pmin^(-theta). No multiplier is redefined.
+
+PrincipalRemainderFiniteProductX.lean (namespace PrincipalFiniteProductX):
+continued_source_analytic_x and continued_source_differentiable_strip hold
+on x.re > max(theta, HeckeZeroSupremum.beta).
+
+PrincipalRemainderContours.lean (namespace PrincipalContours):
+continued_source_joint_integrable, continued_residue_pair_integrable,
+source_ordered_outer and supporting Fubini/profile lemmas at a>=theta.
+These are actual complex integrals, not abstract numerical majorants.
+
+PrincipalRemainderTransport.lean (namespace PrincipalTransport):
+source_initial_ordered_at_a and source_initial_joint_ordered_at_a move the
+actual initial source contours to a>theta, then take the w/z residues.
+Analyticity, growth, horizontal boundary decay, and Fubini are discharged
+in the proof. The continued reciprocal handles the possible exceptional
+real points of the original raw reciprocal, with equality almost everywhere.
+
+PrincipalRemainderBounds.lean (namespace PrincipalRemainderBounds):
+window_sharp_bound and ordered_remainders_scale_bound give actual integral
+bounds. source_scale_identity uses sum_j slotEll_j=ell, X=Z^lx,Y=Z^ly:
+  scalePower * product_j (Z^slotEll_j)^xi
+  = Z^(a-(4+b)/6 + h*(xi-1/6) + ly*(upsilon-1)).
+source_w_scale_identity: exponent a-(4+b)/6+h*e-ly/20.
+source_z_scale_identity: exponent a-(4+b)/6-h/600.
+source_remainders_strict_saving: for 0<e<=1/1000 and
+beta+e in [theta,2], both principal remainder integrals are bounded by
+C/e or C times Z^(beta-(4+b)/6-1/4000). The explicit saving is 1/4000.
+
+PrincipalRemainderPhysical.lean (namespace PrincipalPhysical):
+principal_physical_pool_ordered identifies the actual finite tuple sum of
+principalRowIntegral with these transported source integrals, assuming
+pairwise distinct chosen primes. This identity is valid for arbitrary
+positive X,Y,Z and a>theta.
+
+PrincipalRemainderPhysicalBounds.lean (namespace PrincipalPhysical):
+physical_principal_residue_remainder bounds the actual weighted finite
+principal tuple sum minus sourceResidueIntegral by
+C/e * Z^(beta-(4+b)/6-1/4000), at X=Z^lx,Y=Z^ly and total length ell.
+
+PrincipalRemainderResidueActual.lean (namespace PrincipalResidueActual):
+normalized_actual_window_residue applies PrincipalSignal's compiled theorem
+to the same original windowMultiplier and original residue weights, with
+normalizer sourceResidueConstant * principalScalar(total length ell).
+The error is D*Z^(a+signalShift)*P^(-theta).
+
+PrincipalRemainderRayThresholds.lean (namespace PrincipalRaySlots):
+power_pool_thresholds replaces the old 7/8 power in the small local-error
+condition by theta. Ray class mass/normalizer facts are unchanged upstream
+statements, valid for arbitrary positive slot lengths.
+
+PrincipalRemainderNormalized.lean (namespace PrincipalNormalized):
+actual_ray_principal_comparison gives the final actual normalized principal
+pool sum versus HeckeSignal.signal, with error at most
+ C [Z^(beta-(4+b)/6-1/4000+nu)
+    + Z^(beta-(4+b)/6+e-theta*ellMin)]
+eventually in Z. It assumes smooth nonnegative nonzero prime weights,
+positive distinct slot lengths summing to ell, positive ellMin, and the
+standard upstream SourceExclusions/ray-class hypotheses. These hypotheses
+are explicit; this theorem does not construct their common probe instance.
+
+Scope: these modules certify the principal branch only. They do not claim
+end-to-end QRH or the independently new weighted numerator branch.

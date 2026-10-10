@@ -1,0 +1,5 @@
+import WeightedQRH.HighRows.WeightedSlotSelection
+#print axioms WeightedQRH.WeightedSlotSelection.highData_weighted_selection
+#print axioms WeightedQRH.WeightedSlotSelection.zero_error_whole_slots
+#print axioms WeightedQRH.WeightedSlotSelection.baseCapacity_lt_supply
+#check WeightedQRH.WeightedSlotSelection.highData_weighted_selection

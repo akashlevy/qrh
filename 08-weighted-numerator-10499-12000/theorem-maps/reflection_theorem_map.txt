@@ -1,0 +1,175 @@
+Actual reflected numerator moments: theorem-to-manuscript map
+============================================================
+Status: additions in the isolated WeightedQRH tree; upstream unchanged relative to fork
+commit c388e88e6, whose retained declarations come from openai/math fd4aeeb2e.
+These are analytic components, not a claim of final nonvanishing or new QRH.
+
+1. Actual coefficient and orientation dictionary
+NumeratorPhysicalMoment.numerator_polynomial_eq_moment identifies the physical
+rowCharacter with the certified positive source moment character, on all ideals
+including the natural zero extensions. actual_pair_source_identity and
+finite_actual_pair_le_energy restrict the actual nonnegative radial energy to
+any finite retained physical row set.
+NumeratorPhysicalMomentInput.finite_physical_pair_positiveAt applies the actual
+certified PositiveAt directly to arbitrary two Profiles, retaining sourceControl
+and the fixed degree; no Fourier-frequency height cutoff is introduced.
+source_physical_slot_conj identifies each normalized positive source slot with
+the conjugate of the original canonicalPrimeAmplitude, which itself uses the
+negative (star idealRowHom) physical orientation. reflected_pair_norm_eq
+conjugates the entire reflected numerator and selected-prime product correctly.
+Manuscript: weighted numerator lemma's positive moment dictionary after reflection.
+
+2. Unrestricted Fourier frequencies and order of constants
+NumeratorFourierProfiles.numerator_fourier_profiles_control proves that the two
+independent unbounded frequencies have product polynomial control with a fixed
+integer degree. Its annular derivative tests are actual Schwartz profiles.
+NumeratorCertifiedFourier.certified_reflected_fourier_moment invokes the
+unconditional original certified terminal (using only beta>=51/100 and established
+beta<=7/8), obtaining the actual physical inverse-row pair times selected canonical
+Q. All frequency/profile/height degrees are chosen before U, contours, or tau.
+It assumes only the explicit capacity and selected fine-mesh bounds.
+Manuscript: weighted four-plain-factor moment, and Fourier separation of the
+row-dependent reflected numerator profile. This avoids the invalid inference
+from bounded-height SourceMomentsAt to arbitrary Fourier frequencies.
+
+3. Empty selected family
+MomentTerminalLongZero.weighted_terminal_energy_two reconstructs the original
+certified terminal with plain length cap L=2. The ZeroAt endpoint has no capacity
+condition on the two plain lengths.
+NumeratorCertifiedZero.certified_reflected_zero_fourier_moment gives the actual
+inverse-row paired Fourier estimate for any positive X1,X2<=U^2, including
+lengths above the square-root scale. There is no gap requiring a pointwise L bound
+or the weaker detector max(1,2m) estimate in this case.
+Manuscript: coefficient boxes where the selected-prime capacity has vanished.
+
+4. Removing row-dependent profiles, scales, and restoration coefficients
+NumeratorReflectionProfiles.reflected_fourth_profiles and
+reflected_fourth_rowwise_scales apply actual upstream Fourier separation twice
+and compact logarithmic scale suprema, with selected Q at exponent TWO.
+NumeratorReflectionMass.weighted_fourth_selection handles arbitrary independent
+rowwise choices in an absolutely summable coefficient packet.
+actual_masked_reflection_fourth applies this to the actual natural primitive
+redundant-prime and annular restoration weights.
+NumeratorReflectionRetained.actual_retained_uniform_fourth assembles these into
+a fourth moment of the actual retainedSchwartz, conditional on its explicitly
+stated fixed-scale Fourier input, profile seminorm and geometric log interval.
+NumeratorRetainedGeometry.actual_dual_scale_bound and
+eventually_retained_log_interval show that the combined primitive-plus-redundant
+conductor controls every retained annular scale, paying no redundant deletion
+factor twice. The coefficient dilation may vary independently with each row.
+Manuscript: scale-sup removal, natural coefficient restoration, combined conductor
+amendment, and coefficient-dilation boxes.
+
+5. Certified retained composition
+NumeratorCertifiedRetained.certified_actual_retained_fourth is compiled and
+discharges the actual_retained_uniform_fourth Fourier premise using the
+two certified endpoints above, for arbitrary radical-sized character
+presentations having all the actual row coefficients, rowwise profiles/scales,
+and either selected capacity or an empty selected family.
+NumeratorRetainedFixed.certified_retained_fixed_profile fixes the source profile
+and absorbs both Rcap<=Ccond U and the logarithmic scale cost into any specified
+positive exponent loss. Its result is C(1+height)^degree U^(1+D.t+loss), uniformly
+over every rowwise presentation/primitive/scaling choice satisfying the concrete
+combined-conductor bound. Constants precede U, heights, and all row choices.
+
+6. Original polynomial and finite active coefficient boxes
+NumeratorOriginalFourth.certified_original_numerator_fourth composes the certified
+retained moment with the separately proved actual discarded tail and unit-phase
+natural reflection identity. The output concerns the original physical
+row-character polynomial, not a surrogate. PhysicalReflectionData existence is
+proved from the radical conductor presentation. The fixed profile and every
+rowwise coefficient choice have the order of quantifiers required by packet
+coefficient removal.
+NumeratorSelectedCrude.canonical_selected_product_crude derives the actual
+selected Q product bound <=U from amplitude-bin upper bounds and physical slot
+width sum <=167/500. This supplies the tail with fixed Cslot=q=1, independently
+of the row-count constant.
+NumeratorBoxGeometry fixes n=ceil(1/boxWidth) and proves finite box coverage,
+nonnegative reflected exponent m=1-ly/d+j*boxWidth+boxWidth, m+annulusSlack<=2,
+and exact positive-capacity/empty-family alternatives. It explicitly deducts the
+annular slack from base prime capacity; no missing annular length is absorbed
+silently. All estimates hold on the full enlarged moderate dyad range.
+NumeratorActiveFourth.certified_active_box_fourth supplies the literal fourth
+moment of the cutoff-and-box-masked original polynomial against the actual
+selected canonical Q. It is uniform over arbitrary positive choices N_i.
+Inactive choices are replaced by a proved positive admissible fallback scale,
+the original all-row moment is invoked, and inactive nonnegative contributions
+are discarded. Set N_i=labelPacketScale to discharge the concrete hselection
+premise in NumeratorActualBin.actual_label_packet_bin_bound. Constants are chosen
+before U, the row set, reflection data, coefficient choices, d, box, selected
+family, and contour heights. The result is C(1+height)^degree U^(1+D.t+loss).
+Manuscript: finite coefficient-dilation boxes, reflected selected moment,
+capacity exhaustion, and all original numerator slots after reconstruction.
+
+The remaining full amplitude-bin and high-dyad assembly is separate; these
+compiled endpoints do not themselves assert improved QRH nonvanishing.
+
+7. Selection on the actual full amplitude class
+NumeratorSourceBin.source_packet_selected_bin invokes the actual coefficient
+packet mass/bin theorem and the certified active-box fourth endpoint. Thus no
+moment premise remains in this source bin bound. It keeps explicit finite count,
+selected spike, capacity and full-product upper hypotheses.
+NumeratorSourceClass.source_packet_amplitude_class discharges those selected
+and full-product hypotheses on the literal original full amplitude class. For
+each finite coefficient box j, it applies source_class_main_selection at
+v=j*t+2*t: one t pays the coefficient box width and the other pays annular slack.
+The chosen selected family is common to all rows in that full amplitude class.
+Its masked lower mean gives error slots zero gain while retaining every slot
+length in the denominator. The physical row class and its count are unchanged.
+The squared spike is square-rooted with squared_selected_lower, selected products
+are bounded by U via source_selected_product_crude, and the main upper-bin loss
+t*ell/d is restored with restore_upper_bin_loss. The result concerns the actual
+labelPolynomialPacket multiplied by the UNnormalized canonical main product.
+
+The exact exponent retained by this theorem is
+ t + q*(ell/d) - q*((2*(ly/d)-1)/(9/2)-4*t/9)/2
+ + (3*R+1+2*t)/4 + delta*weighted_detectorMesh(t)/4 + delta*t/4 + t*(ell/d).
+The prefactor includes Y^(-1/2), error-slot product lengths to power -4/25,
+C*Ccount and (1+height)^degree. Constants and height degree precede U and every
+row/bin/contour choice. The original full-class count, actual pointwise amplitude
+upper bounds, and actual physical row/pool geometry are deliberately explicit
+premises to be supplied by the final source-cell assembly.
+NumeratorSourceClassAxioms.lean audits both source endpoints: only the standard
+three axioms propext, Classical.choice and Quot.sound appear.
+
+Important normalization/quantifier points
+- Rows have U^(1/100)<=rowNorm<=U in the moment endpoint. A physical dyad with
+  upper edge 2U must use an enlarged moment base or an explicitly dilated radial
+  window; it is not silently treated as <=U.
+- Fine mesh is fineMesh 2 0 1 (3/4) (D.t/4) in selected moments.
+- Retained annuli use R=U^(xi/4); the discarded API written with xi/2 must be
+  instantiated at xi/2 to match this cutoff.
+- The two-profile energy has exponent 1+D.t. Additional restoration/profile/
+  logarithmic losses must be bounded separately before choosing final tau.
+- No theorem here assumes beta>7/8 or an unproved improved arithmetic-probe obligation
+  (a concept from the kappa-bootstrap work; ArithmeticProbeObligation is not a Lean
+  identifier in WeightedQRH, c388e88e6 or fd4aeeb2e).
+
+Axiom audit
+-----------
+NumeratorReflectionAxioms.lean and its build log check all new direct dictionary,
+Fourier, empty-slot, geometry, retained and fixed-profile endpoint theorems.
+Only propext, Classical.choice, Quot.sound occur. No new axiom, sorry, admit, or
+native_decide is used. The original-polynomial and active-box moment endpoints
+are now included. The final QRH assertion still requires its separate assembly;
+this audit does not claim that assertion complete.
+
+STATUS UPDATE 2026-10-09 (supersedes conditional wording above)
+--------------------------------------------------------------
+The input this map calls unproved or conditional is now proved.
+WeightedQRH.Numerator.actual_raw_fullW_input : RawFullWAnalyticInput
+(NumeratorActualSource.lean) and WeightedQRH.fullW_analytic_input :=
+fullW_input_of_raw_source Numerator.actual_raw_fullW_input (Final.lean) discharge
+FullWAnalyticInput. Final.lean proves WeightedQRH.beta_le_theta :
+HeckeZeroSupremum.beta <= 10499/12000 and hecke_nonzero, dirichlet_nonzero and
+zeta_nonzero; Statements.lean gives the three Comparator-form statements. FinalAxioms
+(isolated log .verification/final2_20261009/lib/logs/WeightedQRH.FinalAxioms.log) shows
+only propext, Classical.choice and Quot.sound. Isolated rebuild:
+final_rebuild_verification.json (231 modules, all exit 0). Comparator (local macOS run,
+unsandboxed Landrun stand-in, lake-build shim, default Lean kernel only; no NanoDa or
+con-ron) accepts all three challenges. No external human peer review. The exact final
+step chain, files and caveats are in final_assembly_theorem_map.txt.
+In this map: the remaining full amplitude-bin and high-dyad assembly and the final
+QRH assertion are completed by source_integrated_amplitude_classes,
+actual_raw_fullW_input and Final.lean; certified_original_numerator_fourth is on that
+proof path.

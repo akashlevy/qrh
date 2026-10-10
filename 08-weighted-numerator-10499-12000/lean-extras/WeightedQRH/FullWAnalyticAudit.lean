@@ -1,0 +1,26 @@
+import WeightedQRH.FullWBound
+import WeightedQRH.NumeratorLabelReconstruction
+import WeightedQRH.WeightedCellExponent
+import WeightedQRH.NumeratorOriginalFourth
+
+#print axioms WeightedQRH.MellinReconstruction.weighted_numerator_mellin
+#print axioms WeightedQRH.MellinReconstruction.reconstructed_series_norm_summable
+#print axioms WeightedQRH.MellinReconstruction.reconstruction_exact_cutoff
+#print axioms WeightedQRH.FullWContour.buffered_w_integral_eq
+#print axioms WeightedQRH.FullWContour.finite_fullW_arbitrary_saving
+#print axioms WeightedQRH.FullWContour.finiteFullW_reconstruction
+#print axioms WeightedQRH.FullWContour.sourceSZ_uniform_integral_bound
+#print axioms WeightedQRH.FullWContour.finiteFullW_uniform_norm_bound
+#print axioms WeightedQRH.Numerator.actual_quotient_free_expansion
+#print axioms WeightedQRH.Numerator.calibrated_prime_error_slots_separate
+#print axioms WeightedQRH.Numerator.actual_error_packet_integrable
+#print axioms WeightedQRH.Numerator.partialErrorTuple_mellin
+#print axioms WeightedQRH.Numerator.normalized_prime_tuple_reconstruction
+#print axioms WeightedQRH.Numerator.integratedDyadValue_reconstruction
+#print axioms WeightedQRH.Numerator.errorLabelNumerator_reconstruction
+#print axioms WeightedQRH.normalized_weighted_cell_bound
+#print axioms WeightedQRH.Numerator.discardedSchwartz_fixed_profile
+#print axioms WeightedQRH.Numerator.subtype_discarded_fourth_negligible
+#print axioms WeightedQRH.Numerator.physical_reflection_data_exists
+#print axioms WeightedQRH.Numerator.combined_scale_of_dilation
+#print axioms WeightedQRH.Numerator.certified_original_numerator_fourth

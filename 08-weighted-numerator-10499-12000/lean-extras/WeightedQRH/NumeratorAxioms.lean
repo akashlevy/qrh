@@ -1,0 +1,28 @@
+import WeightedQRH.NumeratorPacketMellin
+import WeightedQRH.NumeratorErrorPrimeSum
+import WeightedQRH.NumeratorActualBin
+import WeightedQRH.NumeratorFiniteCollect
+
+#print axioms WeightedQRH.Numerator.actual_error_expansion
+#print axioms WeightedQRH.Numerator.actual_error_coefficient_mass
+#print axioms WeightedQRH.Numerator.continuedCorrection_coefficient_expansion
+#print axioms WeightedQRH.Numerator.continuedCorrection_coefficient_subpower
+#print axioms WeightedQRH.Numerator.error_packet_expansion
+#print axioms WeightedQRH.Numerator.error_packet_coefficient_mass
+#print axioms WeightedQRH.Numerator.radical_repeated_deficit
+#print axioms WeightedQRH.Numerator.error_packet_damped_mass
+#print axioms WeightedQRH.Numerator.coefficient_prefactor_subpower
+#print axioms WeightedQRH.Numerator.error_coefficient_slot_sum
+#print axioms WeightedQRH.Numerator.actual_error_packet_mellin
+#print axioms WeightedQRH.Numerator.reconstructed_numerator_bound
+
+#print axioms WeightedQRH.Numerator.actual_label_packet_mass
+#print axioms WeightedQRH.Numerator.actual_physical_label_mass
+#print axioms WeightedQRH.Numerator.packet_fourth_selection
+#print axioms WeightedQRH.Numerator.packet_box_fourth
+#print axioms WeightedQRH.Numerator.normalized_dilation_box_fourth
+#print axioms WeightedQRH.Numerator.normalized_box_reconstruction
+#print axioms WeightedQRH.Numerator.packet_weighted_bins
+#print axioms WeightedQRH.Numerator.actual_label_packet_bin_bound
+#print axioms WeightedQRH.Numerator.errorLabelNumerator_eq_packet
+#print axioms WeightedQRH.Numerator.reconstructedDyadValue_norm_bound

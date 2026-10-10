@@ -1,0 +1,159 @@
+SECOND AUDIT OF THE ALL-ERROR WEIGHTED NUMERATOR ARGUMENT
+2026-10-09, independent check against original paper78.tex local identities.
+
+Reviewed artifact: research_audit/independent_count.txt, sections 2--4.
+Conclusion: its all-error extension is valid subject to the original plain
+moment and reflection inputs, with the exact support simplification below.
+This audit is analytical, not Lean kernel verification.
+
+A. Quotient-free decomposition.
+
+For each error prime, write E_p=G_p+conjugate(chi_p(u))*H_p, including
+chi_p(u)=0 on ramified primes. The correction term with error index set I
+is exactly a sum over its prime labels of product p^(z-1)E_p times the
+product H_p outside these labels, times the main-slot polynomials outside
+I. The source's disjoint underlying slot supports are essential here.
+This identity follows directly by expanding G_p=-conj(chi_p(u))H_p+E_p.
+No local quotient or reciprocal H_p is required.
+
+B. Coefficient norms, not just values.
+
+The local P_p^* formula is linear in T=(Np)^(-w). Consequently H_p is
+quadratic in T for p not dividing u, and linear for p dividing u. G_p
+and E_p are also polynomials of uniformly bounded degree. Denominators
+1-R,1-V,1-D are independent of w. At an unramified prime, first simplify
+P_p^*+D exactly, before taking coefficient absolute values. In particular,
+its constant coefficient is
+
+ [R(1-Q^(-1))/(1-V)-D R]/(1-R),
+
+not the sum of the absolute values of -D/(1-R) and D. This cancellation
+is within one coefficient. After this simplification the source defect
+proof bounds the polynomial coefficient l1 norm at each real w line.
+With rho=delta/4 and sigma=1/2-rho, all unramified error exponents are
+at most -.51 (or smaller) uniformly for a>=.51 and z_r=.34. The usual
+O(P_i) count of available prime ideals therefore gives a slot norm at
+most P_i^(z_r-1/2), with spare negative power.
+
+C. Explicit ramified exponent check.
+
+For p dividing u, put j=v_p(u), 1<=j<=5. The identity
+
+ G_p=bar(eta(p))*Q^s*(1-V)*P_p^* - Q^(-w)*H_p
+
+is exact since D=W=0 at this prime. Include its slot scalar Q^(z-1),
+and divide by the reference Q^(z_r-1/2). At s_r=a=(1+delta)/2 and
+w_r=1/2-rho, the J_j boundary terms have real exponents:
+
+ j=1: -1+rho;
+ j=2: -delta;
+ j=3: -delta+rho, and -3delta/2;
+ j=4: -3delta/2+rho;
+ j=5: -5delta/2.
+
+These follow by direct substitution into the original six-row J_j table.
+They are all negative for rho=delta/4. Increasing s_r to a+16e only
+improves them. The R/(1-V) tail has exponent
+3.5-5s_r-6z_r <=-1.09. The extra -Q^(-w)H_p term has exponent
+-1+rho and bounded local coefficient norm. The strict second-family
+term for j>=2 is the only exception:
+
+  -eta(p)*(Q-1)*Q^(-s-w)/(1-R),
+
+which after the stated normalization has coefficient norm at most
+Q^rho. For j<=1 it has an additional V, hence no exception.
+At w_r=1/2, its cost is at most one.
+
+D. Conductor allocation is spent once.
+
+For any term after triangle-expanding the finite product of local
+polynomials, let J be exactly the strict ramified labels in that term.
+The labels are distinct. The original primitive conductor assertion gives
+
+ C_u <= C_S rad(u)
+     <= C'_S U product_{p in J}(Np)^(-(j_p-1)).
+
+Since each strict term has j_p>=2,
+
+ (C_u/(C'_S U))^rho product_{p in J}(Np)^rho <=1.
+
+This applies once to the entire term, and thus also after summing terms.
+Other ramified choices cost only a divisor bound. Unramified choices
+cost the already counted P_i prime supply. Therefore if
+F_I(w)=sum_k A_{I,u}(k)(Nk)^(-w) and
+B_I=product_{i in I}P_i^(z_r-1/2), then both
+
+ sum_k |A_{I,u}(k)|(Nk)^(-1/2) << U^epsilon B_I,
+ (C_u/(C'_S U))^rho
+   sum_k |A_{I,u}(k)|(Nk)^(-1/2+rho) << U^epsilon B_I
+
+hold with all constants uniform in row phases and external heights.
+Combining these two (using max(1,x)^rho<=1+x^rho) yields the required
+weighted coefficient norm. It does not require any uniform global norm
+sum_k sup_u |A_{I,u}(k)|, which would be unjustified.
+
+E. Exact support closes the scale-range issue.
+
+The exact Mellin reconstruction before reflection contains
+S_chi(Y/Nk;W1), and W1 is compactly supported in (0,infinity).
+If its upper support endpoint is B, this expression vanishes unless
+Nk<=B Y, since every integral ideal n has norm at least one.
+TRUNCATE THIS EXACT SUM BEFORE APPLYING REFLECTION.
+Then
+
+ T=max(1,C_u Nk/(C'_S U)) <= max(1,BY),
+
+because C_u<=C'_S U. Thus v=log_U T lies in a fixed bounded interval
+0<=v<=y+O(1/log U). The main reflected length is at most
+1-y+v+o(1)<=1+o(1). All moment and profile parameter ranges are
+therefore bounded as required by the original source. The remaining
+annular tail of the reflected profile is handled by the source's usual
+fixed-tolerance annular truncation. No theorem uniform in unbounded
+log-length is needed. Any discussion of reflecting arbitrarily long
+T dyads back, or choosing a new rho for their tail, can be deleted.
+
+F. Character and mask compatibility.
+
+Physical sixth-power-free rows have each good conductor prime exactly
+once and no redundant moving good puncture. Fixed S omissions can be
+restored as in the source natural reflection formula, with fixed scale
+multipliers and subpower/bounded coefficient mass. The reflected plain
+sum has row character conjugate(chi_u), matching the physical main
+prime factors. Conjugating the whole moment returns the positive
+orientation in the stated plain theorem. Underlying prime supports are
+still disjoint and every original nonunit zero remains zero. Any physical
+row at the large scales used here ramifies outside S, hence its inducing
+character is outside the finite fixed family Theta.
+
+G. Holder and capacity.
+
+At scale T=U^v the reflected log-length is at most n0+v+o(1), n0=1-y.
+The selected capacity decreases by at most v/(3kappa). The fourth
+moment supplies a gain q*z(v)/2 in the first absolute moment, while
+the coefficient weight supplies rho*v. Since
+
+ rho-q/(6kappa) >=5delta/36>0
+
+for kappa>=3/4 and q<=delta/2, every scale dyad is controlled by the
+v=0 exponent. The full main prime product is still paid at U^(qL).
+No selected prime is removed a second time. Error slots have amplitude
+zero; selecting all positive slots when supply runs out still gives
+at least the requested q*z gain by the original greedy selection lemma.
+
+H. Integration strategy caution.
+
+The new argument integrates w before amplitude subdivision in the
+remaining external parameters. No row set depending on a moving contour
+parameter may simply be analytically continued as a separate function.
+The conservative comparison of the old and new full-bin bounds is
+min(max_q E_old,max_q E_weighted). A stronger pointwise-in-q comparison
+requires explicitly noting that the amplitude set is independent of w,
+and making both w bounds after all contour moves in s,z for the ORIGINAL
+fixed dynamic-bin sum. The conservative comparison avoids this extra
+bookkeeping and is sufficient if its exact exponent certificate passes.
+
+This audit found no additional analytic hypothesis beyond the original
+moment, reflection and local-identity package. A complete improved
+zero-free theorem still requires its exact global exponent certificate,
+low estimate, outer-row bounds, principal remainder and continuation
+checks; this document alone does not certify those other pieces.

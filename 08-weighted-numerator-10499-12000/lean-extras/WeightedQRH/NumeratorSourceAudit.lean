@@ -1,0 +1,12 @@
+import WeightedQRH.NumeratorSourceScalar
+import WeightedQRH.NumeratorSourceExponent
+import WeightedQRH.NumeratorSourceBin
+
+#print axioms WeightedQRH.Numerator.source_frequency_scalar_bound
+#print axioms WeightedQRH.Numerator.error_main_source_power
+#print axioms WeightedQRH.Numerator.source_packet_multiplicative_identity
+#print axioms WeightedQRH.Numerator.actual_physical_label_mass
+#print axioms WeightedQRH.Numerator.actual_label_packet_bin_bound
+#print axioms WeightedQRH.Numerator.errorLabelNumerator_eq_packet
+#print axioms WeightedQRH.Numerator.certified_active_box_fourth
+#print axioms WeightedQRH.Numerator.source_packet_selected_bin

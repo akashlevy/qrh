@@ -1,0 +1,258 @@
+QRH WEIGHTED-NUMERATOR PROJECT — COMPLETION RECORD
+Recorded 2026-10-09 (PDT) / 2026-10-10 (UTC).
+Workspace: /Users/akashlevy/Documents/riemann (paths below are relative to it)
+
+This record supersedes the status sections of HANDOFF_ROOT_20261009.txt,
+HANDOFF_ALL_20261009.txt and the handoff_*_20261009.txt agent reports. Those files are
+kept unchanged as historical records. They also call c388e88e6 the "Original OpenAI
+commit"; that is wrong. c388e88e6 is a commit of the fork akashlevy/math (see Provenance).
+
+Result: theta = 10499/12000 = 0.874916666... The Lean development proves the bound
+end to end. It depends only on the standard axioms, the imported original
+development and Mathlib. There has been no external human peer review.
+
+Author: Akash Levy (akashlevy). Attribution statement (user instruction, for the
+manuscript footnote and the submission): GPT-6 Astra (Ultra) was used to discover the
+proof and perform partial formalization; Opus 5.5 Ultracode was used to complete the
+formalization and submit the result.
+
+
+1. WHAT WAS MISSING AT THE HANDOFF (HANDOFF_ROOT_20261009.txt, sections 2 and 12)
+================================================================================
+- research_audit/weighted_formal/WeightedQRH/NumeratorActualSource.lean did not compile
+  ("dsimp made no progress" at line 59), and it had no .olean.
+  WeightedQRH.Numerator.actual_raw_fullW_input : RawFullWAnalyticInput was therefore unproved.
+- Final.lean and FinalAxioms.lean did not exist, so there was no unconditional endpoint.
+- The full final dependency closure had not been rebuilt in isolation. The final source
+  scan and the endpoint axiom audit had not been run.
+- The LaTeX status wording, PDF review, manifests and public comparison all still had to
+  be updated.
+
+
+2. WHAT WAS DONE
+================
+- NumeratorActualSource.lean: a redundant `dsimp only` in the count premise was removed.
+  The module compiles and proves WeightedQRH.Numerator.actual_raw_fullW_input :
+  RawFullWAnalyticInput with no added hypothesis.
+- WeightedQRH/Final.lean defines
+  fullW_analytic_input := fullW_input_of_raw_source Numerator.actual_raw_fullW_input
+  and feeds it to the implications in HighRows/ConditionalFinal.lean.
+- Added WeightedQRH/Statements.lean (Comparator-form statements),
+  WeightedQRH/FinalAxioms.lean (endpoint audit) and
+  ComparatorChallenges/WeightedQRH{Zeta,Dirichlet,Hecke}.{lean,json}.
+- WeightedQRH/LowDetector/LowOriginalPools.lean was re-pointed. It used to import an
+  original module that the fork's prune commit 817ddb5e6 deleted (only a stale pre-prune
+  object of it was being loaded). It now imports that module's own imports,
+  Detector.LowSlotScales and Detector.RayPoolGood.
+- Added verify_parallel.py and run_comparator.sh. Ran the isolated rebuild, Comparator on
+  all three challenges, and a negative control.
+- Refreshed the dated public search (research_audit/public_search_final_20261009.json).
+- Updated the records:
+  research_audit/weighted_numerator_verification_manifest.json (analytic_status,
+    verification_limits, new lean_verification and lean_source, corrected
+    original_source, public_comparison, formal_status, pdf_review = pending re-render,
+    recomputed sha256);
+  research_audit/weighted_formal/final_assembly_theorem_map.txt (new);
+  dated STATUS UPDATE paragraphs in high_, numerator_, moment_ and
+    reflection_theorem_map.txt, plus naming and provenance wording fixes in those maps
+    and in principal_ and conductor_theorem_map.txt;
+  provenance_note in research_audit/weighted_formal/low_port_manifest.json.
+
+
+3. ENDPOINTS (exact Lean names; statements as printed in FinalAxioms.log)
+=========================================================================
+WeightedQRH/Final.lean
+  WeightedQRH.beta_le_theta : HeckeZeroSupremum.beta ≤ 10499 / 12000
+  WeightedQRH.hecke_nonzero : ∀ (χ : HeckeFamily.Character) (s : ℂ),
+    10499 / 12000 < s.re → s ≠ 1 ∨ χ.residue ≠ 1 → HeckeFamily.LFunction χ s ≠ 0
+  WeightedQRH.dirichlet_nonzero : ∀ {q : ℕ} [NeZero q] (χ : DirichletCharacter ℂ q) (s : ℂ),
+    10499 / 12000 < s.re → ¬(χ = 1 ∧ s = 1) → DirichletCharacter.LFunction χ s ≠ 0
+  WeightedQRH.zeta_nonzero : ∀ (s : ℂ), 10499 / 12000 < s.re → s ≠ 1 →
+    AnalyticAt ℂ riemannZeta s ∧ riemannZeta s ≠ 0
+WeightedQRH/Statements.lean (Comparator solution module)
+  OAI.riemannZeta_ne_zero_of_10499_12000_lt_re : ∀ {s : ℂ}, 10499 / 12000 < s.re → riemannZeta s ≠ 0
+    (no s ≠ 1, as in OpenAI's upstream 7/8 challenge; Mathlib's total riemannZeta has a
+    nonzero assigned value at s = 1)
+  OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re : same hypotheses as
+    dirichlet_nonzero, for Mathlib's _root_.DirichletCharacter.LFunction
+  OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_10499_12000_lt_re : ∀ (χ : Character) {s : ℂ},
+    10499 / 12000 < s.re → ¬(χ.residue = 1 ∧ s = 1) → LFunction χ s ≠ 0
+The full step chain is in research_audit/weighted_formal/final_assembly_theorem_map.txt.
+
+
+4. EVIDENCE (W = research_audit/weighted_formal)
+================================================
+Axioms: W/WeightedQRH/FinalAxioms.lean; isolated log
+  W/.verification/final2_20261009/lib/logs/WeightedQRH.FinalAxioms.log
+  sha256 e9788e6c2adbc6919bf4e37afe5cd9fd0b21429896dea3b77c9ac9c874d6eccc
+  Every endpoint above, plus source_integrated_amplitude_classes,
+  actual_raw_fullW_input and fullW_analytic_input, depends only on
+  [propext, Classical.choice, Quot.sound].
+Source scan of the 228 closure modules: no sorry, admit, axiom, unsafe, implemented_by,
+  extern, native_decide, skipKernelTC, elab, macro or run_cmd; the only set_options are
+  maxHeartbeats and maxRecDepth. (The challenge files contain `sorry` by design.)
+Isolated rebuild: W/verify_parallel.py; report W/final_rebuild_verification.json
+  sha256 2a3faedaa36d9e806eba03214e73f0a15f257c288183843d1f3f56deceec0ef0
+  status compiled, 231 modules (228 local Lean modules + 3 challenge modules), all exit 0,
+  started 2026-10-10T00:21:47Z, finished 00:28:17Z, output root
+  W/.verification/final2_20261009/lib/lean. The live development directory was excluded
+  from LEAN_PATH. Every external OAI import was checked to be tracked at c388e88e6. The
+  challenge modules were compiled first, against Mathlib and its dependencies only.
+Comparator (Lean FRO comparator d03acab1, lean4export 076e8e57, Lean v4.34.1, default
+  Lean kernel, nanoda disabled; runner W/run_comparator.sh):
+  W/logs/comparator-WeightedQRHZeta.log      sha256 c31980be663b125a7f7e3e07cdcc2e85d89eb1c26f68e77291af7f5bedb189cb
+  W/logs/comparator-WeightedQRHDirichlet.log sha256 6bf5b8045806e110e0cdbe4484411a3a2e1b03accd77a32176407f47b2cf3ded
+  W/logs/comparator-WeightedQRHHecke.log     sha256 489266f8c6baaa1ae15019ac885f070e7cf3763cea645d562f1b3d517bc5677c
+  All three print "Lean default kernel accepts the solution" and "Your solution is okay!".
+  Negative control (zeta challenge with 1/2 in place of 10499/12000) was rejected with
+  "Challenge and solution theorem statement do not match":
+  W/logs/comparator-NegControl.log sha256 39763e98b480d91df7231b36bfdac8e48bcfe5c72f39a40536e84be2d2beff9d
+  The Zeta and Dirichlet challenges use only Mathlib definitions. The Hecke challenge is
+  OpenAI's upstream HeckeSevenEighths challenge with only the theorem name and the
+  constant changed.
+Reproduce (from W):
+  python3 verify_parallel.py ComparatorChallenges.WeightedQRHZeta \
+    ComparatorChallenges.WeightedQRHDirichlet ComparatorChallenges.WeightedQRHHecke \
+    WeightedQRH.FinalAxioms --report <report.json> --output-root <fresh>/lib/lean
+  OBJROOT=<fresh>/lib/lean bash run_comparator.sh Zeta    (likewise Dirichlet, Hecke)
+Consolidated record: research_audit/weighted_numerator_verification_manifest.json
+  (lean_verification).
+Do not cite: W/.verification/final_20261009/ (report_superseded.json and
+  comparator_superseded/, from before the LowOriginalPools re-pointing), logs built
+  against the live tree (such as W/logs/FinalAxioms.log and the top-level W/*Axioms.log
+  files), or objects in the live tree W/WeightedQRH/ (not reproducible by build.py).
+  Cite only the final2_20261009 isolated objects and logs.
+
+
+5. PROVENANCE
+=============
+Lean original development: github.com/akashlevy/math commit
+  c388e88e6519d139ad2ca5571ef0c7fbf0e245b5 (branch qrh-23-24-pruned), local checkout
+  formalize_11_12/math. This is github.com/openai/math commit
+  fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb with the declarations no QRH result uses
+  pruned in place, plus 23/24 modules (OAI.NumberTheory.DirichletL.QRH*) that the
+  weighted proof does not import. Its compiled objects
+  (formalize_11_12/upstream/.lake/build/lib/lean) were hash-checked against those sources.
+Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612. PrimeNumberTheoremAnd
+  c39a751132c88b6e8080b74c74023fd95b3d8be0 and rellich-kondrachov
+  70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23, with the fork's recorded Lean 4.34.1
+  compatibility patches. Lean v4.34.1.
+Written source: the September-30 OpenAI paper.tex (git blob 268c4e32) is byte-identical
+  at fd4aeeb2e and c388e88e6, and so is formalize_11_12/papers/paper78.tex. Pinned PDF:
+  https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf
+Low-detector ports: adapted from openai/math fd4aeeb2e (byte-identical to the lean-base
+  copies named in W/low_port_manifest.json; see its provenance_note).
+No outside refinement work (Li Xiang's or anyone else's) was copied, fetched or reused.
+
+
+6. PUBLIC COMPARISON (research_audit/public_search_final_20261009.json, as of 2026-10-10T00:16:22Z)
+=================================================================================================
+The strongest comparable unconditional claim found is the cubic root ~0.87495701942009894613
+  (written by Shunia with GPT-6 Astra, and by Guo; Nielstron's Lean package for it is in the
+  open, unmerged GTimG/QuasiRiemannTracker PR #2).
+The tracker's listed best is 874957019420098946128604623/10^27 (Nielstron, framework-verified).
+10499/12000 is smaller than the cubic root by about 4.0353e-5. The Lean lemma
+  WeightedQRH.theta_lt_public_cubic_lower (CertificateBenchmark.lean) proves
+  theta < 8749570194/10^10.
+Guo's 328/375 is smaller, but it is conditional on the unproved Hypothesis 11.1.
+This search is dated and is not an exhaustive novelty proof. The outside claims were
+  read, not rerun.
+
+
+7. CAVEATS (keep in every summary)
+==================================
+- No external human peer review.
+- The public search is dated and not an exhaustive novelty proof; the outside claims
+  were read, not rerun.
+- Comparator ran locally on macOS with an unsandboxed Landrun stand-in and a lake-build
+  shim that only confirms prebuilt isolated objects exist. Export, statement/definition
+  comparison, axiom check and kernel replay ran unchanged. Only the default Lean kernel
+  was used; NanoDa and con-ron have not been run.
+- The original development, Mathlib and dependency objects were supplied prebuilt, not
+  rebuilt in the isolated run.
+- The Hecke result concerns the finite-order Hecke characters of Q(zeta_3) in the original
+  OpenAI definition. It is not general GRH.
+- The half-plane is strict (Re s > 10499/12000), and the trivial-character pole at
+  s = 1 is excluded.
+- The 13/15 barrier is a limitation of the stated low estimates only.
+
+
+8. REMAINING WORK
+=================
+In progress elsewhere (not done by this record):
+- Manuscript: revise the provisional/conditional wording in weighted_numerator_proof.tex
+  and weighted_numerator_lemma.tex, recompile, render every page into
+  output/pdf/pages_final_20261009, inspect them, then set pdf_review and refresh the
+  .tex/.pdf hashes in the manifest.
+- Submission to GTimG/QuasiRiemannTracker as the proof package
+  proofs/akashlevy-20261009-weighted-numerator/ (not yet submitted when this was written).
+Optional strengthening:
+- Run Comparator on Linux with the real Landrun sandbox and a real `lake build`.
+- Run the NanoDa second kernel (and con-ron), as the tracker's comparator-and-nanoda
+  policy describes.
+- Get human expert review.
+- Delete the 253 stale pruned-module objects (with their .trace/.hash/.ilean files) in
+  formalize_11_12/upstream/.lake/build/lib/lean, or rebuild the fork into a fresh build
+  directory. Then rerun the isolated rebuild and Comparator. These objects let an import
+  of a pruned module load silently; that is how the LowOriginalPools problem went unnoticed.
+- Minor tooling: give verify.py verify_parallel.py's fresh-root check (or retire it), and
+  record the dependency revisions and patch hashes in lean_environment.json (they are
+  recorded in the manifest's lean_source).
+
+
+9. ADDENDUM 2026-10-10T01:12Z (UTC) — MANUSCRIPT PASS DONE; SECTIONS 1-8 KEPT AS WRITTEN
+========================================================================================
+Manuscript: the first Section 8 item is done. weighted_numerator_proof.tex and
+  weighted_numerator_lemma.tex carry the unconditional status wording. After three
+  reviewer reports, a final pass corrected the following:
+  - the rebuild scope ("228 modules in the dependency closure of the endpoints";
+    WeightedQRH/ has 252 .lean files, and 24 lie outside that closure);
+  - the axiom-log claim (FinalAxioms.log audits 10 declarations; theorems on their
+    proof paths are covered transitively; physical_low_barrier is not covered);
+  - the proof-path sentence of Section 8 (endpoints of Final.lean and Statements.lean);
+  - the CertificateBenchmark qualification (stand-alone module, live tree only, outside
+    the closure and the isolated rebuild; theta_lt_public in Parameters.lean is inside);
+  - the hash-check wording (see Provenance correction below);
+  - the Comparator lean-toolchain caveat (v4.34.1 instead of the pinned v4.34.0);
+  - the reproduction inputs (verify.py, lean_environment.json, the hardcoded
+    ../../formalize_11_12/upstream path in verify_parallel.py);
+  - a note on the stale ConditionalFinal.lean docstring;
+  - typography, the theta/z_0 bridge and PDF title/author metadata.
+  The mathematics is unchanged.
+PDF: output/pdf/weighted_numerator_proof.pdf, 16 pages, compiled 2026-10-10T01:09:13Z
+  with no TeX warnings. sha256 7ea0493e5f1d6b5f552ec64bc368740dcd8451815e015dc1158bcd19caaaf3e3.
+  Tectonic embeds a CreationDate, so a recompile changes this hash.
+  Sources: proof.tex sha256 0ab9e231b5bc26a78649ee6c6eb358126c309f14e216900e2df33a79ec1391ef,
+  lemma.tex sha256 01018c660f039a29796732f2258c3c34ab04b6f9d3b6768ad3bfd97ab273389f.
+Page review: all 16 pages were rendered to output/pdf/pages_final_20261009 (page-01..16.png,
+  110 dpi) and every page was inspected. The manifest's pdf_review is complete and its
+  .tex/.pdf hashes are refreshed (weighted_numerator_verification_manifest.json,
+  updated_utc 2026-10-10T01:12:00Z).
+Provenance correction to Section 5: "hash-checked" means the following. The source hashes
+  recorded in the Lake build traces of the prebuilt objects were compared with the
+  c388e88e6 sources by a reimplemented Lake hash, and they agree. That check exists only
+  as an audit note; no evidence file records it. The same object directory also holds
+  stale objects of 253 modules deleted by the prune. verify_parallel.py admits an
+  external OAI import only if its module is tracked at c388e88e6, which excludes them.
+Packaging note: the manuscript cites WeightedQRH/CertificateBenchmark.lean and
+  FullWAnalyticAudit.lean as package files. Ship them in formalization/WeightedQRH/ even
+  though they are outside the endpoint closure. Also ship verify.py and
+  lean_environment.json next to verify_parallel.py and run_comparator.sh.
+Submission: still pending when this addendum was written. The proof package
+  proofs/akashlevy-20261009-weighted-numerator/ is to be assembled and submitted to
+  GTimG/QuasiRiemannTracker separately. All Section 7 caveats still apply, unchanged.
+
+SUBMISSION (2026-10-10 UTC)
+===========================
+Submitted to the QuasiRiemannTracker as https://github.com/GTimG/QuasiRiemannTracker/pull/6
+(branch akashlevy/QuasiRiemannTracker:akashlevy-weighted-numerator-20261009, opened 2026-10-10T03:22:55Z).
+Commits (author Akash Levy <me@akashlevy.com>): ec626ec9c0e7ab7b29f6c916314932caeb4df39a package
+(record source_commit), 6f0aa13 catalogue record + validator + tests, 2fd60c0 PR number/submitted_at.
+Package: proofs/akashlevy-20261009-weighted-numerator/ (302 files) and public downloads (18 files).
+Status proposed: framework-verified, from the author-side three-kernel run (Comparator + con-ron +
+NanoDa + Lean kernel, PASS 2026-10-10T01:53:26Z, macOS arm64, no sandbox); maintainers may relabel
+it verification-pending. Fork commit c388e88e6 pinned by tag qrh-weighted-10499-12000-base on
+akashlevy/math. Local checks on the final head: validator, npm run check (28/28), browser tests
+(13 passed, 1 skipped), deployment test, privacy grep: all pass. CI awaits maintainer approval.
+Correction to the evidence notes above: the final Lake run compiled all 228 proof modules and the
+3 challenges (not 181 + 47 reused); see evidence/lake/lake-build.log in the package.

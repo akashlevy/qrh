@@ -1,0 +1,176 @@
+Final assembly: from the source estimate to the unconditional endpoints
+=====================================================================
+Recorded 2026-10-09 (PDT) / 2026-10-10 (UTC). AI-assisted formal work; no external
+human peer review. Names, files and statements below were read from the sources in
+research_audit/weighted_formal/ (paths relative to that directory). Statements are
+paraphrased on one or two lines; the Lean source is authoritative.
+
+Namespaces used below:
+  N   = WeightedQRH.Numerator
+  WHF = OAI.SevenEighths.WeightedHighFinalAssembly
+Geometry: theta = WeightedQRH.theta = 10499/12000; signal(s) = s-681/1000.
+
+Chain, bottom to top
+--------------------
+
+1. WeightedQRH/NumeratorSourceCollect.lean
+   N.source_integrated_amplitude_classes D F (hbeta : 51/100 <= HeckeZeroSupremum.beta)
+     (hfine : forall j, D.ell j <= weighted_detectorMesh D.t/200) :
+     exists Jw >= 0, exists C > 0, eventually in U: 1 < U and, for every Z,d with U = Z^d,
+     1/2 <= d <= h+rowExtension, every target eta, Re x = a+16e, Re z = 17/50,
+     51/100 <= a <= 7/8, finite nonprincipal rows with U^(1/100) <= rowNorm <= U, injective,
+     coprime, norm >= 4 source prime pools, and constants Cs, K >= 1, C0 >= 1:
+     [count bound for every mask J and amplitude bin] -> [row scalar bound Cs] ->
+     [pointwise amplitude upper bounds] ->
+     ||FullWContour.integratedDyadValue ...|| <= (C*Cs*K)*C0*N(eta)^(2eps)*(3+height)^Jw
+        * Z^(signal theta - 1/40000 - WHF.weightedSourceSZExponent a D.e - D.t).
+   Sums N.source_mask_amplitude_class (NumeratorSourceMask) over all masks and full
+   amplitude classes, with N.finite_height_envelope (NumeratorFiniteHeight),
+   N.source_reconstructed_sum_masks (NumeratorPhysicalCollect),
+   reconstructedDyadValue_class_uniform (NumeratorFiniteCollect) and
+   integratedDyadValue_reconstruction (NumeratorReconstruction). One height degree and
+   one constant are chosen before U.
+
+2. WeightedQRH/NumeratorActualSourceHelpers.lean
+   N.actual_source_prime_upper D F tau n (0 < tau) (4*tau < (1/200)*D.cost) :
+     eventually in Z, for rows in the source band whose detector maximum at height
+     3(i+1)Z^tau is < a+2e, every p in FullWContour.szRectangle((3i+1)Z^tau), row u and
+     slot j: ||canonicalPrimeAmplitude ... (17/50 + p.2 i)||
+       <= (Z^(ell j))^(amplitude(Z^(ell j), (2a-1)/2, t, Q) + t).
+   From WHF.weighted_source_prime_bins (HighRows/WeightedSourcePrimeBins).
+
+3. WeightedQRH/HighRows/WeightedSourceFinish.lean   (namespace WHF)
+   def weightedSourceSZExponent a e := lx*(1/2-17/50) + a + 16e + 17/50 - 1.
+   def weightedSourceNormalizer D F Z := sourceResidueConstant * principalScalar(...).
+   weighted_source_normalizer_bound : exists C > 0, eventually normalizer != 0 and
+     ||normalizer^-1|| <= C*Z^(t/8).
+   weighted_source_integrated_certificate : numeratorExponent d (2a-1) x + loss + t
+     <= signal theta - 1/40000 - weightedSourceSZExponent a e, under the stated budget.
+   weighted_source_height_absorption, weighted_source_absorb_height : absorb the fixed
+     height degree (chosen before tau) into Z^t.
+   weighted_source_normalized_fullW_of_integrated : integrated bounds on szRectangle H
+     imply ||finiteCentralFullWRows / normalizer||
+       <= C*Cw*C0*N(eta)^(2eps)*Z^(signal theta - 1/40000 + t/8)
+     (uses WeightedQRH.FullWContour.finiteFullW_uniform_norm_bound, FullWBound.lean).
+   def IntegratedWeightedCellsAt D F eta Z tau n Cw C0 : Prop  (literal integrated cell
+     bounds on the supported nonfloor dyad/zero-bin/height cells).
+   fullWCellsAt_of_integrated : exists C > 0, forall tau > 0, n, eventually in Z,
+     IntegratedWeightedCellsAt D F eta Z tau n Cw C0 -> FullWCellsAt D F eta Z tau n (C*Cw) C0.
+
+4. WeightedQRH/HighRows/WeightedSourceFinalAssembly.lean   (namespace WHF)
+   def IntegratedFullWAnalyticInput : Prop  (same quantifiers as FullWAnalyticInput,
+     conclusion IntegratedWeightedCellsAt).
+   fullW_input_of_integrated_input : IntegratedFullWAnalyticInput -> FullWAnalyticInput.
+
+5. WeightedQRH/HighRows/WeightedSourceRawCells.lean   (namespace WHF)
+   def RawSourceDyadBound D F eta Z tau n Jw Cw C0 : Prop  (for every admissible row set,
+     d in [1/2, h+rowExtension], a in (51/100, 7/8], 1/3 <= 2a-1, i <= n, q in the
+     rectangle: ||integratedDyadValue(x = a+16e+q.1 i, z = 17/50+q.2 i)||
+       <= Cw*C0*N(eta)^(2eps)*(3+(3i+1)Z^tau)^Jw*Z^(signal theta-1/40000-weightedSourceSZExponent a e - t)).
+   def RawFullWAnalyticInput : Prop  (forall theta < beta, D, fine mesh, F, counts:
+     exists Jw >= 0, forall admissible tau, n, eta: exists Cw >= 0, eventually in Z,
+     forall C0 >= 1, weighted_SourceMomentBound ... -> RawSourceDyadBound ...).
+   integrated_cells_of_raw_source : eventually in Z, RawSourceDyadBound -> IntegratedWeightedCellsAt.
+   integrated_input_of_raw_source : RawFullWAnalyticInput -> IntegratedFullWAnalyticInput.
+   fullW_input_of_raw_source : RawFullWAnalyticInput -> FullWAnalyticInput.
+
+6. WeightedQRH/NumeratorActualSource.lean
+   N.actual_raw_fullW_input : RawFullWAnalyticInput.
+   Proof: from theta < beta get 51/100 <= beta; then N.source_integrated_amplitude_classes,
+   WHF.weighted_source_scalar_on_rows (HighRows/WeightedSourceScalar),
+   WHF.weighted_source_masked_amplitude_count (HighRows/WeightedSourceMaskedCount),
+   WHF.eventually_uniform_source_conductor, WHF.weighted_source_pools_nonempty,
+   WHF.weighted_source_height_le (HighRows/WeightedSourceCellGeometry),
+   N.actual_source_prime_upper, N.source_prime_reconstruction_geometry
+   (NumeratorPhysicalFront). No hypothesis beyond RawFullWAnalyticInput's own binders.
+   This is the step that was missing at the 2026-10-09 handoff (a failing dsimp).
+
+7. WeightedQRH/HighRows/ConditionalFinal.lean   (namespace WHF)
+   def FullWAnalyticInput : Prop  (exists Jw >= 0 before tau; conclusion FullWCellsAt).
+   chosen_data_height : chooses tau from the source-moment degree J and Jw.
+   common_probe_of_fullW_input : FullWAnalyticInput -> WeightedQRH.UniformCommonProbe theta (-681/1000).
+   beta_le_theta_of_fullW_input : FullWAnalyticInput -> HeckeZeroSupremum.beta <= theta.
+   hecke_of_fullW_input, dirichlet_of_fullW_input, zeta_of_fullW_input.
+   The module's docstring still calls FullWAnalyticInput unproved; that describes this
+   module alone. The input is discharged in Final.lean (step 8). Lean sources not edited.
+
+8. WeightedQRH/Final.lean   (namespace WeightedQRH)
+   fullW_analytic_input : FullWAnalyticInput := fullW_input_of_raw_source Numerator.actual_raw_fullW_input
+   beta_le_theta : HeckeZeroSupremum.beta <= 10499/12000
+   hecke_nonzero (chi : HeckeFamily.Character) (s) (hs : 10499/12000 < s.re)
+     (hpole : s != 1 or chi.residue != 1) : HeckeFamily.LFunction chi s != 0
+   dirichlet_nonzero {q} [NeZero q] (chi : DirichletCharacter C q) (s) (hs : 10499/12000 < s.re)
+     (hpole : not (chi = 1 and s = 1)) : chi.LFunction s != 0
+   zeta_nonzero (s) (hs : 10499/12000 < s.re) (h1 : s != 1) :
+     AnalyticAt C riemannZeta s and riemannZeta s != 0
+
+9. WeightedQRH/Statements.lean   (Comparator solution module)
+   OAI.riemannZeta_ne_zero_of_10499_12000_lt_re {s} (hs : (10499/12000 : R) < s.re) :
+     riemannZeta s != 0
+     (no s != 1, as in OpenAI's upstream 7/8 challenge; Mathlib's total riemannZeta
+     takes a nonzero assigned value at s = 1)
+   OAI.DirichletCharacter.LFunction_ne_zero_of_10499_12000_lt_re {q} [NeZero q] chi {s} (hs)
+     (hpole : not (chi = 1 and s = 1)) : _root_.DirichletCharacter.LFunction chi s != 0
+   OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_10499_12000_lt_re chi {s} (hs)
+     (hpole : not (chi.residue = 1 and s = 1)) : LFunction chi s != 0
+
+10. WeightedQRH/FinalAxioms.lean   (endpoint audit)
+   #check of actual_raw_fullW_input, fullW_analytic_input, the four Final endpoints and the
+   three Statements theorems; #print axioms of those plus
+   N.source_integrated_amplitude_classes. Isolated log:
+   .verification/final2_20261009/lib/logs/WeightedQRH.FinalAxioms.log
+   (sha256 e9788e6c2adbc6919bf4e37afe5cd9fd0b21429896dea3b77c9ac9c874d6eccc).
+   Every declaration depends only on [propext, Classical.choice, Quot.sound].
+
+11. ComparatorChallenges/WeightedQRH{Zeta,Dirichlet,Hecke}.lean and .json
+   Each challenge imports Mathlib only and states one theorem of step 9 with `sorry`.
+   Zeta and Dirichlet use only Mathlib definitions. Hecke is OpenAI's upstream
+   ComparatorChallenges/HeckeSevenEighths.lean with only the theorem name and the
+   constant (7/8 -> 10499/12000) changed (lines 237-238). Configs: solution module
+   WeightedQRH.Statements, permitted axioms propext, Quot.sound, Classical.choice,
+   enable_nanoda false.
+   Results (logs/comparator-WeightedQRH{Zeta,Dirichlet,Hecke}.log): "Lean default kernel
+   accepts the solution" / "Your solution is okay!" for all three. Negative control
+   (zeta challenge with 1/2 in place of 10499/12000): rejected, "Challenge and solution
+   theorem statement do not match" (logs/comparator-NegControl.log).
+
+Other modules the chain relies on (unchanged from the component maps): Continuation.lean
+(UniformCommonProbe, beta_le_of_common_probe, dirichlet_of_hecke, zeta_of_hecke),
+Parameters.lean (theta, theta_gt_half, theta_lt_seven_eighths), HighRows/FixedHigh.lean
+(fixed_high_bound_of_fullW), HighRows/SourceProbe.lean (sourceProbe_low),
+HighRows/HighDataFine.lean (exists_high_data_fine), MomentSourceMoments.lean
+(weighted_actual_source_moments), MomentTerminalInput.lean (weighted_background_beta).
+
+Evidence
+--------
+Isolated rebuild: final_rebuild_verification.json (sha256
+2a3faedaa36d9e806eba03214e73f0a15f257c288183843d1f3f56deceec0ef0), verify_parallel.py,
+status compiled, 231 modules (228 local WeightedQRH modules + 3 challenge modules), all
+exit codes 0, started 2026-10-10T00:21:47Z, finished 00:28:17Z. Output root
+.verification/final2_20261009/lib/lean; live development directory excluded from
+LEAN_PATH; every external OAI import tracked at source commit c388e88e6; challenge
+modules compiled against Mathlib and its dependencies only.
+Source scan of the 228 closure modules: no sorry, admit, axiom, unsafe, implemented_by,
+extern, native_decide, skipKernelTC, elab, macro or run_cmd; the only set_options are
+maxHeartbeats and maxRecDepth. (The challenge files contain `sorry` by design.)
+
+Scope and caveats
+-----------------
+- Hecke result: finite-order residue Hecke characters of Q(zeta_3) in the original OpenAI
+  HeckeFamily definition; not general GRH.
+- Strict half-plane Re s > 10499/12000; the trivial-character pole at s = 1 is excluded.
+- The imported original development is akashlevy/math@c388e88e6 (branch
+  qrh-23-24-pruned), i.e. openai/math fd4aeeb2e with unused declarations pruned in place
+  plus 23/24 modules not imported here. Its objects were supplied prebuilt, not rebuilt.
+- Comparator ran locally on macOS with an unsandboxed Landrun stand-in and a lake-build
+  shim that only confirms prebuilt isolated objects exist; export, statement comparison,
+  axiom check and kernel replay ran unchanged. Default Lean kernel only; NanoDa and
+  con-ron second kernels have not been run. Comparator's lean-toolchain was set to
+  v4.34.1 (pinned v4.34.0) to match the objects; its source is otherwise unchanged.
+- The prebuilt object directory of the original development also holds stale objects
+  of 253 modules deleted by the fork's prune; the isolated rebuild admits an external
+  OAI import only if its module is tracked at c388e88e6, which excludes them.
+- FinalAxioms.log prints axioms for the 10 declarations of step 10 only; other theorems
+  on the endpoints' proof paths are covered transitively. physical_low_barrier
+  (Parameters.lean) is off the proof path and not covered by that log.
+- No external human peer review.

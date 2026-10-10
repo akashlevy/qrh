@@ -1,0 +1,4 @@
+import WeightedQRH.MomentTerminalInput
+#print axioms OAI.SevenEighths.ProbeFinalAssemblyCertifiedBands.weighted_background_beta
+#print axioms OAI.SevenEighths.ProbeFinalAssemblyCertifiedBands.weighted_terminal_certificate
+#print axioms OAI.SevenEighths.ProbeFinalAssemblyCertifiedBands.weighted_terminal_energy

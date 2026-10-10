@@ -1,0 +1,137 @@
+NUMERATOR FORMALIZATION STATUS (AI-assisted, not human review)
+
+Original cache only; no kappa-feedback imports. Compile environment is numerator_environment.json.
+All modules listed below compiled successfully. Logs in logs/<module>.log.
+
+NumeratorLocalCoefficients / PolynomialMass:
+  Exact finite-degree local polynomial identities and four-point Fourier extraction.
+  Original full-vertical-line local bounds imply absolute coefficient masses.
+NumeratorRamifiedMass / UnramifiedMass / ActualError:
+  Actual H coefficients and quotient-free E=G+H*bar(row phase) coefficients.
+  actual_error_expansion identifies literal continuedCompensatedLocal error.
+  actual_error_coefficient_mass <=2880 errorSize * repeatedDeficit^rho at sigma=.5-rho.
+  errorSize=Q^.5 for ramified, Q^-.51 otherwise; repeatedDeficit=Q only if multiplicity>=2.
+NumeratorEulerExpansion / PrimeExpansion / RamifiedProduct / CorrectionExpansion:
+  Exact absolutely convergent positive-scale Mellin packet of original continuedCorrection.
+  Mass <=579^omega(row)*exp(.5), and arbitrary subpower row cost proved.
+NumeratorFinitePacket / ErrorPacket:
+  Exact actual correction excluding error primes times product rawErrorSlot packet.
+  Central and left coefficient mass bounds, summability, scale>=1.
+NumeratorDeficit:
+  Actual repeated-prime square divisibility and simultaneous radical/conductor deficit.
+NumeratorMassDamping:
+  error_packet_damped_mass proves sum |A|N^-.5 max(1,LN)^rho <=2*base*errorProductSize.
+  actual_conductor_packet_cap derives L=Cu/(C Nu) cap from Cu<=C rad(Nu).
+  coefficient_prefactor_subpower is uniform in exclusions/error labels.
+NumeratorErrorPrimeSum:
+  actual physical slot positive coefficient majorant sum <=Ceps Nu^eps Y^(-4/25).
+NumeratorPacketMellin:
+  Countable packet index instances, exact actual L(row) Mellin reconstruction.
+  reconstructed_numerator_bound uses exact compact support cutoff N<=bY.
+NumeratorIntegral:
+  Literal normalized full-w L(row)*C(markExclusions S T)*product(rawErrorSlot) bounded by
+  Y^-.5 * actual damped coefficient mass * polynomial scale-sup bound.
+NumeratorPacketFourth:
+  Row-dependent coefficient packets preserve arbitrary rowwise-choice weighted4
+  moment, with selected prime factors exponent2; uses verified reflection mass lemma.
+NumeratorErrorLabels:
+  Dependent Sigma coefficient mass over finite prime labels; exact error-label
+  product factorization and bound by product of actual positive slot sums.
+NumeratorLabelPacket:
+  Definitions LabelPacketIndex / labelPacketCoefficient / labelPacketScale for
+  all physical error-label tuples and their coefficient packets.
+  actual_label_packet_mass: uniform summed damped mass <=Ceps Nu^eps * product
+  of sum_P 2880 |physical slot weight| errorSize. Actual conductor premise,
+  not an assumed analytic coefficient mass.
+NumeratorHolder / AmplitudeHolder / Damping:
+  Weighted Holder exponent, actual fixed-kappa .75 capacity damping.
+  weighted_dilation_bin includes finite exponent-box width loss delta*xi/4.
+
+Axiom audit NumeratorAxioms.lean covers all core coefficient/Mellin theorems
+through PacketMellin / ErrorPrimeSum. Only propext, Classical.choice, Quot.sound.
+Later LabelPacket / PacketFourth / Integral / AmplitudeHolder should be added
+at final audit. No complete high-bin theorem or full QRH theorem is claimed.
+
+Remaining analytic assembly:
+  six_sevenths: actual certified moment -> physical reflected scale-choice moment.
+  gram_audit: actual fine prime-slot greedy selection (now compiled).
+  root: literal finite row integrals -> error labels / packet integral identities.
+  formal_audit: finite dilation-box packet collection and actual amplitude-bin
+  weighted estimate, combining coefficient mass, scale-choice moments, selection,
+  existing row counts and remaining scalar bound.
+
+LATEST COMPILED NUMERATOR ASSEMBLY (2026-10-09):
+NumeratorDilationBoxes: finite exponent boxes, active cutoff scale upper,
+  exact absolutely convergent box-series decomposition.
+NumeratorLabelPrimeBound: all physical error prime slots contribute
+  Ceps Nu^epsilon * product Y_j^(-4/25), uniformly finite subsets.
+NumeratorPhysicalPacketMass: complete actual all-error-label damped packet mass
+  Cmass Nu^massEps product error Y_j^(-4/25), with any chosen massEps>0.
+NumeratorPacketBoxes / BoxReconstruction: normalized packet inside a box
+  retains active-choice polynomial fourth moment; exact cutoffs, Mellin series
+  norm summability, empty-label case, finite normalized reconstruction.
+NumeratorFiniteBins / PacketBinBound: complete finite-box coefficient + Holder
+  engine, only linear coefficient mass and Ccount (so only linear source C0).
+NumeratorAmplitudeLoss: normalize then restore main upper amplitude mesh loss,
+  keeping q as lower-bin masked mean.
+NumeratorActualBin.actual_label_packet_bin_bound: ACTUAL original rowCharacter
+  polynomial, physical profiles and error labels, full coefficient reduction.
+  Source/exclusion/conductor/profile conditions explicit; only remaining
+  substantive input is uniform original-polynomial active-choice fourth moment,
+  together with card / selected lower / full main upper (supplied separately).
+  Cmass is before rows/heights/target eta and independent C0.
+  errorLabelNumerator_eq_packet identifies each literal error-label numerator (one label
+  subset J, integral on Re w=1/2) with its coefficient packet.
+NumeratorFiniteCollect: literal reconstructedDyadValue finite row/error collection
+  (reconstructedDyadValue itself is defined in NumeratorReconstruction.lean).
+
+Remaining: source amplitude-bin specialization and finite class collection,
+using root original-polynomial moment wrapper (being derived), six certified
+retained endpoint + geometry, gram actual counts/selection/front/scalar. Then
+root/gram already compiled sourceSZ, normalizer, exponent and contradiction.
+No complete FullWAnalyticInput or unconditional new QRH theorem yet.
+
+LATEST VERIFIED SOURCE SPECIALIZATION (supersedes earlier remaining-work lists):
+NumeratorSourceBin.source_packet_selected_bin: compiled original row-character
+  polynomial numerator bound, with certified_active_box_fourth fully instantiated.
+  No fourth-moment hypothesis remains. The same chosen PhysicalReflectionData
+  combined conductor occurs in coefficient damping and reflection geometry.
+  massEps=t, momentEps=2t, boxWidth=t, annulusSlack=t; all losses explicit.
+NumeratorSourceClass.source_packet_amplitude_class: compiled actual full-class
+  selection, masked mean over ALL original slots, lower selected prime spike,
+  and normalized/restored main-amplitude upper. Only actual full-class count,
+  actual upper bins and source row/pool geometry remain as external premises.
+NumeratorPhysicalCollect: exact literal mask contribution, actual error/main
+  physical fronts, and source reconstruction as a finite sum over error masks.
+NumeratorSourceMask.source_mask_amplitude_class: compiled literal source mask
+  contribution at Y=Z^ly, exact errorLabelNumerator-to-packet conversion, fixed
+  physical fronts, source scalar/frequency exponent identity, and certified
+  uniform target exponent signal(theta)-1/40000-weightedSourceSZExponent(a,e)-t
+  (OAI.SevenEighths.WeightedHighFinalAssembly.weightedSourceSZExponent).
+  Count and scalar input constants K,Cs are retained linearly; final prefactor
+  is (C*Cs*K)*C0*Neta^(2eps)*(3+height)^(degree+2eps).
+  degree and C are chosen before U, target eta, C0, heights, and finite rows.
+  Parent is collecting finite error masks and full amplitude classes; gram is
+  supplying actual source count/row geometry and closing full-w cell bounds.
+NumeratorSourceClassAxioms already checked only propext, Classical.choice,
+  Quot.sound; NumeratorSourceMaskAxioms is the expanded audit entry point.
+This module status does not assert the entire new QRH theorem is complete.
+
+STATUS UPDATE 2026-10-09 (supersedes conditional wording above)
+--------------------------------------------------------------
+The input this map calls unproved or conditional is now proved.
+WeightedQRH.Numerator.actual_raw_fullW_input : RawFullWAnalyticInput
+(NumeratorActualSource.lean) and WeightedQRH.fullW_analytic_input :=
+fullW_input_of_raw_source Numerator.actual_raw_fullW_input (Final.lean) discharge
+FullWAnalyticInput. Final.lean proves WeightedQRH.beta_le_theta :
+HeckeZeroSupremum.beta <= 10499/12000 and hecke_nonzero, dirichlet_nonzero and
+zeta_nonzero; Statements.lean gives the three Comparator-form statements. FinalAxioms
+(isolated log .verification/final2_20261009/lib/logs/WeightedQRH.FinalAxioms.log) shows
+only propext, Classical.choice and Quot.sound. Isolated rebuild:
+final_rebuild_verification.json (231 modules, all exit 0). Comparator (local macOS run,
+unsandboxed Landrun stand-in, lake-build shim, default Lean kernel only; no NanoDa or
+con-ron) accepts all three challenges. No external human peer review. The exact final
+step chain, files and caveats are in final_assembly_theorem_map.txt.
+In this map: the "Remaining" items (source amplitude-bin specialization and finite
+class collection) are WeightedQRH.Numerator.source_integrated_amplitude_classes
+(NumeratorSourceCollect.lean) and actual_raw_fullW_input, both compiled and audited.

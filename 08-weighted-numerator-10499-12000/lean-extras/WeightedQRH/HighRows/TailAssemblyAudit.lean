@@ -1,0 +1,9 @@
+import WeightedQRH.HighRows.NonfloorTransport
+import WeightedQRH.HighRows.MixedCollected
+
+#print axioms OAI.SevenEighths.WeightedHighRowFamily.actual_normalized_probe_transport
+#print axioms OAI.SevenEighths.WeightedHighRowFamily.actual_normalized_probe_transport_saving
+#print axioms OAI.SevenEighths.WeightedHighRowFamily.actual_nonfloor_probe_transport
+#print axioms OAI.SevenEighths.WeightedHighRowFamily.actual_mixed_nonfloor_rows_saving
+#check OAI.SevenEighths.WeightedHighRowFamily.actual_nonfloor_probe_transport
+#check OAI.SevenEighths.WeightedHighRowFamily.actual_mixed_nonfloor_rows_saving

@@ -1,0 +1,23 @@
+Source assembly checkpoint — gram_audit — 2026-10-09
+
+Implemented and compiled:
+- HighRows/WeightedSourceCount: actual original full-amplitude class counts.
+- HighRows/WeightedSourceMaskedCount: canonical source Q, masked mean, same full-class count; count constant C*C0*Z^(3t), exponent R+159epsilon+9t.
+- HighRows/WeightedSourcePrimeBins: actual physical amplitude upper and lower bounds.
+- HighRows/WeightedSourceSelection: common selected subset per actual class/dilation box; squared_selected_lower; amplitude_class_main_upper; source_selected_product_crude.
+- HighRows/WeightedSourceLoss: mesh<=t, full ledger <=120epsilon+2eps+13t, exact packet exponent identity, actual HighData budget, uniform pre-height numerical certificate.
+- HighRows/WeightedSourceCellGeometry: actual row bounds, calibration, nonprincipality, current/next detector ranges; uniform eventual U threshold; external H<=Z^(2tau); source pool nonemptiness from actual source normalizer.
+- HighRows/WeightedSourceFinish: actual source normalizer bound, remaining SZ integration, fixed-degree height absorption and common-target height removal, integrated target->literal FullWCellsAt.
+- HighRows/WeightedSourceFinalAssembly: IntegratedFullWAnalyticInput->FullWAnalyticInput, preserving degree-before-tau and C0 linearity.
+
+Important: this checkpoint DOES NOT assert IntegratedFullWAnalyticInput. formal_audit is completing literal per-mask/class contributions and finite collection from NumeratorSourceClass (six_sevenths). Those instantiation/height/fullW transformations are now compiled in HighRows/WeightedSourceRawCells. formal_audit owns NumeratorActualSource, proving RawFullWAnalyticInput from the finite collected theorem and the existing source input wrappers. Parent root owns unconditional endpoint and full verification.
+
+Exact stable requested raw target:
+Norm integratedDyadValue <= Cw*C0*Norm(eta)^2eps*(3+H)^Jw * Z^(signal(theta)-1/40000-weightedSourceSZExponent(a,e)-t).
+Jw is fixed before tau. Cw may depend on tau,n,eta but not C0,Z,d,a or cell frequencies. H=(3i+1)Z^tau in actual cells. Reserve 2tau(1+Jw)<=t removes (3+H)^Jw.
+
+Ledger includes 3t from count prefactor, .68t from actual enlarged conductor, 2eps*d scalar cost, coefficient mass t*d, Holder count loss 3d(159epsilon+9t)/4, fourth-moment loss 2td/4, selected mesh delta*mesh*d/4, box loss delta*t*d/4, annulus capacity padding 2qtd/9, and main upper-bin restoration .167t. No extra unproved phase-correlation assumption is used.
+
+All audited endpoints use only propext, Classical.choice, Quot.sound. Latest audit file HighRows/WeightedSourceCompletionAudit; rerun after subsequent additions before claiming entire assembly complete.
+
+Latest additions: HighRows/WeightedSourceScalar supplies the exact external-rectangle scalar bound; HighRows/WeightedSourceRawCells gives RawSourceDyadBound and RawFullWAnalyticInput interfaces and proves fullW_input_of_raw_source. These are explicit conditional transformations, not an assertion of RawFullWAnalyticInput.

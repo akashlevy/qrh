@@ -1,0 +1,53 @@
+Radical conductor and actual reflected numerator bridge
+======================================================
+
+File: WeightedQRH/RowConductor.lean
+Namespace: WeightedQRH.RowConductor
+
+Upstream input is Detector/RowRadicalConductor.lean, already present with a
+compiled .olean in the source distribution (unchanged relative to fork commit
+c388e88e6, whose retained declarations come from openai/math fd4aeeb2e). In particular,
+rawRow_small_presentation constructs a smaller modulus with ALL element
+coefficients preserved, using explicit radical periodicity of the local
+sextic row character and the fixed 72/m bad-prime factors.
+
+exists_row_small_presentation S hS u extends this to the actual excluded
+physical row rowCharacter S hS u. It yields τ such that:
+  N(modulus τ) <= fixedConductorConstant S * N(radical(span u));
+  elementCoeff(rowCharacter S hS u,n) = elementCoeff(τ,n) for EVERY n.
+This includes zeros on ramified/deleted primes, not merely agreement away
+from a finite set. The fixedConductorConstant is the existing upstream one.
+
+idealCoeff_eq_of_elementCoeff_eq and inverse_elementCoeff_eq carry this
+identity to all ideals and inverse characters. polynomial_eq_of_elementCoeff_eq
+therefore identifies every actual smoothed polynomial, for either plain or
+Möbius coefficients, arbitrary profiles and shifts. The original row/bin is
+not replaced by an unrelated character.
+
+principal_iff_of_equal_elements preserves nonprincipality.
+LFunction_eq_of_elementCoeff_eq gives exact L-function equality for Re(s)>0,
+s!=1, hence preserves all zero-bin data in the region used here.
+
+row_original_split S hS u hn returns τ, ψ, g, where ψ is primitive,
+nonprincipal, |g|=1, and the actual physical polynomial equals
+  g * (retainedSchwartz τ ψ + discardedSchwartz τ ψ).
+These are the upstream retained/discarded reflection expressions, with
+τ.inverse agreeing with the original physical row.inverse on ALL ideals.
+
+For C_u = N(modulus ψ) * N(redundantIdeal(modulus τ,modulus ψ)), the same
+chosen ψ satisfies C_u <= N(modulus τ) <= C_S N(radical(span u)).
+For ANY injective selected prime tuple P_i and exponents e_i>=2 with
+P_i^e_i | span u, the chosen C_u simultaneously satisfies
+  C_u * product_i N(P_i)^(e_i-1) <= C_S N(span u).
+The quantifiers are important: one ψ and one g work for all selected tuples.
+reflected_scale_selected_deficit_real is the real-valued convenience form;
+reflected_scale_pos proves positivity of this exact combined scale.
+
+This combined scale includes the entire redundant Euler product. Every
+subset used in the reflection has no larger product norm, and the smooth
+ideal denominator only decreases the reflected scale. Consequently one
+need not assert that redundant primes belong to a fixed set. Their
+coefficient-mass bounds remain the reflection-module responsibility.
+
+These are structural conductor/reflection lemmas. They do not themselves
+prove the new weighted moment estimate or the final QRH theorem.

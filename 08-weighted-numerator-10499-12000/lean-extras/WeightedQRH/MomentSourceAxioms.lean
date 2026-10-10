@@ -1,0 +1,5 @@
+import WeightedQRH.MomentSourceMoments
+#print axioms OAI.SevenEighths.ProbeFinalAssemblyCertifiedBands.weighted_actual_source_moments
+#print axioms OAI.SevenEighths.ProbeFinalAssemblyCertifiedBands.weighted_actual_positive_fine_input
+#print axioms OAI.SevenEighths.ProbeDetectorInverseFields.weighted_source_batch_inverse_fields
+#print axioms OAI.SevenEighths.ProbeDetectorPlainMarkedFineField.weighted_source_batch_plain_marked_fine

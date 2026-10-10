@@ -1,0 +1,603 @@
+QRH WEIGHTED-NUMERATOR PROJECT — ROOT HANDOFF
+Recorded 2026-10-09, after the user's explicit request to stop.
+Workspace: /Users/akashlevy/Documents/riemann
+
+READ THIS FIRST
+==============
+
+This is an unfinished research/formalization project, not a completed improved
+QRH theorem. The proposed threshold is 10499/12000 = 0.874916666666... .
+Substantial analytic components compile, including the actual original
+numerator fourth moment and the finite sum over amplitude classes and masks.
+The final source-instantiation module does NOT compile at this stopping point.
+No unconditional Final.lean or FinalAxioms.lean exists. Do not announce the
+improved result as end-to-end Lean checked.
+
+The user has explicitly stopped the work to transfer it to another AI. Do not
+interpret this file as authorization for this stopped session to continue.
+All agents were told to stop proof edits/builds and write detailed reports only.
+No new proof build, web research, or mathematical fix was undertaken by root
+after the stop request. Read-only status checks and handoff writing followed.
+get_goal returned goal:null at the stop checkpoint; no goal was marked complete.
+
+1. USER OBJECTIVE AND CONSTRAINTS
+===============================
+
+Original requests, in order:
+- Improve the released OpenAI QRH bound theta=7/8, using the 7/8 and 11/12
+  expositions, Lean code, prior work, and related literature as useful.
+- Analyze blockers to theta=1/2 and seek either a genuine improvement or a
+  rigorous limitation of the method.
+- Explicit prohibition: no copying Li Xiang's work; the result should beat
+  all publicly known comparable methods.
+- Produce an actual Lean proof, a corresponding LaTeX proof, and a broad
+  internet/arXiv search for stronger public results.
+- Latest instruction: stop and have every agent report work, status, and
+  remaining work in great detail for another AI.
+
+Prior user-supplied work is at gram_split/note under the workspace. The active
+approach retains the ORIGINAL kappa=3/4 moment input. It does not use a
+lower-kappa feedback improvement or import another author's refinement code.
+Public papers and verification metadata were read for comparison. Original
+OpenAI source lemmas remain explicit mathematical and formal dependencies.
+
+2. EXACT STOPPING POINT
+======================
+
+Compiled latest connection:
+  research_audit/weighted_formal/WeightedQRH/NumeratorSourceCollect.lean
+  theorem WeightedQRH.Numerator.source_integrated_amplitude_classes
+  Its .olean exists and is newer than the source; agent formal_audit reported
+  successful compilation. logs/NumeratorSourceCollect.log is empty (success).
+
+Uncompiled next connection:
+  research_audit/weighted_formal/WeightedQRH/NumeratorActualSource.lean
+  intended theorem WeightedQRH.Numerator.actual_raw_fullW_input :
+    OAI.SevenEighths.WeightedHighFinalAssembly.RawFullWAnalyticInput
+
+The latest observed compiler log is:
+  research_audit/weighted_formal/logs/NumeratorActualSource.log
+  NumeratorActualSource.lean:59:6: error: `dsimp` made no progress
+
+There is no NumeratorActualSource.olean. The relevant source tail currently is:
+
+    Cs K C0 hCs.le hK hC0 (by
+      dsimp only
+      intro J bin
+      dsimp only
+      intro hne
+      simpa only [add_assoc] using (hcounts (Finset.univ\J) bin hne).2.2)
+      hscalar' hupper'
+
+The SECOND dsimp at line 59 is the reported failure. An earlier build had a
+let-binder issue in this count premise, where an introduction named hne was
+actually introducing the locally defined rows'. The current version was an
+attempt to expose that let at the correct stage. Do not presume the error is
+the only remaining one until a repaired module compiles. Root did not fix it
+after the stop instruction.
+
+Final.lean and FinalAxioms.lean have NOT been created. Agent gram_audit had
+prepared the endpoint construction and checked signatures in a smoke test,
+but there is no unconditional endpoint to audit at this stopping point.
+
+Process/session status: formal_audit confirmed session 96321 FINISHED with
+Lean exit code 1. Its Python wrapper exited 0 because it only printed Lean's
+return code; do not mistake the wrapper status for proof success. All three
+agents confirmed they own no running processes. Earlier sessions 91776 and
+67342 were complete. Root owned no running proof build.
+Root's global process-list attempt was denied by the sandbox; root cannot
+independently certify that no unrelated system process exists. Agent reports
+identify the processes they own. Do not blindly kill processes or relaunch a
+build with the same log while an old process may still own it.
+
+3. REPORTS TO READ NEXT
+======================
+
+All paths below are relative to the workspace unless stated otherwise.
+
+Agent reports requested at stop:
+  research_audit/handoff_formal_audit_20261009.txt
+  research_audit/handoff_gram_audit_20261009.txt
+  research_audit/handoff_six_sevenths_20261009.txt
+
+Existing audits and theorem maps:
+  research_audit/final_assumption_audit.txt
+  research_audit/source_assembly_status.txt
+  research_audit/weighted_formal/original_fourth_proposition_audit.txt
+  research_audit/weighted_formal/source_class_quantifier_audit.txt
+  research_audit/weighted_formal/reflection_theorem_map.txt
+  research_audit/weighted_formal/arithmetic_theorem_map.txt
+  research_audit/weighted_formal/principal_theorem_map.txt
+  research_audit/weighted_formal/high_theorem_map.txt
+  research_audit/weighted_formal/conductor_theorem_map.txt
+  research_audit/weighted_formal/numerator_theorem_map.txt
+  research_audit/weighted_formal/moment_theorem_map.txt
+
+The older audits describe their own checkpoints. The latest handoff takes
+precedence for completion status. A comment that says a component is pending
+may be stale; conversely, a draft theorem statement is not proof of a compiled
+unconditional result. Logs, source hashes, theorem assumptions, and dependency
+rebuilds must be assessed together.
+
+4. MATHEMATICAL APPROACH AND NUMBERS
+==================================
+
+The new step replaces a pointwise estimate for the physical numerator with a
+weighted fourth-moment estimate, while preserving the original compensated
+probe and the original kappa=3/4 theorem. Mellin reconstruction and natural
+character reflection shorten the numerator polynomial. This leaves moment
+capacity for selected main prime factors. A coefficient norm argument treats
+the actual Euler correction and ramified error terms. It never inserts
+arbitrary row-dependent coefficients into a moment theorem that forbids them.
+
+Fixed geometry:
+  theta = 10499/12000
+  ell = 167/1000
+  b = 43/500
+  lx = 747/2000
+  ly = 919/2000
+  h = 1587/2000
+  M = lx+ly = 833/1000 = 1-ell
+  kappa_plain = 3/4
+  z real part = 17/50 = .34
+  rowExtension = 1/1000000
+  counting constant cCount = 2/9
+  prime normalizer exponent alpha = 5/6
+  signal(s) = s - 681/1000
+
+The source uses U=Z^d, with 1/2 <= d <= h+rowExtension on the new high branch.
+The exact exponent certificates leave a central margin 1/20000, with final
+reserve 1/40000 after losses. The separate arithmetic certificate also records
+a larger idealized margin 1/10000; do not conflate those margins.
+D.t is chosen very small (at most 1e-8 in the high parameter construction).
+The final source budget includes 16*D.e + weightedSourceLoss + D.t <= 1/40000.
+
+The remaining adapter targets the literal integratedDyadValue of the original
+full-w source, with bound of the form
+
+  norm(integratedDyadValue)
+    <= Cw*C0*Norm(eta)^(2*eps)*(3+H)^Jw
+       * Z^(signal(theta)-1/40000-weightedSourceSZExponent(a,e)-t).
+
+Jw must be chosen before tau. Cw may depend on tau,n,eta but not on Z, C0,
+d, a, or the cell frequencies. Dependence on C0 remains linear throughout.
+The actual cell height is H=(3*i+1)*Z^tau. Choosing
+2*tau*(1+Jw) <= t absorbs its polynomial height cost.
+
+5. ROOT'S COMPLETED WORK
+========================
+
+The following are source-relative components, not an unconditional final
+QRH theorem. Full theorem statements are in the files.
+
+A. Continuation / principal signal / common probe infrastructure:
+   Continuation.lean, RegionalCorrection.lean, PrincipalSlots.lean,
+   SignalShift.lean, PrincipalSignal.lean and related dependencies.
+   Proves continuation criteria, finite prime deletion compatibility, source
+   correction analyticity/nonvanishing and the principal signal identity.
+   The low and high sides are the SAME normalized compensated physical probe.
+
+B. Full-w contour and exact reconstruction:
+   FullWContour, FullWTransport, FullWFiniteError, FullWAggregate,
+   MellinReconstruction, FullWReconstruction, SourceSZBound, FullWBound,
+   NumeratorTupleRestoration, NumeratorPrimeSeparation,
+   NumeratorErrorIntegrable, NumeratorReconstruction,
+   NumeratorLabelReconstruction and supporting modules.
+   Includes the actual quotient-free error expansion, exact Mellin identity,
+   cutoff, norm summability, packet integrability, finite full-w integration,
+   remaining s/z integral bound and arbitrary tail savings.
+
+C. Discarded reflected tails:
+   NumeratorDiscarded.lean, with
+     discardedSchwartz_active_negligible
+     discardedSchwartz_fixed_profile
+     weighted_fourth_add
+     selected_tail_fourth
+     row_discarded_fourth_negligible
+     subtype_discarded_fourth_negligible
+     original_split_weighted_fourth
+   The discarded tail is negligible uniformly for active cutoff N<=bY and
+   combined conductor <= Ccond*U. No extra box restriction was introduced.
+
+D. Actual reflection data:
+   NumeratorReflectionData.lean defines PhysicalReflectionData and proves
+   physical_reflection_data_exists using the original reflection theorem.
+   Preserves the actual polynomial coefficients, primitive/redundant
+   conductor relation, phase, and retained-plus-discarded identity.
+   combined_scale_of_dilation proves the conductor/scale relation needed for
+   the short-polynomial moment. It is in namespace WeightedQRH.Numerator,
+   not nested under PhysicalReflectionData.
+
+E. Original physical numerator fourth moment:
+   NumeratorOriginalFourth.lean
+   theorem WeightedQRH.Numerator.certified_original_numerator_fourth
+   Compiled and audited with standard foundational axioms only.
+   For a fixed source F, beta>=.51, fixed Schwartz profile, positive losses,
+   and rows U^.01<=Norm(u)<=U, controls the original numerator fourth power
+   times the squared selected prime product. Constants and polynomial height
+   degree precede U, rows, cutoff scales, box parameters, and Fourier height.
+   Conditions include active scales 0<N<=bY, combined conductor
+   <=C_S*U^m*(Y/N), 0<=m, m+xi<=2, and either
+   2*(m+xi)+(9/2)*sum(selectedWidths)<=1 or empty selected slots.
+   The actual source-selected product crude bound is subsequently proved;
+   it is not an unproved final hypothesis.
+
+F. Scalar and exact source exponent bookkeeping:
+   NumeratorSourceScalar.source_frequency_scalar_bound
+   NumeratorSourceExponent.error_main_source_power
+   NumeratorSourceExponent.source_packet_multiplicative_identity
+   (Actual namespaces are WeightedQRH.Numerator; filenames shown for context.)
+   Scalar bound includes U^(2eps), U^(-.34), and Z^(.68t) because actual row
+   norms have lower edge Z^(d-2t), not U itself. Exact multiplicative identity
+   preserves the linear C0 prefactor and carries the height factor unchanged.
+
+G. Finite collection:
+   NumeratorSourceCollect.source_integrated_amplitude_classes
+   Root drafted the finite mask/bin/height envelope assembly. formal_audit
+   completed the last semireducible-dimension/cardinality fixes and compiled
+   it. All rows belong to exactly one literal amplitude class. Masks sum
+   the actual reconstructed source, then integratedDyadValue is recovered
+   with its exact 2*pi factor. Constants are fixed before conductor/height
+   choices. It still takes count, scalar, prime geometry, and upper-amplitude
+   premises that NumeratorActualSource is intended to instantiate.
+
+H. Audits and reproducible verifier:
+   FullWAnalyticAudit.lean prints 21 endpoint axiom lists.
+   NumeratorSourceAudit.lean prints 8 additional endpoint axiom lists.
+   Every inspected list contains only propext, Classical.choice, Quot.sound.
+   verify.py performs an isolated topological rebuild of local dependencies,
+   hashes sources/logs, and refuses a moving source tree.
+
+I. LaTeX proof, exact arithmetic certificate, public literature search:
+   See sections 9-11 below. These are provisional research deliverables and
+   a dated search, not independent peer review or a global priority proof.
+
+6. AGENT DIVISION OF WORK
+========================
+
+formal_audit: Actual Euler coefficient norm estimates; prime amplification
+packets; actual label/box/bin bounds; literal mask contribution and finite
+class reconstruction; NumeratorSourceBin; NumeratorSourceMask; final fixes to
+NumeratorSourceCollect; NumeratorActualSourceHelpers; currently uncompiled
+NumeratorActualSource. See its report for exact ownership and proof interfaces.
+
+gram_audit: Direct/Gram low-side and all original high-row branches at the new
+geometry; actual common source data and parameter choices; original full
+amplitude class counts; masked-count weakening; prime-bin selection; complete
+loss ledger; real source row geometry; height absorption; full-w normalization
+and remaining contour adapter; ConditionalFinal; assumption audit. Was to
+create Final and FinalAxioms only after actual_raw_fullW_input compiled.
+
+six_sevenths: Certified terminal moments, actual reflected plain polynomials,
+finite dilation boxes and active cutoff handling, exact selected-slot moment
+capacity, NumeratorActiveFourth, NumeratorSelectedCrude, NumeratorBoxGeometry,
+NumeratorSourceClass, NumeratorFiniteHeight, source quantifier/manuscript audit.
+At stop, was preparing a delivery checklist only, with no proof build running.
+
+All agents share the filesystem. Ownership was used to avoid simultaneous
+edits and builds of the same module/log. Do not overwrite another in-flight
+build or mix sources while a dependency rebuild is running.
+
+7. IMPORTANT MATHEMATICAL REPAIRS AND AUDIT FINDINGS
+=================================================
+
+1. Empty selected slots:
+   An earlier suspected zero-slot obstruction was resolved by reading the
+   ORIGINAL plain moment theorem. Its direct ZeroAt result gives U^(1+eps)
+   for empty selected slots at every bounded plain length; it does not need
+   the selected-slot capacity inequality. An intermediate wrapper using
+   max(1,2*n) was too weak and was replaced with the direct certified ZeroAt
+   path, including the L=2 endpoint. Do not resurrect the old false gap.
+
+2. Conductor in reflection:
+   Use primitive conductor times redundant conductor. Redundant primes need
+   not all lie in the fixed excluded set S. The proved bound is
+   combinedConductor <= C_S*rad(Norm(u)), and hence <= C_S*Norm(u).
+   The Euler coefficient damping must use the SAME combined conductor.
+
+3. Actual row characters:
+   Reflection data preserve the actual coefficients. The proof never replaces
+   the physical numerator by an unrelated polynomial with a convenient bound.
+
+4. Count versus mask:
+   Count the original full amplitude class. For masked selected factors,
+   only weaken the count via antitonicity of R in the masked mean, retaining
+   all slots in the denominator. Do not assert an unproved masked family
+   moment theorem or independence/correlation estimate.
+
+5. Uniformity and heights:
+   Both the source degree J and new weighted degree Jw precede tau. The
+   original moment inputs use direct PositiveAt/ZeroAt for unrestricted
+   Fourier frequencies. No finite-height statement is extrapolated to all
+   heights. Constants may depend on fixed eta; the final C0 dependence must
+   remain linear. Source geometry accounts for all .68t, bin, annulus,
+   inverse-normalizer and scalar losses.
+
+6. No vacuous final input:
+   Existing final_assumption_audit.txt found no strengthened contradictory
+   premise, circular new beta bound, or wrong probe in the completed adapters.
+   HighData is constructed for every positive beta-theta. The original 7/8
+   theorem supplies the old moment range, while beta>theta supplies beta>.51.
+   The remaining input RawFullWAnalyticInput is still unproved at stop.
+   A fresh final audit remains necessary after its proof compiles.
+
+7. The method barrier is scoped:
+   Parameters.lean proves low_barrier_identity, low_barrier and
+   physical_low_barrier. The unchanged Gram/reflected-row low majorants force
+   B>=13/15, using the exact nonnegative dual identity
+
+   M/12 - ell/6 + e/2 - 1/30 =
+     (1/5)*(e-(1+3*ell-2*M)/4)
+     +(1/60)*(e-(M+ell-1))+(17/60)*e.
+
+   This is a limitation of that sufficient estimate system. It is NOT a
+   lower bound for actual zero locations, NOT proof that all possible QRH
+   refinements stop at 13/15, and NOT a proof of impossibility of full GRH.
+   Reaching 1/2 would require better low estimates and/or a different probe.
+
+8. THEOREM SCOPE AND THE FINAL CONNECTION
+=======================================
+
+Exact intended scope: all finite-order residue Hecke characters over
+Q(zeta_3)=Q(sqrt(-3)), with arbitrary conductor and complex height, plus all
+Dirichlet characters of every positive modulus via the original exact
+norm-pullback factorization. This is NOT arbitrary number-field/automorphic
+full GRH. Principal poles must be excluded from meromorphic zero-free prose.
+
+Existing conditional endpoints, namespace
+OAI.SevenEighths.WeightedHighFinalAssembly:
+  common_probe_of_fullW_input (hinput : FullWAnalyticInput)
+  beta_le_theta_of_fullW_input (hinput : FullWAnalyticInput)
+  hecke_of_fullW_input (hinput : FullWAnalyticInput)
+  dirichlet_of_fullW_input (hinput : FullWAnalyticInput)
+  zeta_of_fullW_input (hinput : FullWAnalyticInput)
+
+Existing compiled adapter:
+  fullW_input_of_raw_source : RawFullWAnalyticInput -> FullWAnalyticInput
+
+Planned final construction after repairing and compiling ActualSource:
+  hraw := WeightedQRH.Numerator.actual_raw_fullW_input
+  hfull := fullW_input_of_raw_source hraw
+  apply the conditional endpoints to hfull.
+
+Hecke endpoint uses hpole : s != 1 OR chi.residue != 1.
+Dirichlet endpoint uses [NeZero q] and NOT(chi=1 AND s=1).
+The existing zeta endpoint uses Mathlib's total function, whose assigned value
+at 1 is nonzero. The publication-facing zeta theorem should explicitly add
+s!=1 to describe the analytic function away from its pole. Do not portray
+that totalized value as an analytic evaluation at the pole.
+
+9. BUILD ENVIRONMENT AND VERIFICATION EVIDENCE
+============================================
+
+Lean executable:
+  /Users/akashlevy/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean
+Configuration:
+  research_audit/weighted_formal/lean_environment.json
+Local source root:
+  research_audit/weighted_formal/WeightedQRH/
+There are 249 local .lean sources at the stopping snapshot.
+
+Original source checkout:
+  formalize_11_12/math/lean/OAI/NumberTheory/DirichletL/
+Original OpenAI commit:
+  c388e88e6519d139ad2ca5571ef0c7fbf0e245b5
+mathlib pin:
+  d13f23b723b8a846827a245b89c10fc7d3f11612
+Original compiled cache:
+  formalize_11_12/upstream/.lake/build/lib/lean
+Dependency caches:
+  formalize_11_12/.lake/packages/*/.lake/build/lib/lean
+DO NOT use formalize_11_12/lean-base, which is an older/stale source tree.
+
+Single module or explicit sequence (does NOT rebuild dependencies):
+  python3 research_audit/weighted_formal/build.py WeightedQRH.ModuleName
+Flags: -DautoImplicit=false -M8192 -j2 -R <formal root>.
+Default build logs: weighted_formal/logs/WeightedQRH.ModuleName.log.
+Agents sometimes used shorter log names, e.g. NumeratorActualSource.log.
+
+Isolated dependency rebuild:
+  python3 research_audit/weighted_formal/verify.py WeightedQRH.FinalAxioms \
+    --report research_audit/weighted_formal/final_rebuild_verification.json \
+    --output-root research_audit/weighted_formal/.verification/final
+
+That is a FUTURE command: FinalAxioms does not exist yet. Freeze all local
+source edits during this rebuild. --plan is available to list dependencies.
+verify.py prepends isolated new objects, rebuilds each local dependency in
+topological order, hashes source and logs, and refuses any moving source tree.
+It still relies on supplied external original/mathlib objects; it does not
+claim to freshly rebuild or independently validate the entire upstream tree.
+
+Completed coherent rebuild evidence:
+- fullw_rebuild_verification.json: PASS, 80 local modules, target
+  WeightedQRH.FullWAnalyticAudit, finished 2026-10-09T23:09:31Z,
+  changed_modules=[], all exit codes zero.
+- conditional_dependencies_rebuild.json: PASS, 136 local modules, target
+  WeightedQRH.HighRows.ConditionalFinal, finished 2026-10-09T23:19:13Z,
+  changed_modules=[], all exit codes zero.
+
+These graphs overlap; do not add them as a count of unique verified modules.
+Neither graph proves the missing actual source input or unconditional result.
+The final full dependency closure has NOT been rebuilt.
+
+Audited component endpoints use only propext, Classical.choice, Quot.sound.
+Earlier source scans found no sorry/admit/added analytic axiom/unsafe or
+native_decide in the new source; the final frozen tree still needs its own
+source scan and final endpoint axiom audit. Inspect assumptions as well as
+axioms: an axiom-free theorem with an extra analytic hypothesis is conditional.
+
+Additional freshness caution from gram_audit: sibling .olean timestamps for
+HighRows/NormalizedTransport.lean and NormalizedTransportSaving.lean are older
+than those source files. Check their participation in the isolated coherent
+rebuild reports and the eventual final closure; do not silently infer that
+every development object is current. The latest successful SourceCollect log
+is logs/NumeratorSourceCollect.log. The older prefixed
+logs/WeightedQRH.NumeratorSourceCollect.log still contains a superseded failure.
+
+Lean pitfalls encountered:
+- Put spaces around <= in mathematical notation; compact Unicode <= tokens
+  sometimes parsed unexpectedly next to names/numerals.
+- D.N versus D.toMomentData.N can make rw/simp fail under implicit
+  transparency. Prefer an explicit congrArg/calc term instead of rewriting.
+- Explicitly unfold or cast rowNorm/Ccond/combinedConductor as needed before
+  exact_mod_cast. Real rationals coerced to complex may need
+  Complex.ofReal_div and Complex.ofReal_ofNat simplification.
+- Qualify HeckeInverseAmplification.PrimeIdeal when imports make it ambiguous.
+- F.W.smooth top supplies ContDiff infinity; mismatching that parameter fails.
+- A theorem premise containing a let may introduce the let before the desired
+  hypothesis. Expose it at the right point, but a no-progress dsimp itself
+  fails, as the final error demonstrates.
+- Harmless ring/linter messages do not mean the build failed. Trust exit code.
+
+10. MANUSCRIPT AND PDF STATUS
+============================
+
+Main source:
+  research_audit/weighted_numerator_proof.tex
+Included detailed numerator argument:
+  research_audit/weighted_numerator_lemma.tex
+Compiled PDF:
+  output/pdf/weighted_numerator_proof.pdf
+Current length: 12 pages.
+
+The manuscript explicitly says PROVISIONAL and formalization unfinished.
+Keep that status until the actual endpoint and its complete audit succeed.
+Some of its status text now lags the completed finite collection, but it
+correctly declines to claim end-to-end verification.
+
+Recent additions:
+- A numbered checked original-numerator moment proposition corresponding to
+  certified_original_numerator_fourth, with quantifiers and actual cutoff,
+  conductor, selected-slot capacity/empty-slot alternative, and height degree.
+- A theorem-correspondence section listing Lean source/theorem names.
+- An explanation of the original full-class count and masked-mean weakening.
+six_sevenths independently checked the proposition/interface correspondence.
+
+Last Tectonic run completed without warnings. All 12 pages of the preceding
+revision were rendered and visually inspected. A later masked-count paragraph
+was added and compiled; the current final PDF has NOT had a complete new
+render/inspection. Existing page PNGs predate that last paragraph.
+Never claim current all-page visual review from those stale images.
+
+Future build/review:
+  /opt/homebrew/bin/tectonic research_audit/weighted_numerator_proof.tex \
+    --outdir output/pdf
+Use pdfinfo/pdftoppm, render every page, inspect layout, and fix issues if any.
+Do not add xurl: it was unavailable through the TeX network. Existing
+nolinkurl and raggedright handling prevents long identifier overflow.
+
+Manifest:
+  research_audit/weighted_numerator_verification_manifest.json
+It is intentionally provisional and partly STALE: it still calls the
+136-module rebuild in progress, though that rebuild passed. Some file hashes
+may predate later edits. Recompute statuses/hashes from evidence at delivery.
+Do not confuse it with research_audit/verification_manifest.json, which
+belongs to an earlier abandoned lower-kappa feedback route.
+
+11. PUBLIC SEARCH AND NOVELTY STATUS
+==================================
+
+No further search was run after the user's STOP instruction.
+
+Main dated reports:
+  research_audit/public_search_formalization_20261009.txt
+  research_audit/public_search_formalization_20261009.json
+Main search completed 2026-10-09T22:04:32Z; later refreshes are in
+  research_audit/public_search_refresh_20261009.json
+with last recorded query refresh 2026-10-09T23:06:33Z.
+
+Strongest comparable public unconditional CLAIM found:
+  the unique root in (.8749570194,.8749570195) of
+  7884*s^3 - 18819*s^2 + 14643*s - 3686 = 0,
+  approximately .87495701942009894612860385056...
+
+This endpoint already appears in Shunia and Guo written work; a Nielstron
+tracker report claims seven-target mechanical verification. Our search READ
+those outside reports; it did NOT rerun those proof kernels or independently
+prove the outside papers. The proposed 10499/12000 is smaller by about
+.00004035275343227946, but ours remains a candidate until the missing final
+Lean connection and audits are complete.
+
+Representative pinned primary URLs:
+  https://github.com/nielstron/QuasiRiemannTracker/blob/0284b10d3c8c92b4d8995c36f24728be03815b4a/public/proofs/nielstron-algebraic-20261009-kernels/result.json
+  https://github.com/jshunia/rhtm/blob/c3abed0cae8fdb0090c12b0e4d20aea68b6e067d/compensated_half_plane_refinement.pdf
+  https://github.com/aster2024/openai-math-followups/blob/5750cc81e489729a2111d6c9c073f4adecdb9de7/zero-free-beyond-7-8/README.md
+  https://arxiv.org/abs/2610.12234v1
+
+Coverage included 57 queries/evidence URLs, 14 comparable claims, arXiv API
+sets of 7/19/62 records, GitHub repository searches, 165 recent commits and
+107 issues in relevant broad queries, tracker PR/history inspection, exact
+decimal/fraction queries, and English/Chinese searches. See the actual dated
+report for exact query and pagination scope; these are not exhaustive counts
+of all potentially relevant literature.
+
+Guo's smaller 328/375=.874666... is explicitly conditional on unproved
+Hypothesis 11.1, and is excluded from the unconditional comparison. Puglisi's
+older claimed QRH-to-RH implication concerns zeta and is not an established
+comparable all-Dirichlet theorem. Other conditional moment criteria, numerical
+evidence, zero-density/proportion results, and bounds on different constants
+were distinguished from an unconditional fixed all-height zero-free threshold.
+
+Limitations: no search proves universal novelty. Indexes can omit new,
+private, deleted, or differently described work. Some current GitHub refresh
+URLs returned cache misses; earlier pinned evidence was retained. Zenodo API
+queries failed with 406/400. No outside refinement code was imported/executed.
+Respect the user's no-copying constraint in any continuation.
+
+12. REMAINING WORK, IN ORDER
+===========================
+
+1. Read all agent handoffs and confirm no old process still owns the final
+   log/object. Resume only when authorized in the new session.
+2. Repair the failed count-premise binder/simplification in
+   NumeratorActualSource.lean. Compile it against current dependencies.
+   Do not assume that removing the second dsimp necessarily finishes the proof.
+3. Inspect and print actual_raw_fullW_input's type and axioms. Confirm it
+   really discharges RawFullWAnalyticInput with no new analytic hypothesis.
+4. Create Final.lean and FinalAxioms.lean using fullW_input_of_raw_source and
+   ConditionalFinal. Include actual beta, Hecke, all-Dirichlet and zeta
+   endpoints; make publication-facing zeta pole exclusion explicit.
+5. Audit final theorem signatures, all assumptions, nonvacuity, family scope,
+   original input provenance, exact source functions, and all quantifier orders.
+   Print final endpoint axioms. A successful wrapper alone is insufficient.
+6. Freeze the source tree and run a coherent isolated rebuild of the full
+   FinalAxioms dependency closure. Inspect all exit codes, hashes, and final
+   audit output. Run final source scans for placeholders/added axioms and
+   inventory external imports. Distinguish local rebuilt proofs from supplied
+   original/mathlib dependency caches.
+7. Update the LaTeX's provisional wording ONLY after the endpoint succeeds.
+   Match its statements and hypotheses to exact checked theorem types; include
+   source pins, Lean version, verification scope, and the scoped 13/15 barrier.
+8. Recompile PDF, render/inspect all pages, update the current visual-review
+   record, and refresh all manifest hashes/status fields. Keep the old
+   abandoned method manifest separate.
+9. Refresh dated primary-source/arXiv/GitHub public comparison near delivery.
+   Report the strongest comparable result FOUND and its verification status;
+   do not promise exhaustive priority or beat a conditional claim by relabeling
+   it. Do not copy Li Xiang or other prohibited refinement work.
+10. Only after all of the above, report the finished proof/artifacts accurately.
+    If a genuine mathematical gap appears, repair it or report it; never
+    substitute an assumption, a numerical certificate, or a conditional Lean
+    theorem for the requested unconditional mathematical result.
+
+13. FILE INTEGRITY SNAPSHOT
+==========================
+
+The handoff inventory, when present, is
+  research_audit/handoff_inventory_20261009.json
+It records current source/file hashes for transfer. File presence and mtime
+are useful diagnostics but do not alone establish successful compilation.
+Preserve existing source, logs, manifests and evidence rather than overwriting
+older records with claims of success.
+
+The combined reading copy is research_audit/HANDOFF_ALL_20261009.txt. It
+contains this root report followed by all three agent reports verbatim.
+The transfer archive is research_audit/qrh_handoff_20261009.zip. It contains
+the new Lean SOURCES, logs, scripts/configuration, theorem maps, manuscript,
+PDF, dated public search evidence and handoff reports. It omits .olean caches,
+the full original OpenAI/mathlib source trees and installed Lean toolchain.
+It is a source/evidence handoff, not a self-contained build environment.
+Use the source pins and environment instructions when moving to another host;
+the included configuration contains absolute paths for this machine.
+
+END OF ROOT HANDOFF

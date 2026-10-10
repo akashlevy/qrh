@@ -1,0 +1,8 @@
+import WeightedQRH.NumeratorSourceMask
+#print axioms WeightedQRH.Numerator.source_packet_selected_bin
+#print axioms WeightedQRH.Numerator.source_packet_amplitude_class
+#print axioms WeightedQRH.Numerator.source_mask_amplitude_class
+#print axioms WeightedQRH.Numerator.reconstructedDyadValue_class_uniform
+#print axioms WeightedQRH.Numerator.source_mask_physical_front
+#print axioms WeightedQRH.Numerator.source_frequency_scalar_bound
+#print axioms WeightedQRH.Numerator.source_packet_multiplicative_identity

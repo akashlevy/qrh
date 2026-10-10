@@ -1,0 +1,612 @@
+HANDOFF — six_sevenths subagent — 9 October 2026
+Workspace: /Users/akashlevy/Documents/riemann
+Instruction at handoff: USER REQUESTED STOP HERE. No further proof edits or builds
+were performed after that instruction. This handoff file and read-only status
+inspection are the only subsequent work. Do not infer authorization to resume
+from this document; follow the next user's instructions.
+
+======================================================================
+1. EXECUTIVE STATE — WHAT IS AND IS NOT ESTABLISHED
+======================================================================
+
+The target improvement is theta = 10499/12000 = 0.874916666666666...,
+using a genuinely changed high estimate: a selected-prime weighted fourth moment
+of the reconstructed physical numerator. The moment parameter remains kappa=3/4.
+No lower-kappa feedback refinement or Li Xiang improved proof is an input.
+
+The candidate beats the dated public cubic benchmark about
+0.87495701942009894613. Public priority/novelty is NOT exhaustively established.
+The current written manuscript already records the scope of the dated search.
+
+The complete new unconditional QRH theorem is NOT YET COMPILED at the stop
+snapshot. Do not claim that it is complete. Extensive actual analytic components,
+the original numerator fourth moment, active coefficient boxes, actual amplitude
+classes, physical error masks, and finite mask/class collection are compiled.
+The raw actual-source assembly is drafted with a final elaboration error; the
+unconditional final wrapper has not yet been written to disk.
+
+Read-only filesystem status taken after the stop instruction:
+  NumeratorSourceClass.lean/.olean              compiled, object newer than source
+  NumeratorSourceClassAxioms.lean/.olean         compiled, object newer than source
+  NumeratorFiniteHeight.lean/.olean             compiled, object newer than source
+  NumeratorFiniteHeightAxioms.lean/.olean        compiled, object newer than source
+  NumeratorSourceBin.lean/.olean                compiled, object newer than source
+  NumeratorSourceMask.lean/.olean               compiled, object newer than source
+  NumeratorSourceCollect.lean/.olean            compiled, object newer than source
+  NumeratorActualSource.lean                    source exists, NO .olean
+  WeightedQRH/Final.lean                        absent
+  WeightedQRH/HighRows/Final.lean               absent
+
+Latest relevant raw-source log:
+  research_audit/weighted_formal/logs/NumeratorActualSource.log
+  reports line 59: error: `dsimp` made no progress.
+This is a report of the most recently observed log, not a promise that fixing
+that one tactic will finish the full proof. No fix was attempted after STOP.
+The other agent's handoff should describe its exact current source line.
+
+Two prior isolated dependency rebuild reports both pass:
+  weighted_formal/fullw_rebuild_verification.json:
+    target WeightedQRH.FullWAnalyticAudit, 80 local modules, status compiled,
+    changed_modules = [].
+  weighted_formal/conditional_dependencies_rebuild.json:
+    target WeightedQRH.HighRows.ConditionalFinal, 136 local modules,
+    status compiled, changed_modules = [].
+These do not cover the final new source assembly/unconditional wrapper. They
+are proof checks against the supplied original OAI/mathlib object caches, not a
+fresh independent rebuild of every upstream analytic dependency.
+
+======================================================================
+2. PROCESS / SESSION STATE
+======================================================================
+
+No known active process or tool session belongs to six_sevenths. All builds I
+started returned completion before STOP. Most recent completed session IDs:
+  72516: NumeratorSourceClass build, exit 0.
+  97773: NumeratorSourceClassAxioms build, exit 0.
+  22316: NumeratorFiniteHeight build, exit 0.
+  5473: NumeratorFiniteHeightAxioms build, exit 0.
+Earlier ActiveFourth and reflection audit builds also completed (4140 etc.).
+Do not poll those as if still active. I did not kill or inspect other agents'
+processes; root/formal_audit/gram_audit must report their own active sessions.
+No proof or build process was launched by me after STOP.
+
+======================================================================
+3. OWNERSHIP / WORKSTREAMS
+======================================================================
+
+Parent /root:
+  Overall research; exact weighted exponent certificate; principal signal and
+  continuation; actual full-w reconstruction; discarded-tail and original
+  numerator fourth composition; frequency/scalar estimates; finite collection;
+  main manuscript/PDF/manifest; final goal status.
+
+/ root / formal_audit:
+  Euler coefficient packets, all finite local errors and strict ramified errors;
+  coefficient mass and packet/bin Holder; SourceBin and SourceMask; now
+  NumeratorActualSource and the last SourceCollect elaboration fix after parent
+  had a stream disconnect.
+
+/ root / gram_audit:
+  Low/high geometry and count ports; actual source row/pool geometry;
+  full-w source cell finishing; ConditionalFinal; intended unconditional Final
+  wrapper after actual_raw_fullW_input compiles.
+
+six_sevenths (this report):
+  Early analytic audit and research notes; exact rational arithmetic/geometry
+  Lean certificates and scoped barrier; principal remainder/transport port;
+  HighData-independent certified source moment bridge; radical conductor bridge;
+  actual reflected/profile/scale-sup selected fourth moment; active coefficient
+  boxes; actual full amplitude-class selection; generic finite-height envelope;
+  manuscript theorem-to-proof audits and correspondence maps.
+
+All agents share the directory. Do not overwrite other agents' files based on
+ownership descriptions alone: read current state first.
+Upstream source trees were not intentionally changed by this agent. All new
+Lean modules are under research_audit/weighted_formal/WeightedQRH.
+
+======================================================================
+4. CORE MATHEMATICS AND IMPORTANT REPAIRS
+======================================================================
+
+Fixed geometry:
+  theta = 10499/12000
+  ell = 167/1000
+  b = 43/500
+  lx = 747/2000
+  ly = 919/2000
+  h = 1587/2000
+  kappa = 3/4
+  z0 = 17/50
+  rowExtension = 1/1000000 (see Parameters.lean for exact definition).
+The ordinary high branch is used for delta <= 1/3 and the new numerator branch
+for delta >= 1/3, up to delta=3/4. Exact rational Bernstein certificates prove
+all-real rectangle inequalities, not merely a numerical grid. Extended dyad
+margins and final small losses are handled in separate parameter lemmas.
+
+The new analytic saving:
+  Reconstruct the entire w-Mellin numerator as the actual smoothed plain sum
+  S_{chi_u}(Y/N). Reflect it, retaining the actual short scale. At main scale
+  U=Z^d, reflected length is n0=1-ly/d. The existing four-plain-factor moment
+  leaves selected-prime capacity (2ly/d-1)/(6*kappa). Weight the selected prime
+  product at exponent TWO inside the fourth moment. This is stronger than
+  treating the numerator L-function pointwise or using only an unweighted L4.
+
+Key corrections already made and now embodied in compiled proofs:
+
+A. Natural zeros and orientation.
+  The literal main prime sums use star(idealRowHom), as does the inverse/reflected
+  row numerator. Conjugate the whole numerator/selected product inside its norm
+  to use the positive certified source energy. Do not conjugate just one factor.
+  The physical coefficient dictionary preserves every natural zero extension.
+
+B. Combined conductor, not primitive conductor alone.
+  Use a small, coefficient-preserving presentation and its primitive character.
+  Cu is primitive conductor norm times the full redundant Euler ideal norm.
+  The proved bound is Cu <= C(S)*rad(Nu). Every restoration subset is bounded by
+  that full redundant ideal; every smooth-ideal denominator decreases scale.
+  A proof that the redundant support lies only in fixed S is unnecessary and
+  was not assumed. This avoids paying the strict ramified prime deficit twice.
+
+C. Strict ramified errors.
+  Their coefficient mass can cost N^rho on the left coefficient line. Distinct
+  repeated ramified primes consume distinct factors in the same radical deficit.
+  The deficit is applied simultaneously to the entire tuple, not separately to
+  each term using the full conductor. formal_audit's NumeratorDeficit and packet
+  mass modules prove this for actual coefficients.
+
+D. Row-dependent coefficients/profiles/scales must be removed before moments.
+  The coefficient packet is absolutely summable with a weighted l1 norm. A
+  fourth-selection inequality reduces to arbitrary rowwise coefficient choices.
+  Smooth reflection and scale supremum are handled by actual finite annuli and
+  two Fourier separations, rather than treating varying coefficients as fixed
+  moment coefficients.
+
+E. Fourier height quantifiers.
+  SourceMomentsAt with bounded imaginary height does NOT by itself control the
+  unbounded Fourier frequencies. We use direct certified PositiveAt and ZeroAt
+  with explicit sourceControl polynomial factors. Fixed Fourier/height degrees
+  are chosen before the final contour exponent tau. ConditionalFinal's
+  FullWAnalyticInput was corrected to choose Jw first and require
+  2*tau*(1+Jw)<=t. The old and new degrees are combined before choosing tau.
+
+F. Empty selected family.
+  The original source's ZeroAt endpoint is stronger than a downstream detector
+  estimate: it gives U^(1+eps) for any fixed bounded two-plain lengths, without
+  the positive-slot capacity restriction. This is actually available in the
+  upstream lemma and certified source. An earlier concern requiring a weaker
+  U^max(1,2n) bound was corrected. The compiled L=2 zero endpoint is essential
+  when coefficient dilation exhausts prime capacity.
+
+G. Exact support cutoff.
+  Original Mellin inversion has compactly supported W in [1,2]. The polynomial
+  vanishes identically for N>2Y before reflection. Thus coefficient dilation lies
+  in finitely many exponent boxes; no unbounded-length moment or infinite
+  coefficient tail argument is needed.
+
+H. Finite boxes and both small length losses.
+  n=ceil(1/xi); j runs through range(n+1). Use box width=annular slack=t in the
+  source specialization. For box j, m=1-ly/d+j*t+t. Capacity subtracts both the
+  box upper edge and the annular slack, so source prime selection is evaluated
+  at v=j*t+2t. Omitting the second t would overstate capacity.
+
+I. Row scale normalization.
+  The moment endpoints require U^(1/100)<=Nu<=U. A physical dyad originally
+  bounded by 2U must use the actual enlarged source moment base. Do not silently
+  identify its upper edge with U. Root's source frequency/scalar combination
+  records the extra Z^((17/25)*t) loss; gram's source geometry supplies the
+  enlarged-base inequalities.
+
+J. Masked count and full amplitude class.
+  Error slots receive zero gain in q, but their widths remain in its denominator.
+  The counted set is the original FULL amplitude class. Do not replace it by a
+  main-only projected class and reuse the old count. The proved antitonic count
+  transfer supplies the diluted q. Selection is common to all rows in a class
+  and is performed after full w integration; no separate continuation of
+  amplitude subsets is claimed.
+
+K. Upper-bin slack.
+  Divide the canonical main product by U^(t*ell/d) before the packet theorem,
+  then restore exactly that factor afterward. It remains visible in the exact
+  source-class exponent. The lower-bin q is not shifted by this upper slack.
+
+L. Scope of the 13/15 barrier.
+  The unchanged stated low-side Gram and completed-row energy majorants force
+  theta>=13/15 by a nonnegative dual identity. This is a sharp limitation of
+  those sufficient estimates, not a theorem about actual zeros and not a proof
+  that all variations of the method cannot improve. Reaching 1/2 needs a changed
+  low-side estimate/probe as well as the new high-side numerator estimate.
+
+======================================================================
+5. COMPILED MODULES AND EXACT INTERFACES OWNED BY THIS AGENT
+======================================================================
+
+Full correspondence maps (read them rather than guessing theorem names):
+  weighted_formal/arithmetic_theorem_map.txt
+  weighted_formal/principal_theorem_map.txt
+  weighted_formal/moment_theorem_map.txt
+  weighted_formal/conductor_theorem_map.txt
+  weighted_formal/reflection_theorem_map.txt
+Additional audits:
+  weighted_formal/original_fourth_proposition_audit.txt
+  weighted_formal/source_class_quantifier_audit.txt
+
+Arithmetic:
+  Parameters.lean, CertificateBernstein.lean, ExponentCertificate.lean and
+  supporting Certificate* modules. Rational all-real geometry/certificate;
+  weighted_extended_bound includes row extension and margin 1/20000.
+  Parameters.physical_low_barrier formalizes the scoped 13/15 obstruction.
+  Do not confuse the old kappa_feedback notes/certificate with this new proof.
+
+Principal remainder:
+  PrincipalRemainder*.lean modules port actual finite products, contour remainders,
+  source residue/normalizer and physical/principal transport at the new geometry.
+  Root's RegionalCorrection, PrincipalSlots, SignalShift and PrincipalSignal are
+  dependencies. principal_theorem_map.txt gives exact endpoint names/conditions.
+
+Certified moment bridge:
+  Moment*.lean ports actual certified terminal/source energies without old
+  HighData premises that would require beta>7/8. Main source data type is
+  ProbeFinalAssembly.WeightedSourceData for WeightedQRH.MomentData.
+  Established original beta<=7/8 supplies fixed kappa=.75; the only lower beta
+  premise is beta>=.51, which follows in the intended contradiction beta>theta.
+  No rejected ArithmeticProbeObligation or feedback theorem is assumed.
+
+Conductor:
+  RowConductor.lean provides the small-presentation/radical conductor and
+  row_original_split connection preserving the actual physical coefficients.
+  Root's NumeratorReflectionData packages the exact chosen data and unit phase.
+
+Actual physical dictionary / Fourier source:
+  NumeratorPhysicalMoment.lean:
+    numerator_polynomial_eq_moment
+    actual_pair_source_identity
+    finite_actual_pair_le_energy
+  NumeratorPhysicalMomentInput.lean:
+    finite_physical_pair_positiveAt
+    source_physical_slot_conj
+    reflected_pair_norm_eq
+  NumeratorFourierProfiles.lean:
+    numeratorAnnular, numeratorFourierProfiles,
+    numerator_fourier_profiles_control,
+    numerator_fourier_polynomial_zero/one,
+    inverse_annular_norm_eq.
+  NumeratorCertifiedFourier.lean:
+    eventually_fixed_source_keep
+    certified_reflected_fourier_moment.
+  MomentTerminalLongZero.lean:
+    weighted_terminal_certificate_two
+    weighted_terminal_energy_two.
+  NumeratorCertifiedZero.lean:
+    finite_pair_zeroAt
+    certified_reflected_zero_fourier_moment.
+
+The last two actual Fourier endpoints are in namespace
+  OAI.SevenEighths.WeightedNumeratorReflection,
+except the moment-terminal theorem in
+  OAI.SevenEighths.ProbeFinalAssemblyCertifiedBands.
+They give finite actual physical inverse-row pair moments times canonical Q^2,
+all Fourier frequencies, fixed polynomial frequency/height control, and explicit
+positive-slot capacity OR the bounded-length zero-slot endpoint.
+
+Reflection removal / retained endpoint:
+  NumeratorReflectionProfiles.lean:
+    reflected_fourth_profiles, reflected_fourth_rowwise_scales.
+  NumeratorReflectionMass.lean:
+    weighted_fourth_selection, actual_masked_reflection_fourth.
+  NumeratorReflectionRetained.lean:
+    actual_retained_uniform_fourth (abstract intermediate Fourier premise).
+  NumeratorRetainedGeometry.lean:
+    actual_dual_scale_bound, eventually_retained_log_interval.
+  NumeratorCertifiedRetained.lean:
+    certified_actual_retained_fourth (discharges that Fourier premise).
+  NumeratorRetainedFixed.lean:
+    eventually_retained_log_cost,
+    certified_retained_fixed_profile.
+
+certified_retained_fixed_profile, and root's composed
+WeightedQRH.Numerator.certified_original_numerator_fourth, give constants/degree
+before U and every rowwise choice. Output:
+  sum_u |original physical polynomial at Y/N_u|^4 * |selected canonical Q|^2
+    <= C*(1+height)^degree*U^(1+t+loss).
+Important original-fourth hypotheses:
+  beta>=.51; fixed F and Schwartz profile G; loss, xi, b, Cslot positive;
+  rows U^.01<=Nu<=U; actual PhysicalReflectionData per row;
+  Y>0, 0<N_u<=bY;
+  m>=0, m+xi<=2;
+  Cu<=Ccond*U^m*(Y/N_u);
+  selected widths nonnegative and <=fineMesh(2,0,1,.75,t/4);
+  z_i.re=.34, height>=0, |z_i.im|<=height;
+  2*(m+xi)+4.5*sum(width)<=1 OR selected empty;
+  selected product <=Cslot*U^qtail.
+The root theorem's discarded tail is actual original_split, not a new assumption.
+
+Selected crude bound:
+  NumeratorSelectedCrude.lean, namespace WeightedQRH.Numerator:
+    selected_product_crude
+    physical_width_sum_crude
+    canonical_selected_product_crude.
+  If total widths<=167/500, mesh<=.01, gains<=.5 and actual amplitude upper
+  bounds hold, every selected product<=U. This supplies Cslot=qtail=1.
+  Gram also supplied source_selected_product_crude for actual source lengths.
+
+Finite box geometry:
+  NumeratorBoxGeometry.lean, same namespace:
+    physical_y_range; physical_y_strong_lower;
+    reflected_box_geometry;
+    combined_scale_of_dilation_box;
+    capacity_shift_exact;
+    reflected_capacity_or_empty and _subtype;
+    annular_capacity_saving_loss;
+    shifted_base_capacity_pos;
+    coefficientBoxCount, coefficientBoxCount_extent;
+    coefficient_box_index_range;
+    eventually_physical_cutoff_le_base;
+    physical_coefficient_box_geometry.
+  All compiled; full d range .5<=d<=h+rowExtension. m>=0 and m+annulusSlack<=2
+  if 2*boxWidth+annulusSlack<=.5. Shifted positive capacity is established for
+  the source's tiny slack. Empty-family alternative is proved, not assumed.
+
+Actual active coefficient box:
+  NumeratorActiveFourth.lean, same namespace:
+    fallbackCoefficientScale, fallback_scale_admissible;
+    certified_active_box_fourth.
+  Fixed F,hbeta,G,loss,boxWidth,annulusSlack,b and positive/smallness assumptions
+  precede existence of degree,C and eventual U. Then all finite rows, actual
+  reflection data, arbitrary positive choices N_i, d,j,selected,width,z,height.
+  Output is the LITERAL fourth sum with mask
+    N_i<=bY AND dilationBox U boxWidth n(max(1,Cu_i*N_i/(Ccond*Nu_i)))=j,
+  Y=U^(ly/d), selected cap
+    max(0, ((2ly/d-1)/4.5-4annulusSlack/9)-4(j*boxWidth+boxWidth)/9).
+  Inactive choices are replaced by a proved admissible positive fallback before
+  the all-row moment, then discarded by nonnegativity. No arbitrary profile or
+  finite-subtype transport is hidden. This is exactly ActualBin's hselection.
+
+Actual amplitude class:
+  NumeratorSourceClass.lean, same namespace:
+    source_box_capacity_eq
+    source_packet_amplitude_class.
+  Consumes formal_audit's compiled source_packet_selected_bin and discharges its
+  selected/capacity/crude/full-product premises via gram's actual amplitude class.
+  Fix D,F,hbeta,hfine,J first. degree,C,threshold precede U,Z,d,eta,x,z,a,height,
+  rows and bin. The full class is amplitudeRows of actual canonical amplitudes.
+  q is the masked lower mean with all slot widths in the denominator.
+  Remaining explicit premises: actual row/nonprincipal/pool geometry;
+  nonempty full class; its count card<=Ccount*U^R with Ccount>=1; actual amplitude
+  upper inequalities. None is a new moment hypothesis.
+  Output is labelPolynomialPacket times the UNnormalized canonical main product,
+  with prefactor C*Ccount*(1+height)^degree*Y^(-1/2)*product_error P_i^(-4/25),
+  and exponent
+    t + q*(ell/d) - q*((2*(ly/d)-1)/(9/2)-4*t/9)/2
+      + (3*R+1+2*t)/4 + delta*weighted_detectorMesh(t)/4
+      + delta*t/4 + t*(ell/d).
+  It uses source selection at v=j*t+2t, square-rooted squared spike and exact
+  restoration of upper-bin slack. The counted class never changes with J.
+
+Finite height collection (latest module owned by me):
+  NumeratorFiniteHeight.lean, same namespace:
+    finite_height_envelope
+    eventually_finite_all
+    finite_height_eventual_envelope.
+  For Fintype i, degree_i:Nat, C_i>0, produces J:Real>=0 and Ctot>=1, with
+  degree_i<=J, C_i<=Ctot, and for every H>=0,eps>=0 both
+    C_i*(3+H)^(degree_i+2eps)<=Ctot*(3+H)^(J+2eps)
+  and the analogous full sum bound. Empty indexing family allowed. J is the
+  finite sum of degrees; Ctot=1+sum C_i. The eventual wrapper chooses per-index
+  degrees/constants and combines all eventual thresholds for an arbitrary filter.
+
+Axiom audits compiled:
+  NumeratorReflectionAxioms.lean/log includes original and active-box moments.
+  NumeratorSourceClassAxioms.lean/log includes SourceBin and SourceClass.
+  NumeratorFiniteHeightAxioms.lean/log includes all three envelope lemmas.
+All listed endpoints print only propext, Classical.choice, Quot.sound.
+No sorry, admit, native_decide or added analytic axiom in these new bridges.
+
+======================================================================
+6. IMPORTANT REMAINING PROOF / AUDIT ITEMS, IF AUTHORIZED TO RESUME
+======================================================================
+
+1. Finish NumeratorActualSource.lean. Latest log is only `dsimp made no progress`
+   at line59. It is intended to prove actual_raw_fullW_input : RawFullWAnalyticInput
+   by supplying actual masked counts, source amplitude uppers, physical scalar,
+   finite source pool geometry/nonemptiness, and the compiled SourceCollect bound.
+   formal_audit owns the exact current source/fix. No .olean at STOP.
+
+2. Derive FullWAnalyticInput via the proved raw-source-to-full-cell bridge.
+   gram_audit owns this and intended Final.lean. Then instantiate the existing
+   ConditionalFinal implications with the constructed input. New endpoints must
+   state beta<=theta, Hecke nonvanishing, Dirichlet nonvanishing and zeta without
+   any hinput/RawFullWAnalyticInput/FullWAnalyticInput parameter left.
+
+3. Inspect THEOREM STATEMENTS, not just successful compilation or standard axioms.
+   A theorem can have only standard axioms yet remain conditional. Print final
+   endpoint types, including implicit parameters, and print axioms. Ensure no
+   accidental free variable or vacuous beta>7/8 premise. Use autoImplicit=false.
+
+4. Empty cases in final source collection:
+   - Empty amplitude classes contribute zero; class_uniform handles them.
+   - J empty has a unique empty label tuple.
+   - A full prime-pool tuple witness restricts to every error J; alternatively
+     integratedDyadValue_zero_of_no_labels proves the whole numerator zero when
+     no full tuple exists. ActualSource currently instead uses the proved
+     weighted_source_pools_nonempty eventual assertion.
+   - Empty selected family uses strong ZeroAt, not a missing fourth moment.
+
+5. Independent final closure audit should check all actual physical objects and
+   heights, not only arithmetic. In particular beta contradiction chooses actual
+   source data and counts before tau; fixed common height degree before tau;
+   source moment and numerator thresholds uniform over retained contour points;
+   actual modified/common probe equality; principal pole handling; natural Euler
+   factor restoration; Dirichlet transfer from the Q(sqrt(-3)) norm pullback.
+
+6. Fresh isolated rebuild of the FINAL local dependency graph once source freezes.
+   Prior 80/136 rebuilds are not a substitute for the last new source layers.
+   Existing verify.py refuses any local source hash change during its run.
+   Do not start it while collaborators are still editing its closure.
+
+======================================================================
+7. BUILD / REPRODUCIBILITY NOTES (PLAN ONLY; NOTHING STARTED AFTER STOP)
+======================================================================
+
+Environment:
+  research_audit/weighted_formal/lean_environment.json
+  Lean executable:
+    /Users/akashlevy/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean
+  lean-toolchain = leanprover/lean4:v4.34.1.
+  LEAN_PATH starts at weighted_formal, then original package caches and
+  formalize_11_12/upstream/.lake/build/lib/lean.
+
+Normal helper:
+  python3 research_audit/weighted_formal/build.py WeightedQRH.ModuleName
+  Builds chosen targets only; it DOES NOT recursively build dependencies.
+
+Final isolated recursive check, once an actual FinalAudit module exists:
+  python3 research_audit/weighted_formal/verify.py WeightedQRH.FinalAudit --plan
+  python3 research_audit/weighted_formal/verify.py WeightedQRH.FinalAudit \
+    --output-root research_audit/weighted_formal/.verification/final/lib/lean \
+    --report research_audit/weighted_formal/final_rebuild_verification.json
+  Replace target with the real final audit path actually created by gram/root.
+  Do not invent a final theorem identifier in a published report.
+  Script uses -DautoImplicit=false -M8192 -j2 -R, a separate object directory,
+  source SHA256s and log SHA256s, and checks hashes throughout and at completion.
+  It logs under weighted_formal/logs; a new run can overwrite matching old log
+  names, so retain/archive any reports whose old log hashes must remain auditable.
+
+The cache is an explicit dependency. lean_environment.json has absolute paths
+specific to this workspace; it is not by itself a portable reproduction recipe.
+For export, include a short build README describing toolchain, pinned upstream
+source and dependency manifests, cache/build setup and how to regenerate paths.
+The local formalize_11_12 and upstream directories have no .git metadata; don't
+claim a git-verified Lean revision without another source manifest. The existing
+verification manifest pins the original paper commit and confirms byte identity
+for paper78.tex, which is narrower than a complete Lean-source/cache provenance.
+Useful observed SHA256s:
+  formalize_11_12/lean-toolchain and upstream/lean-toolchain:
+    d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b
+  formalize_11_12/lake-manifest.json:
+    b66ae3d3b4c503c19fc043326dbd171275cd8905862349a4d32bf377d666e9ed
+  formalize_11_12/upstream/lake-manifest.json:
+    3e5a42d25172ffcc5597186adf6cab3fe3ba2bc5793c5908186473a7f320b726
+
+Rational numerical companion:
+  python3 research_audit/weighted_numerator_certificate.py \
+    --output research_audit/weighted_numerator_certificate.json
+  This is a standard-library exact rational certificate, but is not a replacement
+  for the Lean analytic proof. Negative control margin1/1000 rejects as recorded.
+
+======================================================================
+8. MANUSCRIPT AND DELIVERY CHECKLIST
+======================================================================
+
+Main files:
+  research_audit/weighted_numerator_proof.tex
+  research_audit/weighted_numerator_lemma.tex (included fragment)
+  output/pdf/weighted_numerator_proof.pdf
+  output/pdf/weighted_numerator_proof.log
+  research_audit/weighted_numerator_verification_manifest.json
+  research_audit/public_search_formalization_20261009.txt/.json
+  research_audit/public_search_refresh_20261009.json
+
+The files currently correctly say the final improved theorem is provisional.
+DO NOT REMOVE THAT STATUS AT THE CURRENT STOP STATE.
+Once and only once the final unconditional theorem and audit actually pass,
+these exact passages need revision together:
+
+weighted_numerator_proof.tex:
+  - Abstract around lines30-37: currently says amplitude-bin composition and
+    final assembly unfinished, not end-to-end Lean verified.
+  - Main theorem label around line46: [Provisional improved bound].
+  - Public comparison around line373: "proposed" B; status paragraph385-390 says
+    finite composition/assembly in progress and no end-to-end verification.
+    Keep no external human peer review / no exhaustive novelty claim as true.
+  - Correspondence section around420: "remaining assembly" framing.
+  - Correspondence final bullet459-463: currently only ConditionalFinal plus
+    explicit FullWAnalyticInput and says it has not been constructed. Replace
+    with exact new actual_raw/fullW construction and actual unconditional final
+    identifiers, preserving ConditionalFinal as a proved intermediate if useful.
+  - Axiom audit paragraph468-471: currently says it does not remove the final
+    conditional premise. Cite the new FINAL audit, its actual scope and result.
+  - Add SourceBin -> SourceClass -> SourceMask -> SourceCollect -> ActualSource
+    -> actual full-w input -> Final chain to executable theorem correspondence.
+
+weighted_numerator_lemma.tex:
+  - Intro12-13 currently says complete amplitude-bin composition being formalized.
+    Update only after the actual final source endpoint compiles/audits.
+  - Proposition checked-original-fourth at219-273 is already accurate and has
+    independent interface audit. It need not be strengthened or rewritten.
+  - The text may retain concise o(1) loss notation in explanation, but the exact
+    t/mesh/annulus/box/frequency costs should point to SourceExponent/certificate.
+
+Manifest weighted_numerator_verification_manifest.json:
+  - analytic_status and verification_limits currently correctly provisional.
+  - formal_status.unconditional_improved_endpoint=false, remaining_input names
+    FullWAnalyticInput, conditional_endpoints path; update only after proof.
+  - isolated_dependency_rebuild currently describes 80 pass and 136 in progress;
+    136 is now PASS, but neither is a final unconditional rebuild.
+  - Add actual final theorem identifiers, raw/full input derivation, final audit
+    log, final recursive report and source hashes, distinguishing original-cache
+    reliance from rebuilding upstream.
+  - pdf_review currently has inconsistent historical wording: all12pages old
+    revision inspected, latest affected-page review pending, boolean false.
+    Regenerate, render and inspect final PDF, then record exact final page count
+    and truthful all-pages status, rather than inheriting an earlier revision.
+  - Recompute ALL relevant SHA256s after final source/PDF/manifest edits. Current
+    manuscript, PDF, logs and many newer modules have changed since older hashes.
+  - Keep public benchmark search date, exact root bracket and scope. Reports from
+    other projects were read, not rerun. Do not turn this into a priority claim.
+
+Theorem correspondence maps:
+  reflection_theorem_map.txt ends with final QRH still pending; high_theorem_map
+  includes historical NOT-proved FullW input notes; numerator_theorem_map includes
+  historical no-unconditional-endpoint notes. Preserve historical audit context,
+  but append a dated final-closure section or update status unambiguously if/when
+  final closure succeeds. Do not let the exported package contradict itself.
+
+Export / PDF sequence if authorized later:
+  1. Freeze proof and finish final theorem/axiom/scope audit.
+  2. Perform isolated local dependency rebuild and save report.
+  3. Update manuscript status/correspondence, keeping scoped13/15 barrier and
+     bounded novelty language unchanged.
+  4. Use the PDF skill's render-and-verify workflow. Rebuild the LaTeX enough
+     passes for labels/bibliography, inspect logs for undefined references,
+     missing citations, overfull boxes and errors.
+  5. Render every page of the final PDF and visually inspect; do not assume
+     compilation means readable mathematics. Existing PDF is in output/pdf.
+  6. Update manifest, hashes, precise build instructions and compact result note.
+  7. Final user-facing result should give theta, actual theorem scope, proof/PDF
+     links, precise verification coverage, and the scoped barrier preventing
+     this unchanged low estimate from reaching1/2. Do not imply full GRH proved.
+
+======================================================================
+9. COMMON LEAN / INTEGRATION PITFALLS
+======================================================================
+
+- Open HeckeInverseAmplification for FreeRow, or autoImplicit can accidentally
+  introduce an unrelated type. Rebuild with autoImplicit=false catches this.
+- Real Finset products use prod_le_prod₀ with nonnegativity; the plain prod lemma
+  may have another API.
+- Finset.sum_coe_sort / prod_coe_sort relate subtype sums/products to finset ones.
+  D.toMomentData.N and D.N can fail simplifier rewriting due to transparency even
+  though definitionally equal. Use explicit congrArg and Finset.sum_congr/product
+  equality, as SourceBin's final actual moment dictionary does.
+- `simp only` / `dsimp` can fail when there is no progress. Avoid unnecessary
+  tactics after the preceding simplification already normalized the target.
+- Write whitespace before selectedCapacity after <=; the compact token
+  `≤selectedCapacity` was parsed via a different <=s notation and caused a
+  misleading Graph type error. It is fixed in SourceClass.
+- The fallback N may be below1; the original moment allows positive real scales
+  and exact source cutoff. Do not impose a nonexistent integer lower bound on
+  inactive fallback choices. Actual labelPacketScale choices are >=1.
+- Keep complex polynomial scale normalizations and absolute norms explicit.
+  The fourth moment weights selected Q at exponent2, not4.
+- No repeated request for user approval was necessary for ordinary proof work;
+  the CURRENT explicit STOP does require leaving this work paused.
+
+======================================================================
+10. END OF HANDOFF
+======================================================================
+
+Latest own completed deliverables before STOP were the finite-height envelope
+and its standard-three-axiom audit, plus source_bin/class quantifier audit.
+The interrupted delivery audit had not created a separate final_delivery_checklist
+file; all its findings are incorporated above. No final theorem completion,
+PDF regeneration, final manifest update or new web search was performed afterward.
