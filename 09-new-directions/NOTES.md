@@ -625,3 +625,15 @@ Files: `agents/h2/{H2.md, model_h2.py, h2_kernel.py, h2_poisson_Z.py, h2_struct.
   - The random model satisfies it iff L′² ≤ K.
   - Evaluating it needs (H1) asymptotically to relative error 1/L′, so the wall returns as a precision requirement.
 - **Conclusion:** a proof must supply a freeness/uncertainty statement; there is no main term to identify and cancel.
+
+## 36. SOTA scan 12:40 UTC (coordinator) — a new (pending) record from re-tuning: 0.874887
+
+- Tracker main is now c480675 (PR #4 merged; Argonaut independently verified). PRs #7 and #8 were updated.
+- **New PR #9 (Hailey Collet, "quartic boundary", verification-pending, three kernels pass):**
+  - θ = 683505193/781250000 = **0.87488664704** (exact boundary 11/12 − ℓ₀/4, with ℓ₀ ≈ 0.16712 a root of 927ℓ⁴ − 3135ℓ³ + 2433ℓ² + 275ℓ − 100).
+  - It combines variable-κ moments (κ-feedback for κ ∈ [7/10, 3/4]), **our weighted-numerator construction (08, 10499/12000)**,
+    reflected physical numerator estimates, and a "completed zero-slot moment" from an earlier 4/33 branch.
+  - This is a re-tuning/combination of P78-class corrections (Δ ≈ 7·10⁻⁵ below the cubic root), not a new mechanism.
+  - The low side is the same 11/12 − ℓ/4, so our structural analysis (wall, Gram, counts) applies unchanged.
+- openai/math HEAD is still fd4aeeb. Web search finds nothing new.
+- **The record to beat meaningfully is now 0.874887 (pending). The 27/31 target is unaffected.** Next scan no earlier than ~14:40 UTC.
