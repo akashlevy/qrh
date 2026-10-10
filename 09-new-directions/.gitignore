@@ -1,3 +1,7 @@
 __pycache__/
 agents/lit-combos/lit/afaveri_site/
 agents/lit-combos/prof.out
+agents/cB-numerics/**/*.npz
+agents/cB-numerics/cubic_data
+agents/cB-numerics/allprimary
+agents/cB-numerics/data/

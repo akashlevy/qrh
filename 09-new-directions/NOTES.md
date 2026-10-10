@@ -512,3 +512,23 @@ Files: `agents/cB-theory/{NOTES.md, local_fe.py(.out), orient_check.py(.out), ff
 - openai/math HEAD is still fd4aeeb. Web search finds nothing new. **No result below 0.8749.** Next scan no earlier than ~12:30 UTC.
 - Lean: `/home/user/leanbuild` built the full OAI library (akashlevy/math c388e88e6, Mathlib d13f23b, PNT+ patched) from source.
   6817 jobs, no errors, finished 10:29 UTC. The formalization environment is ready.
+
+## 31. Agent report: cB-numerics (round 4, finished ~10:55 UTC) — consistent with c_B = 4; controls validate the conductor rule
+
+Files: `agents/cB-numerics/{cubic_data.c, verify.py, onset*.py, groups.py, fit_half.py, runs/}`. Large `*.npz` data files are not committed.
+- Exact cubic Gauss sums for all primary primes with N ≤ 10⁷, and 3.53M squarefree n.
+  - G̃³ = −π/|π| verified to 6e-12 on 665k primes.
+  - Twisted multiplicativity g(1,ab) = (a/b)₃²g(1,a)g(1,b) and cubic reciprocity verified.
+- Controls recover the conductor rule of §29 (onset statistic E = |T|²/Σ|a|²W²):
+  - completed cubic Kubota, index class h: fitted c = 0.96–1.01;
+  - class h²: fitted c = 1.98–2.11;
+  - L(s,χ_h) onset at about 6N(h), as predicted.
+- For B itself (sextic, five Γ-factors, archimedean scale ≈ 128.6, predicted Q_eff ≈ 1.65·10⁴·N(index)), the onset is out of reach for X ≤ 10⁷.
+  - There is an h-independent "sag" of E to about 0.5 at X ~ 10⁵–10⁶, source unidentified.
+  - No small-constant c_B = 2 behaviour is seen. The numerics do not contradict 4, but cannot discriminate.
+- Local theory (agrees with cB-theory):
+  - B⁺_π = (Z₄ − h₅X⁵Z₀)/(1 − h₁h₅X⁶);
+  - B⁻_π = Z₂/(1 + h₃X³).
+  - So the orientation forced by detection has conductor N⁴, and the non-detecting orientation N².
+
+**Verdict on the cubic θ₃⊗θ₃ architecture:** dead (c_B = 4, proved modulo standard Kubota theory, consistent with numerics). Remaining: the two-/three-variable split (agent `twovar`).
