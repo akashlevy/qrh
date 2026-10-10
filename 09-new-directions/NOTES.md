@@ -658,3 +658,28 @@ Files: `agents/hls/{HLS.md, hls_lib.py, gram_scan.py, sextic_kubota.c, block_dec
 **Round 6 conclusion:** both halves of the 19/22 conditional theorem reduce to the same decorrelation across mark blocks, once
 for characters (HLS) and once for theta coefficients (H2). Numerically each is exactly random-matrix-like. A proof needs a
 freeness/uncertainty principle for structured subspaces, which nothing in the literature supplies.
+
+## 38. Agent report: radical (round 7, finished ~13:50 UTC) — 24 strategies triaged; none gives any half-plane on its own
+
+Files: `agents/radical/{RADICAL.md, dictionary.py, model_radical.py, run_ceiling.sh, runs/}`. The ext/ snapshot of qrh-debruijn-newman is not committed.
+- **Strategies triaged.**
+  - Eisenstein scattering, Maass–Selberg and Sarnak's method; Langlands–Shahidi on covers.
+  - Resonance gaps, fractal uncertainty and Lax–Phillips (equivalent to the problem; they need a gap of 0.0626).
+  - Kuznetsov and Kloosterman zeta (Ramanujan sums have no Weil saving).
+  - Weil positivity, Li coefficients, de Bruijn–Newman (they see bounded height and grade by (2β−1)/γ², not β).
+  - Nyman–Beurling, Beurling L^p and horocycle rates (equivalent; stuck at the trivial endpoints).
+  - Turán, pretentious methods, Type II, Landau (Beurling systems satisfy all their inputs).
+  - Frobenius determinants; function-field transfer; random-matrix models.
+  - **None gives any θ < 1** except via P78's μ-absorption at the cubic-cover theta.
+- de Bruijn–Newman spinoff: Λ ≤ 2(θ−½)² is one-way (Ki–Kim–Lee). The record 0.874887 gives Λ ≤ 0.28108.
+- **The families bootstrap is already P78's logic.** Zero-freeness right of β* feeds Halász–Montgomery only for σ > (1+β*)/2 ≈ 0.94. Payoff 0.
+- **Truth ceiling of the architecture** (exponent model, all open inputs assumed):
+
+  | inputs assumed | θ |
+  |---|---|
+  | (H1)+(H2) | 19/22 |
+  | (H1)+(H2) + DH counts | 0.85955 |
+  | (H1)+(H2) + GRH rows | **6/7** (tight at row range h = 6/7) |
+
+  This is the law θ ≥ 1 − h/6, where 1/6 is the copy density of order-6 families. Denser copies need order < 6, which μ-absorption excludes.
+  **So 6/7 is the ceiling of the metaplectic method even with every frontier input.**

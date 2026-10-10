@@ -6,3 +6,4 @@ agents/cB-numerics/cubic_data
 agents/cB-numerics/allprimary
 agents/cB-numerics/data/
 agents/cB-numerics/runs/*.log
+agents/radical/ext/
