@@ -1,0 +1,14 @@
+'QRHResearch.KappaThirteenEighteenths.certified_bands' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRHResearch.KappaThirteenEighteenths.terminal_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+QRHResearch.KappaThirteenEighteenths.terminal_certificate.{u_1} {α : Type u_1} [Fintype α] [DecidableEq α]
+  (M : Ideal OAI.SevenEighths.HeckeFamily.O) [NeZero M] (H : Subgroup (OAI.SevenEighths.HeckeFamily.O ⧸ M)ˣ)
+  (hH : OAI.SevenEighths.RayOrthogonality.globalUnits M ≤ H) (W : ℝ → ℂ)
+  (aslot bslot a b radial Bmask L lo hi Mcap κ ε : ℝ) (haslot : 0 < aslot)
+  (hWs : Function.support W ⊆ Set.Icc aslot bslot) (hW : ContDiff ℝ (↑⊤) W) (hbslot : 0 ≤ bslot) (ha : 0 < a)
+  (haUpper : a ≤ 1 / 4) (hb : 1 ≤ b) (_hrad : 0 < radial) (hmask : 0 ≤ Bmask) (hMcap : 0 < Mcap) (hκ0 : 13 / 18 ≤ κ)
+  (hε : 0 < ε) (hbeta : 51 / 100 ≤ OAI.SevenEighths.HeckeZeroSupremum.beta)
+  (hκ : 2 * OAI.SevenEighths.HeckeZeroSupremum.beta - 1 ≤ κ) :
+  OAI.SevenEighths.CenteredMomentEnergyCappedWidthInduction.CertifiedBand M H hH W bslot a b radial Bmask L lo hi Mcap κ
+    ε (OAI.SevenEighths.CenteredMomentEnergyWidthSchedule.count Mcap ε)
+
+{"exit_code": 0, "elapsed_seconds": 3.337934970855713, "has_sorryAx": false, "endpoint_log": "/Users/akashlevy/Documents/riemann/research_audit/kappa_formal/logs/endpoint-axioms.log"}

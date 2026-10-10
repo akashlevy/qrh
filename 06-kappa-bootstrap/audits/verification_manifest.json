@@ -1,0 +1,47 @@
+{
+  "created_utc": "2026-10-09T20:24:22.962299+00:00",
+  "bound": {
+    "exact": "43747851/50000000",
+    "decimal": "0.87495702",
+    "family": "Finite-order Hecke L-functions over Q(sqrt(-3)); all Dirichlet L-functions including zeta"
+  },
+  "proof_status": "Complete written analytic proof by citation and modification of the explicitly listed original source lemmas, with independent agent review. Not an independent reproof of the upstream analytic results; not an end-to-end Lean verification of the new zero-free theorem.",
+  "formal_status": {
+    "claim": "Extended full energy induction with kappa >= 13/18, retaining 2*beta_star-1 <= kappa",
+    "affected_modules_compiled": 63,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "new_zero_free_theorem_formalized": false
+  },
+  "exact_checks": {
+    "stage_0": "PASS; independently rerun by referee; 35 Bernstein leaves",
+    "stage_1": "PASS; 24 Bernstein leaves; margin 1/100000000",
+    "stage_2": "PASS; 26 Bernstein leaves; margin 1/1000000000",
+    "negative_control": "Overstrong target rejected",
+    "feedback_barrier_certificate": "PASS",
+    "method_barriers": "PASS"
+  },
+  "pdf_visual_review": {
+    "pages": 11,
+    "all_pages_rendered_and_inspected": true
+  },
+  "barrier_scope": "The unchanged sufficient exponent package with the stated direct majorant and row-count formula cannot certify theta below 0.874957019420098946... through geometry and kappa feedback alone. This is not an impossibility result for changed estimates or other methods.",
+  "novelty": "No priority claim. The kappa-feedback route and limiting cubic were already described in LiXiang public work; source attribution is in the manuscript.",
+  "sha256": {
+    "output/pdf/kappa_bootstrap_proof.pdf": "e03762446a97d1838308ab9b9e3e1957a743c4627529caa990ed8251e3c0f927",
+    "research_audit/kappa_bootstrap_proof.tex": "76c54508b2d5acc413bc4c722e40e818363d5931e99f07b24c5337c9f3ba0198",
+    "certificate.py": "2a97ced551b202cff52355fce1505e77b5c071e4526c20d679a83ea28bfe81e3",
+    "research_audit/bootstrap_certificate.py": "208adad1a615f9c01b09377eab265d337f8b23992769306d11e4f0d56ef9ba12",
+    "research_audit/bootstrap_all.json": "5d803da56749a21f13e788876a8bb8c545112fc6e7ec4b845747c5d89861c091",
+    "research_audit/feedback_barrier_certificate.py": "0fd1d5f121ebbaa74498a26edab5bf2299afe426244eb4dab20ee1597a3ae3df",
+    "research_audit/method_barriers.py": "4ce6a7594f0e0db84611160e51dc41d341704dc2c0d485c58df7d714ea9c92e4",
+    "research_audit/bootstrap_referee.txt": "ca8b68ac806f7a5978c6bd29d8ff56ca3b73a6d8a9a39021d58d829447618273",
+    "research_audit/kappa_formal/KappaFormal.lean": "adb873d4f7364af050aa6e616bd53f37017e10be040e6d29c08fe9b8fc44a1a9",
+    "research_audit/kappa_formal/logs/endpoint-axioms.log": "ac03cacccdc4ae8393b27ee5453c375ce766f6f47aa80e59f1f600256cd3ebee",
+    "research_audit/kappa_formal/endpoint_verification.json": "0c1c776256e400f110954b4d68c550ef20f776ccdf4207ce89c584397695e369",
+    "research_audit/kappa_formal/provenance.json": "d63e402b5d5f579f183b5dbc15c31ac8f46d60635aeb8dcc050db96e5193160a"
+  }
+}

@@ -1,0 +1,455 @@
+{
+  "base_git_commit": "817ddb5e640e6bad6f89e9ea224e63f574d099d4",
+  "lean_version": "4.34.1",
+  "semantic_kappa_floor": "13/18",
+  "retained_beta_hypothesis": "2*HeckeZeroSupremum.beta-1 <= kappa",
+  "files": [
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.CappedAnalyticSuccessor",
+      "overlay_module": "KappaFormal.Energy.CappedAnalyticSuccessor",
+      "original_sha256": "82aba2d213f3e36b30c8d6fb902bf5171f7bc0fbc54142196a4edb999f70e3d8",
+      "overlay_sha256": "63951ea0a2863e138f756a4489413e67d75ec7bbbcade9859fceff4c59ac3059",
+      "overlay_lines": 181
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.CappedLowStage",
+      "overlay_module": "KappaFormal.Energy.CappedLowStage",
+      "original_sha256": "509429faea3d5a14c221c3e404ab8f6d6bb0f2f020354287dcf3cd15d8db46f1",
+      "overlay_sha256": "f94803755b5707dfa75f2c130554f8fb84ed1e7781d9b7d70e19ca5afa81e6e5",
+      "overlay_lines": 109
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.CappedSuccessorPacking",
+      "overlay_module": "KappaFormal.Energy.CappedSuccessorPacking",
+      "original_sha256": "5106ca8ff2fa0f3fc06a6b71f747c07860e81007f78035b41b4539c8fb61a192",
+      "overlay_sha256": "6690a3b46520f006826a34936165c1b9790a9023840b1597d9def0cc0a2c2aeb",
+      "overlay_lines": 112
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.CertifiedExistence",
+      "overlay_module": "KappaFormal.Energy.CertifiedExistence",
+      "original_sha256": "7e2ebe2995d879e52c0242977ffae3b63ba34c501aa2c62da39a4c02f7108ac6",
+      "overlay_sha256": "23ff76b0fc4a830745f17e1a800b0320c54619904e7c9feec704e2c8ecfd9e72",
+      "overlay_lines": 55
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.DeletedRobustGeometry",
+      "overlay_module": "KappaFormal.Energy.DeletedRobustGeometry",
+      "original_sha256": "05602688b6506ee25531054f14313fbdd011e6cf73f6311a863efc626abf92b1",
+      "overlay_sha256": "fa1129c27f73e79a525d2044a2517ecbf66b73fb2232f5363de4e046b53a3472",
+      "overlay_lines": 85
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.FirstSourceParameters",
+      "overlay_module": "KappaFormal.Energy.FirstSourceParameters",
+      "original_sha256": "366aab890e90135d6e2a91597a5fc8c7f608332cbd623f64075d10d9665ca334",
+      "overlay_sha256": "fdd3f1fce8f60bcb515e4a90dbac354f421e2ce6d13f3039ab8eb87218d9a894",
+      "overlay_lines": 102
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.LiveClippingDefect",
+      "overlay_module": "KappaFormal.Energy.LiveClippingDefect",
+      "original_sha256": "d4ed7da6c9fc5f8a59bb20047e7c29ed16cf3bf1e6a2882c1bd4025054c3ce05",
+      "overlay_sha256": "e367e4fe3f194671c07bbf00c3d9657bb242c70daddedd70844cd4cc3c2bf74a",
+      "overlay_lines": 283
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.NaturalHighStage",
+      "overlay_module": "KappaFormal.Energy.NaturalHighStage",
+      "original_sha256": "72829f11a174820aab0e8f2f4e06073ea31f7e7f9ee199fc4469de04a356f86d",
+      "overlay_sha256": "02cde029fe17f8c4c342f11e14211594e8b210563ffb86db46f1413fe4a86dd8",
+      "overlay_lines": 103
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.NaturalLowPhysical",
+      "overlay_module": "KappaFormal.Energy.NaturalLowPhysical",
+      "original_sha256": "455e0caec86e692c150c58e3a7a969ad8c0dd5a369d65ab0b280a40e14ca0a19",
+      "overlay_sha256": "482b6a40d082c28f28f802813676a5411181e4f72e966bdd53591a98cc639ae6",
+      "overlay_lines": 138
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.NaturalLowStage",
+      "overlay_module": "KappaFormal.Energy.NaturalLowStage",
+      "original_sha256": "e53dce11390ab5eecafbf4943d1ee1d4d1e8f2ad6d33f2a3845fe9d8d2efeba2",
+      "overlay_sha256": "b583e5a2dbec22d01cb86ad5702cefc68ba53890fc2a8a7b8e287b3a033dd666",
+      "overlay_lines": 151
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.NaturalZeroStage",
+      "overlay_module": "KappaFormal.Energy.NaturalZeroStage",
+      "original_sha256": "9cc08b590a82998c5491f8efd3a637f36662b8e7f6ed8fe6db94d69c10297460",
+      "overlay_sha256": "7b1e66b96681de477c58cf7ec835c8318a9a4313417db735bdb4663a0d92c964",
+      "overlay_lines": 138
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionBounded",
+      "overlay_module": "KappaFormal.Energy.OriginalHighReflectionBounded",
+      "original_sha256": "ba887c18c741da682ef853f008f95fafc93872e7f02ccd68280724d23a4046c5",
+      "overlay_sha256": "4df0a84c11e9c792033b696b83d2f8f18b50f2adb1b33b4225eff3f2c6c2fa4b",
+      "overlay_lines": 143
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionDeleted",
+      "overlay_module": "KappaFormal.Energy.OriginalHighReflectionDeleted",
+      "original_sha256": "84a73930305e6a4c8d338177227d6be56f741541f1120fbe9f1c848ec899b1c7",
+      "overlay_sha256": "4b013487547862a53baaa78f663d086b98e485e286f0b6717584915906f342e2",
+      "overlay_lines": 136
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionGeometry",
+      "overlay_module": "KappaFormal.Energy.OriginalHighReflectionGeometry",
+      "original_sha256": "d1d79e68372b2c15d0fbe8dd7acd5c658a59994cbf7884c45ee74947ba576e01",
+      "overlay_sha256": "49a9fbf0312cb74bf4f39a961e963beb551fa43cc4e4937048f8ed291e2db258",
+      "overlay_lines": 108
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionOriginal",
+      "overlay_module": "KappaFormal.Energy.OriginalHighReflectionOriginal",
+      "original_sha256": "7c422aee37d505fe228f34d7365d1e56bc9504e560c0dbd7e0c6001c63a7ee3c",
+      "overlay_sha256": "59e807becba3d32a06d41e4a9be48ef367795dec468ec0ba944597650cfd6bf4",
+      "overlay_lines": 122
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionSymmetric",
+      "overlay_module": "KappaFormal.Energy.OriginalHighReflectionSymmetric",
+      "original_sha256": "6b113b67cbb09c733938453b4e57c37fdf80334aeb704611c8f12447aec7e0e5",
+      "overlay_sha256": "1ba7f8e20c22aacaec0c7daca859d69ab93fb59990e044c90fc9225685cb134c",
+      "overlay_lines": 76
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.OriginalHighReflectionSymmetricBounded",
+      "overlay_module": "KappaFormal.Energy.OriginalHighReflectionSymmetricBounded",
+      "original_sha256": "5b3071addb8948ef0c09eebee660e3cbfab3e8c052ab1f5129e3145e4c5006a1",
+      "overlay_sha256": "8a7ee678f45038825d2b79c7beed3e373e0d07a948a66d9b87aef1f82b4ddcae",
+      "overlay_lines": 84
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.PositiveBalancedAdmission",
+      "overlay_module": "KappaFormal.Energy.PositiveBalancedAdmission",
+      "original_sha256": "6492f894a9ad2387ca854fbd54e32451ad6fece081d3a5e775a8ba068038e43f",
+      "overlay_sha256": "e83678b0f7e3747c61c3ff0631b3c315370dc05014119b9372537060b0a400af",
+      "overlay_lines": 76
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighAssembly",
+      "overlay_module": "KappaFormal.Energy.PositiveHighAssembly",
+      "original_sha256": "6898bdce7ca9cbb074e3e01d4356d0b50b6ac8514a0f4276f74f50c4950aad18",
+      "overlay_sha256": "6e82ec89f4846d22fab76a88c85489c00bfcfaa266dc16601bb5594a80796fd2",
+      "overlay_lines": 49
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighAssemblyBounded",
+      "overlay_module": "KappaFormal.Energy.PositiveHighAssemblyBounded",
+      "original_sha256": "e8375e19b8b4b86616eab94479dece0ceb96a61cba980a219bbfad01507d0714",
+      "overlay_sha256": "59782194850331fdfb3f9c7e98e8b14f3d0ece6617bf4de3278f49f5f2300ea3",
+      "overlay_lines": 114
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighBound",
+      "overlay_module": "KappaFormal.Energy.PositiveHighBound",
+      "original_sha256": "a183fa2d68609da33b2637ab33b3c354bcc06886c927913d868c6bc1c463668a",
+      "overlay_sha256": "05400d4effef9b31de5c88e700d31943ef0715c8069a70e43753ff722721b9d7",
+      "overlay_lines": 192
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighParameters",
+      "overlay_module": "KappaFormal.Energy.PositiveHighParameters",
+      "original_sha256": "663ed4f4f13fd9ada1ebb9873c53ba60e712b0a6023f227389e8e15481a96da8",
+      "overlay_sha256": "e9d5569866761d3ff6ae2863c3111479b3d56b73aa3de9f1d6619215e6bc3376",
+      "overlay_lines": 66
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighPhysical",
+      "overlay_module": "KappaFormal.Energy.PositiveHighPhysical",
+      "original_sha256": "7b257b633389cbf0d9771cab83fb0c90e38c2bb2103dbd753ae853e052f818f2",
+      "overlay_sha256": "a84ee32942469c458fee3db17fc44dc57a5a3dae8ef1d60f932706f89d148f11",
+      "overlay_lines": 130
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighSource",
+      "overlay_module": "KappaFormal.Energy.PositiveHighSource",
+      "original_sha256": "1cdd964dd6530b4b2b8eef4f8f4937e27867dbfd92c909e16201a3ebb2e260e5",
+      "overlay_sha256": "23a01573e0a6d41b7dbed78a9356d168ed550a45da56216c04f7a1c17591886d",
+      "overlay_lines": 81
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighSourceBound",
+      "overlay_module": "KappaFormal.Energy.PositiveHighSourceBound",
+      "original_sha256": "d3b7d742776713f1a9bda2384d6fd7965192cded9f0c43b3989489b358a80beb",
+      "overlay_sha256": "a19c1a5392c2b98f2fa561d28f06ead406d65d46a9ba400f5e5984b46e2ce076",
+      "overlay_lines": 158
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.PositiveHighSourceBounded",
+      "overlay_module": "KappaFormal.Energy.PositiveHighSourceBounded",
+      "original_sha256": "1e68fe297eb34aa4d2acc9f8955c5cbbf6e32213f61663e54ec152ec4bbf9fcd",
+      "overlay_sha256": "98c81f06396a5339e31443fe073cc8be4e454f8bae508f1ab18225f1c9fac7b2",
+      "overlay_lines": 121
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLiveBounded",
+      "overlay_module": "KappaFormal.Energy.ReferenceLiveBounded",
+      "original_sha256": "180e86fa928ecabc25f20c61f023f30a40eeb282b75b890b1e449d30af6da381",
+      "overlay_sha256": "13df956b14ac7ece6210a7a3a0f97fc436413dc274de7209250cde6496d0d3c3",
+      "overlay_lines": 92
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLowBranchGeometry",
+      "overlay_module": "KappaFormal.Energy.ReferenceLowBranchGeometry",
+      "original_sha256": "c6fa7b18438193bd3a8d6e882cab6de44d6bde488b1c00a49def2f16a45e2f30",
+      "overlay_sha256": "b94a5bf588b1d24074dcb190ee28b62d2eb52718248324b171bc998411950e24",
+      "overlay_lines": 61
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLowReflection",
+      "overlay_module": "KappaFormal.Energy.ReferenceLowReflection",
+      "original_sha256": "141b3e6b482009644adc7bb00edc0ab5fa0542c89bb89ae59a582518bfe5fe51",
+      "overlay_sha256": "5cda4f3f2fda7675a983f9eb4e4af255862b7119540dd214cc56ae273577dc03",
+      "overlay_lines": 99
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLowReflectionError",
+      "overlay_module": "KappaFormal.Energy.ReferenceLowReflectionError",
+      "original_sha256": "fbb080d5a8f268ac104455811b8385cfa5592167d2d837fbae366706774b0105",
+      "overlay_sha256": "d1c0c91c86dda18d66eb81d199a63b3219a89d1af98373e547477420a398b5df",
+      "overlay_lines": 102
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ReferenceLowWindow",
+      "overlay_module": "KappaFormal.Energy.ReferenceLowWindow",
+      "original_sha256": "7a065548822319a1df9c784d18db052f7e394f082c0b8bfef6e61e03d594be3b",
+      "overlay_sha256": "59a4d3fb4a8335668dce20b2c59fb3d41a72706d23409e6a5cf7acb5bf712581",
+      "overlay_lines": 32
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustBounded",
+      "overlay_module": "KappaFormal.Energy.ReferenceRobustBounded",
+      "original_sha256": "37c4c367d41e2b980e8dc30762c6c4d3f53609dd655c11f5fcfbe7e1ecd08f7a",
+      "overlay_sha256": "a786378821f21862b9060a1d2420a793b37a2569f6f6b4588c614578f6e692ef",
+      "overlay_lines": 143
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustDeletedEnergy",
+      "overlay_module": "KappaFormal.Energy.ReferenceRobustDeletedEnergy",
+      "original_sha256": "9a7e96bf64d40c98eed0392deff4a99c1e1b6ccdbee11dc759d524ad5a68cd3d",
+      "overlay_sha256": "be2a3f19a33d71ea7f2daadc72e348e44c1a936b92da2112788d985896902b82",
+      "overlay_lines": 135
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ReferenceRobustOriginal",
+      "overlay_module": "KappaFormal.Energy.ReferenceRobustOriginal",
+      "original_sha256": "84afd481b291a2185a09bc81133c65752d4f94b211fe276871cf616d57645bc5",
+      "overlay_sha256": "ceba3c1d1a594278e6506ce4ba7b5790d3be121556abca313d2ba830f1c83ca6",
+      "overlay_lines": 122
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.StageMonotonicity",
+      "overlay_module": "KappaFormal.Energy.StageMonotonicity",
+      "original_sha256": "554de85d6aa0b143062924a11b8c7d4285938a8ae152ddc36c8adcb7be8476c9",
+      "overlay_sha256": "3cf2c8cabd0af8879a513481505e1cd76fa52d4786af704e621a8a744fa6a7e3",
+      "overlay_lines": 105
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroBalancedAdmission",
+      "overlay_module": "KappaFormal.Energy.ZeroBalancedAdmission",
+      "original_sha256": "9bc95b14141623b0861c87eca06f7487784d035c1f1df7bc3f8933429595b503",
+      "overlay_sha256": "e0b8af7d59af6d8b7c8ea7e9afc2687ad65726de136baee00aecd61e1e1e4e26",
+      "overlay_lines": 47
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroBalancedDictionary",
+      "overlay_module": "KappaFormal.Energy.ZeroBalancedDictionary",
+      "original_sha256": "12c986d7a030df465465cb9071d0bd4911491871ba60f118bfd67bca24ca1665",
+      "overlay_sha256": "73f48fe1a6ea60bb16e28b55d2b86b8b1ed0e2460dd5c849c394feaed4016efb",
+      "overlay_lines": 59
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthBounded",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthBounded",
+      "original_sha256": "bc30e4131fcfba17b2f354bbfb7c3ac5ac09aaca19f41a1e5f65b1fbe567359a",
+      "overlay_sha256": "87b911fe44d254b99079304fe11bbddfd96d245b1a475f7676a1ef4797b3bdbe",
+      "overlay_lines": 92
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthBounds",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthBounds",
+      "original_sha256": "5174365a159b18786402a811396e4f238ebdcf389f1be54ccaef2d5f8beda71d",
+      "overlay_sha256": "cba5b1eff763c3003fc07efd144d90d96f9734b9511d9f5d18429803fe042b67",
+      "overlay_lines": 65
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthContourBounded",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthContourBounded",
+      "original_sha256": "e5d8c212e4abddfb424ec7bd7b02321d8c6088c6d04e020745901cdfcf2494cc",
+      "overlay_sha256": "7c145c7c107cff3ceefae248f4389f9d2ea0162aea9d1445176152a34e4e736b",
+      "overlay_lines": 129
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthHighBound",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthHighBound",
+      "original_sha256": "5a53300ffebda3f55948600d46cd38f145d80bc43cf3788faec7c45e921ba153",
+      "overlay_sha256": "a5c9b74d3cf5eee4a034909db0579c77394107ce2074295494b9f21d066a9f2d",
+      "overlay_lines": 195
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthMoments",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthMoments",
+      "original_sha256": "6910d1c9e376725e101791d8628273be747069014825cd9467d223b2cdf16529",
+      "overlay_sha256": "d54c268382089eb826c92f9821665f9af3bca25d2b9296cb4512e9a6a24a0bda",
+      "overlay_lines": 77
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthOriginal",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthOriginal",
+      "original_sha256": "b9837817280826f1fc83eb685ef24b4394e7c2effd186383a82522c00f913724",
+      "overlay_sha256": "e9bdb626cd508ddfb6aa4b6996661634747f55182c2c68b73d53fc136c032665",
+      "overlay_lines": 249
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthPhysical",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthPhysical",
+      "original_sha256": "644a136138d172836bd5a5c9ac82b414eca9c0f4d2fd7bb7c9993a145d21cf40",
+      "overlay_sha256": "a0578ce2021cbe01afc87da298b1adbeec4928b7c072a1bd6a806563ff9c7108",
+      "overlay_lines": 146
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthPhysicalReindex",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthPhysicalReindex",
+      "original_sha256": "bed55f933cd66bfada806d5035afe5235a0474b138f1826702a9e63f1c47d05a",
+      "overlay_sha256": "e2da406fbf97a34ce60d3694342d5bae36dd181fbc4a6a51f9e63b8d8ab16081",
+      "overlay_lines": 84
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthReflection",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthReflection",
+      "original_sha256": "7fd80192a4df58d209c50f051c8bb3992869addb76d06cd30501fc57850d3090",
+      "overlay_sha256": "e0f271a9a88790ad71211a45f787e6117607e7b73123594b9a6db2cb28c06fde",
+      "overlay_lines": 99
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthSource",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthSource",
+      "original_sha256": "57203e73f17213355ad29626d91a99303ee785f1f6e82acc59f886612725c3c2",
+      "overlay_sha256": "c56442db6e6664b729dca1648fc231c3e610d8550a980656cb3bfe9598f4c33f",
+      "overlay_lines": 35
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthSourceControlled",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthSourceControlled",
+      "original_sha256": "ba493dd9438da43f605506cbc2d36e52568b37f4ffe0ec5695db65deccdca4f6",
+      "overlay_sha256": "890b740b58ab2e065808763f8bf1b5d70d941d620da3714f0099853d4732c37c",
+      "overlay_lines": 116
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroGrowthWindow",
+      "overlay_module": "KappaFormal.Energy.ZeroGrowthWindow",
+      "original_sha256": "e70e1777ff7bd05db8759acf6059535e7132b4596741818b70bfe5802f256966",
+      "overlay_sha256": "466dc2fa2f112f92d2dbaaeca59533f4a79e9cb6e729782ce6627efb5c76bb05",
+      "overlay_lines": 82
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroReferenceBounded",
+      "overlay_module": "KappaFormal.Energy.ZeroReferenceBounded",
+      "original_sha256": "3ab76c162bcae1bd3178b5e54c4431c9e9c146bee5d2d715958fb522b5148de4",
+      "overlay_sha256": "ca2fa46e0f271e3401379888ffc5fdb2addebb2b345a09c1b19298be5bf7100e",
+      "overlay_lines": 112
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroReferenceDeleted",
+      "overlay_module": "KappaFormal.Energy.ZeroReferenceDeleted",
+      "original_sha256": "c494ccbab490590aa76a9116ed3698ca05056f9291d6ea58d630f74856bf1d24",
+      "overlay_sha256": "a29d3e797419428b523b2aa9aa653f42df8807869909a67e18c40a57e1f06518",
+      "overlay_lines": 110
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroReferenceLiveBounded",
+      "overlay_module": "KappaFormal.Energy.ZeroReferenceLiveBounded",
+      "original_sha256": "c48bf82a703b5be0683e8abca5773ce1e183688b5bac1b5e9211c1e8a0bd2ebc",
+      "overlay_sha256": "f39f7a956fc637a303ea9a2956c291c8de560fb94e8a9928ed61ac5493fe9fce",
+      "overlay_lines": 57
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroReferenceOriginal",
+      "overlay_module": "KappaFormal.Energy.ZeroReferenceOriginal",
+      "original_sha256": "8d9c79fd2c8c701a6c1676fd30affc05d58ad14632348eb41ec18714e52db575",
+      "overlay_sha256": "2f545bdb0c29faaeda7461cf7caf51aed5319485955caa5e28e1c2f0e78963a4",
+      "overlay_lines": 78
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroReferencePhysical",
+      "overlay_module": "KappaFormal.Energy.ZeroReferencePhysical",
+      "original_sha256": "acd63c477c3b6896f29449fdf86f0a18f48b04b43ef2b2362611921720897537",
+      "overlay_sha256": "56ddbf85053f6019963c1a0f0a045d74183952c89310c3e971c7554f27adeed2",
+      "overlay_lines": 46
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroReferencePhysicalBounded",
+      "overlay_module": "KappaFormal.Energy.ZeroReferencePhysicalBounded",
+      "original_sha256": "fcc6e60490063011a089f99251785e1c8ff4ff6c76f2d18d5638a110462364ed",
+      "overlay_sha256": "8a585780a3874801561080622e93d30badb699a06dbedec0847ed7e429165425",
+      "overlay_lines": 82
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroReferenceReflection",
+      "overlay_module": "KappaFormal.Energy.ZeroReferenceReflection",
+      "original_sha256": "817c1a8c98ee4b36fcc03d42f7fbdde309ffbc2c2398050282ecc0c82b747d3e",
+      "overlay_sha256": "41062a36fba94aac2e8aa65f4727c6dbe9fe40a09412380c4b399819cde6717f",
+      "overlay_lines": 80
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroReflectionSupport",
+      "overlay_module": "KappaFormal.Energy.ZeroReflectionSupport",
+      "original_sha256": "1fc50643ff06b378b20d586d66d13f21d293095297bef1b5ea06e5ed6e32d12b",
+      "overlay_sha256": "24f39db1f2f19794b7383f4ab339295f006de23fae21cdeea2d1af2a5c22252f",
+      "overlay_lines": 166
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroRetainedError",
+      "overlay_module": "KappaFormal.Energy.ZeroRetainedError",
+      "original_sha256": "4cf9439e276aa7cda292249cee678cfad715efe8c0aec8895d0e33f649da19d7",
+      "overlay_sha256": "568e00b03698375b44a1db6f07b2b5c0f9925cbc1214a93fbb494d4a6c48490a",
+      "overlay_lines": 228
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroUnbalancedOriginal",
+      "overlay_module": "KappaFormal.Energy.ZeroUnbalancedOriginal",
+      "original_sha256": "feaca73473c33b86011238a9749717772a6e7ad01f0e7c7f1af0889d3e874a30",
+      "overlay_sha256": "d9c32e06f005b4477697196a4ef720ac8baf66abea8e975c0657c8cb1285ef65",
+      "overlay_lines": 87
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroUnbalancedOriginalDeleted",
+      "overlay_module": "KappaFormal.Energy.ZeroUnbalancedOriginalDeleted",
+      "original_sha256": "376fe3719cae5999a3490c0dd76e1bec395edea469adf4face3ffa0b5fd9491f",
+      "overlay_sha256": "a9987b8a340376222e71b7ea5898c394fb1e463af96453249f4914386feabb7c",
+      "overlay_lines": 110
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroUnbalancedOriginalGates",
+      "overlay_module": "KappaFormal.Energy.ZeroUnbalancedOriginalGates",
+      "original_sha256": "a88a9fa3f8d0b4219999e2645a2a02569e84d73d75edc9138c987afe4f0e30a0",
+      "overlay_sha256": "fedbf91f0a199e9f28491cb6cca377b150532e1a03bf44e7fc901f3e8871fe96",
+      "overlay_lines": 37
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroUnbalancedOriginalPower",
+      "overlay_module": "KappaFormal.Energy.ZeroUnbalancedOriginalPower",
+      "original_sha256": "56043e791597b1fe70673e37275df381630fe619aa82ef2de4c58b05eb9bbf94",
+      "overlay_sha256": "fe0ed3df03cfe344ff07b789769c096817305a3d89c5e29a342da8b9033d8c3a",
+      "overlay_lines": 112
+    },
+    {
+      "original_module": "OAI.NumberTheory.DirichletL.Energy.ZeroUnbalancedOriginalSource",
+      "overlay_module": "KappaFormal.Energy.ZeroUnbalancedOriginalSource",
+      "original_sha256": "3abf1cade3f2734e5c37aad7de945763c8c30406339a6bed6a3b87369c78e73e",
+      "overlay_sha256": "aeeaf75a6ebb76114b1d9bea015d21232f08da45bd9a2b7ccb82d57f2ae36424",
+      "overlay_lines": 77
+    }
+  ],
+  "autoImplicit": false,
+  "compile_memory_limit_megabytes": 8192,
+  "compile_threads": 2,
+  "all_63_overlay_modules_compiled": true,
+  "build_log": "build.log",
+  "total_overlay_lines": 6861
+}

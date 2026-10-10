@@ -1,0 +1,243 @@
+Independent adversarial audit of the kappa-bootstrap, 9 October 2026
+
+Audited proposal:
+  research_audit/plain_moment_extension.txt
+  research_audit/bootstrap_certificate.py
+
+Source manuscript:
+  formalize_11_12/papers/paper78.tex
+
+Verdict
+-------
+I found no fatal mathematical obstruction to the proposed first bootstrap
+step, relative to the source manuscript's analytic theorems. The extension
+of its fourth-moment lemma has a concrete proof by modifying two numerical
+inequalities, not an additional conjectural mean-value input. The first
+stage's exact certificate was independently rerun and passed. Its negative
+control rejected the overstrong target.
+
+This is an audit of a mathematical amendment and its exponent certificate.
+It is not a fresh verification of every theorem in the 16,000-line source,
+and it is not Lean kernel verification of the new theorem. The low-side
+Gram split and its missing pi-pairing estimate are not used in this route.
+
+1. Range extension of Lemma plain
+--------------------------------
+I searched every occurrence of kappa and the potentially consequential
+constants 3/4, 7/2, 2M/9, M/21, M/20 in the complete printed proof, lines
+12531--14986. The uses identified in the proposed amendment are complete.
+
+The source's prime bound uses logarithmic control at
+  s_kappa=(1+kappa)/2 >= beta_*.
+For kappa>=13/18, s_kappa>=31/36. The logarithmic-control lemma is uniform
+on a in [1/2,1], hence remains applicable. The fixed positive contour
+displacement e, rather than a positive gap between s_kappa and beta_*,
+gives the zero-free contour. Equality beta_*=s_kappa causes no problem.
+Expanding the finitely many fixed slot characters preserves the class of
+finite-order Hecke characters to which the global bound applies.
+
+At the terminal width floor, the only required error is kappa*z<=M/6.
+The auxiliary estimate z<=2M/9 changes to z<=3M/13, but no later
+argument needs the sharper former estimate.
+
+In the positive-slot centered comparison,
+  (6*kappa-1) z <= M-A < M/6.
+Since 6*(13/18)-1=10/3, this implies z<M/20. That is exactly the
+bound used in the two subsequent estimates:
+  A_comp <= 23M/30+xi,
+  A_comp+(6*kappa-1)z <= 14M/15+xi.
+Both required distances to the boundary are at least M/15 before xi,
+so the existing choice xi<=rho/30 survives unchanged. Also A-z>2L,
+where L=M/4, by a large margin.
+
+The remaining uses need only kappa>0, kappa<=1, and
+0<=6*kappa-1<=5. In particular, removing a slot of length d reduces
+the affine defect by 6*kappa*d at squared cost kappa*d, yielding the
+same defect/6 charge and the same one-slot overshoot. The aggregate
+Lipschitz constant remains bounded by |Delta M|+|Delta A|+5|Delta z|.
+The mesh/slot-count quantifier ordering and induction depth therefore
+do not acquire a dependence on a gap kappa-3/4.
+
+2. The modified selected-row count
+---------------------------------
+At fixed kappa supplied by an already proved bound B, c=1/(6*kappa)
+is the actual plain capacity coefficient, because two copies of the
+plain witness require 2m+6*kappa*z<=1. Thus replacing a baseline capacity
+by an inferior one, and its old Delta/4 penalty, is unnecessary.
+
+The two short-count exponents are exactly
+  A_I(r)=1-delta*[x+(1-x)r],
+  S_t(r)=1-delta*[2cx+(2-4cx)(t-r)].
+Their slopes have opposite signs and their crossing has denominator
+D=3-(1+4c)x. For c in [2/9,3/13], x in [0,1/2],
+  D>=53/26,
+  r_*(1)>=(3-2c)/(5-4c)>=23/37,
+  r_*(3/2)=1,
+  1/3<=t-r_*(t)<=1/2.
+These prove that every selected inverse capacity is <=7/37 and has
+the same strict second-width margin 9/37 after the decrement. Every
+selected plain capacity is <=c/3<=1/13. Supply >1/5 is therefore
+more than sufficient. The source's zero-capacity and r=1 neighborhoods
+continue to use the unrestricted zero-slot estimates.
+
+With P=(2-4cx)(1-x), the crossing and long count balance at
+  J=(5/6-delta)D+delta*P,
+  t=1+delta*P/(2J),
+  R=1-delta+(5/6-delta)*delta*P/(2J).
+P>=10/13 and D>P make J uniformly positive on the closed parameter
+rectangle. There is no singularity at delta=5/6; there t=3/2 and
+R=1-delta, which is also provided by the source's no-slot endpoint
+argument. With B=34999/40000 the actual bin ceiling is smaller than
+5/6, so certifying the larger rectangle is conservative.
+
+3. Low-side normalization and the changed geometry
+--------------------------------------------------
+The manuscript's fixed-geometry row-norm conclusion cannot simply be
+copied when ell>1/6. The amendment correctly returns to the proof.
+At M=1-ell, M'=M-2d and ell'=ell-d, the proof's key identity remains
+  M'+ell'-1=-3d.
+It gives T_d<=H-3d+o(1), and its two reflected-energy branches give
+  E_ref<=M'+((1+3ell'-2M')/4)_++o(1)
+       =M'+((5ell-1+d)/4)_++o(1).
+
+After summing rescaled tuples the extra exponent is
+  f(d)=-d+(5ell-1+d)_+/8.
+For ell<=1/5 it is nonpositive on [0,ell]: it starts at zero and
+has slopes -1 and -7/8. Thus the original total low estimate survives
+despite the positive energy correction of some individual subsets.
+The stage-one certificate checks ell<1/5 and the requisite positive
+rescaled lengths and Gram domination with substantial margins.
+
+Independently checking the normalization:
+  lx=(1-ell-b)/2, ly=(1-ell+b)/2,
+  h=1-lx+ell=(1+3ell+b)/2,
+  C(s)=s-(4+b)/6.
+The low exponent lx/2+b/12 equals C(theta) precisely at
+theta=11/12-ell/4. This is exactly the certificate's ell definition.
+An equality of these exponents is allowed: under beta_*>theta the
+positive contradiction gap absorbs the arbitrarily small low-side
+loss. No fixed positive low-side margin is required.
+
+4. Euler regions and the contour/tail amendments
+-----------------------------------------------
+The four shared contour statements do print sigma0>=7/8. The amendment
+must be included in the new theorem, rather than treating them as
+literally applicable without change. I inspected their uses and the
+source's local-factor proofs around lines 4080--4180 and 8655--9190.
+
+At x>=theta, w>=19/20, z>=33/200, theta>=437/500:
+the denominators 1-D, 1-V, 1-R stay uniformly nonzero;
+the good-prime error powers 4-6x-6z and 1-x-w-6z remain below -1;
+the other displayed defect powers, including -x-w, are below -1;
+and the ramified defects remain strictly negative. Thus the required
+positive majorants, holomorphy, and subpower bounds persist.
+
+The principal approximation powers -x, -6z, 4-5x-6z, 1-w-6z
+are all <=-theta. Hence the principal multiplier remains
+  B_p=-1+O(q_p^(-theta)),
+uniformly in phases and heights. The principal residue normalization
+and a positive approximation margin survive after replacing 7/8
+by theta in the relevant inequality.
+
+On the small-row line x=beta_*+e, w=1/2, z=17/50, choose a first-region
+epsilon0<=theta-1/2, rather than the hard-coded 3/8. The displayed
+off-row powers remain negative. On a ramified row the strict term
+has exponent <=1/2; the other boundary powers -1/2, 3/2-2x,
+2-3x, 3-5x remain <=1/2. Thus the quotient-free local tuple bounds
+used for small rows survive. Large-row estimates use the unchanged
+absolute line (2,2,z_infinity).
+
+5. Exact certificate and closure
+-------------------------------
+I reran:
+  python3 research_audit/bootstrap_certificate.py
+  python3 research_audit/bootstrap_certificate.py --negative-control
+and saved an independent output copy as bootstrap_stage1_gram_referee.json.
+
+The first stage uses
+  B=34999/40000,
+  kappa=14999/20000,
+  theta=17499141/20000000=0.87495705,
+  b=6170279/50000000,
+  c=10000/44997.
+Its Bernstein proof has 24 leaves and certifies E(h)<=-10^(-8) on
+the entire rectangle delta in [0,5/6], x in [0,1/2]. The separate
+floor, intermediate-row, small-row, supply, local and rescaling checks
+pass. The negative control detects a negative point and rejects.
+
+I checked the polynomial construction against the generalized source
+formula
+  E(d)=a-theta+h*(z0-1/6)-a*ly-(1-a)*ell
+       -(delta/2-q)*ell+d*(R+delta/2-z0).
+At d=h, q=x*delta, the constructed polynomial is exactly
+J*(-E(h)-margin). The bivariate power-to-Bernstein conversion is the
+standard exact identity b_ij=sum a_kl*binom(i,k)/binom(n,k)
+*binom(j,l)/binom(m,l) after affine substitution to a unit box.
+Nonnegative coefficients bound the polynomial on the whole rectangle;
+this is not a sampled numerical test.
+
+The final proof still must choose zeta>0 small enough to preserve
+both supply and the endpoint margin above d=h. This is possible:
+R>=1-delta gives a positive row slope, and R<=17/12 gives a uniform
+upper slope below 2 on the stated rectangle. Thus taking, for example,
+zeta<min(5ell-h,margin/8) suffices before allocating the other real
+losses. The intermediate and floor slopes are also positive and
+their certified endpoint margins are much larger.
+
+All remaining choices have the same valid order as in the source:
+choose small moment/rounding losses; choose their uniform mesh; choose
+a fixed sufficiently large even number of disjoint slots; then choose
+principal approximation, contour and amplitude losses; finally choose
+target-dependent height ceilings after finite internal orders. Large
+K or small real margins affect constants and eventual thresholds,
+not the exponent inequalities.
+
+6. Novelty and presentation caveats
+----------------------------------
+This first stage beats Liu's algebraic value 0.874957069799..., but
+gram_split/LIT_ideas234.md already records a public Li Xiang claim
+0.874957019420... described as a kappa-feedback cubic boundary. Its
+primary source and proof must be checked before describing the present
+mechanism or a further bootstrap as new research. This observation
+does not invalidate the theorem implication audited above.
+
+The appropriate theorem status is a proved analytic amendment plus an
+exact arithmetic certificate, conditional only on accepting the upstream
+source theorems and the fully written final contour/parameter closure.
+It should not be advertised as a new Lean-verified theorem unless the
+changed analytic lemma, not only the numerical certificate, is formally
+proved in the actual dependency chain.
+
+7. Final complete-note review and stage two
+-----------------------------------------
+I subsequently reviewed research_audit/kappa_bootstrap_proof.tex in full.
+The explicit final closure now reserves zeta below both the supply and
+endpoint margins, and puts the moment/mesh/slot/principal-margin choices
+in their required order. In particular, the principal approximation
+margin mu is chosen only after the slot count, and no earlier mesh
+choice is required to depend on this later margin.
+
+I independently reran the preliminary certificate.py: all checks pass,
+with 35 boxes and endpoint margin 9/100000. I also independently ran
+bootstrap_certificate.py --stage 2. It passes with 26 exact Bernstein
+rectangles at theta=43747851/50000000=0.87495702, with kappa=7499141/10000000
+justified by the preceding stage and endpoint margin 1/1000000000.
+
+The new low-only 13/15 obstruction has an exact algebraic identity:
+  M/12-ell/6+e/2-1/30
+   = (1/5)[e-(1+3ell-2M)/4]
+     +(1/60)[e-(M+ell-1)]+(17/60)e.
+All three terms are nonnegative under the unchanged direct majorant's
+listed hypotheses. Together with g>=b/6 this forces B>=13/15.
+It is a lower bound for the supplied sufficient majorant, independent
+of improvements in high-side row counts. It is not a lower bound for
+actual zeros or an impossibility theorem for other arithmetic estimates.
+
+My final assessment is that the note supplies a complete ordinary
+mathematical proof by citation and modification of the original source
+proofs, with exact arithmetic for its new finite inequalities. It is
+not merely a framework contingent on an unproved new moment hypothesis.
+This judgment imports the source's stated analytic results, as explicitly
+declared, and does not independently certify all of their proofs. It also
+does not amount to Lean kernel verification of this new bound. No LiXiang
+ArithmeticProbeObligation is imported as an established theorem.

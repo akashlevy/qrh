@@ -1,0 +1,10 @@
+'QRHResearch.KappaThirteenEighteenths.terminal_slot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRHResearch.KappaThirteenEighteenths.slot_budgets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRHResearch.KappaThirteenEighteenths.robust_slot_budgets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRHResearch.KappaThirteenEighteenths.robust_balanced_long_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'QRHResearch.KappaThirteenEighteenths.robust_reflected_low' depends on axioms: [propext, Classical.choice, Quot.sound]
+'QRHResearch.KappaThirteenEighteenths.robust_reflected_low_admissible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
