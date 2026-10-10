@@ -1,0 +1,4 @@
+(a) theta x quadratic twists (ours)      group sizes by word length: [4, 9, 17, 28, 41, 57, 76, 97, 121, 148, 177, 209, 244, 281]  -> infinite
+(c) GL2 x quadratic twists (SY/Li)       group sizes by word length: [4, 9, 17, 28, 41, 57, 76, 97, 121, 148, 177, 209, 244, 281]  -> infinite
+(b) cubic Hecke L second moment          group sizes by word length: [4, 9, 15, 20, 23, 24, 24]  -> FINITE, order 24
+(b2) same, conductor n1 n2^2 variant     group sizes by word length: [4, 9, 16, 24, 32, 39, 44, 47, 48, 48]  -> FINITE, order 48

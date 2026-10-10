@@ -1,0 +1,44 @@
+[
+{
+"k3": true,
+"_tag": "paper+k3(cP3=2/9)"
+},
+{
+"k3": true,
+"cP3": 1.0,
+"_tag": "paper+k3(cP3=1)"
+},
+{
+"_sc": true,
+"_kmin": 0.75,
+"_tag": "paper+sc(kmin=.75: dmax only)"
+},
+{
+"_sc": true,
+"_kmin": 0.0,
+"_tag": "paper+sc(kmin=0: cP,dmax)"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"gram_b": 0.75,
+"_tag": "DIAG+gram0.75"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"gram_b": 0.674,
+"_tag": "DIAG+gram0.674"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"_tag": "provable(refA,d0=1e-3)"
+}
+]

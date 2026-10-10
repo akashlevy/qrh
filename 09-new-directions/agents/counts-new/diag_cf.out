@@ -1,0 +1,10 @@
+DIAG (R0): (0.872549871990491, 0.17646717870470263, np.float64(0.32976106666666666))
+check M_kappa k=0.9627 (LP: 0.870928): (0.870928149666582, 0.1829540680003383, np.float64(0.27403546666666667))
+needed for 27/31 with DIAG:
+  M_kappa  kappa = 0.9637
+  diag Moebius up to r1 = 1.0426
+  joint M.S diagonal up to length U^(1+w), w = 0.0657
+  joint M.S slope beyond s=1 (copies-type), lambda = 0.6158
+  plain sixth moment diagonal up to 3m <= 1+w, w = 0.2355
+full beyond-edge plain sixth moment (m <= 1/2): (0.8693513538079166, 0.1892612514350004, np.float64(0.2547612))
+DH counts: (0.8666466586634654, 0.20008003201280516, np.float64(0.001))

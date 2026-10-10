@@ -1,0 +1,9 @@
+k=2 floor vs Gram-exceptional factor f (slope f/3):
+  f= 1.00  theta=1.083333   perfect-energy: 1.055556
+  f= 0.75  theta=1.033333   perfect-energy: 1.033333
+  f= 0.50  theta=0.976190   perfect-energy: 0.976190
+  f= 0.25  theta=0.910256   perfect-energy: 0.910256
+  f= 0.10  theta=0.865591   perfect-energy: 0.865591
+  f= 0.00  theta=0.833333   perfect-energy: 0.833333
+k=2 reaches 7/8 at Gram factor f = 0.1304 (cubic-LS energy model)
+k=2 reaches 7/8 at Gram factor f = 0.1304 (perfect energy)

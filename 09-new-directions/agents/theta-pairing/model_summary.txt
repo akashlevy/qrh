@@ -1,0 +1,29 @@
+{"gram_s": 0.0}                          theta=0.874957  M=0.8332 ell=0.1668  M+ell=1.0000
+{"gram_s": 0.002}                        theta=0.873332  M=0.8347 ell=0.1653  M+ell=1.0000
+{"gram_s": 0.004}                        theta=0.871707  M=0.8362 ell=0.1638  M+ell=1.0000
+{"gram_s": 0.005}                        theta=0.870895  M=0.8369 ell=0.1631  M+ell=1.0000
+{"gram_s": 0.0127}                       theta=0.864692  M=0.8429 ell=0.1571  M+ell=1.0000
+{"gram_s": 0.002, "gram_q": 0.0}         theta=0.873332  M=0.8347 ell=0.1653  M+ell=1.0000
+{"gram_s": 0.005, "gram_q": 0.0}         theta=0.870895  M=0.8369 ell=0.1631  M+ell=1.0000
+{"gram_s": 0.01, "gram_q": 0.0}          theta=0.866832  M=0.8407 ell=0.1593  M+ell=1.0000
+{"gram_ls": 1.0}                         theta=0.863101  M=0.8486 ell=0.1043  M+ell=0.9529
+{"gram_ls": 0.25}                        theta=0.872159  M=0.7990 ell=0.0631  M+ell=0.8620
+{"gram_ls": 0.1}                         theta=0.874957  M=0.8332 ell=0.1668  M+ell=1.0000
+{"gram_ls": 1.0, "gram_q": 0.0}          theta=0.858141  M=0.8754 ell=0.0426  M+ell=0.9179
+{"gram_ls": 0.25, "gram_q": 0.0}         theta=0.872159  M=0.7990 ell=0.0631  M+ell=0.8621
+{"gram_ls": 0.1, "gram_q": 0.0}          theta=0.874957  M=0.8332 ell=0.1668  M+ell=1.0000
+{"gram_ls": 0.12}                        theta=0.874957  M=0.8332 ell=0.1668  M+ell=1.0000
+{"gram_ls": 0.15}                        theta=0.874957  M=0.8332 ell=0.1668  M+ell=1.0000
+{"gram_ls": 0.2}                         theta=0.873583  M=0.8063 ell=0.1135  M+ell=0.9197
+{"gram_ls": 0.3}                         theta=0.870182  M=0.8054 ell=0.0642  M+ell=0.8695
+{"gram_ls": 0.35}                        theta=0.868842  M=0.8130 ell=0.0579  M+ell=0.8710
+{"gram_ls": 0.4}                         theta=0.867776  M=0.8196 ell=0.0666  M+ell=0.8862
+{"gram_ls": 0.16}                        theta=0.874823  M=0.8102 ell=0.1251  M+ell=0.9353
+{"gram_ls": 0.17}                        theta=0.874512  M=0.8048 ell=0.1138  M+ell=0.9186
+{"gram_ls": 0.18}                        theta=0.874191  M=0.8052 ell=0.1136  M+ell=0.9188
+{"gram_ls": 0.27}                        theta=0.871229  M=0.7985 ell=0.0454  M+ell=0.8438
+{"gram_ls": 0.28}                        theta=0.870837  M=0.8011 ell=0.0524  M+ell=0.8535
+{"gram_ls": 0.29}                        theta=0.870491  M=0.8033 ell=0.0586  M+ell=0.8620
+{"gram_b": 1.0}                          theta=0.874957  M=0.8332 ell=0.1668  M+ell=1.0000
+{"gram_b": 0.5}                          theta=0.869495  M=0.8620 ell=0.1380  M+ell=1.0000
+{"gram_b": 0.0}                          theta=0.859796  M=0.8691 ell=0.1309  M+ell=1.0000

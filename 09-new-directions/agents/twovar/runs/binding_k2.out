@@ -1,0 +1,8 @@
+geometry l=[0. 0.], y=[0.75 0.75], M=1.500
+  low base (signal/low) = 0.8333;  + Gram exceptional/2 = 1.0833;  energy excess e = 0.0000 (nodes {'direct cubic LS': np.float64(0.167), 'Poisson': 0, 'reflect (cB=2)+cubic LS': np.float64(0.833), 'reflect+Poisson': np.float64(1.0)}, third -0.167)
+  LOW total = 1.0833
+  GRH rows: generic 1.0833; copy in var1 only 0.7917; copy in var2 only 0.7917
+geometry l=[0.679 0.071], y=[0.679 0.071], M=1.500
+  low base (signal/low) = 1.0833;  + Gram exceptional/2 = 1.0833;  energy excess e = 0.0000 (nodes {'direct cubic LS': np.float64(0.167), 'Poisson': 0, 'reflect (cB=2)+cubic LS': np.float64(0.833), 'reflect+Poisson': np.float64(1.0)}, third -0.167)
+  LOW total = 1.0833
+  GRH rows: generic 0.9583; copy in var1 only 1.0838; copy in var2 only 0.3745

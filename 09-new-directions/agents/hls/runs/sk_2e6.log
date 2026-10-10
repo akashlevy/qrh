@@ -1,0 +1,15 @@
+# 148939 primary primes with N <= 2000000
+# Gauss sums done in 198.8s
+# test prime 0: 7 = N(-2 + -3 w)
+# test prime 1: 13 = N(1 + -3 w)
+# test prime 2: 19 = N(-5 + -3 w)
+# test prime 3: 31 = N(-5 + -6 w)
+# test prime 4: 37 = N(4 + -3 w)
+# test prime 5: 43 = N(1 + -6 w)
+# test prime 6: 61 = N(-5 + -9 w)
+# test prime 7: 67 = N(-2 + -9 w)
+# test prime 8: 73 = N(-8 + -9 w)
+# test prime 9: 79 = N(7 + -3 w)
+# test prime 10: 97 = N(-11 + -3 w)
+# test prime 11: 103 = N(-11 + -9 w)
+# 564517 squarefree odd primary c in 0.2s

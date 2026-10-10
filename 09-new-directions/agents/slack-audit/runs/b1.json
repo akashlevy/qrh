@@ -1,0 +1,108 @@
+[
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"k3": true,
+"cP3": 1.0,
+"_duals": true,
+"_tag": "DIAG+k3"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"interm": true,
+"_tag": "DIAG+interm"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"tmin": 0.5,
+"_tag": "DIAG+tmin0.5"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"dmax": 0.7450996000000001,
+"_tag": "DIAG+dmax_sc"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"dgrid": 641,
+"xgrid": 21,
+"_duals": true,
+"_tag": "DIAG fine grid"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"kA": 0.95,
+"_duals": true,
+"_tag": "DIAG+kA0.95"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"kA": 0.9,
+"_duals": true,
+"_tag": "DIAG+kA0.9"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"kA": 0.85,
+"_tag": "DIAG+kA0.85"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"perfect": true,
+"_duals": true,
+"_tag": "DIAG+perfect"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"w1": 0.1,
+"_tag": "DIAG+w1=0.1"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"w1": 0.2,
+"_tag": "DIAG+w1=0.2"
+}
+]

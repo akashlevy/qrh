@@ -1,0 +1,14 @@
+N0=40000: cols 11311, rows 11279 (N(k) <= 40000)  60.2s
+row symbols for 4201 primes  68.6s
+rows done 81.2s
+K=64      F=625       rows~7      rho: beta:-0.4803(sec rms 0.768)  beta*X(coh):+0.2456(sec rms 1.197)  beta*X(rnd):-0.4284(sec rms 0.614) | rand sec rms 1.105 | H2 rms 0.4710 (rand 0.4677) max 0.969
+K=128     F=312.5     rows~19     rho: beta:+0.2221(sec rms 0.496)  beta*X(coh):-0.3604(sec rms 0.545)  beta*X(rnd):+0.0875(sec rms 0.859) | rand sec rms 1.150 | H2 rms 0.2957 (rand 0.2786) max 0.753
+K=256     F=156.2     rows~37     rho: beta:-0.5724(sec rms 0.652)  beta*X(coh):+0.1209(sec rms 0.507)  beta*X(rnd):-0.0283(sec rms 0.634) | rand sec rms 0.591 | H2 rms 0.2070 (rand 0.2007) max 0.637
+K=512     F=78.12     rows~74     rho: beta:-0.0030(sec rms 0.363)  beta*X(coh):-0.2035(sec rms 0.555)  beta*X(rnd):+0.1966(sec rms 0.522) | rand sec rms 0.391 | H2 rms 0.1585 (rand 0.1482) max 0.452
+K=1024    F=39.06     rows~139    rho: beta:+0.1058(sec rms 0.195)  beta*X(coh):-0.0964(sec rms 0.261)  beta*X(rnd):+0.1119(sec rms 0.258) | rand sec rms 0.323 | H2 rms 0.0995 (rand 0.1032) max 0.267
+K=2048    F=19.53     rows~294    rho: beta:-0.0738(sec rms 0.262)  beta*X(coh):-0.0662(sec rms 0.211)  beta*X(rnd):-0.0284(sec rms 0.212) | rand sec rms 0.249 | H2 rms 0.0791 (rand 0.0744) max 0.230
+K=4096    F=9.766     rows~583    rho: beta:-0.0319(sec rms 0.168)  beta*X(coh):+0.0078(sec rms 0.079)  beta*X(rnd):+0.0085(sec rms 0.203) | rand sec rms 0.196 | H2 rms 0.0524 (rand 0.0516) max 0.166
+K=8192    F=4.883     rows~1145   rho: beta:-0.0313(sec rms 0.113)  beta*X(coh):-0.0410(sec rms 0.053)  beta*X(rnd):+0.0067(sec rms 0.107) | rand sec rms 0.116 | H2 rms 0.0384 (rand 0.0377) max 0.109
+K=16384   F=2.441     rows~2311   rho: beta:-0.0054(sec rms 0.073)  beta*X(coh):-0.0385(sec rms 0.116)  beta*X(rnd):+0.0086(sec rms 0.081) | rand sec rms 0.081 | H2 rms 0.0288 (rand 0.0298) max 0.077
+K=32768   F=1.221     rows~4638   rho: beta:-0.0130(sec rms 0.034)  beta*X(coh):-0.0303(sec rms 0.048)  beta*X(rnd):+0.0016(sec rms 0.068) | rand sec rms 0.056 | H2 rms 0.0222 (rand 0.0219) max 0.063
+principal row |S_1|^2/d_1: {'beta': 0.05, 'beta*X(coh)': 1.04, 'beta*X(rnd)': 0.28}

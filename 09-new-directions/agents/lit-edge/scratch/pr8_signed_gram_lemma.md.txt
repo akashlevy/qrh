@@ -1,0 +1,40 @@
+### 4.1. Signed additive Gram bound
+
+**Lemma 4.1.** For (2.7), with \(P_a=Y^2/Q_0\ge1\),
+\[
+ \sum_{q_m\ll Q_0}|A_{m,\sigma,v}(Y)|^2
+ \ll (1+|v|)^J\frac{Q_0}{Y}
+ \left(1+P_a^{1/6}+\frac{P_a^2}{Y}\right)Z^\varepsilon.
+\tag{4.1}
+\]
+The coefficients must have the displayed fixed finite-ray form.
+# A zero-free half-plane from a single compensating prime
+
+**Hailey Collet**
+
+[HaileyCollet@gmail.com](mailto:HaileyCollet@gmail.com)
+
+Developed with assistance from OpenAI's GPT-6 Pro.
+
+## Abstract
+
+We prove that the Riemann zeta function, every Dirichlet \(L\)-function, and every finite-order Hecke \(L\)-function over \(\mathbf Q(\sqrt{-3})\) have no zero in \(\Re s>29/33\), with principal poles at one allowed. A cubic-theta probe exposes a reciprocal \(L\)-function after Poisson summation. One compensating prime strengthens its principal signal, while two polynomial witnesses detected at the same zero control the remaining rows. The decisive exponent comparison is an exact nonnegative square. We prove the required polynomial moments, reflection estimates, and finite arithmetic identities from classical theta formulas and large sieves.
+
+## 1. The result and the argument
+
+**Theorem 1.** Every finite-order Hecke \(L\)-function over \(K=\mathbf Q(\sqrt{-3})\), and every Dirichlet \(L\)-function, is nonzero in \(\Re s>29/33\), apart from its allowed principal pole at one. In particular,
+\[
+\boxed{\zeta(s)\ne0\qquad(\Re s>29/33,\ s\ne1),\qquad c=\frac4{33}.}
+\]
+The boundary line is not included. All \(L\)-functions are uncompleted; their prescribed finite Euler deletions remain part of the presentation.
+
+Let \(\beta_*\) be the supremum of \(\{1/2\}\) and the real parts of nontrivial zeros of primitive finite-order Hecke functions over \(K\). It need not be attained. We estimate one probe in two ways. Its physical expression is small by a signed Gram bound and cubic-theta energy. Its Poisson expression contains a nonvanishing multiple of \(1/L_K(s,\eta)\). The other terms are indexed by sextic twists. Two large Dirichlet polynomials belonging to the same zero give a sufficiently small count of the difficult twists. A prime-divisibility term, paired with a rescaled subtraction, increases the principal signal without requiring a prime-marked polynomial moment.
+
+Section 2 constructs the probe and signal; §§3–4 bound the other rows and the physical probe; §5 compares the exponents and completes the Mellin argument. Appendices A–D supply the finite arithmetic, reflection energies, and two moment proofs. The external inputs are the unconditional cubic-theta automorphy and cusp expansions [DR], the quadratic and cubic large sieves [QLS; HB], and standard Hecke, Fourier–Mellin, and complex-analytic theory. The earlier zero-free manuscripts are used only for provenance.[^provenance]
+
+[^provenance]: The probe and moment/reflection framework originate in [L; S]; the shared-witness and signed-Gram refinements in [C]. The exposition follows the dependency boundary of [K]: published foundational theorems are cited directly, while every specialized intermediate estimate used here is proved in this document.
+
+### 1.1. Arithmetic conventions
+
+Put \(\mathcal O=\mathbf Z[\omega]\), \(\omega=e^{2\pi i/3}\), \(\lambda=1+2\omega\), and \(q_a=Na\). This norm-Euclidean ring has six units. Every ideal prime to three has a unique primary generator, congruent to one modulo \(3\mathcal O\). Ideal sums use that generator once; element sums retain the units. Ideal and lattice counts up to norm \(X\ge1\) are \(O(X)\).
+

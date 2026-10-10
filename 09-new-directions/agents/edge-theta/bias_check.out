@@ -1,0 +1,6 @@
+2000 561 beta: |S|/sqrt(sum w^2)=1.77  gamma2: |S|/sqrt(sum w^2)=3.26  gamma2*alpha: |S|/sqrt(sum w^2)=0.11  mob_partner: |S|/sqrt(sum w^2)=0.71  mu: |S|/sqrt(sum w^2)=0.79   (count^(1/3)=8.2) 0s
+4000 1129 beta: |S|/sqrt(sum w^2)=0.23  gamma2: |S|/sqrt(sum w^2)=2.32  gamma2*alpha: |S|/sqrt(sum w^2)=0.37  mob_partner: |S|/sqrt(sum w^2)=0.70  mu: |S|/sqrt(sum w^2)=0.74   (count^(1/3)=10.4) 0s
+8000 2252 beta: |S|/sqrt(sum w^2)=0.10  gamma2: |S|/sqrt(sum w^2)=4.63  gamma2*alpha: |S|/sqrt(sum w^2)=1.09  mob_partner: |S|/sqrt(sum w^2)=1.14  mu: |S|/sqrt(sum w^2)=0.50   (count^(1/3)=13.1) 2s
+16000 4519 beta: |S|/sqrt(sum w^2)=0.33  gamma2: |S|/sqrt(sum w^2)=5.53  gamma2*alpha: |S|/sqrt(sum w^2)=1.53  mob_partner: |S|/sqrt(sum w^2)=0.94  mu: |S|/sqrt(sum w^2)=0.69   (count^(1/3)=16.5) 6s
+32000 9044 beta: |S|/sqrt(sum w^2)=0.42  gamma2: |S|/sqrt(sum w^2)=7.87  gamma2*alpha: |S|/sqrt(sum w^2)=0.24  mob_partner: |S|/sqrt(sum w^2)=1.45  mu: |S|/sqrt(sum w^2)=0.23   (count^(1/3)=20.8) 24s
+64000 18061 beta: |S|/sqrt(sum w^2)=0.32  gamma2: |S|/sqrt(sum w^2)=9.58  gamma2*alpha: |S|/sqrt(sum w^2)=0.06  mob_partner: |S|/sqrt(sum w^2)=1.28  mu: |S|/sqrt(sum w^2)=0.94   (count^(1/3)=26.2) 92s

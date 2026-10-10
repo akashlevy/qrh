@@ -1,0 +1,89 @@
+N0=40000 cols=11311 rows=11279 marks=184 (77.7s)
+K/N0=0.015625 rows=   178 L'=184  MP=[0.000,4.067]
+   theta    lam=[-0.000,3.942] off_rms=0.0769 top1=0.043 top3=0.124 top10%=0.480 srank=23.0 ipr(u1)=0.009 Dcv=0.074 rowmax/mean=1.33 u1~row=0.024
+      R: p78=1.036 (ovl_u1 0.005, opt-gain nan, c*flat nan)  ones=0.949  kub=0.916  rand=1.002+-0.072 (max 1.186)  flat_top=3.392  sup=3.988
+   randcol  lam=[-0.000,4.066] off_rms=0.0765 top1=0.048 top3=0.129 top10%=0.480 srank=21.0 ipr(u1)=0.011 Dcv=0.070 rowmax/mean=1.22 u1~row=0.047
+      R: p78=0.978 (ovl_u1 0.007, opt-gain nan, c*flat nan)  ones=0.976  kub=0.929  rand=1.006+-0.080 (max 1.221)  flat_top=3.383  sup=4.068
+   gauss    lam=[-0.000,3.835] off_rms=0.0745 top1=0.043 top3=0.120 top10%=0.455 srank=23.3 ipr(u1)=0.010 Dcv=0.070 rowmax/mean=1.15 u1~row=0.035
+      R: p78=0.975 (ovl_u1 0.009, opt-gain nan, c*flat nan)  ones=0.882  kub=1.014  rand=0.994+-0.072 (max 1.169)  flat_top=3.215  sup=3.868
+K/N0=0.0625  rows=   701 L'=184  MP=[0.238,2.287]
+   theta    lam=[0.216,2.355] off_rms=0.0406 top1=0.033 top3=0.093 top10%=0.385 srank=30.2 ipr(u1)=0.011 Dcv=0.037 rowmax/mean=1.33 u1~row=0.033
+      R: p78=1.034 (ovl_u1 0.012, opt-gain 1.392, c*flat 1.67)  ones=0.977  kub=0.970  rand=1.003+-0.038 (max 1.086)  flat_top=2.110  sup=2.348
+   randcol  lam=[0.230,2.368] off_rms=0.0402 top1=0.034 top3=0.096 top10%=0.382 srank=29.1 ipr(u1)=0.011 Dcv=0.036 rowmax/mean=1.27 u1~row=0.036
+      R: p78=1.063 (ovl_u1 0.000, opt-gain 1.394, c*flat 1.96)  ones=1.023  kub=0.985  rand=1.001+-0.042 (max 1.107)  flat_top=2.075  sup=2.381
+   gauss    lam=[0.249,2.238] off_rms=0.0376 top1=0.032 top3=0.088 top10%=0.362 srank=31.0 ipr(u1)=0.010 Dcv=0.040 rowmax/mean=1.22 u1~row=0.044
+      R: p78=1.074 (ovl_u1 0.006, opt-gain 1.359, c*flat 1.86)  ones=1.007  kub=0.976  rand=1.000+-0.039 (max 1.142)  flat_top=2.014  sup=2.244
+K/N0=0.25    rows=  2831 L'=184  MP=[0.555,1.575]
+   theta    lam=[0.505,1.697] off_rms=0.0229 top1=0.027 top3=0.079 top10%=0.344 srank=36.5 ipr(u1)=0.010 Dcv=0.020 rowmax/mean=1.33 u1~row=0.045
+      R: p78=1.039 (ovl_u1 0.001, opt-gain 1.087, c*flat 1.49)  ones=1.023  kub=0.971  rand=1.000+-0.023 (max 1.056)  flat_top=1.557  sup=1.704
+   randcol  lam=[0.493,1.716] off_rms=0.0229 top1=0.029 top3=0.080 top10%=0.337 srank=34.6 ipr(u1)=0.011 Dcv=0.019 rowmax/mean=1.32 u1~row=0.052
+      R: p78=1.033 (ovl_u1 0.003, opt-gain 1.097, c*flat 1.53)  ones=1.008  kub=1.003  rand=0.999+-0.023 (max 1.054)  flat_top=1.560  sup=1.725
+   gauss    lam=[0.565,1.568] off_rms=0.0188 top1=0.027 top3=0.074 top10%=0.323 srank=36.8 ipr(u1)=0.012 Dcv=0.018 rowmax/mean=1.26 u1~row=0.044
+      R: p78=0.998 (ovl_u1 0.026, opt-gain 1.072, c*flat 1.47)  ones=0.963  kub=0.994  rand=1.000+-0.020 (max 1.047)  flat_top=1.441  sup=1.573
+K/N0=1       rows= 11279 L'=184  MP=[0.761,1.272]
+   theta    lam=[0.623,1.486] off_rms=0.0161 top1=0.027 top3=0.074 top10%=0.329 srank=37.0 ipr(u1)=0.010 Dcv=0.009 rowmax/mean=1.33 u1~row=0.053
+      R: p78=1.019 (ovl_u1 0.004, opt-gain 1.040, c*flat 1.28)  ones=1.019  kub=0.959  rand=1.001+-0.016 (max 1.057)  flat_top=1.402  sup=1.488
+   randcol  lam=[0.623,1.475] off_rms=0.0160 top1=0.026 top3=0.074 top10%=0.325 srank=38.4 ipr(u1)=0.012 Dcv=0.008 rowmax/mean=1.34 u1~row=0.050
+      R: p78=1.042 (ovl_u1 0.009, opt-gain 1.043, c*flat 1.38)  ones=1.011  kub=0.992  rand=0.999+-0.016 (max 1.040)  flat_top=1.364  sup=1.475
+   gauss    lam=[0.763,1.261] off_rms=0.0095 top1=0.023 top3=0.064 top10%=0.310 srank=44.2 ipr(u1)=0.011 Dcv=0.010 rowmax/mean=1.33 u1~row=0.049
+      R: p78=1.011 (ovl_u1 0.009, opt-gain 1.015, c*flat 1.23)  ones=1.013  kub=0.999  rand=1.001+-0.009 (max 1.021)  flat_top=1.201  sup=1.263
+{
+ "class_(pi0/P)_3,N(pi0)=7": {
+  "theta": {
+   "within": 0.015857845072846894,
+   "across": 0.0162319907496057,
+   "n_within": 11106,
+   "n_across": 22566
+  },
+  "randcol": {
+   "within": 0.015882454226713527,
+   "across": 0.016121289053677375,
+   "n_within": 11106,
+   "n_across": 22566
+  },
+  "sizes": [
+   61,
+   60,
+   63
+  ]
+ },
+ "class_(pi0/P)_3,N(pi0)=13": {
+  "theta": {
+   "within": 0.01603836015554574,
+   "across": 0.016144457556799854,
+   "n_within": 11104,
+   "n_across": 22568
+  },
+  "randcol": {
+   "within": 0.01595754612879092,
+   "across": 0.01608474090713146,
+   "n_within": 11104,
+   "n_across": 22568
+  },
+  "sizes": [
+   62,
+   60,
+   62
+  ]
+ },
+ "conjugate_pairs": {
+  "n": 92,
+  "theta_pair_rms": 0.021919603114372573,
+  "theta_all_rms": 0.01610954708581367,
+  "rand_pair_rms": 0.021446940124523986,
+  "rand_all_rms": 0.016042907388688066
+ },
+ "mutual_symbol": {
+  "theta_sym1": 0.016316110202241406,
+  "theta_symne1": 0.016000033946172977,
+  "rand_sym1": 0.016224364864411603,
+  "rand_symne1": 0.01594681567435857,
+  "frac_sym1": 0.3442622950819672
+ },
+ "greedy_cubic_clique": {
+  "size": 7,
+  "Lp": 184,
+  "ratio_log": 0.3731417297358041,
+  "R_p78": 0.97337351871965
+ }
+}

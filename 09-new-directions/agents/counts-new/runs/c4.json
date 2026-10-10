@@ -1,0 +1,1 @@
+[{"_tag": "DIAG+p6(m<=0.39)", "p6": true, "m6": 0.39, "caseA": "refined", "delta0": 0.001, "mk": 1.0, "w2scale": 10.0, "cP": 1.0}, {"_tag": "DIAG+p6(m<=0.4)", "p6": true, "m6": 0.4, "caseA": "refined", "delta0": 0.001, "mk": 1.0, "w2scale": 10.0, "cP": 1.0}]

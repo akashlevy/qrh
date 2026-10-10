@@ -1,0 +1,12 @@
+N0=10000: cols 2816, rows 2831 (N(k) <= 10000)  3.9s
+row symbols for 1234 primes  4.4s
+rows done 5.2s
+K=64      F=156.2     rows~7      rho: beta:-0.1966(sec rms 0.340)  beta*X(coh):-0.6941(sec rms 0.690)  beta*X(rnd):+1.1349(sec rms 1.231) | rand sec rms 0.750 | H2 rms 0.4640 (rand 0.4509) max 0.913
+K=128     F=78.12     rows~19     rho: beta:+0.1095(sec rms 0.490)  beta*X(coh):-0.2176(sec rms 0.649)  beta*X(rnd):-0.2736(sec rms 0.808) | rand sec rms 0.762 | H2 rms 0.2848 (rand 0.2841) max 0.647
+K=256     F=39.06     rows~37     rho: beta:+0.0472(sec rms 0.689)  beta*X(coh):-0.3302(sec rms 0.671)  beta*X(rnd):-0.1335(sec rms 0.469) | rand sec rms 0.597 | H2 rms 0.2064 (rand 0.2028) max 0.639
+K=512     F=19.53     rows~74     rho: beta:-0.0596(sec rms 0.577)  beta*X(coh):-0.2781(sec rms 0.334)  beta*X(rnd):+0.1729(sec rms 0.621) | rand sec rms 0.498 | H2 rms 0.1483 (rand 0.1500) max 0.485
+K=1024    F=9.766     rows~139    rho: beta:-0.1532(sec rms 0.228)  beta*X(coh):+0.0205(sec rms 0.379)  beta*X(rnd):+0.2121(sec rms 0.428) | rand sec rms 0.295 | H2 rms 0.1074 (rand 0.1093) max 0.318
+K=2048    F=4.883     rows~294    rho: beta:-0.0095(sec rms 0.227)  beta*X(coh):-0.0044(sec rms 0.253)  beta*X(rnd):+0.1068(sec rms 0.219) | rand sec rms 0.282 | H2 rms 0.0783 (rand 0.0750) max 0.240
+K=4096    F=2.441     rows~583    rho: beta:-0.0289(sec rms 0.176)  beta*X(coh):-0.0941(sec rms 0.169)  beta*X(rnd):+0.0114(sec rms 0.232) | rand sec rms 0.153 | H2 rms 0.0565 (rand 0.0578) max 0.155
+K=8192    F=1.221     rows~1145   rho: beta:-0.0630(sec rms 0.083)  beta*X(coh):-0.0388(sec rms 0.135)  beta*X(rnd):+0.0434(sec rms 0.124) | rand sec rms 0.122 | H2 rms 0.0441 (rand 0.0437) max 0.099
+principal row |S_1|^2/d_1: {'beta': 0.05, 'beta*X(coh)': 0.0, 'beta*X(rnd)': 0.4}

@@ -1,0 +1,24 @@
+N0=40000: cols 11311, rows 11279, marks 500 {np.int64(450): np.int64(50), np.int64(600): np.int64(50), np.int64(780): np.int64(50), np.int64(1000): np.int64(50), np.int64(1300): np.int64(50), np.int64(1700): np.int64(50), np.int64(2200): np.int64(50), np.int64(2900): np.int64(50), np.int64(3700): np.int64(50), np.int64(4800): np.int64(50)}  62.4s
+row symbols for 4201 primes  81.5s
+rows done 113.7s
+L0=450: K=8192: p78 -0.26 kub -0.11 one -1.58 K=16384: p78 +1.53 kub -0.49 one +0.21 K=32768: p78 -0.87 kub -1.81 one -2.16
+L0=600: K=8192: p78 +0.21 kub +0.50 one -4.27 K=16384: p78 +0.22 kub +0.12 one -0.35 K=32768: p78 +0.80 kub -1.44 one -0.20
+L0=780: K=8192: p78 +0.86 kub -0.12 one +0.43 K=16384: p78 +0.17 kub -1.61 one -0.88 K=32768: p78 -1.37 kub -0.92 one +0.40
+L0=1000: K=8192: p78 -0.27 kub -0.12 one +1.18 K=16384: p78 -0.97 kub -1.79 one -1.39 K=32768: p78 -1.43 kub +0.68 one +0.96
+L0=1300: K=8192: p78 +0.28 kub -1.33 one -0.04 K=16384: p78 -0.21 kub -0.26 one -0.55 K=32768: p78 -0.45 kub -1.80 one -0.98
+L0=1700: K=8192: p78 -1.47 kub -1.27 one -0.48 K=16384: p78 -0.42 kub -0.66 one +1.23 K=32768: p78 -0.21 kub -0.55 one +1.03
+L0=2200: K=8192: p78 -2.02 kub -0.71 one +0.00 K=16384: p78 -0.13 kub -0.58 one +0.77 K=32768: p78 -1.18 kub -0.43 one +0.55
+L0=2900: K=8192: p78 +0.89 kub -2.76 one +1.50 K=16384: p78 -2.05 kub +0.62 one +0.79 K=32768: p78 -1.21 kub -1.73 one +0.72
+L0=3700: K=8192: p78 -0.68 kub +0.19 one +0.31 K=16384: p78 +0.25 kub -0.11 one -1.23 K=32768: p78 +0.17 kub -1.77 one -1.65
+L0=4800: K=8192: p78 +0.76 kub -1.53 one +0.89 K=16384: p78 +0.15 kub -0.71 one +0.09 K=32768: p78 +0.57 kub +1.34 one +0.92
+blocks: 30  (null: mean t = 0 +- 1/sqrt(n), mean t^2 = 1 +- sqrt(2/n))
+  one       theta: mean t -0.126  mean t^2 1.508   | random cols: mean t -0.066  mean t^2 1.196
+  kub       theta: mean t -0.705  mean t^2 1.340   | random cols: mean t -0.139  mean t^2 1.245
+  conjkub   theta: mean t -0.234  mean t^2 1.389   | random cols: mean t -0.010  mean t^2 0.973
+  beta      theta: mean t +0.076  mean t^2 1.207   | random cols: mean t +0.368  mean t^2 1.276
+  conjbeta  theta: mean t +0.003  mean t^2 1.592   | random cols: mean t +0.210  mean t^2 0.929
+  p78       theta: mean t -0.277  mean t^2 0.858   | random cols: mean t -0.160  mean t^2 0.971
+  conjp78   theta: mean t +0.052  mean t^2 1.497   | random cols: mean t -0.081  mean t^2 0.671
+  alpha     theta: mean t -0.130  mean t^2 1.881   | random cols: mean t -0.082  mean t^2 1.086
+  alpha2    theta: mean t -0.140  mean t^2 1.035   | random cols: mean t +0.188  mean t^2 1.432
+done 219.4s

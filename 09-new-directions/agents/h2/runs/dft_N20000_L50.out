@@ -1,0 +1,6 @@
+N0=20000: cols 5632, rows 5647, marks 10 {np.int64(50): np.int64(10)}  19.4s
+row symbols for 2265 primes  24.5s
+rows done 28.9s
+theta  : pairs 45  |G12|^2/mean|F|^2 = 0.840 (null 1)  rank of trivial 0.584 (null 0.5, KS 0.192)  max/mean 9.00 (iid 9.17)  argmax sextic 0.000  sextic pts mean 0.971 max 3.91
+random : pairs 45  |G12|^2/mean|F|^2 = 1.115 (null 1)  rank of trivial 0.434 (null 0.5, KS 0.153)  max/mean 9.19 (iid 9.17)  argmax sextic 0.000  sextic pts mean 0.989 max 4.10
+done 68.1s

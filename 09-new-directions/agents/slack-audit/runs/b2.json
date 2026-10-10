@@ -1,0 +1,26 @@
+[
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"interm": "R0",
+"_duals": true,
+"_tag": "DIAG+intermR0"
+},
+{
+"caseA": "refined",
+"delta0": 0.001,
+"mk": 1.0,
+"w2scale": 10.0,
+"cP": 1.0,
+"interm": true,
+"_duals": true,
+"_tag": "DIAG+interm(paper) duals"
+},
+{
+"interm": true,
+"_tag": "paper+interm(paper)"
+}
+]

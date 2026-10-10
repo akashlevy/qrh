@@ -1,0 +1,171 @@
+== payoff: theta vs (H2) saving theta2 = 1 - Hoff  ((H1)-average assumed, bias piece kept; model_h2.py) ==
+  theta2 = 1.00  (Hoff 0.00): offset-branch 0.863636  -> theta = 0.863636   geometry M=0.909 ell=0.273  M+ell-1=0.182  ell<=M/2: True
+  theta2 = 0.98  (Hoff 0.02): offset-branch 0.865617  -> theta = 0.865617   geometry M=0.908 ell=0.277  M+ell-1=0.185  ell<=M/2: True
+  theta2 = 0.96  (Hoff 0.04): offset-branch 0.867696  -> theta = 0.867696   geometry M=0.908 ell=0.281  M+ell-1=0.189  ell<=M/2: True
+  theta2 = 0.94  (Hoff 0.06): offset-branch 0.869843  -> theta = 0.869843   geometry M=0.907 ell=0.286  M+ell-1=0.193  ell<=M/2: True
+  theta2 = 0.93  (Hoff 0.07): offset-branch 0.870942  -> theta = 0.870942   geometry M=0.907 ell=0.288  M+ell-1=0.195  ell<=M/2: True
+  theta2 = 0.92  (Hoff 0.08): offset-branch 0.872060  -> theta = 0.872060   geometry M=0.907 ell=0.291  M+ell-1=0.197  ell<=M/2: True
+  theta2 = 0.91  (Hoff 0.09): offset-branch 0.873196  -> theta = 0.873196   geometry M=0.906 ell=0.293  M+ell-1=0.200  ell<=M/2: True
+  theta2 = 0.90  (Hoff 0.10): offset-branch 0.874352  -> theta = 0.874352   geometry M=0.906 ell=0.296  M+ell-1=0.202  ell<=M/2: True
+  theta2 = 0.89  (Hoff 0.11): offset-branch 0.875527  -> theta = 0.874957   geometry M=0.906 ell=0.298  M+ell-1=0.204  ell<=M/2: True
+  theta2 = 0.88  (Hoff 0.12): offset-branch 0.876721  -> theta = 0.874957   geometry M=0.906 ell=0.301  M+ell-1=0.206  ell<=M/2: True
+  theta2 = 0.87  (Hoff 0.13): offset-branch 0.877937  -> theta = 0.874957   geometry M=0.905 ell=0.303  M+ell-1=0.208  ell<=M/2: True
+  theta2 = 0.85  (Hoff 0.15): offset-branch 0.880431  -> theta = 0.874957   geometry M=0.905 ell=0.309  M+ell-1=0.213  ell<=M/2: True
+  theta2 = 0.80  (Hoff 0.20): offset-branch 0.887067  -> theta = 0.874957   geometry M=0.903 ell=0.323  M+ell-1=0.226  ell<=M/2: True
+  linear fit theta ~ 0.863376 + 0.1102 Hoff ;  break-even with 0.874957 at Hoff = 0.1051;  27/31 at Hoff = 0.0689
+
+== structure hunt N0 = 20000 (cols 5632, rows 5647) : pure off-diagonal O = (G - Delta)/sqrt(G11 G22) ==
+  block      K      rows  L'   rmsO th/rnd      rmsC th   Delta   ineqfail  indef  <z2_O> th/rnd  zmax_O th(arg)            cubic1 th/rnd  conj O th/rnd  slopeN th   Tcoh(p78)/sd
+  L0=30     4096   583   6    0.0631/0.0456  0.0596  0.0170  0.60      0.60   1.40/0.80      2.45(sym(0,0)    )   0.87/0.98      0.34/1.00      -1.273     -2.80
+  L0=30     8192   1145  6    0.0344/0.0489  0.0454  0.0174  0.73      0.73   0.79/1.06      2.20(alpha^-5    )   0.68/1.29      1.04/1.75      +2.952     +1.75
+  L0=30     16384  2311  6    0.0286/0.0272  0.0343  0.0180  0.93      0.93   0.93/0.84      1.90(conjbeta    )   0.65/1.19      1.01/0.94      -1.250     +0.06
+  L0=100    4096   583   20   0.0516/0.0540  0.0535  0.0183  0.99      0.99   1.08/0.83      2.77(sym(1,4)    )   1.14/1.08      1.15/0.90      +0.450     +1.61
+  L0=100    8192   1145  20   0.0406/0.0352  0.0465  0.0176  0.86      0.86   1.40/0.74      2.46(alpha^-2    )   0.96/0.93      1.96/0.79      -0.152     +1.46
+  L0=100    16384  2311  20   0.0260/0.0235  0.0311  0.0178  0.92      0.92   1.47/0.70      2.86(sym(1,0)    )   1.18/0.88      2.45/0.83      +0.155     -0.46
+  L0=300    4096   583   44   0.0516/0.0498  0.0544  0.0189  0.85      0.85   1.18/1.03      2.33(sym(0,0)    )   1.04/1.07      2.07/1.04      -0.092     -2.05
+  L0=300    8192   1145  44   0.0368/0.0365  0.0425  0.0190  0.79      0.79   1.17/0.95      2.55(alpha^-5    )   1.01/1.01      1.85/1.01      +0.408     +3.18
+  L0=300    16384  2311  44   0.0254/0.0250  0.0317  0.0192  0.88      0.88   1.10/0.99      2.43(p78conj     )   1.09/0.99      1.35/1.13      -0.236     -0.19
+  L0=1000   4096   583   60   0.0513/0.0510  0.0549  0.0186  0.96      0.96   1.02/0.91      1.68(sym(0,4)    )   0.97/1.01      1.72/1.19      -0.057     -1.39
+  L0=1000   8192   1145  60   0.0364/0.0356  0.0414  0.0186  0.95      0.95   0.98/1.23      2.05(p78         )   1.05/0.98      1.60/1.07      -0.057     +0.70
+  L0=1000   16384  2311  60   0.0249/0.0247  0.0310  0.0184  0.90      0.90   1.10/0.90      1.88(sym(1,3)    )   1.02/1.02      2.15/1.05      +0.197     -1.56
+  L0=3000   4096   583   60   0.0511/0.0502  0.0542  0.0186  0.94      0.94   0.76/1.03      1.72(alpha^-6    )   0.97/0.99      2.42/1.17      -0.004     -1.78
+  L0=3000   8192   1145  60   0.0360/0.0361  0.0404  0.0184  0.88      0.88   1.04/1.02      2.00(sym(0,2)    )   1.01/1.02      3.23/0.70      -0.005     -1.01
+  L0=3000   16384  2311  60   0.0245/0.0241  0.0305  0.0185  0.93      0.93   1.16/0.77      2.26(sym(1,2)    )   1.01/1.00      1.40/0.35      +0.148     -1.28
+  all       4096   583   190  0.0507/0.0507  0.0539  0.0186  0.92      0.92   0.98/1.27      2.06(alpha^12    )   1.01/1.02      1.80/1.06      +0.004     -2.36
+  all       8192   1145  190  0.0365/0.0361  0.0412  0.0185  0.88      0.88   1.38/0.94      2.27(p78         )   1.01/1.00      1.96/1.07      -0.014     +2.55
+  all       16384  2311  190  0.0246/0.0247  0.0308  0.0186  0.90      0.90   0.75/1.19      1.58(alpha^-1    )   1.00/1.03      1.88/0.98      +0.013     -1.66
+  phase tests (O): mean z^2 over 15 blocks x 54 phases: theta 1.106, random 0.921 (null 1); largest per-phase mean z^2: theta 1.77 (p78), random 1.45 (alpha^12)
+  pair classes (O): (P1/P2)_3 = 1 vs all: theta 0.977, random 1.029;  conjugate pairs: theta 1.72, random 1.00
+  L-dependence of rms O at fixed K (theta / random):
+    K=4096  : L0=30: 0.0631/0.0456  L0=100: 0.0516/0.0540  L0=300: 0.0516/0.0498  L0=1000: 0.0513/0.0510  L0=3000: 0.0511/0.0502   (1/sqrt(rows) = 0.0414)
+    K=8192  : L0=30: 0.0344/0.0489  L0=100: 0.0406/0.0352  L0=300: 0.0368/0.0365  L0=1000: 0.0364/0.0356  L0=3000: 0.0360/0.0361   (1/sqrt(rows) = 0.0296)
+    K=16384 : L0=30: 0.0286/0.0272  L0=100: 0.0260/0.0235  L0=300: 0.0254/0.0250  L0=1000: 0.0249/0.0247  L0=3000: 0.0245/0.0241   (1/sqrt(rows) = 0.0208)
+  persistence K=4096: sector coherence ratio th 1.003 rnd 0.999 (null 1, deterministic 12); mean inter-sector corr th +0.0003 rnd -0.0002; column-halves corr +0.0061
+  persistence K=8192: sector coherence ratio th 1.020 rnd 0.996 (null 1, deterministic 12); mean inter-sector corr th +0.0018 rnd -0.0004; column-halves corr +0.0015
+  persistence K=16384: sector coherence ratio th 0.934 rnd 0.939 (null 1, deterministic 12); mean inter-sector corr th -0.0060 rnd -0.0056; column-halves corr -0.0009
+  dyadic-window corr (O): theta 8192:+0.001 | random 8192:+0.006
+  cocycle twists chi_k(P)^a chi_P(k)^b, rms of normalised G (K=16384, theta):
+     a=0: 0.0308 0.0258 0.0256 0.0254 0.0258 0.0257
+     a=1: 0.0256 0.0256 0.0257 0.0256 0.0256 0.0273
+     a=2: 0.0256 0.0254 0.0258 0.0257 0.0308 0.0258
+     a=3: 0.0257 0.0256 0.0256 0.0273 0.0256 0.0256
+     a=4: 0.0258 0.0257 0.0308 0.0258 0.0256 0.0254
+     a=5: 0.0256 0.0273 0.0256 0.0256 0.0257 0.0256
+  cocycle twists chi_k(P)^a chi_P(k)^b, rms of normalised G (K=16384, random):
+     a=0: 0.0309 0.0256 0.0257 0.0255 0.0257 0.0255
+     a=1: 0.0256 0.0257 0.0256 0.0256 0.0256 0.0273
+     a=2: 0.0257 0.0255 0.0257 0.0255 0.0309 0.0256
+     a=3: 0.0256 0.0256 0.0256 0.0273 0.0256 0.0257
+     a=4: 0.0257 0.0255 0.0309 0.0256 0.0257 0.0255
+     a=5: 0.0256 0.0273 0.0256 0.0257 0.0256 0.0256
+
+== structure hunt N0 = 40000 (cols 11311, rows 11279) : pure off-diagonal O = (G - Delta)/sqrt(G11 G22) ==
+  block      K      rows  L'   rmsO th/rnd      rmsC th   Delta   ineqfail  indef  <z2_O> th/rnd  zmax_O th(arg)            cubic1 th/rnd  conj O th/rnd  slopeN th   Tcoh(p78)/sd
+  L0=100    8192   1145  20   0.0359/0.0345  0.0385  0.0114  0.89      0.89   0.92/0.98      1.90(alpha^3     )   1.14/1.04      2.62/0.92      +0.362     -0.37
+  L0=100    16384  2311  20   0.0246/0.0250  0.0283  0.0116  0.96      0.96   0.78/0.86      1.91(alpha^6     )   1.08/0.93      2.01/1.00      -1.095     +1.17
+  L0=100    32768  4638  20   0.0197/0.0171  0.0229  0.0115  0.94      0.94   0.91/1.32      2.24(alpha^3     )   1.10/1.04      1.96/1.02      +0.636     -1.46
+  L0=1000   8192   1145  80   0.0355/0.0356  0.0379  0.0131  0.90      0.90   1.26/1.47      2.14(sym(0,3)    )   1.03/1.01      2.08/1.24      -0.101     +1.19
+  L0=1000   16384  2311  80   0.0255/0.0256  0.0288  0.0131  0.87      0.87   0.88/0.83      2.31(p78         )   1.07/1.02      1.76/0.78      -0.221     -3.23
+  L0=1000   32768  4638  80   0.0175/0.0174  0.0221  0.0131  0.87      0.87   1.09/1.15      2.31(alpha^-2    )   0.98/0.97      1.71/1.03      +0.117     -0.11
+  L0=3000   8192   1145  80   0.0361/0.0359  0.0383  0.0130  0.91      0.91   1.53/0.80      2.22(sym(1,3)    )   0.97/1.03      1.43/0.92      -0.043     -1.00
+  L0=3000   16384  2311  80   0.0255/0.0255  0.0287  0.0131  0.92      0.92   1.34/0.97      2.14(sym(0,5)    )   1.01/1.02      1.72/1.14      -0.026     +0.91
+  L0=3000   32768  4638  80   0.0173/0.0174  0.0215  0.0130  0.91      0.91   1.38/1.18      2.28(sym(1,4)    )   0.92/1.00      0.96/0.75      +0.070     -1.00
+  all       8192   1145  180  0.0359/0.0360  0.0383  0.0131  0.91      0.91   0.74/0.71      1.60(sym(1,3)    )   1.01/1.01      2.00/1.05      +0.006     -0.21
+  all       16384  2311  180  0.0255/0.0255  0.0287  0.0131  0.90      0.90   0.95/1.19      2.25(sym(1,2)    )   1.01/1.01      1.77/0.92      -0.001     +0.35
+  all       32768  4638  180  0.0175/0.0175  0.0220  0.0131  0.90      0.90   1.37/1.12      1.96(sym(1,1)    )   0.98/1.00      1.68/0.94      +0.000     -1.61
+  phase tests (O): mean z^2 over 9 blocks x 54 phases: theta 1.119, random 1.062 (null 1); largest per-phase mean z^2: theta 2.17 (alpha^-2), random 1.48 (sym(1,1))
+  pair classes (O): (P1/P2)_3 = 1 vs all: theta 1.034, random 1.004;  conjugate pairs: theta 1.81, random 0.98
+  L-dependence of rms O at fixed K (theta / random):
+    K=8192  : L0=100: 0.0359/0.0345  L0=1000: 0.0355/0.0356  L0=3000: 0.0361/0.0359   (1/sqrt(rows) = 0.0296)
+    K=16384 : L0=100: 0.0246/0.0250  L0=1000: 0.0255/0.0256  L0=3000: 0.0255/0.0255   (1/sqrt(rows) = 0.0208)
+    K=32768 : L0=100: 0.0197/0.0171  L0=1000: 0.0175/0.0174  L0=3000: 0.0173/0.0174   (1/sqrt(rows) = 0.0147)
+  persistence K=8192: sector coherence ratio th 0.990 rnd 0.996 (null 1, deterministic 12); mean inter-sector corr th -0.0009 rnd -0.0003; column-halves corr -0.0028
+  persistence K=16384: sector coherence ratio th 0.996 rnd 0.997 (null 1, deterministic 12); mean inter-sector corr th -0.0004 rnd -0.0003; column-halves corr -0.0039
+  persistence K=32768: sector coherence ratio th 0.941 rnd 0.947 (null 1, deterministic 12); mean inter-sector corr th -0.0054 rnd -0.0048; column-halves corr +0.0058
+  dyadic-window corr (O): theta 8192:+0.000 16384:-0.003 | random 8192:+0.000 16384:+0.001
+  cocycle twists chi_k(P)^a chi_P(k)^b, rms of normalised G (K=32768, theta):
+     a=0: 0.0219 0.0181 0.0181 0.0181 0.0181 0.0180
+     a=1: 0.0181 0.0182 0.0179 0.0181 0.0181 0.0196
+     a=2: 0.0181 0.0181 0.0181 0.0180 0.0219 0.0181
+     a=3: 0.0179 0.0181 0.0181 0.0196 0.0181 0.0182
+     a=4: 0.0181 0.0180 0.0219 0.0181 0.0181 0.0181
+     a=5: 0.0181 0.0196 0.0181 0.0182 0.0179 0.0181
+  cocycle twists chi_k(P)^a chi_P(k)^b, rms of normalised G (K=32768, random):
+     a=0: 0.0218 0.0181 0.0180 0.0181 0.0180 0.0181
+     a=1: 0.0181 0.0180 0.0183 0.0179 0.0181 0.0193
+     a=2: 0.0180 0.0181 0.0180 0.0181 0.0218 0.0181
+     a=3: 0.0183 0.0179 0.0181 0.0193 0.0181 0.0180
+     a=4: 0.0180 0.0181 0.0218 0.0181 0.0180 0.0181
+     a=5: 0.0181 0.0193 0.0181 0.0180 0.0183 0.0179
+
+== all-character spectrum in k mod P1P2 (dft_N20000_L120.json; off-diagonal part, per-row n-diagonal removed) ==
+  theta  : pairs 45, |O12|^2/mean|F|^2 = 1.232 (null 1), rank of trivial char 0.466 (null 0.5), max/mean 11.17 (iid 10.85), argmax at sextic char 0.000, sextic points mean 1.056
+  random : pairs 45, |O12|^2/mean|F|^2 = 1.128 (null 1), rank of trivial char 0.475 (null 0.5), max/mean 10.55 (iid 10.85), argmax at sextic char 0.000, sextic points mean 1.029
+
+== all-character spectrum in k mod P1P2 (dft_N20000_L50.json; off-diagonal part, per-row n-diagonal removed) ==
+  theta  : pairs 45, |O12|^2/mean|F|^2 = 0.840 (null 1), rank of trivial char 0.584 (null 0.5), max/mean 9.00 (iid 9.17), argmax at sextic char 0.000, sextic points mean 0.971
+  random : pairs 45, |O12|^2/mean|F|^2 = 1.115 (null 1), rank of trivial char 0.434 (null 0.5), max/mean 9.19 (iid 9.17), argmax at sextic char 0.000, sextic points mean 0.989
+
+== coherent vectors (coh_N20000.json): t = T(c)/sd_random(T), 30 independent blocks; null mean t^2 = 1 +- 0.26 ==
+  one       theta: mean t -0.009 mean t^2 0.947   | random columns: mean t -0.119 mean t^2 0.898
+  kub       theta: mean t -0.136 mean t^2 2.014   | random columns: mean t +0.433 mean t^2 1.172
+  conjkub   theta: mean t +0.039 mean t^2 0.751   | random columns: mean t -0.293 mean t^2 0.915
+  beta      theta: mean t -0.218 mean t^2 1.329   | random columns: mean t -0.102 mean t^2 0.830
+  conjbeta  theta: mean t +0.244 mean t^2 1.068   | random columns: mean t +0.332 mean t^2 0.916
+  p78       theta: mean t -0.094 mean t^2 1.577   | random columns: mean t +0.121 mean t^2 0.858
+  conjp78   theta: mean t +0.036 mean t^2 1.863   | random columns: mean t +0.327 mean t^2 1.079
+  alpha     theta: mean t -0.122 mean t^2 1.098   | random columns: mean t +0.420 mean t^2 1.441
+  alpha2    theta: mean t -0.006 mean t^2 1.123   | random columns: mean t +0.229 mean t^2 0.688
+
+== coherent vectors (coh_N40000.json): t = T(c)/sd_random(T), 30 independent blocks; null mean t^2 = 1 +- 0.26 ==
+  one       theta: mean t -0.126 mean t^2 1.508   | random columns: mean t -0.066 mean t^2 1.196
+  kub       theta: mean t -0.705 mean t^2 1.340   | random columns: mean t -0.139 mean t^2 1.245
+  conjkub   theta: mean t -0.234 mean t^2 1.389   | random columns: mean t -0.010 mean t^2 0.973
+  beta      theta: mean t +0.076 mean t^2 1.207   | random columns: mean t +0.368 mean t^2 1.276
+  conjbeta  theta: mean t +0.003 mean t^2 1.592   | random columns: mean t +0.210 mean t^2 0.929
+  p78       theta: mean t -0.277 mean t^2 0.858   | random columns: mean t -0.160 mean t^2 0.971
+  conjp78   theta: mean t +0.052 mean t^2 1.497   | random columns: mean t -0.081 mean t^2 0.671
+  alpha     theta: mean t -0.130 mean t^2 1.881   | random columns: mean t -0.082 mean t^2 1.086
+  alpha2    theta: mean t -0.140 mean t^2 1.035   | random columns: mean t +0.188 mean t^2 1.432
+
+== conjugation symmetry explains the T(c) excess along structured (c_conjP = conj c_P) vectors: E t^2 = 1 + f ==
+  N0=20000: <f> = 0.202, predicted <t^2> = 1.202, observed theta 1.308, random columns 0.977; per-block fit t^2 = 1.06 + 1.23 f (prediction 1 + 1 f)
+  N0=40000: <f> = 0.168, predicted <t^2> = 1.168, observed theta 1.367, random columns 1.086; per-block fit t^2 = 1.15 + 1.28 f (prediction 1 + 1 f)
+
+== Patterson bias of slot sums X_c(n) = sum_P c_P chi_P(n)^-2: max |corr| with conj(gamma_2(n)) alpha(n)^j dictionary (null 0.0133) ==
+  L0=100   L'=20   c=one       max|r| 0.0343 at conjbeta*a^-1
+  L0=100   L'=20   c=kub=g2    max|r| 0.2033 at conjbeta*a^-1
+  L0=100   L'=20   c=conj g2   max|r| 0.0606 at beta*a^1
+  L0=100   L'=20   c=beta_P    max|r| 0.0258 at beta*a^1
+  L0=100   L'=20   c=p78       max|r| 0.0306 at beta*a^1
+  L0=100   L'=20   c=conj p78  max|r| 0.0670 at conjbeta*a^-1
+  L0=100   L'=20   c=alpha     max|r| 0.0304 at conjbeta*a^-1
+  L0=100   L'=20   c=random    max|r| 0.0309 at conjbeta*a^-1
+  L0=300   L'=44   c=one       max|r| 0.0462 at conjbeta*a^-1
+  L0=300   L'=44   c=kub=g2    max|r| 0.2798 at conjbeta*a^-1
+  L0=300   L'=44   c=conj g2   max|r| 0.0625 at conjbeta*a^-1
+  L0=300   L'=44   c=beta_P    max|r| 0.0368 at beta*a^3
+  L0=300   L'=44   c=p78       max|r| 0.0664 at conjbeta*a^-1
+  L0=300   L'=44   c=conj p78  max|r| 0.0439 at beta*a^1
+  L0=300   L'=44   c=alpha     max|r| 0.0745 at conjbeta*a^-1
+  L0=300   L'=44   c=random    max|r| 0.0275 at beta*a^2
+  L0=1000  L'=136  c=one       max|r| 0.0564 at conjbeta*a^-1
+  L0=1000  L'=136  c=kub=g2    max|r| 0.3454 at conjbeta*a^-1
+  L0=1000  L'=136  c=conj g2   max|r| 0.0414 at conjbeta*a^2
+  L0=1000  L'=136  c=beta_P    max|r| 0.0249 at conjbeta*a^2
+  L0=1000  L'=136  c=p78       max|r| 0.0426 at conjbeta*a^-3
+  L0=1000  L'=136  c=conj p78  max|r| 0.0415 at conjbeta*a^0
+  L0=1000  L'=136  c=alpha     max|r| 0.0504 at conjbeta*a^-1
+  L0=1000  L'=136  c=random    max|r| 0.0583 at conjbeta*a^-1
+  L0=3000  L'=354  c=one       max|r| 0.0805 at conjbeta*a^-1
+  L0=3000  L'=354  c=kub=g2    max|r| 0.4435 at conjbeta*a^-1
+  L0=3000  L'=354  c=conj g2   max|r| 0.0350 at beta*a^0
+  L0=3000  L'=354  c=beta_P    max|r| 0.0310 at conjbeta*a^1
+  L0=3000  L'=354  c=p78       max|r| 0.0360 at conjbeta*a^-3
+  L0=3000  L'=354  c=conj p78  max|r| 0.0246 at conjbeta*a^3
+  L0=3000  L'=354  c=alpha     max|r| 0.0304 at beta*a^-3
+  L0=3000  L'=354  c=random    max|r| 0.0286 at conjbeta*a^-3
+
+== idea 1 kernel test (kernel_N10000.json): N=2816, K=2048, K'=294 rows ==
+  rank deficiency of Gamma 2522 (N-K' = 2522); Q eigenvalues [-145.3, 3540.8], 91.4% negative, median negative -141.8 vs mean diagonal 137.2; mark mass in ker Gamma 0.892 (1-K'/N = 0.896)
+  flat certificate: rms | |x2|-|x1| | / rms|x1| = 1.2e-16;  O11 = O22 = 1182.2, |Delta12| = 2.0e-12, |O12| = 146432.7 = G11;  |O12|/sqrt(O11 O22) = 123.9,  |O12|/Delta11 = 1.01

@@ -1,0 +1,16 @@
+             theta | horocycle a | Beurling p | res. gap g | LP decay | dBN Lambda<= | HM boot thr
+               7/8 |     0.56250 |    1.14286 |    0.06250 |  0.06250 |      0.28125 |     0.93750
+   record 0.874887 |     0.56256 |    1.14301 |    0.06256 |  0.06256 |      0.28108 |     0.93744
+             27/31 |     0.56452 |    1.14815 |    0.06452 |  0.06452 |      0.27523 |     0.93548
+               6/7 |     0.57143 |    1.16667 |    0.07143 |  0.07143 |      0.25510 |     0.92857
+             19/22 |     0.56818 |    1.15789 |    0.06818 |  0.06818 |      0.26446 |     0.93182
+
+Unconditional endpoints before P78 (all = the trivial theta = 1):
+  horocycle a = 1/2 (Sarnak 1981, continuous spectrum on Re s = 1/2); Beurling p = 1 (Bercovici-Foias);
+  resonance gap 0; dBN Lambda <= 1/2 (de Bruijn), < 1/2 (Ki-Kim-Lee), 0.2 (Platt-Trudgian, numerical).
+To beat Platt-Trudgian Lambda <= 0.2 through the one-way conversion one needs theta <= 0.81623
+To beat Polymath15 Lambda <= 0.22 one needs theta <= 0.83166
+
+H(beta*=0.875000): HM count effective only for sigma > 0.93750; P78's binding rows sit at a = (1+delta)/2 in [0.63, 0.70]  -> no effect
+H(beta*=0.874887): HM count effective only for sigma > 0.93744; P78's binding rows sit at a = (1+delta)/2 in [0.63, 0.70]  -> no effect
+H(beta*=0.870968): HM count effective only for sigma > 0.93548; P78's binding rows sit at a = (1+delta)/2 in [0.63, 0.70]  -> no effect

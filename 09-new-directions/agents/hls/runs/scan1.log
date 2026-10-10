@@ -1,0 +1,28 @@
+[Family] N0=5000 cols=1416  K=400 k's=109  L0=50 P's=10  rows=1090  (0.4s)
+[Family] Gauss sums at 786 primes (1.5s)
+N0=5000 K=400 L0=50: cols=1416 k=109 P=10 rows=1090 | lam=4684  lam/(rows+cols)=1.869  lam/max=3.308  rmt=4991  prod-ctrl=4651  seq=23242  HBquad(k'=1129): lam/(k'+cols)=1.835  top: k1share=0.003 maxrow=0.007
+    rho: rand0=1.000  rand1=1.027  rand2=1.049  g1=1.015(w/o k1 0.995)  mu*g1=0.968  g2=1.052(w/o k1 0.982)  mu*g2=0.924  g3=0.955  mu*g3=0.925  g4=1.064(w/o k1 1.046)  mu*g4=1.019  g5=0.956(w/o k1 0.943)  mu*g5=0.992  beta=0.963(w/o k1 0.961)  mu*beta=1.017(w/o k1 0.999)  column=2.325  top=4.520
+[Family] N0=20000 cols=5632  K=1000 k's=282  L0=100 P's=20  rows=5640  (6.4s)
+[Family] Gauss sums at 2686 primes (23.8s)
+N0=20000 K=1000 L0=100: cols=5632 k=282 P=20 rows=5640 | lam=21287  lam/(rows+cols)=1.888  lam/max=3.774  rmt=22544  prod-ctrl=21272  seq=188284  HBquad(k'=5647): lam/(k'+cols)=1.873  top: k1share=0.002 maxrow=0.001
+    rho: rand0=1.037  rand1=0.996  rand2=0.998  g1=0.973(w/o k1 0.971)  mu*g1=0.977  g2=1.006(w/o k1 0.958)  mu*g2=0.994  g3=0.980  mu*g3=1.042  g4=0.963(w/o k1 0.957)  mu*g4=1.002  g5=0.982(w/o k1 0.980)  mu*g5=0.993  beta=1.007(w/o k1 1.005)  mu*beta=1.002(w/o k1 0.998)  column=2.056  top=3.975
+[Family] N0=20000 cols=5632  K=200 k's=57  L0=100 P's=20  rows=1140  (6.1s)
+[Family] Gauss sums at 2686 primes (22.5s)
+N0=20000 K=200 L0=100: cols=5632 k=57 P=20 rows=1140 | lam=11076  lam/(rows+cols)=1.636  lam/max=1.967  rmt=11840  prod-ctrl=11257  seq=136053  HBquad(k'=1129): lam/(k'+cols)=1.942  top: k1share=0.015 maxrow=0.007
+    rho: rand0=1.015  rand1=0.986  rand2=0.992  g1=0.972(w/o k1 0.964)  mu*g1=0.955  g2=1.153(w/o k1 0.913)  mu*g2=0.950  g3=0.892  mu*g3=1.062  g4=0.914(w/o k1 0.886)  mu*g4=1.012  g5=0.969(w/o k1 0.959)  mu*g5=0.984  beta=1.028(w/o k1 1.019)  mu*beta=1.021(w/o k1 1.003)  column=6.134  top=10.271
+[Family] N0=20000 cols=5632  K=200 k's=57  L0=300 P's=44  rows=2508  (6.0s)
+[Family] Gauss sums at 2686 primes (23.5s)
+N0=20000 K=200 L0=300: cols=5632 k=57 P=44 rows=2508 | lam=14788  lam/(rows+cols)=1.817  lam/max=2.626  rmt=15657  prod-ctrl=14852  seq=299317  HBquad(k'=2485): lam/(k'+cols)=2.004  top: k1share=0.021 maxrow=0.003
+    rho: rand0=0.996  rand1=1.004  rand2=1.010  g1=1.033(w/o k1 1.009)  mu*g1=0.992  g2=1.129(w/o k1 0.938)  mu*g2=0.991  g3=0.938  mu*g3=0.982  g4=0.990(w/o k1 0.971)  mu*g4=1.021  g5=1.018(w/o k1 1.001)  mu*g5=1.005  beta=0.993(w/o k1 0.982)  mu*beta=0.938(w/o k1 0.921)  column=3.312  top=6.203
+[Family] N0=20000 cols=5632  K=200 k's=57  L0=1000 P's=136  rows=7752  (6.3s)
+[Family] Gauss sums at 2686 primes (24.1s)
+N0=20000 K=200 L0=1000: cols=5632 k=57 P=136 rows=7752 | lam=25128  lam/(rows+cols)=1.877  lam/max=3.241  rmt=26599  prod-ctrl=25281  seq=448908  HBquad(k'=7675): lam/(k'+cols)=1.805  top: k1share=0.018 maxrow=0.001
+    rho: rand0=1.007  rand1=0.989  rand2=0.982  g1=1.016(w/o k1 0.987)  mu*g1=0.992  g2=1.069(w/o k1 0.957)  mu*g2=0.995  g3=0.978  mu*g3=1.010  g4=0.969(w/o k1 0.950)  mu*g4=0.991  g5=0.956(w/o k1 0.939)  mu*g5=1.006  beta=1.004(w/o k1 0.986)  mu*beta=0.989(w/o k1 0.970)  column=1.751  top=3.388
+[Family] N0=20000 cols=5632  K=60 k's=15  L0=3000 P's=354  rows=5310  (6.7s)
+[Family] Gauss sums at 2686 primes (24.7s)
+N0=20000 K=60 L0=3000: cols=5632 k=15 P=354 rows=5310 | lam=20558  lam/(rows+cols)=1.879  lam/max=3.650  rmt=21879  prod-ctrl=20629  seq=137781  top: k1share=0.072 maxrow=0.002
+    rho: rand0=1.023  rand1=1.010  rand2=0.993  g1=0.990(w/o k1 0.916)  mu*g1=0.990  g2=1.246(w/o k1 0.910)  mu*g2=1.006  g3=0.973  mu*g3=0.986  g4=1.011(w/o k1 0.939)  mu*g4=0.987  g5=0.984(w/o k1 0.923)  mu*g5=1.003  beta=0.975(w/o k1 0.922)  mu*beta=0.993(w/o k1 0.915)  column=2.068  top=4.073
+[Family] N0=80000 cols=22579  K=2500 k's=701  L0=200 P's=32  rows=22432  (92.9s)
+[Family] Gauss sums at 9402 primes (355.4s)
+N0=80000 K=2500 L0=200: cols=22579 k=701 P=32 rows=22432 | lam=85545  lam/(rows+cols)=1.901  lam/max=3.789  rmt=90022  prod-ctrl=85501  seq=1225507  top: k1share=0.001 maxrow=0.000
+    rho: rand0=0.991  rand1=1.012  rand2=0.991  g1=1.012(w/o k1 1.009)  mu*g1=0.997  g2=1.005(w/o k1 0.972)  mu*g2=1.002  g3=1.009  mu*g3=0.978  g4=0.986(w/o k1 0.984)  mu*g4=0.996  g5=1.003(w/o k1 1.002)  mu*g5=1.006  beta=0.989(w/o k1 0.987)  mu*beta=1.020(w/o k1 1.018)  column=1.970  top=4.004

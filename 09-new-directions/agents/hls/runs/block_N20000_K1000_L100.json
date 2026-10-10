@@ -1,0 +1,46 @@
+[
+ {
+  "tag": "arith",
+  "nk": 282,
+  "nP": 20,
+  "nc": 5632,
+  "lam_G": 21286.62454858784,
+  "diag_block_mean": 9356.104096311636,
+  "diag_block_max": 9380.622230728744,
+  "off_block_mean": 2412.755736856287,
+  "off_block_max": 2625.478032233409,
+  "rand_model_offblock": 2520.495189441948,
+  "trivial_offblock": 5914.0,
+  "poisson_offblock": 5921.6,
+  "block_schur": 55423.7063822996,
+  "block_schur_off": 46070.50307582039,
+  "Goff_norm": 15229.841501017469,
+  "Goff_eigs": [
+   15229.841501017469,
+   15126.721620246091
+  ],
+  "time": 44.62267827987671
+ },
+ {
+  "tag": "prod-random",
+  "nk": 282,
+  "nP": 20,
+  "nc": 5632,
+  "lam_G": 21282.69737093276,
+  "diag_block_mean": 7965.864853163439,
+  "diag_block_max": 7994.071740245053,
+  "off_block_mean": 2413.229534605955,
+  "off_block_max": 2491.2271198585017,
+  "rand_model_offblock": 2520.495189441948,
+  "trivial_offblock": 5914.0,
+  "poisson_offblock": 5921.6,
+  "block_schur": 54153.89680482503,
+  "block_schur_off": 46195.894007056566,
+  "Goff_norm": 15269.275928449359,
+  "Goff_eigs": [
+   15269.275928449359,
+   15194.664642363226
+  ],
+  "time": 61.49577975273132
+ }
+]

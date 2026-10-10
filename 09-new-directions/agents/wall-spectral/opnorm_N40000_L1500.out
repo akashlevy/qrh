@@ -1,0 +1,16 @@
+cols 14127 rows 14110 marks 184  118.7s
+theta      K/N0=0.015625 rows=   222 L'= 184  s_max^2/(K'D)=4.542 (RMT 3.650)  s_2^2/(K'D)=4.159  max per-P=1.190  max row/(L'D)=1.31
+theta      K/N0=0.0625  rows=   879 L'= 184  s_max^2/(K'D)=2.452 (RMT 2.124)  s_2^2/(K'D)=2.451  max per-P=1.108  max row/(L'D)=1.31
+theta      K/N0=0.25    rows=  3532 L'= 184  s_max^2/(K'D)=1.725 (RMT 1.509)  s_2^2/(K'D)=1.706  max per-P=1.057  max row/(L'D)=1.33
+theta      K/N0=0.5     rows=  7062 L'= 184  s_max^2/(K'D)=1.576 (RMT 1.349)  s_2^2/(K'D)=1.554  max per-P=1.042  max row/(L'D)=1.34
+theta      K/N0=1       rows= 14110 L'= 184  s_max^2/(K'D)=1.496 (RMT 1.241)  s_2^2/(K'D)=1.453  max per-P=1.029  max row/(L'D)=1.36
+random     K/N0=0.015625 rows=   222 L'= 184  s_max^2/(K'D)=4.522 (RMT 3.650)  s_2^2/(K'D)=4.284  max per-P=1.263  max row/(L'D)=1.23
+random     K/N0=0.0625  rows=   879 L'= 184  s_max^2/(K'D)=2.447 (RMT 2.124)  s_2^2/(K'D)=2.402  max per-P=1.117  max row/(L'D)=1.33
+random     K/N0=0.25    rows=  3532 L'= 184  s_max^2/(K'D)=1.757 (RMT 1.509)  s_2^2/(K'D)=1.708  max per-P=1.073  max row/(L'D)=1.33
+random     K/N0=0.5     rows=  7062 L'= 184  s_max^2/(K'D)=1.573 (RMT 1.349)  s_2^2/(K'D)=1.552  max per-P=1.055  max row/(L'D)=1.33
+random     K/N0=1       rows= 14110 L'= 184  s_max^2/(K'D)=1.482 (RMT 1.241)  s_2^2/(K'D)=1.461  max per-P=1.034  max row/(L'D)=1.35
+adversary  K/N0=0.015625 rows=   222 L'= 184  s_max^2/(K'D)=4.404 (RMT 3.650)  s_2^2/(K'D)=4.291  max per-P=1.196  max row/(L'D)=1.28
+adversary  K/N0=0.0625  rows=   879 L'= 184  s_max^2/(K'D)=2.499 (RMT 2.124)  s_2^2/(K'D)=2.443  max per-P=1.118  max row/(L'D)=1.29
+adversary  K/N0=0.25    rows=  3532 L'= 184  s_max^2/(K'D)=3.754 (RMT 1.509)  s_2^2/(K'D)=1.705  max per-P=3.638  max row/(L'D)=52.45
+adversary  K/N0=0.5     rows=  7062 L'= 184  s_max^2/(K'D)=2.426 (RMT 1.349)  s_2^2/(K'D)=1.572  max per-P=2.318  max row/(L'D)=52.79
+adversary  K/N0=1       rows= 14110 L'= 184  s_max^2/(K'D)=2.291 (RMT 1.241)  s_2^2/(K'D)=1.467  max per-P=2.192  max row/(L'D)=52.84

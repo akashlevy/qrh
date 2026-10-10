@@ -1,0 +1,8 @@
+sextic k=1 (P78) GRH floor           kvar=0.866666667 (13/15)  reference=0.866666667  OK 13/15
+sextic k=1, W(0.1)                   kvar=0.865000000 (173/200)  reference=0.865000000  OK 0.865
+cubic k=1 cB=2 third=True            kvar=0.764705882 (13/17)  reference=0.764705882  OK 
+cubic k=1 cB=2 third=False           kvar=0.750000000 (3/4)  reference=0.750000000  OK 
+cubic k=1 cB=3 third=True            kvar=0.859615385 (300/349)  reference=0.859615385  OK 
+cubic k=1 cB=3 third=False           kvar=0.750000000 (3/4)  reference=0.750000000  OK 
+cubic k=1 cB=4 third=True            kvar=0.909090909 (10/11)  reference=0.909090909  OK 
+cubic k=1 cB=4 third=False           kvar=0.750000000 (3/4)  reference=0.750000000  OK 

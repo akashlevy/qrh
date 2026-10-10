@@ -1,0 +1,16 @@
+cols 7048 rows 7062 marks 70  44.8s
+theta      K/N0=0.015625 rows=   111 L'=  70  s_max^2/(K'D)=3.608 (RMT 3.219)  s_2^2/(K'D)=3.475  max per-P=1.225  max row/(L'D)=1.38
+theta      K/N0=0.0625  rows=   439 L'=  70  s_max^2/(K'D)=2.179 (RMT 1.958)  s_2^2/(K'D)=2.072  max per-P=1.083  max row/(L'D)=1.36
+theta      K/N0=0.25    rows=  1764 L'=  70  s_max^2/(K'D)=1.635 (RMT 1.438)  s_2^2/(K'D)=1.613  max per-P=1.053  max row/(L'D)=1.49
+theta      K/N0=0.5     rows=  3532 L'=  70  s_max^2/(K'D)=1.513 (RMT 1.301)  s_2^2/(K'D)=1.476  max per-P=1.041  max row/(L'D)=1.49
+theta      K/N0=1       rows=  7062 L'=  70  s_max^2/(K'D)=1.424 (RMT 1.209)  s_2^2/(K'D)=1.391  max per-P=1.021  max row/(L'D)=1.49
+random     K/N0=0.015625 rows=   111 L'=  70  s_max^2/(K'D)=3.664 (RMT 3.219)  s_2^2/(K'D)=3.274  max per-P=1.298  max row/(L'D)=1.35
+random     K/N0=0.0625  rows=   439 L'=  70  s_max^2/(K'D)=2.210 (RMT 1.958)  s_2^2/(K'D)=2.058  max per-P=1.130  max row/(L'D)=1.46
+random     K/N0=0.25    rows=  1764 L'=  70  s_max^2/(K'D)=1.639 (RMT 1.438)  s_2^2/(K'D)=1.564  max per-P=1.057  max row/(L'D)=1.51
+random     K/N0=0.5     rows=  3532 L'=  70  s_max^2/(K'D)=1.494 (RMT 1.301)  s_2^2/(K'D)=1.438  max per-P=1.047  max row/(L'D)=1.54
+random     K/N0=1       rows=  7062 L'=  70  s_max^2/(K'D)=1.395 (RMT 1.209)  s_2^2/(K'D)=1.372  max per-P=1.035  max row/(L'D)=1.57
+adversary  K/N0=0.015625 rows=   111 L'=  70  s_max^2/(K'D)=3.402 (RMT 3.219)  s_2^2/(K'D)=3.318  max per-P=1.310  max row/(L'D)=1.72
+adversary  K/N0=0.0625  rows=   439 L'=  70  s_max^2/(K'D)=2.101 (RMT 1.958)  s_2^2/(K'D)=2.079  max per-P=1.133  max row/(L'D)=1.73
+adversary  K/N0=0.25    rows=  1764 L'=  70  s_max^2/(K'D)=3.651 (RMT 1.438)  s_2^2/(K'D)=1.561  max per-P=3.560  max row/(L'D)=66.63
+adversary  K/N0=0.5     rows=  3532 L'=  70  s_max^2/(K'D)=2.383 (RMT 1.301)  s_2^2/(K'D)=1.448  max per-P=2.300  max row/(L'D)=67.89
+adversary  K/N0=1       rows=  7062 L'=  70  s_max^2/(K'D)=2.250 (RMT 1.209)  s_2^2/(K'D)=1.364  max per-P=2.166  max row/(L'D)=68.15

@@ -1,0 +1,53 @@
+====================================================================================================
+n=2 l=0: SINGLETON.  psi_l = (1 + b X^1) C_l,  |b| = q^0
+   M = q^(l(1/2-u)) * [A(Y)/A(X)] * [D(X)/D(Y)]  with A,D Euler-type polynomials
+   leading monomials of q^(l/2) X^l A(Y): [(-1, e0/sqrt(q)), (0, 1)]
+n=2 l=1: SINGLETON.  psi_l = (1 + b X^2) C_l,  |b| = q^0
+   M = q^(l(1/2-u)) * [A(Y)/A(X)] * [D(X)/D(Y)]  with A,D Euler-type polynomials
+   leading monomials of q^(l/2) X^l A(Y): [(-1, -1/q), (1, 1)]
+====================================================================================================
+n=3 pair (l,l')=(0,1):  det A - D = 0
+   T_0 <- T_0(1-u):  [e=0, weight 1],  [e=0, weight -1/q]
+   T_0 <- T_1(1-u):  [e=-1, weight e0/sqrt(q)],  [e=2, weight -e0/sqrt(q)]
+   T_1 <- T_0(1-u):  [e=-1, weight 1/(e0*sqrt(q))],  [e=2, weight -1/(e0*sqrt(q))]
+   T_1 <- T_1(1-u):  [e=1, weight 1],  [e=1, weight -1/q]
+n=3 pair (l,l')=(1,0):  det A - D = 0
+   T_1 <- T_1(1-u):  [e=1, weight 1],  [e=1, weight -1/q]
+   T_1 <- T_0(1-u):  [e=-1, weight e1/sqrt(q)],  [e=2, weight -e1/sqrt(q)]
+   T_0 <- T_1(1-u):  [e=-1, weight 1/(e1*sqrt(q))],  [e=2, weight -1/(e1*sqrt(q))]
+   T_0 <- T_0(1-u):  [e=0, weight 1],  [e=0, weight -1/q]
+n=3 l=2: SINGLETON.  psi_l = (1 + b X^3) C_l,  |b| = q^1/2
+   M = q^(l(1/2-u)) * [A(Y)/A(X)] * [D(X)/D(Y)]  with A,D Euler-type polynomials
+   leading monomials of q^(l/2) X^l A(Y): [(-1, -1/q), (2, 1)]
+====================================================================================================
+n=6 pair (l,l')=(0,4):  det A - D = 0
+   T_0 <- T_0(1-u):  [e=0, weight 1],  [e=0, weight -1/q]
+   T_0 <- T_4(1-u):  [e=-1, weight e0/sqrt(q)],  [e=5, weight -e0/sqrt(q)]
+   T_4 <- T_0(1-u):  [e=-1, weight 1/(e0*sqrt(q))],  [e=5, weight -1/(e0*sqrt(q))]
+   T_4 <- T_4(1-u):  [e=4, weight 1],  [e=4, weight -1/q]
+n=6 pair (l,l')=(1,3):  det A - D = 0
+   T_1 <- T_1(1-u):  [e=1, weight 1],  [e=1, weight -1/q]
+   T_1 <- T_3(1-u):  [e=-1, weight e1/sqrt(q)],  [e=5, weight -e1/sqrt(q)]
+   T_3 <- T_1(1-u):  [e=-1, weight 1/(e1*sqrt(q))],  [e=5, weight -1/(e1*sqrt(q))]
+   T_3 <- T_3(1-u):  [e=3, weight 1],  [e=3, weight -1/q]
+n=6 l=2: SINGLETON.  psi_l = (1 + b X^3) C_l,  |b| = q^1
+   M = q^(l(1/2-u)) * [A(Y)/A(X)] * [D(X)/D(Y)]  with A,D Euler-type polynomials
+   leading monomials of q^(l/2) X^l A(Y): [(-1, e2/sqrt(q)), (2, 1)]
+n=6 pair (l,l')=(3,1):  det A - D = 0
+   T_3 <- T_3(1-u):  [e=3, weight 1],  [e=3, weight -1/q]
+   T_3 <- T_1(1-u):  [e=-1, weight e3/sqrt(q)],  [e=5, weight -e3/sqrt(q)]
+   T_1 <- T_3(1-u):  [e=-1, weight 1/(e3*sqrt(q))],  [e=5, weight -1/(e3*sqrt(q))]
+   T_1 <- T_1(1-u):  [e=1, weight 1],  [e=1, weight -1/q]
+n=6 pair (l,l')=(4,0):  det A - D = 0
+   T_4 <- T_4(1-u):  [e=4, weight 1],  [e=4, weight -1/q]
+   T_4 <- T_0(1-u):  [e=-1, weight e4/sqrt(q)],  [e=5, weight -e4/sqrt(q)]
+   T_0 <- T_4(1-u):  [e=-1, weight 1/(e4*sqrt(q))],  [e=5, weight -1/(e4*sqrt(q))]
+   T_0 <- T_0(1-u):  [e=0, weight 1],  [e=0, weight -1/q]
+n=6 l=5: SINGLETON.  psi_l = (1 + b X^6) C_l,  |b| = q^2
+   M = q^(l(1/2-u)) * [A(Y)/A(X)] * [D(X)/D(Y)]  with A,D Euler-type polynomials
+   leading monomials of q^(l/2) X^l A(Y): [(-1, -1/q), (5, 1)]
+====================================================================================================
+Reading: the coefficient of T_l(1-u) in the FE of T_l is q^{l(1/2-u)}(1 - q^-1) (weight 1,
+exponent l); the only other monomials are off-diagonal, of weight q^{-1/2}, exponents -1 and n-1,
+i.e. the shifted series a_l X^{l+1} psi_{l'} of conductor q^{l'}.  1/D(Y) only adds exponents -n k
+with weights q^-k.  Hence: effective conductor of the coprime part at index p^l is q^{(l mod n)}.
