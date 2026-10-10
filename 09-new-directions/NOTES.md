@@ -533,7 +533,7 @@ Files: `agents/cB-numerics/{cubic_data.c, verify.py, onset*.py, groups.py, fit_h
 
 **Verdict on the cubic θ₃⊗θ₃ architecture:** dead (c_B = 4, proved modulo standard Kubota theory, consistent with numerics). Remaining: the two-/three-variable split (agent `twovar`).
 
-## 32. Agent report: twovar (round 4, finished ~11:30 UTC) — multi-variable cubic splits DEAD
+## 32. Agent report: twovar (round 4, finished ~10:50 UTC) — multi-variable cubic splits DEAD
 
 Files: `agents/twovar/{NOTES.md, kvar_lp.py, validate.py, variants.py, closed_forms.py, binding_k2.py, runs/}`.
 - **Structure (proved).** κ_A is completely multiplicative, so a k-Poisson split factors as I_k = Σ_A b(A)q_A^{−1/2}Π_i S_i(A).
