@@ -240,3 +240,21 @@ Lindelöf-on-average beyond the edge (W(w)) is therefore equivalent to a power-s
 as power-saving second moments of quadratic twists of GL2 forms at the edge. Li (2024) and Shen–Stucky reach that class
 only with log savings, and power savings there are open. BFKMM-type power savings at the edge exist for the family of
 ALL characters mod q (exact orthogonality and shifted convolutions), not for quadratic families.
+
+## 17. Agent report: lit-combos (finished ~06:55 UTC) — SOTA unchanged, combination map
+
+Files: `agents/lit-combos/{LIT.md, COMBOS.md, combo.py, runs/}`.
+- **SOTA:** tracker PRs #1–#7 only; best 0.874957019420; openai/math HEAD fd4aeeb (Oct 7). Gao now claims 0.8749571516.
+  Nothing below 0.8749 anywhere.
+- **Literature:** no beyond-the-edge input for any lever (full table in LIT.md). DDHL (1.11) is the only published
+  "fewer rows than conductor" mean value, at large-sieve strength 3/2.
+- **Levers trade off linearly.** As fractions of their single-knob thresholds, the requirements in a working combination sum to about 1, so combining gives no bonus.
+  - Single knobs for 27/31: W(0.0638), κ_A = 0.895, s₀ ≈ 0.0065 on the Gram pairing, w1 = 0.2215.
+  - For 6/7: full (V′) + W(0.013), or W(0.285).
+- **DIAG package:** Lemma marked at r + z ≤ m with no 2r + 8z cap (mk = 1), and Lemma plain at n₁ + n₂ + z ≤ M (cP = 1).
+  - Alone: **0.87255**. With DIAG, 27/31 needs only W(0.0196), and 20/23 needs W(0.037).
+  - Partial versions: mk ≥ 0.75 alone gives 0.87349; cP = 1 alone gives 0.87345.
+  - Caveat (coordinator): the factor 2 in z comes from the same mechanism as the wall: a mark p costs conductor p² for length p in the
+    reflected recursion (P78 invariant 3M + 6z₀ ≤ 4F₀). In the primal picture DIAG is "within the diagonal"
+    (product length ≤ family), but there the sextic large sieve's theta term U^{1/3}N^{5/6} exceeds U for N > U^{4/5}.
+    So DIAG needs a coefficient-sensitive sextic sieve for Möbius × prime-slot coefficients, which is unproved.
