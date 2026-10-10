@@ -481,3 +481,25 @@ and numerics (fast Z[ω] Gauss sums, AFE-consistency conductor test).
 - **Dichotomy (if confirmed).** Single-Gauss-sum rows give degree 2 but a thin (quadratic-residual) family. Double-Gauss-sum rows give a full family
   but degree 4. Both lose against the family/conductor balance. The metaplectic μ-absorption method would then appear capped near 7/8
   with current mean-value technology.
+
+## 29. Agent report: cB-theory (round 4, finished ~10:05 UTC) — c_B = 4 (sharp). The cubic θ₃⊗θ₃ architecture is DEAD (≥ 10/11)
+
+Files: `agents/cB-theory/{NOTES.md, local_fe.py(.out), orient_check.py(.out), ff_*}`.
+- Full Kubota series of order n: Ψ_n(r,s) = N(r)^{1/2−s}·τ(s)·Ψ_n(r,1−s), with a finite S-matrix τ.
+  Gamma factor Π_{j=1}^{n−1} Γ(s−1/2+j/n) times ζ_F(ns−n/2+1).
+- Exact p-part: ψ(p^l m′) = C_l + a_l X^{l+1} C_{l′} with l′ = −l−2 mod n and |a_l| = q^{l/2}.
+  **Rule (proved given Kubota):** the coprime part at index r has conductor Π_p q_p^{(v_p(r) mod n)}.
+  The p-part absorbs conductor only for l ≥ n (Kazhdan–Patterson periodicity), unlike σ_{1−2s} for GL2 Eisenstein series.
+  The rule matches wf2's n = 2 example and P78's completed-reflection at every j_p.
+- B_h = coprime sextic series at index h⁴, so c_B = 4. Exact identity: B_h = Σ_{d|h}(...)ψ̃₆((h/d)⁴)/Π(1−N(p)^{2−6s}).
+  The d = 1 term carries a full-size dual at scale N(h)⁴. For general h = h₁h₂²h₃³ the conductor is N(h₁)⁴N(h₂)²; cube rows (the copies) have conductor 1.
+- **Calibration correction.** P78's dual is NOT a sextic index shift. By DH it is the cubic theta twisted by the quadratic (k/·)₂, giving N(k)².
+- **Orientation (proved):** numerator h, hence index h⁴. The index-h² object (conductor N(h)²) has γ₁²γ̄₁ = γ₁, i.e. no μ, so no detection.
+- **Alternatives:**
+  - twisting one theta factor gives the same B, so c = 4;
+  - N = 3 has only the (1,1,1) pairing;
+  - square rows (conductor N(k)²) are produced by no probe.
+  - **The only c_B = 2 cubic variant:** the triple split as (Poisson, Poisson, θ₃), i.e. a TWO-VARIABLE probe Σ A_{m₁}A′_{m₂}B_{m₁m₂}
+    with a single cubic theta row. It is rigorous by P78's j_p = 2 case and has a full-index dual, but A enters both Poisson moduli.
+    P2 shape provably gives θ ≥ 7/6. The P78 shape is unmodelled; the expected cost is about Z^{1/2}.
+- Confirms coordinator prediction §28.
