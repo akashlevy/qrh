@@ -60,3 +60,25 @@ Scripts in `model/`: `wmodel.py` (reproduces the 08 certificate: margin −1.3·
 ## 4. Research agents
 Five agents (numerator, marked-cap, amplitude, redesign, lit2) were launched at ~14:15 UTC and all
 terminated immediately on an API spend limit; they produced no results.
+
+## 5. Further checks (after the agents failed)
+- **Numerator contour Re w = c with moment convexity.** Gabriel/Hölder interpolation between the
+  4th moment on Re w = 1/2 and the bin's zero-free pointwise bound on Re w = a gives the exponent
+  (c−1)l_y + d(R + θ_c(1−R)/4), θ_c = (a−c)/(a−1/2): affine in c, so an endpoint is optimal
+  (c = 1/2, i.e. the weighted bound, at the binding bins: slope l_y − d(1−R)/(2δ) ≈ +0.10 > 0).
+  Pointwise convexity alone gives the P78 choice c = 1−a (σ = δn₀/2). No interior gain.
+- **Restricting the low-side Cauchy–Schwarz to the bad rows** (rows factor as S_u·M_u): bounding
+  Σ_{u∈C}|S_u M_u| needs Σ_C|M_u|², i.e. a large-values bound for the length-Z Möbius sums with
+  q_u < Z (below the diagonal, M_κ type). Same obstruction.
+- **Several Y-scales / dyadic splits of the numerator:** the numerator is single-scale after the
+  compact-support weight; multi-scale probes are sums of probes (additive bounds, no gain).
+- **Heath-Brown splitting of the long inverse witness:** already covered by the 09 result that
+  detector redesigns only give the adversary more freedom; products of several Möbius pieces have
+  no moment lemma.
+
+**Conclusion so far.** In the weighted model every route to 41/47 found here requires one of the
+open inputs in §2.4. The cheapest (closest to existing technology) look like a lossless energy
+wall W(0.045) or a marked capacity ≥ 0.8(1−r) with plain capacity ≥ 0.4(1−2m); both are versions of
+the beyond-the-edge problems the 09 session documented. Nothing here is a proof, so there is nothing
+yet to formalize; the Lean environment build (Mathlib + OAI + WeightedQRH) was started in
+/home/user/leanbuild for when a proof exists.
