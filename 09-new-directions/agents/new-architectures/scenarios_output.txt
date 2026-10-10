@@ -1,0 +1,60 @@
+== sensitivity of the GRH floor to each scaling (others at P78 values) ==
+P78 base (c=a=gb=1/6, rho=1/2, kU=1, r=2)                       theta=0.866667 ~ 13/15  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.800
+amplification a=0.200                                           theta=0.861472 ~ 199/231  lx=0.403 ly=0.403 ell=0.195 M=0.805 h=0.792
+amplification a=0.250                                           theta=0.854167 ~ 41/48  lx=0.406 ly=0.406 ell=0.188 M=0.813 h=0.781
+amplification a=0.333                                           theta=0.843137 ~ 43/51  lx=0.412 ly=0.412 ell=0.176 M=0.824 h=0.765
+slot suppression rho=0.600                                      theta=0.866667 ~ 13/15  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.800
+slot suppression rho=0.667                                      theta=0.866667 ~ 13/15  lx=0.300 ly=0.500 ell=0.200 M=0.800 h=0.900
+slot suppression rho=0.750                                      theta=0.866667 ~ 13/15  lx=0.250 ly=0.550 ell=0.200 M=0.800 h=0.950
+slot suppression rho=1.000                                      theta=0.866667 ~ 13/15  lx=0.250 ly=0.550 ell=0.200 M=0.800 h=0.950
+row-range growth kU=0.90                                        theta=0.866667 ~ 13/15  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.780
+row-range growth kU=0.75                                        theta=0.866667 ~ 13/15  lx=0.275 ly=0.525 ell=0.200 M=0.800 h=0.875
+row-range growth kU=0.50                                        theta=0.866667 ~ 13/15  lx=0.250 ly=0.550 ell=0.200 M=0.800 h=0.850
+row-range growth kU=0.00                                        theta=0.866667 ~ 13/15  lx=0.250 ly=0.550 ell=0.200 M=0.800 h=0.750
+copy exponent c=0.200 (a=gb=c, GL2 wall)                        theta=0.840000 ~ 21/25  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.800
+copy exponent c=0.250 (a=gb=c, GL2 wall)                        theta=0.800000 ~ 4/5  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.800
+copy exponent c=0.333 (a=gb=c, GL2 wall)                        theta=0.733333 ~ 11/15  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.800
+copy exponent c=0.200 only in signal/rows (a=gb=1/6)            theta=0.846000 ~ 335/396  lx=0.380 ly=0.420 ell=0.200 M=0.800 h=0.820
+copy exponent c=0.250 only in signal/rows (a=gb=1/6)            theta=0.812500 ~ 13/16  lx=0.259 ly=0.571 ell=0.170 M=0.830 h=0.910
+no wall (energy diagonal for all M,ell), caseA kept             theta=0.837500 ~ 67/80  lx=0.900 ly=0.950 ell=0.900 M=1.850 h=1.000
+no wall, no case A                                              theta=0.837500 ~ 67/80  lx=0.471 ly=0.521 ell=0.471 M=0.992 h=1.000
+no wall, no case A, no Gram                                     theta=0.833333 ~ 5/6  lx=0.000 ly=3.000 ell=-0.000 M=3.000 h=1.000
+
+== Idea 1: higher-rank dual objects (degree r reflection), optimistic: no caseA/third, margin 0 ==
+sextic twists, GL3^(3)-type dual (r=3)                          theta=0.916667 ~ 11/12  lx=0.500 ly=0.000 ell=-0.000 M=0.500 h=0.500
+sextic twists, r=4                                              theta=1.000000 ~ 1  lx=0.400 ly=0.000 ell=-0.000 M=0.400 h=0.600
+cubic twists -> sextic Gauss sums, GL5^(6) (r=5)                theta=0.944444 ~ 17/18  lx=0.333 ly=0.000 ell=0.000 M=0.333 h=0.667
+cubic twists -> sextic Gauss sums, GL6^(6) (r=6)                theta=0.976190 ~ 41/42  lx=0.286 ly=0.000 ell=0.000 M=0.286 h=0.714
+order-10 twists -> quintic, GL4^(5) (r=4)                       theta=1.040000 ~ 26/25  lx=0.400 ly=0.000 ell=-0.000 M=0.400 h=0.600
+order-10 twists -> quintic, GL5^(5) (r=5)                       theta=1.100000 ~ 11/10  lx=0.333 ly=0.000 ell=0.000 M=0.333 h=0.667
+order-10 twists, hypothetical GL2 quintic theta (r=2)           theta=0.920000 ~ 23/25  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.800
+cubic twists, hypothetical GL2 dual (r=2)                       theta=0.733333 ~ 11/15  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.800
+cubic twists -> sextic Kubota series, shift h^4 (cond N(h)^4, r=4)  theta=0.900000 ~ 9/10  lx=0.400 ly=0.000 ell=0.000 M=0.400 h=0.600
+quartic twists -> conj quartic Kubota (cond N(h)^3, r=3), optimistic LS  theta=0.875000 ~ 7/8  lx=0.500 ly=-0.000 ell=-0.000 M=0.500 h=0.500
+
+== Idea 4: other placements of the slot amplifier (GRH) ==
+quadratic m-twist (m/p)_2, weights conj gamma_3(p), grouped with B: P78 wall, no case A  theta=0.866667 ~ 13/15  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.800
+sextic m-twist chi_p(m), grouped with B: reflected dual needs BGL, wall 3M/2+ell<=1  theta=0.888889 ~ 8/9  lx=0.333 ly=0.333 ell=0.000 M=0.667 h=0.667
+m-twist grouped with A (Gram (YP^2/X)^(1/6) eats P^(1/6)); see aside_marks.py   {'theta': np.float64(0.888889), 'lx': np.float64(0.3333), 'ly': np.float64(0.3333), 'ell': np.float64(0.0), 'M': np.float64(0.6667)}
+s-marks (p|s, Y->YP) = reparametrization Y->YP: base            theta=0.866667 ~ 13/15  lx=0.400 ly=0.400 ell=0.200 M=0.800 h=0.800
+unmarked probe (ell = 0 forced), for reference                  theta=0.888889 ~ 8/9  lx=0.333 ly=0.333 ell=-0.000 M=0.667 h=0.667
+
+== P2-type mean square (paper2 architecture), order-N twists, degree-r dual ==
+   need sum_{h<=Hd}|B_h|^2 << D^2 with Hd = D^2/H and dual length Hd^r/D (optimistic
+   diagonal large sieve for the reflected dual): Hd <= D^{2/r}, i.e. H >= D^{2-2/r};
+   extraction with H^{1/N} copies:  theta = 1/2 + (1-1/N)(1-1/r)
+   sextic -> cubic theta GL2^(3) [paper2]                                     theta = 11/12 = 0.9167
+   sextic -> GL3^(3) first-row (if Gauss sums)                                theta = 19/18 = 1.0556
+   quartic -> conj. quartic Gauss (Kubota, cond N(h)^3) [refuted transplant]  theta = 1 = 1.0000
+   cubic -> sextic Gauss, shift h^4 (Kubota, cond N(h)^4)                     theta = 1 = 1.0000
+   cubic -> sextic Gauss on GL5^(6) theta                                     theta = 31/30 = 1.0333
+   order 10 -> quintic Gauss on GL4^(5) theta                                 theta = 47/40 = 1.1750
+   order 10 -> hypothetical GL2 quintic theta                                 theta = 19/20 = 0.9500
+   cubic -> hypothetical GL2 object with sextic Gauss coefficients            theta = 5/6 = 0.8333
+   quartic -> hypothetical GL2 theta                                          theta = 7/8 = 0.8750
+
+== generic wall-free device: low gain gL per unit length, row cost gR (device.py) ==
+   gR/gL =   2:  theta = 0.83333  (device length used 1.000)
+   gR/gL =   3:  theta = 0.85417  (device length used 0.750)
+   gR/gL =   4:  theta = 0.86667  (device length used 0.000)
+   gR/gL =  14:  theta = 0.86667  (device length used 0.000)

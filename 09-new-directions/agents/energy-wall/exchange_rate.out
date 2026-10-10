@@ -1,0 +1,18 @@
+model optimum at wE=0.07: M=0.8623 l=0.2077 w=M+l-1=0.0700
+   paper (quadratic LS column term)                           excess +0.0700   
+   slot transfer, min over v<=l                               excess +0.0700   
+   TM factor (mark-coupled, dense sieve)                      excess +0.2429   
+   TM factor (mark-coupled, optimistic sparse sieve)          excess +0.1390   
+   TM factor + marks to rows                                  excess +0.2077   
+   decoupled factor (hypothetical)                            excess +0.0350   (<= w: gain)
+   primal, BGL sextic sieve                                   excess +0.5177   
+   primal, if sparsity (Z effective columns) were exploitable excess +0.1377   
+P78 geometry (on the wall): M=0.8333 l=0.1667 w=M+l-1=0.0000
+   paper (quadratic LS column term)                           excess +0.0000   
+   slot transfer, min over v<=l                               excess +0.0000   
+   TM factor (mark-coupled, dense sieve)                      excess +0.1668   
+   TM factor (mark-coupled, optimistic sparse sieve)          excess +0.0835   
+   TM factor + marks to rows                                  excess +0.1667   
+   decoupled factor (hypothetical)                            excess +0.0000   
+   primal, BGL sextic sieve                                   excess +0.5000   
+   primal, if sparsity (Z effective columns) were exploitable excess +0.1667   
