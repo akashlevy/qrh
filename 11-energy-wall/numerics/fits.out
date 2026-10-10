@@ -1,0 +1,138 @@
+runs: N0 = [12500, 25000, 50000, 100000, 200000];  windows F = N0/K = 2^(j/2) >= 1, 12 angular row sectors, rows/sector >= 8
+slot mark lengths (geometric mean norm): s30: L=37 (6 primes), s100: L=149 (20 primes), s300: L=425 (44 primes), s1000: L=1459 (136 primes), t31x61: L=3605 (20 primes)
+
+== unmarked theta and random-phase control (|c| = |beta w|)
+  beta               a=-0.14  b=-0.458±0.036  c=-0.000±0.036  (n=65, resid sd 0.26)
+  rand(4 seeds)      a=+0.19  b=-0.497±0.015  c=-0.014±0.015  (n=260, resid sd 0.22)
+
+== single-mark energies E_P (rows with (P,k)=1), theta beta chi_P^-2 vs control e^{ith} 1_{(n,P)=1}
+    N(P) fit theta                                                    | control                                  | theta/control rms
+       7 b=-0.528±0.027 c=-0.014±0.026 (n=65) | b=-0.507±0.024 c=-0.007±0.024 | 1.033±0.033
+      13 b=-0.508±0.034 c=+0.002±0.034 (n=65) | b=-0.501±0.036 c=-0.010±0.036 | 0.964±0.047
+      19 b=-0.518±0.036 c=-0.033±0.035 (n=65) | b=-0.519±0.031 c=-0.017±0.031 | 1.022±0.045
+      31 b=-0.512±0.031 c=-0.037±0.031 (n=65) | b=-0.464±0.031 c=+0.014±0.031 | 1.077±0.043
+      43 b=-0.506±0.031 c=-0.019±0.031 (n=65) | b=-0.473±0.031 c=+0.015±0.031 | 0.993±0.034
+      61 b=-0.534±0.030 c=+0.010±0.029 (n=65) | b=-0.523±0.032 c=-0.004±0.032 | 1.008±0.039
+      97 b=-0.469±0.032 c=+0.051±0.032 (n=65) | b=-0.532±0.026 c=-0.035±0.026 | 0.992±0.043
+     151 b=-0.478±0.027 c=+0.040±0.027 (n=65) | b=-0.479±0.029 c=+0.039±0.029 | 0.967±0.034
+     211 b=-0.512±0.030 c=-0.022±0.030 (n=65) | b=-0.534±0.029 c=-0.029±0.029 | 0.898±0.039
+     307 b=-0.483±0.030 c=-0.009±0.030 (n=65) | b=-0.494±0.031 c=+0.004±0.031 | 1.012±0.041
+     409 b=-0.465±0.036 c=+0.016±0.036 (n=65) | b=-0.576±0.032 c=-0.089±0.032 | 0.954±0.043
+     601 b=-0.454±0.032 c=+0.043±0.032 (n=65) | b=-0.530±0.034 c=-0.014±0.034 | 0.992±0.042
+    1009 b=-0.494±0.031 c=-0.016±0.031 (n=65) | b=-0.499±0.029 c=-0.015±0.029 | 0.959±0.037
+  pooled theta (d = exponent of N(P)):   a=+0.24  b=-0.497±0.009  c=+0.001±0.009  d=-0.019±0.005  (n=845, resid sd 0.23)
+  pooled control:                        a=+0.27  b=-0.510±0.009  c=-0.011±0.008  d=-0.005±0.005  (n=845, resid sd 0.22)
+  pooled theta, only F < N(P) (unproved window): a=+0.24  b=-0.500±0.009  c=-0.006±0.010  d=-0.015±0.006  (n=721, resid sd 0.23)
+  theta/control rms ratio, all P pooled: 0.990 ± 0.012 (65 windows)
+  bias test z = rho_full/(rms/sqrt12): theta mean +0.016 rms 0.99 (t=+0.48, n=845); control mean -0.057 rms 1.03 (t=-1.60)
+
+== coherent multi-mark core sum N (exact mask 1_{(P,k)=1}); control e^{ith}|beta X w|
+  slot     design theta fit                                            | control fit                          | theta/ctrl
+  s30      gauss  b=-0.462±0.049 c=+0.027±0.049 (n=65) | b=-0.526±0.027 c=-0.016±0.027 | 0.966±0.047
+  s30      kub    b=-0.501±0.040 c=+0.029±0.040 (n=65) | b=-0.509±0.030 c=-0.003±0.030 | 0.996±0.045
+  s30      ones   b=-0.573±0.039 c=-0.033±0.039 (n=65) | b=-0.536±0.028 c=-0.023±0.028 | 0.943±0.047
+  s30      p78    b=-0.491±0.048 c=-0.012±0.048 (n=65) | b=-0.515±0.028 c=-0.026±0.028 | 0.965±0.044
+  s30      rnd    b=-0.466±0.032 c=+0.016±0.032 (n=65) | b=-0.520±0.029 c=-0.023±0.029 | 0.993±0.038
+  s100     gauss  b=-0.443±0.044 c=+0.050±0.044 (n=65) | b=-0.496±0.024 c=-0.002±0.024 | 0.982±0.044
+  s100     kub    b=-0.498±0.045 c=-0.004±0.045 (n=65) | b=-0.426±0.029 c=+0.053±0.029 | 0.943±0.050
+  s100     ones   b=-0.484±0.048 c=+0.028±0.048 (n=65) | b=-0.498±0.030 c=+0.022±0.030 | 0.942±0.050
+  s100     p78    b=-0.558±0.048 c=-0.041±0.048 (n=65) | b=-0.514±0.030 c=-0.041±0.030 | 0.926±0.048
+  s100     rnd    b=-0.541±0.030 c=-0.047±0.030 (n=65) | b=-0.488±0.033 c=+0.025±0.033 | 0.952±0.039
+  s300     gauss  b=-0.460±0.046 c=+0.045±0.046 (n=65) | b=-0.553±0.030 c=-0.048±0.030 | 1.025±0.052
+  s300     kub    b=-0.414±0.049 c=+0.080±0.049 (n=65) | b=-0.489±0.023 c=-0.005±0.023 | 0.932±0.051
+  s300     ones   b=-0.433±0.037 c=+0.045±0.037 (n=65) | b=-0.496±0.030 c=-0.018±0.030 | 1.012±0.043
+  s300     p78    b=-0.478±0.041 c=+0.020±0.040 (n=65) | b=-0.431±0.030 c=+0.109±0.030 | 0.863±0.045
+  s300     rnd    b=-0.569±0.033 c=-0.063±0.033 (n=65) | b=-0.510±0.029 c=-0.009±0.029 | 0.943±0.042
+  s1000    gauss  b=-0.430±0.036 c=+0.031±0.036 (n=65) | b=-0.570±0.038 c=-0.058±0.038 | 0.997±0.051
+  s1000    kub    b=-0.536±0.042 c=-0.014±0.042 (n=65) | b=-0.546±0.035 c=-0.028±0.035 | 1.023±0.046
+  s1000    ones   b=-0.515±0.047 c=-0.032±0.046 (n=65) | b=-0.474±0.033 c=+0.039±0.033 | 0.976±0.044
+  s1000    p78    b=-0.424±0.039 c=+0.049±0.039 (n=65) | b=-0.493±0.027 c=+0.015±0.027 | 1.002±0.044
+  s1000    rnd    b=-0.478±0.029 c=+0.013±0.029 (n=65) | b=-0.554±0.037 c=-0.023±0.036 | 1.014±0.043
+  t31x61   p78x2  b=-0.464±0.045 c=+0.013±0.045 (n=65) | b=-0.493±0.032 c=-0.009±0.032 | 1.004±0.053
+  t31x61   rndx2  b=-0.522±0.027 c=-0.010±0.027 (n=65) | b=-0.575±0.032 c=-0.060±0.032 | 0.964±0.041
+  pooled p78    over single slots (d = exponent of L): a=-0.04  b=-0.488±0.022  c=+0.004±0.022  d=+0.013±0.015  (n=260, resid sd 0.32)
+  pooled gauss  over single slots (d = exponent of L): a=-0.15  b=-0.449±0.022  c=+0.038±0.022  d=-0.001±0.015  (n=260, resid sd 0.32)
+  pooled ones   over single slots (d = exponent of L): a=+0.01  b=-0.501±0.021  c=+0.002±0.021  d=+0.021±0.014  (n=260, resid sd 0.31)
+  pooled kub    over single slots (d = exponent of L): a=+0.03  b=-0.487±0.022  c=+0.023±0.022  d=-0.001±0.015  (n=260, resid sd 0.32)
+  pooled rnd    over single slots (d = exponent of L): a=+0.18  b=-0.514±0.016  c=-0.020±0.015  d=+0.012±0.010  (n=260, resid sd 0.23)
+  pooled P78-coherent (p78 + p78x2, all slots):    a=-0.09  b=-0.483±0.020  c=+0.006±0.020  d=+0.019±0.011  (n=325, resid sd 0.32)
+  its control:                                      a=+0.06  b=-0.489±0.013  c=+0.010±0.013  d=+0.006±0.007  (n=325, resid sd 0.22)
+  (all 311/325 P78-coherent points lie in the unproved window 1 <= F < L)
+  theta/control rms ratio, all designs pooled: 1.003 ± 0.010 (65 windows)
+  bias test p78 (all slots) : z mean -0.123, z rms 0.97, t = -2.31 (n=325)  [z uses sqrt6 for |S_k|=|S_kbar| families]
+  bias test ones            : z mean +0.004, z rms 0.99, t = +0.06 (n=260)  [z uses sqrt6 for |S_k|=|S_kbar| families]
+  bias test all designs     : z mean -0.068, z rms 1.01, t = -2.55 (n=1430)  [z uses sqrt6 for |S_k|=|S_kbar| families]
+  bias test controls        : z mean +0.009, z rms 1.00, t = +0.33 (n=1430)  [z uses sqrt6 for |S_k|=|S_kbar| families]
+
+== conjugation-symmetric families (|S_k| = |S_kbar| exactly): ['X:s1000:gauss', 'X:s1000:kub', 'X:s1000:ones', 'X:s1000:p78', 'X:s100:gauss', 'X:s100:kub', 'X:s100:ones', 'X:s100:p78', 'X:s300:gauss', 'X:s300:kub', 'X:s300:ones', 'X:s300:p78', 'X:s30:gauss', 'X:s30:kub', 'X:s30:ones', 'X:s30:p78', 'X:t31x61:p78x2', 'beta']
+== absolute bound on a deterministic off-diagonal component: weighted mean of rho_full (+- 1 s.e.)
+  unmarked beta    F in [1,4]: -0.0055 ± 0.0038 (n=25)   F in [5.7,64]: -0.0051 ± 0.0080   F >= 90: -0.1794 ± 0.0431
+  single marks     F in [1,4]: +0.0004 ± 0.0008 (n=325)   F in [5.7,64]: +0.0016 ± 0.0018   F >= 90: -0.0175 ± 0.0094
+  single controls  F in [1,4]: -0.0000 ± 0.0008 (n=325)   F in [5.7,64]: -0.0025 ± 0.0018   F >= 90: -0.0225 ± 0.0095
+  P78 designs      F in [1,4]: -0.0011 ± 0.0016 (n=125)   F in [5.7,64]: -0.0065 ± 0.0036   F >= 90: -0.0154 ± 0.0167
+  all designs      F in [1,4]: -0.0012 ± 0.0007 (n=550)   F in [5.7,64]: -0.0033 ± 0.0016   F >= 90: -0.0128 ± 0.0084
+  design controls  F in [1,4]: -0.0000 ± 0.0006 (n=550)   F in [5.7,64]: +0.0005 ± 0.0013   F >= 90: -0.0109 ± 0.0072
+== deep weighted-geometry regime L/F >= 10 only
+  P78-coherent designs, L/F >= 10: a=-0.08  b=-0.484±0.021  c=+0.002±0.024  d=+0.019±0.015  (n=241, resid sd 0.30)
+  single marks, N(P)/F >= 10:      a=+0.15  b=-0.490±0.011  c=-0.001±0.016  d=-0.009±0.011  (n=429, resid sd 0.23)
+  P78-coherent, L/F >= 10 and L^2 <= N (weighted-like, [('s100', 25000), ('s100', 50000), ('s100', 100000)]...): a=+0.55  b=-0.540±0.049  c=-0.039±0.072  d=-0.039±0.058  (n=63, resid sd 0.31)
+  single marks, N(P)/F >= 10 and N(P)^2 <= N: a=+0.38  b=-0.514±0.018  c=-0.021±0.028  d=-0.026±0.021  (n=215, resid sd 0.22)
+
+== per-mark energies E_P for all 44 slot primes N(P) in [300,600) pooled: a=+0.20  b=-0.502±0.005  c=-0.009±0.005  (n=2860, resid sd 0.22)
+
+== sector-count method: rms over S in {6,12,24,48} sectors at fixed window (window fixed effects)
+  beta             b = -0.646 ± 0.025  (235 points, 70 windows x names)
+  rand             b = -0.544 ± 0.007  (940 points, 280 windows x names)
+  single marks     b = -0.546 ± 0.004  (3055 points, 910 windows x names)
+  P78 designs      b = -0.575 ± 0.010  (1175 points, 350 windows x names)
+  design controls  b = -0.541 ± 0.003  (5170 points, 1540 windows x names)
+
+== extrapolation: rho ~ Z^{bM + cw + d l}; W needs rho << Z^eps; margin = -(bM + cw + dl) (Z-exponent)
+  W(0.043) optimum (wall4 s.8) (M,l,w)=(0.8511, 0.1915, 0.0426):
+     beta: 0.390±0.032
+     single pooled: 0.427±0.008
+     single pooled, F < N(P): 0.428±0.008
+     single, N(P)/F>=10: 0.419±0.010
+     single, weighted-like: 0.443±0.015
+     coherent p78 all slots: 0.407±0.018
+     coherent p78, L/F>=10: 0.408±0.019
+     coherent p78, weighted-like: 0.469±0.040
+     design p78 pooled: 0.413±0.020
+     rand(4 seeds): 0.423±0.013
+     coherent p78 control: 0.415±0.012
+  W(0.040) point (M,l,w)=(0.8492, 0.191, 0.0402):
+     beta: 0.389±0.032
+     single pooled: 0.426±0.008
+     single pooled, F < N(P): 0.427±0.008
+     single, N(P)/F>=10: 0.418±0.010
+     single, weighted-like: 0.442±0.015
+     coherent p78 all slots: 0.406±0.018
+     coherent p78, L/F>=10: 0.408±0.019
+     coherent p78, weighted-like: 0.468±0.040
+     design p78 pooled: 0.412±0.020
+     rand(4 seeds): 0.422±0.013
+     coherent p78 control: 0.414±0.012
+  BRIEF range low (M=0.82, l=0.18) (M,l,w)=(0.82, 0.18, 0.0):
+     beta: 0.376±0.030
+     single pooled: 0.411±0.007
+     single pooled, F < N(P): 0.412±0.007
+     single, N(P)/F>=10: 0.404±0.010
+     single, weighted-like: 0.426±0.014
+     coherent p78 all slots: 0.393±0.016
+     coherent p78, L/F>=10: 0.394±0.017
+     coherent p78, weighted-like: 0.450±0.037
+     design p78 pooled: 0.398±0.018
+     rand(4 seeds): 0.407±0.012
+     coherent p78 control: 0.400±0.011
+  BRIEF range high (M=0.86, l=0.20) (M,l,w)=(0.86, 0.2, 0.06):
+     beta: 0.394±0.033
+     single pooled: 0.431±0.008
+     single pooled, F < N(P): 0.433±0.008
+     single, N(P)/F>=10: 0.424±0.011
+     single, weighted-like: 0.448±0.015
+     coherent p78 all slots: 0.411±0.018
+     coherent p78, L/F>=10: 0.413±0.019
+     coherent p78, weighted-like: 0.475±0.041
+     design p78 pooled: 0.417±0.020
+     rand(4 seeds): 0.428±0.014
+     coherent p78 control: 0.419±0.012

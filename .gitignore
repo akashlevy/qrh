@@ -20,3 +20,9 @@ venv/
 *.synctex.gz
 # OS
 .DS_Store
+
+# 10-below-41-47: agent scratch clones and in-progress agent dirs
+10-below-41-47/agents/*/scratch/
+10-below-41-47/agents/*
+!10-below-41-47/agents/lit2/
+11-energy-wall/*/

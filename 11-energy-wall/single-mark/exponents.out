@@ -1,0 +1,100 @@
+=== ell = 0.19, M = 0.85 ===
+  w = M+ell-1 (= log N/K)                                         0.0400
+  K                                                               0.8500
+  L                                                               0.1900
+  N                                                               0.8900
+  KL (AFE length, conductor (KL)^2)                               1.0400
+  K sqrt(L) (AFE point, U_P picture, conductor K^2 L)             0.9450
+  excess of (K+N)N over KN                                        0.0400
+  lossless reflection regime starts at N = K^{3/2}L               1.4650
+  excess of reflection+sextic-sieve branch at this N              0.3833
+  max excess over the gap (K^{1/5} L^{2/5})                       0.2460
+  proved mean square of D(1/2): K^{6/5} L^{2/5}                   1.0960
+  H = Z^2/K                                                       1.1500
+  natural boundary of Prop U_P: H = ZL                            1.1900
+  Prop U_P error exponent 2 + max(0, 1+L-H)                       2.0400
+  needed error exponent                                           2.0000
+  Diag exponent H+1                                               2.1500
+  sextic-sieve theta term (HZ)^{2/3} Z                            2.4333
+  individual subconvexity needed: delta >                         0.2394
+  H' = N^2/L (cubic GL(1) family)                                 1.5900
+  needed power saving in H'-units, delta >=                       0.4403
+  conductor of twist xi_k = K, as power of H'                     0.5346
+  PL strip width Delta = log(K^{1/2} L)                           0.6150
+  PL energy cost per unit type sigma: c*Delta, c = 8G/pi^2        0.4566
+  only dual dyads N' > N Z^{-2w/3} matter; lower end              0.8633
+=== ell = 0.18, M = 0.86 ===
+  w = M+ell-1 (= log N/K)                                         0.0400
+  K                                                               0.8600
+  L                                                               0.1800
+  N                                                               0.9000
+  KL (AFE length, conductor (KL)^2)                               1.0400
+  K sqrt(L) (AFE point, U_P picture, conductor K^2 L)             0.9500
+  excess of (K+N)N over KN                                        0.0400
+  lossless reflection regime starts at N = K^{3/2}L               1.4700
+  excess of reflection+sextic-sieve branch at this N              0.3800
+  max excess over the gap (K^{1/5} L^{2/5})                       0.2440
+  proved mean square of D(1/2): K^{6/5} L^{2/5}                   1.1040
+  H = Z^2/K                                                       1.1400
+  natural boundary of Prop U_P: H = ZL                            1.1800
+  Prop U_P error exponent 2 + max(0, 1+L-H)                       2.0400
+  needed error exponent                                           2.0000
+  Diag exponent H+1                                               2.1400
+  sextic-sieve theta term (HZ)^{2/3} Z                            2.4267
+  individual subconvexity needed: delta >                         0.2395
+  H' = N^2/L (cubic GL(1) family)                                 1.6200
+  needed power saving in H'-units, delta >=                       0.4444
+  conductor of twist xi_k = K, as power of H'                     0.5309
+  PL strip width Delta = log(K^{1/2} L)                           0.6100
+  PL energy cost per unit type sigma: c*Delta, c = 8G/pi^2        0.4529
+  only dual dyads N' > N Z^{-2w/3} matter; lower end              0.8733
+=== ell = 0.2, M = 0.84 ===
+  w = M+ell-1 (= log N/K)                                         0.0400
+  K                                                               0.8400
+  L                                                               0.2000
+  N                                                               0.8800
+  KL (AFE length, conductor (KL)^2)                               1.0400
+  K sqrt(L) (AFE point, U_P picture, conductor K^2 L)             0.9400
+  excess of (K+N)N over KN                                        0.0400
+  lossless reflection regime starts at N = K^{3/2}L               1.4600
+  excess of reflection+sextic-sieve branch at this N              0.3867
+  max excess over the gap (K^{1/5} L^{2/5})                       0.2480
+  proved mean square of D(1/2): K^{6/5} L^{2/5}                   1.0880
+  H = Z^2/K                                                       1.1600
+  natural boundary of Prop U_P: H = ZL                            1.2000
+  Prop U_P error exponent 2 + max(0, 1+L-H)                       2.0400
+  needed error exponent                                           2.0000
+  Diag exponent H+1                                               2.1600
+  sextic-sieve theta term (HZ)^{2/3} Z                            2.4400
+  individual subconvexity needed: delta >                         0.2394
+  H' = N^2/L (cubic GL(1) family)                                 1.5600
+  needed power saving in H'-units, delta >=                       0.4359
+  conductor of twist xi_k = K, as power of H'                     0.5385
+  PL strip width Delta = log(K^{1/2} L)                           0.6200
+  PL energy cost per unit type sigma: c*Delta, c = 8G/pi^2        0.4603
+  only dual dyads N' > N Z^{-2w/3} matter; lower end              0.8533
+=== ell = 0.191, M = 0.8492 ===
+  w = M+ell-1 (= log N/K)                                         0.0402
+  K                                                               0.8492
+  L                                                               0.1910
+  N                                                               0.8894
+  KL (AFE length, conductor (KL)^2)                               1.0402
+  K sqrt(L) (AFE point, U_P picture, conductor K^2 L)             0.9447
+  excess of (K+N)N over KN                                        0.0402
+  lossless reflection regime starts at N = K^{3/2}L               1.4648
+  excess of reflection+sextic-sieve branch at this N              0.3836
+  max excess over the gap (K^{1/5} L^{2/5})                       0.2462
+  proved mean square of D(1/2): K^{6/5} L^{2/5}                   1.0954
+  H = Z^2/K                                                       1.1508
+  natural boundary of Prop U_P: H = ZL                            1.1910
+  Prop U_P error exponent 2 + max(0, 1+L-H)                       2.0402
+  needed error exponent                                           2.0000
+  Diag exponent H+1                                               2.1508
+  sextic-sieve theta term (HZ)^{2/3} Z                            2.4339
+  individual subconvexity needed: delta >                         0.2394
+  H' = N^2/L (cubic GL(1) family)                                 1.5878
+  needed power saving in H'-units, delta >=                       0.4399
+  conductor of twist xi_k = K, as power of H'                     0.5348
+  PL strip width Delta = log(K^{1/2} L)                           0.6156
+  PL energy cost per unit type sigma: c*Delta, c = 8G/pi^2        0.4571
+  only dual dyads N' > N Z^{-2w/3} matter; lower end              0.8626

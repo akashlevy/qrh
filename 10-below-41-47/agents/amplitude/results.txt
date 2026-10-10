@@ -1,0 +1,23 @@
+L=0.2207, max marked cap 7/37=0.1892
+1) supply irrelevance at x=1/2: R(d,1/2) with L phys vs L=inf
+  d=0.3: R(L)=0.74667 R(inf)=0.74667 binding (t,r,m)=(1.087, 0.687, 0.4)
+  d=0.4: R(L)=0.65633 R(inf)=0.65633 binding (t,r,m)=(1.13, 1.13, 0.0)
+  d=0.47: R(L)=0.58948 R(inf)=0.58948 binding (t,r,m)=(1.163, 0.747, 0.416)
+  d=0.55: R(L)=0.50998 R(inf)=0.50998 binding (t,r,m)=(1.21, 0.782, 0.428)
+  d=0.6: R(L)=0.45775 R(inf)=0.45775 binding (t,r,m)=(1.245, 0.808, 0.438)
+2) worst E under scenarios (best b):
+  baseline                                                worst=+0.01119 at (delta,x)=(np.float64(0.475), np.float64(0.5)) b=0.075
+  infinite physical supply (counts)                       worst=+0.01119 at (delta,x)=(np.float64(0.475), np.float64(0.5)) b=0.075
+  aux windows: counts use amp 1/2 for ALL rows, inf supply worst=+0.01119 at (delta,x)=(np.float64(0.475), np.float64(0.5)) b=0.075
+  mean-treatment of marks on high side (3)                worst=+0.01119 at (delta,x)=(np.float64(0.475), np.float64(0.5)) b=0.075
+  prime-only witness cap 1/2 (large sieve)                worst=+0.01119 at (delta,x)=(np.float64(0.475), np.float64(0.5)) b=0.075
+  prime-only witness cap 1/2 + aux supply                 worst=+0.01119 at (delta,x)=(np.float64(0.475), np.float64(0.5)) b=0.075
+  prime-only witness cap 1 + aux supply (HYP)             worst=-0.02837 at (delta,x)=(np.float64(0.1), np.float64(0.5)) b=0.000
+mk=1.0, cP=0.222: counting supply L >= 0.2458 (physical 0.2207)
+mk=0.9, cP=0.222: counting supply L >= 0.2458 (physical 0.2207)
+mk=0.8, cP=0.222: counting supply L >= 0.2458 (physical 0.2207)
+mk=1.0, cP=0.300: counting supply L >= 0.2390 (physical 0.2207)
+mk=0.75, cP=0.222: counting supply L >= 0.2458 (physical 0.2207)
+unlimited supply (slot powers), cubic branch dropped : mk* = 0.7441
+unlimited supply (slot powers), cubic branch 2r+8z<=3 kept : mk=1 not enough, worst 0.00429
+physical supply L, cubic branch dropped : mk=1 not enough, worst 0.00167

@@ -1,0 +1,94 @@
+== Large q, fixed degrees (kappa, lam, nu); D = 2kappa+lam-2 (kappa>=3; for kappa=2 the measured degree is lam+1) ==
+   rho = E_P/Diag - 1 (theta);  rho*q;  m4 = mean|S|^4/mean(|S|^2)^2;  cross_rms*sqrt(rows) (RMT ~ 1); 's' = row subset
+ (kappa,lam,nu) = (2, 1, 3):
+   q= 7 rows=   36  rho=-0.7974 rho*q= -5.582 (1+rho)*q=  1.418 m4=1.365 cross*sqrt(rows)=0.50 | ctrl rho=-0.0011
+   q=13 rows=  144  rho=-0.9015 rho*q=-11.720 (1+rho)*q=  1.280 m4=1.684 cross*sqrt(rows)=0.35 | ctrl rho=+0.0270
+   q=19 rows=  324  rho=-0.9368 rho*q=-17.800 (1+rho)*q=  1.200 m4=1.388 cross*sqrt(rows)=0.26 | ctrl rho=-0.0105
+   q=31 rows=  900  rho=-0.9637 rho*q=-29.874 (1+rho)*q=  1.126 m4=1.240 cross*sqrt(rows)=0.17 | ctrl rho=-0.0132
+   q=37 rows= 1296  rho=-0.9701 rho*q=-35.894 (1+rho)*q=  1.106 m4=1.232 cross*sqrt(rows)=0.15 | ctrl rho=-0.0024
+   q=43 rows= 1764  rho=-0.9746 rho*q=-41.908 (1+rho)*q=  1.092 m4=1.236 cross*sqrt(rows)=0.13 | ctrl rho=-0.0083
+   fit (full-row runs): |rho| ~ q^+0.10;  1+rho ~ q^-1.15
+ (kappa,lam,nu) = (2, 2, 3):
+   q= 7 rows=   41  rho=+0.1310 rho*q= +0.917 (1+rho)*q=  7.917 m4=1.828 cross*sqrt(rows)=0.98 | ctrl rho=-0.0078
+   q=13 rows=  155  rho=+0.0756 rho*q= +0.983 (1+rho)*q= 13.983 m4=1.890 cross*sqrt(rows)=0.88 | ctrl rho=+0.0381
+   q=19 rows=  341  rho=+0.0523 rho*q= +0.993 (1+rho)*q= 19.993 m4=1.895 cross*sqrt(rows)=0.92 | ctrl rho=-0.0041
+   q=31 rows=  929  rho=+0.0322 rho*q= +0.998 (1+rho)*q= 31.998 m4=1.928 cross*sqrt(rows)=1.01 | ctrl rho=-0.0158
+   q=37 rows= 1331  rho=+0.0270 rho*q= +0.998 (1+rho)*q= 37.998 m4=1.945 cross*sqrt(rows)=0.99 | ctrl rho=+0.0046
+   q=43 rows= 1805  rho=+0.0232 rho*q= +0.999 (1+rho)*q= 43.999 m4=1.963 cross*sqrt(rows)=1.04 | ctrl rho=-0.0037
+   fit (full-row runs): |rho| ~ q^-0.96;  1+rho ~ q^-0.05
+ (kappa,lam,nu) = (2, 2, 4):
+   q= 7 rows=   41  rho=-0.8783 rho*q= -6.148 (1+rho)*q=  0.852 m4=1.466 cross*sqrt(rows)=0.77 | ctrl rho=+0.0190
+   q=13 rows=  155  rho=-0.9254 rho*q=-12.031 (1+rho)*q=  0.969 m4=1.312 cross*sqrt(rows)=0.57 | ctrl rho=+0.0041
+   q=19 rows=  341  rho=-0.9481 rho*q=-18.014 (1+rho)*q=  0.986 m4=1.211 cross*sqrt(rows)=0.51 | ctrl rho=-0.0067
+   q=31 rows=  526s rho=-0.9681 rho*q=-30.012 (1+rho)*q=  0.988 m4=1.128 cross*sqrt(rows)=0.66 | ctrl rho=+0.0158
+   q=37 rows=  292s rho=-0.9729 rho*q=-35.998 (1+rho)*q=  1.002 m4=1.104 cross*sqrt(rows)=1.24 | ctrl rho=-0.0194
+   q=43 rows=  287s rho=-0.9766 rho*q=-41.995 (1+rho)*q=  1.005 m4=1.098 cross*sqrt(rows)=0.53 | ctrl rho=-0.0369
+   fit (full-row runs): |rho| ~ q^+0.08;  1+rho ~ q^-0.85
+ (kappa,lam,nu) = (3, 1, 4):
+   q= 7 rows=  258  rho=-0.2322 rho*q= -1.625 (1+rho)*q=  5.375 m4=1.727 cross*sqrt(rows)=1.97 | ctrl rho=+0.0030
+   q=13 rows= 1884  rho=-0.1189 rho*q= -1.546 (1+rho)*q= 11.454 m4=1.822 cross*sqrt(rows)=3.24 | ctrl rho=-0.0079
+   q=19 rows= 3477s rho=-0.0787 rho*q= -1.494 (1+rho)*q= 17.506 m4=1.896 cross*sqrt(rows)=3.23 | ctrl rho=+0.0049
+   q=31 rows=  513s rho=-0.0157 rho*q= -0.487 (1+rho)*q= 30.513 m4=1.977 cross*sqrt(rows)=0.99 | ctrl rho=+0.0116
+   q=37 rows=  293s rho=-0.0457 rho*q= -1.691 (1+rho)*q= 35.309 m4=1.990 cross*sqrt(rows)=0.81 | ctrl rho=-0.0094
+   q=43 rows=  289s rho=-0.0797 rho*q= -3.429 (1+rho)*q= 39.571 m4=1.978 cross*sqrt(rows)=0.91 | ctrl rho=+0.0091
+ (kappa,lam,nu) = (3, 2, 4):
+   q= 7 rows=  287  rho=-0.1795 rho*q= -1.256 (1+rho)*q=  5.744 m4=1.859 cross*sqrt(rows)=1.02 | ctrl rho=+0.0445
+   q=13 rows= 2015  rho=-0.0930 rho*q= -1.209 (1+rho)*q= 11.791 m4=1.957 cross*sqrt(rows)=1.72 | ctrl rho=-0.0175
+   q=19 rows= 3641s rho=-0.0662 rho*q= -1.258 (1+rho)*q= 17.742 m4=1.972 cross*sqrt(rows)=1.38 | ctrl rho=+0.0055
+   q=31 rows=  526s rho=-0.0345 rho*q= -1.069 (1+rho)*q= 29.931 m4=1.936 cross*sqrt(rows)=1.13 | ctrl rho=+0.0087
+   q=37 rows=  297s rho=-0.0098 rho*q= -0.361 (1+rho)*q= 36.639 m4=2.009 cross*sqrt(rows)=1.28 | ctrl rho=-0.0079
+   q=43 rows=  294s rho=-0.0098 rho*q= -0.419 (1+rho)*q= 42.581 m4=2.096 cross*sqrt(rows)=0.85 | ctrl rho=-0.0006
+ (kappa,lam,nu) = (3, 3, 4):
+   q= 7 rows=  293  rho=-0.0013 rho*q= -0.009 (1+rho)*q=  6.991 m4=2.064 cross*sqrt(rows)=1.36 | ctrl rho=+0.0495
+   q=13 rows= 2027  rho=+0.0033 rho*q= +0.043 (1+rho)*q= 13.043 m4=2.039 cross*sqrt(rows)=1.26 | ctrl rho=-0.0145
+   q=19 rows= 3650s rho=+0.0130 rho*q= +0.248 (1+rho)*q= 19.248 m4=1.968 cross*sqrt(rows)=0.75 | ctrl rho=+0.0047
+   q=31 rows=  526s rho=-0.0110 rho*q= -0.341 (1+rho)*q= 30.659 m4=1.979 cross*sqrt(rows)=0.75 | ctrl rho=+0.0114
+   q=37 rows=  297s rho=-0.0085 rho*q= -0.313 (1+rho)*q= 36.687 m4=1.952 cross*sqrt(rows)=1.13 | ctrl rho=-0.0084
+   q=43 rows=  294s rho=+0.0125 rho*q= +0.539 (1+rho)*q= 43.539 m4=1.989 cross*sqrt(rows)=0.83 | ctrl rho=-0.0004
+
+== campaign_q7.jsonl: fixed q, growing degrees; window = kappa < nu < kappa+lam-2 (genuinely beyond the wall on both sides of the FE) ==
+ q=7 (k,l,nu)=(3,2,4) D=6 win=0 rows=  287  rho per mark [-0.1795, -0.1795, -0.1795, -0.1795]  |rho|*sqrt(rows): th 3.04 ct 1.28 | m4 1.86 | cross*sqrt(rows) th 1.02 ct 0.93 | Ncoh -0.1136 Nrnd -0.1920 | op/edge 0.745
+ q=7 (k,l,nu)=(4,2,5) D=8 win=0 rows= 2017  rho per mark [0.0267, 0.0267, 0.0267, 0.0267]  |rho|*sqrt(rows): th 1.20 ct 0.98 | m4 1.95 | cross*sqrt(rows) th 6.40 ct 1.39 | Ncoh -0.0792 Nrnd +0.2979 | op/edge 1.342
+ q=7 (k,l,nu)=(5,2,6) D=10 win=0 rows= 3590s rho per mark [-0.0239, 0.0074, -0.0146, -0.0072]  |rho|*sqrt(rows): th 0.89 ct 1.41 | m4 2.04 | cross*sqrt(rows) th 1.39 ct 0.99 | Ncoh -0.0258 Nrnd -0.0341 | op/edge 0.978
+ q=7 (k,l,nu)=(6,2,7) D=12 win=0 rows=  518s rho per mark [-0.012, -0.0398, -0.1187, -0.0583]  |rho|*sqrt(rows): th 1.58 ct 1.13 | m4 2.07 | cross*sqrt(rows) th 0.80 ct 1.18 | Ncoh -0.0662 Nrnd -0.0194 | op/edge 0.883
+ q=7 (k,l,nu)=(3,3,4) D=7 win=0 rows=  293  rho per mark [0.0477, 0.0477, -0.0502, -0.0502]  |rho|*sqrt(rows): th 0.84 ct 1.42 | m4 2.06 | cross*sqrt(rows) th 1.36 ct 0.80 | Ncoh -0.0486 Nrnd -0.0462 | op/edge 0.950
+ q=7 (k,l,nu)=(4,3,5) D=9 win=0 rows= 2051  rho per mark [-0.0198, -0.0198, -0.0241, -0.0241]  |rho|*sqrt(rows): th 1.00 ct 1.14 | m4 2.07 | cross*sqrt(rows) th 0.94 ct 1.42 | Ncoh -0.0000 Nrnd -0.0135 | op/edge 0.930
+ q=7 (k,l,nu)=(5,3,6) D=11 win=0 rows= 3642s rho per mark [-0.0286, -0.0423, -0.028, -0.0353]  |rho|*sqrt(rows): th 2.05 ct 1.51 | m4 1.99 | cross*sqrt(rows) th 1.01 ct 1.03 | Ncoh -0.0454 Nrnd -0.0290 | op/edge 0.946
+ q=7 (k,l,nu)=(6,3,7) D=13 win=0 rows=  526s rho per mark [0.0341, -0.0437, -0.0193, -0.0005]  |rho|*sqrt(rows): th 0.67 ct 1.17 | m4 2.02 | cross*sqrt(rows) th 1.27 ct 1.10 | Ncoh -0.0139 Nrnd +0.0838 | op/edge 0.959
+ q=7 (k,l,nu)=(4,4,5) D=10 win=1 rows= 2057  rho per mark [-0.0282, -0.0158, -0.0282, -0.013]  |rho|*sqrt(rows): th 1.02 ct 1.18 | m4 1.99 | cross*sqrt(rows) th 1.17 ct 1.44 | Ncoh -0.0337 Nrnd -0.0071 | op/edge 0.948
+ q=7 (k,l,nu)=(5,4,6) D=12 win=1 rows= 3649s rho per mark [-0.0024, 0.0135, 0.0141, 0.0101]  |rho|*sqrt(rows): th 0.67 ct 1.44 | m4 2.00 | cross*sqrt(rows) th 0.77 ct 1.00 | Ncoh +0.0346 Nrnd +0.0008 | op/edge 0.974
+ q=7 (k,l,nu)=(6,4,7) D=14 win=1 rows=  526s rho per mark [0.0184, 0.0709, -0.0685, -0.0099]  |rho|*sqrt(rows): th 1.16 ct 1.19 | m4 2.04 | cross*sqrt(rows) th 0.68 ct 1.07 | Ncoh +0.0479 Nrnd +0.0109 | op/edge 0.921
+ q=7 (k,l,nu)=(6,4,8) D=14 win=0 rows=  256s rho per mark [-0.0385, -0.0751, -0.0918, -0.0619]  |rho|*sqrt(rows): th 1.11 ct 0.62 | m4 2.04 | cross*sqrt(rows) th 0.84 ct 1.15 | Ncoh -0.0647 Nrnd -0.0138 | op/edge 0.821
+ q=7 (k,l,nu)=(7,4,8) D=16 win=1 rows=  256s rho per mark [0.0097, 0.0164, 0.0415, -0.0406]  |rho|*sqrt(rows): th 0.49 ct 1.22 | m4 2.06 | cross*sqrt(rows) th 1.13 ct 0.79 | Ncoh +0.0264 Nrnd -0.0199 | op/edge 0.920
+ q=7 (k,l,nu)=(4,5,5) D=11 win=1 rows= 2058  rho per mark [-0.03, -0.0029, 0.0167, -0.0221]  |rho|*sqrt(rows): th 0.93 ct 1.18 | m4 1.99 | cross*sqrt(rows) th 0.87 ct 1.43 | Ncoh -0.0056 Nrnd +0.0004 | op/edge 0.957
+ q=7 (k,l,nu)=(4,5,6) D=11 win=1 rows= 2058  rho per mark [-0.0205, -0.004, 0.0095, -0.0277]  |rho|*sqrt(rows): th 0.82 ct 1.14 | m4 2.04 | cross*sqrt(rows) th 0.92 ct 0.87 | Ncoh -0.0237 Nrnd -0.0003 | op/edge 0.951
+ q=7 (k,l,nu)=(5,5,6) D=13 win=1 rows= 3652s rho per mark [0.0076, -0.0189, 0.0185, -0.0052]  |rho|*sqrt(rows): th 0.85 ct 1.49 | m4 2.01 | cross*sqrt(rows) th 0.72 ct 1.02 | Ncoh -0.0058 Nrnd +0.0083 | op/edge 0.966
+ q=7 (k,l,nu)=(5,5,7) D=13 win=1 rows=  513s rho per mark [0.0116, 0.0169, -0.0039, -0.0709]  |rho|*sqrt(rows): th 0.84 ct 1.29 | m4 2.10 | cross*sqrt(rows) th 0.95 ct 1.20 | Ncoh -0.0232 Nrnd +0.0140 | op/edge 0.919
+ q=7 (k,l,nu)=(6,5,7) D=15 win=1 rows=  526s rho per mark [0.0157, 0.0063, 0.1047, -0.0002]  |rho|*sqrt(rows): th 1.22 ct 1.20 | m4 2.08 | cross*sqrt(rows) th 1.31 ct 1.07 | Ncoh +0.0340 Nrnd -0.0757 | op/edge 0.975
+ q=7 (k,l,nu)=(6,5,8) D=15 win=1 rows=  256s rho per mark [0.0889, -0.0306, -0.1078, 0.0354]  |rho|*sqrt(rows): th 1.18 ct 0.60 | m4 2.05 | cross*sqrt(rows) th 0.57 ct 1.15 | Ncoh +0.0229 Nrnd +0.0289 | op/edge 0.894
+ q=7 (k,l,nu)=(5,6,6) D=14 win=1 rows= 3652s rho per mark [-0.0033, -0.0005, -0.0055, -0.0198]  |rho|*sqrt(rows): th 0.63 ct 1.48 | m4 2.02 | cross*sqrt(rows) th 0.95 ct 1.02 | Ncoh -0.0216 Nrnd +0.0002 | op/edge 0.966
+ q=7 (k,l,nu)=(5,6,7) D=14 win=1 rows=  513s rho per mark [-0.0538, -0.0006, -0.0183, -0.0228]  |rho|*sqrt(rows): th 0.69 ct 1.30 | m4 2.05 | cross*sqrt(rows) th 0.93 ct 1.23 | Ncoh -0.0049 Nrnd +0.0153 | op/edge 0.892
+ q=7 (k,l,nu)=(6,6,7) D=16 win=1 rows=  526s rho per mark [-0.0229, 0.0806, 0.0084, -0.0232]  |rho|*sqrt(rows): th 1.00 ct 1.19 | m4 2.05 | cross*sqrt(rows) th 1.04 ct 1.07 | Ncoh +0.0195 Nrnd +0.0599 | op/edge 0.935
+ q=7 (k,l,nu)=(6,6,8) D=16 win=1 rows=  256s rho per mark [0.1268, -0.0364, 0.0379, -0.0774]  |rho|*sqrt(rows): th 1.26 ct 0.60 | m4 1.87 | cross*sqrt(rows) th 1.23 ct 1.15 | Ncoh +0.0207 Nrnd +0.1239 | op/edge 0.952
+ pooled fit theta: |rho_P| ~ rows^-0.503  (RMT: -0.5);  median |rho|*sqrt(rows) = 0.86
+ pooled fit control: |rho_P| ~ rows^-0.296  (RMT: -0.5);  median |rho|*sqrt(rows) = 1.01
+
+== campaign_q13.jsonl: fixed q, growing degrees; window = kappa < nu < kappa+lam-2 (genuinely beyond the wall on both sides of the FE) ==
+ q=13 (k,l,nu)=(3,2,4) D=6 win=0 rows= 2015  rho per mark [-0.093, -0.093, -0.093, -0.093]  |rho|*sqrt(rows): th 4.17 ct 1.25 | m4 1.96 | cross*sqrt(rows) th 1.72 ct 0.73 | Ncoh -0.1201 Nrnd -0.0955 | op/edge 0.906
+ q=13 (k,l,nu)=(3,3,4) D=7 win=0 rows= 2027  rho per mark [-0.0052, -0.0052, 0.0288, -0.0052]  |rho|*sqrt(rows): th 0.68 ct 1.06 | m4 2.04 | cross*sqrt(rows) th 1.26 ct 0.73 | Ncoh +0.0248 Nrnd +0.0169 | op/edge 0.984
+ q=13 (k,l,nu)=(4,3,5) D=9 win=0 rows= 1252s rho per mark [0.0475, 0.0077, -0.0376, 0.0563]  |rho|*sqrt(rows): th 1.47 ct 0.62 | m4 2.04 | cross*sqrt(rows) th 1.17 ct 0.94 | Ncoh -0.0133 Nrnd +0.0425 | op/edge 1.001
+ q=13 (k,l,nu)=(4,4,5) D=10 win=1 rows= 1253s rho per mark [-0.0129, 0.0156, 0.0007, -0.0128]  |rho|*sqrt(rows): th 0.42 ct 0.62 | m4 1.97 | cross*sqrt(rows) th 1.14 ct 0.95 | Ncoh +0.0267 Nrnd +0.0337 | op/edge 0.962
+ q=13 (k,l,nu)=(4,5,5) D=11 win=1 rows= 1253s rho per mark [-0.0094, -0.0467, 0.0192, 0.0017]  |rho|*sqrt(rows): th 0.91 ct 0.63 | m4 1.98 | cross*sqrt(rows) th 1.27 ct 0.95 | Ncoh -0.0155 Nrnd +0.0251 | op/edge 0.966
+ q=13 (k,l,nu)=(4,5,6) D=11 win=1 rows=  271s rho per mark [0.0078, 0.0902, 0.0628, 0.0963]  |rho|*sqrt(rows): th 1.20 ct 0.97 | m4 2.03 | cross*sqrt(rows) th 0.88 ct 0.92 | Ncoh +0.0748 Nrnd +0.1906 | op/edge 0.951
+ q=13 (k,l,nu)=(5,4,6) D=12 win=1 rows=  283s rho per mark [0.0576, -0.0337, 0.0837, 0.0619]  |rho|*sqrt(rows): th 1.04 ct 0.99 | m4 2.06 | cross*sqrt(rows) th 0.88 ct 0.88 | Ncoh +0.0679 Nrnd +0.0455 | op/edge 0.941
+ q=13 (k,l,nu)=(5,5,6) D=13 win=1 rows=  283s rho per mark [0.0254, 0.0443, -0.0039, -0.0763]  |rho|*sqrt(rows): th 0.77 ct 0.96 | m4 2.04 | cross*sqrt(rows) th 0.68 ct 0.87 | Ncoh +0.0150 Nrnd +0.0177 | op/edge 0.880
+ pooled fit theta: |rho_P| ~ rows^-0.388  (RMT: -0.5);  median |rho|*sqrt(rows) = 0.86
+ pooled fit control: |rho_P| ~ rows^-1.018  (RMT: -0.5);  median |rho|*sqrt(rows) = 0.76
+
+== All marks of degree lam (true mark family), q = 7 ==
+ {"q": 7, "kappa": 4, "lam": 4, "nu": 5, "rows": 2057, "nmarks": 588, "subset": false, "secs": 19.97899079322815, "rho_mean": -0.03399099302915803, "rho_rms": 0.041425860802509866, "rho_min": -0.08610055547885731, "rho_max": 0.0014141497058430819, "n_distinct_rho": 16, "N_coherent": -0.5784883355684124, "N_random": -0.014147238450393007, "N_gauss_aligned": -0.2321539652731861, "opnorm2_over_meandiag": 3.5307772143997305, "sv2_top5_over_meandiag": [3.5308, 2.5815, 2.5815, 2.5815, 2.5815], "rmt_edge": 2.354759253363983, "cross_rms": 0.02362944796604552, "cross_max": 0.07815606107892065, "one_over_sqrt_rows": 0.022043335708870276}
+ {"q": 7, "kappa": 4, "lam": 4, "nu": 5, "control": true, "rows": 2057, "nmarks": 588, "subset": false, "secs": 19.45544672012329, "rho_mean": 0.00027122417924043936, "rho_rms": 0.023079202527060836, "rho_min": -0.060546258823586774, "rho_max": 0.06861283648306737, "n_distinct_rho": 588, "N_coherent": 0.019171310842768907, "N_random": -0.016317701608338342, "N_gauss_aligned": 0.00732975505365685, "opnorm2_over_meandiag": 2.4527318365749555, "sv2_top5_over_meandiag": [2.4527, 2.4272, 2.4065, 2.3789, 2.3631], "rmt_edge": 2.354759253363983, "cross_rms": 0.023505456421324563, "cross_max": 0.08511995772851129, "one_over_sqrt_rows": 0.022043335708870276}
+ {"q": 7, "kappa": 3, "lam": 4, "nu": 4, "control": false, "rows": 294, "nmarks": 588, "subset": false, "secs": 0.7620713710784912, "rho_mean": -0.027017588950473806, "rho_rms": 0.06286226424732896, "rho_min": -0.13042344597413436, "rho_max": 0.07732321652065077, "n_distinct_rho": 16, "N_coherent": -0.4612573752905419, "N_random": 0.022386399226069997, "N_gauss_aligned": -0.4922363892365458, "opnorm2_over_meandiag": 5.877955914060101, "sv2_top5_over_meandiag": [5.878, 5.878, 5.878, 5.878, 5.878], "rmt_edge": 5.82842712474619, "cross_rms": 0.0627134547750967, "cross_max": 0.2038766928200418, "one_over_sqrt_rows": 0.05832118435198043}
+ {"q": 7, "kappa": 3, "lam": 4, "nu": 4, "control": true, "rows": 294, "nmarks": 588, "subset": false, "secs": 0.6888113021850586, "rho_mean": -0.0018854426268987818, "rho_rms": 0.05683934622421917, "rho_min": -0.15055277430120984, "rho_max": 0.18083057691161564, "n_distinct_rho": 588, "N_coherent": -0.007990522070023709, "N_random": -0.053626103765767597, "N_gauss_aligned": -0.031717138476464624, "opnorm2_over_meandiag": 6.2967726377431354, "sv2_top5_over_meandiag": [6.2968, 6.2, 5.9915, 5.9061, 5.7916], "rmt_edge": 5.82842712474619, "cross_rms": 0.06218195045981457, "cross_max": 0.23700405792840054, "one_over_sqrt_rows": 0.05832118435198043}
+ {"q": 7, "kappa": 5, "lam": 4, "nu": 6, "control": false, "rows": 847, "nmarks": 588, "subset": true, "secs": 61.001309633255005, "rho_mean": 0.009800403414490478, "rho_rms": 0.0354846952105297, "rho_min": -0.09103941359466161, "rho_max": 0.11915657081108133, "n_distinct_rho": 588, "N_coherent": 0.09884891443144816, "N_random": -0.0224036546341132, "N_gauss_aligned": 0.2183670932739108, "opnorm2_over_meandiag": 3.9377267772477076, "sv2_top5_over_meandiag": [3.9377, 3.3305, 3.3203, 3.2769, 3.2604], "rmt_edge": 3.3606060378351814, "cross_rms": 0.03461874353733831, "cross_max": 0.11310996097702293, "one_over_sqrt_rows": 0.034360406637202474}
+ {"q": 7, "kappa": 5, "lam": 4, "nu": 6, "control": true, "rows": 847, "nmarks": 588, "subset": true, "secs": 59.632981300354004, "rho_mean": 0.0007203637022402959, "rho_rms": 0.035839814874441094, "rho_min": -0.10297992737255124, "rho_max": 0.0977856007348088, "n_distinct_rho": 588, "N_coherent": -0.03462755859734645, "N_random": 0.04200824280531035, "N_gauss_aligned": -0.005983537508054582, "opnorm2_over_meandiag": 3.3830859714078634, "sv2_top5_over_meandiag": [3.3831, 3.3028, 3.2587, 3.2499, 3.2011], "rmt_edge": 3.3606060378351814, "cross_rms": 0.034680072645860795, "cross_max": 0.12069245649113856, "one_over_sqrt_rows": 0.034360406637202474}

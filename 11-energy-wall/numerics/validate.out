@@ -1,0 +1,4 @@
+(a) library beta vs direct gamma_2 conj(alpha): 14 squarefree n (omega 1..3, incl. inert factors), max |diff| = 9.84e-15
+(c) Moebius partner a = mu conj G vs conj(gamma_1 beta) (direct): max |diff| = 1.32e-14
+(b) identity (*): 42 tests (with inert factor: 15), failures 0, max |lhs-rhs| = 1.36e-13; without mu(n) the omega-odd cases would fail: 24 of 24 odd cases differ in sign
+time 3.7s

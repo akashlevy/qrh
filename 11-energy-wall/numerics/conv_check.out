@@ -1,0 +1,5 @@
+# 34603 primary primes (17272 split rational) with N <= 410000
+# Gauss sums done in 4.2s
+# 144667 squarefree n in 0.0s
+primes: 778 tested (split+inert, N <= 6000), max |gamma_2 - (lambda/pi)_3 G~| = 1.28e-13, failures 0
+composites: 580 columns in (20000, 22000]: max |beta_edge - (lambda/n)_3 G~ conj(alpha)| = 2.50e-13

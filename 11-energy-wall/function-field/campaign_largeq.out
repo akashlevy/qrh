@@ -1,0 +1,36 @@
+q= 7 k=2 l=1 nu=3 win=0 rows=    36  rho_th mean=-0.7974 rms=0.7974 | ctrl mean=-0.0011 rms=0.1190 | m4 th=1.365 ct=2.012 | cross th=0.0833 ct=0.1579 | Ncoh=-0.8480 op=0.219/edge 1.778 | 0s
+q=13 k=2 l=1 nu=3 win=0 rows=   144  rho_th mean=-0.9015 rms=0.9015 | ctrl mean=+0.0270 rms=0.0653 | m4 th=1.684 ct=1.948 | cross th=0.0292 ct=0.0906 | Ncoh=-0.9101 op=0.101/edge 1.361 | 0s
+q=19 k=2 l=1 nu=3 win=0 rows=   324  rho_th mean=-0.9368 rms=0.9368 | ctrl mean=-0.0105 rms=0.0536 | m4 th=1.388 ct=2.008 | cross th=0.0145 ct=0.0685 | Ncoh=-0.9396 op=0.064/edge 1.235 | 0s
+q=31 k=2 l=1 nu=3 win=0 rows=   900  rho_th mean=-0.9637 rms=0.9637 | ctrl mean=-0.0132 rms=0.0439 | m4 th=1.240 ct=1.982 | cross th=0.0057 ct=0.0229 | Ncoh=-0.9643 op=0.037/edge 1.138 | 0s
+q=37 k=2 l=1 nu=3 win=0 rows=  1296  rho_th mean=-0.9701 rms=0.9701 | ctrl mean=-0.0024 rms=0.0197 | m4 th=1.232 ct=2.016 | cross th=0.0041 ct=0.0243 | Ncoh=-0.9705 op=0.030/edge 1.114 | 1s
+q=43 k=2 l=1 nu=3 win=0 rows=  1764  rho_th mean=-0.9746 rms=0.9746 | ctrl mean=-0.0083 rms=0.0165 | m4 th=1.236 ct=1.966 | cross th=0.0031 ct=0.0275 | Ncoh=-0.9748 op=0.025/edge 1.098 | 2s
+q= 7 k=2 l=2 nu=3 win=0 rows=    41  rho_th mean=+0.1310 rms=0.1310 | ctrl mean=-0.0078 rms=0.1381 | m4 th=1.828 ct=2.017 | cross th=0.1537 ct=0.1166 | Ncoh=-0.1535 op=1.613/edge 1.722 | 0s
+q=13 k=2 l=2 nu=3 win=0 rows=   155  rho_th mean=+0.0756 rms=0.0756 | ctrl mean=+0.0381 rms=0.0672 | m4 th=1.890 ct=2.037 | cross th=0.0705 ct=0.0959 | Ncoh=-0.0277 op=1.289/edge 1.347 | 0s
+q=19 k=2 l=2 nu=3 win=0 rows=   341  rho_th mean=+0.0523 rms=0.0523 | ctrl mean=-0.0041 rms=0.0407 | m4 th=1.895 ct=2.043 | cross th=0.0496 ct=0.0612 | Ncoh=+0.0826 op=1.200/edge 1.228 | 0s
+q=31 k=2 l=2 nu=3 win=0 rows=   929  rho_th mean=+0.0322 rms=0.0322 | ctrl mean=-0.0158 rms=0.0380 | m4 th=1.928 ct=1.992 | cross th=0.0331 ct=0.0223 | Ncoh=-0.0002 op=1.134/edge 1.136 | 0s
+q=37 k=2 l=2 nu=3 win=0 rows=  1331  rho_th mean=+0.0270 rms=0.0270 | ctrl mean=+0.0046 rms=0.0227 | m4 th=1.945 ct=2.012 | cross th=0.0271 ct=0.0234 | Ncoh=+0.0413 op=1.108/edge 1.113 | 1s
+q=43 k=2 l=2 nu=3 win=0 rows=  1805  rho_th mean=+0.0232 rms=0.0232 | ctrl mean=-0.0037 rms=0.0153 | m4 th=1.963 ct=1.967 | cross th=0.0246 ct=0.0304 | Ncoh=+0.0052 op=1.098/edge 1.096 | 1s
+q= 7 k=2 l=2 nu=4 win=0 rows=    41  rho_th mean=-0.8783 rms=0.8783 | ctrl mean=+0.0190 rms=0.1153 | m4 th=1.466 ct=1.807 | cross th=0.1210 ct=0.1168 | Ncoh=-0.8701 op=0.160/edge 1.722 | 0s
+q=13 k=2 l=2 nu=4 win=0 rows=   155  rho_th mean=-0.9254 rms=0.9254 | ctrl mean=+0.0041 rms=0.0684 | m4 th=1.312 ct=2.003 | cross th=0.0460 ct=0.0781 | Ncoh=-0.9293 op=0.083/edge 1.347 | 0s
+q=19 k=2 l=2 nu=4 win=0 rows=   341  rho_th mean=-0.9481 rms=0.9481 | ctrl mean=-0.0067 rms=0.0490 | m4 th=1.211 ct=2.013 | cross th=0.0274 ct=0.0509 | Ncoh=-0.9479 op=0.056/edge 1.228 | 1s
+q=31 k=2 l=2 nu=4 win=0 rows=   526s rho_th mean=-0.9681 rms=0.9681 | ctrl mean=+0.0158 rms=0.0252 | m4 th=1.128 ct=1.965 | cross th=0.0286 ct=0.0382 | Ncoh=-0.9676 op=0.034/edge 1.182 | 5s
+q=37 k=2 l=2 nu=4 win=0 rows=   292s rho_th mean=-0.9729 rms=0.9729 | ctrl mean=-0.0194 rms=0.0246 | m4 th=1.104 ct=1.921 | cross th=0.0723 ct=0.0724 | Ncoh=-0.9731 op=0.031/edge 1.248 | 7s
+q=43 k=2 l=2 nu=4 win=0 rows=   287s rho_th mean=-0.9766 rms=0.9766 | ctrl mean=-0.0369 rms=0.0395 | m4 th=1.098 ct=2.043 | cross th=0.0312 ct=0.0726 | Ncoh=-0.9765 op=0.025/edge 1.250 | 12s
+q= 7 k=3 l=2 nu=4 win=0 rows=   287  rho_th mean=-0.1795 rms=0.1795 | ctrl mean=+0.0445 rms=0.0754 | m4 th=1.859 ct=1.939 | cross th=0.0602 ct=0.0551 | Ncoh=-0.1136 op=0.932/edge 1.250 | 0s
+q=13 k=3 l=2 nu=4 win=0 rows=  2015  rho_th mean=-0.0930 rms=0.0930 | ctrl mean=-0.0175 rms=0.0278 | m4 th=1.957 ct=2.006 | cross th=0.0382 ct=0.0163 | Ncoh=-0.1201 op=0.989/edge 1.091 | 1s
+q=19 k=3 l=2 nu=4 win=0 rows=  3641s rho_th mean=-0.0662 rms=0.0672 | ctrl mean=+0.0055 rms=0.0107 | m4 th=1.972 ct=1.973 | cross th=0.0228 ct=0.0105 | Ncoh=-0.0808 op=0.980/edge 1.067 | 5s
+q=31 k=3 l=2 nu=4 win=0 rows=   526s rho_th mean=-0.0345 rms=0.0596 | ctrl mean=+0.0087 rms=0.0346 | m4 th=1.936 ct=2.024 | cross th=0.0495 ct=0.0440 | Ncoh=-0.0077 op=1.106/edge 1.182 | 6s
+q=37 k=3 l=2 nu=4 win=0 rows=   297s rho_th mean=-0.0098 rms=0.0327 | ctrl mean=-0.0079 rms=0.0404 | m4 th=2.009 ct=2.035 | cross th=0.0745 ct=0.0689 | Ncoh=+0.0527 op=1.147/edge 1.246 | 7s
+q=43 k=3 l=2 nu=4 win=0 rows=   294s rho_th mean=-0.0098 rms=0.0489 | ctrl mean=-0.0006 rms=0.0268 | m4 th=2.096 ct=1.968 | cross th=0.0493 ct=0.0338 | Ncoh=-0.0016 op=1.113/edge 1.247 | 12s
+q= 7 k=3 l=3 nu=4 win=0 rows=   293  rho_th mean=-0.0013 rms=0.0490 | ctrl mean=+0.0495 rms=0.0830 | m4 th=2.064 ct=1.969 | cross th=0.0792 ct=0.0470 | Ncoh=-0.0486 op=1.185/edge 1.247 | 0s
+q=13 k=3 l=3 nu=4 win=0 rows=  2027  rho_th mean=+0.0033 rms=0.0151 | ctrl mean=-0.0145 rms=0.0235 | m4 th=2.039 ct=2.007 | cross th=0.0280 ct=0.0163 | Ncoh=+0.0248 op=1.073/edge 1.091 | 1s
+q=19 k=3 l=3 nu=4 win=0 rows=  3650s rho_th mean=+0.0130 rms=0.0157 | ctrl mean=+0.0047 rms=0.0110 | m4 th=1.968 ct=1.971 | cross th=0.0125 ct=0.0099 | Ncoh=-0.0015 op=1.042/edge 1.067 | 5s
+q=31 k=3 l=3 nu=4 win=0 rows=   526s rho_th mean=-0.0110 rms=0.0206 | ctrl mean=+0.0114 rms=0.0347 | m4 th=1.979 ct=2.030 | cross th=0.0328 ct=0.0438 | Ncoh=-0.0046 op=1.069/edge 1.182 | 6s
+q=37 k=3 l=3 nu=4 win=0 rows=   297s rho_th mean=-0.0085 rms=0.0192 | ctrl mean=-0.0084 rms=0.0397 | m4 th=1.952 ct=2.030 | cross th=0.0657 ct=0.0697 | Ncoh=+0.0271 op=1.142/edge 1.246 | 7s
+q=43 k=3 l=3 nu=4 win=0 rows=   294s rho_th mean=+0.0125 rms=0.0611 | ctrl mean=-0.0004 rms=0.0286 | m4 th=1.989 ct=1.969 | cross th=0.0487 ct=0.0348 | Ncoh=+0.0017 op=1.160/edge 1.247 | 13s
+q= 7 k=3 l=1 nu=4 win=0 rows=   258  rho_th mean=-0.2322 rms=0.2322 | ctrl mean=+0.0030 rms=0.0574 | m4 th=1.727 ct=1.952 | cross th=0.1228 ct=0.0537 | Ncoh=-0.5151 op=0.862/edge 1.265 | 0s
+q=13 k=3 l=1 nu=4 win=0 rows=  1884  rho_th mean=-0.1189 rms=0.1189 | ctrl mean=-0.0079 rms=0.0172 | m4 th=1.822 ct=1.999 | cross th=0.0746 ct=0.0189 | Ncoh=-0.3160 op=0.947/edge 1.094 | 1s
+q=19 k=3 l=1 nu=4 win=0 rows=  3477s rho_th mean=-0.0787 rms=0.0787 | ctrl mean=+0.0049 rms=0.0122 | m4 th=1.896 ct=1.969 | cross th=0.0547 ct=0.0111 | Ncoh=-0.2271 op=0.992/edge 1.069 | 5s
+q=31 k=3 l=1 nu=4 win=0 rows=   513s rho_th mean=-0.0157 rms=0.0243 | ctrl mean=+0.0116 rms=0.0340 | m4 th=1.977 ct=2.040 | cross th=0.0435 ct=0.0457 | Ncoh=-0.0686 op=1.085/edge 1.184 | 5s
+q=37 k=3 l=1 nu=4 win=0 rows=   293s rho_th mean=-0.0457 rms=0.0649 | ctrl mean=-0.0094 rms=0.0310 | m4 th=1.990 ct=2.032 | cross th=0.0471 ct=0.0663 | Ncoh=-0.1061 op=1.039/edge 1.247 | 7s
+q=43 k=3 l=1 nu=4 win=0 rows=   289s rho_th mean=-0.0797 rms=0.0845 | ctrl mean=+0.0091 rms=0.0290 | m4 th=1.978 ct=2.006 | cross th=0.0535 ct=0.0364 | Ncoh=-0.0910 op=1.028/edge 1.249 | 12s
