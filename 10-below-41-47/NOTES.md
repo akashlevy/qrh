@@ -82,3 +82,12 @@ wall W(0.045) or a marked capacity ≥ 0.8(1−r) with plain capacity ≥ 0.4(1�
 the beyond-the-edge problems the 09 session documented. Nothing here is a proof, so there is nothing
 yet to formalize; the Lean environment build (Mathlib + OAI + WeightedQRH) was started in
 /home/user/leanbuild for when a proof exists.
+
+## 6. Required counts and the Gram lever (`model/rneed.py`, `model/gram.py`)
+- **Counts needed at x = 1/2** (ℓ = 0.1773, b = 0.075, weighted branch): R(0.3) 0.7468 → 0.7359,
+  R(0.4) 0.6561 → 0.6391, R(0.47) 0.5897 → 0.5713, R(0.55) 0.5100 → 0.4938, R(0.6) 0.4575 → 0.4454.
+  A drop of 0.011–0.018, still well above DH (1−δ). At x = 0.3 the gap is ≤ 0.006.
+- **Gram exceptional factor g** (Gram term P_a^{g/6}, low side B = 5/6 + M/12 − ℓ/6 − b(1−g)/12):
+  g = 0.9 → 0.8741, 0.85 → 0.8734, 0.8 → 0.8728, **0.75 → 0.87221 < 41/47** (coarse grid; b ≈ 0.19).
+  The 04/07 analyses show the Gram term's Mellin coefficient Ŵ₁(1)Ŵ₀(5/6) equals the signal's, so
+  reducing it is equivalent to the (V′) pairing problem, which is signal-circular.
