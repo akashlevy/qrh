@@ -101,3 +101,16 @@ yet to formalize; the Lean environment build (Mathlib + OAI + WeightedQRH) was s
   already beat Ingham and Guth–Maynard at the binding bin. Numerator sixth moment needs excess λ ≲ 0.09;
   available routes give 0.34 (perfect sextic sieve), 0.45 (de Faveri), 0.37 (4th moment × Burgess).
 - No published or preprint tool supplies any input of the BRIEF table (details and citations in LIT.md).
+
+## 8. Agent `redesign` (finished; `agents/redesign/NOTES.md`) — negative
+- PROVED (relative to P78's lemmas): high identity for ANY s-weight λ; the numerator N_u[λ] is linear
+  in λ with a multiplicative, w-independent local factor π_u. Low side: any |λ| ≤ 1 costs (Q/Y)(1+P_a);
+  the Gram bound (1 + P_a^{1/6}) holds only for fixed ray-character combinations (b > 0 otherwise costs
+  up to Z^{5b/12}); at b = 0 the weight is free but the high side is worse (+0.0132).
+- (a) mollified/Selberg/Λ/square/cube/AP/sector weights: all worse (+0.0145 … +0.0228) or break the
+  principal-row structure. (b) Y = Y₁Y₂ product numerators: only a second moment for products (+0.094);
+  even granting diagonal moments of every real order the envelope is θ ≥ 0.87273. (c) target-dependent
+  annihilation: dimension count fails at the worst bin (#C ≈ Z^{0.486} vs Y ≈ Z^{0.441}); worst stays
+  +0.0118. (d) coupled probes reduce to multi-scale weights; per-bin oracle geometry still +0.0113.
+- New sufficient condition (open): a restricted large sieve Σ_{u∈C}|S̃_u|² ≪ U^ε(#C + U^{l_y/d}) on the
+  bad set closes 41/47 (θ ≈ 0.8663); minimal need at the worst bin U^{0.770} vs proved U^{0.805}.
