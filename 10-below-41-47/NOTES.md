@@ -141,3 +141,21 @@ yet to formalize; the Lean environment build (Mathlib + OAI + WeightedQRH) was s
 - Every suggested route (μ-absorption of slot primes, Möbius/Mellin decompositions, Vaughan/Heath-Brown,
   primes kept on the original side, marks → labels, β*, slot-only witnesses, copies) lands on a precise
   step and gives nothing (details in the agent notes).
+
+## 11. Agent `amplitude` (finished; `agents/amplitude/NOTES.md`) — negative, one new lemma
+- Fine grid baseline at ℓ = 0.1773: +0.01119 (δ = 0.475, x = 1/2, b = 0.075). At x = 1/2 the pure long
+  inverse witness (no slot capacity) and a short split (r ≈ 0.69–0.81, m ≈ 0.40–0.44; capacities ≈ 0.13
+  and 0.04 < supply 0.22) balance at t ≈ 1.09–1.25.
+- PROVED: marks "in mean" lose (amplitude bins give the slot size as both an upper and lower bound);
+  unlimited auxiliary amplitude windows leave +0.01119; the count LP is complete for the existing lemmas
+  (multi-t witnesses, two plain witnesses, slots beyond capacity, slots in amplification, prime-only
+  witnesses, t < 1, per-class numerator contours: no gain); slot redesign has no exponent-level effect.
+- NEW LEMMA (PROVED): polarised slot powers in lem:marked. With e_k the k-th elementary symmetric sum over
+  one slot's primes, random k-colourings give E_f Π_c Q^{(f,c)} = (k!/k^k)e_k, so Cauchy–Schwarz yields
+  Σ_u|M_r e_k Q_rest|² ≤ (k^k/k!)² sup_f(…) ≪ U (lem:marked is uniform in prime supports and bounded
+  coefficients); |Q^k − k!e_k| ≪ |Q|^{k−2}. So prime SUPPLY in the marked count is unlimited — no gain at the
+  paper's capacities, but it lowers the conditional target: a marked capacity mk(1−r) for arbitrary bounded
+  slot coefficients without the 2r+8z ≤ 3 condition closes 41/47 at mk ≥ 0.744 with no plain improvement
+  (with the 2r+8z cap kept, even mk = 1 leaves +0.0043).
+- Explicit-formula rigidity needs o(log U) zeros near a per unit window; Jensen gives only ≲ log U.
+- Reference: capping amplitude at x ≤ 0.255, or DH counts for rows with x ≥ 0.255, would close 41/47.
