@@ -213,3 +213,21 @@ r + z < 1; slot powers in lem:marked via elementary symmetric polarization), plu
   pooled. 41/47 needs a common saving ε ≈ 0.0099 simultaneously in five lemmas (cross-marks, lem:plain
   edge, amplified inverse moment, restricted large sieve, wall). A 10⁻³ saving in any one lemma gains
   ≤ 9·10⁻⁵ (3.6% of the gap). None of these savings (even ε > 0) is provable by known techniques.
+
+## 16. Round 2, agent `wall4` (finished; `agents/wall4/NOTES.md`) — negative
+- Past the wall only one branch of lem:reflected-energy is positive; W(w) ⇔ a lossless bound on one core
+  sum (all slots active, no dual cube part, top rows, O < 2w, dual length near T_d).
+- Routes: Lemma-D split fails (the probe's target is the row count, which does not grow with label
+  length; the tuple-diagonal part is Σ_P|c_P|²E_P, each with the full wall — needs (HLS)/(H1));
+  flat-B configurations defeat any large-values/Hölder dichotomy; slot groups/powers/tiny slots and the
+  cube part give no gain at the binding dyad.
+- New (conditional on 04's Corollary D): the low-side loss is RANK ONE — Proposition T:
+  |I_J| ≪ Z^ε[X′^{1/2}Z^{w_J/2} + Q^{−1/2}Y′^{−1/3}Σ_σ|T_σ|], T_σ = ⟨ρ_σ, B⟩; the residual part tolerates
+  w ≤ b/6 with no new input. A rank-one wall W_θ (|T| ≪ Q^{11/12+ε} past the wall) plus full W(0.014)
+  would close 41/47; W_θ alone gives +0.0047. W_θ fails at the same step as W and carries the signal.
+- Lossless W alone needs w ≈ 0.0415 (W(0.040): +0.0006; W(0.043): −0.0004).
+
+## 17. Status after two rounds (nine agents this session)
+No proof below 41/47. With proved inputs the frontier is θ = 0.8748866 (Collet). Every route needs a
+power-saving "beyond the edge" estimate for a thin sextic/cubic family; the levers are additive, so the
+required total saving cannot be assembled from small pieces. Nothing new to formalize in Lean.
