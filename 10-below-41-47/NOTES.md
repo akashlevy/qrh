@@ -126,3 +126,18 @@ yet to formalize; the Lean environment build (Mathlib + OAI + WeightedQRH) was s
   general-coefficient truth is 3n₀ − 1 ≈ 0.39, so the d₃ structure (sixth-moment Lindelöf on average)
   would be required. Mixed moments: |S|⁴|S_m|² needs η′ ≤ 0.086; numerator prime capacity rate ≈ 1.4.
 - Halász–Montgomery over C, even with Lindelöf for every pair character, only gives σ ≤ n₀/4 ≈ 0.11.
+
+## 10. Agent `marked-cap` (finished; `agents/marked-cap/NOTES.md`) — negative, structural reduction
+- Fine grid (δ step 0.01): saturating lem:marked (z = L for all r < 1) alone leaves +0.0019; the BRIEF pair
+  "marked 0.8(1−r) + plain 0.4(1−2m)" is a coarse-grid artefact (+0.0003). Closing pairs: plain 0.45(1−2m)
+  with saturated marks (−0.0002); 0.75(1−r) with α = 0.75 (−0.0009); saturated marks with α = 0.78.
+- A shared lossless wall saving Z^w feeds lem:marked only as r + 2z ≤ 1 + w/2; 41/47 needs w ≈ 0.037.
+- PROVED (Lemma D): for r + z ≤ m − c the tuple-diagonal part of lem:marked's initial canonical energy is
+  ≪ Z^{F+ε} with no mark cost (factor n = τn′, drop |A_*(τ)χ_τ(k)| ≤ 1, absorb the tuple into a fourth-power
+  label, apply lem:canonical-moment with z₀ = 0). Hence lem:marked at (r, z) reduces to bounding the
+  cross-tuple terms τ ≠ τ′ for a slot part of length r + 2z − 1. P78's range r + 2z ≤ m is exactly
+  "no cross-mark cancellation". Going further needs ≈ 60% of square-root cancellation in the marks' Gram
+  matrix — an (H2)-type cross-mark decorrelation for twisted cubic theta, true numerically, no tool known.
+- Every suggested route (μ-absorption of slot primes, Möbius/Mellin decompositions, Vaughan/Heath-Brown,
+  primes kept on the original side, marks → labels, β*, slot-only witnesses, copies) lands on a precise
+  step and gives nothing (details in the agent notes).
