@@ -202,3 +202,14 @@ r + z < 1; slot powers in lem:marked via elementary symmetric polarization), plu
   or moves into an inverse-witness moment beyond its diagonal. Numerics: cross terms random-size (within
   3–17% of random-phase control), Möbius fourth moment Gaussian (ratio ≈ 2.06–2.10).
 - Model: a cross-mark saving δ improves the worst exponent by ≈ −0.07δ; 41/47 needs δ ≈ 0.159.
+
+## 15. Round 2, agent `combo` (finished; `agents/combo/NOTES.md`, `combo_model.py`) — consolidated model
+- Validated: 08 certificate margin −1.29·10⁻⁴; Collet's boundary to 10⁻⁹. Exact count LP (no grid).
+- **Proved inputs only: θ = 0.8748866 (= Collet's b₀).** Gap to 41/47: 0.0025462. Corrected thresholds:
+  joint plain/numerator capacity c* = 0.655; numerator sixth-moment excess η* = 0.097 (acts only below 0.194).
+- Standalone requirements: restricted large sieve on bad rows sLS 0.0274; lossless wall w 0.0358; saving
+  beyond the diagonal eL 0.059; lem:plain edge eP 0.060; cross-mark saving sM 0.155; α ≤ 0.583·…; g 0.739.
+- **The levers are almost exactly additive** (f_i + f_j ≈ 1 for most pairs): small savings cannot be
+  pooled. 41/47 needs a common saving ε ≈ 0.0099 simultaneously in five lemmas (cross-marks, lem:plain
+  edge, amplified inverse moment, restricted large sieve, wall). A 10⁻³ saving in any one lemma gains
+  ≤ 9·10⁻⁵ (3.6% of the gap). None of these savings (even ε > 0) is provable by known techniques.
