@@ -335,3 +335,23 @@ Files: `agents/wall-spectral/{WALL_SPECTRAL.md, identity_check.py, fe_group.py, 
   hybrid-energy, of excess (M+4ℓ−2)/3. It is harmless up to wE ≈ 0.064 (0.8709554 either way). If it is kept, any W(w)
   **saturates at 19/22 = 0.863636**, so energy-wall's large-wE values (0.86333, 0.85) were optimistic.
   Numerics (opnorm): W holds uniformly in the slot coefficients (top singular value/K′D tracks the random control).
+
+## 22. The structural chain behind every obstruction (coordinator synthesis, 07:50 UTC)
+
+1. Zero detection needs a Möbius-twisted sum (1/L, not L).
+2. μ-absorption works only for order-6 twists, via μ·γ₋₁ ∝ γ₂ (6→3). So the theta row must be twisted by the SEXTIC symbol χ_A(m).
+3. Theta reflection absorbs the cubic part of the twist into the theta index. The QUADRATIC part χ_k³ survives on the dual.
+   In Kubota-index form (wall-spectral identity) the rows enter only as cubes h = k³P⁴.
+4. A family indexed by cubes k³ is thin: one quadratic character per row. Its second moment has an affine functional-equation group
+   (C̃₂, invariant (x₁+x₂+y)², the same as Soundararajan–Young / Li for GL2 quadratic twists).
+   - Contrast: full-index families Σ_h |Kubota(h)|² are finite type (DdFDS: group of order 24/48), where power savings exist.
+   - With cubic twists (j = 2, 4) the dual is a full-index family, but the probe would then detect L(s,η), not 1/L(s,η).
+5. Coherent prime amplification (marks) adds conductor P² at fixed family size, which makes the family thinner still (wall M+ℓ ≤ 1, Lemma marked's 2z).
+6. Hence every lever (W(w), DIAG/marked, (V′), M_κ/counts) is a power-saving moment at or beyond the edge of an affine family.
+   This is open even for GL2 quadratic twists.
+
+Any meaningful improvement must break this chain somewhere. The candidates:
+- (a) a zero-detecting identity that does not go through μ-absorption of order 6;
+- (b) a way to make the quadratic residual twist "full" (e.g. average it into a full family without losing the signal);
+- (c) solve the affine edge problem (power-saving second moments of quadratic twists) for theta-type coefficients;
+- (d) a high-side (count) breakthrough, i.e. "Ingham below 7/10" for the sextic family.
