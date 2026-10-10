@@ -1,0 +1,20 @@
+\subsection{The formalization}\label{sec:formal}
+Theorem~\ref{thm:main} has been formally verified in Lean~4 with Mathlib, using only the
+standard axioms. The formal proof is the module \texttt{OAI.NumberTheory.\allowbreak DirichletL.\allowbreak QRH} of the
+Lean library of \cite{OpenAI26}. It uses the infrastructure of that library, but none of the
+argument specific to \cite{OpenAI26}, and it is organized like this paper:
+\begin{itemize}
+\item every numbered result of Section~\ref{sec:reduction} is a Lean theorem with the same
+statement, and the formal proof of Theorem~\ref{thm:main} is the same three-line composition as
+in Section~\ref{sec:reduction};
+\item the main results of Sections~\ref{sec:initialization}--\ref{sec:transfer-proof} are
+theorems of the formalization, which proves them with somewhat different bookkeeping
+(Remarks~\ref{rem:formal-dual} and~\ref{rem:formal-descent}).
+\end{itemize}
+Appendix~\ref{app:lean} lists the correspondence. The formalization also proves the facts that
+this paper cites: the arithmetic identities of Lemma~\ref{lem:arithmetic}, Patterson's
+coefficients and the transformation law of the cubic theta function (constructed as the residue
+of a cubic metaplectic Eisenstein series), the quadratic large sieve of Lemma~\ref{lem:quadratic},
+and the factorization $L_K(s,\chi\circ\NK)=L(s,\chi)L(s,\chi\chi_{-3})$. Only the analytic facts
+about Dirichlet $L$-functions (continuation, and nonvanishing on $\Rea s\ge1$) come from Mathlib.
+

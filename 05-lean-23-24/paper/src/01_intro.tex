@@ -1,0 +1,121 @@
+\section{Introduction}\label{sec:intro}
+
+The \emph{quasi-Riemann hypothesis} for $\zeta(s)$ is the assertion that there is a
+fixed $\delta>0$ such that $\zeta(s)$ has no zeros in the half-plane $\Rea s>1-\delta$
+(e.g., \cite[\S1]{BG17}, \cite[p.~274]{MS02}, \cite[\S2]{BR18}). The classical zero-free
+regions of de la Vall\'ee Poussin \cite{VP99} and of Vinogradov and Korobov
+\cite{Vin58,Kor58} shrink to the line $\Rea s=1$ as the height grows; a half-plane of fixed
+width is a different kind of statement. This note gives an account of one proof.
+
+\begin{theorem}\label{thm:main}
+The Riemann zeta function has no zeros in the half-plane $\Rea s>23/24$.
+\end{theorem}
+
+\subsection{Relation to the source and to the formalization}
+The argument is that of OpenAI's paper \emph{The Quasi-Riemann Hypothesis}
+\cite{OpenAI26b}, which proves the stronger half-plane $\Rea s>11/12$ for every
+finite-order Hecke $L$-function over $K=\Q(\sqrt{-3})$, and hence for every Dirichlet
+$L$-function. That paper is in turn an intermediate step towards the half-plane
+$\Rea s>7/8$ of \cite{OpenAI26}. We follow \cite{OpenAI26b} closely, and much of the text
+below is taken from it, but we make three simplifications. The first and third do not affect
+the exponent; the second weakens it.
+\begin{enumerate}
+\item We treat only $\zeta$. The twisting character of \cite{OpenAI26b} is then trivial, and
+the Hecke $L$-function that controls the Möbius sums is the Dedekind zeta function
+$\zeta_K(s)=\zeta(s)L(s,\chi_{-3})$, so no continuation of Hecke $L$-functions is needed.
+\item We fix the parameter $\vartheta=1/10$ that measures how far the row range of the
+basic mean square exceeds the column range. The argument of \cite{OpenAI26b} gives the
+exponent $11/12+5\vartheta/12$ for every $0<\vartheta\le1/10$; letting $\vartheta\to0$ gives
+$11/12$, while our fixed choice gives $23/24$. Fixing $\vartheta$ turns every exponent below
+into a concrete number.
+\item We extract the Möbius sum from the mean square using all rows $u=b^6$, $b\in\OO$,
+rather than the rows $u=p^6$ with $p$ prime. This avoids any prime counting; the price is
+a harmless totient weight $\varphi(\mathfrak n)/\NK(\mathfrak n)$ in the Möbius sum, which
+contributes an Euler product that is holomorphic in $\Rea s>0$.
+\end{enumerate}
+
+Theorem~\ref{thm:main} has been formally verified in Lean~4 with Mathlib, using only the
+standard axioms. The formal proof is organized like this note:
+\begin{itemize}
+\item every numbered result of Section~\ref{sec:reduction} is a Lean theorem in the directory
+\texttt{QRH/Spine}, and the top-level proof of Theorem~\ref{thm:main} is the same three-line
+composition as below;
+\item the main results of Sections~\ref{sec:initialization}--\ref{sec:transfer-proof} are
+theorems of the formalization, which proves them with somewhat different bookkeeping
+(Remarks~\ref{rem:formal-dual} and~\ref{rem:formal-descent}).
+\end{itemize}
+Appendix~\ref{app:lean} lists the correspondence. The formalization was obtained from OpenAI's
+Lean development of \cite{OpenAI26}, which contains this argument at $\vartheta=1/10$ as an
+intermediate result.
+
+\subsection{Classical inputs}\label{sec:inputs}
+We use the following standard facts without proof. They are the only places where the
+argument leaves elementary analysis and the arithmetic of $\OO=\mathbb Z[\omega]$.
+\begin{itemize}
+\item[\textbf{A.}] \emph{Poisson summation} on the lattice $\OO\subset\C$ and the evaluation of
+Gauss sums of primitive characters \cite[(3.12) and Theorem~4.5]{IK04}.
+\item[\textbf{B.}] \emph{Gauss and Jacobi sums, cubic and sextic reciprocity} in $\OO$:
+the Gauss--Jacobi identity, $J(\chi,\chi)=-p$ for a primary prime $p$ and the cubic
+character $\chi=(\cdot/p)_3$, and the cubic and quadratic reciprocity laws with their
+supplements \cite[Chapters~8 and~9]{IR90}, \cite[\S3]{IK04}, \cite[(1.5)]{DR}. The
+consequences we need are collected in Lemma~\ref{lem:arithmetic}; their derivation is
+recalled in Appendix~\ref{app:gauss-identities}.
+\item[\textbf{C.}] \emph{Kubota's cubic theta function} \cite{Kub69}: it is automorphic for
+a congruence subgroup of $\mathrm{SL}_2(\OO)$ with the cubic Kubota character. Its Fourier
+coefficients at the cusp $\infty$ are normalized cubic Gauss sums (Patterson
+\cite[Theorem~8.1]{Pat77}), and its expansions at the other cusps are given by
+\cite[\S5 and Appendix~A]{DR}, following \cite[Table~III]{Pat77}. We use the normalization
+of \cite[\S5.1]{DR}.
+\item[\textbf{D.}] \emph{The quadratic large sieve} over $K$ (Heath-Brown \cite{HB95} for
+$\Q$; Goldmakher and Louvel \cite[Theorem~1.1]{GL} for number fields), recorded in
+Lemma~\ref{lem:quadratic}.
+\item[\textbf{E.}] \emph{The factorization} $\zeta_K(s)=\zeta(s)L(s,\chi_{-3})$ of the
+Dedekind zeta function of $K$, the meromorphic continuation of $\zeta$ (with its only pole
+at $s=1$), the fact that $L(s,\chi_{-3})$ is entire, and the nonvanishing of $\zeta(s)$ on $\Rea s\ge1$ (see \cite[Chapter~5]{IK04} and \cite{Dav00}).
+\end{itemize}
+In the formalization, Inputs~A--D and the factorization in Input~E are proved within the
+development, the cubic theta function included (as the residue of a cubic metaplectic
+Eisenstein series); the analytic facts about $\zeta$ and $L(s,\chi_{-3})$ come from Mathlib.
+That is where most of the formal proof's length goes; the argument of this note is the
+remaining layer.
+
+\subsection{Organization}
+\begin{itemize}
+\item Section~\ref{sec:outline} gives a high-level outline of the argument.
+\item Section~\ref{sec:reduction} deduces Theorem~\ref{thm:main} from a mean-square estimate
+for a family of twisted Möbius sums (Proposition~\ref{thm:ms}).
+\item Section~\ref{sec:initialization} reduces this estimate to a dual mean square with cubic
+Gauss-sum coefficients.
+\item Section~\ref{sec:descent} states the completed mean-square and transfer estimates,
+combines them into a recursive inequality, and proves Proposition~\ref{thm:ms}.
+\item Sections~\ref{sec:reflection} and~\ref{sec:transfer-proof} prove the completed estimate
+and the transfer estimate.
+\item Appendix~\ref{sec:arithmetic} contains the arithmetic identities and the theta
+calculation, Appendix~\ref{app:weights} the separation of variables in smooth weights, and
+Appendix~\ref{app:lean} the correspondence with the formal proof.
+\end{itemize}
+
+\subsection{Notation}
+
+Write $\OO=\OO_K=\mathbb Z[\omega]$, where $\omega=e^{2\pi\mathrm i/3}$, and
+$\lambda=1+2\omega$, so that $\lambda^2=-3$.
+For $a\in K$, write $\NK(a)=a\overline a=|a|^2$ for its norm.
+For a nonzero integral ideal $\mathfrak a\subseteq\OO$, write
+$\NK(\mathfrak a)=\#(\OO/\mathfrak a)$.
+We use $\ind_{\mathcal C}$ for the indicator of a condition $\mathcal C$.
+For a prime ideal represented by $p$ and a nonzero element or ideal $a$,
+write $v_p(a)$ for its exponent in the prime factorization of $a$.
+Throughout, $S$ is the set of the two prime ideals $(\lambda)$ and $(2)$ dividing $6$.
+For an ideal or element $a$, write $(a,S)=1$ if no prime ideal in $S$ divides $a$.
+
+We use standard asymptotic notation, writing $f=O(g)$ or $f\ll g$ when $|f|\le Cg$, where $g\ge0$ and $C>0$ is an absolute constant unless otherwise specified. Subscripts indicate possible dependence of the implied constant: for example, $f\ll_{W,\varepsilon}g$ means $|f|\le C_{W,\varepsilon}g$, where the constant may depend on $W,\varepsilon$ but is uniform in all other varying parameters. For nonnegative $f,g$, we write $f\asymp g$ when $f\ll g$ and $g\ll f$.
+ A dyadic norm range is an interval $R\le\NK(a)<2R$; a sum over dyadic scales uses $R=2^j$.
+
+We use $D\ge1$ as an ambient size parameter; in the main argument, it is the original norm scale introduced
+in the outline below. Auxiliary scales may vary within ranges bounded by fixed powers of $D$. We write
+\[
+A\precbd B \quad\text{if}\quad A\ll_\varepsilon D^\varepsilon B
+\qquad\text{for every }\varepsilon>0,
+\]
+uniformly in the varying parameters over their stated ranges. Implied constants may also depend on the fixed data specified in each statement.
+

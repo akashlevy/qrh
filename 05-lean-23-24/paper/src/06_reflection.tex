@@ -1,0 +1,585 @@
+\section{Proof of the completed mean-square estimate}\label{sec:reflection}
+
+We prove Proposition~\ref{prop:R}. We first express the completed sum
+\eqref{eq:T} using cubic theta coefficients and state the transformation
+formula. We then apply the quadratic large sieve and account for
+repeated prime factors in $k$.
+
+\subsection{Realization by the cubic theta function}
+With the row $k$ and auxiliary index $f$ fixed, we express
+$T(X;k,f)$ as a weighted sum of Fourier coefficients of the cubic theta function.
+Its automorphy then expresses this sum in terms of coefficients at
+other cusps, as in \cite[\S5 and Appendix~A]{DR}.
+We use $\Psi_k$ from \eqref{eq:completed-twist}, suppressing its dependence on the fixed $f$ and $\xi$.
+
+Write $(z,v)\in\mathbb C\times\mathbb R_{>0}$ for upper half-space
+coordinates, with horizontal coordinate $z$ and height $v$.
+We use Kubota's cubic theta function in the normalization of
+\cite[\S5.1, (5.6)]{DR}:
+\begin{equation}\label{eq:cubic-theta-definition}
+ \theta(z,v)=\frac{3^{5/2}}2v^{2/3}
+ +\sum_{\substack{\ell\in\lambda^{-3}\OO\\\ell\ne0}}
+ \tau(\ell)vK_{1/3}(4\pi|\ell|v)
+ \exp\!\bigl(2\pi\mathrm i(\ell z+\overline{\ell z})\bigr).
+\end{equation}
+Here $K_{1/3}$ is the modified Bessel function of the second kind,
+and $\tau(\ell)$ is the coefficient sequence given explicitly in
+\cite[(5.7)--(5.8)]{DR}, following Patterson's calculation
+\cite[Theorem~8.1]{Pat77}.
+
+We define $\Theta_k(z,v)$ by twisting the Fourier coefficients of $\overline\theta$. First define $\phi_k:\OO\to\mathbb C$ by
+\[
+ \phi_k(n)=
+ \begin{cases}
+  \chi_n(\lambda)^2\Psi_k(n),&n\equiv1\pmod3,\quad(n,S)=1,\\
+  0,&\text{otherwise}.
+ \end{cases}
+\]
+Then we define $\Theta_k(z,v)$ by multiplying the Fourier coefficient of
+$\overline\theta$ at $\ell$, which is $\overline{\tau(-\ell)}$, by $\phi_k(\lambda^3\ell)$:
+
+\begin{equation}\label{eq:twisted-theta-definition}
+ \Theta_k(z,v)=
+ \sum_{\substack{\ell\in\lambda^{-3}\OO\\\ell\ne0}}
+ \overline{\tau(-\ell)}\phi_k(\lambda^3\ell)
+ vK_{1/3}(4\pi|\ell|v)
+ \exp\!\bigl(2\pi\mathrm i(\ell z+\overline{\ell z})\bigr).
+\end{equation}
+Recall that $c_\theta(nb^3)$ is defined in
+\eqref{eq:intro-theta-coefficients}. 
+Choose a nonzero $q\in\OO$ such that $\phi_k$ is periodic modulo $(q)$, and put
+\[
+ \widehat\phi_k(h)=\frac1{\NK(q)}\sum_{n\bmod q}\phi_k(n)e(-hn/q).
+\]
+
+\begin{lemma}\label{lem:theta-realization}
+With these definitions,
+\begin{equation}\label{eq:T-theta}
+ T(X;k,f)=\frac1{3^{5/2}\sqrt X}
+ \sum_{\substack{n,b\in\OO\\n,b\equiv1\ (3)\\n\ {\rm squarefree}\\(nb,S)=1}}
+ c_\theta(nb^3)\phi_k(nb^3)\overline{\alpha(nb^3)}
+ W\!\Bigl(\frac{\NK(nb^3)}X\Bigr).
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:theta-twist-translates}
+ \Theta_k(z,v)=\sum_{h\in\OO/(q)}\widehat\phi_k(h)
+       \overline{\theta(z+\lambda^2h/q,v)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The coefficient formula \eqref{eq:intro-theta-coefficients} gives
+\[
+ c_\theta(nb^3)\phi_k(nb^3)
+ =3^{5/2}|b|\gamma_2(n)\Psi_k(n)\Psi_k(b)^3.
+\]
+Substitution into \eqref{eq:T}, using $V_*(y)=\sqrt y\,W(y)$,
+proves \eqref{eq:T-theta}.
+Finite Fourier inversion gives
+\[
+ \phi_k(n)=\sum_{h\in\OO/(q)}\widehat\phi_k(h)e(nh/q),
+ \qquad
+ \sum_{h\in\OO/(q)}\widehat\phi_k(h)=\phi_k(0)=0.
+\]
+Multiplication of the $\ell$th Fourier mode by
+$e(\lambda^3\ell h/q)$ translates $z$ to $z+\lambda^2h/q$.
+The second identity cancels the constant term, proving
+\eqref{eq:theta-twist-translates}.
+\end{proof}
+The resulting transformation formula is stated in the next subsection;
+its automorphy calculation is given in Appendix~\ref{app:fixed-ray}.
+
+\subsection{The theta transformation}
+Recall that, for a primary prime $p\notin S$,
+$\chi_p(x)=(x/p)_6$ is the sextic residue character on
+$(\OO/(p))^\times$. For every integer $j$, write $\chi_p^j$ for
+its $j$th power on this group, extended by zero on multiples of $p$;
+in particular, $\chi_p^0(x)=\ind_{p\nmid x}$.
+Sextic reciprocity \eqref{eq:recip} expresses the factors of
+$\Psi_k$ at primes outside $S$ as such powers, with $0\le j\le5$.
+
+
+
+For a primary prime $p\notin S$, $j\in\{0,\ldots,5\}$, and $x\in\OO$,
+define the local factor
+\begin{equation}\label{eq:theta-local-factors}
+ B_{p,j}(x)=
+ \begin{cases}
+  \chi_p(x)^{-j-2},&j\ne0,4,\\
+  \NK(p)^{-1/2}(-1+\NK(p)\ind_{p\mid x}),&j=4,\\
+  \NK(p)^{-1/2}\chi_p(x)^{-2},&j=0.
+ \end{cases}
+\end{equation}
+The key case is the quadratic character
+\[
+ B_{p,1}(x)=\chi_p(x)^3.
+\]
+For the smooth compactly supported weight $V_*$ in \eqref{eq:T},
+put $\widehat V_*(s)=\int_0^\infty V_*(x)x^s\dd x/x$.
+We write $\int_{(\sigma)}$ for integration upwards along the
+vertical line with real part $\sigma$.
+With $\Gamma$ denoting Euler's gamma function, the accompanying transform of the weight is
+\begin{equation}\label{eq:theta-weight}
+ V_*^\sharp(x)=\frac1{2\pi\mathrm i}\int_{(0)}
+ \widehat V_*(-t)
+ \frac{\Gamma(7/6+t)\Gamma(5/6+t)}
+      {\Gamma(7/6-t)\Gamma(5/6-t)}
+ \Bigl(\frac{(2\pi)^4x}{27}\Bigr)^{-t}\dd t,\qquad x>0.
+\end{equation}
+Here $\theta$ is Kubota's cubic theta function, normalized in
+\eqref{eq:cubic-theta-definition}. The dual sums use the Fourier
+coefficients of $\overline\theta$ at three cusps. Take the representatives
+\begin{equation}\label{eq:theta-cusp-representatives}
+ \gamma_0=I,\qquad
+ \gamma_+=\Bigl(\begin{matrix}1&0\\\omega&1\end{matrix}\Bigr),\qquad
+ \gamma_-=\Bigl(\begin{matrix}1&0\\\omega^2&1\end{matrix}\Bigr),
+\end{equation}
+acting on upper half-space. For $\sigma\in\{0,+,-\}$, define
+$d_\sigma(\ell)$ by the Fourier expansion \cite[(5.9), (5.15)]{DR}
+\begin{equation}\label{eq:cusp-coefficient-definition}
+ \overline{\theta(\gamma_\sigma(z,v))}
+ =\frac{3^{5/2}}2\ind_{\sigma=0}v^{2/3} +\sum_{0\ne\ell\in\lambda^{-4}\OO}
+ d_\sigma(\ell)vK_{1/3}(4\pi|\ell|v)
+ \exp\!\bigl(2\pi\mathrm i(\ell z+\overline{\ell z})\bigr).
+\end{equation}
+Thus $d_0(\ell)=\overline{\tau(-\ell)}$, with $\tau$ extended by zero
+outside $\lambda^{-3}\OO$.
+In particular, $c_\theta(nb^3)=d_0(\lambda^{-3}nb^3)$ for the indices in \eqref{eq:intro-theta-coefficients}; the outline uses $d_\theta(m)$ for $d_\sigma(\lambda^{-4}m)$ with one of these three choices of $\sigma$. The arithmetic formulas for all three
+sequences are given by \eqref{eq:cusp-fourier-coefficients} and
+\eqref{eq:conjugate-cusp-coefficients} in Appendix~\ref{app:fixed-ray}.
+
+We state the formula for a general product of local twists.
+Fix a ray class character whose conductor is supported on $S$,
+and let $\Psi_0$ be its extension by zero at every prime in $S$.
+Let $\mathcal P$ be a finite set of primes outside $S$,
+each represented by its primary generator in $\OO$,
+and choose integers $0\le j_p\le5$ for each $p\in\mathcal P$.
+For primary $n\in\OO$, set
+\[
+ \Psi(n)=\Psi_0(n)\prod_{p\in\mathcal P}\chi_p^{j_p}(n).
+\]
+
+
+In the transformed sums, $\mathcal A$ will range over subsets satisfying
+\[
+ \{p\in\mathcal P:j_p\ne0\}\subseteq\mathcal A\subseteq\mathcal P.
+\]
+Thus only primes with $j_p=0$ may be omitted from $\mathcal A$.
+We call the primes in $\mathcal A$ \emph{active} and those in $\mathcal P\setminus\mathcal A$ \emph{inactive}.
+For such a subset and $c_0\in\OO\setminus\{0\}$, write
+\[
+ c=c_0\prod_{p\in\mathcal A}p.
+\]
+
+
+\begin{proposition}\label{lem:reflection}
+The quantity $T(X;\Psi)$ defined in \eqref{eq:T} is a sum of $O_{\Psi_0}(2^{|\mathcal P|})$ terms of the form
+\begin{equation}\label{eq:reflection}
+ C\sum_{0\ne\ell\in\lambda^{-4}\OO}
+ \frac{d(\ell)\alpha(\ell)}{\sqrt{\NK(\ell)}}\,
+ \psi(\lambda^4\ell)
+ \prod_{p\in\mathcal A}B_{p,j_p}(\lambda^4\ell)
+ V_*^\sharp\!\Bigl(\frac{\NK(\ell) X}{\NK(c)^2}\Bigr).
+\end{equation}
+
+
+Here $\mathcal A$ and $c$ are as above, and $|C|\ll_{\Psi_0}1$.
+The triples $(d,\psi,c_0)$ belong to a fixed finite family depending
+only on $\Psi_0$, where $d\in\{d_0,d_+,d_-\}$,
+$c_0\in\OO\setminus\{0\}$, and $\psi$ is a unit-modulus additive
+character on $\OO$.
+\end{proposition}
+
+
+
+
+To average the transformed sums over $k_0$, we need to choose their
+cusp coefficients and additive characters consistently as $k_0$ varies.
+Fix a finite set $\mathcal P_{\rm fix}$ of primary primes outside $S$
+and exponents $j_p\in\{0,\ldots,5\}$, and put
+\[
+ \Psi_{k_0}(n)=\Psi_0(n)
+       \prod_{p\in\mathcal P_{\rm fix}}\chi_p^{j_p}(n)
+       \prod_{p\mid k_0}\chi_p(n),
+\]
+where $k_0$ is primary and squarefree, with
+$(k_0,S\prod_{p\in\mathcal P_{\rm fix}}p)=1$.
+Let $\mathcal A_{\rm fix}$ range over the subsets satisfying
+\[
+ \{p\in\mathcal P_{\rm fix}:j_p\ne0\}
+       \subseteq\mathcal A_{\rm fix}\subseteq\mathcal P_{\rm fix},
+ \qquad
+ \mathcal A=\mathcal A_{\rm fix}\cup\{p:p\mid k_0\}.
+\]
+Every prime dividing $k_0$ belongs to $\mathcal A$, since its exponent is $1$.
+
+
+\begin{lemma}[Uniformity in the twist]\label{lem:reflection-uniformity}
+For the family $\Psi_{k_0}$ above, the summands in
+Proposition~\ref{lem:reflection} may be indexed by
+$(h,\mathcal A_{\rm fix})$, with $h$ in a fixed finite set depending
+only on $\Psi_0$. Zero scalar coefficients are permitted.
+For each fixed index, the triple $(d,\psi,c_0)$ depends on $k_0$
+only through its ray class modulo a fixed ideal supported on $S$
+and depending only on $\Psi_0$.
+\end{lemma}
+
+To estimate the dual sums, we need bounds for the cusp coefficients
+and the transformed weight.
+\begin{lemma}\label{lem:theta-bounds}
+For each $d\in\{d_0,d_+,d_-\}$, the coefficient $d(\ell)$
+vanishes unless $\ell$ can be written as
+\begin{equation}\label{eq:theta-support}
+ \ell=u\lambda^mnb^3,
+\end{equation}
+where $u\in\OO^\times$, $m\in\mathbb Z$ with $m\ge-4$, and
+$n,b\in\OO$ are primary with $n$ squarefree.
+\begin{equation}\label{eq:theta-coefficient-bound}
+ |d(\ell)|=|d(u\lambda^mnb^3)|\le27\cdot 3^{m/6}|b|.
+\end{equation}
+
+For $A>0$, integers $j\ge0$, and $V_*$ supported in a fixed compact
+interval $I\subset(0,\infty)$, there is $J=J(A,j)$ such that
+\begin{equation}\label{eq:theta-weight-decay}
+ |(x\partial_x)^jV_*^\sharp(x)|
+ \ll_{A,j,I}\|V_*\|_{C^J(I)}\min(x^{1/4},x^{-A}),\qquad x>0.
+\end{equation}
+\end{lemma}
+
+Proposition~\ref{lem:reflection}
+and Lemmas~\ref{lem:reflection-uniformity} and~\ref{lem:theta-bounds}
+are proved in Appendix~\ref{app:fixed-ray}.
+
+\subsection{The quadratic mean square on the dual side}
+We record the quadratic large-sieve estimate needed below.
+
+\begin{lemma}\label{lem:quadratic}
+Let $\mathcal H,U\ge1$, and let $\beta(n)$ be complex coefficients
+on squarefree primary $n$ with $\NK(n)\asymp U$.
+For every $\varepsilon>0$,
+\begin{equation}\label{eq:Q}
+ \sum_{\substack{k\equiv1\ (3),\ (k,S)=1\\\NK(k)\le\mathcal H}}^*
+ \Bigl|\sum_{\substack{n\equiv1\ (3),\ n\ {\rm squarefree}\\
+                       \NK(n)\asymp U}}
+       \beta(n)\chi_k(n)^3\Bigr|^2
+ \ll_{\varepsilon}(\mathcal HU)^\varepsilon(\mathcal H+U)
+       \sum_n|\beta(n)|^2.
+\end{equation}
+The star restricts $k$ to squarefree primary elements.
+\end{lemma}
+\begin{proof}
+This is Goldmakher and Louvel's quadratic large sieve \cite[Theorem~1.1]{GL}, after
+fixing the product of the prime factors of $n$ lying in $S$, and finitely many ray classes.
+For completeness, let $e_k\in\{0,1\}$ according as
+$\NK(k)\equiv1,3\pmod4$, and let $\kappa_\lambda$ be the nontrivial
+character modulo $\lambda$. The character
+$x\mapsto(x/k)_2\kappa_\lambda(x)^{e_k}$ is trivial on
+units and has primitive conductor $k\lambda^{e_k}$.
+When $e_k=0$, the factor $\kappa_\lambda(x)^{e_k}$ is omitted.
+Classes modulo $24\OO$ fix the supplementary characters and
+reciprocity factors; for coprime $k_1,k_2$ in the same class, the
+product character has conductor $k_1k_2$.
+These are the hypotheses in \cite[Definition~1 and \S2]{GL}.
+\end{proof}
+
+\subsection{Squarefree rows and the completed bound}
+Write $N(a)=\NK(a)$. In \eqref{eq:completed-twist}, allow any
+$g\in\OO\setminus\{0\}$ in place of $f$, so
+$\Psi_k(n)=\xi(n)\chi_n(k)\chi_n(g)^4$.
+The zero extension at $S$ is retained.
+Choose prime-ideal generators, primary away from $3$, and extend
+multiplicatively to all ideals. We first bound squarefree rows.
+
+\begin{lemma}\label{lem:squarefree-completed}
+For every $\varepsilon>0$ and $C_0\ge1$ there is
+$J=J(\varepsilon,C_0)\ge1$ such that
+\begin{equation}\label{eq:squarefree-completed}
+ \sum_{\substack{0<N(s)\le\mathcal H\\s\ {\rm squarefree}}}
+ |T(X;u_0s,g)|^2
+ \ll_{I,\xi,\varepsilon,C_0}D^\varepsilon\|W\|_{C^J(I)}^2
+ \Bigl(\mathcal H+\frac{\mathcal H^2N(g)}X\Bigr)
+\end{equation}
+for $1\le\mathcal H,X,N(g)\le D^{C_0}$, $u_0\in\OO^\times$,
+every compact interval $I\subset(0,\infty)$, and $W\in C_c^\infty(I)$.
+The sum uses the chosen generators of squarefree ideals, including
+those meeting $S$.
+\end{lemma}
+\begin{proof}
+By homogeneity assume $\|W\|_{C^J(I)}\le1$, with $J$ chosen below.
+Write
+\[
+ s=t k_0,\qquad
+ t=\prod_{\substack{p\mid s\\p\mid g\ \text{or}\ p\in S}}p,\qquad
+ N(k_0)\le\mathcal H_0:=\frac{\mathcal H}{N(t)}.
+\]
+Fix $t$; then $k_0$ is squarefree and primary, with
+$(k_0,g)=1$ and $(k_0,S)=1$. Discard empty ranges, so
+$\mathcal H_0\ge1$, and retain these restrictions below.
+For a coefficient function $A(n,b)$, a positive scale $Y$, and an integer $m\ge-4$, put
+\begin{equation}\label{eq:prepared-theta-sum}
+ \mathscr S_m[A,Y](k_0):=
+ \sum_{\substack{n,b\equiv1\ (3)\\n\ {\rm squarefree}}}
+ \frac{A(n,b)\chi_{k_0}(nb)^3}{3^{m/3}\sqrt{N(n)}\,N(b)}
+ V_*^\sharp\!\Bigl(\frac{3^mN(n)N(b)^3\mathcal H_0^2}
+ {YN(k_0)^2}\Bigr).
+\end{equation}
+
+We shall obtain, after partitioning $k_0$ into fixed ray classes,
+\[
+ T(X;u_0tk_0,g)
+ =\sum_{\iota\in\mathcal I}\sum_{m\ge-4}
+ c_{\iota,m}(k_0)\mathscr S_m[A_{\iota,m},Y_\iota](k_0),
+\]
+where $\mathcal I$ is independent of $k_0$, $|\mathcal I|\precbd1$,
+$|c_{\iota,m}(k_0)|\ll1$, and $A_{\iota,m}$ is independent of $k_0$.
+For some $a_\iota,Y_\iota>0$, the coefficients and lengths satisfy
+\begin{equation}\label{eq:auxiliary-conductor-bound}
+ |A_{\iota,m}(n,b)|\ll a_\iota,\qquad
+ a_\iota^2\le1,\qquad
+ a_\iota^2Y_\iota\ll
+ \frac{\mathcal H_0^2}{X}N(t)^2N(g).
+\end{equation}
+All column restrictions are included by extending $A_{\iota,m}$ by zero.
+Put $k=u_0tk_0$. For $\mathcal P=\{p\notin S:p\mid kg\}$, sextic
+reciprocity \eqref{eq:recip} gives
+\begin{equation}\label{eq:theta-row-twist}
+ \Psi_k(n)=\Psi_0(n)\prod_{p\in\mathcal P}\chi_p^{j_p}(n),
+ \qquad j_p\equiv v_p(k)+4v_p(g)\pmod6,
+ \qquad 0\le j_p\le5.
+\end{equation}
+Even when $j_p=0$, the factor $\chi_p^0(n)=\ind_{p\nmid n}$
+retains the zero extension at $p\mid kg$. The fixed factor $\Psi_0$
+contains $\xi$, the factors at $S$, the unit factors,
+and $n\mapsto\mathcal R(n,\prod_{p\notin S}p^{v_p(k)})$.
+The fourth power at $g$ contributes no reciprocity sign, and the
+factors at $S$ depend only on exponents modulo six. Thus $\Psi_0$
+ranges over a fixed finite family. In the notation of
+Lemma~\ref{lem:reflection-uniformity}, take
+$\mathcal P_{\rm fix}=\{p\notin S:p\mid tg\}$, so that
+$\mathcal P=\mathcal P_{\rm fix}\sqcup\{p:p\mid k_0\}$;
+the exponents on $\mathcal P_{\rm fix}$ are fixed with $t,g$.
+Partitioning $k_0$ into fixed
+ray classes fixes $\Psi_0$ and, by
+Lemma~\ref{lem:reflection-uniformity},
+the data $d,\psi,c_0$ in each transformed term.
+
+Fix one transformed term, with active primes $\mathcal A_{\rm fix}$
+away from $k_0$, and put $c_*=c_0\prod_{p\in\mathcal A_{\rm fix}}p$.
+Thus $c=c_*k_0$ in \eqref{eq:reflection}.
+By \eqref{eq:theta-support}, write $\ell=u\lambda^mnb^3$,
+with $u,m,n,b$ as there.
+Every prime dividing $k_0$ has $j_p=1$, and hence
+\begin{equation}\label{eq:residual-quadratic-factor}
+ B_{p,1}(u\lambda^{m+4}nb^3)
+ =\chi_p(u\lambda^{m+4})^3\chi_p(nb)^3.
+\end{equation}
+Indeed, the transformed exponent is $-1-2\equiv3\pmod6$ and
+$\chi_p(b)^9=\chi_p(b)^3$, also when $p\mid b$ by zero extension.
+The coefficient bound and rapid decay in Lemma~\ref{lem:theta-bounds}
+give absolute convergence of the transformed series, so we may regroup
+its terms below. Set
+\[
+ A_{u,m}(n,b)=
+ \frac{d(u\lambda^mnb^3)\alpha(u\lambda^mnb^3)
+       \psi(u\lambda^{m+4}nb^3)}{3^{m/6}\sqrt{N(b)}},
+ \qquad |A_{u,m}(n,b)|\le27.
+\]
+The transformed term is therefore
+\[
+ \begin{aligned}
+ &C(k_0)\sum_{u\in\OO^\times}\sum_{m\ge-4}
+ \chi_{k_0}(u\lambda^{m+4})^3
+ \sum_{\substack{n,b\equiv1\ (3)\\n\ {\rm squarefree}}}
+ \frac{A_{u,m}(n,b)\chi_{k_0}(nb)^3}
+      {3^{m/3}\sqrt{N(n)}\,N(b)}\\
+ &\qquad\times\prod_{p\in\mathcal A_{\rm fix}}
+ B_{p,j_p}(u\lambda^{m+4}nb^3)
+ V_*^\sharp\!\Bigl(\frac{3^mN(n)N(b)^3X}
+ {N(c_*)^2N(k_0)^2}\Bigr),\qquad |C(k_0)|\ll1.
+ \end{aligned}
+\]
+The representation is unique: away from $\lambda$, the prime
+exponents of $\ell$ are $3v_p(b)$ or $1+3v_p(b)$. Apart from the
+quadratic character and weight, the $k_0$-dependence is a bounded scalar.
+
+Fix $u,m$ and write $q=N(p)$ for an active prime $p\nmid k_0$.
+For $j_p=4$, the local identity is
+\[
+ B_{p,4}(u\lambda^{m+4}nb^3)
+ =-q^{-1/2}+q^{1/2}\ind_{p\mid n}
+              +q^{1/2}\ind_{p\nmid n,\ p\mid b}.
+\]
+To display the reindexing in \eqref{eq:prepared-theta-sum}, let
+$A^{(p)}(n,b)$ include all the other local factors and set
+\[
+ A^{(p,n)}(n,b)=\ind_{p\nmid n}A^{(p)}(pn,b),\qquad
+ A^{(p,b)}(n,b)=\ind_{p\nmid n}A^{(p)}(n,pb).
+\]
+Then the changes $n=pn'$ and $b=pb'$ give the exact identity
+\[
+ \begin{aligned}
+ &\mathscr S_m[A^{(p)}(n,b)B_{p,4}(u\lambda^{m+4}nb^3),q^2Y](k_0)\\
+ &\quad=-q^{-1/2}\mathscr S_m[A^{(p)},q^2Y](k_0)
+ +\chi_{k_0}(p)^3\mathscr S_m[A^{(p,n)},qY](k_0)\\
+ &\qquad\quad+q^{-1/2}\chi_{k_0}(p)^3
+              \mathscr S_m[A^{(p,b)},Y/q](k_0).
+ \end{aligned}
+\]
+In the second term $p\nmid n'$ preserves squarefreeness; in the
+third, $p\nmid n$ is retained and $b'$ is unrestricted at $p$.
+Both extracted phases have modulus one. The factors $q^{1/2}$
+in the local identity cancel against $\sqrt{N(pn')}$ or leave
+$q^{-1/2}$ after division by $N(pb')$.
+
+Let $a$ track a bound $|A(n,b)|\le27a$ for the coefficient in
+\eqref{eq:prepared-theta-sum}, and let $Y$ be its scale.
+Before inserting the active primes, these are $a=1$ and
+$Y=N(c_0)^2\mathcal H_0^2/X$.
+Each active prime contributes $q^2$ to the squared conductor norm.
+Including this factor, the updates are
+\[
+ (a^2,Y)\longmapsto
+ \begin{cases}
+ (a^2,q^2Y),&j_p\notin\{0,4\},\\
+ (a^2/q,q^2Y),&j_p=0,\\
+ (a^2/q,q^2Y),\ (a^2,qY),\ (a^2/q,Y/q),&j_p=4.
+ \end{cases}
+\]
+Thus $a^2$ never increases. If $p\mid t$ and $p\notin S$, then
+$j_p$ is odd, so $a^2Y$ costs at most $N(p)^2$.
+If $p\mid g$ and $p\nmid t$, the cost is
+$N(p)$ for $j_p=0,4$ and $N(p)^2$ for $j_p=2$; the latter case
+requires $v_p(g)\ge2$. Hence
+\[
+ a^2Y\ll\frac{\mathcal H_0^2}{X}
+ \prod_{\substack{p\mid t\\p\notin S}}N(p)^2
+ \prod_{\substack{p\mid g\\p\nmid t,\ p\notin S}}N(p)^{v_p(g)}
+ \le\frac{\mathcal H_0^2N(t)^2N(g)}X.
+\]
+Reindexing at distinct primes preserves the form and zero extensions.
+By %
+Lemma~\ref{lem:reflection-uniformity}, the transformed terms, units,
+and at most three choices per prime $p\in\mathcal A_{\rm fix}$ with $j_p=4$ form an index set
+of divisor-bounded size in $tg$. Here and below, divisor-bounded in $a$ means bounded by $C\tau_{\mathrm{div}}(a)^A$ for fixed constants $C,A$; in particular, this is $\ll_\varepsilon\NK(a)^\varepsilon$ for every $\varepsilon>0$.
+For one index $\iota$, abbreviate
+$a=a_\iota$, $Y=Y_\iota$, and $A_m=A_{\iota,m}$.
+The local updates give $Y\ll D^{C_1}$ for some fixed $C_1=C_1(C_0)$.
+Split $b$ into $B\le N(b)<2B$, and $n$ by a smooth dyadic
+partition $V(N(n)/U)$, with $U,B\ge1$ and uniformly bounded cutoffs.
+For this part of \eqref{eq:prepared-theta-sum}, write
+\[
+ \begin{aligned}
+ \mathscr S_{m;U,B}(k_0)
+ &=3^{-m/3}\sum_{B\le N(b)<2B}\frac{\chi_{k_0}(b)^3}{N(b)}F_b(k_0),\\
+ F_b(k_0)
+ &=\sum_{n\ {\rm squarefree}}
+ \frac{A_m(n,b)\chi_{k_0}(n)^3}{\sqrt{N(n)}}V(N(n)/U)
+ V_*^\sharp\!\Bigl(\frac{3^mN(n)N(b)^3\mathcal H_0^2}
+                         {YN(k_0)^2}\Bigr).
+ \end{aligned}
+\]
+Here $n,b$ remain primary. Put $z_*=3^mUB^3/Y$ and fix a decay
+exponent $A>0$. With $m,U,B,Y$ fixed, Lemma~\ref{lem:smooth},
+applied only in $N(n)/U$, gives the following representation in a
+real Mellin variable $s$:
+\begin{equation}\label{eq:theta-separated-columns}
+ \begin{aligned}
+ F_b(k_0)&=\int_{\mathbb R}c_{b,k_0}(s)G_{b,s}(k_0)\,ds,\\
+ G_{b,s}(k_0)&=\sum_{\substack{n\ {\rm squarefree}\\N(n)\asymp U}}
+ \frac{A_m(n,b)\chi_{k_0}(n)^3}{\sqrt{N(n)}}
+             (N(n)/U)^{\mathrm i s},\\
+ |c_{b,k_0}(s)|&\ll_{I,A}(1+z_*)^{-A}(1+|s|)^{-2}.
+ \end{aligned}
+\end{equation}
+Indeed, the scale $R$ in \eqref{eq:smooth-pointwise} is
+$3^mUN(b)^3\mathcal H_0^2/(YN(k_0)^2)\ge z_*$.
+Lemma~\ref{lem:theta-bounds} supplies the required derivative
+bounds, independently of $b,k_0,U,B,m$.
+Since $\sum_{N(n)\asymp U}N(n)^{-1}\ll1$,
+Lemma~\ref{lem:quadratic} gives, for any $\sigma>0$,
+\[
+ \sum_{N(k_0)\le\mathcal H_0}^*|G_{b,s}(k_0)|^2
+ \ll_{\sigma}a^2(\mathcal H_0U)^\sigma(\mathcal H_0+U).
+\]
+Apply weighted Cauchy--Schwarz to the Mellin integral, as recorded in
+\eqref{eq:integral-mean-square}, with the common majorant in
+\eqref{eq:theta-separated-columns}, then weighted Cauchy--Schwarz in $b$, using
+$\sum_{B\le N(b)<2B}N(b)^{-1}\ll1$:
+\begin{equation}\label{eq:prepared-mean-square}
+ \begin{aligned}
+ \sum_{N(k_0)\le\mathcal H_0}^*|\mathscr S_{m;U,B}(k_0)|^2
+ &\le3^{-2m/3}\Bigl(\sum_{B\le N(b)<2B}\frac1{N(b)}\Bigr)
+       \sum_{B\le N(b)<2B}\frac1{N(b)}
+       \sum_{N(k_0)\le\mathcal H_0}^*|F_b(k_0)|^2\\
+ &\ll_{I,A,\sigma}a^2 3^{-2m/3}
+       (\mathcal H_0U)^\sigma(\mathcal H_0+U)(1+z_*)^{-2A}.
+ \end{aligned}
+\end{equation}
+Since $m\ge-4$, we have $U\le81Yz_*$ and hence
+$\mathcal H_0U\ll D^{C_0+C_1}(1+z_*)$.
+Choose $0<\sigma\le1$ small in terms of $\varepsilon_1>0,C_0$ and take
+$A=3$. Taking square roots in \eqref{eq:prepared-mean-square} gives
+\[
+ \Bigl(\sum_{N(k_0)\le\mathcal H_0}^*|\mathscr S_{m;U,B}(k_0)|^2\Bigr)^{1/2}
+ \ll aD^{\varepsilon_1}3^{-m/3}
+       (\sqrt{\mathcal H_0}+\sqrt U)(1+3^mUB^3/Y)^{-2}.
+\]
+The infinite dyadic sums converge: for dyadic $U,B\ge1$ and every $Z>0$,
+\[
+ \sum_{U,B\ {\rm dyadic}}(1+UB^3/Z)^{-2}\ll\log^2(2+Z),
+ \qquad
+ \sum_{U,B\ {\rm dyadic}}\sqrt U(1+UB^3/Z)^{-2}\ll\sqrt Z.
+\]
+These estimates make the sum of $\ell^2(k_0)$ norms finite.
+The triangle inequality and the geometric sum over
+$m\ge-4$ therefore give
+\[
+ \Bigl(\sum_{N(k_0)\le\mathcal H_0}^*
+   \Bigl|\sum_{m\ge-4}c_{\iota,m}(k_0)
+       \mathscr S_m[A_m,Y](k_0)\Bigr|^2\Bigr)^{1/2}
+ \ll aD^{\varepsilon_1}
+       \bigl(\sqrt{\mathcal H_0}\log^2(2+Y)+\sqrt Y\bigr).
+\]
+Combine the divisor-bounded choices of $\iota$ and use
+\eqref{eq:auxiliary-conductor-bound} to obtain
+\[
+ \sum_{N(k_0)\le\mathcal H_0}^*|T(X;u_0tk_0,g)|^2
+ \precbd\max_\iota a_\iota^2(\mathcal H_0+Y_\iota)
+ \ll\mathcal H_0+\frac{\mathcal H_0^2N(t)^2N(g)}X
+ \le\mathcal H+\frac{\mathcal H^2N(g)}X.
+\]
+Sum the fixed ray classes and the divisor-bounded choices
+$t\mid\rad(g\prod_{\mathfrak p\in S}\mathfrak p)$, choosing
+$\varepsilon_1$ and the other small-power losses in terms of
+$\varepsilon$. The weight estimates above require a fixed number
+$J=J(\varepsilon,C_0)$ of derivatives. Homogeneity restores
+$\|W\|_{C^J(I)}^2$ and proves \eqref{eq:squarefree-completed}.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:R}]
+Write uniquely $k=u_0sv^2$, with $s$ squarefree and $s,v$ among
+the chosen ideal generators. No condition $(s,v)=1$ is imposed.
+Since $8\equiv2\pmod6$, including the zero extensions,
+\[
+ \chi_n(u_0sv^2)\chi_n(f)^4
+ =\chi_n(u_0s)\chi_n(fv^2)^4,\qquad
+ T(X;u_0sv^2,f)=T(X;u_0s,fv^2).
+\]
+Apply Lemma~\ref{lem:squarefree-completed} with row bound
+$\mathcal H/N(v)^2$ and auxiliary twist $g=fv^2$.
+Here $N(g)\le\mathcal H N(f)\le D^{2C_0}$, so use that lemma
+with $2C_0$. Summing its bounds gives
+\[
+ \begin{aligned}
+ \sum_{0<N(k)\le\mathcal H}|T(X;k,f)|^2
+ &=\sum_{u_0\in\OO^\times}\sum_{N(v)^2\le\mathcal H}
+   \sum_{\substack{N(s)\le\mathcal H/N(v)^2\\s\ {\rm squarefree}}}
+   |T(X;u_0s,fv^2)|^2\\
+ &\ll D^\varepsilon\|W\|_{C^J(I)}^2
+   \Bigl(\mathcal H+\frac{\mathcal H^2N(f)}X\Bigr)
+   \sum_v\frac1{N(v)^2}.
+ \end{aligned}
+\]
+The last sum is $\zeta_K(2)<\infty$, where $\zeta_K$ is the Dedekind zeta function of $K$ (Input~E). This proves \eqref{eq:R}.
+\end{proof}
+
+

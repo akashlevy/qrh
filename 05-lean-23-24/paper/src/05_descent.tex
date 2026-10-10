@@ -1,0 +1,392 @@
+\section[Iteration of the dual mean-square estimate]{\texorpdfstring{Iteration of the dual mean-square estimate}{Iteration of the dual mean-square estimate}}\label{sec:descent}
+
+Put $\Sigma=XF$. We prove the following estimate for the family
+\eqref{eq:energy}, with exclusions removed by
+Lemma~\ref{lem:remove-exclusions}. The two inputs are proved in
+Sections~\ref{sec:reflection} and~\ref{sec:transfer-proof}.
+
+\begin{proposition}\label{prop:canonical}
+Fix $\kappa>0$ and $C_0\ge1$. Suppose that
+\begin{equation}\label{eq:positive-gap}
+ \mathcal H,X,F\ge1,\qquad
+ \Sigma=XF\le D^{C_0},\qquad
+ \mathcal H\le\Sigma D^{-\kappa}.
+\end{equation}
+For every $\varepsilon>0$ there is an integer
+$J=J(\kappa,C_0,\varepsilon)\ge1$ such that
+\begin{equation}\label{eq:canonical-bound}
+ \E(\mathcal H,X,F;\xi,W)
+ \ll_{I,\kappa,C_0,\varepsilon}
+ \|W\|_{C^J(I)}^2D^\varepsilon\Sigma
+\end{equation}
+for every compact interval $I\subset(0,\infty)$ and smooth $W$ supported
+in $I$.
+\end{proposition}
+
+The proof is given in Section~\ref{sec:canonical-proof}, using
+Lemma~\ref{lem:cube-reduction} and Proposition~\ref{prop:transfer}.
+
+\subsection{The completed sums}
+Let $\Psi$ be a completely multiplicative $\mathbb C$-valued function on the
+nonzero integral ideals of $\OO_K=\mathbb Z[\omega]$ coprime to $3$, vanishing on ideals divisible by a prime in $S$. 
+For a primary element $n$, write $\Psi(n)=\Psi((n))$.
+Define
+\begin{equation}\label{eq:T}
+ T(X;\Psi)=
+ \sum_{(n,S)=1}^*\sum_{\substack{b\in\OO\\b\equiv1\ (3)\\(b,S)=1}}
+ \frac{\overline{\alpha(n)}\gamma_2(n)\Psi(n)
+       \overline{\alpha(b)}^{\,3}\Psi(b)^3}
+      {\sqrt{\NK(n)}\,\NK(b)}\,V_*(\NK(n)\NK(b)^3/X),
+\end{equation}
+where $V_*(y)=\sqrt y\,W(y)$. The extra index $b$ supplies the cubes in the Fourier expansion of the
+Kubota theta function.
+Here $n,b$ are primary elements of $\OO$; only $n$ is required to be
+squarefree.
+
+The $b=1$ part is exactly
+$X^{-1/2}\sum_{(n,S)=1}^*\overline{\alpha(n)}\gamma_2(n)\Psi(n)W(\NK(n)/X)$.
+To identify this with the normalized column sum in \eqref{eq:energy},
+fix a ray class character $\xi$. For a nonzero row $k\in\OO$ and a
+squarefree primary $f$ prime to $S$, set
+\begin{equation}\label{eq:completed-twist}
+ \Psi_k(n):=\xi(n)\chi_n(k)\chi_n(f)^4,
+ \qquad T(X;k,f):=T(X;\Psi_k).
+\end{equation}
+The displayed product defines $\Psi_k(n)$ for $(n,S)=1$; set $\Psi_k(n)=0$ otherwise. Thus the zero extension required in \eqref{eq:T} is part of this definition.
+
+
+\subsection{The completed mean-square estimate}
+For the twist \eqref{eq:completed-twist}, the theta transformation converts
+the relevant sextic twists into quadratic characters. Combining it with
+the quadratic large sieve gives the following estimate, proved in
+Section~\ref{sec:reflection}.
+
+\begin{proposition}\label{prop:R}
+Fix $\varepsilon>0$, $C_0\ge1$, and a character $\xi$ of the fixed ray
+class group. There is $J=J(\varepsilon,C_0)\ge1$ such that
+\begin{equation}\label{eq:R}
+ \sum_{0<\NK(k)\ll\mathcal H}|T(X;k,f)|^2
+ \ll_{I,\xi,\varepsilon,C_0}
+ D^\varepsilon\|W\|_{C^J(I)}^2
+ \Bigl(\mathcal H+\frac{\mathcal H^2\NK(f)}{X}\Bigr)
+\end{equation}
+whenever
+\[
+ 1\le\mathcal H,X,\NK(f)\le D^{C_0}.
+\]
+Here $f$ is squarefree and primary with $(f,S)=1$,
+$W$ is smooth and supported in a compact interval $I\subset(0,\infty)$,
+and $T$ is defined by \eqref{eq:completed-twist}.
+\end{proposition}
+\subsection{Cube inversion and the remaining sums}
+Set
+\begin{equation}\label{eq:cube-cutoff}
+ H_c^3=\min\!\Bigl(X,\frac{X^2}{\mathcal H^2}\Bigr),
+ \qquad L_b=\frac{X}{\NK(b)^3}.
+\end{equation}
+
+\begin{lemma}\label{lem:cube-reduction}
+Fix $C_0\ge1$ and $\varepsilon>0$. Suppose
+$1\le\mathcal H,X,F\le D^{C_0}$ and $\mathcal H\le\Sigma=XF$.
+There is an integer $J=J(\varepsilon,C_0)\ge1$ such that
+\begin{equation}\label{eq:cube-reduction}
+ \E(\mathcal H,X,F;\xi,W)
+ \ll_{I,C_0,\varepsilon}D^\varepsilon
+ \biggl(\Sigma\|W\|_{C^J(I)}^2+
+ \sup_{\substack{b\equiv1\ (3),\ (b,S)=1\\
+                  \NK(b)>H_c,\ L_b>1}}
+       \E(\mathcal H,L_b,F;\xi,W)\biggr)
+\end{equation}
+for every compact interval $I\subset(0,\infty)$ and
+$W\in C_c^\infty(I)$. An empty supremum is zero; in particular it
+is empty when $\mathcal H^2\le X$.
+\end{lemma}
+
+\begin{proof}
+Write $N=\NK$ and $I=[u,v]$. Complete multiplicativity in
+\eqref{eq:T}, including at the zeros of $\Psi_k$, gives
+\begin{equation}\label{eq:cube-inverse}
+ \begin{aligned}
+ &X^{-1/2}\sum_{(n,S)=1}^*a_\xi(n)\chi_n(k)\chi_n(f)^4
+ W(N(n)/X)\\
+ &\qquad=\sum_{(h,S)=1}
+ \frac{\mu(h)\overline{\alpha(h)}^{\,3}\Psi_k(h)^3}{N(h)}
+ T(X/N(h)^3;k,f).
+ \end{aligned}
+\end{equation}
+Indeed, after substitution of \eqref{eq:T}, the coefficient of the
+total cube index $b$ contains
+$\sum_{h\mid b}\mu(h)=\ind_{b=1}$.
+This is M\"obius inversion; compare \cite[(1.18)]{IK04} and
+\cite[(8.2)]{DR}.
+
+Split the right-hand side of \eqref{eq:cube-inverse} into
+$P_{\rm short}(k,f)+P_{\rm long}(k,f)$, where
+\[
+ \begin{aligned}
+ P_{\rm short}(k,f)&=
+ \sum_{\substack{(h,S)=1\\N(h)\le H_c}}
+ \frac{\mu(h)\overline{\alpha(h)}^{\,3}\Psi_k(h)^3}{N(h)}
+ T(X/N(h)^3;k,f),\\
+ \E_{\rm short}&=\frac1F\sum_{\substack{F\le N(f)<2F\\(f,S)=1}}^*
+ \sum_{0<N(k)\le\mathcal H}|P_{\rm short}(k,f)|^2.
+ \end{aligned}
+\]
+Define $\E_{\rm long}$ in the same way using $P_{\rm long}$.
+Weighted Cauchy--Schwarz for each $k,f$, followed by
+Proposition~\ref{prop:R}, gives
+\begin{equation}\label{eq:short-cube-bound}
+ \begin{aligned}
+ \E_{\rm short}
+ &\le\Bigl(\sum_{N(h)\le H_c}\frac1{N(h)}\Bigr)
+ \sum_{N(h)\le H_c}\frac1{N(h)} \frac1F\sum_{\substack{F\le N(f)<2F\\(f,S)=1}}^*
+ \sum_{0<N(k)\le\mathcal H}|T(X/N(h)^3;k,f)|^2\\
+ &\ll_{I,C_0,\varepsilon}
+ D^{\varepsilon/2}\|W\|_{C^J(I)}^2
+ \Bigl(\mathcal H+\frac{\mathcal H^2FH_c^3}{X}\Bigr)
+ \ll D^{\varepsilon/2}\Sigma\|W\|_{C^J(I)}^2.
+ \end{aligned}
+\end{equation}
+Here $X/N(h)^3\ge1$, and the reciprocal-norm sum contributes
+only a logarithm. We use Proposition~\ref{prop:R} with exponent
+$\varepsilon/4$ and range $C_0+1$, since $N(f)<2D^{C_0}$.
+If $H_c<1$, the sum is empty.
+
+Expand $T$ using \eqref{eq:T} in the remaining terms, with cube index $c$:
+\[
+ \begin{aligned}
+ P_{\rm long}(k,f)
+ ={}&\frac1{\sqrt X}
+ \sum_{\substack{(h,S)=1\\N(h)>H_c}}\sum_{(c,S)=1}
+ \mu(h)\sqrt{N(hc)}\,\overline{\alpha(hc)}^{\,3}\Psi_k(hc)^3\\
+ &\quad\times\sum_{(n,S)=1}^*a_\xi(n)\chi_n(k)\chi_n(f)^4
+ W\!\Bigl(\frac{N(n)N(hc)^3}{X}\Bigr).
+ \end{aligned}
+\]
+Put $b=hc$; the pairs giving $b$ are exactly $(h,b/h)$ with
+$h\mid b$ and $N(h)>H_c$. Since
+$\Psi_k(b)^3=\xi(b)^3\chi_b(k)^3\ind_{(b,f)=1}$, this gives
+\[
+ \begin{aligned}
+ P_{\rm long}(k,f)
+ ={}&\sum_{\substack{(b,S)=1\\N(b)>H_c}}
+ \frac{\beta_0(b,f)\chi_b(k)^3}{N(b)}
+ \frac1{\sqrt{L_b}}
+ \sum_{(n,S)=1}^*a_\xi(n)\chi_n(k)\chi_n(f)^4
+ W(N(n)/L_b),\\
+ \beta_0(b,f):={}&\overline{\alpha(b)}^{\,3}\xi(b)^3
+ \ind_{(b,f)=1}\sum_{\substack{h\mid b\\N(h)>H_c}}\mu(h),
+ \qquad |\beta_0(b,f)|\le\tau_{\mathrm{div}}(b).
+ \end{aligned}
+\]
+The divisor function $\tau_{\mathrm{div}}(b)$ counts ideal divisors.
+All these indices are primary and prime to $S$; $b$ need not be
+squarefree. The support of $W$ restricts the sum to $N(b)^3\le vX$.
+Weighted Cauchy--Schwarz now gives
+\[
+ \begin{aligned}
+ \E_{\rm long}
+ &\le\Bigl(\sum_{\substack{H_c<N(b)\le(vX)^{1/3}\\(b,S)=1}}
+             \frac{\tau_{\mathrm{div}}(b)}{N(b)}\Bigr)
+       \sum_{\substack{H_c<N(b)\le(vX)^{1/3}\\(b,S)=1}}
+             \frac{\tau_{\mathrm{div}}(b)}{N(b)}
+             \E(\mathcal H,L_b,F;\xi,W).
+ \end{aligned}
+\]
+The reciprocal divisor sum is $\ll_I\log^2(2+X)$, since
+\[
+ \sum_{N(b)\le R}\frac{\tau_{\mathrm{div}}(b)}{N(b)}
+ =\sum_{N(cd)\le R}\frac1{N(c)N(d)}
+ \le\Bigl(\sum_{N(c)\le R}\frac1{N(c)}\Bigr)^2
+ \ll\log^2(2R)\qquad(R\ge1).
+\]
+If $L_b\le1$, the column sum is empty unless $L_b\ge1/v$;
+otherwise it has $O_I(1)$ terms, so
+\[
+ \E(\mathcal H,L_b,F;\xi,W)
+ \ll_I\frac{\mathcal H}{L_b}\|W\|_\infty^2
+ \ll_I\Sigma\|W\|_\infty^2.
+\]
+Absorb the logarithms in $D^\varepsilon$ and combine the two parts
+using $\E\le2\E_{\rm short}+2\E_{\rm long}$.
+This proves \eqref{eq:cube-reduction}. If $\mathcal H^2\le X$,
+then $H_c=X^{1/3}$, so $N(b)>H_c$ implies $L_b<1$.
+\end{proof}
+
+\subsection{The transfer estimate}
+Fix a nonnegative radial Schwartz weight $\Phi$ with
+$\Phi(t)\ge1$ for $0\le t\le1$ and
+$\operatorname{supp}\widehat\Phi\subset[0,C_\Phi]$.
+Such a weight is obtained by squaring and rescaling a real radial
+Schwartz function with compactly supported Fourier transform.
+Write $N=\NK$. For fixed $\mathcal H,L,F,\xi$, put
+\begin{equation}\label{eq:smoothed-energy}
+ \mathcal A(W):=\frac1{LF}
+ \sum_{\substack{F\le N(f)<2F\\(f,S)=1}}^*
+ \sum_{k\in\OO}\Phi(N(k)/\mathcal H)
+ \Bigl|\sum_{(n,S)=1}^*
+ a_\xi(n)\chi_n(k)\chi_n(f)^4W(N(n)/L)\Bigr|^2.
+\end{equation}
+Thus $\E(\mathcal H,L,F;\xi,W)\le\mathcal A(W)$.
+In the following proposition $\Sigma$ is an independent target scale;
+we will apply it at column scale $L_b$ with $\Sigma=XF$.
+
+\begin{proposition}\label{prop:transfer}
+Assume $1\le\mathcal H,L,F,\Sigma\le D^{C_0}$ and
+$\max\{\mathcal H,LF\}\le\Sigma$, for fixed $C_0\ge1$.
+For every integer $m\ge0$ and $\varepsilon>0$,
+\begin{equation}\label{eq:transfer-summary}
+ \mathcal A(W)\ll D^\varepsilon\Sigma\|W\|_{C^{4m+12}(I)}^2
+ \Bigl(1+\sup\frac{\E(\mathcal H',X',F';\xi',U)}{\Sigma'}\Bigr)
+\end{equation}
+where the supremum is over the family \eqref{eq:energy}, with
+$\Sigma'=X'F'$, $\mathcal H',X',F'\ge1$, and
+\begin{equation}\label{eq:transfer-scales}
+ \mathcal H'\le\frac{\mathcal HL}{\Sigma F},\qquad
+ \frac{\mathcal H'}{\Sigma'}\le
+ \frac{\mathcal H}{\Sigma},\qquad
+ \Sigma'\le L.
+\end{equation}
+For $I=[u,v]$, the tests satisfy
+$U\in C_c^\infty(I')$, $I'=[u/16,4v]$, and
+$\|U\|_{C^m(I')}\le1$; an empty supremum is zero.
+The estimate holds for every compact $I\subset(0,\infty)$ and
+$W\in C_c^\infty(I)$, with implied constant depending on
+$m,C_0,\varepsilon,I$ and the fixed ray class group.
+\end{proposition}
+
+The proof is given in Section~\ref{sec:transfer-proof}, by combining
+Lemmas~\ref{lem:first-transfer} and~\ref{lem:second-transfer}.
+
+\subsection{Proof of Proposition~\ref{prop:canonical}}
+\label{sec:canonical-proof}
+\begin{proof}[Proof of Proposition~\ref{prop:canonical}]
+Fix $\kappa>0$ and $C_0\ge1$. We prove by induction on $j\ge0$
+that the proposition holds under the additional restriction
+$\mathcal H\le D^{j\kappa}$, with the derivative order and implied
+constant allowed to depend on $j$. More precisely, for every
+$\varepsilon>0$ there is an integer $J=J(j,\kappa,C_0,\varepsilon)\ge1$
+such that
+\[
+ \E(\mathcal H,X,F;\xi,W)
+ \ll_{I,j,\kappa,C_0,\varepsilon}
+ D^\varepsilon\Sigma\|W\|_{C^J(I)}^2
+\]
+for every compact interval $I=[u,v]\subset(0,\infty)$ and
+$W\in C_c^\infty(I)$, under the hypotheses of the proposition.
+The derivative order is independent of $I$; this allows us to apply
+the induction hypothesis on the enlarged interval in the transfer estimate.
+For the base case $j=0$, we have $\mathcal H\le1$.
+In \eqref{eq:energy}, the support of $W$ restricts $n$ to the
+$O_I(X)$ ideals with $\NK(n)\in[uX,vX]$.
+The factors $a_\xi(n)$, $\chi_n(k)$, and $\chi_n(f)^4$ have absolute
+value at most one, so the triangle inequality bounds each inner sum
+by $O_I(X\|W\|_\infty)$.
+There are $O(F)$ choices of $f$ and $O(\mathcal H)$ choices of $k$.
+Consequently,
+\[
+ \E(\mathcal H,X,F;\xi,W)
+ \ll_I\frac{F\mathcal H}{XF}
+       \bigl(X\|W\|_\infty\bigr)^2
+ =\mathcal H X\|W\|_\infty^2.
+\]
+Dividing by $\Sigma=XF$ and using $\mathcal H\le1$ and $F\ge1$
+proves the assertion for $j=0$, with $J=1$.
+
+Suppose the assertion holds for $j$, and fix $\varepsilon>0$.
+Let $m$ be the derivative order supplied by the induction hypothesis
+with exponent $\varepsilon/3$. For $\mathcal H\le D^{(j+1)\kappa}$,
+apply Lemma~\ref{lem:cube-reduction} with exponent $\varepsilon/3$.
+We must bound the mean squares in its supremum uniformly in $b$.
+If this supremum is nonempty, then $\mathcal H^2>X$ and
+$H_c^3=X^2/\mathcal H^2$.
+For each such $b$, recall that $L_b=X/\NK(b)^3>1$.
+Since $L_b\le X$ and $\Sigma\ge\max\{\mathcal H,L_bF\}$,
+Proposition~\ref{prop:transfer} applies at column scale $L_b$, with derivative
+order $m$, and exponent $\varepsilon/3$.
+Its estimate also bounds $\E(\mathcal H,L_b,F;\xi,W)$ because
+$\E(\mathcal H,L_b,F;\xi,W)\le\mathcal A(W)$.
+
+Let $\mathcal H',X',F'$ be any parameters in the supremum in
+\eqref{eq:transfer-summary}, with $\Sigma'=X'F'$ as in that proposition.
+By \eqref{eq:transfer-scales} and $\NK(b)>H_c$,
+\[
+ \begin{aligned}
+ \mathcal H'
+ &\le\frac{\mathcal H L_b}{\Sigma F}
+ =\frac{\mathcal H}{\NK(b)^3F^2}
+ <\mathcal H\Bigl(\frac{\mathcal H}{\Sigma}\Bigr)^2
+ \le D^{-2\kappa}\mathcal H\le D^{j\kappa},\\
+ \frac{\mathcal H'}{\Sigma'}
+ &\le\frac{\mathcal H}{\Sigma}\le D^{-\kappa},
+ \qquad \Sigma'\le L_b\le\Sigma\le D^{C_0}.
+ \end{aligned}
+\]
+Thus each of these mean squares is covered by the induction hypothesis.
+Its weight $U$ is supported in $[u/16,4v]$ and has $C^m$ norm at most one.
+Applying the induction hypothesis on this interval gives
+\[
+ \frac{\E(\mathcal H',X',F';\xi',U)}{\Sigma'}
+ \ll_{I,j,\kappa,C_0,\varepsilon}D^{\varepsilon/3}.
+\]
+The enlarged interval is determined by $I$, so the implied constant
+has only the permitted dependence on the support.
+Substituting into \eqref{eq:transfer-summary} yields, uniformly in $b$,
+\[
+ \E(\mathcal H,L_b,F;\xi,W)
+ \ll_{I,j,\kappa,C_0,\varepsilon}
+ D^{2\varepsilon/3}\Sigma\|W\|_{C^{4m+12}(I)}^2.
+\]
+Substitution into \eqref{eq:cube-reduction} contributes the remaining
+factor $D^{\varepsilon/3}$. Choose $J$ at least $4m+12$ and at least
+the derivative order required by Lemma~\ref{lem:cube-reduction}.
+We obtain
+\[
+ \E(\mathcal H,X,F;\xi,W)
+ \ll_{I,j,\kappa,C_0,\varepsilon}
+ D^\varepsilon\Sigma\|W\|_{C^J(I)}^2.
+\]
+The choice of $J$ depends only on $j,\kappa,C_0,\varepsilon$.
+If the supremum in \eqref{eq:cube-reduction} is empty, the same bound
+follows directly from that lemma. This completes the induction.
+
+Finally, take $j=\lceil C_0/\kappa\rceil$.
+The hypothesis $\mathcal H\le\Sigma\le D^{C_0}$ ensures
+$\mathcal H\le D^{j\kappa}$, so the induction gives the proposition.
+\end{proof}
+
+\begin{remark}\label{rem:formal-descent}
+The formal proof runs the same descent with fixed parameters. At $\kappa=1/20$ (the value used in
+Section~\ref{sec:completion}) it removes, at each level, the cubes of norm greater than a fixed
+cutoff $D^{1/1000}$, instead of the adaptive cutoff $H_c$ of \eqref{eq:cube-cutoff}. Each level
+therefore lowers the row norm by a factor of at least $D^{1/1000}$ (in fact $D^{3/1000}$), so the
+rank $\lceil1000\log\mathcal H/\log D\rceil$ drops at each level. Since $\mathcal H\le D^3$ in all
+states, at most $3000$ levels occur, and the induction is on this rank rather than on $j$. The losses
+are tracked additively: each level costs a factor $D^{57\eta}$, and the gap $1/20$ is reduced
+by $\eta$ per level, with $3000\eta\le1/80$, instead of re-quantifying $\varepsilon$ at each
+level. The short cubes then contribute $D^{7\varepsilon-1/40}\Sigma$: the saving $D^{-1/40}$,
+half the gap, absorbs the loss $D^{7\varepsilon}$. Because the margin starts at $1/20$, the
+formal mean square requires $\vartheta>1/20$, which $\vartheta=1/10$ satisfies.
+\end{remark}
+
+\subsection{The original mean square}
+\label{sec:completion}
+\begin{proof}[Proof of Proposition~\ref{thm:ms}]
+Let $\vartheta=1/10$ and put $H=D^{1+\vartheta}=D^{11/10}$.
+The ranges in \eqref{eq:initial-scales} give
+\begin{equation}\label{eq:initial-positive-gap}
+ \mathcal H\le\frac{CD^{1-\vartheta}}{B^2},\qquad
+ \Sigma=XF=\frac DB,\qquad
+ \frac{\mathcal H}{\Sigma}\ll D^{-\vartheta}.
+\end{equation}
+For large $D$, Proposition~\ref{prop:canonical} applies with
+$\kappa=\vartheta/2=1/20$ and $C_0=2$. If $X<1$, nonempty support forces
+$X\gg_I1$, and counting gives $\E\ll_I\mathcal H\|W\|_\infty^2
+\ll\Sigma\|W\|_\infty^2$; if $\mathcal H<1$, the sum is empty.
+Thus \eqref{eq:auxiliary-target} holds, with derivative order depending
+only on $\varepsilon$, and
+Proposition~\ref{prop:poisson-reduction} proves \eqref{eq:ms}.
+Bounded $D$ is again covered by counting.
+\end{proof}
+
+

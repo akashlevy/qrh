@@ -1,0 +1,20 @@
+Comparator starting: ComparatorChallenges/QRH.json
+Building ComparatorChallenges.QRH
+⚠ [8924/8924] Replayed ComparatorChallenges.QRH
+warning: ComparatorChallenges/QRH.lean:5:8: declaration uses `sorry`
+Build completed successfully (8924 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, QRH.riemannZeta_ne_zero_of_twentyThree_twentyFourths_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.QRH
+Building QRH
+⚠ [4373/4378] Replayed QRH.Spine.ZeroFree
+warning: QRH/Spine/ZeroFree.lean:65:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+Build completed successfully (4378 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, QRH.riemannZeta_ne_zero_of_twentyThree_twentyFourths_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from QRH
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

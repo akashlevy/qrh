@@ -1,0 +1,18 @@
+Comparator starting: ../math/lean/ComparatorChallenges/HeckeSevenEighths.json
+warning: rellich-kondrachov: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/rellich-kondrachov' has local changes
+warning: PrimeNumberTheoremAnd: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/PrimeNumberTheoremAnd' has local changes
+Building ComparatorChallenges.HeckeSevenEighths
+warning: rellich-kondrachov: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/rellich-kondrachov' has local changes
+warning: PrimeNumberTheoremAnd: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/PrimeNumberTheoremAnd' has local changes
+⚠ [8924/8924] Replayed ComparatorChallenges.HeckeSevenEighths
+warning: ../math/lean/ComparatorChallenges/HeckeSevenEighths.lean:237:8: declaration uses `sorry`
+Build completed successfully (8924 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.HeckeSevenEighths
+Building OAI.NumberTheory.DirichletL.Hecke.Nonvanishing
+warning: rellich-kondrachov: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/rellich-kondrachov' has local changes
+warning: PrimeNumberTheoremAnd: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/PrimeNumberTheoremAnd' has local changes
+Build completed successfully (6809 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.SevenEighths.HeckeFamily.LFunction_ne_zero_of_seven_eighths_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.NumberTheory.DirichletL.Hecke.Nonvanishing
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

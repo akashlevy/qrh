@@ -1,0 +1,18 @@
+Comparator starting: ../math/lean/ComparatorChallenges/QuasiRiemannHypothesis.json
+warning: rellich-kondrachov: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/rellich-kondrachov' has local changes
+warning: PrimeNumberTheoremAnd: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/PrimeNumberTheoremAnd' has local changes
+Building ComparatorChallenges.QuasiRiemannHypothesis
+warning: rellich-kondrachov: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/rellich-kondrachov' has local changes
+warning: PrimeNumberTheoremAnd: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/PrimeNumberTheoremAnd' has local changes
+⚠ [8924/8924] Replayed ComparatorChallenges.QuasiRiemannHypothesis
+warning: ../math/lean/ComparatorChallenges/QuasiRiemannHypothesis.lean:5:8: declaration uses `sorry`
+Build completed successfully (8924 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.QuasiRiemannHypothesis
+Building OAI.NumberTheory.DirichletL.Nonvanishing
+warning: rellich-kondrachov: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/rellich-kondrachov' has local changes
+warning: PrimeNumberTheoremAnd: repository '/Users/akashlevy/Documents/riemann/formalize_11_12/upstream/../.lake/packages/PrimeNumberTheoremAnd' has local changes
+Build completed successfully (6808 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.NumberTheory.DirichletL.Nonvanishing
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!

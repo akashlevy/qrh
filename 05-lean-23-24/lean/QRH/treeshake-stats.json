@@ -1,0 +1,1727 @@
+{
+ "summary": {
+  "modules_before": 286,
+  "modules_after": 286,
+  "lines_before": 190576,
+  "lines_after": 135990,
+  "removed_modules": []
+ },
+ "modules": {
+  "OAI.NumberTheory.DirichletL.Arithmetic.EisensteinCoordinates": {
+   "orig_lines": 741,
+   "decl_groups": 38,
+   "kept_groups": 14,
+   "new_lines": 357
+  },
+  "OAI.NumberTheory.DirichletL.Arithmetic.EisensteinEmbedding": {
+   "orig_lines": 702,
+   "decl_groups": 59,
+   "kept_groups": 43,
+   "new_lines": 517
+  },
+  "OAI.NumberTheory.DirichletL.Arithmetic.EisensteinIdeals": {
+   "orig_lines": 904,
+   "decl_groups": 69,
+   "kept_groups": 12,
+   "new_lines": 65
+  },
+  "OAI.NumberTheory.DirichletL.Arithmetic.IdealMobius": {
+   "orig_lines": 621,
+   "decl_groups": 71,
+   "kept_groups": 68,
+   "new_lines": 537
+  },
+  "OAI.NumberTheory.DirichletL.Arithmetic.LatticeCount": {
+   "orig_lines": 572,
+   "decl_groups": 32,
+   "kept_groups": 11,
+   "new_lines": 179
+  },
+  "OAI.NumberTheory.DirichletL.Arithmetic.NormFiberMellin": {
+   "orig_lines": 721,
+   "decl_groups": 40,
+   "kept_groups": 15,
+   "new_lines": 195
+  },
+  "OAI.NumberTheory.DirichletL.Arithmetic.SquarefreeDivisors": {
+   "orig_lines": 677,
+   "decl_groups": 56,
+   "kept_groups": 55,
+   "new_lines": 604
+  },
+  "OAI.NumberTheory.DirichletL.ChineseRemainder.AdditiveCharacters": {
+   "orig_lines": 606,
+   "decl_groups": 41,
+   "kept_groups": 16,
+   "new_lines": 181
+  },
+  "OAI.NumberTheory.DirichletL.ChineseRemainder.FrequencyLifts": {
+   "orig_lines": 661,
+   "decl_groups": 51,
+   "kept_groups": 36,
+   "new_lines": 538
+  },
+  "OAI.NumberTheory.DirichletL.ChineseRemainder.PrimaryCompletions": {
+   "orig_lines": 584,
+   "decl_groups": 41,
+   "kept_groups": 26,
+   "new_lines": 463
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.ArithmeticBins": {
+   "orig_lines": 681,
+   "decl_groups": 55,
+   "kept_groups": 50,
+   "new_lines": 496
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.CanonicalLogEnergy": {
+   "orig_lines": 627,
+   "decl_groups": 33,
+   "kept_groups": 32,
+   "new_lines": 559
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.ChildTransfer": {
+   "orig_lines": 666,
+   "decl_groups": 33,
+   "kept_groups": 29,
+   "new_lines": 533
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.ClosedRecursion": {
+   "orig_lines": 644,
+   "decl_groups": 11,
+   "kept_groups": 11,
+   "new_lines": 583
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.ConjugateProfiles": {
+   "orig_lines": 748,
+   "decl_groups": 41,
+   "kept_groups": 35,
+   "new_lines": 593
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.CrossFactorization": {
+   "orig_lines": 740,
+   "decl_groups": 36,
+   "kept_groups": 24,
+   "new_lines": 544
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.CubeBlocks": {
+   "orig_lines": 610,
+   "decl_groups": 34,
+   "kept_groups": 30,
+   "new_lines": 455
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.CubeLabels": {
+   "orig_lines": 641,
+   "decl_groups": 47,
+   "kept_groups": 28,
+   "new_lines": 352
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.CutoffOrders": {
+   "orig_lines": 594,
+   "decl_groups": 31,
+   "kept_groups": 31,
+   "new_lines": 537
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.DensityBudgets": {
+   "orig_lines": 727,
+   "decl_groups": 35,
+   "kept_groups": 27,
+   "new_lines": 552
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.DivisorTargets": {
+   "orig_lines": 664,
+   "decl_groups": 17,
+   "kept_groups": 17,
+   "new_lines": 604
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.DualZeroMode": {
+   "orig_lines": 691,
+   "decl_groups": 16,
+   "kept_groups": 16,
+   "new_lines": 634
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.DyadicKernel": {
+   "orig_lines": 622,
+   "decl_groups": 25,
+   "kept_groups": 22,
+   "new_lines": 456
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.FirstCoreCutoff": {
+   "orig_lines": 633,
+   "decl_groups": 19,
+   "kept_groups": 11,
+   "new_lines": 229
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.FirstPassage": {
+   "orig_lines": 674,
+   "decl_groups": 28,
+   "kept_groups": 16,
+   "new_lines": 357
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.FixedProfiles": {
+   "orig_lines": 649,
+   "decl_groups": 34,
+   "kept_groups": 30,
+   "new_lines": 470
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.FrequencyBlocks": {
+   "orig_lines": 709,
+   "decl_groups": 44,
+   "kept_groups": 33,
+   "new_lines": 413
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.FrequencyCutoffs": {
+   "orig_lines": 616,
+   "decl_groups": 46,
+   "kept_groups": 44,
+   "new_lines": 437
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.GlobalEncoding": {
+   "orig_lines": 676,
+   "decl_groups": 36,
+   "kept_groups": 35,
+   "new_lines": 599
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.IntegratedTransfer": {
+   "orig_lines": 690,
+   "decl_groups": 44,
+   "kept_groups": 39,
+   "new_lines": 530
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.KernelEnergy": {
+   "orig_lines": 758,
+   "decl_groups": 34,
+   "kept_groups": 28,
+   "new_lines": 475
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.LiteralSources": {
+   "orig_lines": 656,
+   "decl_groups": 57,
+   "kept_groups": 55,
+   "new_lines": 601
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.LocalBrackets": {
+   "orig_lines": 644,
+   "decl_groups": 41,
+   "kept_groups": 34,
+   "new_lines": 410
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.LogSeparation": {
+   "orig_lines": 631,
+   "decl_groups": 40,
+   "kept_groups": 36,
+   "new_lines": 528
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.LogarithmicTargets": {
+   "orig_lines": 717,
+   "decl_groups": 27,
+   "kept_groups": 9,
+   "new_lines": 227
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.NormalizedMass": {
+   "orig_lines": 703,
+   "decl_groups": 32,
+   "kept_groups": 32,
+   "new_lines": 647
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.PaddedPassage": {
+   "orig_lines": 654,
+   "decl_groups": 45,
+   "kept_groups": 44,
+   "new_lines": 589
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.PooledRows": {
+   "orig_lines": 654,
+   "decl_groups": 47,
+   "kept_groups": 18,
+   "new_lines": 401
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.PrincipalDensity": {
+   "orig_lines": 660,
+   "decl_groups": 34,
+   "kept_groups": 33,
+   "new_lines": 596
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.PrincipalNormalization": {
+   "orig_lines": 631,
+   "decl_groups": 27,
+   "kept_groups": 20,
+   "new_lines": 429
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.QuantitativePassage": {
+   "orig_lines": 613,
+   "decl_groups": 18,
+   "kept_groups": 14,
+   "new_lines": 282
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.RadialProfiles": {
+   "orig_lines": 608,
+   "decl_groups": 52,
+   "kept_groups": 51,
+   "new_lines": 535
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.RadialWindows": {
+   "orig_lines": 647,
+   "decl_groups": 42,
+   "kept_groups": 35,
+   "new_lines": 364
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.RankMargins": {
+   "orig_lines": 629,
+   "decl_groups": 22,
+   "kept_groups": 20,
+   "new_lines": 540
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.RayCoefficients": {
+   "orig_lines": 654,
+   "decl_groups": 47,
+   "kept_groups": 39,
+   "new_lines": 475
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.RayExpansion": {
+   "orig_lines": 673,
+   "decl_groups": 30,
+   "kept_groups": 26,
+   "new_lines": 419
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.ReopenedFibers": {
+   "orig_lines": 749,
+   "decl_groups": 46,
+   "kept_groups": 38,
+   "new_lines": 576
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.ReopeningBounds": {
+   "orig_lines": 621,
+   "decl_groups": 32,
+   "kept_groups": 25,
+   "new_lines": 449
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.ReopeningSeparation": {
+   "orig_lines": 613,
+   "decl_groups": 41,
+   "kept_groups": 36,
+   "new_lines": 486
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.ResidualSectors": {
+   "orig_lines": 617,
+   "decl_groups": 35,
+   "kept_groups": 28,
+   "new_lines": 415
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.RowCaps": {
+   "orig_lines": 699,
+   "decl_groups": 57,
+   "kept_groups": 44,
+   "new_lines": 440
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.RowMajorants": {
+   "orig_lines": 719,
+   "decl_groups": 65,
+   "kept_groups": 50,
+   "new_lines": 442
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.ScaleCaps": {
+   "orig_lines": 796,
+   "decl_groups": 51,
+   "kept_groups": 36,
+   "new_lines": 595
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.SecondPoisson": {
+   "orig_lines": 632,
+   "decl_groups": 29,
+   "kept_groups": 8,
+   "new_lines": 222
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.SquarefreeTransfer": {
+   "orig_lines": 624,
+   "decl_groups": 12,
+   "kept_groups": 3,
+   "new_lines": 302
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.SupportNorms": {
+   "orig_lines": 671,
+   "decl_groups": 24,
+   "kept_groups": 21,
+   "new_lines": 450
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.TwistedProfiles": {
+   "orig_lines": 739,
+   "decl_groups": 55,
+   "kept_groups": 49,
+   "new_lines": 528
+  },
+  "OAI.NumberTheory.DirichletL.CubicSieve.UniformTransfer": {
+   "orig_lines": 745,
+   "decl_groups": 15,
+   "kept_groups": 9,
+   "new_lines": 429
+  },
+  "OAI.NumberTheory.DirichletL.Cusp.MatrixPhases": {
+   "orig_lines": 707,
+   "decl_groups": 97,
+   "kept_groups": 38,
+   "new_lines": 325
+  },
+  "OAI.NumberTheory.DirichletL.Cusp.ResiduePhases": {
+   "orig_lines": 634,
+   "decl_groups": 52,
+   "kept_groups": 22,
+   "new_lines": 364
+  },
+  "OAI.NumberTheory.DirichletL.Cusp.ResiduesModThree": {
+   "orig_lines": 640,
+   "decl_groups": 69,
+   "kept_groups": 50,
+   "new_lines": 374
+  },
+  "OAI.NumberTheory.DirichletL.Cusp.StaticReflectionPhases": {
+   "orig_lines": 673,
+   "decl_groups": 54,
+   "kept_groups": 39,
+   "new_lines": 557
+  },
+  "OAI.NumberTheory.DirichletL.Cusp.WeylRepresentatives": {
+   "orig_lines": 639,
+   "decl_groups": 55,
+   "kept_groups": 35,
+   "new_lines": 405
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.AffineCuspFourier": {
+   "orig_lines": 659,
+   "decl_groups": 32,
+   "kept_groups": 25,
+   "new_lines": 575
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ArbitraryCuspPullback": {
+   "orig_lines": 691,
+   "decl_groups": 58,
+   "kept_groups": 50,
+   "new_lines": 578
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.BarrierPotential": {
+   "orig_lines": 595,
+   "decl_groups": 30,
+   "kept_groups": 29,
+   "new_lines": 534
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.BesselDerivatives": {
+   "orig_lines": 644,
+   "decl_groups": 37,
+   "kept_groups": 30,
+   "new_lines": 514
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.BesselMellinTransform": {
+   "orig_lines": 608,
+   "decl_groups": 42,
+   "kept_groups": 39,
+   "new_lines": 550
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CompactEnergyFamilies": {
+   "orig_lines": 604,
+   "decl_groups": 45,
+   "kept_groups": 44,
+   "new_lines": 540
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CompactProfiles": {
+   "orig_lines": 694,
+   "decl_groups": 41,
+   "kept_groups": 40,
+   "new_lines": 560
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ConjugateCuspProfiles": {
+   "orig_lines": 614,
+   "decl_groups": 45,
+   "kept_groups": 32,
+   "new_lines": 441
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ConjugateLevelAction": {
+   "orig_lines": 682,
+   "decl_groups": 58,
+   "kept_groups": 43,
+   "new_lines": 529
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ConstantDirichletSeries": {
+   "orig_lines": 633,
+   "decl_groups": 36,
+   "kept_groups": 24,
+   "new_lines": 371
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ConstantTermSupport": {
+   "orig_lines": 629,
+   "decl_groups": 28,
+   "kept_groups": 25,
+   "new_lines": 523
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CoordinateLaplacian": {
+   "orig_lines": 643,
+   "decl_groups": 47,
+   "kept_groups": 35,
+   "new_lines": 431
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CorrespondenceAdjoint": {
+   "orig_lines": 666,
+   "decl_groups": 48,
+   "kept_groups": 36,
+   "new_lines": 550
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CorrespondenceEnergy": {
+   "orig_lines": 619,
+   "decl_groups": 40,
+   "kept_groups": 34,
+   "new_lines": 558
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CorrespondencePullback": {
+   "orig_lines": 642,
+   "decl_groups": 38,
+   "kept_groups": 33,
+   "new_lines": 576
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CorrespondenceTests": {
+   "orig_lines": 689,
+   "decl_groups": 41,
+   "kept_groups": 33,
+   "new_lines": 600
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CoverTrace": {
+   "orig_lines": 623,
+   "decl_groups": 53,
+   "kept_groups": 40,
+   "new_lines": 451
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CubeCuspAverage": {
+   "orig_lines": 671,
+   "decl_groups": 50,
+   "kept_groups": 40,
+   "new_lines": 608
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CubeEigenrelation": {
+   "orig_lines": 612,
+   "decl_groups": 61,
+   "kept_groups": 47,
+   "new_lines": 461
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CubeResidueStrata": {
+   "orig_lines": 628,
+   "decl_groups": 57,
+   "kept_groups": 45,
+   "new_lines": 557
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CuspAverage": {
+   "orig_lines": 636,
+   "decl_groups": 38,
+   "kept_groups": 35,
+   "new_lines": 554
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CuspDilation": {
+   "orig_lines": 640,
+   "decl_groups": 38,
+   "kept_groups": 22,
+   "new_lines": 402
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CuspHeight": {
+   "orig_lines": 655,
+   "decl_groups": 71,
+   "kept_groups": 69,
+   "new_lines": 576
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CuspIntegration": {
+   "orig_lines": 766,
+   "decl_groups": 62,
+   "kept_groups": 13,
+   "new_lines": 333
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CuspResidues": {
+   "orig_lines": 702,
+   "decl_groups": 67,
+   "kept_groups": 65,
+   "new_lines": 629
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.CutoffApproximation": {
+   "orig_lines": 607,
+   "decl_groups": 38,
+   "kept_groups": 36,
+   "new_lines": 519
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.DirichletForm": {
+   "orig_lines": 618,
+   "decl_groups": 41,
+   "kept_groups": 31,
+   "new_lines": 394
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.EntireMellinProfile": {
+   "orig_lines": 646,
+   "decl_groups": 41,
+   "kept_groups": 35,
+   "new_lines": 570
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.FixedConductor": {
+   "orig_lines": 650,
+   "decl_groups": 52,
+   "kept_groups": 28,
+   "new_lines": 305
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.FixedCuspArrays": {
+   "orig_lines": 687,
+   "decl_groups": 63,
+   "kept_groups": 39,
+   "new_lines": 391
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.FixedFrequencyExpansion": {
+   "orig_lines": 638,
+   "decl_groups": 59,
+   "kept_groups": 40,
+   "new_lines": 445
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.FixedThetaTwists": {
+   "orig_lines": 590,
+   "decl_groups": 60,
+   "kept_groups": 39,
+   "new_lines": 369
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.FourierCoefficients": {
+   "orig_lines": 646,
+   "decl_groups": 51,
+   "kept_groups": 46,
+   "new_lines": 528
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.FredholmAlternative": {
+   "orig_lines": 638,
+   "decl_groups": 26,
+   "kept_groups": 23,
+   "new_lines": 542
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.FullFrequencyExpansion": {
+   "orig_lines": 599,
+   "decl_groups": 44,
+   "kept_groups": 18,
+   "new_lines": 325
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.FundamentalDomain": {
+   "orig_lines": 745,
+   "decl_groups": 66,
+   "kept_groups": 58,
+   "new_lines": 656
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.GaussFactorization": {
+   "orig_lines": 652,
+   "decl_groups": 42,
+   "kept_groups": 29,
+   "new_lines": 443
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.GreenIdentity": {
+   "orig_lines": 702,
+   "decl_groups": 48,
+   "kept_groups": 32,
+   "new_lines": 393
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.HyperbolicSpace": {
+   "orig_lines": 620,
+   "decl_groups": 58,
+   "kept_groups": 55,
+   "new_lines": 546
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.HyperbolicVolume": {
+   "orig_lines": 631,
+   "decl_groups": 61,
+   "kept_groups": 61,
+   "new_lines": 577
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.IntegralCover": {
+   "orig_lines": 707,
+   "decl_groups": 77,
+   "kept_groups": 71,
+   "new_lines": 644
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.InverseCorrespondence": {
+   "orig_lines": 655,
+   "decl_groups": 59,
+   "kept_groups": 40,
+   "new_lines": 490
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.InverseCuspCoordinates": {
+   "orig_lines": 605,
+   "decl_groups": 38,
+   "kept_groups": 32,
+   "new_lines": 512
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.LocalCutoffs": {
+   "orig_lines": 650,
+   "decl_groups": 41,
+   "kept_groups": 35,
+   "new_lines": 417
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.MeromorphicResolvent": {
+   "orig_lines": 703,
+   "decl_groups": 80,
+   "kept_groups": 62,
+   "new_lines": 503
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.OppositeCusp": {
+   "orig_lines": 655,
+   "decl_groups": 67,
+   "kept_groups": 58,
+   "new_lines": 561
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.PrimeGaussFactors": {
+   "orig_lines": 654,
+   "decl_groups": 41,
+   "kept_groups": 32,
+   "new_lines": 568
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.PrimePowerGaussSums": {
+   "orig_lines": 658,
+   "decl_groups": 51,
+   "kept_groups": 42,
+   "new_lines": 560
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.PrimeRecurrence": {
+   "orig_lines": 659,
+   "decl_groups": 44,
+   "kept_groups": 31,
+   "new_lines": 530
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.PrimitiveRows": {
+   "orig_lines": 652,
+   "decl_groups": 47,
+   "kept_groups": 40,
+   "new_lines": 569
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.QuotientTopology": {
+   "orig_lines": 739,
+   "decl_groups": 60,
+   "kept_groups": 38,
+   "new_lines": 358
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.RamifiedGaussSeries": {
+   "orig_lines": 596,
+   "decl_groups": 47,
+   "kept_groups": 41,
+   "new_lines": 534
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.RamifiedNormWeights": {
+   "orig_lines": 645,
+   "decl_groups": 40,
+   "kept_groups": 38,
+   "new_lines": 576
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.RamifiedSixBranches": {
+   "orig_lines": 643,
+   "decl_groups": 41,
+   "kept_groups": 34,
+   "new_lines": 580
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.RamifiedTransform": {
+   "orig_lines": 630,
+   "decl_groups": 48,
+   "kept_groups": 41,
+   "new_lines": 567
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.RamifiedValuation": {
+   "orig_lines": 691,
+   "decl_groups": 58,
+   "kept_groups": 38,
+   "new_lines": 491
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.RationalTranslations": {
+   "orig_lines": 697,
+   "decl_groups": 52,
+   "kept_groups": 40,
+   "new_lines": 574
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ReflectedCuspMellin": {
+   "orig_lines": 687,
+   "decl_groups": 45,
+   "kept_groups": 31,
+   "new_lines": 529
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ReflectionFibers": {
+   "orig_lines": 616,
+   "decl_groups": 49,
+   "kept_groups": 25,
+   "new_lines": 369
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ResidualCuspDecay": {
+   "orig_lines": 682,
+   "decl_groups": 44,
+   "kept_groups": 26,
+   "new_lines": 348
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ResidualFourierBounds": {
+   "orig_lines": 711,
+   "decl_groups": 47,
+   "kept_groups": 39,
+   "new_lines": 617
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ResidualFourierExpansion": {
+   "orig_lines": 635,
+   "decl_groups": 49,
+   "kept_groups": 42,
+   "new_lines": 530
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ResidualFourierSeries": {
+   "orig_lines": 632,
+   "decl_groups": 44,
+   "kept_groups": 33,
+   "new_lines": 487
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ResidualOrthogonality": {
+   "orig_lines": 599,
+   "decl_groups": 47,
+   "kept_groups": 39,
+   "new_lines": 537
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.Rows": {
+   "orig_lines": 626,
+   "decl_groups": 84,
+   "kept_groups": 78,
+   "new_lines": 528
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ScatteringCoefficients": {
+   "orig_lines": 739,
+   "decl_groups": 72,
+   "kept_groups": 61,
+   "new_lines": 616
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.ScatteringResidues": {
+   "orig_lines": 660,
+   "decl_groups": 48,
+   "kept_groups": 43,
+   "new_lines": 566
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SeedDefects": {
+   "orig_lines": 688,
+   "decl_groups": 39,
+   "kept_groups": 31,
+   "new_lines": 580
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SeedHeight": {
+   "orig_lines": 611,
+   "decl_groups": 50,
+   "kept_groups": 46,
+   "new_lines": 518
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SmoothCuspCutoffs": {
+   "orig_lines": 643,
+   "decl_groups": 61,
+   "kept_groups": 57,
+   "new_lines": 559
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SmoothSummands": {
+   "orig_lines": 719,
+   "decl_groups": 41,
+   "kept_groups": 34,
+   "new_lines": 469
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SmoothTests": {
+   "orig_lines": 652,
+   "decl_groups": 43,
+   "kept_groups": 36,
+   "new_lines": 544
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SourceBesselExpansion": {
+   "orig_lines": 624,
+   "decl_groups": 42,
+   "kept_groups": 34,
+   "new_lines": 538
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SourceCuspKernels": {
+   "orig_lines": 631,
+   "decl_groups": 41,
+   "kept_groups": 30,
+   "new_lines": 415
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SourceMellinInversion": {
+   "orig_lines": 646,
+   "decl_groups": 52,
+   "kept_groups": 41,
+   "new_lines": 526
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SourceProjection": {
+   "orig_lines": 647,
+   "decl_groups": 64,
+   "kept_groups": 47,
+   "new_lines": 486
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SourceQuotient": {
+   "orig_lines": 619,
+   "decl_groups": 68,
+   "kept_groups": 47,
+   "new_lines": 389
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.SquarefreeCoefficients": {
+   "orig_lines": 613,
+   "decl_groups": 54,
+   "kept_groups": 46,
+   "new_lines": 548
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.TranslatedFourierResidues": {
+   "orig_lines": 605,
+   "decl_groups": 43,
+   "kept_groups": 23,
+   "new_lines": 364
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.UnitNormalization": {
+   "orig_lines": 677,
+   "decl_groups": 46,
+   "kept_groups": 37,
+   "new_lines": 532
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.VariationalLaplacian": {
+   "orig_lines": 698,
+   "decl_groups": 61,
+   "kept_groups": 38,
+   "new_lines": 474
+  },
+  "OAI.NumberTheory.DirichletL.Eisenstein.WhittakerContinuation": {
+   "orig_lines": 638,
+   "decl_groups": 48,
+   "kept_groups": 21,
+   "new_lines": 305
+  },
+  "OAI.NumberTheory.DirichletL.Fourier.FrequencyTwists": {
+   "orig_lines": 652,
+   "decl_groups": 40,
+   "kept_groups": 35,
+   "new_lines": 543
+  },
+  "OAI.NumberTheory.DirichletL.Fourier.LogDensity": {
+   "orig_lines": 611,
+   "decl_groups": 44,
+   "kept_groups": 42,
+   "new_lines": 546
+  },
+  "OAI.NumberTheory.DirichletL.Fourier.PositiveLogProfiles": {
+   "orig_lines": 988,
+   "decl_groups": 27,
+   "kept_groups": 19,
+   "new_lines": 548
+  },
+  "OAI.NumberTheory.DirichletL.Fourier.TupleWeights": {
+   "orig_lines": 638,
+   "decl_groups": 38,
+   "kept_groups": 34,
+   "new_lines": 492
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.AbelPhaseLimit": {
+   "orig_lines": 637,
+   "decl_groups": 39,
+   "kept_groups": 38,
+   "new_lines": 612
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.ActiveConductor": {
+   "orig_lines": 649,
+   "decl_groups": 38,
+   "kept_groups": 13,
+   "new_lines": 216
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.ActiveReindexing": {
+   "orig_lines": 610,
+   "decl_groups": 43,
+   "kept_groups": 27,
+   "new_lines": 495
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.BesselReflection": {
+   "orig_lines": 666,
+   "decl_groups": 36,
+   "kept_groups": 30,
+   "new_lines": 523
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.BranchScaling": {
+   "orig_lines": 630,
+   "decl_groups": 36,
+   "kept_groups": 33,
+   "new_lines": 445
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.ChineseRemainder": {
+   "orig_lines": 687,
+   "decl_groups": 36,
+   "kept_groups": 9,
+   "new_lines": 133
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.CompletedDyadicRows": {
+   "orig_lines": 611,
+   "decl_groups": 29,
+   "kept_groups": 18,
+   "new_lines": 308
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.CompletedExpansion": {
+   "orig_lines": 683,
+   "decl_groups": 73,
+   "kept_groups": 66,
+   "new_lines": 590
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.CubicNormalization": {
+   "orig_lines": 629,
+   "decl_groups": 23,
+   "kept_groups": 14,
+   "new_lines": 393
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.CubicTrace": {
+   "orig_lines": 682,
+   "decl_groups": 32,
+   "kept_groups": 25,
+   "new_lines": 464
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.DualKernelSummability": {
+   "orig_lines": 575,
+   "decl_groups": 39,
+   "kept_groups": 27,
+   "new_lines": 473
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.FiniteFourier": {
+   "orig_lines": 1414,
+   "decl_groups": 103,
+   "kept_groups": 55,
+   "new_lines": 890
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.FiniteTranslations": {
+   "orig_lines": 601,
+   "decl_groups": 44,
+   "kept_groups": 38,
+   "new_lines": 538
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.FixedRayFibers": {
+   "orig_lines": 634,
+   "decl_groups": 45,
+   "kept_groups": 34,
+   "new_lines": 497
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.GaussianDualLimit": {
+   "orig_lines": 580,
+   "decl_groups": 36,
+   "kept_groups": 20,
+   "new_lines": 313
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.GaussianFiberMass": {
+   "orig_lines": 621,
+   "decl_groups": 18,
+   "kept_groups": 16,
+   "new_lines": 450
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.GlobalScales": {
+   "orig_lines": 746,
+   "decl_groups": 38,
+   "kept_groups": 36,
+   "new_lines": 678
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.LocalProductAssembly": {
+   "orig_lines": 620,
+   "decl_groups": 25,
+   "kept_groups": 4,
+   "new_lines": 92
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.MellinSupport": {
+   "orig_lines": 620,
+   "decl_groups": 56,
+   "kept_groups": 48,
+   "new_lines": 553
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.MixedConversion": {
+   "orig_lines": 744,
+   "decl_groups": 43,
+   "kept_groups": 28,
+   "new_lines": 426
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.PowerfulParts": {
+   "orig_lines": 637,
+   "decl_groups": 44,
+   "kept_groups": 36,
+   "new_lines": 297
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.QuadraticNormalization": {
+   "orig_lines": 868,
+   "decl_groups": 52,
+   "kept_groups": 19,
+   "new_lines": 249
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.QuadraticTrace": {
+   "orig_lines": 605,
+   "decl_groups": 35,
+   "kept_groups": 16,
+   "new_lines": 252
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.RamifiedTracePhase": {
+   "orig_lines": 588,
+   "decl_groups": 42,
+   "kept_groups": 7,
+   "new_lines": 179
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.RayCharacters": {
+   "orig_lines": 730,
+   "decl_groups": 39,
+   "kept_groups": 36,
+   "new_lines": 566
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.ReflectedBranches": {
+   "orig_lines": 747,
+   "decl_groups": 62,
+   "kept_groups": 57,
+   "new_lines": 571
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.ReflectionBrackets": {
+   "orig_lines": 645,
+   "decl_groups": 54,
+   "kept_groups": 44,
+   "new_lines": 493
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.ReflectionPool": {
+   "orig_lines": 675,
+   "decl_groups": 45,
+   "kept_groups": 13,
+   "new_lines": 319
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.ResidualEquivalence": {
+   "orig_lines": 652,
+   "decl_groups": 44,
+   "kept_groups": 32,
+   "new_lines": 541
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.SecondPoissonScale": {
+   "orig_lines": 951,
+   "decl_groups": 76,
+   "kept_groups": 61,
+   "new_lines": 656
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.SexticNormalization": {
+   "orig_lines": 622,
+   "decl_groups": 29,
+   "kept_groups": 10,
+   "new_lines": 244
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.SexticRadialPoisson": {
+   "orig_lines": 857,
+   "decl_groups": 58,
+   "kept_groups": 47,
+   "new_lines": 642
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.SquarePhaseFactorization": {
+   "orig_lines": 590,
+   "decl_groups": 41,
+   "kept_groups": 38,
+   "new_lines": 502
+  },
+  "OAI.NumberTheory.DirichletL.GaussSum.ThetaLocalRows": {
+   "orig_lines": 590,
+   "decl_groups": 32,
+   "kept_groups": 15,
+   "new_lines": 398
+  },
+  "OAI.NumberTheory.DirichletL.Hecke.FiniteEulerFactors": {
+   "orig_lines": 660,
+   "decl_groups": 30,
+   "kept_groups": 17,
+   "new_lines": 332
+  },
+  "OAI.NumberTheory.DirichletL.Hecke.LocalEulerIdentities": {
+   "orig_lines": 758,
+   "decl_groups": 41,
+   "kept_groups": 30,
+   "new_lines": 482
+  },
+  "OAI.NumberTheory.DirichletL.Hecke.MobiusEulerCorrection": {
+   "orig_lines": 695,
+   "decl_groups": 72,
+   "kept_groups": 70,
+   "new_lines": 615
+  },
+  "OAI.NumberTheory.DirichletL.Hecke.NormFiberCharacters": {
+   "orig_lines": 708,
+   "decl_groups": 40,
+   "kept_groups": 35,
+   "new_lines": 546
+  },
+  "OAI.NumberTheory.DirichletL.Hecke.PrimeExtraction": {
+   "orig_lines": 592,
+   "decl_groups": 38,
+   "kept_groups": 24,
+   "new_lines": 342
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.CanonicalDensity": {
+   "orig_lines": 640,
+   "decl_groups": 40,
+   "kept_groups": 39,
+   "new_lines": 563
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.CanonicalTailBounds": {
+   "orig_lines": 646,
+   "decl_groups": 14,
+   "kept_groups": 13,
+   "new_lines": 520
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.DiagonalDensity": {
+   "orig_lines": 659,
+   "decl_groups": 22,
+   "kept_groups": 20,
+   "new_lines": 474
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.HarmonicAggregation": {
+   "orig_lines": 644,
+   "decl_groups": 25,
+   "kept_groups": 24,
+   "new_lines": 509
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.HighRadialBounds": {
+   "orig_lines": 635,
+   "decl_groups": 22,
+   "kept_groups": 20,
+   "new_lines": 550
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.InputEnergy": {
+   "orig_lines": 627,
+   "decl_groups": 17,
+   "kept_groups": 15,
+   "new_lines": 527
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.LogarithmicBins": {
+   "orig_lines": 660,
+   "decl_groups": 35,
+   "kept_groups": 30,
+   "new_lines": 555
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.OutsideIdeals": {
+   "orig_lines": 197,
+   "decl_groups": 7,
+   "kept_groups": 7,
+   "new_lines": 144
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.PoissonSource": {
+   "orig_lines": 766,
+   "decl_groups": 30,
+   "kept_groups": 29,
+   "new_lines": 651
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.PolynomialHeight": {
+   "orig_lines": 627,
+   "decl_groups": 19,
+   "kept_groups": 8,
+   "new_lines": 144
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.ReflectedDyadicSeries": {
+   "orig_lines": 601,
+   "decl_groups": 19,
+   "kept_groups": 15,
+   "new_lines": 342
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.RetainedDensity": {
+   "orig_lines": 722,
+   "decl_groups": 13,
+   "kept_groups": 10,
+   "new_lines": 310
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.SourceRemainders": {
+   "orig_lines": 696,
+   "decl_groups": 22,
+   "kept_groups": 22,
+   "new_lines": 640
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.SourceTransfer": {
+   "orig_lines": 654,
+   "decl_groups": 52,
+   "kept_groups": 47,
+   "new_lines": 568
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.ThetaDensity": {
+   "orig_lines": 649,
+   "decl_groups": 22,
+   "kept_groups": 20,
+   "new_lines": 569
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.TransformedColumns": {
+   "orig_lines": 691,
+   "decl_groups": 39,
+   "kept_groups": 15,
+   "new_lines": 236
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.UniformPolynomialHeight": {
+   "orig_lines": 614,
+   "decl_groups": 19,
+   "kept_groups": 17,
+   "new_lines": 522
+  },
+  "OAI.NumberTheory.DirichletL.MeanSquare.UnitRows": {
+   "orig_lines": 610,
+   "decl_groups": 25,
+   "kept_groups": 23,
+   "new_lines": 488
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.CompactScale": {
+   "orig_lines": 812,
+   "decl_groups": 25,
+   "kept_groups": 12,
+   "new_lines": 386
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.CompactWeights": {
+   "orig_lines": 602,
+   "decl_groups": 48,
+   "kept_groups": 25,
+   "new_lines": 223
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.ExponentialSmoothing": {
+   "orig_lines": 653,
+   "decl_groups": 30,
+   "kept_groups": 1,
+   "new_lines": 43
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.FiniteEulerRestoration": {
+   "orig_lines": 692,
+   "decl_groups": 18,
+   "kept_groups": 6,
+   "new_lines": 244
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.InverseContour": {
+   "orig_lines": 675,
+   "decl_groups": 43,
+   "kept_groups": 40,
+   "new_lines": 552
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.LocalNonvanishing": {
+   "orig_lines": 592,
+   "decl_groups": 23,
+   "kept_groups": 8,
+   "new_lines": 222
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.LogProfiles": {
+   "orig_lines": 1547,
+   "decl_groups": 64,
+   "kept_groups": 19,
+   "new_lines": 397
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.ReflectedKernel": {
+   "orig_lines": 621,
+   "decl_groups": 43,
+   "kept_groups": 24,
+   "new_lines": 309
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.SixthPowerAverage": {
+   "orig_lines": 727,
+   "decl_groups": 35,
+   "kept_groups": 30,
+   "new_lines": 573
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.UniformKernelBounds": {
+   "orig_lines": 657,
+   "decl_groups": 27,
+   "kept_groups": 24,
+   "new_lines": 545
+  },
+  "OAI.NumberTheory.DirichletL.Mellin.VerticalContourShift": {
+   "orig_lines": 635,
+   "decl_groups": 33,
+   "kept_groups": 33,
+   "new_lines": 574
+  },
+  "OAI.NumberTheory.DirichletL.Poisson.BinaryGaussian": {
+   "orig_lines": 751,
+   "decl_groups": 52,
+   "kept_groups": 52,
+   "new_lines": 747
+  },
+  "OAI.NumberTheory.DirichletL.Poisson.EisensteinLattice": {
+   "orig_lines": 630,
+   "decl_groups": 59,
+   "kept_groups": 55,
+   "new_lines": 553
+  },
+  "OAI.NumberTheory.DirichletL.Poisson.GaussianMoments": {
+   "orig_lines": 580,
+   "decl_groups": 39,
+   "kept_groups": 32,
+   "new_lines": 429
+  },
+  "OAI.NumberTheory.DirichletL.Poisson.LatticeEnvelopes": {
+   "orig_lines": 707,
+   "decl_groups": 55,
+   "kept_groups": 45,
+   "new_lines": 581
+  },
+  "OAI.NumberTheory.DirichletL.Poisson.OscillatoryGaussian": {
+   "orig_lines": 619,
+   "decl_groups": 34,
+   "kept_groups": 34,
+   "new_lines": 614
+  },
+  "OAI.NumberTheory.DirichletL.Poisson.PrincipalTruncation": {
+   "orig_lines": 689,
+   "decl_groups": 37,
+   "kept_groups": 32,
+   "new_lines": 581
+  },
+  "OAI.NumberTheory.DirichletL.Poisson.QuadraticProfiles": {
+   "orig_lines": 668,
+   "decl_groups": 35,
+   "kept_groups": 22,
+   "new_lines": 375
+  },
+  "OAI.NumberTheory.DirichletL.Poisson.RadialFourier": {
+   "orig_lines": 626,
+   "decl_groups": 50,
+   "kept_groups": 42,
+   "new_lines": 499
+  },
+  "OAI.NumberTheory.DirichletL.PrimeRows.ActiveGaussFactorization": {
+   "orig_lines": 803,
+   "decl_groups": 50,
+   "kept_groups": 37,
+   "new_lines": 474
+  },
+  "OAI.NumberTheory.DirichletL.PrimeRows.IdealGenerators": {
+   "orig_lines": 647,
+   "decl_groups": 27,
+   "kept_groups": 23,
+   "new_lines": 506
+  },
+  "OAI.NumberTheory.DirichletL.PrimeRows.NormFiberExtraction": {
+   "orig_lines": 653,
+   "decl_groups": 49,
+   "kept_groups": 34,
+   "new_lines": 276
+  },
+  "OAI.NumberTheory.DirichletL.PrimeRows.RationalApproximation": {
+   "orig_lines": 615,
+   "decl_groups": 22,
+   "kept_groups": 12,
+   "new_lines": 262
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.AnnularLifting": {
+   "orig_lines": 660,
+   "decl_groups": 44,
+   "kept_groups": 43,
+   "new_lines": 591
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.AnnularRecursion": {
+   "orig_lines": 641,
+   "decl_groups": 51,
+   "kept_groups": 16,
+   "new_lines": 195
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.CoefficientCancellation": {
+   "orig_lines": 688,
+   "decl_groups": 35,
+   "kept_groups": 28,
+   "new_lines": 439
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.CommonMasks": {
+   "orig_lines": 652,
+   "decl_groups": 32,
+   "kept_groups": 31,
+   "new_lines": 590
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.CoprimeBilinearBound": {
+   "orig_lines": 626,
+   "decl_groups": 43,
+   "kept_groups": 42,
+   "new_lines": 566
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.CrossSeparation": {
+   "orig_lines": 641,
+   "decl_groups": 28,
+   "kept_groups": 22,
+   "new_lines": 492
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.CuspCoercivity": {
+   "orig_lines": 608,
+   "decl_groups": 42,
+   "kept_groups": 11,
+   "new_lines": 224
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.DivisorBlocks": {
+   "orig_lines": 715,
+   "decl_groups": 35,
+   "kept_groups": 28,
+   "new_lines": 519
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.DualMiddleExpansion": {
+   "orig_lines": 738,
+   "decl_groups": 27,
+   "kept_groups": 19,
+   "new_lines": 434
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.DyadicColumns": {
+   "orig_lines": 652,
+   "decl_groups": 36,
+   "kept_groups": 31,
+   "new_lines": 516
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.FiniteOperator": {
+   "orig_lines": 804,
+   "decl_groups": 53,
+   "kept_groups": 47,
+   "new_lines": 683
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.GcdReduction": {
+   "orig_lines": 679,
+   "decl_groups": 40,
+   "kept_groups": 19,
+   "new_lines": 347
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.GlobalBinLoss": {
+   "orig_lines": 638,
+   "decl_groups": 30,
+   "kept_groups": 29,
+   "new_lines": 518
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.GreenIntegrals": {
+   "orig_lines": 646,
+   "decl_groups": 33,
+   "kept_groups": 14,
+   "new_lines": 348
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.HighKernelGeometry": {
+   "orig_lines": 651,
+   "decl_groups": 43,
+   "kept_groups": 37,
+   "new_lines": 575
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.IdealQuotients": {
+   "orig_lines": 718,
+   "decl_groups": 35,
+   "kept_groups": 35,
+   "new_lines": 661
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.InitialBound": {
+   "orig_lines": 634,
+   "decl_groups": 46,
+   "kept_groups": 45,
+   "new_lines": 575
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.LogarithmicLoss": {
+   "orig_lines": 631,
+   "decl_groups": 23,
+   "kept_groups": 22,
+   "new_lines": 554
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.LogarithmicSectors": {
+   "orig_lines": 692,
+   "decl_groups": 19,
+   "kept_groups": 3,
+   "new_lines": 132
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.MainTermDifference": {
+   "orig_lines": 656,
+   "decl_groups": 38,
+   "kept_groups": 30,
+   "new_lines": 494
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.MaskedPrincipalBounds": {
+   "orig_lines": 642,
+   "decl_groups": 22,
+   "kept_groups": 20,
+   "new_lines": 519
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.MiddleWindows": {
+   "orig_lines": 627,
+   "decl_groups": 19,
+   "kept_groups": 19,
+   "new_lines": 572
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.PoissonComparison": {
+   "orig_lines": 597,
+   "decl_groups": 29,
+   "kept_groups": 29,
+   "new_lines": 543
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.PoissonConstants": {
+   "orig_lines": 691,
+   "decl_groups": 15,
+   "kept_groups": 15,
+   "new_lines": 637
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.PrimePools": {
+   "orig_lines": 678,
+   "decl_groups": 44,
+   "kept_groups": 41,
+   "new_lines": 577
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.PrincipalDifference": {
+   "orig_lines": 673,
+   "decl_groups": 24,
+   "kept_groups": 21,
+   "new_lines": 520
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.PrincipalMajorants": {
+   "orig_lines": 773,
+   "decl_groups": 22,
+   "kept_groups": 21,
+   "new_lines": 663
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.PrincipalTruncation": {
+   "orig_lines": 629,
+   "decl_groups": 27,
+   "kept_groups": 17,
+   "new_lines": 385
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.ProductColumns": {
+   "orig_lines": 717,
+   "decl_groups": 22,
+   "kept_groups": 21,
+   "new_lines": 619
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.RetainedDualBounds": {
+   "orig_lines": 655,
+   "decl_groups": 23,
+   "kept_groups": 23,
+   "new_lines": 600
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.SelectedExponents": {
+   "orig_lines": 670,
+   "decl_groups": 50,
+   "kept_groups": 48,
+   "new_lines": 578
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.SpatialDerivatives": {
+   "orig_lines": 685,
+   "decl_groups": 46,
+   "kept_groups": 42,
+   "new_lines": 574
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.SquareParts": {
+   "orig_lines": 666,
+   "decl_groups": 34,
+   "kept_groups": 26,
+   "new_lines": 409
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.TruncatedSecondTransfer": {
+   "orig_lines": 709,
+   "decl_groups": 19,
+   "kept_groups": 8,
+   "new_lines": 234
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.UniformTailBounds": {
+   "orig_lines": 644,
+   "decl_groups": 22,
+   "kept_groups": 21,
+   "new_lines": 562
+  },
+  "OAI.NumberTheory.DirichletL.QuadraticSieve.UnrestrictedCharacters": {
+   "orig_lines": 584,
+   "decl_groups": 32,
+   "kept_groups": 26,
+   "new_lines": 386
+  },
+  "OAI.NumberTheory.DirichletL.Reciprocity.CubeCorrespondence": {
+   "orig_lines": 661,
+   "decl_groups": 59,
+   "kept_groups": 47,
+   "new_lines": 516
+  },
+  "OAI.NumberTheory.DirichletL.Reciprocity.CubicJacobi": {
+   "orig_lines": 770,
+   "decl_groups": 71,
+   "kept_groups": 67,
+   "new_lines": 701
+  },
+  "OAI.NumberTheory.DirichletL.Reciprocity.KubotaCharacter": {
+   "orig_lines": 692,
+   "decl_groups": 66,
+   "kept_groups": 61,
+   "new_lines": 604
+  },
+  "OAI.NumberTheory.DirichletL.Reciprocity.PrimaryCongruences": {
+   "orig_lines": 717,
+   "decl_groups": 52,
+   "kept_groups": 44,
+   "new_lines": 659
+  },
+  "OAI.NumberTheory.DirichletL.Reciprocity.RamifiedCuspPhases": {
+   "orig_lines": 696,
+   "decl_groups": 58,
+   "kept_groups": 48,
+   "new_lines": 628
+  },
+  "OAI.NumberTheory.DirichletL.Reciprocity.RamifiedSymbol": {
+   "orig_lines": 759,
+   "decl_groups": 49,
+   "kept_groups": 43,
+   "new_lines": 518
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.BranchDecoding": {
+   "orig_lines": 646,
+   "decl_groups": 32,
+   "kept_groups": 20,
+   "new_lines": 569
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.CompletedEnergy": {
+   "orig_lines": 620,
+   "decl_groups": 48,
+   "kept_groups": 24,
+   "new_lines": 363
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.ControlledPrimeStrata": {
+   "orig_lines": 616,
+   "decl_groups": 39,
+   "kept_groups": 29,
+   "new_lines": 533
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.CubicReopening": {
+   "orig_lines": 693,
+   "decl_groups": 37,
+   "kept_groups": 34,
+   "new_lines": 611
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.DensityTransfer": {
+   "orig_lines": 616,
+   "decl_groups": 12,
+   "kept_groups": 12,
+   "new_lines": 557
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.FixedCuspBranches": {
+   "orig_lines": 642,
+   "decl_groups": 40,
+   "kept_groups": 18,
+   "new_lines": 346
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.FreePrimePools": {
+   "orig_lines": 653,
+   "decl_groups": 58,
+   "kept_groups": 39,
+   "new_lines": 489
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.InitialDensity": {
+   "orig_lines": 651,
+   "decl_groups": 6,
+   "kept_groups": 6,
+   "new_lines": 592
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.PeriodicRows": {
+   "orig_lines": 674,
+   "decl_groups": 67,
+   "kept_groups": 27,
+   "new_lines": 272
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.PolynomialHeight": {
+   "orig_lines": 729,
+   "decl_groups": 24,
+   "kept_groups": 20,
+   "new_lines": 411
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.ReflectedFibers": {
+   "orig_lines": 694,
+   "decl_groups": 32,
+   "kept_groups": 14,
+   "new_lines": 469
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.RowAmplitudes": {
+   "orig_lines": 661,
+   "decl_groups": 56,
+   "kept_groups": 43,
+   "new_lines": 441
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.SupportBounds": {
+   "orig_lines": 650,
+   "decl_groups": 36,
+   "kept_groups": 32,
+   "new_lines": 526
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.ThetaNonvanishing": {
+   "orig_lines": 677,
+   "decl_groups": 41,
+   "kept_groups": 40,
+   "new_lines": 618
+  },
+  "OAI.NumberTheory.DirichletL.RowCompletion.ZeroFreeRegion": {
+   "orig_lines": 220,
+   "decl_groups": 11,
+   "kept_groups": 8,
+   "new_lines": 157
+  }
+ }
+}

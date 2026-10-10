@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# macOS stand-in for Landrun (Linux Landlock sandbox): drops the sandbox arguments and
+# runs the command after `--` unsandboxed. Only acceptable for solutions we authored;
+# run the real sandboxed Comparator on Linux for an adversarial-grade check.
+while [[ $# -gt 0 && "$1" != "--" ]]; do shift; done
+shift
+exec "$@"

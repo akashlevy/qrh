@@ -1,0 +1,98 @@
+{
+  "_doc": "Import boundary for the 11/12 development. Every rule records its reason. Checked by scripts/audit_imports.py against the transitive closure of ElevenTwelfths/* and ComparatorChallenges.ElevenTwelfths.",
+  "deny_modules": [
+    {
+      "module": "OAI.NumberTheory.DirichletL.Nonvanishing",
+      "reason": "7/8 end theorem (11/12 would follow in one line)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Detector",
+      "reason": "7/8 zero-detector toolkit (paper78 sec:detector)"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.GammaZeroDetector",
+      "reason": "7/8 detector chain"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.GammaDetectorExpansion",
+      "reason": "7/8 detector chain"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrincipalSignalComparison",
+      "reason": "7/8 principal-signal/probe chain"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrincipalSlotEstimate",
+      "reason": "7/8 principal-signal/probe chain"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrincipalMellinGrowth",
+      "reason": "7/8 principal-signal/probe chain"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.PrincipalMellinResidues",
+      "reason": "7/8 principal-signal/probe chain"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Supremum",
+      "reason": "7/8 beta* continuation margins"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Endpoint",
+      "reason": "7/8 endpoint numerology"
+    }
+  ],
+  "deny_prefixes": [
+    {
+      "prefix": "OAI.NumberTheory.DirichletL.Detector.",
+      "reason": "7/8 probe/detector chain and final assembly"
+    },
+    {
+      "prefix": "OAI.NumberTheory.DirichletL.Moments.",
+      "reason": "7/8 marked/plain moment inductions"
+    },
+    {
+      "prefix": "OAI.NumberTheory.DirichletL.Descent.",
+      "reason": "7/8 canonical reduction/induction (marked moment)"
+    },
+    {
+      "prefix": "OAI.NumberTheory.DirichletL.Energy.",
+      "reason": "7/8 moment-induction energy bookkeeping"
+    },
+    {
+      "prefix": "OAI.NumberTheory.DirichletL.Inversion.",
+      "reason": "7/8 inverse moment with prime factors"
+    },
+    {
+      "prefix": "OAI.NumberTheory.DirichletL.Dictionary.",
+      "reason": "7/8 inverse-moment dictionary"
+    },
+    {
+      "prefix": "OAI.NumberTheory.DirichletL.Hecke.Detector",
+      "reason": "7/8 detector row counts"
+    },
+    {
+      "prefix": "OAI.NumberTheory.DirichletL.Parameters",
+      "reason": "7/8 parameter choices"
+    }
+  ],
+  "deny_dependents_of": [
+    {
+      "module": "OAI.NumberTheory.DirichletL.Nonvanishing",
+      "reason": "anything depending on the 7/8 end theorem"
+    },
+    {
+      "module": "OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional",
+      "reason": "proves the 7/8 bound"
+    }
+  ],
+  "deny_external_prefixes": [],
+  "allow_prefixes": [],
+  "decisions": [
+    {
+      "module": "OAI.NumberTheory.DirichletL.RowCompletion.ZeroFreeRegion (and its 286-module closure)",
+      "decision": "allowed",
+      "reason": "lean-base's own unconditional 23/24 proof; contains no 7/8-chain module. On 8 Oct 2026 the user retargeted the project to the shortest possible QRH proof with any constant, so this closure is the proof being shrunk (QRH/*)."
+    }
+  ]
+}

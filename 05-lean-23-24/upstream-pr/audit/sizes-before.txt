@@ -1,0 +1,5 @@
+OAI.NumberTheory.DirichletL.Nonvanishing: modules=2924  lines=486490  code_lines=441096  import_open_lines=39443  nonws_chars=18898437
+OAI.NumberTheory.DirichletL.Hecke.Nonvanishing: modules=2925  lines=486525  code_lines=441126  import_open_lines=39444  nonws_chars=18899568
+OAI.NumberTheory.DirichletL.QRH: modules=292  lines=190780  code_lines=173227  import_open_lines=21597  nonws_chars=7052237
+OAI.NumberTheory.DirichletL.RowCompletion.ZeroFreeRegion: modules=286  lines=190290  code_lines=172968  import_open_lines=21577  nonws_chars=7041580
+union (all roots): modules=2932  lines=487048  code_lines=441401  import_open_lines=39467  nonws_chars=18910838

@@ -1,0 +1,71 @@
+\section{Correspondence with the formal proof}\label{app:lean}
+
+The formal proof is part of the Lean library of \cite{OpenAI26} (Lean~4.34.1 with Mathlib). The
+statement checked by Comparator is
+\begin{center}
+\small
+\texttt{theorem OAI.DirichletCharacter.}\\
+\texttt{\ \ LFunction\_ne\_zero\_of\_twenty\_three\_twenty\_fourths\_lt\_re}\\
+\texttt{\ \ \{q :\ }$\mathbb N$\texttt{\} [NeZero q] (}$\chi$\texttt{ :\ DirichletCharacter }$\mathbb C$\texttt{ q)}\\
+\texttt{\ \ \{s :\ }$\mathbb C$\texttt{\}}
+\texttt{ (hs :\ (23 / 24 :\ }$\mathbb R$\texttt{) < s.re) (hpole :\ }$\neg$\texttt{(}$\chi$\texttt{ = 1 }$\wedge$\texttt{ s = 1)) :}\\
+\texttt{\ \ DirichletCharacter.LFunction }$\chi$\texttt{ s }$\ne$\texttt{ 0}\\[3pt]
+(Comparator configuration \texttt{ComparatorChallenges/\allowbreak DirichletTwentyThreeTwentyFourths.json}),
+\end{center}
+together with its corollary for $\zeta$, which has no $s\ne1$ hypothesis:
+\texttt{OAI.riemannZeta\_ne\_zero\_of\_\allowbreak twenty\_\allowbreak three\_\allowbreak twenty\_\allowbreak fourths\_\allowbreak lt\_\allowbreak re}
+(configuration \texttt{Quasi\allowbreak Riemann\allowbreak Twenty\allowbreak Three\allowbreak Twenty\allowbreak Fourths.json}).
+Their only axioms are \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The
+modules \texttt{OAI.NumberTheory.\allowbreak DirichletL.\allowbreak QRH.*} state the steps of this paper as Lean theorems
+in the notation used here: the scale is $D$, and $M\ge bD$ is a cutoff beyond the support of $W$
+that makes every sum finite. (Inside the underlying library the roles are reversed: there $Z$ is
+the scale and $D\in\mathbb N$ the cutoff.) The main theorem is proved by composing these steps
+exactly as in Section~\ref{sec:reduction}, and Proposition~\ref{thm:ms} is proved as
+Proposition~\ref{prop:poisson-reduction} applied to Proposition~\ref{prop:canonical}. Names below
+are in the namespace \texttt{OAI.QRH}, in the module named in parentheses.
+
+\medskip
+{\small\raggedright
+\begin{tabular}{@{}p{0.34\textwidth}p{0.62\textwidth}@{}}
+\toprule
+This paper & Lean\\
+\midrule
+$A_u(D)$, $A^\varphi(D)$, $S$ & \texttt{A }$\chi$\texttt{ W D M u}, \texttt{weightedSum }$\chi$\texttt{ W D M}, \texttt{S q} (\texttt{Setup})\\
+Theorem~\ref{thm:main} & the theorem above (module \texttt{OAI.NumberTheory.\allowbreak DirichletL.\allowbreak QRH})\\
+Proposition~\ref{thm:ms} & \texttt{meanSquare} (\texttt{MeanSquare})\\
+Proposition~\ref{prop:extraction} & \texttt{saving\_of\_meanSquare} (\texttt{Extraction})\\
+Proposition~\ref{prop:mellin} & \texttt{LFunction\_ne\_zero\_of\_saving} (\texttt{ZeroFree})\\
+Lemma~\ref{lem:arithmetic} & \texttt{gauss\_jacobi}, \texttt{gauss\_two\_cube}, \texttt{mobius\_absorption} (\texttt{Milestones})\\
+Lemma~\ref{lem:poisson} & \texttt{poisson\_with\_exclusions}\\
+Proposition~\ref{prop:poisson-reduction} & \texttt{poissonReduction} (\texttt{MeanSquare})\\
+Proposition~\ref{prop:canonical} & \texttt{dualBound} (\texttt{MeanSquare}); \texttt{descent\_bound}, \texttt{descent\_by\_rank}\\
+Proposition~\ref{prop:R} & \texttt{completed\_mean\_square}\\
+Lemma~\ref{lem:cube-reduction} & \texttt{cube\_inversion}, \texttt{short\_cubes}, \texttt{descent\_step}\\
+Proposition~\ref{prop:transfer} & \texttt{transfer}; Lemma~\ref{lem:arithmetic-poisson}: \texttt{second\_poisson}\\
+Proposition~\ref{lem:reflection} & \texttt{theta\_reflection}; \texttt{thetaModels} (\texttt{MeanSquare})\\
+Lemma~\ref{lem:theta-bounds} & \texttt{theta\_cusp\_bounds}\\
+Lemma~\ref{lem:quadratic} & \texttt{quadratic\_large\_sieve}\\
+Patterson's coefficients \eqref{eq:intro-theta-coefficients}, automorphy of $\theta$ & \texttt{theta\_coefficients}, \texttt{theta\_automorphy}\\
+$E_\varphi(s)$, $P_S(s)$, \eqref{eq:weighted-euler} & \texttt{OAI.SmoothMobiusCorrection.\allowbreak eulerCorrection}, \texttt{OAI.CompactMellinBridge.\allowbreak finiteEulerFactor}\\
+\bottomrule
+\end{tabular}\par}
+
+\medskip
+Names without a module are aliases in \texttt{Milestones}, whose documentation gives the
+library theorem behind each. The formal proof of
+Sections~\ref{sec:initialization}--\ref{sec:transfer-proof} follows the same strategy as the
+text: Poisson summation in $u$, completed sums, theta reflection, the quadratic large sieve, cube
+inversion, and the transfer by two Poisson summations. It differs in four points of
+bookkeeping, recorded in Remarks~\ref{rem:formal-dual} and~\ref{rem:formal-descent}:
+\begin{itemize}
+\item test functions are expanded in height twists $\NK(\mathfrak n)^{\mathrm i\theta}$ once and
+for all, rather than controlled by $C^J$-norms;
+\item excluded primes are carried in the dual mean square as a mask, rather than removed by
+Lemma~\ref{lem:remove-exclusions};
+\item rows are weighted by a compactly supported smooth majorant, whose Fourier transform only
+decays rapidly, rather than by a weight with compactly supported Fourier transform;
+\item the descent uses a fixed cube cutoff and an explicit loss budget.
+\end{itemize}
+The import closure of \texttt{OAI.NumberTheory.\allowbreak DirichletL.\allowbreak QRH} contains none of the modules of
+the argument of \cite{OpenAI26} (its probe, detector and moment inductions), and no
+\texttt{sorry}.

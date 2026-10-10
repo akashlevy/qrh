@@ -1,0 +1,493 @@
+\section{Poisson summation and the dual mean square}\label{sec:initialization}
+
+We now turn to the mean-square estimate in Proposition~\ref{thm:ms}.
+Following Step~3 of the outline, we expand the square and apply
+Poisson summation in the row variable $u$. The finite Fourier
+transforms of the characters supply Gauss sums. Arithmetic identities
+then combine these Gauss sums with the original M\"obius coefficients
+to give the normalized cubic Gauss-sum coefficients that appear in the theta
+function.
+
+The column indices produced by expanding the square need not be
+coprime. We first extract their common factor, then use M\"obius
+inversion to separate the remaining coprimality condition. These
+operations introduce an auxiliary twisting index and an exclusion
+ideal. The comparison below removes the exclusion without changing
+the row range or the product of the column and auxiliary scales.
+
+We record the arithmetic and Poisson identities first, then define
+this family. Proposition~\ref{prop:poisson-reduction} states the
+estimate for it that suffices to prove \eqref{eq:ms}; the rest of
+the section proves that implication.
+
+\subsection{The arithmetic identities}
+We first record the identities that convert between M\"obius
+coefficients and normalized cubic Gauss sums. Recall that, for a
+squarefree primary element $n$ with $(n,S)=1$,
+\[
+ \alpha(n)=\frac{n}{|n|},\qquad
+ \gamma_j(n)=\frac{1}{\sqrt{\NK(n)}}
+       \sum_{x\bmod n}\chi_n(x)^j e(x/n)\quad(j\in\mathbb Z),
+\]
+where $e(z)=\exp(4\pi\mathrm i\,\operatorname{Im}z/\sqrt3)$, as in
+\eqref{eq:intro-gauss-sum}. Put
+\[
+ a_\xi(n)=\overline{\alpha(n)}\gamma_2(n)\xi(n)
+ \qquad(n\text{ squarefree}),
+\]
+where $\xi$ is a fixed ray class character. The character $\xi$ accounts for the
+residue-class factors in the identities below.
+
+By character orthogonality \cite[\S3.1]{IK04}, we can absorb functions
+on a fixed ray class group into a finite sum of twists $\xi$.
+Choose a fixed modulus, supported on $S$, divisible by $12$
+and sufficiently large that all reciprocity factors below
+depend only on the corresponding ray classes. We then expand these
+factors in characters of this finite group.
+
+The following lemma collects standard consequences of the Gauss--Jacobi
+identities, quadratic Gauss-sum evaluations, and reciprocity.
+
+\begin{lemma}\label{lem:arithmetic}
+On a fixed ray class group, there are a function $G$ with values in
+$\{z\in\mathbb C:|z|=1\}$ and a symmetric $\{\pm1\}$-valued
+bicharacter $\mathcal R$. This means that $\mathcal R(a,b)=\mathcal R(b,a)$ and $\mathcal R$ is
+multiplicative in each argument separately:
+\[
+ \begin{aligned}
+ \mathcal R(aa',b)&=\mathcal R(a,b)\mathcal R(a',b),\\
+ \mathcal R(a,bb')&=\mathcal R(a,b)\mathcal R(a,b'),
+ \end{aligned}
+\]
+for all classes $a,a',b,b'$ in the ray class group.
+These functions have the following properties.
+Let $a,b,n$ be primary elements prime to $S$, with $(a,b)=1$ and
+$n$ squarefree. Then
+\begin{align}
+ \chi_b(a)&=\mathcal R(a,b)\chi_a(b),&
+ G(ab)&=G(a)G(b)\mathcal R(a,b),                                      \label{eq:recip}\\
+ \gamma_2(n)^3&=\mu(n)\alpha(n),&
+ \gamma_1(n)\gamma_2(n)&=\mu(n)\alpha(n)G(n),                 \label{eq:gj}\\
+ G(n)&=\overline{\chi_n(4)}\gamma_3(n),&
+ \gamma_1(n)\gamma_{-1}(n)&=\chi_n(-1).                     \label{eq:g}
+\end{align}
+Consequently
+\begin{align}
+ \overline{\alpha(n)}\gamma_2(n)\gamma_1(n)&=\mu(n)G(n),\label{eq:convert1}\\
+ \mu(n)\gamma_{-1}(n)
+ &=\chi_n(-1)G(n)^{-1}\overline{\alpha(n)}\gamma_2(n),\label{eq:convert2}\\
+ a_\xi(ab)&=a_\xi(a)a_\xi(b)\chi_b(a)^4,                     \label{eq:crt-a}\\
+ \chi_a(-1)\overline{G(a)}G(b)\mathcal R(a,b)&=G(ba^{-1}).            \label{eq:quotient}
+\end{align}
+In \eqref{eq:crt-a}, $a,b$ are also squarefree.
+The identity for $G(ab)$ in \eqref{eq:recip} extends to all classes of the fixed ray class
+group; the quotient in \eqref{eq:quotient} is taken in that group.
+\end{lemma}
+The proof, including the dependence of $G$ and $\mathcal R$ on fixed ray
+classes, is given in Appendix~\ref{app:gauss-identities}.
+Under Poisson summation, \eqref{eq:convert2} converts the M\"obius
+coefficients to $a_\xi(n)$, up to fixed ray class factors, while
+\eqref{eq:convert1} converts them back.
+
+\subsection{Poisson summation with excluded primes}
+The row sum to which we apply Poisson summation will have an
+additional coprimality restriction. We record the formula with that
+restriction included, so that its effect on the Fourier frequencies
+and the normalization is explicit.
+
+For a nonzero ideal $\mathfrak r$, write $\rad \mathfrak r$ for the product of
+its distinct prime divisors. We use the additive character $e$
+introduced in Step~3. In quotients and Gauss sums, use a fixed
+generator for each ideal, chosen primary when the ideal is prime to $3$.
+
+\begin{lemma}\label{lem:poisson}
+Let $\mathcal H>0$, let $\mathfrak r$ be a nonzero ideal, and let
+$\Phi(\NK(k)/\mathcal H)$ be a smooth radial Schwartz weight
+on the row lattice. Let $\chi$ be a primitive multiplicative character
+of $(\OO/\mathfrak m)^\times$, viewed as a function on $\OO$ by
+reduction modulo $\mathfrak m$ and extension by zero on nonunits.
+Write 
+\[
+\gamma(\chi)=\NK(\mathfrak m)^{-1/2}
+\sum_{x\bmod\mathfrak m}\chi(x)e(x/\mathfrak m)
+\]
+for its normalized Gauss sum.
+Since $\chi$ is primitive, its modulus $\mathfrak m$ is determined by $\chi$ and is suppressed in the notation. Then
+\begin{equation}\label{eq:poisson}
+ \begin{aligned}
+ &\sum_k\chi(k)\ind_{(k,\mathfrak r)=1}\Phi(\NK(k)/\mathcal{H})\\
+ &\quad=\frac{\mathcal{H}\gamma(\chi)}{\sqrt{\NK(\mathfrak m)}}
+   \sum_{d\mid\rad \mathfrak r}\frac{\mu(d)\chi(d)}{\NK(d)}
+   \sum_h\overline{\chi(h)}
+        \widehat\Phi\!\Bigl(\frac{\mathcal{H}\NK(h)}{\NK(d)\NK(\mathfrak m)}\Bigr).
+ \end{aligned}
+\end{equation}
+Here $\widehat\Phi$ is defined by
+\[
+ \widehat\Phi(|w|^2)=\frac2{\sqrt3}\int_{\mathbb C}
+       \Phi(|z|^2)e(-zw)\,dx\,dy,\qquad z=x+\mathrm i y.
+\]
+The measure is normalized so that $\OO$ has covolume one.
+Here $k,h\in\OO$, and $h$ is the Fourier frequency. We have
+\[
+ \chi\text{ nonprincipal}\quad\Longrightarrow\quad
+ \overline{\chi(0)}=0.
+\]
+For the principal primitive character ($\chi=\mathbf1$, $\mathfrak m=1$),
+the zero-frequency contribution is
+\[
+ \mathcal H\widehat\Phi(0)
+   \prod_{\mathfrak p\mid \mathfrak r}\Bigl(1-\frac1{\NK(\mathfrak p)}\Bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+Inclusion--exclusion followed by $k=d\ell$ gives
+\[
+ \sum_k\chi(k)\ind_{(k,\mathfrak r)=1}\Phi(\NK(k)/\mathcal{H})
+ =\sum_{d\mid\rad \mathfrak r}\mu(d)\chi(d)
+       \sum_\ell\chi(\ell)\Phi\!\Bigl(\frac{\NK(\ell)}{\mathcal{H}/\NK(d)}\Bigr).
+\]
+Apply lattice Poisson summation \cite[Theorem~4.5]{IK04} in $\ell$
+on residue classes modulo $\mathfrak m$, at scale $\mathcal H/\NK(d)$.
+The primitive Gauss-sum identity \cite[(3.12)]{IK04} evaluates the
+finite Fourier transform as
+$\sqrt{\NK(\mathfrak m)}\gamma(\chi)\overline{\chi(h)}$
+for every $h$, giving \eqref{eq:poisson}. For a nonprincipal primitive
+character, $\overline{\chi(0)}=0$, so the zero-frequency term vanishes.
+For the principal character, sum $\mu(d)/\NK(d)$ over
+$d\mid\rad \mathfrak r$ to obtain the displayed zero-frequency contribution.
+\end{proof}
+
+\subsection{The dual mean squares} 
+We use the following mean square of the column sums with
+coefficients $a_\xi(n)$.
+
+\begin{definition}
+The parameters $\mathcal H$, $X$, and $F$ are the norm scales of
+$k$, $n$, and $f$, respectively. Here $k$ ranges over elements of
+$\OO$, and a star restricts a sum to squarefree ideals prime to $S$,
+represented by their primary generators. For a smooth compactly
+supported weight $W$ on $(0,\infty)$, define the \emph{dual mean square} by
+\begin{equation}\label{eq:energy}
+ \begin{aligned}
+ &\E(\mathcal{H},X,F;\xi,W)\\
+ &\qquad=\frac1{XF}
+ \sum_{\substack{F\le\NK(f)<2F\\(f,S)=1}}^*\sum_{0<\NK(k)\le \mathcal{H}}
+ \Bigl|\sum_{(n,S)=1}^*a_\xi(n)\chi_n(k)\chi_n(f)^4
+                  W(\NK(n)/X)\Bigr|^2.
+ \end{aligned}
+\end{equation}
+\end{definition}
+
+Below, $\xi$ ranges over all characters of the fixed ray class group
+chosen above, through which $G$ and $\mathcal R$ factor.
+
+Write $\E_{\mathfrak r}$ for the same expression with the additional
+restriction $(n,\mathfrak r)=1$. This notation is only needed in the
+Poisson reductions; the following comparison returns to $\E$.
+
+\begin{lemma}\label{lem:remove-exclusions}
+Let $r_0$ be the product of the primes dividing $\mathfrak r$ outside
+$S$. For $\mathcal H,X>0$, $F\ge1$, and smooth compactly supported $W$,
+\begin{equation}\label{eq:remove-exclusions}
+ \E_{\mathfrak r}(\mathcal H,X,F;\xi,W)
+ \le\tau_{\mathrm{div}}(r_0)
+ \sum_{d\mid r_0}\E\!\Bigl(\mathcal H,\frac X{\NK(d)},F\NK(d);\xi,W\Bigr).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $C_{\mathfrak r}(X;k,f)$ denote the inner column sum defining
+$\E_{\mathfrak r}$, with $\xi,W$ fixed. Inclusion--exclusion,
+$n=dm$, and \eqref{eq:crt-a} give
+\[
+ \begin{aligned}
+ C_{\mathfrak r}(X;k,f)
+ &=\sum_{d\mid r_0}\mu(d)
+   \sum_{\substack{(n,S)=1\\d\mid n}}^*
+   a_\xi(n)\chi_n(k)\chi_n(f)^4W(\NK(n)/X)\\
+ &=\sum_{\substack{d\mid r_0\\(d,f)=1}}
+   \mu(d)a_\xi(d)\chi_d(k)\chi_d(f)^4
+   C_1(X/\NK(d);k,df).
+ \end{aligned}
+\]
+Indeed, $\chi_m(d)^4$ enforces $(m,d)=1$ and combines with
+$\chi_m(f)^4$; terms with $(d,f)\ne1$ vanish. Each exterior
+coefficient has modulus at most one. Apply Cauchy--Schwarz in $d$,
+then enlarge the injective image $f\mapsto df$ to the squarefree
+range $F\NK(d)\le\NK(df)<2F\NK(d)$. The normalizing product is
+unchanged: $(X/\NK(d))(F\NK(d))=XF$.
+\end{proof}
+
+
+\subsection{Reduction to the dual mean square}
+The following proposition gives the dual estimate sufficient for
+\eqref{eq:ms}. Its proof applies Poisson summation directly to the
+original M\"obius sums.
+
+\begin{proposition}\label{prop:poisson-reduction}
+Let $\vartheta=1/10$ and put $H=D^{1+\vartheta}=D^{11/10}$.
+For each fixed $C\ge1$ and all real $B,F\ge1$, consider the ranges
+\begin{equation}\label{eq:initial-scales}
+ X=\frac D{BF},\qquad 0<\mathcal{H}\le\frac{CD^2}{HB^2},\qquad
+ XF=\frac DB.
+\end{equation}
+Suppose that for every $\varepsilon>0$ there exists an integer
+$J=J(\varepsilon)\ge1$ such that, for every compact interval
+$I\subset(0,\infty)$ and every smooth $W$ supported in $I$,
+\begin{equation}\label{eq:auxiliary-target}
+ \E(\mathcal H,X,F;\xi,W)
+ \ll_{I,C,\varepsilon}\|W\|_{C^J(I)}^2D^\varepsilon XF,
+\end{equation}
+where
+\[
+ \|W\|_{C^J(I)}=\max_{0\le j\le J}\sup_{x\in I}|W^{(j)}(x)|.
+\]
+For functions of several variables, the norm uses all partial derivatives
+of total order at most $J$.
+Then the original mean-square
+estimate in Proposition~\ref{thm:ms} holds.
+\end{proposition}
+
+\begin{proof}
+Write $I=[a_0,b_0]$. Choose a nonnegative radial Schwartz weight
+$\Phi$ such that $\Phi(x)\ge1$ on $[0,1]$ and
+$\operatorname{supp}\widehat\Phi\subset[0,C_\Phi]$ for some fixed $C_\Phi>0$.
+It suffices to prove
+$\mathcal M_D\ll_{I,\varepsilon}
+\|W\|_{C^{J'}(I)}^2HD^\varepsilon$ for some $J'=J'(\varepsilon)$, where
+\begin{equation}\label{eq:expanded-ms}
+ \mathcal M_D:=\frac1D\sum_{u\in\OO}\Phi(\NK(u)/H)
+ \Bigl|\sum_{(n,S)=1}\mu(n)\chi_n(u)W(\NK(n)/D)\Bigr|^2.
+\end{equation}
+Conjugate the inner sum, expand the square, and put
+$g=(n_1,n_2)$ and $n_j=gz_j$. The squarefree indices satisfy
+$(z_1,z_2)=(z_1z_2,g)=1$, and
+\[
+ \overline{\chi_{n_1}(u)}\chi_{n_2}(u)
+ =\ind_{(u,g)=1}\overline{\chi_{z_1}(u)}\chi_{z_2}(u).
+\]
+Apply Lemma~\ref{lem:poisson} with
+$\chi=\overline{\chi_{z_1}}\chi_{z_2}$ and exclusion $g$:
+\begin{equation}\label{eq:initial-poisson-rows}
+ \begin{aligned}
+ &\sum_u\Phi(\NK(u)/H)\ind_{(u,g)=1}\chi(u)\\
+ &\quad=\sum_{e\mid g}
+ \frac{H\mu(e)\chi(e)\gamma(\chi)}
+      {\NK(e)\sqrt{\NK(z_1)\NK(z_2)}}
+ \sum_h\overline{\chi(h)}
+ \widehat\Phi\!\Bigl(\frac{H\NK(h)}{\NK(e)\NK(z_1)\NK(z_2)}\Bigr).
+ \end{aligned}
+\end{equation}
+The zero frequency occurs only when $z_1=z_2=1$ and contributes
+\[
+ Z=\frac HD\widehat\Phi(0)
+ \sum_{(g,S)=1}^*|W(\NK(g)/D)|^2
+       \prod_{p\mid g}\Bigl(1-\frac1{\NK(p)}\Bigr)
+ \ll_{\Phi,I}H\|W\|_\infty^2.
+\]
+Retain all $h\ne0$, including those with $z_1=z_2=1$.
+
+Expand the fixed ray class function
+$G(t^{-1})=\sum_\xi c_\xi\xi(t)$.
+The Chinese remainder theorem and
+\eqref{eq:convert2}--\eqref{eq:quotient} give
+\begin{equation}\label{eq:initial-paired-gauss}
+ \mu(z_1)\mu(z_2)
+       \gamma(\overline{\chi_{z_1}}\chi_{z_2}) =\sum_\xi c_\xi a_\xi(z_1)\overline{a_\xi(z_2)}.
+\end{equation}
+Write $N=\NK$ for the remainder of this proof, and put
+$W_0(x)=x^{-1/2}\overline{W(x)}$. Substituting
+\eqref{eq:initial-paired-gauss} into \eqref{eq:initial-poisson-rows},
+including the normalization $1/D$ in \eqref{eq:expanded-ms}, gives
+\[
+ \mathcal M_D-Z=\sum_\xi c_\xi\mathcal S_\xi,
+ \qquad
+ |\mathcal M_D-Z|\ll\max_\xi|\mathcal S_\xi|,
+\]
+since the character sum is fixed and finite. Fix $\xi$. Using
+$\overline{\chi_z(e)}=\chi_z(e^5)$, its contribution is
+\[
+ \begin{aligned}
+ \mathcal S_\xi
+ ={}&\frac H{D^2}
+ \sum_g^*\sum_{e\mid g}\frac{\mu(e)N(g)}{N(e)}
+ \sum_{h\ne0}
+ \sum_{\substack{z_1,z_2\\(z_1,z_2)=1\\(z_1z_2,g)=1}}^*
+ a_\xi(z_1)\overline{a_\xi(z_2)}
+ \chi_{z_1}(he^5)\overline{\chi_{z_2}(he^5)}
+ \\
+ &\quad{}\times
+ W_0\!\Bigl(\frac{N(gz_1)}D\Bigr)
+ \overline{W_0\!\Bigl(\frac{N(gz_2)}D\Bigr)}
+ \widehat\Phi\!\Bigl(
+ \frac{HN(h)}{N(e)N(z_1)N(z_2)}
+ \Bigr).
+ \end{aligned}
+\]
+Here and below every starred variable is squarefree, primary, and
+prime to $S$, while $h,k$ range over nonzero elements of $\OO$.
+We must show
+$|\mathcal S_\xi|\ll_{I,\varepsilon}
+\|W\|_{C^{J'}(I)}^2HD^\varepsilon$.
+
+Insert the coprimality identity and change variables:
+\[
+ \ind_{(z_1,z_2)=1}
+ =\sum_{v\mid z_1,\ v\mid z_2}\mu(v),
+ \qquad z_j=vm_j.
+\]
+By \eqref{eq:crt-a}, the common factor from the two columns satisfies
+\[
+ a_\xi(vm)=a_\xi(v)a_\xi(m)\chi_m(v)^4,
+ \qquad
+ |a_\xi(v)\chi_v(he^5)|^2=\ind_{(v,h)=1},
+\]
+where $(v,e)=1$. Thus the same sum becomes
+\[
+ \begin{aligned}
+ \mathcal S_\xi
+ ={}&\frac H{D^2}
+ \sum_{\substack{g,v\\(g,v)=1}}^*
+ \sum_{e\mid g}\frac{\mu(e)\mu(v)N(g)}{N(e)}
+ \sum_{\substack{h\ne0\\(h,v)=1}}
+ \sum_{\substack{m_1,m_2\\(m_1m_2,gv)=1}}^*
+ a_\xi(m_1)\overline{a_\xi(m_2)}
+ \\
+ &\quad{}\times
+ \chi_{m_1}(he^5v^4)\overline{\chi_{m_2}(he^5v^4)}
+ W_0\!\Bigl(\frac{N(gvm_1)}D\Bigr)
+ \overline{W_0\!\Bigl(\frac{N(gvm_2)}D\Bigr)}
+ \\
+ &\quad{}\times
+ \widehat\Phi\!\Bigl(
+ \frac{HN(h)}{N(e)N(v)^2N(m_1)N(m_2)}
+ \Bigr).
+ \end{aligned}
+\]
+There is now no restriction $(m_1,m_2)=1$.
+Make the bijective change of variables
+\[
+ \begin{gathered}
+ b=g/e,\qquad f=ev,\qquad k=eh,\\
+ e=(f,k),\qquad v=f/e,\qquad g=be,\qquad h=k/e.
+ \end{gathered}
+\]
+The resulting $b,f$ are coprime and squarefree, $k\ne0$ is arbitrary,
+and
+\[
+ gv=bf,\qquad he^5v^4=kf^4,\qquad
+ \mu(e)\mu(v)=\mu(f),\qquad
+ \frac{N(g)}{N(e)}=N(b).
+\]
+Consequently,
+\begin{equation}\label{eq:initial-column-output}
+ \begin{aligned}
+ \mathcal S_\xi
+ ={}&\frac H{D^2}
+ \sum_{\substack{b,f\\(b,f)=1}}^*\mu(f)N(b)
+ \sum_{k\ne0}
+ \sum_{\substack{m_1,m_2\\(m_1m_2,b)=1}}^*
+ a_\xi(m_1)\overline{a_\xi(m_2)}
+ \chi_{m_1}(kf^4)\overline{\chi_{m_2}(kf^4)}
+ \\
+ &\quad{}\times
+ W_0\!\Bigl(\frac{N(bfm_1)}D\Bigr)
+ \overline{W_0\!\Bigl(\frac{N(bfm_2)}D\Bigr)}
+ \widehat\Phi\!\Bigl(
+ \frac{HN(k)}{N(f)^2N(m_1)N(m_2)}
+ \Bigr).
+ \end{aligned}
+\end{equation}
+The characters enforce $(m_j,f)=1$, leaving only the displayed
+exclusion $(m_j,b)=1$.
+The supports of $W_0$ and $\widehat\Phi$ give
+\[
+ N(b)N(f)\le b_0D,\qquad
+ 0<N(k)\le\frac{C_\Phi b_0^2D^2}{HN(b)^2}.
+\]
+
+Partition $B\le N(b)<2B$ and $F\le N(f)<2F$ into dyadic ranges.
+Denote the corresponding contribution to
+\eqref{eq:initial-column-output} by $\mathcal S_{\xi;B,F}$, and put
+\[
+ X=\frac D{BF},\qquad
+ \mathcal H=\frac{C_{I,\Phi}D^2}{HB^2},\qquad
+ C_{I,\Phi}=\max(2,C_\Phi b_0^2).
+\]
+These satisfy \eqref{eq:initial-scales}.
+In the variables $x_j=N(m_j)/X$, the coupled smooth weight is
+\[
+ \begin{gathered}
+ \mathcal K_{b,f,k}(x_1,x_2)
+ =W_0(r x_1)\overline{W_0(r x_2)}
+ \widehat\Phi\!\Bigl(\frac{a}{x_1x_2}\Bigr),\\
+ r=\frac{N(b)N(f)}{BF}\in[1,4),\qquad
+ a=\frac{HN(k)}{N(f)^2X^2}\le C_{I,\Phi}.
+ \end{gathered}
+\]
+For every integer $q\ge0$, these kernels satisfy
+\[
+ \sup_{b,f,k}\|\mathcal K_{b,f,k}\|_{C^q([a_0/4,b_0]^2)}
+ \ll_{I,\Phi,q}\|W\|_{C^q(I)}^2.
+\]
+For $U\in C_c^\infty(I_*)$, where $I_*=[a_0/8,2b_0]$, put
+\[
+ S_U(b,f,k)=\sum_{\substack{(n,S)=1\\(n,b)=1}}^*a_\xi(n)
+       \chi_n(k)\chi_n(f)^4U(N(n)/X).
+\]
+The shifts $(X,F)\mapsto(X/N(d),FN(d))$ preserve
+\eqref{eq:initial-scales}. Thus Lemma~\ref{lem:remove-exclusions}
+and \eqref{eq:auxiliary-target}, with $J=J(\varepsilon/4)$, give
+\[
+ \begin{aligned}
+ \sum_{f,k}|S_U(b,f,k)|^2
+ &=XF\,\E_{(b)}(\mathcal H,X,F;\xi,U)\\
+ &\le XF\,\tau_{\mathrm{div}}(b)
+       \sum_{d\mid b}\E(\mathcal H,X/N(d),FN(d);\xi,U)\\
+ &\ll_{I,\varepsilon}
+ D^{\varepsilon/2}(XF)^2\|U\|_{C^J(I_*)}^2.
+ \end{aligned}
+\]
+Here $N(b)\ll_I D$, so the divisor factors are absorbed in $D^{\varepsilon/4}$.
+We use the following smooth-weight principle, stated and proved in
+Lemma~\ref{lem:smooth-mean-square}: a mean-square bound valid for every
+common test function, with a $C^J$ norm, also bounds the corresponding
+quadratic sum with a kernel depending on the row, at a cost given by
+the kernel's $C^{2J+4}$ norm.
+For each fixed $b$, apply Lemma~\ref{lem:smooth-mean-square}
+with row index $(f,k)$, coefficient $\mu(f)\ind_{(f,b)=1}$,
+and kernel $\mathcal K_{b,f,k}$.
+The larger row range $0<N(k)\le\mathcal H$ adds only terms
+whose original kernel vanishes. With $q=2J+4$, this gives
+\begin{equation}\label{eq:weighted}
+ \begin{aligned}
+ |\mathcal S_{\xi;B,F}|
+ &\ll_{I,\varepsilon}
+ D^{\varepsilon/2}\|W\|_{C^q(I)}^2
+ \sum_{B\le N(b)<2B}^*\frac{HN(b)}{D^2}(XF)^2\\
+ &\ll D^{\varepsilon/2}\|W\|_{C^q(I)}^2
+ \frac{HB}{D^2}\,B\,(XF)^2
+ =D^{\varepsilon/2}\|W\|_{C^q(I)}^2H,
+ \end{aligned}
+\end{equation}
+where $XF=D/B$ and ideal counting gives $O(B)$ choices of $b$.
+Summing the $O((\log D)^2)$ nonempty dyadic ranges bounds
+$\mathcal S_\xi$ as required. Sum over the fixed finite set of $\xi$,
+include $Z$, and restore the factor $D$ to obtain \eqref{eq:ms}.
+The required derivative order depends only on $\varepsilon$.
+
+\end{proof}
+
+\begin{remark}\label{rem:formal-dual}
+The formal proof organizes the dual mean squares slightly differently. The excluded primes are
+not removed by Lemma~\ref{lem:remove-exclusions}. Instead, an exclusion mask $m$ is carried
+inside the dual mean square, through the twist $\chi_n(m^6)=\ind_{(n,m)=1}$. Test functions are
+written as profiles $V(\log(\NK(n)/X))$ with compact support and expanded once and for all in
+the height twists $\NK(n)^{\mathrm i\theta}$, with bounds polynomial in $\theta$. This is the
+expansion behind Lemma~\ref{lem:smooth-mean-square}, built into the definition. Finally, the
+rows are weighted by a compactly supported smooth majorant, whose Fourier transform is not
+compactly supported but decays rapidly, instead of a weight $\Phi$ with compactly supported
+$\widehat\Phi$; the resulting frequency tails are estimated separately. None of these changes affects the exponents.
+\end{remark}
+

@@ -1,0 +1,165 @@
+\section{From the mean-square estimate to the zero-free region}\label{sec:reduction}
+
+We first carry out Steps~1 and~2 of the outline: extract
+cancellation in a M\"obius sum from a mean-square estimate for the family,
+then use a Mellin transform to deduce nonvanishing.
+Fix a Dirichlet character $\chi$ of modulus $q$, put $\nu=\chi\circ\NK$, and fix a finite set $S$
+of prime ideals that contains all prime ideals above $2$ or $3$, as
+well as all prime ideals dividing the conductor of $\nu$.
+(In the formalization, $S$ consists of the prime ideals dividing $2592q$, where $2592=2^5\cdot3^4$.)
+For an ideal or element $a$, write $(a,S)=1$ if no prime ideal in $S$
+divides $a$.
+An ideal is supported on $S$ if all its prime factors belong to $S$.
+For $W\in C_c^\infty((0,\infty);\mathbb C)$, recall the family
+\[
+ A_u(D):=\sum_{(n,S)=1}\mu(n)\nu(n)\chi_n(u)W(\NK(n)/D),
+\]
+introduced in \eqref{eq:intro-family}, and the weighted M\"obius sum
+\begin{equation}\label{eq:A-phi}
+ A^\varphi(D):=\sum_{(n,S)=1}\mu(n)\nu(n)\frac{\varphi(n)}{\NK(n)}W(\NK(n)/D),
+ \qquad
+ \frac{\varphi(n)}{\NK(n)}=\prod_{\mathfrak p\mid n}\Bigl(1-\frac1{\NK(\mathfrak p)}\Bigr).
+\end{equation}
+Here and throughout the
+original family, $n$ runs over ideals prime to $S$, represented by
+their primary generators. The key estimate is the following.
+
+\begin{proposition}\label{thm:ms}
+Let $\vartheta=1/10$. For every fixed $\varepsilon>0$, there exists an integer $k=k(\varepsilon)\ge1$
+such that, for every compact interval $I\subset(0,\infty)$,
+all smooth $W$ supported in $I$, and $D\ge2$,
+\begin{equation}\label{eq:ms}
+ \sum_{0<\NK(u)\le D^{1+\vartheta}}|A_u(D)|^2
+       \ll_{\nu,S,I,\varepsilon}
+       \Bigl(\max_{0\le j\le k}\|W^{(j)}\|_\infty\Bigr)^2
+       D^{2+\vartheta+\varepsilon}.
+\end{equation}
+\end{proposition}
+
+We first deduce Theorem~\ref{thm:main} assuming Proposition~\ref{thm:ms}.
+The proof of the proposition is completed in Section~\ref{sec:completion}.
+The deduction uses \eqref{eq:ms} only for one $W$ at a time, with an implied constant that may
+depend on $W$; this is the form that the formalization proves.
+
+\subsection{Extraction}
+\begin{proposition}\label{prop:extraction}
+Let $I\subset(0,\infty)$ be a compact interval, let $W$ be smooth and supported in $I$, and let
+$\varepsilon>0$. Suppose that \eqref{eq:ms} holds for $W$ with $2\varepsilon$ in place of
+$\varepsilon$. Then, for $D\ge2$,
+\begin{equation}\label{eq:mobius-saving}
+ A^\varphi(D)\ll_{\nu,S,W,\varepsilon}D^{23/24+\varepsilon}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Put $H=D^{1+\vartheta}$ and
+$Y=H^{1/6}=D^{(1+\vartheta)/6}=D^{11/60}$. For $b\in\OO$ and a prime
+$\mathfrak p\notin S$, the character $\chi_{\mathfrak p}$ has order six, so
+\begin{equation}\label{eq:sixth-power-rows}
+ \chi_n(b^6)=\ind_{(b,n)=1}.
+\end{equation}
+Fix a smooth $V:\R\to\C$ supported in $[1/2,1]$, with $|V|\le1$ and
+\[
+ \widehat V(0):=\frac2{\sqrt3}\int_{\C}V(|z|^2)\dd x\dd y\ne0,
+\]
+the value at $0$ of the radial Fourier transform of Lemma~\ref{lem:poisson}, and consider
+\[
+ \mathcal V(D):=\sum_{b\in\OO}V\Bigl(\frac{\NK(b)}Y\Bigr)A_{b^6}(D)
+ =\sum_{(n,S)=1}\mu(n)\nu(n)W(\NK(n)/D)
+ \sum_{\substack{b\in\OO\\(b,n)=1}}V\Bigl(\frac{\NK(b)}Y\Bigr),
+\]
+where the second expression follows from \eqref{eq:sixth-power-rows}.
+For squarefree $n$, inclusion--exclusion over $\mathfrak d\mid n$ writes the
+inner sum as
+\[
+ \sum_{\mathfrak d\mid n}\mu(\mathfrak d)\sum_{c\in\OO}V\bigl(\NK(\mathfrak d)\NK(c)/Y\bigr).
+\]
+By Poisson summation (Lemma~\ref{lem:poisson}), the sum over $c$ is
+$(Y/\NK(\mathfrak d))\widehat V(0)+O_V(1)$: the zero frequency gives the main term, the other
+frequencies are $O_V(1)$ by the rapid decay of $\widehat V$, and when $\NK(\mathfrak d)>Y$ only
+$c=0$ is in the support, where $V(0)=0$. Summing over $\mathfrak d$, and using
+$2^{\omega(n)}\ll_\varepsilon\NK(n)^\varepsilon$ and $\NK(n)\ll_W D$, gives
+\begin{equation}\label{eq:extraction-evaluation}
+ \mathcal V(D)=Y\widehat V(0)A^\varphi(D)+O_{W,V,\varepsilon}(D^{1+\varepsilon}).
+\end{equation}
+The $b$ in the support of $V(\NK(b)/Y)$ satisfy $Y/2\le\NK(b)\le Y$; there are $O(Y)$ of them,
+and their sixth powers are rows of norm at most $H$, each taken at most six times. Apply
+\eqref{eq:ms} with loss $2\varepsilon$ and Cauchy--Schwarz to obtain
+\begin{align}
+ |A^\varphi(D)|^2
+ &\ll \frac1{Y^2}\Bigl(Y\sum_{0<\NK(u)\le H}|A_u(D)|^2+D^{2+2\varepsilon}\Bigr)\nonumber\\
+ &\ll_{\nu,S,W,\varepsilon}D^{2+\vartheta+2\varepsilon}/Y+D^{2+2\varepsilon}/Y^2
+   =D^{23/12+2\varepsilon}+D^{49/30+2\varepsilon}.
+                                                        \label{eq:prime-extract}
+\end{align}
+Thus $A^\varphi(D)\ll_{\nu,S,W,\varepsilon}D^{23/24+\varepsilon}$.
+\end{proof}
+
+\subsection{The Mellin transform}
+For $\Rea s>0$ put
+\[
+ E_\varphi(s,\nu):=\prod_{\mathfrak p\notin S}
+ \frac{1-\nu(\mathfrak p)\NK(\mathfrak p)^{-s}}{1-\nu(\mathfrak p)\NK(\mathfrak p)^{-s}(1-\NK(\mathfrak p)^{-1})},
+ \qquad
+ P_S(s,\nu):=\prod_{\mathfrak p\in S}\bigl(1-\nu(\mathfrak p)\NK(\mathfrak p)^{-s}\bigr).
+\]
+Every prime $\mathfrak p\notin S$ has $\NK(\mathfrak p)\ge7$, and $|\nu(\mathfrak p)|\le1$, so for
+$\sigma=\Rea s>0$ each factor of $E_\varphi$ is $1+O_\sigma(\NK(\mathfrak p)^{-1-\sigma})$ uniformly
+in $\mathfrak p$, with a denominator of absolute value at least $1-7^{-\sigma}$. So the product
+converges absolutely, and $E_\varphi(\cdot,\nu)$ is holomorphic on $\Rea s>0$. For $\Rea s>1$,
+comparing Euler products gives
+\begin{equation}\label{eq:weighted-euler}
+ \sum_{(n,S)=1}\frac{\mu(n)\nu(n)\varphi(n)}{\NK(n)^{1+s}}
+ =\prod_{\mathfrak p\notin S}\Bigl(1-\frac{\nu(\mathfrak p)}{\NK(\mathfrak p)^{s}}\Bigl(1-\frac1{\NK(\mathfrak p)}\Bigr)\Bigr)
+ =\frac1{L_K(s,\nu)P_S(s,\nu)E_\varphi(s,\nu)},
+\end{equation}
+where $L_K(s,\nu)=L(s,\chi)L(s,\chi\chi_{-3})$. Indeed, a rational prime $p$ that splits in $K$
+contributes $(1-\chi(p)p^{-s})^{-2}$ to $L_K(s,\nu)$, an inert one contributes
+$(1-\chi(p)^2p^{-2s})^{-1}$, and the ramified prime $3$ contributes $(1-\chi(3)3^{-s})^{-1}$;
+these are the Euler factors of $L(s,\chi)L(s,\chi\chi_{-3})$, since $\chi_{-3}(p)=1,-1,0$ in the
+three cases.
+
+\begin{proposition}\label{prop:mellin}
+Suppose that $A^\varphi(D)\ll_{W,\varepsilon}D^{23/24+\varepsilon}$ for every $\varepsilon>0$ and
+every smooth $W:\R\to\C$ that vanishes outside $(1,2)$. Then $L(s,\chi)\ne0$ for
+$\Rea s>23/24$, except at the pole $s=1$ when $\chi$ is principal.
+\end{proposition}
+
+\begin{proof}
+We use the hypothesis to rule out a zero of $L(s,\chi)$ in
+$\Rea s>23/24$. Suppose such a zero $\varrho$ exists. Since $L(s,\chi)\ne0$ on $\Rea s\ge1$,
+apart from the pole (see \cite[Chapters~13 and~14]{Dav00}), we have $\Rea\varrho<1$.
+Choose $0\ne\phi\in C_c^\infty((1,2))$, $\phi\ge0$, and
+$W(y)=y^{-\varrho}\phi(y)$.
+With the Mellin convention
+$\widehat W(s)=\int_0^\infty W(y)y^s\dd y/y$, we have
+$\widehat W(\varrho)=\int\phi(y)\dd y/y>0$.
+The function
+\[
+ \mathcal M_W(s)=\int_0^\infty A^\varphi(D)D^{-s}\frac{\dd D}{D}
+\]
+is holomorphic on $\Rea s>23/24$: the hypothesis
+controls the integral at infinity, and
+the compact support of $W$ makes $A^\varphi(D)$ vanish for sufficiently
+small $D$. Termwise integration for $\Rea s>1$ and \eqref{eq:weighted-euler} give
+\[
+ \mathcal M_W(s)
+ =\widehat W(s)\sum_{(n,S)=1}\frac{\mu(n)\nu(n)\varphi(n)}{\NK(n)^{1+s}}
+ =\frac{\widehat W(s)}{L(s,\chi)L(s,\chi\chi_{-3})P_S(s,\nu)E_\varphi(s,\nu)}.
+\]
+Dirichlet $L$-functions continue meromorphically to $\C$, with at most a simple pole at $s=1$,
+which occurs only for principal characters (see \cite[Chapters~8 and~9]{Dav00}); at most one of
+$\chi$ and $\chi\chi_{-3}$ is principal. The identity theorem therefore shows that
+$L(s,\chi)L(s,\chi\chi_{-3})P_S(s,\nu)E_\varphi(s,\nu)\mathcal M_W(s)=\widehat W(s)$ holds on
+$\Rea s>23/24$, $s\ne1$.
+Evaluation at $s=\varrho$ gives $0=\widehat W(\varrho)>0$, a contradiction.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main} from Proposition~\ref{thm:ms}]
+Let $\chi$ be a Dirichlet character, let $W$ be smooth and vanish outside $(1,2)$, and let
+$\varepsilon>0$. Proposition~\ref{thm:ms}, applied with $I=[1,2]$ and loss $2\varepsilon$, and
+Proposition~\ref{prop:extraction} give $A^\varphi(D)\ll_{W,\varepsilon}D^{23/24+\varepsilon}$.
+Proposition~\ref{prop:mellin} concludes. For $\zeta$, take $\chi=1$ of modulus $1$; at $s=1$,
+where the proposition does not apply, $\zeta(1)$ is a pole, not a zero.
+\end{proof}
+

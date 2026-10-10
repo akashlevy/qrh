@@ -1,0 +1,468 @@
+\section{Outline of the argument}\label{sec:outline}
+
+In this section, we sketch the proof of Theorem~\ref{thm:main}, suppressing
+various coprimality conditions, local factors, and details of smoothing.
+The precise statements appear in Sections~\ref{sec:reduction}--\ref{sec:transfer-proof}.
+
+\subsection{Step 1: Reduction to power-saving estimates for M\"obius sums}
+
+The zeros of $\zeta(s)$ are zeros of the Dedekind zeta function
+$\zeta_K(s)=\zeta(s)L(s,\chi_{-3})$ of $K=\Q(\sqrt{-3})$, and
+$1/\zeta_K(s)=\sum_{\mathfrak n}\mu(\mathfrak n)\NK(\mathfrak n)^{-s}$ for $\Rea s>1$, where
+$\mu$ is the M\"obius function on the nonzero integral ideals of $\OO$. We will deduce
+Theorem~\ref{thm:main} from a power-saving estimate for smoothed M\"obius sums over ideals.
+All ideal sums run over nonzero integral ideals prime to $6$. For a norm scale $D>0$,
+consider
+\[
+ A_1(D)=\sum_{\mathfrak n}
+   \mu(\mathfrak n)W(\NK(\mathfrak n)/D),
+\]
+where $W\in C_c^\infty((0,\infty);\mathbb C)$ is a smooth cutoff function. Thus $A_1(D)$ is a
+smoothed M\"obius sum over ideals of norm comparable to $D$, with roughly $D$ terms. We seek a
+power saving over this size: for a fixed $\delta>0$ and every $\varepsilon>0$,
+\begin{equation}\label{eq:power-savings}
+A_1(D)\ll_{W,\varepsilon}D^{1-\delta+\varepsilon} \text{ for every }W\in C_c^\infty((0,\infty);\mathbb C).
+\end{equation}
+The Mellin transform of $D\mapsto A_1(D)$ is $\widehat W(s)/\zeta_K(s)$ up to finitely many
+Euler factors, so \eqref{eq:power-savings} continues $1/\zeta_K$ holomorphically to
+$\Rea s>1-\delta$. This is the smoothed version of the classical relation between M\"obius
+sums and zero-free regions; for $\zeta$ itself, the equivalence between the Riemann Hypothesis
+and the bound $\sum_{n\le x}\mu(n)\ll_\varepsilon x^{1/2+\varepsilon}$ is due to Littlewood
+\cite{Lit12}; see also \cite[\S1]{MM09}. Section~\ref{sec:reduction} gives the argument in
+the form we use, in which $\mu(\mathfrak n)$ carries an additional factor
+$\varphi(\mathfrak n)/\NK(\mathfrak n)$ (Step~2 explains why).
+
+\subsection{Step 2: Embedding the sum in a family}
+
+In order to estimate $A_1(D)$, we embed it into a family of such sums,
+parametrized by $u\in\OO_K$, by introducing a sextic twist.
+We call an element of $\OO$ \emph{primary} if it is congruent to $1$
+modulo $3$. The ring $\OO=\mathbb Z[\omega]$ is Euclidean, so it has unique
+factorization and every ideal is principal; for an ideal coprime to $3$,
+multiplying any generator by a unique unit gives $n\equiv1\pmod3$,
+since the six units represent the six invertible residue classes modulo $3$.
+For a primary element $n$, we write $\mu(n)=\mu((n))$;
+divisor sums count each ideal divisor once, using its primary generator.
+For an ideal $\mathfrak n$ prime to $6$, use its unique primary generator
+$n$ and write
+\[
+ \chi_{\mathfrak n}(u)=\chi_n(u)=(u/n)_6.
+\]
+Here $(u/n)_6$ is the sextic residue symbol, extended by zero
+when $(u,n)\neq 1$.\footnote{For a primary prime $p\nmid6$ and $p\nmid u$,
+$(u/p)_6$ is the unique sixth root of unity congruent to
+$u^{(\NK(p)-1)/6}$ modulo $p$; set $(u/p)_6=0$ when $p\mid u$.
+Extend multiplicatively in the denominator to define
+$\chi_n(u)=(u/n)_6$ for primary $n$ coprime to $6$.
+For the unit ideal, $\chi_1(u)=1$ for every $u$, including $u=0$.
+}
+We also write $(u/n)_2$ and $(u/n)_3$ for the quadratic and cubic residue symbols, defined by the same convention with $6$ replaced by $2$ and $3$, respectively. When $(n,6)=1$, they equal $\chi_n(u)^3$ and $\chi_n(u)^2$. Restrictions that keep these symbols defined are understood when omitted in the outline.
+The family is
+\begin{equation}\label{eq:intro-family}
+ A_u(D)=\sum_{\mathfrak n}
+   \mu(\mathfrak n)\chi_{\mathfrak n}(u)
+   W(\NK(\mathfrak n)/D).
+\end{equation}
+
+Put $\vartheta=1/10$ and $H=D^{1+\vartheta}=D^{11/10}$. The crucial estimate,
+Proposition~\ref{thm:ms}, is that
+\begin{equation}\label{eq:intro-ms}
+ \sum_{0<\NK(u)\le H}|A_u(D)|^2
+       \ll_{W,\varepsilon}D^{1+\varepsilon}H=D^{21/10+\varepsilon}.
+\end{equation}
+In a mean square, we call the variable in the outer sum the \emph{row}
+and the variable in the inner sum the \emph{column}. In
+\eqref{eq:intro-ms} these are $u$ and $\mathfrak n$, respectively.
+Up to the factor of $D^\varepsilon$, \eqref{eq:intro-ms} can be thought of as saying that the
+family $\{A_u(D)\}$ exhibits ``square-root cancellation'' on average (in the $L^2$ sense) over
+$u$. The argument of \cite{OpenAI26b} works for every fixed $0<\vartheta\le1/10$. We take
+$\vartheta=1/10$, the value in the formalization, whose fixed-margin descent needs
+$\vartheta>1/20$ (Remark~\ref{rem:formal-descent}); a smaller $\vartheta$ would give a better
+exponent at the price of a longer descent.
+
+The mean-square estimate \eqref{eq:intro-ms} gives a power saving for the M\"obius sum because
+the rows $u=b^6$ see it almost untwisted: $\chi_n(b^6)=\ind_{(b,n)=1}$. Average these rows
+over $\NK(b)\le Y$, with $Y=H^{1/6}$, against a smooth bump. Counting the $b$ prime to a given
+$n$ gives about $Y\varphi(n)/\NK(n)$ of them, so the average is, with a nonzero constant
+$\widehat V(0)$ (see Section~\ref{sec:reduction}),
+\begin{equation}\label{eq:intro-extraction}
+ \sum_{b}V\!\Bigl(\frac{\NK(b)}{Y}\Bigr)A_{b^6}(D)
+ =Y\widehat V(0)\,A^\varphi(D)+O(D^{1+\varepsilon}),
+\end{equation}
+where
+\[
+ A^\varphi(D)=\sum_{\mathfrak n}\mu(\mathfrak n)\frac{\varphi(\mathfrak n)}{\NK(\mathfrak n)}
+ W\Bigl(\frac{\NK(\mathfrak n)}{D}\Bigr).
+\]
+There are about $Y$ rows $b^6$, all of norm at most $Y^6=H$, so Cauchy--Schwarz and
+\eqref{eq:intro-ms} bound the left side by $\sqrt{Y\cdot D^{1+\varepsilon}H}$. Hence
+\[
+ A^\varphi(D)\ll\frac{(YD^{1+\varepsilon}H)^{1/2}}{Y}+\frac{D^{1+\varepsilon}}{Y}
+ \ll\bigl(D^{1+\varepsilon}H^{5/6}\bigr)^{1/2}=D^{23/24+\varepsilon},
+\]
+since the second term, $D^{49/60+\varepsilon}$, is smaller.
+For general $\vartheta$ the same computation gives $D^{11/12+5\vartheta/12+\varepsilon}$; this
+is where $\vartheta<1/5$ is needed. The weight $\varphi(\mathfrak n)/\NK(\mathfrak n)$ changes
+the Dirichlet series only by an Euler product that converges absolutely in $\Rea s>0$, so the
+saving for $A^\varphi$ serves as well as \eqref{eq:power-savings}.
+Therefore it remains to establish \eqref{eq:intro-ms}.
+
+\subsection{Step 3: Poisson summation}
+
+We turn to the task of proving the mean-square estimate \eqref{eq:intro-ms}. Now that we have introduced the row variable $u$, we can apply Poisson summation in this variable. This introduces sextic Gauss sums, arising from the Fourier transforms of the sextic characters. Upon application of the Gauss--Jacobi identities, these sextic Gauss sums absorb the factor of $\mu$ and turn into cubic Gauss sums. We interpret the resulting cubic Gauss sums as coefficients of Kubota's cubic theta function. In the next step, we use the automorphy of this theta function. For now, we explain the appearance of these Gauss sums in more detail.
+
+Define the additive character
+\[
+ e(z)=\exp(4\pi\mathrm i\,\operatorname{Im}z/\sqrt3)\quad(z\in\mathbb C).
+\]
+For a squarefree Eisenstein integer $n\equiv1\pmod3$ prime to $6$ and an integer $j$, define the normalized Gauss sums
+\begin{equation}\label{eq:intro-gauss-sum}
+ \gamma_j(n)=\frac{1}{\sqrt{\NK(n)}}
+       \sum_{x\bmod n}\chi_n(x)^j e(x/n).
+\end{equation}
+For $j=-1$, we interpret $\chi_n^{-1}$ as the conjugate character $\overline{\chi_n}$.
+
+Consider the classical identity
+\[
+ \left(\frac{-1}{m}\right)=\left(\frac{1}{\sqrt{m}}\sum_{x\bmod m}\left(\frac{x}{m}\right)e^{2\pi ix/m}\right)^2,
+\]
+where $m$ is an odd squarefree positive integer and the symbols are Jacobi symbols. We would like a similar decomposition for $\mu$ instead of $\left(\frac{-1}{m}\right)$. Following the work of Hasse \cite[pp.~443--445]{Has50} and Heath-Brown \cite[(2)]{HB00}, we derive the following identity in Appendix~\ref{app:gauss-identities}, valid for squarefree primary $n$ away from a fixed set of excluded primes:
+\[
+ \mu(n)\gamma_{-1}(n)=\chi_n(-1)G(n)^{-1}\overline{\alpha(n)}\gamma_2(n),
+ \qquad \alpha(n)=\frac{n}{|n|},\quad G(n)=\overline{\chi_n(4)}\gamma_3(n).
+\]
+Here $G(n)$ is a fixed ray-class factor. The factor $\gamma_{-1}(n)$ comes from Poisson summation; as promised, it combines with $\mu(n)$ to produce the cubic coefficient $\overline{\alpha(n)}\gamma_2(n)$ (up to ray-class factors). Further details are given in Section~\ref{sec:initialization}.
+
+We call the sums obtained after applying Poisson summation \emph{dual sums}.\footnote{For this terminology, see \cite[p.~440]{PY20},
+\cite[\S2.3]{KLMS20}, and \cite[arXiv abstract]{FLN10}.} Rearranging these dual sums reduces the problem of estimating
+$\sum_u |A_u(D)|^2$ to estimating the following family of column sums (for clarity, we have suppressed auxiliary twists and coprimality conditions):
+\begin{equation}\label{eq:intro-gauss-family}
+ B_h(X)=\sum_{\substack{n\in\OO\\n\equiv1\ (3)\\n\ {\rm squarefree}}}
+       \overline{\alpha(n)}\gamma_2(n)\xi(n)\chi_n(h)
+       U(\NK(n)/X).
+\end{equation}
+Here $h$ is the new row variable, Fourier dual to $u$, while $U$ is a smooth weight restricting the column variable $n$ to norm comparable to $X$. Here $\xi$ ranges over a finite set of ray class characters of fixed modulus; these twists
+absorb the residue-class dependence of the reciprocity and Gauss-sum factors below.\footnote{The ray class group modulo an ideal $\mathfrak m$ is the group of fractional ideals prime to $\mathfrak m$, modulo principal ideals generated by elements congruent to $1$ modulo $\mathfrak m$. A ray class character is a character of this finite group. For an element prime to $\mathfrak m$, its ray class means the class of its principal ideal.}  For each choice of $\xi$, this defines a family of sums $B_h(X)$.
+
+ After treating the diagonal and separating the smooth weights, we roughly get that
+\begin{equation}\label{eq:intro-poisson-comparison}
+ \sum_{0<\NK(u)\le H}|A_u(D)|^2
+ \precbd DH+\frac HD
+       \sum_{0<\NK(h)\ll\mathcal H}|B_h(D)|^2.
+\end{equation}
+Here $\mathcal H\asymp D^2/H$ is the dual norm scale. This schematic
+comparison suppresses the common factors arising when the square is
+expanded. Thus the desired estimate is
+\begin{equation}\label{eq:intro-dual-ms}
+ \sum_{0<\NK(h)\ll\mathcal H}|B_h(D)|^2\precbd D^2.
+\end{equation}
+
+\subsection{Step 4: \texorpdfstring{Relation}{Relation} to cubic Gauss sums and Kubota's cubic theta function}
+
+To estimate \eqref{eq:intro-dual-ms}, we first identify the cubic
+Gauss coefficients with Fourier coefficients of a theta function.
+Its transformation law applies to a sum with extra cube factors,
+which we will remove in Step~5.
+
+Let $\theta(z,v)$ be Kubota's cubic theta function on hyperbolic three-space ($z\in\mathbb C$, $v \in \R_{>0}$), obtained as a residue of a cubic metaplectic Eisenstein series \cite{Kub69,Pat77}. We use the normalization of \cite[\S5.1, (5.6)--(5.8)]{DR},
+recalled below in \eqref{eq:cubic-theta-definition}.
+
+Put $\lambda=1+2\omega$. For primary elements $n,b\in\OO=\mathbb Z[\omega]$, 
+with $n$ squarefree and $(nb,6)=1$, let $c_\theta(nb^3)$ denote the Fourier coefficient of $\overline\theta$ indexed by $\lambda^{-3}nb^3$ in its expansion in $z$. Patterson's formula \cite[Theorem~8.1]{Pat77}, recorded in \cite[(5.7)]{DR}, gives
+\begin{equation}\label{eq:intro-theta-coefficients}
+ c_\theta(nb^3)
+     =3^{5/2}|b|\,\overline{\chi_n(\lambda)^2}\gamma_2(n).
+\end{equation}
+Taking $b=1$ in \eqref{eq:intro-theta-coefficients} and substituting into \eqref{eq:intro-gauss-family} yields
+\begin{equation}\label{eq:intro-theta-family}
+ B_h(X)=3^{-5/2}\sum_{\substack{n\in\OO\\n\equiv1\ (3)\\n\ {\rm squarefree}}}
+ c_\theta(n)\overline{\alpha(n)}\chi_n(\lambda)^2
+ \xi(n)\chi_n(h)U(\NK(n)/X).
+\end{equation}
+Thus \eqref{eq:intro-theta-family} expresses $B_h(X)$ as a smoothed, twisted sum of the squarefree-index coefficients of $\overline\theta$. This connection was used by Heath-Brown and Patterson to study Kummer sums \cite{HBP79}.
+
+To use the summation formula for theta coefficients, we embed the sum \eqref{eq:intro-theta-family} in a completed sum, by including terms indexed by $nb^3$. This use of cube completion follows Dunn and Radziwi\l\l\ \cite[Lemma~5.4 and Proposition~5.3]{DR}, with the underlying theta coefficients given by Patterson \cite[Theorem~8.1]{Pat77}. For fixed $h$, $\xi$, and $U$, define
+\begin{equation}\label{eq:intro-completed-theta-sum}
+T_h(X):=\frac{1}{3^{5/2}\sqrt X}
+ \sum_{\substack{n,b\in\OO\\n,b\equiv1\ (3)\\n\ {\rm squarefree}}}
+ c_\theta(nb^3)\overline{\alpha(nb^3)}\chi_{nb^3}(\lambda)^2
+ \xi(nb^3)\chi_{nb^3}(h)U(\NK(nb^3)/X).
+\end{equation}
+The $b=1$ terms are exactly $X^{-1/2}B_h(X)$; the other
+terms supply the cube indices in the theta expansion. The first goal is to bound the mean square of $T_h(X)$ over $h$.
+
+The automorphy of $\theta$ gives a summation formula that transforms the completed column sum $T_h(X)$, with the row $h$ held fixed, into dual sums of theta coefficients with new smooth weights and character twists.
+A cusp is represented by a boundary point in $K\cup\{\infty\}$. A \emph{cusp expansion} is the Fourier expansion in the horizontal variable after a change of coordinates taking infinity to that point. We call its Fourier coefficients \emph{cusp coefficients}.
+Our starting point is a variant (established in Appendix~\ref{app:fixed-ray}) of the theta transformation of Dunn and Radziwi\l\l\ \cite[\S5]{DR}, extending work of Patterson \cite{Pat77} and Yoshimoto \cite{Yos87}. The key point is how the character twists change. Suppose for
+illustration that $h$ is squarefree and primary, with $(h,6)=1$. Then, by Proposition~\ref{lem:reflection}, the transformed expression is a finite linear combination of sums of the form
+\begin{equation}\label{eq:intro-dual-theta-sum}
+ \sum_{0\ne m\in\OO}
+ \frac{d_\theta(m)\alpha(m)}{\sqrt{\NK(m)}}\,
+ \chi_h(m)^3
+ V_*^\sharp\!\Bigl(\frac{\NK(m)X}{\NK(h)^2}\Bigr).
+\end{equation}
+The dual column index is $m$, while $h$ remains the row index.
+Here $d_\theta(m)$ denotes the coefficient at the Fourier index
+$\lambda^{-4}m$ in a cusp expansion of $\overline\theta$, and
+$V_*^\sharp$ is the transform in \eqref{eq:theta-weight}, applied to $V_*(y)=y^{1/2}U(y)$.
+We have suppressed
+a finite sum over these cusp expansions, fixed periodic twists,
+bounded prefactors, and fixed scale constants. Within each fixed
+ray class of $h$, the coefficient sequences and transformed weights
+are independent of $h$ by Lemma~\ref{lem:reflection-uniformity}.
+Proposition~\ref{lem:reflection} gives the
+precise formula, writing $d(\ell)$ for the cusp coefficient at
+$\ell=\lambda^{-4}m$.
+
+Since $V_*^\sharp$ decays rapidly at infinity, the effective norm range in \eqref{eq:intro-dual-theta-sum} is $\NK(m)\ll\NK(h)^2/X$, in place of the original range $\NK(nb^3)\asymp X$. These dual sums arise from the theta transformation and involve theta coefficients on the transformed scale, now twisted by the quadratic character $\chi_h^3$. This character arises because, at each prime $p\mid h$, the Fourier and theta factors combine as
+\begin{equation}\label{eq:intro-quadratic-twist}
+ \chi_p^{-1}\chi_p^{-2}=\chi_p^{-3}=\chi_p^3.
+\end{equation}
+Now a key point is that since $\chi_p^3$ is quadratic, Goldmakher and Louvel's quadratic large sieve \cite[Theorem~1.1 and Corollary~1.2]{GL} (a generalization of Heath-Brown's quadratic large sieve \cite{HB95} to number fields) bounds the mean square of the sums in \eqref{eq:intro-dual-theta-sum} as $h$ varies. For squarefree quadratic families with row and column norm ranges $M,L$, the quadratic large sieve gives the factor $M+L$, up to $(ML)^\varepsilon$. Crucially, this avoids the additional term $(ML)^{2/3}$ in Blomer, Goldmakher, and Louvel's general higher-order large sieve \cite[Theorem~1.3]{BGL}.
+
+We then apply Cauchy--Schwarz in the cube variable and the quadratic
+large sieve in the squarefree column variable to estimate the mean square of $T_h(X)$. The details are given in the proof of Proposition~\ref{prop:R}, which gives, for $\mathcal H,X\ge1$,
+\begin{equation}\label{eq:intro-completed-ms}
+ \sum_{0<\NK(h)\ll\mathcal H}|T_h(X)|^2
+ \ll_{\varepsilon,\xi,U}(\mathcal H X)^\varepsilon
+       \Bigl(\mathcal H+\frac{\mathcal H^2}{X}\Bigr).
+\end{equation}
+At $X=D$ and $\mathcal H\le D$, the heuristic comparison
+$B_h(D)\approx\sqrt D\,T_h(D)$ would therefore give the desired
+$D^2$ bound. The remaining task is to justify the corresponding
+mean-square bound by removing the cube factors.
+
+\subsection{Step 5: Removing the cube factors} 
+We now pass from a mean-square bound for $T_h(X)$ to one for $X^{-1/2}B_h(X)$, with both averages taken over $h$. Note that one cannot simply discard the terms with $b\ne1$, because the contributions from different $b$ can cancel. We begin by undoing the addition of cube factors using M\"obius inversion. Related completions appear in Patterson \cite[Theorem~6.1]{Pat77} and Heath-Brown \cite[\S3]{HB00}, with explicit removal of the cube factors by M\"obius inversion in Dunn and Radziwi\l\l\ \cite[Proposition~5.3 and (8.2)]{DR}.
+
+Fix $h$ and $\xi$, and write $P_h(X)=X^{-1/2}B_h(X)$ for the $b=1$ part of $T_h(X)$. Substituting the coefficient formula \eqref{eq:intro-theta-coefficients} into \eqref{eq:intro-completed-theta-sum} gives
+\begin{equation}\label{eq:intro-cube-completion}
+ T_h(X)=\sum_{\substack{b\in\OO\\b\equiv1\ (3)}}\frac{w_h(b)}{\NK(b)}\,
+                  P_h\!\Bigl(\frac{X}{\NK(b)^3}\Bigr),
+\end{equation}
+where
+\begin{equation}\label{eq:intro-cube-weight}
+ w_h(b)=\overline{\alpha(b)}^{\,3}\xi(b)^3\chi_b(h)^3.
+\end{equation}
+Each factor in \eqref{eq:intro-cube-weight} is completely multiplicative in $b$. Thus $w_h(bc)=w_h(b)w_h(c)$ even when $b,c$ share prime factors, and $|w_h(b)|\le1$. M\"obius inversion (cf. \cite[\S1.3]{IK04}) gives
+\begin{equation}\label{eq:intro-cube-inversion}
+ P_h(X)=\sum_{\substack{d\in\OO\\d\equiv1\ (3)}}\frac{\mu(d)w_h(d)}{\NK(d)}\,
+                  T_h\!\Bigl(\frac{X}{\NK(d)^3}\Bigr).
+\end{equation}
+Indeed, substituting \eqref{eq:intro-cube-completion} into \eqref{eq:intro-cube-inversion} and grouping by the total cube index $b$ gives the factor $w_h(b)\sum_{d\mid b}\mu(d)$, which is $1$ for $b=1$ and $0$ otherwise.
+
+
+The objective is now an estimate for $P_h$, rather than for the
+completed sum $T_h$. For the simplified family and the parameter
+ranges arising from Step~3, the required bound is
+
+\begin{equation}\label{eq:intro-cube-target}
+ \sum_{0<\NK(h)\ll\mathcal H}|P_h(X)|^2
+       \ll_{\varepsilon,\xi,U}(\mathcal H X)^\varepsilon X.
+\end{equation}
+Since $B_h(X)=\sqrt X\,P_h(X)$, this is equivalent to a bound of size $X^2$, up to the same small power, for the mean square of $B_h(X)$.
+
+For $1\le H_c\le X^{1/3}$, let $P_{h,\le H_c}(X)$ be the part of
+\eqref{eq:intro-cube-inversion} with $\NK(d)\le H_c$.
+Applying weighted Cauchy--Schwarz for each fixed $h$, then summing over $h$
+and using \eqref{eq:intro-completed-ms}, gives
+\[
+ \begin{aligned}
+ &\sum_{0<\NK(h)\ll\mathcal H}|P_{h,\le H_c}(X)|^2\\
+ &\quad\le\Bigl(\sum_{\NK(e)\le H_c}\frac1{\NK(e)}\Bigr)
+       \Bigl(\sum_{\NK(d)\le H_c}\frac1{\NK(d)}
+       \sum_{0<\NK(h)\ll\mathcal H}
+       |T_h\!\bigl(X/\NK(d)^3\bigr)|^2\Bigr)\\
+ &\quad\precbd\sum_{\NK(d)\le H_c}\frac1{\NK(d)}
+       \Bigl(\mathcal H+\frac{\mathcal H^2\NK(d)^3}{X}\Bigr)
+       \precbd\mathcal H+\frac{\mathcal H^2H_c^3}{X}.
+ \end{aligned}
+\]
+Thus
+\begin{equation}\label{eq:intro-short-cube-ms}
+ \sum_{0<\NK(h)\ll\mathcal H}|P_{h,\le H_c}(X)|^2
+ \ll_{\varepsilon,\xi,U}(\mathcal H X)^\varepsilon
+       \Bigl(\mathcal H+\frac{\mathcal H^2H_c^3}{X}\Bigr).
+\end{equation}
+For $\mathcal H\le X$, the estimate \eqref{eq:intro-short-cube-ms} is within the target \eqref{eq:intro-cube-target} provided $\mathcal H^2H_c^3/X\le X$. Thus we apply the completed mean-square bound directly only up to the cutoff
+\begin{equation}\label{eq:intro-cube-cutoff}
+ H_c=\min\!\biggl\{X^{1/3},
+                \Bigl(\frac{X}{\mathcal H}\Bigr)^{2/3}\biggr\}.
+\end{equation}
+At the basic scales from Step~3,
+\[
+ X\asymp D,\qquad \mathcal H\asymp D^{1-\vartheta}=D^{9/10},
+ \qquad H_c\asymp D^{2\vartheta/3}=D^{1/15}.
+\]
+The inverse sum can extend to $\NK(d)\asymp D^{1/3}$, so we must
+still control the larger divisors.
+
+Write $\tau_{\mathrm{div}}(b)$ for the number of nonzero integral ideal divisors of $(b)$.
+Let $P_{h,>H_c}(X)$ denote the terms with $\NK(d)>H_c$ in
+\eqref{eq:intro-cube-inversion}, and put $L_b=X/\NK(b)^3$.
+Substituting \eqref{eq:intro-cube-completion} into the truncated inversion formula for $P_{h,>H_c}(X)$ obtained from \eqref{eq:intro-cube-inversion}, and grouping by $b=dc$, gives
+\[
+ \begin{aligned}
+ P_{h,>H_c}(X)
+ &=\sum_{\NK(d)>H_c}\sum_c
+   \frac{\mu(d)w_h(d)w_h(c)}{\NK(d)\NK(c)}
+   P_h\!\Bigl(\frac{X}{\NK(dc)^3}\Bigr)\\
+ &=\sum_{\NK(b)>H_c}
+   \frac{\beta_0(b)\chi_b(h)^3}{\NK(b)}P_h(L_b),
+ \end{aligned}
+\]
+where all indices are primary and
+\[
+ \beta_0(b)=\overline{\alpha(b)}^{\,3}\xi(b)^3
+       \sum_{\substack{d\mid b\\\NK(d)>H_c}}\mu(d),
+ \qquad |\beta_0(b)|\le\tau_{\mathrm{div}}(b).
+\]
+The support of $U$ restricts $\NK(b)\ll_U X^{1/3}$.
+Weighted Cauchy--Schwarz for each $h$, followed by summation, gives
+\begin{equation}\label{eq:intro-long-cube-ms}
+ \begin{aligned}
+ \sum_{0<\NK(h)\ll\mathcal H}|P_{h,>H_c}(X)|^2
+ &\le\Bigl(\sum_b\frac{\tau_{\mathrm{div}}(b)}{\NK(b)}\Bigr)
+ \sum_b\frac{\tau_{\mathrm{div}}(b)}{\NK(b)}
+ \sum_{0<\NK(h)\ll\mathcal H}|P_h(L_b)|^2\\
+ &\precbd\sup_b\sum_{0<\NK(h)\ll\mathcal H}|P_h(L_b)|^2.
+ \end{aligned}
+\end{equation}
+Put
+$a_\xi(n)=\overline{\alpha(n)}\gamma_2(n)\xi(n)$. Write
+\[
+ E(\mathcal H,X)
+ :=\frac1X\sum_{0<\NK(h)\ll\mathcal H}
+ \Bigl|\sum_n^*a_\xi(n)\chi_n(h)U(\NK(n)/X)\Bigr|^2.
+\]
+A star restricts an index to squarefree primary elements.
+By \eqref{eq:intro-gauss-family} and the definition of $P_h$, we have
+\[
+ E(\mathcal H,X)
+ =\frac1X\sum_{0<\NK(h)\ll\mathcal H}|B_h(X)|^2
+ =\sum_{0<\NK(h)\ll\mathcal H}|P_h(X)|^2.
+\]
+At the scales from Step~3, our goal is to prove
+\begin{equation}\label{eq:intro-energy-target}
+ E(\mathcal H,X)\precbd X.
+\end{equation}
+At $X=D$, this is precisely the bound \eqref{eq:intro-dual-ms}
+for the mean square of $B_h(D)$. Substitution into the Poisson
+comparison \eqref{eq:intro-poisson-comparison} then gives the
+required original mean-square estimate \eqref{eq:intro-ms}.
+Combining \eqref{eq:intro-short-cube-ms} for $P_{h,\le H_c}$
+(the terms with $\NK(d)\le H_c$) and \eqref{eq:intro-long-cube-ms}
+for $P_{h,>H_c}$ (the terms with $\NK(d)>H_c$), with the cutoff
+\eqref{eq:intro-cube-cutoff}, gives
+ \[
+ E(\mathcal H,X)\precbd X + \sup_{b:\,1\le L_b\le X/H_c^3}E(\mathcal H,L_b).
+ \]
+It therefore remains to prove $E(\mathcal H,L_b)\precbd X$ for
+$1<L_b\le X/H_c^3$. Here the row range $\mathcal H$ stays fixed,
+and the required bound is still of size $X$ even though the column
+scale has decreased to $L_b$.
+ 
+We now expand the square and apply Poisson summation in $h$ as before; we now record the proof in terms of $E(\mathcal H,L_b)$. The
+Gauss-sum coefficients become M\"obius coefficients, and the new
+row variable $y$ has norm at most about $L_b^2/\mathcal H$. After
+separating the weights, this gives schematically
+\[
+ \begin{aligned}
+ E(\mathcal H,L_b)
+ &\precbd X+\frac{\mathcal H}{L_b^2}
+ \sum_{0<\NK(y)\ll L_b^2/\mathcal H}|M(y)|^2,\\
+ M(y)&=\sum_{\NK(n)\asymp L_b}^*
+ \mu(n)\xi_1(n)\overline{\chi_n(y)}U_1(\NK(n)/L_b).
+ \end{aligned}
+\]
+Here $\xi_1$ is another fixed ray class character and $U_1$ is a smooth compactly supported weight produced by separating the variables. The term $X$ includes the diagonal and zero-frequency
+contributions, using $\mathcal H\le X$.
+
+Since $L_b=X/\NK(b)^3\le X$, we may enlarge the nonnegative sum over $y$ to
+\[
+ \NK(y)\ll \mathcal Y,\qquad
+ \mathcal Y=\frac{XL_b}{\mathcal H}\ge\frac{L_b^2}{\mathcal H}.
+\]
+The purpose of this enlargement is that a second application of
+Poisson summation gives a shorter row range:
+\[
+ \mathcal H'=\frac{L_b^2}{\mathcal Y}=\frac{\mathcal HL_b}{X}.
+\]
+The coefficients return to cubic Gauss-sum coefficients, and
+\[
+ \sum_{0<\NK(y)\ll \mathcal Y}|M(y)|^2
+ \precbd YL_b+\mathcal Y E'(\mathcal H',L_b).
+\]
+Here $E'$ has the same form as $E$, with possibly different smooth
+weights and fixed characters; $YL_b$ accounts for the
+zero-frequency contribution. Consequently,
+\[
+ E(\mathcal H,L_b)
+ \precbd X+\frac X{L_b} E'\!\Bigl(\frac{\mathcal HL_b}{X},L_b\Bigr),
+ \qquad
+ \frac{E(\mathcal H,L_b)}X
+ \precbd 1+\frac{E'(\mathcal HL_b/X,L_b)}{L_b}.
+\]
+Thus it suffices to prove
+\[
+ E'\!\Bigl(\frac{\mathcal HL_b}{X},L_b\Bigr)\precbd L_b.
+\]
+This is the original type of estimate at smaller parameters:
+\[
+ (\mathcal H',X')
+ =\Bigl(\frac{\mathcal H}{\NK(b)^3},
+         \frac{X}{\NK(b)^3}\Bigr),
+ \qquad
+ \frac{\mathcal H'}{X'}=\frac{\mathcal H}{X}.
+\]
+Both scales decrease while their ratio stays fixed. The factor
+$X/L_b$ in the preceding inequality is exactly what converts the
+new target bound $L_b$ into the required bound $X$.
+These two Poisson summations give the \emph{transfer estimate}: a bound
+for the remaining mean square in terms of new mean squares of the same type.
+For related uses of an enlarged summation range, see
+Goldmakher--Louvel
+\cite[Lemma~4.4 and the proof of Theorem~4.1]{GL}, following
+Heath-Brown \cite[Lemma~9]{HB95}.
+
+
+Combining the bounds \eqref{eq:intro-short-cube-ms} and
+\eqref{eq:intro-long-cube-ms} from the first part of Step~5 with
+the transfer estimate above gives the recursive bound
+\[
+ \frac{E(\mathcal H,X)}{X}
+ \precbd 1+\sup_{\substack{\NK(b)>H_c\\L_b>1}}\frac{E'(\mathcal H',X')}{X'},
+ \qquad X'=L_b,\quad \mathcal H'=\frac{\mathcal H L_b}{X}.
+\]
+For each $b$ in this supremum, the cutoff \eqref{eq:intro-cube-cutoff}
+gives $\mathcal H'<\mathcal H(\mathcal H/X)^2
+\ll D^{-2\vartheta}\mathcal H=D^{-1/5}\mathcal H$.
+Since $\mathcal H'/X'=\mathcal H/X$, the same contraction applies
+at every step. After a bounded number of steps, every resulting mean
+square either has an empty remainder or has row parameter at most $1$,
+where counting gives the desired bound at its reduced scales.
+Applying the recursive inequality back through these steps proves
+\eqref{eq:intro-energy-target} for the original $E(\mathcal H,X)$,
+completing the sketch of the proof.
+
+The preceding sketch suppresses auxiliary twists and common factors for the purpose of illustration. To carry out this argument with the auxiliary twists included, we use the family
+\[
+ \mathcal E(\mathcal H,X,F)
+ =\frac1{XF}\sum_{\NK(f)\asymp F}^*
+   \sum_{0<\NK(k)\ll\mathcal H}
+ \Bigl|\sum_n^*a_\xi(n)\chi_n(k)\chi_n(f)^4
+                      U(\NK(n)/X)\Bigr|^2
+\]
+and prove $\mathcal E(\mathcal H,X,F)\precbd XF$ in the parameter
+ranges of Proposition~\ref{prop:canonical}. Unlike the sketch above, the full
+argument must also handle the common factors and the resulting dyadic
+ranges.
+The precise family is defined in \eqref{eq:energy}, and
+Proposition~\ref{prop:transfer} states the transfer estimate.
+Combining it with the bounds for the two parts of
+the inverse sum in Step~5 reduces the row range at each step.
+Section~\ref{sec:descent} proves the desired bound by a finite iteration,
+following the admissible-exponent method of Heath-Brown
+\cite[Lemma~8 and \S8]{HB95}, \cite[Lemma~9]{HB00}; see also
+\cite[Theorem~4.1]{GL} and \cite[\S3.2]{BGL}.
+

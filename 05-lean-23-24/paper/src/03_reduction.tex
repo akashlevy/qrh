@@ -1,0 +1,160 @@
+\section{From the mean-square estimate to the zero-free region}\label{sec:reduction}
+
+We carry out Steps~1 and~2 of the outline: we extract cancellation in a M\"obius sum from a
+mean-square estimate for the sextic family, and then use a Mellin transform to deduce
+nonvanishing. Recall that $S=\{(\lambda),(2)\}$ is the set of prime ideals dividing $6$.
+Throughout this section, $\mathfrak n$ runs over the nonzero ideals of $\OO$ with
+$(\mathfrak n,S)=1$, represented by their primary generators $n$, and
+$W\in C_c^\infty((0,\infty);\C)$. Define
+\begin{align}
+ A_u(D)&:=\sum_{(\mathfrak n,S)=1}\mu(\mathfrak n)\chi_{\mathfrak n}(u)W(\NK(\mathfrak n)/D)
+ \qquad(u\in\OO),\label{eq:A-u}\\
+ A^\varphi(D)&:=\sum_{(\mathfrak n,S)=1}\mu(\mathfrak n)
+ \frac{\varphi(\mathfrak n)}{\NK(\mathfrak n)}W(\NK(\mathfrak n)/D),
+ \qquad
+ \frac{\varphi(\mathfrak n)}{\NK(\mathfrak n)}=\prod_{\mathfrak p\mid\mathfrak n}
+ \Bigl(1-\frac1{\NK(\mathfrak p)}\Bigr).\label{eq:A-phi}
+\end{align}
+The key estimate is the following square-root cancellation on average over the rows $u$.
+
+\begin{proposition}\label{thm:ms}
+Let $W\in C_c^\infty((0,\infty);\C)$ and $\varepsilon>0$. For $D\ge1$,
+\begin{equation}\label{eq:ms}
+ \sum_{\substack{u\in\OO\\0<\NK(u)\le D^{11/10}}}|A_u(D)|^2
+       \ll_{W,\varepsilon}D^{21/10+\varepsilon}.
+\end{equation}
+\end{proposition}
+
+Here $D^{11/10}=D^{1+\vartheta}$ with $\vartheta=1/10$, and the right side is
+$D^{1+\varepsilon}\cdot D^{1+\vartheta}$: each of the roughly $D^{1+\vartheta}$ rows contributes
+about $D$, the size of a sum of $D$ unimodular terms with random signs. The proof of
+Proposition~\ref{thm:ms} occupies Sections~\ref{sec:initialization}--\ref{sec:transfer-proof} and is
+completed in Section~\ref{sec:completion}. We first deduce Theorem~\ref{thm:main} from it.
+
+\subsection{Extraction}
+The rows $u=b^6$, $b\in\OO$, see the M\"obius sum almost untwisted. Indeed, for a prime
+$\mathfrak p\notin S$ the character $\chi_{\mathfrak p}$ has order six, so
+\begin{equation}\label{eq:sixth-power-rows}
+ \chi_{\mathfrak n}(b^6)=\ind_{(b,\mathfrak n)=1}\qquad(b\in\OO).
+\end{equation}
+Averaging over $b$ therefore replaces $\chi_{\mathfrak n}(u)$ by the density of the $b$ prime
+to $\mathfrak n$, which is $\varphi(\mathfrak n)/\NK(\mathfrak n)$.
+
+\begin{proposition}\label{prop:extraction}
+Let $W\in C_c^\infty((0,\infty);\C)$ and $\varepsilon>0$, and suppose that \eqref{eq:ms}
+holds for $W$ with $2\varepsilon$ in place of $\varepsilon$. Then, for $D\ge1$,
+\[
+ A^\varphi(D)\ll_{W,\varepsilon}D^{23/24+\varepsilon}.
+\]
+\end{proposition}
+
+\begin{proof}
+Fix a Schwartz function $V:\R\to\C$ supported in $[1/2,1]$, with $|V|\le1$ and
+\[
+ \widehat V(0):=\frac2{\sqrt3}\int_{\C}V(|z|^2)\,dx\,dy\ne0 ,
+\]
+the value at $0$ of the radial Fourier transform of Lemma~\ref{lem:poisson} (with the measure
+for which $\OO$ has covolume one). Put $Y=D^{11/60}$, so that $Y^6=D^{11/10}$, and consider
+\[
+ \mathcal V(D):=\sum_{b\in\OO}V\Bigl(\frac{\NK(b)}Y\Bigr)A_{b^6}(D).
+\]
+\emph{Evaluation.} By \eqref{eq:sixth-power-rows},
+\[
+ \mathcal V(D)=\sum_{(\mathfrak n,S)=1}\mu(\mathfrak n)W(\NK(\mathfrak n)/D)
+ \sum_{\substack{b\in\OO\\(b,\mathfrak n)=1}}V\Bigl(\frac{\NK(b)}Y\Bigr).
+\]
+For squarefree $\mathfrak n$, inclusion--exclusion over $\mathfrak d\mid\mathfrak n$ writes the
+inner sum as
+\[
+ \sum_{\mathfrak d\mid\mathfrak n}\mu(\mathfrak d)\sum_{c\in\OO}V\bigl(\NK(\mathfrak d)\NK(c)/Y\bigr).
+\]
+By Poisson summation (Input~A), the sum over $c$ is
+$(Y/\NK(\mathfrak d))\widehat V(0)+O_V(1)$: the zero frequency gives the main term, the other
+frequencies are $O_V(1)$ by the rapid decay of $\widehat V$, and when $\NK(\mathfrak d)>Y$ only
+$c=0$ is in the support, where $V(0)=0$. Summing over $\mathfrak d$,
+\[
+ \sum_{\substack{b\in\OO\\(b,\mathfrak n)=1}}V\Bigl(\frac{\NK(b)}Y\Bigr)
+ =Y\widehat V(0)\frac{\varphi(\mathfrak n)}{\NK(\mathfrak n)}+O_V\bigl(2^{\omega(\mathfrak n)}\bigr).
+\]
+Since $2^{\omega(\mathfrak n)}\ll_\varepsilon\NK(\mathfrak n)^\varepsilon$ and $W(\NK(\mathfrak n)/D)$
+restricts to $\NK(\mathfrak n)\ll_W D$, this gives
+\begin{equation}\label{eq:extraction-evaluation}
+ \mathcal V(D)=Y\widehat V(0)A^\varphi(D)+O_{W,V,\varepsilon}(D^{1+\varepsilon}).
+\end{equation}
+
+\emph{Cauchy--Schwarz.} The terms of $\mathcal V(D)$ have $Y/2\le\NK(b)\le Y$, so $b\ne0$. There are $O(Y)$ such $b$,
+the map $b\mapsto b^6$ is at most six-to-one, and its values $u=b^6$ satisfy
+$0<\NK(u)\le Y^6=D^{11/10}$. Hence, by \eqref{eq:ms} with $2\varepsilon$,
+\[
+ |\mathcal V(D)|^2\le\Bigl(\sum_{\NK(b)\le Y}1\Bigr)\sum_{0<\NK(b)\le Y}|A_{b^6}(D)|^2
+ \ll Y\sum_{0<\NK(u)\le D^{11/10}}|A_u(D)|^2
+ \ll_{W,\varepsilon}Y D^{21/10+2\varepsilon}.
+\]
+\emph{Conclusion.} Since $Y\cdot D^{21/10}=D^{137/60}$, combining with
+\eqref{eq:extraction-evaluation} gives
+\[
+ Y|\widehat V(0)|\,|A^\varphi(D)|\ll D^{137/120+\varepsilon}+D^{1+\varepsilon}
+ \ll D^{137/120+\varepsilon},
+\]
+and dividing by $Y=D^{22/120}$ leaves $A^\varphi(D)\ll D^{115/120+\varepsilon}=D^{23/24+\varepsilon}$.
+\end{proof}
+
+\subsection{The Mellin transform}
+For $\Rea s>0$ put
+\[
+ E_\varphi(s):=\prod_{\mathfrak p\notin S}
+ \frac{1-\NK(\mathfrak p)^{-s}}{1-\NK(\mathfrak p)^{-s}+\NK(\mathfrak p)^{-1-s}},
+ \qquad
+ P_S(s):=\prod_{\mathfrak p\in S}\bigl(1-\NK(\mathfrak p)^{-s}\bigr).
+\]
+Every prime $\mathfrak p\notin S$ has $\NK(\mathfrak p)\ge7$, so for $\sigma=\Rea s>0$ the
+denominator satisfies
+$|1-(1-\NK(\mathfrak p)^{-1})\NK(\mathfrak p)^{-s}|\ge1-7^{-\sigma}>0$, and each factor of
+$E_\varphi$ is $1+O_\sigma(\NK(\mathfrak p)^{-1-\sigma})$ uniformly in $\mathfrak p$. So the product converges absolutely, and $E_\varphi$ is
+holomorphic on $\Rea s>0$. The polynomial $P_S$ is entire. For $\Rea s>1$, comparing Euler
+products gives
+\begin{equation}\label{eq:weighted-euler}
+ \sum_{(\mathfrak n,S)=1}\mu(\mathfrak n)\frac{\varphi(\mathfrak n)}{\NK(\mathfrak n)}\NK(\mathfrak n)^{-s}
+ =\prod_{\mathfrak p\notin S}\Bigl(1-\NK(\mathfrak p)^{-s}+\NK(\mathfrak p)^{-1-s}\Bigr)
+ =\frac1{\zeta_K(s)P_S(s)E_\varphi(s)},
+\end{equation}
+where $\zeta_K(s)=\zeta(s)L(s,\chi_{-3})$ (Input~E).
+
+\begin{proposition}\label{prop:mellin}
+Suppose that $A^\varphi(D)\ll_{W,\varepsilon}D^{23/24+\varepsilon}$ for every $\varepsilon>0$ and
+every $W\in C^\infty(\R)$ supported in $[1,2]$ (in the formalization: $W(x)=0$ for $x\le1$ and
+for $x\ge2$, an equivalent condition for continuous $W$). Then $\zeta(s)\ne0$ for
+$\Rea s>23/24$.
+\end{proposition}
+
+\begin{proof}
+For $\Rea s\ge1$ this is classical (Input~E). Suppose that $\zeta(\varrho)=0$ with
+$23/24<\Rea\varrho<1$. Choose $0\ne\phi\in C_c^\infty((1,2))$ with $\phi\ge0$, and put
+$W(y)=y^{-\varrho}\phi(y)$. With the Mellin convention
+$\widehat W(s)=\int_0^\infty W(y)y^s\dd y/y$, we have
+$\widehat W(\varrho)=\int\phi(y)\dd y/y>0$.
+
+The function
+\[
+ \mathcal M^\varphi(s)=\int_0^\infty A^\varphi(D)D^{-s}\frac{\dd D}{D}
+\]
+is holomorphic on $\Rea s>23/24$. The hypothesis controls the integral at infinity, and the
+support of $W$ in $[1,2]$ makes $A^\varphi(D)$ vanish for $D<1/2$, since every $\mathfrak n$
+has $\NK(\mathfrak n)\ge1>2D$. For $\Rea s>2$ the sum and the integral converge absolutely, and
+termwise integration followed by \eqref{eq:weighted-euler} gives
+\[
+ \zeta(s)L(s,\chi_{-3})\,P_S(s)E_\varphi(s)\,\mathcal M^\varphi(s)=\widehat W(s).
+\]
+Both sides are holomorphic on the connected set $\{\Rea s>23/24\}\setminus\{1\}$. Here
+$L(s,\chi_{-3})$ is entire and $\zeta$ has its only pole at $s=1$. By the identity theorem
+the equation holds on that set. At $s=\varrho$ the left side vanishes and the right side does
+not, a contradiction.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $W$ be supported in $[1,2]$ and $\varepsilon>0$.
+Proposition~\ref{thm:ms}, applied with $2\varepsilon$, and Proposition~\ref{prop:extraction}
+give $A^\varphi(D)\ll_{W,\varepsilon}D^{23/24+\varepsilon}$. Proposition~\ref{prop:mellin}
+concludes.
+\end{proof}
+

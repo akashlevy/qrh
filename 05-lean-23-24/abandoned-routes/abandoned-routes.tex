@@ -1,0 +1,372 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx,enumitem}
+\usepackage[expansion=false]{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\setlist{itemsep=2pt,topsep=3pt}
+\makeatletter
+\g@addto@macro\UrlBreaks{\do\_\do\.\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
+\setlength{\emergencystretch}{2em}
+\makeatother
+\newcommand{\lean}[1]{\nolinkurl{#1}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\NK}{\mathrm N}
+\newcommand{\OO}{\mathcal O}
+
+\title{What the dead code says:\\ abandoned routes in the Lean proof of the quasi-Riemann hypothesis}
+\author{Notes on the pruning of \texttt{openai/math}, \texttt{lean/OAI/NumberTheory/DirichletL}}
+\date{October 9, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Lean development behind OpenAI's quasi-Riemann hypothesis (zero-free half-plane
+$\Rea s>7/8$ for Dirichlet and Hecke $L$-functions, and the shorter $23/24$ proof) contains about
+$6{,}400$ named declarations, roughly $99{,}000$ source lines, that no Comparator-checked result
+uses. We pruned them. This note reconstructs, from the deleted code alone, what those abandoned
+branches were trying to do and why they were dropped. It then lists the few ideas that look worth
+more compute and the dead ends worth avoiding. Almost all of the deleted material is \emph{finished}
+mathematics: there is no \lean{sorry} anywhere. What it records is a search process: interfaces
+guessed before their inputs existed, theorems re-proved with a different quantifier order, and a
+handful of genuine obstructions.
+\end{abstract}
+
+\section{Method and caveats}
+
+\paragraph{Data.} Reachability was computed inside Lean, through types and proof terms, from the
+results that must survive:
+\begin{itemize}
+\item the 7/8 theorems for $\zeta$, Dirichlet and Hecke $L$-functions;
+\item the new 23/24 theorems for Dirichlet $L$-functions and $\zeta$;
+\item the one module imported from outside the directory.
+\end{itemize}
+A declaration counts as \emph{dead} if it is unreachable; Table~\ref{tab:areas} gives the counts by
+area. Five agents each audited one area. They read the original sources at commit \texttt{fd4aeeb},
+diffed dead modules against their live successors, and searched for hypotheses that nothing ever
+discharges. This note condenses their reports.
+
+\paragraph{Caveats.} The repository has no development history: it was published as a single
+commit. ``Why it was abandoned'' is therefore an inference from three kinds of evidence:
+\begin{itemize}
+\item \emph{the diff between a dead theorem and its live twin}, usually a change of one hypothesis
+or one quantifier;
+\item \emph{hypotheses that nothing constructs}: a structure or Prop that only ever appears as an
+assumption;
+\item \emph{import depth}, used as a proxy for chronology.
+\end{itemize}
+We mark conjectures as such. ``Dead'' means unused by the final theorems, not wrong: every dead
+declaration compiles.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Area (directories) & dead declarations & lines & files removed \\
+\midrule
+Moments (7/8 fourth moments) & 1,480 & 24,235 & 95 \\
+Descent, Inversion, Dictionary (7/8) & 952 & 17,724 & 76 \\
+Theta function, reflection, cusps, Hecke & 1,230 & 16,008 & 49 \\
+Sieves, Gauss sums, mean square & 1,200 & 20,301 & 0 \\
+Detector, energy, Mellin step, extraction & 1,557 & 20,711 & 33 \\
+\midrule
+Total & 6,419 & 98,979 & 253 \\
+\bottomrule
+\end{tabular}
+\caption{Unreachable named declarations by area, and the source lines they span. Files are removed
+when nothing in them survives.}\label{tab:areas}
+\end{table}
+
+\section{Why code died: a taxonomy}
+
+\begin{enumerate}[label=\textbf{(\Alph*)}]
+\item \textbf{Superseded copies; the majority.} A module was cloned, one hypothesis or quantifier
+changed, and the whole chain proved again. Some examples:
+\begin{itemize}
+\item In \lean{Descent/} and \lean{Inversion/}, 39 of 76 deleted modules have a surviving copy
+that shares at least $70\%$ of its lines.
+\item In \lean{Reflection/}, about $2.8$k of $5.2$k dead lines are twins that differ only in where
+an $\exists$\,\lean{degree} sits.
+\item In \lean{Moments/}, the chain for the $\Theta$-rows was rebuilt three times. The last rebuild
+only removed the hypothesis \lean{IsCoprime Q C}, paying instead a constant factor
+$\NK(\mathrm{rad}\,Q)^{2/3}$.
+\end{itemize}
+\item \textbf{Conditional chains whose hypothesis was never discharged.}
+\begin{itemize}
+\item \lean{FixedTestPrimeMS}: the prime-row extraction of the 11/12 paper. It needs many prime
+ideals in a norm window.
+\item \lean{CanonicalLowerMoments}: a strong induction over a real parameter, which is not
+well-founded as stated.
+\item A single-cusp reflection hypothesis \lean{hreflect}.
+\item Per-row ramification certificates.
+\item A Mertens-type prefix bound.
+\end{itemize}
+In every case the live proof won by \emph{eliminating} the hypothesis, not by proving it.
+\item \textbf{Unneeded strength.}
+\begin{itemize}
+\item Contour estimates uniform in every parameter, where the paper says only the power margins
+need to be uniform.
+\item A full spectral theory of the Laplacian: self-adjointness, global meromorphy, a
+finite-dimensional theta space.
+\item Uniformity over a parametric family of test functions, where explicit seminorm products were
+needed.
+\end{itemize}
+\item \textbf{Genuine mathematical dead ends.} These are few, and are listed in
+Section~\ref{sec:deadends}.
+\item \textbf{Live by replacement.} Upstream's own unconditional 23/24 assembly is dead only
+because the new paper-numbered top level re-proves it from the same lemmas. It was never abandoned.
+\end{enumerate}
+
+\section{Findings by area}
+
+\subsection{The cubic theta function and its reflection}
+Paper~2 (the 11/12 paper) reduces the reflection at a cusp $a/c$ to three standard cusps. It does
+so by asserting, without proof, that Kubota's $\theta$ is invariant under $\mathrm{SL}_2(\mathbb
+Z)$. The dead code shows the formalizers meeting exactly this point.
+\begin{itemize}
+\item \textbf{The early chain could not get past the principal cusp.} It used only the Kubota group
+$\Gamma(3)$ (\lean{levelThree}) and stopped there: the arithmetic structure requires $3\mid c_0$.
+The Weyl-type cusps ($(c,\lambda)=1$) need the $\mathrm{SL}_2(\mathbb Z)$-invariance.
+\item \textbf{The workaround was to average.} The live proof averages $\theta$ over the 24 cosets of
+$\Gamma(3)$ in $\Gamma(3)\mathrm{SL}_2(\mathbb Z)$. The average is automorphic by construction, and
+its Fourier coefficients are an explicit mixture $\tfrac14(\theta_h+3\theta^{\rm opp}_h)$ of the
+expansions at $\infty$ and at the opposite cusp.
+\item \textbf{The invariance itself is never stated or proved.} No dead or live declaration asserts
+it, so the formal proof is correct without it.
+\end{itemize}
+
+Two further routes died:
+\begin{itemize}
+\item \textbf{The spectral and Green-identity routes to the residue.} The Green route stalled before
+any Maass--Selberg relation on a truncated fundamental domain. The live residue comes from a
+Fredholm pencil with an explicit Laurent split at $s=4/3$; only that local interface is used.
+\item \textbf{An Euler-factor recurrence for $\tau(hp^3)=|p|\tau(h)$.} It solves to $A+Bq^k$, which
+leaves one constant free, so it cannot prove the relation. The live proof shows instead that the
+difference is a decaying $8/9$-eigenfunction orthogonal to the residue, hence zero.
+\end{itemize}
+
+\subsection{The top level of the 23/24 proof: Mellin step and extraction}
+\begin{itemize}
+\item \textbf{Six interfaces for the Mellin step.} The step ``power saving $\Rightarrow$ zero-free
+half-plane'' went through six successive interfaces:
+\begin{enumerate}
+\item an exponentially smoothed rational M\"obius sum;
+\item the same sum over ideals of $\mathbb Z[\omega]$;
+\item sharp-cutoff prefix sums;
+\item compactly supported smooth weights;
+\item the same with the Euler factors at $S$ deleted;
+\item prime rows.
+\end{enumerate}
+Each is a complete reduction to a hypothesis. Each was dropped because the one analytic input ever
+proved, the mean-square bound, controls only smooth, compactly supported sums over ideals prime to
+$S$. The interfaces were written about 120 import levels before that input existed.
+\item \textbf{Paper~2's prime-row extraction was formalized but never closed.} It is conditional on
+\lean{FixedTestPrimeMS}, which asks for $\gg Y^{1-\varepsilon}$ prime ideals of norm about
+$Y=D^{11/60}$, and nothing constructs it. The integer rows $b^6$, with a totient weight, replaced
+it. They give \emph{exactly the same exponent} $11/12+5\vartheta/12$ and need no prime ideal
+theorem.
+\item \textbf{Rational-prime rows are strictly worse.} An earlier variant used rows $r^6$ for
+rational primes $r$. It reaches only $89/90$, because $\NK(r)=r^2$ leaves only $Y^{1/2}$ rows.
+\item \textbf{The prime count needed is now available.} The 7/8 chain's prime ideal count
+(\lean{AnnularPrimeMass}) would discharge \lean{FixedTestPrimeMS}, but that would add fidelity to
+Paper~2, not a better result.
+\end{itemize}
+
+\subsection{Descent, inversion and dictionary (7/8)}
+There is no hidden alternative proof here: all 914 dead declarations are finished. The largest group,
+about $2.7$k lines, is a ladder of re-proofs forced by the shape of the final induction predicate:
+\begin{itemize}
+\item windows must be chosen before the degree;
+\item constants must be uniform in the index types;
+\item the degree must be uniform in the level.
+\end{itemize}
+This is the 7/8 paper's lemma on finite seminorm propagation. It is stated abstractly there, and the
+formalization rediscovered it only when the top-level induction failed.
+
+Other replacements:
+\begin{itemize}
+\item Path-length and real-parameter inductions became induction on an integer rank. The formal
+losses per step are $15\eta$ and $62\eta$, against the paper's $11\eta$ and $40\eta+\tau+\pi$; this
+does not affect the exponent.
+\item Per-source radii and slot lists became data that is constant on each cell.
+\item Sums over one fixed cube became a global source, keeping the cube sum inside the square.
+\item Pools that depend on the tuples became the excluded-prime pool.
+\end{itemize}
+
+No variant implements Paper~2's adaptive cube cutoff $H_c$, and none gives a better exponent.
+
+\subsection{Fourth moments (7/8, \texorpdfstring{\lean{Moments/}}{Moments/})}
+\begin{itemize}
+\item \textbf{The rectangle cancellation needed explicit seminorm constants.} Its constants went
+through four forms of uniformity before reaching explicit seminorm products. The form ``$\exists J,
+\forall W, \exists C$'' cannot feed an induction whose test functions move.
+\item \textbf{A decentered majorant was a dead end.} One chain majorized the rectangle difference by
+$|S(X)|^2+|S(Y)|^2$. That gives up the $\Theta$ cancellation the centered range needs, although it
+is valid for the uncentered range $A\le5M/6$.
+\item \textbf{The descent hypotheses were tuned rather than proved.} The second-transform descent's
+hypotheses on child energies could not be met at the recursive call. The live versions do two
+things:
+\begin{itemize}
+\item restrict to children that actually occur, the ``frozen'' variant, at the cost of a factor
+$(n_2n_3/n_0n_1)^{1/6}$;
+\item pay $1/\NK(\mathrm{seed})$ explicitly in the tail term, the ``seeded'' variant.
+\end{itemize}
+\item \textbf{One paragraph of the 7/8 paper was formalized but is unnecessary.} The 7/8 paper's
+``added row zero'' estimate (sixth powers among the rows) is formalized verbatim. The formal proof
+keeps the zero row punctured, so it never needs it.
+\item \textbf{There is no slack in the exponent bookkeeping.} Dead ledger lemmas certify the paper's
+exponent inequality, and show it is tight at $v=M/4$.
+\end{itemize}
+
+\subsection{Detector, energy and the 7/8 assembly}
+Most of this is the ``before'' version of three changes in the order of choices:
+\begin{itemize}
+\item a hypothesis ``for every slot datum $D$'' became ``for some fine $D$'', as in the 7/8 paper's
+proposition on the order of choices;
+\item constants chosen inside a theorem became an input structure;
+\item a fixed stage loss became a parameter, together with a cap on the level.
+\end{itemize}
+The assembly over every zero of every character was replaced by one over primitive characters only.
+The uniform contour estimates were stronger than the paper requires.
+
+\subsection{Sieves, Gauss sums and the mean square}
+\begin{itemize}
+\item \textbf{One conditional chain.} Version~1 of the initial dual-mean-square density,
+\lean{HasInitialCanonicalDensity}, is assumed but never constructed. It demanded one derivative
+order for all test windows. The descent doubles the window's support radius at every level ($A\mapsto
+2A+11$), so the live version \lean{...AtRadius} lets that order depend on the radius.
+\item \textbf{Two-passage transfers.} The largest cluster, about $7$k lines, is a family of
+monolithic ``first-plus-second Poisson'' transfer inequalities with bespoke budget structures. They
+were superseded by a modular split: the first passage produces an abstract output energy, the second
+passage gives twisted children, and a closing step finishes. \emph{Conjecture:} the monolithic
+outputs could not be fed back into the recursion without re-binning.
+\item \textbf{Quadratic large sieve.} No Goldmakher--Louvel attempt exists. Earlier Heath-Brown-style
+recursions on block norms defined by suprema stopped at a recursive inequality whose block norms
+were never bounded. The live proof bootstraps a single scalar exponent, $\alpha\mapsto2-1/\alpha$.
+\item \textbf{Uniformity again.} The non-uniform versions of Prop.~R and of the transfers each fail
+exactly one uniformity that the descent requires: uniformity in the prime pool, in the height twist,
+or in the window family.
+\item \textbf{Absent from the 7/8 directories too.} There is no band-limited weight $\Phi$, no
+analogue of Paper~2's lemma removing excluded primes, and no descent with a general gap or cube
+cutoff. The numbers $1/20$, $1/1000$ and $3000$ are fixed everywhere.
+\item \textbf{Useful leftovers.}
+\begin{itemize}
+\item Two complete, constant-free descent lemmas: \lean{ShortDraftDescent.integral_geometric_descent}
+and \lean{binary_energy_descent}.
+\item A $\sigma$-general initial invariant, \lean{initial_invariant_power_general}.
+\item The paper-faithful prime-row extraction, whose exponents are linear in $\vartheta$.
+\end{itemize}
+\end{itemize}
+
+\section{Ideas worth more compute}\label{sec:leads}
+Ranked by expected value per unit of effort.
+\begin{enumerate}
+\item \textbf{A 15/16 version of the short proof (cheap; verified prerequisite).}
+\begin{itemize}
+\item The formal mean-square bound
+(\lean{InitialMeanSquare.outside_mean_square_of_canonical_density_at_radius}) holds for every row
+range $D^{1+\sigma}$ with $\sigma>1/20$, and its other input does not depend on $\sigma$. Only the
+extraction and the Mellin step hard-code $\vartheta=1/10$, through the literals
+$11/60, 11/10, 21/10, 137/120, 23/24$.
+\item Making them parametric gives a zero-free half-plane $\Rea s>11/12+5\vartheta/12$ for each
+$\vartheta>1/20$, hence $\Rea s>15/16$ after letting $\vartheta$ tend to $1/20$.
+\item The estimated cost is 100--150 Lean lines in the top-level files.
+\item Reaching $11/12$ itself would further require making the descent's fixed margin $1/20$ a
+parameter (Remark~5.5 of the 23/24 paper).
+\end{itemize}
+\item \textbf{A parameterised descent, towards $11/12$.}
+\begin{itemize}
+\item Rebuild the 23/24 descent on the dead, constant-free
+\lean{ShortDraftDescent.integral_geometric_descent}. Its rank should be
+$\lceil\log K/(c\log Z)\rceil$, with mass $C_rZ^{\varepsilon_r}(XF)^2$.
+\item Seed it with \lean{initial_invariant_power_general}, which already holds for every $\sigma$.
+\item Thread the gap through the few lemmas where $1/20$, $1/40$, $1/1000$ and $3000$ enter.
+\end{itemize}
+Together with item~1, this is the formal route to $11/12$. Its cost has not been measured.
+\item \textbf{Remove the exclusion mask from the descent state (a cheap test).}
+\begin{itemize}
+\item The live descent state carries a mask $m$ that grows down the tree, and its invariant charges
+$\|m\|^2$ against the gap.
+\item A Lean analogue of Paper~2's lemma removing excluded primes,
+\[E_m\le\tau(m)\sum_{d\mid m}E(K,X/\NK d,F\NK d),\]
+starting from the inclusion--exclusion identity
+\lean{ideal_mobius_coprime_reindex}, would remove the mask.
+\item That might shorten the descent. \emph{Unverified.}
+\end{itemize}
+\item \textbf{Close Paper~2's $\mathrm{SL}_2(\mathbb Z)$-invariance gap.}
+\begin{itemize}
+\item Live and dead lemmas together reduce ``$\theta$ equals its average'' to one finite identity
+between two cubic Gauss-sum residues for horizontal $h$:
+\[
+\tfrac{9\sqrt3}{2}\cdot\text{\lean{principalArithmeticResidue}}(h)=\text{\lean{unramifiedGaussResidue}}(9h).
+\]
+The constant terms already agree, and both sides vanish at non-horizontal $h$.
+\item Proving the identity would make the formal $\theta$ literally Kubota's, matching Paper~2
+without averaging.
+\item The ``decaying eigenfunction $\Rightarrow0$'' template already used for $\tau(hp^3)$ is an
+alternative route.
+\item If the identity \emph{fails}, that is itself a finding about Paper~2.
+\end{itemize}
+\item \textbf{Shrink the theta construction}, about 30\% of the 23/24 proof's code.
+\begin{itemize}
+\item The dead code shows that meromorphy, self-adjointness, non-vanishing of the residue and
+finite-dimensionality are all unused.
+\item Package the Fredholm pencil and its Laurent split as one generic ``simple-pole residue''
+lemma, then re-run the reachability audit.
+\end{itemize}
+\item \textbf{Shorten the 7/8 proof.}
+\begin{itemize}
+\item Bundle the roughly 40 repeated hypotheses of the surviving descent ladder: theorem statements
+are 52\% of its 2,191 lines.
+\item Try the short, generic hybrid quadratic--cubic sieve lemmas in place of about 1,150 lines of
+grid machinery.
+\item Use the dead decentered majorant together with \lean{actual_live_slot_removal} for the
+uncentered range $A\le5M/6$.
+\end{itemize}
+\item \textbf{Smaller items.}
+\begin{itemize}
+\item Run a linear-programming slack analysis of the 7/8 exponent constraints, to find which ones
+bind. The known one, at $M/4$, is tight.
+\item Drop the added-zero paragraph from the 7/8 paper.
+\item Upstream the self-contained Mellin criteria to Mathlib.
+\end{itemize}
+\end{enumerate}
+
+\section{Dead ends worth avoiding}\label{sec:deadends}
+\subsection*{Mathematics}
+\begin{itemize}
+\item Reflection with $\Gamma(3)$-automorphy alone: the Weyl-type cusps need $\mathrm{SL}_2(\mathbb
+Z)$. Average first, or prove the invariance first.
+\item Global spectral theory, or Green and Maass--Selberg identities on cusp boxes in hyperbolic
+3-space: a local Laurent split at $s=4/3$ suffices.
+\item Euler-factor recurrences for $\tau(hp^3)$: they leave one constant free.
+\item Cauchy--Schwarz over all $3^{|\varphi|}$ cusp branches: restrict to the surviving branches
+first.
+\item Large-sieve recursions on block norms defined by suprema: the scalar exponent bootstrap
+closes, the block-norm recursion never did.
+\item One monolithic two-Poisson transfer inequality with a bespoke budget: keep the passes modular.
+\item Decentering a rectangle difference before the $\Theta$ cancellation.
+\item Prime rows instead of integer rows: they give the same exponent, and need a prime ideal
+theorem. Rational-prime rows are strictly worse ($89/90$).
+\item Re-tuning the 7/8 exponent ledgers: they close with zero slack.
+\end{itemize}
+\subsection*{Process (for agent-driven formalization)}
+\begin{itemize}
+\item \textbf{Fix the consumer before the producer.} Interfaces written before their inputs existed
+were rewritten six times (the Mellin step). Stage lemmas proved before the induction that consumes
+them were rewritten as well.
+\item \textbf{Settle quantifier order and uniformity first.} Most dead lines are the same theorem
+with $\exists$ and $\forall$ in a different order. Fix the shape of the top-level induction
+predicate first.
+\item \textbf{Check that a hypothesis can be discharged at its call site before building a chain on
+it.} A hypothesis-carrying structure was a warning sign every time.
+\item \textbf{Generalize by adding a parameter, not by copying.} Clones were usually imported by
+their successors, so they were also compiled on every build.
+\item \textbf{Prove only the uniformity the paper needs, and match its representation.} Punctured
+rows made one formalized paragraph of the paper unnecessary.
+\end{itemize}
+
+\end{document}

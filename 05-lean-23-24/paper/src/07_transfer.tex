@@ -1,0 +1,469 @@
+\section{Proof of the transfer proposition}\label{sec:transfer-proof}
+
+We prove Proposition~\ref{prop:transfer} for
+$\mathcal A(W)$ defined in \eqref{eq:smoothed-energy}.
+Throughout this section, $\mathcal H,L,F,\Sigma,\xi$ satisfy the
+hypotheses of that proposition. We retain the fixed weight $\Phi$
+and the support bound $C_\Phi$ chosen before \eqref{eq:smoothed-energy}.
+The enlargement by $\Sigma/(LF)\ge1$ in the intermediate mean square
+makes the second Poisson summation return to \eqref{eq:energy} with
+row range at most $\mathcal HL/(\Sigma F)$.
+Lemma~\ref{lem:smooth-mean-square} separates the weights, and
+Lemma~\ref{lem:remove-exclusions} removes the remaining exclusion.
+
+\subsection{First application of Poisson summation}
+Write $N=\NK$, $I=[u,v]$, and $I_*=[u/2,2v]$.
+All ideal indices below are prime to $S$ and represented by their
+primary generators; a star additionally requires squarefreeness.
+The variables $k,h,y$ range over $\OO$.
+For squarefree $C,t$ with $(C,t)=1$, and for $d\mid C$, put
+\[
+ \ell=\frac{L}{N(C)N(t)},\qquad
+ w_{C,d}=\frac{\mathcal H N(C)}{N(d)L^2F},\qquad
+ Y_{C,d}=c_I\frac{\Sigma LFN(d)}{\mathcal H N(C)^2},
+\]
+where $c_I\ge\max(1,4C_\Phi v^2)$ is fixed. Retain only
+$\ell\ge1/(2v)$. For $U\in C_c^\infty(I_*)$ and a character
+$\xi_1$ of the fixed ray class group, define
+\begin{equation}\label{eq:P}
+ \begin{aligned}
+ p_y(n)&=\mu(n)\xi_1(n)\ind_{(n,t)=1}
+       \overline{\chi_n(y)}\chi_n(C)^4\chi_n(d),\\
+ P_{C,d,t}(y;U)&=\sum_n^*p_y(n)U(N(n)/\ell).
+ \end{aligned}
+\end{equation}
+The notation $p_y$ suppresses its dependence on $C,d,t,\xi_1$.
+The nonnegative form required in the second Poisson calculation is
+\begin{equation}\label{eq:first-transfer-forms}
+ \mathcal Q_{\xi_1}(U)=
+ \sum_{\substack{C,t\text{ squarefree}\\(Ct,S)=1, (C,t)=1\\
+                  N(C)N(t)\le2vL}}
+ \sum_{d\mid C}w_{C,d}
+\sum_y\Phi(N(y)/Y_{C,d})|P_{C,d,t}(y;U)|^2.
+\end{equation}
+The outer domain has no additional restriction coming from the support of $\widehat\Phi$. Here $Y_{C,d}>0$ may be smaller than $1$; the outer
+sums are finite, and the $y$-sum converges absolutely.
+
+\begin{lemma}\label{lem:first-transfer}
+Under the hypotheses of Proposition~\ref{prop:transfer}, fix an integer
+$j\ge0$ and $\varepsilon_0>0$. If $M\ge0$ satisfies
+$\mathcal Q_{\xi_1}(U)\le M\|U\|_{C^j(I_*)}^2$
+for every $U\in C_c^\infty(I_*)$ and every $\xi_1$, then
+\[
+ \mathcal A(W)\ll D^{\varepsilon_0}(\Sigma+M)
+                    \|W\|_{C^{2j+4}(I)}^2.
+\]
+\end{lemma}
+\begin{proof}
+Expand the square defining $\mathcal A(W)$, and write
+$n_i=Cu_i$, where $C=(n_1,n_2)$ and
+$(u_1,u_2)=(u_1u_2,C)=1$. The row character is
+$\chi_{u_1}\overline{\chi_{u_2}}$, primitive modulo $u_1u_2$,
+with the extra restriction $(k,C)=1$.
+Lemma~\ref{lem:poisson} introduces $d\mid C$ and a frequency $h$.
+Let $Z$ denote the zero-frequency contribution. It requires $u_1=u_2=1$, so
+\[
+ |Z|\ll\frac{\mathcal H}{LF}
+       \sum_{F\le N(f)<2F}^*\sum_C^*|W(N(C)/L)|^2
+ \ll_I\mathcal H\|W\|_\infty^2.
+\]
+For the other frequencies, the Chinese remainder theorem,
+\eqref{eq:convert1}, and \eqref{eq:quotient} give the paired identity
+\begin{equation}\label{eq:paired-first-gauss}
+ a_\xi(u_1)\overline{a_\xi(u_2)}
+ \gamma(\chi_{u_1}\overline{\chi_{u_2}})
+ =\mu(u_1)\mu(u_2)(\xi G)(u_1u_2^{-1}).
+\end{equation}
+Expand $(\xi G)(z)=\sum_{\xi_1}\ell_{\xi_1}\xi_1(z)$ on the
+fixed ray class group. Insert
+$\ind_{(u_1,u_2)=1}=\sum_{t\mid u_1,\ t\mid u_2}\mu(t)$ and put
+$u_i=tx_i$. The inverse is $x_i=u_i/t$; squarefreeness imposes
+$(x_i,t)=1$, but no condition $(x_1,x_2)=1$ remains.
+The factors at $C,t$ cancel against their conjugates, leaving
+$\mu(d)\mu(t)$ and the restrictions $(f,Ct)=(h,t)=1$.
+Thus
+\[
+ \begin{aligned}
+ &\mathcal A(W)-Z
+ =\sum_{\xi_1}\ell_{\xi_1}
+ \sum_{\substack{C,t\text{ squarefree}\\(Ct,S)=1, (C,t)=1\\
+                  N(C)N(t)\le2vL}}
+ \sum_{d\mid C}\mu(d)\mu(t)w_{C,d}\\
+ &\quad\times\sum_{\substack{F\le N(f)<2F\\(f,Ct)=1}}^*
+ \sum_{\substack{h\ne0, (h,t)=1\\
+         N(h)\le C_\Phi v^2L^2N(d)/(\mathcal H N(C)^2)}} \sum_{x_1,x_2}^*
+ p_{hf^2}(x_1)\overline{p_{hf^2}(x_2)}
+ \mathscr K_h(N(x_1)/\ell,N(x_2)/\ell),
+ \end{aligned}
+\]
+where, for each integer $j_0\ge0$,
+\[
+ \begin{aligned}
+ \mathscr K_h(z_1,z_2)
+ &=(z_1z_2)^{-1/2}W(z_1)\overline{W(z_2)}
+ \widehat\Phi\!\Bigl(
+  \frac{\mathcal H N(h)N(C)^2}{L^2N(d)z_1z_2}\Bigr),\\
+ \sup_{C,d,h}\|\mathscr K_h\|_{C^{j_0}(I^2)}
+ &\ll_{I,\Phi,j_0}\|W\|_{C^{j_0}(I)}^2.
+ \end{aligned}
+\]
+Here $\chi_{x_i}(C)^4$ supplies $(x_i,C)=1$; the other original
+zeros are supplied by $p_{hf^2}(x_i)$. The displayed frequency
+range follows from the support of $\widehat\Phi$.
+
+For fixed $C,d,t$, the map $(f,h)\mapsto y=hf^2$ has
+divisor-bounded multiplicity in $y$. Since $\Sigma/(LF)\ge1$, its
+nonzero image satisfies
+$N(y)\le4C_\Phi v^2L^2F^2N(d)/(\mathcal H N(C)^2)\le Y_{C,d}$.
+Since $\Phi\ge1$ on $[0,1]$ and is nonnegative,
+\[
+ \sum_{C,t}\sum_{d\mid C}w_{C,d}\sum_{f,h}|P_{C,d,t}(hf^2;U)|^2
+ \precbd\mathcal Q_{\xi_1}(U)
+ \le M\|U\|_{C^j(I_*)}^2,
+\]
+with the preceding ranges on the left. Apply
+Lemma~\ref{lem:smooth-mean-square} to the full displayed expression
+for $\mathcal A(W)-Z$. The kernel bound gives
+\[
+ |\mathcal A(W)-Z|
+ \ll D^{\varepsilon_0/2}M\|W\|_{C^{2j+4}(I)}^2.
+\]
+Together with $\mathcal H\le\Sigma$, this proves the result after
+allocating the divisor losses within $\varepsilon_0$.
+\end{proof}
+
+\subsection{Second application of Poisson summation}
+
+Let $C,t$ be coprime squarefree primary elements prime to $S$, and let
+$d\mid C$. Fix a character $\xi_1$ of the ray class group.
+For arbitrary scales $\ell,Y>0$ and
+$U\in C_c^\infty(I_*)$, with
+$I_*=[a,b]\subset(0,\infty)$, put
+\begin{equation}\label{eq:common-mobius-sum}
+ \begin{aligned}
+ P(y)&=\sum_{(n,S)=1}^*\mu(n)\xi_1(n)\ind_{(n,t)=1}
+ \overline{\chi_n(y)}\chi_n(C)^4\chi_n(d)U(N(n)/\ell),\\
+ \mathcal M&=\sum_{y\in\OO}\Phi(N(y)/Y)|P(y)|^2.
+ \end{aligned}
+\end{equation}
+Here $P(y)$ abbreviates $P_{C,d,t}(y;U)$ from \eqref{eq:P}, with the scale $\ell$ now arbitrary.
+
+The second Poisson summation turns the M\"obius coefficients back into
+cubic Gauss-sum coefficients. To state the identity, put
+$U_0(x)=x^{-1/2}U(x)$ and expand
+\[
+ \xi_1(z)G(z^{-1})=\sum_{\xi'}c_{\xi'}\xi'(z)
+\]
+on the fixed ray class group.
+
+On the transformed side, $g$ is the common divisor of the original
+columns, $e\mid g$ comes from the row exclusion, and $w$ removes the
+remaining coprimality condition. The index $h$ is the nonzero Fourier
+frequency. Let $g,w$ range over squarefree primary elements prime to $S$,
+$e$ over divisors of $g$, and $h$ over $\OO\setminus\{0\}$, subject to
+\[
+ (g,Ct)=(w,gCth)=1,\qquad
+ N(gw)\le b\ell,\qquad
+ N(h)\le\frac{C_\Phi b^2\ell^2N(e)}{YN(g)^2}.
+\]
+These conditions ensure that $tg/e$ and $Cew$ are coprime and squarefree.
+For each such choice and each character $\xi'$, the new column scale,
+coefficient, and coupled smooth weight are
+\begin{equation}\label{eq:common-poisson-output}
+ \begin{gathered}
+ X'=\frac{\ell}{N(gw)},\\
+ a^\sharp(n)=a_{\xi'}(n)\ind_{(n,tg/e)=1}
+                   \chi_n(deh)\chi_n(Cew)^4,\\
+ \mathscr K(x_1,x_2)=U_0(x_1)\overline{U_0(x_2)}
+               \widehat\Phi\!\Bigl(\frac{YN(h)N(g)^2}{N(e)\ell^2x_1x_2}\Bigr).
+ \end{gathered}
+\end{equation}
+Here $\mathscr K$ depends on $U,Y,\ell,g,e,h$. A star on a sum over
+$n_1,n_2$ restricts each index separately to squarefree primary elements.
+Define also
+\[
+ Z=Y\widehat\Phi(0)
+ \sum_{\substack{(g,Ct)=1\\(g,S)=1}}^*
+ |U(N(g)/\ell)|^2\prod_{p\mid g}\Bigl(1-\frac1{N(p)}\Bigr).
+\]
+
+
+\begin{lemma}[Second Poisson identity]\label{lem:arithmetic-poisson}
+With the notation and index ranges above,
+\begin{equation}\label{eq:arithmetic-poisson-identity}
+ \mathcal M=Z+
+ \sum_{g,e,w,h,\xi'}\frac{Y\mu(e)\mu(w)c_{\xi'}N(g)}{N(e)\ell} \sum_{(n_1n_2,S)=1}^*a^\sharp(n_1)\overline{a^\sharp(n_2)}
+       \mathscr K\!\Bigl(\frac{N(n_1)}{X'},\frac{N(n_2)}{X'}\Bigr).
+\end{equation}
+The zero-frequency term satisfies
+\[
+ |Z|\ll_{I_*,\Phi}Y\ell\|U\|_\infty^2.
+\]
+\end{lemma}
+
+\begin{proof}
+Expand the square, put $g=(n_1,n_2)$ and $n_i=gz_i$. The nonzero terms satisfy
+\[
+ (z_1,z_2)=(z_1z_2,gCt)=(g,Ct)=1,\qquad
+ \overline{\chi_{n_1}(y)}\chi_{n_2}(y)
+ =\ind_{(y,g)=1}\overline{\chi_{z_1}(y)}\chi_{z_2}(y).
+\]
+Apply Lemma~\ref{lem:poisson} to this last character, with exclusion
+$g$ and divisor $e\mid g$. Its zero frequency occurs exactly when
+$z_1=z_2=1$ and gives the displayed $Z$; counting $g$ gives its bound.
+For the nonzero frequencies, \eqref{eq:convert2}--\eqref{eq:quotient}
+and the Chinese remainder theorem give
+\[
+ \mu(z_1)\mu(z_2)\xi_1(z_1)\overline{\xi_1(z_2)}
+ \gamma(\overline{\chi_{z_1}}\chi_{z_2}) =\sum_{\xi'}c_{\xi'}a_{\xi'}(z_1)\overline{a_{\xi'}(z_2)}.
+\]
+Use also
+\[
+ \begin{aligned}
+ \chi_z(dh)\overline{\chi_z(e)}\chi_z(C)^4
+ &=\chi_z(deh)\chi_z(Ce)^4,\\
+ \frac{U(N(gz_1)/\ell)\overline{U(N(gz_2)/\ell)}}
+      {\sqrt{N(z_1)N(z_2)}}
+ &=\frac{N(g)}\ell U_0(N(gz_1)/\ell)\overline{U_0(N(gz_2)/\ell)}.
+ \end{aligned}
+\]
+Thus the full nonzero contribution is
+\[
+ \begin{aligned}
+ \mathcal M-Z={}&\sum_{\xi'}c_{\xi'}
+ \sum_{\substack{g\\(g,Ct)=1}}^*\sum_{e\mid g}
+ \frac{Y\mu(e)N(g)}{N(e)\ell}\sum_{h\ne0}\\
+ &\quad\times\sum_{\substack{z_1,z_2\\(z_1,z_2)=1\\(z_1z_2,gCt)=1}}^*
+ a_{\xi'}(z_1)\overline{a_{\xi'}(z_2)} \chi_{z_1}(deh)\overline{\chi_{z_2}(deh)}
+ \chi_{z_1}(Ce)^4\overline{\chi_{z_2}(Ce)^4}\\
+ &\quad\times
+ U_0\!\Bigl(\frac{N(gz_1)}\ell\Bigr)
+ \overline{U_0\!\Bigl(\frac{N(gz_2)}\ell\Bigr)}
+ \widehat\Phi\!\Bigl(\frac{YN(h)}{N(e)N(z_1)N(z_2)}\Bigr).
+ \end{aligned}
+\]
+All starred ideal indices are prime to $S$. Insert
+\[
+ \ind_{(z_1,z_2)=1}=\sum_{w\mid z_1,\ w\mid z_2}\mu(w),
+ \qquad z_i=wn_i.
+\]
+Here $(w,gCt)=1$. Equation~\eqref{eq:crt-a} and the zero-extended characters give
+\[
+ \begin{gathered}
+ a_{\xi'}(wn)=a_{\xi'}(w)a_{\xi'}(n)\chi_n(w)^4
+       \quad((w,n)=1),\\
+ |a_{\xi'}(w)\chi_w(deh)\chi_w(Ce)^4|^2=\ind_{(w,h)=1},\\
+ \ind_{(n,gCtw)=1}\chi_n(deh)\chi_n(Cew)^4
+ =\ind_{(n,tg/e)=1}\chi_n(deh)\chi_n(Cew)^4.
+ \end{gathered}
+\]
+Consequently the preceding full sum becomes
+\[
+ \begin{aligned}
+ &\mathcal M-Z=\sum_{\xi'}c_{\xi'}
+ \sum_{\substack{g,w\\(g,Ct)=(w,gCt)=1}}^*
+ \sum_{e\mid g}\frac{Y\mu(e)\mu(w)N(g)}{N(e)\ell}
+ \sum_{\substack{h\ne0\\(h,w)=1}}\\
+ &\quad\times\sum_{(n_1n_2,S)=1}^*a^\sharp(n_1)\overline{a^\sharp(n_2)}
+ U_0\!\Bigl(\frac{N(gwn_1)}\ell\Bigr)
+ \overline{U_0\!\Bigl(\frac{N(gwn_2)}\ell\Bigr)} \widehat\Phi\!\Bigl(
+   \frac{YN(h)}{N(e)N(w)^2N(n_1)N(n_2)}\Bigr).
+ \end{aligned}
+\]
+There is no remaining condition $(n_1,n_2)=1$. The column support gives
+$N(gw)\le b\ell$ and $N(z_1z_2)\le b^2\ell^2/N(g)^2$;
+the support of $\widehat\Phi$ therefore imposes the stated bound on
+$N(h)$. Substituting \eqref{eq:common-poisson-output} gives
+\eqref{eq:arithmetic-poisson-identity}, with only finitely many terms.
+\end{proof}
+
+\begin{lemma}\label{lem:second-transfer}
+Return to $I=[u,v]$ and $I_*=[u/2,2v]$. For an integer $m\ge0$,
+let $S_m$ be the supremum in \eqref{eq:transfer-summary}.
+Then, for every $\varepsilon_0>0$,
+\[
+ \mathcal Q_{\xi_1}(U)\ll D^{\varepsilon_0}\Sigma(1+S_m)
+       \|U\|_{C^{2m+4}(I_*)}^2
+ \qquad(U\in C_c^\infty(I_*)).
+\]
+The test functions in $S_m$ are supported in $I'=[u/16,4v]$ and have $C^m(I')$ norm at most one; an empty supremum is zero.
+\end{lemma}
+\begin{proof}
+Write $N=\NK$.
+Apply Lemma~\ref{lem:arithmetic-poisson} with input length $\ell$,
+row scale $Y_{C,d}$, and the same $C,d,t$, using the character $\xi_1$.
+Here $h$ is the new Fourier variable for the sum over $y$.
+Its nonzero output has squarefree $g,w$, $e\mid g$, and
+\[
+ (g,Ct)=(w,gCth)=1,\qquad
+ r=tg/e,\quad f'=Cew,\quad k'=deh.
+\]
+Thus $r,f'$ are coprime and squarefree, and the coefficient $a^\sharp$ from \eqref{eq:common-poisson-output} becomes
+\[
+ a^\sharp(n)
+ =a_{\xi'}(n)\ind_{(n,r)=1}\chi_n(k')\chi_n(f')^4.
+\]
+Write $X'_0$ for the individual column scale $X'$ in
+\eqref{eq:common-poisson-output}; below, $X'$ will denote a common
+dyadic scale. The length, coefficient, and Fourier parameter simplify to
+\[
+ \begin{aligned}
+ X'_0&=\frac{\ell}{N(g)N(w)}=\frac L{N(r)N(f')},\\
+ w_{C,d}\frac{Y_{C,d}N(g)}{N(e)\ell}
+ &=\frac{c_I\Sigma N(r)}{L^2},\\
+ \frac{Y_{C,d}N(h)N(g)^2}{N(e)\ell^2}
+ &=\frac{c_I\Sigma F N(k')N(r)^2}{\mathcal H L}.
+ \end{aligned}
+\]
+Put $U_0(x)=x^{-1/2}U(x)$. The coupled kernel is therefore
+\[
+ \mathscr K_{r,f',k'}(x_1,x_2)
+ =U_0(x_1)\overline{U_0(x_2)}
+       \widehat\Phi\!\Bigl(\frac{c_I\Sigma F N(k')N(r)^2}{\mathcal H Lx_1x_2}\Bigr),
+\]
+with both columns evaluated at $x_j=N(n_j)/X'_0$.
+In particular its nonzero support requires
+\[
+ N(r)N(f')\le 2vL,\qquad
+ 0<N(k')\le\frac{4C_\Phi v^2}{c_I}
+              \frac{\mathcal H L}{\Sigma F N(r)^2}
+          \le\frac{\mathcal H L}{\Sigma F N(r)^2},
+\]
+since $C_\Phi(2v)^2/c_I\le1$.
+
+For fixed $r,f',k'$, all preimages are obtained by choosing
+\[
+ t\mid r,\qquad f'=Cew,\qquad e\mid k',\qquad
+ (w,k')=1,\qquad d\mid(C,k'),
+\]
+and setting $g=e(r/t)$, $h=k'/(de)$.
+The factorization $f'=Cew$ is disjoint and squarefree.
+All these preimages have the same kernel: $Ctgw=rf'$, and the
+Fourier parameter displayed above depends only on $r,k'$.
+Thus the support restrictions discard only zero kernels.
+The choices $t\mid r$ contribute $\tau_{\mathrm{div}}(r)$.
+At a prime $p\mid f'$, the choices $p\mid C$, $p\mid e$, and
+$p\mid w$, respectively, contribute
+\[
+ \bigl(1+\ind_{p\mid k'}\bigr)
+       -\ind_{p\mid k'}-\ind_{p\nmid k'}=\ind_{p\mid k'}
+\]
+to the sum of $\mu(e)\mu(w)$ over the preimages; the two choices
+inside the first term are $p\nmid d$ and $p\mid d$.
+Let $\mathcal Z$ be the total zero-frequency contribution: the sum of the terms $Z$ from Lemma~\ref{lem:arithmetic-poisson}, with the outer weights $w_{C,d}$ and ranges in \eqref{eq:first-transfer-forms}.
+Consequently, regrouping before taking absolute values gives
+\[
+ \begin{aligned}
+ \mathcal Q_{\xi_1}(U)-\mathcal Z
+ ={}&\frac{c_I\Sigma}{L^2}
+ \sum_{\xi'}c_{\xi'}
+ \sum_{\substack{r,f'\ \mathrm{squarefree}\\(r,f')=1}}
+ N(r)\tau_{\mathrm{div}}(r)\sum_{\substack{k'\ne0\\f'\mid k'}}\\
+ &\quad\times
+ \sum_{n_1,n_2}^*a^\sharp(n_1)\overline{a^\sharp(n_2)}
+ \mathscr K_{r,f',k'}\!\Bigl(\frac{N(n_1)}{X'_0},
+                            \frac{N(n_2)}{X'_0}\Bigr).
+ \end{aligned}
+\]
+
+Fix $R\le N(r)<2R$, $F'\le N(f')<2F'$ dyadically, and put
+\[
+ X'=\frac L{RF'},\qquad \Sigma'=X'F'=\frac LR,\qquad
+ \mathcal H'=\frac{\mathcal H L}{\Sigma F R^2}.
+\]
+Retain only those $r$ for which a nonzero term occurs in these ranges.
+Since $f'\mid k'$, each such $r$ satisfies
+\[
+ F'\le N(f')\le N(k')\le
+ \frac{\mathcal H L}{\Sigma F N(r)^2}.
+\]
+In particular $\mathcal H'\ge1$. For every $j\mid r$, using $\mathcal H\le\Sigma$, we also have
+\begin{equation}\label{eq:child-column-lower-bound}
+ \frac{X'}{N(j)}
+ \ge\frac{\Sigma F N(r)^2}{\mathcal H R N(j)}
+ \ge\frac{F\Sigma}{\mathcal H}\ge1.
+\end{equation}
+Moreover $1\le X'/X'_0<4$. The rescaled kernels
+\[
+ \mathcal K_{r,f',k'}(x_1,x_2)
+ =\mathscr K_{r,f',k'}\!\Bigl(\frac{X'}{X'_0}x_1,
+                              \frac{X'}{X'_0}x_2\Bigr)
+\]
+have support in $[u/8,2v]^2\subset\operatorname{int}(I'^2)$ and satisfy
+\[
+ \sup_{r,f',k'}\|\mathcal K_{r,f',k'}\|_{C^{2m+4}(I'^2)}
+ \ll_{I_*,m,\Phi}\|U\|_{C^{2m+4}(I_*)}^2,
+\]
+where the supremum is over the retained indices in the dyadic block.
+This follows from the Schwartz bounds for $\widehat\Phi$.
+The common parameters satisfy exactly
+\[
+ \frac{\mathcal H'}{\Sigma'}=
+ \frac{\mathcal H}{\Sigma FR}\le\frac{\mathcal H}{\Sigma},\qquad
+ \Sigma'\le L,\qquad
+ \mathcal H'\le\frac{\mathcal H L}{\Sigma F}.
+\]
+
+Fix $\delta>0$, to be chosen in terms of $\varepsilon_0$ at the end.
+For each retained $r$, enlarge the $f',k'$ ranges by positivity,
+keeping this set of $r$ fixed. Lemma~\ref{lem:remove-exclusions}
+then gives, for $V\in C_c^\infty(I')$,
+\[
+ \begin{aligned}
+ \sum_{F'\le N(f')<2F'}^*\sum_{0<N(k')\le\mathcal H'}
+ \Bigl|\sum_n^*a^\sharp(n)V(N(n)/X')\Bigr|^2
+ &=\Sigma'\E_{(r)}(\mathcal H',X',F';\xi',V)\\
+ &\ll_\delta D^\delta(\Sigma')^2S_m
+                  \|V\|_{C^m(I')}^2.
+ \end{aligned}
+\]
+Indeed exclusion removal replaces $(X',F')$ by
+$(X'/N(j),F'N(j))$, $j\mid r$, preserving $\mathcal H'$ and $\Sigma'$.
+Equation~\eqref{eq:child-column-lower-bound} gives $X'/N(j)\ge1$,
+and $F'N(j)\ge1$ as well. Thus every resulting mean square lies in
+the defining supremum.
+
+There are $O(R)$ ideals $r$ in the dyadic range.
+Apply Lemma~\ref{lem:smooth-mean-square} with row index
+$(r,f',k')$, the preceding mean-square bound, and the uniform kernel bound.
+The absolute contribution of this dyadic block is at most
+\[
+ D^{2\delta}\frac{\Sigma R}{L^2}\,
+ R(\Sigma')^2S_m\|U\|_{C^{2m+4}(I_*)}^2
+ =D^{2\delta}\Sigma S_m\|U\|_{C^{2m+4}(I_*)}^2,
+\]
+because $(\Sigma R/L^2)R(L/R)^2=\Sigma$.
+
+Finally, the zero-frequency bound in Lemma~\ref{lem:arithmetic-poisson} gives
+\[
+ \begin{aligned}
+ |\mathcal Z|
+ &\ll_{I_*,\Phi}\|U\|_\infty^2
+     \sum_{N(Ct)\le 2vL}\sum_{d\mid C}w_{C,d}Y_{C,d}\ell\\
+ &\ll_{I_*}\Sigma\|U\|_\infty^2
+     \sum_C\frac{\tau_{\mathrm{div}}(C)}{N(C)^2}
+     \sum_{N(t)\le 2vL}\frac1{N(t)}
+ \ll_{I_*,\delta}D^\delta\Sigma\|U\|_\infty^2.
+ \end{aligned}
+\]
+This uses only $Y_{C,d}>0$, not $Y_{C,d}\ge1$.
+Sum the $O_{I_*,C_0}((\log(2D))^2)$ dyadic blocks and the fixed
+finite character set, and take $\delta=\varepsilon_0/4$.
+The stated bound follows, with implied constant depending only on
+$I_*,m,C_0,\varepsilon_0$, the fixed cutoffs and arithmetic data.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:transfer}]
+Use $S_m$ as in Lemma~\ref{lem:second-transfer}, with $m$ as in the proposition.
+Lemma~\ref{lem:second-transfer}, with loss $D^{\varepsilon/4}$,
+supplies the hypothesis of Lemma~\ref{lem:first-transfer} with
+$j=2m+4$ and $M\ll D^{\varepsilon/4}\Sigma(1+S_m)$.
+Applying that lemma with the same loss gives
+\[
+ \mathcal A(W)\ll D^{\varepsilon/2}\Sigma(1+S_m)
+       \|W\|_{C^{4m+12}(I)}^2,
+\]
+which proves \eqref{eq:transfer-summary}.
+\end{proof}
+
+

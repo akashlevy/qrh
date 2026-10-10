@@ -1,0 +1,61 @@
+\section{Correspondence with the formal proof}\label{app:lean}
+
+The Lean development is the library \texttt{QRH} (Lean~4.34.1 with Mathlib). The statement
+checked by Comparator is
+\begin{center}
+\texttt{QRH.riemannZeta\_ne\_zero\_of\_twentyThree\_twentyFourths\_lt\_re :}\\
+\texttt{\ \ (23 / 24 : ℝ) < s.re → riemannZeta s ≠ 0},
+\end{center}
+and \texttt{\#print axioms} reports only \texttt{propext}, \texttt{Classical.choice} and
+\texttt{Quot.sound}. The directory \texttt{QRH/Spine} states the steps of this note as Lean
+theorems in the notation used here: the scale is $D$, and $M\ge bD$ is a cutoff beyond the
+support of $W$. (Inside the inherited library the roles are reversed: there $Z$ is the scale and
+$D\in\mathbb N$ the cutoff.) The main theorem is proved by composing these steps exactly as in
+Section~\ref{sec:reduction}, and Proposition~\ref{thm:ms} is proved as
+Proposition~\ref{prop:poisson-reduction} applied to Proposition~\ref{prop:canonical}. Names below
+are in the namespace \texttt{QRH} unless they start with \texttt{OAI}.
+
+\medskip
+{\small\raggedright
+\begin{tabular}{@{}p{0.34\textwidth}p{0.62\textwidth}@{}}
+\toprule
+This note & Lean\\
+\midrule
+$A_u(D)$, $A^\varphi(D)$ & \texttt{A W D M u}, \texttt{weightedSum W D M} (\texttt{Spine/Setup})\\
+Theorem~\ref{thm:main} & \texttt{riemannZeta\_ne\_zero\_of\_twentyThree\_twentyFourths\_lt\_re}\\
+Proposition~\ref{thm:ms} & \texttt{meanSquare} (\texttt{Spine/MeanSquare})\\
+Proposition~\ref{prop:extraction} & \texttt{saving\_of\_meanSquare} (\texttt{Spine/Extraction})\\
+Proposition~\ref{prop:mellin} & \texttt{riemannZeta\_ne\_zero\_of\_saving} (\texttt{Spine/ZeroFree})\\
+Lemma~\ref{lem:arithmetic} & \texttt{gauss\_jacobi}, \texttt{gauss\_two\_cube}, \texttt{mobius\_absorption}\\
+Lemma~\ref{lem:poisson} & \texttt{poisson\_with\_exclusions}\\
+Proposition~\ref{prop:poisson-reduction} & \texttt{poissonReduction}\\
+Proposition~\ref{prop:canonical} & \texttt{dualBound}, \texttt{descent\_bound}, \texttt{descent\_by\_rank}\\
+Proposition~\ref{prop:R} & \texttt{completed\_mean\_square}\\
+Lemma~\ref{lem:cube-reduction} & \texttt{cube\_inversion}, \texttt{short\_cubes}, \texttt{descent\_step}\\
+Proposition~\ref{prop:transfer} & \texttt{transfer}; Lemma~\ref{lem:arithmetic-poisson}: \texttt{second\_poisson}\\
+Proposition~\ref{lem:reflection} & \texttt{theta\_reflection}, \texttt{thetaModels}\\
+Lemma~\ref{lem:theta-bounds} & \texttt{theta\_cusp\_bounds}\\
+Lemma~\ref{lem:quadratic} (Input~D) & \texttt{quadratic\_large\_sieve}\\
+Input~C, \eqref{eq:intro-theta-coefficients} & \texttt{theta\_automorphy}, \texttt{theta\_coefficients}\\
+$E_\varphi(s)$, $P_S(s)$, \eqref{eq:weighted-euler} & \texttt{OAI.SmoothMobiusCorrection.\allowbreak eulerCorrection}, \texttt{OAI.CompactMellinBridge.\allowbreak finiteEulerFactor}\\
+\bottomrule
+\end{tabular}\par}
+
+\medskip
+\emph{Bookkeeping.} The formal proof of
+Sections~\ref{sec:initialization}--\ref{sec:transfer-proof} follows the same strategy: Poisson
+summation in $u$, completed sums, theta reflection, the quadratic large sieve, cube inversion,
+and the transfer by two Poisson summations. It differs from the text in four points of
+bookkeeping, recorded in Remarks~\ref{rem:formal-dual} and~\ref{rem:formal-descent}:
+\begin{itemize}
+\item test functions are expanded in height twists $\NK(\mathfrak n)^{\mathrm i\theta}$ once and
+for all, rather than controlled by $C^J$-norms;
+\item excluded primes are carried in the dual mean square as a mask, rather than removed by
+Lemma~\ref{lem:remove-exclusions};
+\item rows are weighted by a compactly supported smooth majorant, whose Fourier transform only
+decays rapidly, rather than by a weight with compactly supported Fourier transform;
+\item the descent uses a fixed cube cutoff and an explicit loss budget.
+\end{itemize}
+
+The library contains no \texttt{sorry}, \texttt{axiom}, \texttt{native\_decide} or
+\texttt{implemented\_by}.

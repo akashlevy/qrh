@@ -1,0 +1,19 @@
+The mean-square estimate \eqref{eq:intro-ms} gives a power saving because $A_{b^6}(D)$ is, on average over $b\in\OO$, close to a $\nu$-twisted M\"obius sum. Indeed, the identity $\chi_n(b^6)=\ind_{(b,n)=1}$ shows that averaging $A_{b^6}(D)$ over $\NK(b)\le Y$ against a smooth bump $V$ counts, for each $n$, the $b$ prime to $n$, of which there are about $Y\varphi(n)/\NK(n)$. Poisson summation in $b$ makes this precise:
+\begin{equation}\label{eq:intro-average}
+ \sum_{b\in\OO}V\Bigl(\frac{\NK(b)}{Y}\Bigr)A_{b^6}(D)=Y\widehat V(0)A^\varphi(D)+O_{W,V,\varepsilon}(D^{1+\varepsilon}),
+\end{equation}
+where $\widehat V(0)\ne0$ and
+\[
+ A^\varphi(D)=\sum_{\mathfrak n}\mu(\mathfrak n)\nu(\mathfrak n)\frac{\varphi(\mathfrak n)}{\NK(\mathfrak n)}W(\NK(\mathfrak n)/D),
+ \qquad
+ \frac{\varphi(\mathfrak n)}{\NK(\mathfrak n)}=\prod_{\mathfrak p\mid\mathfrak n}\Bigl(1-\frac1{\NK(\mathfrak p)}\Bigr).
+\]
+Taking $Y=H^{1/6}$, so that the rows $b^6$ have norm at most $H$, and applying Cauchy--Schwarz and \eqref{eq:intro-ms} to the left side gives
+\begin{equation}\label{eq:intro-extraction}
+|A^\varphi(D)|^2
+\ll D^{1+\varepsilon}H^{5/6}+D^{2+2\varepsilon}H^{-1/3}.
+\end{equation}
+With $H=D^{1+\vartheta}$, this gives
+$A^\varphi(D)\ll D^{11/12+5\vartheta/12+\varepsilon}=D^{23/24+\varepsilon}$, the same exponent that the rows $p^6$ give in \cite{OpenAI26b}. The weight $\varphi(\mathfrak n)/\NK(\mathfrak n)$ changes the Dirichlet series of the M\"obius sum only by an Euler product that converges absolutely in $\Rea s>0$, so this saving serves as well as \eqref{eq:power-savings}.
+Therefore it remains to establish \eqref{eq:intro-ms}. A smaller $\vartheta$ would give a better exponent; we take $\vartheta=1/10$ because the formal proof of \eqref{eq:intro-ms} needs $\vartheta>1/20$ (Remark~\ref{rem:formal-descent}).
+

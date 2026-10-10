@@ -1,0 +1,13 @@
+\begin{remark}\label{rem:formal-descent}
+The formal proof runs the same descent with fixed parameters. At $\kappa=1/20$ (the value used in
+Section~\ref{sec:completion}) it removes, at each level, the cubes of norm greater than a fixed
+cutoff $D^{1/1000}$, instead of the adaptive cutoff $H_c$ of \eqref{eq:cube-cutoff}. Each level
+therefore lowers the row norm by a factor of at least $D^{1/1000}$ (in fact $D^{3/1000}$), so the
+rank $\lceil1000\log\mathcal H/\log D\rceil$ drops at each level. Since $\mathcal H\le D^3$ in all
+states, at most $3000$ levels occur, and the induction is on this rank rather than on $j$. The losses
+are tracked additively: each level costs a factor $D^{57\eta}$, and the gap $1/20$ is reduced
+by $\eta$ per level, with $3000\eta\le1/80$, instead of re-quantifying $\varepsilon$ at each
+level. The short cubes then contribute $D^{7\varepsilon-1/40}\Sigma$: the saving $D^{-1/40}$,
+half the gap, absorbs the loss $D^{7\varepsilon}$. Because the margin starts at $1/20$, the
+formal mean square requires $\vartheta>1/20$, which $\vartheta=1/10$ satisfies.
+\end{remark}

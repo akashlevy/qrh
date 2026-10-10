@@ -1,0 +1,9 @@
+Theorem~\ref{thm:main} is a special case of \cite[Theorem~1.1]{OpenAI26b}, which proves that every finite-order Hecke $L$-function over $K$, and hence every Dirichlet $L$-function, has no zeros in the half-plane $\Rea s>11/12$. That theorem is in turn a natural intermediate step toward the stronger zero-free region $\Rea s>7/8$ established in \cite[Theorem~1.1]{OpenAI26}.
+
+This paper is \cite{OpenAI26b} specialized to Dirichlet $L$-functions and to a fixed exponent. Most of the text is taken from \cite{OpenAI26b} unchanged; what concerns only the limit that gives $11/12$, or extraction along prime rows, is removed. There are three changes to the argument. The first and third do not affect the exponent; the second weakens it.
+\begin{enumerate}
+\item We treat only the Hecke characters $\nu=\chi\circ\NK$ of $K$ that come from Dirichlet characters $\chi$. Their $L$-functions factor as $L_K(s,\nu)=L(s,\chi)L(s,\chi\chi_{-3})$, where $\chi_{-3}$ is the nontrivial character modulo $3$, so no continuation of Hecke $L$-functions is needed. The Riemann zeta function is the case $\chi=1$.
+\item We fix the parameter $\vartheta=1/10$ that measures how far the row range of the basic mean square exceeds the column range. The argument of \cite{OpenAI26b} gives the exponent $11/12+5\vartheta/12$ for every $0<\vartheta\le1/10$ and then lets $\vartheta\to0$; our fixed choice gives $23/24$.
+\item We extract the M\"obius sum from the mean square using all rows $u=b^6$, $b\in\OO$, rather than the rows $u=p^6$ with $p$ prime. This avoids the prime ideal theorem. The price is a weight $\varphi(\mathfrak n)/\NK(\mathfrak n)$ in the M\"obius sum, which changes its Dirichlet series only by an Euler product that is holomorphic in $\Rea s>0$.
+\end{enumerate}
+

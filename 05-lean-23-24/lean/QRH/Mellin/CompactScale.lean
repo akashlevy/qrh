@@ -1,0 +1,386 @@
+import QRH.Hecke.FiniteEulerFactors
+namespace OAI
+
+noncomputable section
+
+open scoped BigOperators
+open MulChar AddChar
+open Filter Asymptotics MeasureTheory
+open scoped Topology
+open Real
+open scoped FourierTransform SchwartzMap
+open Finset Complex
+open scoped Classical
+open ActualEisensteinCubic
+open RationalPrimeExtraction ShortDraftLatticeCount
+open EisensteinEmbedding ConcreteTraceCRT
+open scoped LSeries.notation ArithmeticFunction.Moebius
+open Ideal NumberField RingOfIntegers UniqueFactorizationMonoid
+
+namespace CompactScaleBridge
+
+open ConcretePrimeRowBridge ShortDraftHeckeBridge Filter Asymptotics
+
+end CompactScaleBridge
+
+namespace CompactMellinBridge
+
+theorem compact_weight_mellin_convergent
+    (W : ℝ → ℂ) (hW : ContDiff ℝ (↑(⊤ : ℕ∞)) W)
+    (hsupp : ∀ y : ℝ, y ≤ 1 ∨ 2 ≤ y → W y = 0)
+    (s : ℂ) : MellinConvergent W s := by
+  have hlocal : LocallyIntegrableOn W (Set.Ioi (0 : ℝ)) :=
+    hW.continuous.continuousOn.locallyIntegrableOn measurableSet_Ioi
+  have htopzero : W =ᶠ[atTop] (fun _ => 0) := by
+    filter_upwards [eventually_ge_atTop (2 : ℝ)] with y hy
+    exact hsupp y (Or.inr hy)
+  have hbotzero : W =ᶠ[𝓝[>] (0 : ℝ)] (fun _ => 0) := by
+    filter_upwards [Ioo_mem_nhdsGT (by norm_num : (0 : ℝ) < 1)] with y hy
+    exact hsupp y (Or.inl hy.2.le)
+  have htop : W =O[atTop] (fun y : ℝ => y ^ (-(s.re + 1))) :=
+    htopzero.isBigO.trans (isBigO_zero _ _)
+  have hbot : W =O[𝓝[>] (0 : ℝ)] (fun y : ℝ => y ^ (-(s.re - 1))) :=
+    hbotzero.isBigO.trans (isBigO_zero _ _)
+  exact mellinConvergent_of_isBigO_rpow hlocal htop (by linarith)
+    hbot (by linarith)
+
+theorem weighted_term_integrable
+    (a : ℕ → ℂ) (ha0 : a 0 = 0) (W : ℝ → ℂ)
+    (s : ℂ) (hW : MellinConvergent W s) (n : ℕ) :
+    IntegrableOn
+      (fun t : ℝ => (t : ℂ) ^ (s - 1) *
+        (a n * W ((n : ℝ) * t)))
+      (Set.Ioi 0) := by
+  by_cases hn : n = 0
+  · subst n
+    simp [ha0]
+  · have hnpos : (0 : ℝ) < n := by exact_mod_cast Nat.pos_of_ne_zero hn
+    have hscale : MellinConvergent
+        (fun t : ℝ => W ((n : ℝ) * t)) s :=
+      (MellinConvergent.comp_mul_left hnpos).mpr hW
+    have hscaled := hscale.const_smul (a n)
+    simpa only [MellinConvergent, smul_eq_mul, mul_assoc] using hscaled
+
+theorem weighted_sum_continuousOn_pos
+    (a : ℕ → ℂ) (W F : ℝ → ℂ)
+    (hW : ContDiff ℝ (↑(⊤ : ℕ∞)) W)
+    (hsupp : ∀ y : ℝ, 2 ≤ y → W y = 0)
+    (hF : ∀ t : ℝ, 0 < t →
+      HasSum (fun n : ℕ => a n * W ((n : ℝ) * t)) (F t)) :
+    ContinuousOn F (Set.Ioi (0 : ℝ)) := by
+  intro t0 ht0
+  have ht0pos : 0 < t0 := ht0
+  obtain ⟨N, hN⟩ := exists_nat_gt (4 / t0)
+  have hNmul := mul_lt_mul_of_pos_right hN (by positivity : 0 < t0 / 2)
+  have hNtwo : 2 < (N : ℝ) * (t0 / 2) := by
+    have hdiv : (4 / t0) * (t0 / 2) = 2 := by
+      field_simp
+      ring
+    rw [hdiv] at hNmul
+    exact hNmul
+  have hsumEq (u : ℝ) (hu : t0 / 2 ≤ u) :
+      F u = ∑ n ∈ Finset.range N, a n * W ((n : ℝ) * u) := by
+    have hupos : 0 < u := lt_of_lt_of_le (by positivity : 0 < t0 / 2) hu
+    have htail (n : ℕ) (hn : n ∉ Finset.range N) :
+        a n * W ((n : ℝ) * u) = 0 := by
+      have hnNat : N ≤ n := Nat.le_of_not_gt (by simpa using hn)
+      have hnReal : (N : ℝ) ≤ n := by exact_mod_cast hnNat
+      have hnu : 2 ≤ (n : ℝ) * u := by
+        calc
+          2 ≤ (N : ℝ) * (t0 / 2) := hNtwo.le
+          _ ≤ (N : ℝ) * u :=
+            mul_le_mul_of_nonneg_left hu (Nat.cast_nonneg (α := ℝ) N)
+          _ ≤ (n : ℝ) * u :=
+            mul_le_mul_of_nonneg_right hnReal hupos.le
+      simp [hsupp _ hnu]
+    calc
+      F u = ∑' n : ℕ, a n * W ((n : ℝ) * u) := (hF u hupos).tsum_eq.symm
+      _ = ∑ n ∈ Finset.range N, a n * W ((n : ℝ) * u) :=
+        tsum_eq_sum htail
+  have hcontW : Continuous W := hW.continuous
+  have hcontSum : Continuous
+      (fun u : ℝ => ∑ n ∈ Finset.range N, a n * W ((n : ℝ) * u)) := by
+    fun_prop
+  have hevent : F =ᶠ[𝓝 t0]
+      (fun u : ℝ => ∑ n ∈ Finset.range N, a n * W ((n : ℝ) * u)) := by
+    filter_upwards [Ioi_mem_nhds (by linarith : t0 / 2 < t0)] with u hu
+    exact hsumEq u hu.le
+  exact (hcontSum.continuousAt.congr_of_eventuallyEq hevent).continuousWithinAt
+
+theorem weighted_sum_inv_locallyIntegrableOn_pos
+    (a : ℕ → ℂ) (W F : ℝ → ℂ)
+    (hW : ContDiff ℝ (↑(⊤ : ℕ∞)) W)
+    (hsupp : ∀ y : ℝ, 2 ≤ y → W y = 0)
+    (hF : ∀ t : ℝ, 0 < t →
+      HasSum (fun n : ℕ => a n * W ((n : ℝ) * t)) (F t)) :
+    LocallyIntegrableOn (fun D : ℝ => F D⁻¹) (Set.Ioi 0) := by
+  have hcont : ContinuousOn (fun D : ℝ => F D⁻¹) (Set.Ioi 0) := by
+    apply (weighted_sum_continuousOn_pos a W F hW hsupp hF).comp
+      (continuousOn_inv₀.mono (by
+        intro D hD
+        exact ne_of_gt hD))
+    intro D hD
+    exact inv_pos.mpr (show 0 < D from hD)
+  exact hcont.locallyIntegrableOn measurableSet_Ioi
+
+private theorem weighted_norm_scale
+    (a : ℂ) (W : ℝ → ℂ) (s : ℂ)
+    (N t : ℝ) (hN : 0 < N) (ht : 0 < t) :
+    ‖(t : ℂ) ^ (s - 1) * (a * W (N * t))‖ =
+      (‖a‖ / N ^ (s.re - 1)) *
+        ‖(N * t : ℂ) ^ (s - 1) * W (N * t)‖ := by
+  have hNt : 0 < N * t := mul_pos hN ht
+  have hNpow : 0 < N ^ (s.re - 1) := Real.rpow_pos_of_pos hN _
+  rw [norm_mul, norm_mul, norm_mul]
+  rw [← Complex.ofReal_mul]
+  rw [Complex.norm_cpow_eq_rpow_re_of_pos ht,
+    Complex.norm_cpow_eq_rpow_re_of_pos hNt]
+  simp only [Complex.sub_re, Complex.one_re]
+  rw [Real.mul_rpow hN.le ht.le]
+  field_simp
+
+private theorem weighted_norm_integral
+    (a : ℕ → ℂ) (ha0 : a 0 = 0) (W : ℝ → ℂ)
+    (s : ℂ) (n : ℕ) :
+    (∫ t : ℝ in Set.Ioi 0,
+      ‖(t : ℂ) ^ (s - 1) * (a n * W ((n : ℝ) * t))‖) =
+    ‖LSeries.term a s n‖ *
+      (∫ u : ℝ in Set.Ioi 0,
+        ‖(u : ℂ) ^ (s - 1) * W u‖) := by
+  by_cases hn : n = 0
+  · subst n
+    simp [ha0, LSeries.term_zero]
+  · have hN : (0 : ℝ) < n := by exact_mod_cast Nat.pos_of_ne_zero hn
+    let G : ℝ → ℝ := fun u => ‖(u : ℂ) ^ (s - 1) * W u‖
+    have hscale :
+        (∫ t : ℝ in Set.Ioi 0,
+          ‖(t : ℂ) ^ (s - 1) * (a n * W ((n : ℝ) * t))‖) =
+          (‖a n‖ / (n : ℝ) ^ (s.re - 1)) *
+            (∫ t : ℝ in Set.Ioi 0, G ((n : ℝ) * t)) := by
+      rw [← integral_const_mul]
+      apply setIntegral_congr_fun measurableSet_Ioi
+      intro t ht
+      simpa only [G, Complex.ofReal_mul] using
+        weighted_norm_scale (a n) W s n t hN ht
+    rw [hscale, integral_comp_mul_left_Ioi G 0 hN]
+    simp only [mul_zero, smul_eq_mul]
+    have hpow : (n : ℝ) ^ (s.re - 1) * (n : ℝ) =
+        (n : ℝ) ^ s.re := by
+      calc
+        (n : ℝ) ^ (s.re - 1) * (n : ℝ) =
+            (n : ℝ) ^ (s.re - 1) * (n : ℝ) ^ (1 : ℝ) := by
+              rw [Real.rpow_one]
+        _ = (n : ℝ) ^ ((s.re - 1) + 1) :=
+          (Real.rpow_add hN (s.re - 1) 1).symm
+        _ = (n : ℝ) ^ s.re := by congr 1; ring
+    rw [LSeries.norm_term_eq]
+    simp only [ite_eq_right hn, G]
+    have hinv : ((n : ℝ) ^ (s.re - 1))⁻¹ * (n : ℝ)⁻¹ =
+        ((n : ℝ) ^ s.re)⁻¹ := by
+      rw [← mul_inv_rev, mul_comm, hpow]
+    simp only [div_eq_mul_inv]
+    calc
+      ‖a n‖ * ((n : ℝ) ^ (s.re - 1))⁻¹ *
+          ((n : ℝ)⁻¹ *
+            (∫ u : ℝ in Set.Ioi 0, ‖(u : ℂ) ^ (s - 1) * W u‖)) =
+          (‖a n‖ * (((n : ℝ) ^ (s.re - 1))⁻¹ * (n : ℝ)⁻¹)) *
+            (∫ u : ℝ in Set.Ioi 0, ‖(u : ℂ) ^ (s - 1) * W u‖) := by ring
+      _ = (‖a n‖ * ((n : ℝ) ^ s.re)⁻¹) *
+            (∫ u : ℝ in Set.Ioi 0, ‖(u : ℂ) ^ (s - 1) * W u‖) := by rw [hinv]
+
+theorem weighted_terms_fubini
+    (a : ℕ → ℂ) (ha0 : a 0 = 0) (W : ℝ → ℂ)
+    (s : ℂ) (hlsum : LSeriesSummable a s) :
+    Summable (fun n : ℕ =>
+      ∫ t : ℝ in Set.Ioi 0,
+        ‖(t : ℂ) ^ (s - 1) * (a n * W ((n : ℝ) * t))‖) := by
+  let C : ℝ := ∫ u : ℝ in Set.Ioi 0,
+    ‖(u : ℂ) ^ (s - 1) * W u‖
+  have hnorm : Summable (fun n : ℕ => ‖LSeries.term a s n‖) := hlsum.norm
+  have hsum : Summable (fun n : ℕ => ‖LSeries.term a s n‖ * C) :=
+    hnorm.mul_right C
+  exact hsum.congr (fun n => (weighted_norm_integral a ha0 W s n).symm)
+
+noncomputable def finiteEulerFactor
+    {q : ℕ} (χ : DirichletCharacter ℂ q)
+    (S : Finset (Ideal ShortDraftHeckeBridge.O)) (s : ℂ) : ℂ :=
+  ∏ P ∈ S,
+    (1 - χ (Ideal.absNorm P) *
+      ((Ideal.absNorm P : ℂ) ^ (-s)))
+
+theorem finiteEulerFactor_analytic
+    {q : ℕ} (χ : DirichletCharacter ℂ q)
+    (S : Finset (Ideal ShortDraftHeckeBridge.O))
+    (hprime : ∀ P ∈ S, Prime P) (σ : ℝ) :
+    AnalyticOnNhd ℂ (finiteEulerFactor χ S)
+      {s : ℂ | σ < s.re} := by
+  have hE : Differentiable ℂ (finiteEulerFactor χ S) := by
+    unfold finiteEulerFactor
+    apply Differentiable.fun_finsetProd
+    intro P hPS
+    have hN : Ideal.absNorm P ≠ 0 :=
+      Ideal.absNorm_eq_zero_iff.not.mpr (hprime P hPS).1
+    have hNc : (Ideal.absNorm P : ℂ) ≠ 0 := by exact_mod_cast hN
+    have hcpow : Differentiable ℂ
+        (fun s : ℂ => ((Ideal.absNorm P : ℂ) ^ (-s))) :=
+      (differentiable_id.neg).const_cpow (Or.inl hNc)
+    exact (differentiable_const (1 : ℂ)).sub
+      ((differentiable_const (χ (Ideal.absNorm P))).mul hcpow)
+  exact (Complex.analyticOnNhd_iff_differentiableOn
+    (Complex.isOpen_re_gt σ)).2 hE.differentiableOn
+
+theorem zero_free_of_analytic_identity_gt_two
+    (σ : ℝ) (hσ : σ < 2) (G M W : ℂ → ℂ)
+    (hG : AnalyticOnNhd ℂ G {s | σ < s.re})
+    (hM : AnalyticOnNhd ℂ M {s | σ < s.re})
+    (hW : AnalyticOnNhd ℂ W {s | σ < s.re})
+    (heq : ∀ s : ℂ, 2 < s.re → G s * M s = W s)
+    (ρ : ℂ) (hρ : σ < ρ.re) (hWρ : W ρ ≠ 0) : G ρ ≠ 0 := by
+  have hthree : (3 : ℂ) ∈ {s : ℂ | σ < s.re} := by
+    change σ < (3 : ℂ).re
+    norm_num at *
+    linarith
+  have heventual : (fun s : ℂ => G s * M s) =ᶠ[𝓝 (3 : ℂ)] W := by
+    filter_upwards [((Complex.isOpen_re_gt 2).mem_nhds
+      (by norm_num : (3 : ℂ) ∈ {s : ℂ | 2 < s.re}))] with s hs
+    exact heq s hs
+  have hident : Set.EqOn (fun s : ℂ => G s * M s) W
+      {s | σ < s.re} :=
+    (hG.mul hM).eqOn_of_preconnected_of_eventuallyEq hW
+      ((convex_halfSpace_re_gt σ).isPreconnected) hthree heventual
+  intro hGρ
+  have heqρ := hident hρ
+  change G ρ * M ρ = W ρ at heqρ
+  rw [hGρ, zero_mul] at heqρ
+  exact hWρ heqρ.symm
+
+theorem zero_free_of_regularized_identity_gt_two
+    (σ : ℝ) (hσ : σ < 2) (G Lregular M W : ℂ → ℂ)
+    (hLregular : AnalyticOnNhd ℂ Lregular {s | σ < s.re})
+    (hM : AnalyticOnNhd ℂ M {s | σ < s.re})
+    (hW : AnalyticOnNhd ℂ W {s | σ < s.re})
+    (hregular : ∀ s : ℂ, σ < s.re → s ≠ 1 →
+      Lregular s = (s - 1) * G s)
+    (heq : ∀ s : ℂ, 2 < s.re →
+      Lregular s * M s = (s - 1) * W s)
+    (ρ : ℂ) (hρ : σ < ρ.re) (hρone : ρ ≠ 1)
+    (hWρ : W ρ ≠ 0) : G ρ ≠ 0 := by
+  have hWregular : AnalyticOnNhd ℂ
+      (fun s : ℂ => (s - 1) * W s) {s | σ < s.re} :=
+    (analyticOnNhd_id.sub analyticOnNhd_const).mul hW
+  have hWregularρ : (ρ - 1) * W ρ ≠ 0 :=
+    mul_ne_zero (sub_ne_zero.mpr hρone) hWρ
+  have hLregularρ := zero_free_of_analytic_identity_gt_two σ hσ
+    Lregular M (fun s : ℂ => (s - 1) * W s)
+    hLregular hM hWregular heq ρ hρ hWregularρ
+  rw [hregular ρ hρ hρone] at hLregularρ
+  exact (mul_ne_zero_iff.mp hLregularρ).2
+
+theorem pair_zero_free_of_identity_gt_two
+    {q r : ℕ} [NeZero q] [NeZero r]
+    (χ : DirichletCharacter ℂ q) (ψ : DirichletCharacter ℂ r)
+    (hnotboth : χ ≠ 1 ∨ ψ ≠ 1)
+    (σ : ℝ) (hσ : σ < 1) (M W : ℂ → ℂ)
+    (hM : AnalyticOnNhd ℂ M {s : ℂ | σ < s.re})
+    (hW : AnalyticOnNhd ℂ W {s : ℂ | σ < s.re})
+    (heq : ∀ s : ℂ, 2 < s.re →
+      (χ.LFunction s * ψ.LFunction s) * M s = W s)
+    (ρ : ℂ) (hρ : σ < ρ.re) (hρone : ρ ≠ 1)
+    (hWρ : W ρ ≠ 0) :
+    χ.LFunction ρ ≠ 0 ∧ ψ.LFunction ρ ≠ 0 := by
+  let U : Set ℂ := {s : ℂ | σ < s.re}
+  have hopen : IsOpen U := Complex.isOpen_re_gt σ
+  have hσtwo : σ < 2 := by linarith
+  by_cases hχ : χ = 1
+  · have hψ : ψ ≠ 1 := by
+      intro hψ
+      rcases hnotboth with h | h
+      · exact h hχ
+      · exact h hψ
+    subst χ
+    have hLregular₁ : AnalyticOnNhd ℂ
+        (DirichletCharacter.LFunctionTrivChar₁ q) U :=
+      (Complex.analyticOnNhd_iff_differentiableOn hopen).2
+        (DirichletCharacter.differentiable_LFunctionTrivChar₁ q).differentiableOn
+    have hLψ : AnalyticOnNhd ℂ ψ.LFunction U :=
+      (Complex.analyticOnNhd_iff_differentiableOn hopen).2
+        (ψ.differentiable_LFunction hψ).differentiableOn
+    have hLregular : AnalyticOnNhd ℂ
+        (fun s => DirichletCharacter.LFunctionTrivChar₁ q s * ψ.LFunction s) U :=
+      hLregular₁.mul hLψ
+    have hregular : ∀ s : ℂ, σ < s.re → s ≠ 1 →
+        DirichletCharacter.LFunctionTrivChar₁ q s * ψ.LFunction s =
+          (s - 1) * ((1 : DirichletCharacter ℂ q).LFunction s * ψ.LFunction s) := by
+      intro s _ hs
+      simp [DirichletCharacter.LFunctionTrivChar₁,
+        DirichletCharacter.LFunctionTrivChar, Function.update_of_ne hs]
+      ring
+    have heqregular : ∀ s : ℂ, 2 < s.re →
+        (DirichletCharacter.LFunctionTrivChar₁ q s * ψ.LFunction s) * M s =
+          (s - 1) * W s := by
+      intro s hs
+      rw [hregular s (lt_trans hσ (by linarith : 1 < s.re)) (by
+        intro h; subst s; norm_num at hs)]
+      calc
+        (s - 1) * ((1 : DirichletCharacter ℂ q).LFunction s * ψ.LFunction s) * M s =
+            (s - 1) * (((1 : DirichletCharacter ℂ q).LFunction s * ψ.LFunction s) * M s) := by ring
+        _ = (s - 1) * W s := by rw [heq s hs]
+    have hprod := zero_free_of_regularized_identity_gt_two σ hσtwo
+      (fun s => (1 : DirichletCharacter ℂ q).LFunction s * ψ.LFunction s)
+      (fun s => DirichletCharacter.LFunctionTrivChar₁ q s * ψ.LFunction s)
+      M W hLregular hM hW hregular heqregular ρ hρ hρone hWρ
+    exact mul_ne_zero_iff.mp hprod
+  · by_cases hψ : ψ = 1
+    · subst ψ
+      have hLregular₁ : AnalyticOnNhd ℂ
+          (DirichletCharacter.LFunctionTrivChar₁ r) U :=
+        (Complex.analyticOnNhd_iff_differentiableOn hopen).2
+          (DirichletCharacter.differentiable_LFunctionTrivChar₁ r).differentiableOn
+      have hLχ : AnalyticOnNhd ℂ χ.LFunction U :=
+        (Complex.analyticOnNhd_iff_differentiableOn hopen).2
+          (χ.differentiable_LFunction hχ).differentiableOn
+      have hLregular : AnalyticOnNhd ℂ
+          (fun s => χ.LFunction s * DirichletCharacter.LFunctionTrivChar₁ r s) U :=
+        hLχ.mul hLregular₁
+      have hregular : ∀ s : ℂ, σ < s.re → s ≠ 1 →
+          χ.LFunction s * DirichletCharacter.LFunctionTrivChar₁ r s =
+            (s - 1) * (χ.LFunction s *
+              (1 : DirichletCharacter ℂ r).LFunction s) := by
+        intro s _ hs
+        simp [DirichletCharacter.LFunctionTrivChar₁,
+          DirichletCharacter.LFunctionTrivChar, Function.update_of_ne hs]
+        ring
+      have heqregular : ∀ s : ℂ, 2 < s.re →
+          (χ.LFunction s * DirichletCharacter.LFunctionTrivChar₁ r s) * M s =
+            (s - 1) * W s := by
+        intro s hs
+        rw [hregular s (lt_trans hσ (by linarith : 1 < s.re)) (by
+          intro h; subst s; norm_num at hs)]
+        calc
+          (s - 1) * (χ.LFunction s *
+              (1 : DirichletCharacter ℂ r).LFunction s) * M s =
+              (s - 1) * ((χ.LFunction s *
+                (1 : DirichletCharacter ℂ r).LFunction s) * M s) := by ring
+          _ = (s - 1) * W s := by rw [heq s hs]
+      have hprod := zero_free_of_regularized_identity_gt_two σ hσtwo
+        (fun s => χ.LFunction s *
+          (1 : DirichletCharacter ℂ r).LFunction s)
+        (fun s => χ.LFunction s * DirichletCharacter.LFunctionTrivChar₁ r s)
+        M W hLregular hM hW hregular heqregular ρ hρ hρone hWρ
+      exact mul_ne_zero_iff.mp hprod
+    · have hLχ : AnalyticOnNhd ℂ χ.LFunction U :=
+        (Complex.analyticOnNhd_iff_differentiableOn hopen).2
+          (χ.differentiable_LFunction hχ).differentiableOn
+      have hLψ : AnalyticOnNhd ℂ ψ.LFunction U :=
+        (Complex.analyticOnNhd_iff_differentiableOn hopen).2
+          (ψ.differentiable_LFunction hψ).differentiableOn
+      have hprod := zero_free_of_analytic_identity_gt_two σ hσtwo
+        (fun s => χ.LFunction s * ψ.LFunction s) M W
+        (hLχ.mul hLψ) hM hW heq ρ hρ hWρ
+      exact mul_ne_zero_iff.mp hprod
+
+end CompactMellinBridge
+
+end
+
+end OAI

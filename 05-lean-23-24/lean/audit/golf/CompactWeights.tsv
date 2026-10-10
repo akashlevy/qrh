@@ -1,0 +1,16 @@
+OAI.ConcreteCompactWeight.weight_mellin_eq_bump	264	281	18	-	20
+OAI.ConcreteCompactWeight.weightedBump_compact	290	292	3	-	4
+OAI.ConcreteCompactWeight.weight_support	249	251	3	-	14
+OAI.ConcreteCompactWeight.weight_eq_cpow	253	262	10	-	21
+OAI.ConcreteCompactWeight.bump_one	180	184	5	-	33
+OAI.ConcreteCompactWeight.weightedBump_eq_zero_of_nonpos	306	308	3	-	12
+OAI.ConcreteCompactWeight.positiveExtension_eq	225	229	5	-	13
+OAI.ConcreteCompactWeight.positiveExtension_smooth	202	207	6	-	13
+OAI.ConcreteCompactWeight.weightedBump_continuous	286	288	3	-	15
+OAI.ConcreteCompactWeight.weight_smooth	234	247	14	-	9
+OAI.ConcreteCompactWeight.mellin_bump_zero_eq_integral_weightedBump	310	328	19	-	16
+OAI.ConcreteCompactWeight.bump_smooth	174	176	3	-	8
+OAI.ConcreteCompactWeight.bump_support	186	195	10	-	12
+OAI.ConcreteCompactWeight.weightedBump_integral_pos	300	304	5	-	18
+OAI.ConcreteCompactWeight.positiveExtension_pos	209	223	15	-	16
+OAI.ConcreteCompactWeight.weight_mellin_ne_zero	330	332	3	-	15

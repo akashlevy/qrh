@@ -1,0 +1,14 @@
+{
+  "challenge_module": "ComparatorChallenges.QRH",
+  "solution_module": "QRH",
+  "theorem_names": [
+    "QRH.riemannZeta_ne_zero_of_twentyThree_twentyFourths_lt_re"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

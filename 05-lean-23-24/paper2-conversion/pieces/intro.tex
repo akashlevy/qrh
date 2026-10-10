@@ -1,0 +1,48 @@
+\section{Introduction}\label{sec:intro}
+
+The zeros of the Riemann zeta function $\zeta(s)$ \cite{Rie59} are of significant interest, such as for their role in governing the distribution of primes. The \emph{Riemann Hypothesis} predicts that all zeros of $\zeta(s)$ in the critical strip $0 < \Rea s < 1$ satisfy $\Rea s = 1/2$.
+The weaker assertion that there exists
+$\varepsilon>0$ such that $\zeta(s)$ has no zeros in
+$\Rea s>1-\varepsilon$ is called a \emph{quasi-Riemann Hypothesis}
+(e.g., in \cite[\S1]{BG17}, \cite[p.~274]{MS02}, and \cite[\S2]{BR18}).
+
+Let $K=\Q(\sqrt{-3})$. The main result of this paper is the following.
+
+\begin{theorem}\label{thm:main}
+The Riemann zeta function $\zeta(s)$ has no zeros in the half-plane $\Rea s>23/24$.
+\end{theorem}
+
+Section~\ref{sec:reduction} proves the theorem assuming
+Proposition~\ref{thm:ms}, whose proof is completed in
+Section~\ref{sec:completion}.
+
+Theorem~\ref{thm:main} is a special case of \cite[Theorem~1.1]{OpenAI26b}, which proves that every finite-order Hecke $L$-function over $K$, and hence every Dirichlet $L$-function, has no zeros in the half-plane $\Rea s>11/12$. That theorem is in turn a natural intermediate step toward the stronger zero-free region $\Rea s>7/8$ established in \cite[Theorem~1.1]{OpenAI26}. We refer to \cite[\S1]{OpenAI26b} for the consequences of these theorems and for prior work.
+
+This paper is \cite{OpenAI26b} with everything removed that the case of $\zeta$ at a fixed exponent does not need; most of the remaining text is taken from \cite{OpenAI26b} unchanged. There are three changes to the argument. The first and third do not affect the exponent; the second weakens it.
+\begin{enumerate}
+\item We treat only $\zeta$. The Hecke character $\nu$ that twists the M\"obius sums of \cite{OpenAI26b} is then trivial, and the $L$-function that controls these sums is the Dedekind zeta function $\zeta_K(s)=\zeta(s)L(s,\chi_{-3})$ of $K$, so no continuation of Hecke $L$-functions is needed.
+\item We fix the parameter $\vartheta=1/10$ that measures how far the row range of the basic mean square exceeds the column range. The argument of \cite{OpenAI26b} gives the exponent $11/12+5\vartheta/12$ for every $0<\vartheta\le1/10$ and then lets $\vartheta\to0$; our fixed choice gives $23/24$.
+\item We extract the M\"obius sum from the mean square using all rows $u=b^6$, $b\in\OO$, rather than the rows $u=p^6$ with $p$ prime. This avoids the prime ideal theorem. The price is a weight $\varphi(\mathfrak n)/\NK(\mathfrak n)$ in the M\"obius sum, which changes its Dirichlet series only by an Euler product that is holomorphic in $\Rea s>0$.
+\end{enumerate}
+To keep the paper short, we cite the proofs of the arithmetic identities, of the cubic theta transformation with fixed ray class twists, and of the separation of smooth weights from \cite[Appendices~A and~B]{OpenAI26b}, where they are given for general $\nu$; we use them only with $\nu$ trivial.
+
+\subsection{The formalization}\label{sec:formal}
+Theorem~\ref{thm:main} has been formally verified in Lean~4 with Mathlib, using only the
+standard axioms. The formal proof is the module \texttt{OAI.NumberTheory.\allowbreak DirichletL.\allowbreak QRH} of the
+Lean library of \cite{OpenAI26}. It uses the infrastructure of that library, but none of the
+argument specific to \cite{OpenAI26}, and it is organized like this paper:
+\begin{itemize}
+\item every numbered result of Section~\ref{sec:reduction} is a Lean theorem with the same
+statement, and the formal proof of Theorem~\ref{thm:main} is the same three-line composition as
+in Section~\ref{sec:reduction};
+\item the main results of Sections~\ref{sec:initialization}--\ref{sec:transfer-proof} are
+theorems of the formalization, which proves them with somewhat different bookkeeping
+(Remarks~\ref{rem:formal-dual} and~\ref{rem:formal-descent}).
+\end{itemize}
+Appendix~\ref{app:lean} lists the correspondence. The formalization also proves the facts that
+this paper cites: the arithmetic identities of Lemma~\ref{lem:arithmetic}, Patterson's
+coefficients and the transformation law of the cubic theta function (constructed as the residue
+of a cubic metaplectic Eisenstein series), the quadratic large sieve of Lemma~\ref{lem:quadratic},
+and the factorization of $\zeta_K$. Only the analytic facts about $\zeta$ and $L(s,\chi_{-3})$
+come from Mathlib.
+

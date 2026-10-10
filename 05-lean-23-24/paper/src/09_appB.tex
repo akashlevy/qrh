@@ -1,0 +1,171 @@
+\section{Separating variables in smooth weights}\label{app:weights}
+This appendix justifies the separation of smooth weights in the
+completed mean-square estimate of Section~\ref{sec:reflection}, and
+the treatment of kernels depending on the row in the Poisson
+reductions of Sections~\ref{sec:initialization} and~\ref{sec:transfer-proof}.
+
+\subsection{Separating the variables}
+We use Mellin inversion to separate the variables of a smooth
+weight, with coefficient bounds controlled by finitely many derivatives.
+
+\begin{lemma}\label{lem:smooth}
+Fix a box $\mathcal I=I_1\times\cdots\times I_d$, where each $I_j$ is a
+compact interval in $(0,\infty)$. Every $\mathcal K\in C_c^\infty((0,\infty)^d)$
+supported in $\mathcal I$ has a representation
+\begin{equation}\label{eq:smooth-separation}
+ \mathcal K(\mathbf x)=\int_{\mathbb R^d}b(\mathbf t)
+       \prod_{j=1}^d x_j^{\mathrm i t_j}\dd\mathbf t,
+ \qquad x_j>0.
+\end{equation}
+For $J\ge0$ and every even integer $q>J+d$, the coefficient satisfies
+\[
+ \int_{\mathbb R^d}|b(\mathbf t)|(1+|\mathbf t|)^J\dd\mathbf t
+ \ll_{\mathcal I,J,q,d}\|\mathcal K\|_{C^q(\mathcal I)}.
+\]
+\end{lemma}
+\begin{proof}
+Take the Fourier transform in logarithmic coordinates:
+\[
+ b(\mathbf t)=\frac1{(2\pi)^d}\int_{\mathbb R^d}
+ \mathcal K(e^{y_1},\ldots,e^{y_d})
+ e^{-\mathrm i\mathbf t\cdot\mathbf y}\dd\mathbf y.
+\]
+Applying Fourier inversion to this gives \eqref{eq:smooth-separation}. Since the intervals $I_j$ are fixed and bounded away from zero, the $C^q$ norm in logarithmic coordinates is bounded by a constant times
+$\|\mathcal K\|_{C^q(\mathcal I)}$. Applying
+$(1-\Delta_{\mathbf y})^{q/2}$ under the integral therefore gives
+\[
+ |b(\mathbf t)|\ll_{\mathcal I,q,d}
+ (1+|\mathbf t|)^{-q}\|\mathcal K\|_{C^q(\mathcal I)}
+ \qquad(q\ge0\text{ even}).
+\]
+Multiplication by $(1+|\mathbf t|)^J$ and integration proves the
+bound when $q>J+d$. See also the multivariable Mellin formulation
+in \cite[\S10.1, (130)--(131)]{PY19}.
+\end{proof}
+
+In our applications, the weight has the more specific form
+\[
+ \mathcal K_R(\mathbf x)=\prod_{j=1}^dW_j(x_j)
+ F\Bigl(R\prod_{j=1}^d x_j^{a_j}\Bigr),\qquad R>0,
+\]
+where the exponents $a_j$ are fixed real numbers and
+$W_j\in C_c^\infty((0,\infty))$ is supported in $I_j$.
+Assume that $F\in C^\infty((0,\infty))$ satisfies
+\[
+ \|F\|_{A,q}:=\max_{0\le m\le q}\sup_{u>0}
+ (1+u)^A\bigl|(u\partial_u)^mF(u)\bigr|<\infty
+ \qquad(A\ge0,\ q\in\mathbb Z_{\ge0}).
+\]
+On the fixed box $\mathcal I$, the argument of $F$ is comparable
+to $R$. The chain rule and the pointwise bound in the proof give
+coefficients $b_R$ satisfying, for $A\ge0$ and even $q\ge0$,
+\begin{equation}\label{eq:smooth-pointwise}
+ |b_R(\mathbf t)|
+ \ll (1+R)^{-A}(1+|\mathbf t|)^{-q}\|F\|_{A,q}
+       \prod_{j=1}^d\|W_j\|_{C^q(I_j)}.
+\end{equation}
+Consequently, for $J\ge0$ and even $q>J+d$,
+\begin{equation}\label{eq:smooth-weight-bound}
+ \int_{\mathbb R^d}|b_R(\mathbf t)|(1+|\mathbf t|)^J\dd\mathbf t
+ \ll (1+R)^{-A}\|F\|_{A,q}
+       \prod_{j=1}^d\|W_j\|_{C^q(I_j)}.
+\end{equation}
+The constants depend only on $A,J,q,d$, the intervals $I_j$, and
+the exponents $a_j$. Thus separation preserves the decay in $R$,
+and its cost is controlled by finitely many derivatives of the
+original weights.
+
+\subsection{Weights depending on the row}
+The next lemma extends mean-square bounds for a common test
+function to smooth kernels depending on the row, with losses controlled
+by uniform bounds on their derivatives.
+
+Fix compact intervals $I\subset\operatorname{int}I_*$ in $(0,\infty)$
+and an integer $m\ge0$.
+
+\begin{lemma}\label{lem:smooth-mean-square}
+Consider two families of finite sums
+\[
+ S_{j,r}(U)=\sum_n a_{j,r}(n)U(x_{j,r,n}),\qquad
+ j=1,2,\quad x_{j,r,n}>0,
+\]
+with a finite set of rows $r$ and nonnegative weights $w_r$.
+Suppose that, for every $U\in C_c^\infty(I_*)$,
+\[
+ \sum_r w_r|S_{j,r}(U)|^2\le M_j\|U\|_{C^m(I_*)}^2,
+ \qquad j=1,2.
+\]
+Then for any $|c_r|\le w_r$ and smooth kernels $\mathcal K_r$
+supported in $I^2$,
+\begin{equation}\label{eq:coupled-mean-square}
+ \Bigl|\sum_r c_r\sum_{n_1,n_2}
+ a_{1,r}(n_1)\overline{a_{2,r}(n_2)}
+ \mathcal K_r(x_{1,r,n_1},x_{2,r,n_2})\Bigr|
+ \ll_{I,I_*,m}\sqrt{M_1M_2}\,
+       \sup_r\|\mathcal K_r\|_{C^{2m+4}(I^2)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Choose a real $V\in C_c^\infty(I_*)$ equal to one on $I$, and set
+$U_t(x)=V(x)x^{\mathrm i t}$.
+Apply \eqref{eq:smooth-separation} of Lemma~\ref{lem:smooth}
+to each $\mathcal K_r$ with $d=2$ and $\mathcal I=I^2$.
+Replacing the second Mellin variable by its negative and multiplying
+by $V(x)V(y)$, which equals one on the support of $\mathcal K_r$, gives
+\[
+ \mathcal K_r(x,y)=\int_{\mathbb R^2}b_r(s,t)
+ U_s(x)\overline{U_t(y)}\,ds\,dt,
+\]
+with the following uniform bound, obtained from the pointwise
+coefficient estimate in the proof of Lemma~\ref{lem:smooth} with
+$d=2$ and $\mathcal I=I^2$:
+\[
+ \sup_r|b_r(s,t)|\ll_{I,q}
+ \frac{\sup_r\|\mathcal K_r\|_{C^q(I^2)}}{(1+|s|+|t|)^q}
+ \qquad(q\ge0\text{ even}).
+\]
+The hypothesis applies to each $U_t$, and
+$\|U_t\|_{C^m(I_*)}\ll_{I,I_*,m}(1+|t|)^m$. Taking the common bound for $b_r$ before integrating and applying Cauchy--Schwarz in $r$ therefore bounds the absolute value in \eqref{eq:coupled-mean-square} by a constant depending on $I,I_*,m,q$ times
+\begin{equation}\label{eq:kernel-bilinear-integral}
+ \sqrt{M_1M_2}\sup_r\|\mathcal K_r\|_{C^q(I^2)}
+ \int_{\mathbb R^2}
+ \frac{(1+|s|)^m(1+|t|)^m}{(1+|s|+|t|)^q}\,ds\,dt.
+\end{equation}
+Taking $q=2m+4$ makes the integral converge and proves the claim.
+\end{proof}
+
+\subsection{Recombining the separated sums}
+We use weighted Cauchy--Schwarz to pass from mean-square bounds
+for the separated sums to a bound for their weighted integral.
+
+\begin{lemma}\label{lem:recombine}
+Let $r,\iota$ range over finite sets, let $d\ge1$, and let $w_r\ge0$.
+Suppose the measurable coefficients $c_{\iota,r}$ satisfy
+\[
+ |c_{\iota,r}(\mathbf t)|\le b_\iota(\mathbf t),\qquad
+ M:=\sum_\iota\int_{\mathbb R^d}b_\iota(\mathbf t)\dd\mathbf t<\infty,
+\]
+where $b_\iota:\mathbb R^d\to[0,\infty)$.
+For measurable $F_{\iota,\mathbf t}(r)$, whenever the right-hand
+side is finite, one has
+\begin{equation}\label{eq:integral-mean-square}
+ \sum_r w_r\Bigl|\sum_\iota\int c_{\iota,r}(\mathbf t)
+ F_{\iota,\mathbf t}(r)\dd\mathbf t\Bigr|^2
+ \le M\sum_\iota\int b_\iota(\mathbf t)
+       \sum_r w_r|F_{\iota,\mathbf t}(r)|^2\dd\mathbf t.
+\end{equation}
+The same assertion holds for finite sums with the integrals omitted.
+\end{lemma}
+\begin{proof}
+For each fixed $r$, weighted Cauchy--Schwarz gives
+\[
+ \Bigl|\sum_\iota\int c_{\iota,r}(\mathbf t)
+ F_{\iota,\mathbf t}(r)\dd\mathbf t\Bigr|^2
+ \le M\sum_\iota\int b_\iota(\mathbf t)
+ |F_{\iota,\mathbf t}(r)|^2\dd\mathbf t.
+\]
+Multiply by $w_r$ and sum over $r$ to obtain
+\eqref{eq:integral-mean-square}. The same argument with sums in
+place of integrals proves the finite version.
+\end{proof}
+

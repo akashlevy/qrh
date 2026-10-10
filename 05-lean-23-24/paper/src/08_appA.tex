@@ -1,0 +1,429 @@
+\appendix
+\section{Arithmetic identities and theta calculations}\label{sec:arithmetic}
+
+\subsection{Reciprocity and Gauss sums}\label{app:gauss-identities}
+
+\begin{proof}[Proof of Lemma~\ref{lem:arithmetic}]
+\par\noindent\textit{Proof of \eqref{eq:gj}.}\quad
+For squarefree $n$, set $G(n)=\overline{\chi_n(4)}\gamma_3(n)$.
+Its dependence on a fixed ray class will be verified below.
+Fix a primary prime $p\equiv1\pmod3$ outside $S$. For multiplicative characters $A,B$ of $(\OO/(p))^\times$,
+extended by zero at $0$, write
+\[
+J(A,B)=\sum_{x\bmod p}A(x)B(1-x).
+\]
+For each $y\in\OO/(p)$, the substitution $u=2x-1$ gives
+\[
+ \#\{x\bmod p:4x(1-x)=y\} =\#\{u\bmod p:u^2=1-y\} =1+\chi_p^3(1-y),
+\]
+since $p\nmid2$ and $\chi_p^3$ is the quadratic character, extended
+by zero at $0$. Hence
+\[
+ \chi_p(4)J(\chi_p,\chi_p) =\sum_{x\bmod p}\chi_p\bigl(4x(1-x)\bigr) =\sum_{y\bmod p}\chi_p(y)\bigl(1+\chi_p^3(1-y)\bigr) =J(\chi_p,\chi_p^3).
+\]
+The Gauss--Jacobi identity (cf. \cite[(3.18)]{IK04}) gives
+\[
+ \frac{\gamma_1(p)\gamma_3(p)}{\gamma_4(p)}
+ =\frac{J(\chi_p,\chi_p^3)}{\sqrt{\NK(p)}}
+ =\chi_p(4)\frac{J(\chi_p,\chi_p)}{\sqrt{\NK(p)}}
+ =\chi_p(4)\frac{\gamma_1(p)^2}{\gamma_2(p)}.
+\]
+For $j\not\equiv0\pmod6$, the normalized Gauss sums satisfy
+\[
+ \gamma_j(p)\gamma_{-j}(p)=\chi_p(-1)^j.
+\]
+Taking $j=2$ gives $\gamma_2(p)\gamma_4(p)=\chi_p^2(-1)=1$,
+since $\chi_p^2$ is cubic.
+Combining this with the Gauss--Jacobi relation above gives, after
+cancelling $\gamma_1(p)$ and rearranging,
+\[
+\gamma_1(p)\gamma_2(p)=\overline{\chi_p(4)}\gamma_3(p)\gamma_2(p)^3.
+\]
+
+To finish the prime case of \eqref{eq:gj}, it remains to evaluate
+$\gamma_2(p)^3$. We do so by computing $J(\chi_p^2,\chi_p^2)$.
+Put $q=\NK(p)$. We have $J(\chi_p^2,\chi_p^2)\in\OO$ and $
+\NK\bigl(J(\chi_p^2,\chi_p^2)\bigr)=q$.
+For $0\le\ell\le(q-1)/3$, the exponent $(q-1)/3+\ell$ lies
+strictly between $0$ and $q-1$, so
+$\sum_{x\bmod p}x^{(q-1)/3+\ell}=0$ in $\OO/(p)$.
+Reducing modulo $p$ and expanding the binomial therefore gives
+\[
+ \begin{aligned}
+ J(\chi_p^2,\chi_p^2)
+ &\equiv\sum_{x\bmod p}x^{(q-1)/3}(1-x)^{(q-1)/3}\\
+ &=\sum_{\ell=0}^{(q-1)/3}(-1)^\ell\binom{(q-1)/3}{\ell}
+       \sum_{x\bmod p}x^{(q-1)/3+\ell}
+ =0\pmod p.
+ \end{aligned}
+\]
+ Thus $J(\chi_p^2,\chi_p^2)/p\in\OO$ has norm one,
+so $J(\chi_p^2,\chi_p^2)$ is a unit multiple of $p$.
+To determine the unit, write
+$\chi_p^2(x(1-x))=\omega^{j_x}$ with $j_x\in\{0,1,2\}$
+for $x\in\OO/(p)\setminus\{0,1\}$. Then
+\[
+ \prod_{x\ne0,1}x(1-x)=1
+ \quad\Longrightarrow\quad
+ \sum_{x\ne0,1}j_x\equiv0\pmod3.
+\]
+Since $(\omega-1)^2$ generates $(3)$, expansion modulo this ideal gives
+\[
+ J(\chi_p^2,\chi_p^2) =\sum_{x\ne0,1}\omega^{j_x} \equiv(q-2)+(\omega-1)\sum_{x\ne0,1}j_x \equiv-1\pmod3.
+\]
+Together with $p\equiv1\pmod3$, this fixes the unit:
+\[
+ J(\chi_p^2,\chi_p^2)=-p.
+\]
+Consequently
+\[
+ \gamma_2(p)^3
+ =\frac{\gamma_2(p)^2}{\gamma_4(p)}
+ =\frac{J(\chi_p^2,\chi_p^2)}{\sqrt{\NK(p)}}
+ =-\alpha(p).
+\]
+The Chinese remainder theorem extends these prime-modulus identities
+to \eqref{eq:gj} for squarefree $n$, with one minus sign for each prime
+factor accounting for $\mu(n)$.
+\par\noindent\textit{Proof of \eqref{eq:crt-a}.}\quad
+For coprime squarefree primary $a,b$ prime to $S$, the Chinese
+remainder theorem gives
+\[
+ \gamma_2(ab)=\gamma_2(a)\gamma_2(b)
+                    \chi_a(b)^2\chi_b(a)^2,
+\]
+and cubic reciprocity gives $\chi_a(b)^2=\chi_b(a)^2$.
+Multiplying by $\overline{\alpha(ab)}\xi(ab)$ therefore proves
+\eqref{eq:crt-a}.
+
+\par\noindent\textit{Proof of \eqref{eq:recip}.}\quad
+We now prove \eqref{eq:recip} and the formula for $G(n)$ in
+\eqref{eq:g}, including their dependence on a fixed ray class.
+We begin by evaluating the normalized quadratic Gauss sum.
+For $c\in\OO$ coprime to $2$, we will show that
+\begin{equation}\label{eq:quadratic-gaussian}
+ \Gamma_{\rm quad}(c):=|c|^{-1}\sum_{x\bmod c}e(x^2/c)
+       =\frac12\sum_{y\bmod2\OO}e(-cy^2/4).
+\end{equation}
+To justify \eqref{eq:quadratic-gaussian}, apply Poisson summation over
+$z\in\OO$ to $e(z^2/c)e^{-\pi\eta|z|^2}$, with $\eta>0$.
+The Gaussian makes the sum convergent. The Fourier transform of the product is
+\[
+ \frac{|c|}{2\sqrt{r_\eta}}
+ e^{-\pi\eta \NK(c)|y|^2/(4r_\eta)}e(-cy^2/(4r_\eta)),
+ \qquad r_\eta=1+3\NK(c)\eta^2/16.
+\]
+Divide both sides by the Gaussian mass
+\[
+ \sum_{z\in\OO}e^{-\pi\eta|z|^2}\asymp\eta^{-1}.
+\]
+On the Fourier side, replacing $r_\eta$ by $1$ has total error
+\[
+ O_c\!\biggl(\eta^2\sum_{y\in\OO}|y|^2e^{-C_c\eta|y|^2}\biggr)
+ =O_c(1),
+\]
+where $C_c>0$ is fixed. The normalized error is therefore
+$O_c(\eta)\to0$. Grouping the original sum modulo $c$ and the
+Fourier sum modulo $2\OO$, then letting $\eta\downarrow0$, gives
+\eqref{eq:quadratic-gaussian}.
+
+For $c=a+b\omega$, formula \eqref{eq:quadratic-gaussian} becomes
+\[
+ \Gamma_{\rm quad}(a+b\omega)=\frac{1+\mathrm i^{-b}+\mathrm i^a+\mathrm i^{b-a}}2.
+\]
+Thus $\Gamma_{\rm quad}(c)$ depends only on $c\bmod4\OO$ and is invariant under
+multiplication by a square in $(\OO/4\OO)^\times$. Representatives
+for the four square classes and their values are
+\[
+ \begin{array}{c|rrrr}
+ c&1&-1&\lambda&-\lambda\\ \hline
+ \Gamma_{\rm quad}(c)&1&1&\mathrm i&-\mathrm i
+ \end{array}.
+\]
+Consequently the function
+\[
+ \mathcal R(c_1,c_2):=\frac{\Gamma_{\rm quad}(c_1c_2)}{\Gamma_{\rm quad}(c_1)\Gamma_{\rm quad}(c_2)}
+\]
+on these square classes satisfies
+\[
+ \mathcal R((-1)^e\lambda^f,(-1)^g\lambda^h)=(-1)^{eh+fg+fh},
+ \qquad e,f,g,h\in\{0,1\},
+\]
+and is a symmetric bicharacter.
+For a prime $p$, each $y\in\OO/(p)$ has $1+\chi_p^3(y)$ square roots.
+Grouping by $y=x^2$ gives
+\[
+ \Gamma_{\rm quad}(p)
+ =\frac1{|p|}\sum_{y\bmod p}\bigl(1+\chi_p^3(y)\bigr)e(y/p)
+ =\gamma_3(p),
+\]
+since $\sum_{y\bmod p}e(y/p)=0$.
+The Chinese remainder theorem extends this equality to squarefree
+$n$. Together with cubic reciprocity, it identifies the above $\mathcal R$
+with the quotient $\chi_b(a)/\chi_a(b)$ for coprime primary $a,b$.
+Furthermore $\chi_c(4)=(-2/c)_3=(c/(-2))_3$ is a character modulo
+$2$. Consequently $G(c)=\overline{\chi_c(4)}\Gamma_{\rm quad}(c)$ factors through a fixed ray class group
+and satisfies \eqref{eq:recip}. Moreover $\mathcal R(c,c)=\chi_c(-1)$. Indeed $c^2$ is a square,
+so $\Gamma_{\rm quad}(c^2)=\Gamma_{\rm quad}(1)=1$, while for squarefree $c$ the identity
+$\Gamma_{\rm quad}(c)=\gamma_3(c)$ and the inverse-character identity give
+$\Gamma_{\rm quad}(c)^2=\gamma_3(c)^2=\chi_c(-1)^3=\chi_c(-1)$. Hence
+$\mathcal R(c,c)=\Gamma_{\rm quad}(c)^{-2}=\chi_c(-1)$. Both sides depend only on the class of $c$: the left side by the table above, and the right
+side because $\chi_c(-1)=(-1)^{(\NK(c)-1)/6}$ depends only on $\NK(c)\bmod12$, hence only on
+$c\bmod4$ for primary $c$. So this holds on the whole ray class group. The explicit formula also gives $G(1)=1$ and $|G|=1$
+on every class.
+
+\par\noindent\textit{Proof of \eqref{eq:quotient}.}\quad
+In the fixed ray class group, the multiplicative relation for $G$, together with $G(1)=1$,
+$|G|=1$ and $\mathcal R(a,a)=\chi_a(-1)$ from the proof of \eqref{eq:recip}, gives
+\[
+ G(a^{-1})=\chi_a(-1)\overline{G(a)}.
+\]
+Using the symmetry and multiplicativity of $\mathcal R$, we obtain
+\[
+ G(ba^{-1}) =G(b)G(a^{-1})\mathcal R(b,a^{-1}) =\chi_a(-1)\overline{G(a)}G(b)\mathcal R(a,b),
+\]
+which is \eqref{eq:quotient}.
+
+\par\noindent\textit{Proof of \eqref{eq:convert1}--\eqref{eq:convert2}.}\quad
+The second identity in \eqref{eq:g} follows from the inverse-character
+Gauss identity:
+$\gamma_1(n)\gamma_{-1}(n)=\chi_n(-1)$.
+It remains to prove \eqref{eq:convert1}--\eqref{eq:convert2}.
+Multiplying the second identity in \eqref{eq:gj} by
+$\overline{\alpha(n)}$ gives \eqref{eq:convert1}, and combining it
+with this inverse-character identity gives \eqref{eq:convert2}.
+\end{proof}
+
+\subsection{The cubic theta transformation with fixed ray class twists}\label{app:fixed-ray}
+
+We sketch the proofs of Proposition~\ref{lem:reflection}, Lemma~\ref{lem:reflection-uniformity}
+and Lemma~\ref{lem:theta-bounds}. The method is the theta transformation of Dunn and
+Radziwi\l\l\ \cite[\S5 and Appendix~A]{DR}, which extends Patterson \cite{Pat77} and Yoshimoto
+\cite{Yos87}. What is new compared with \cite{DR} is the fixed ray class twist $\Psi_0$ and the
+non-coprime part of the translation (the reduced denominator $c_0$ below). We record each step
+of the computation and indicate how it is verified; the formalization carries out every step
+in full (Appendix~\ref{app:lean}).
+
+The data are as in Section~\ref{sec:reflection}: $\Psi_0$ and $S$ are fixed, $\mathcal P$ is a
+varying finite set of primes outside $S$, and $j_p\in\{0,\dots,5\}$ are the exponents of the
+character factors of $\Psi=\Psi_0\prod_{p\in\mathcal P}\chi_p^{j_p}$. Write
+$w=(z,v)\in\C\times\R_{>0}$, and $\breve e(z)=\exp(2\pi\mathrm i(z+\bar z))$, so that
+$e(z)=\breve e(z/\lambda)$.
+
+\emph{Step 1: finite Fourier expansion.} Define $\phi:\OO\to\C$ by
+$\phi(n)=\chi_n(\lambda)^2\Psi_0(n)$ if $n\equiv1\pmod3$ and $(n,S)=1$, and $\phi(n)=0$
+otherwise, and put
+\begin{equation}\label{eq:general-twisted-theta-definition}
+ \Theta_\Psi(z,v)=
+ \sum_{\substack{\ell\in\lambda^{-3}\OO\\\ell\ne0}}
+ \overline{\tau(-\ell)}\phi(\lambda^3\ell)
+ \Bigl(\prod_{p\in\mathcal P}\chi_p^{j_p}(\lambda^3\ell)\Bigr)
+ vK_{1/3}(4\pi|\ell|v)\breve e(\ell z).
+\end{equation}
+For $\Psi=\Psi_k$ this is $\Theta_k$ from \eqref{eq:twisted-theta-definition}. Fix
+$L\in\OO$ with all prime divisors in $S$, divisible by the conductor of $\Psi_0$ and by
+sufficiently high powers of $2$ and $\lambda$; in particular $p\nmid L$ for $p\in\mathcal P$. By the supplementary law of cubic reciprocity
+\cite[(1.5)]{DR}, $\phi$ is periodic modulo $L$; let $\widehat\phi(h_0)$, $h_0\in\OO/(L)$, be
+its finite Fourier coefficients; since $|\phi|\le1$, $|\widehat\phi(h_0)|\le1$. Expanding each $\chi_p^{j}$ in additive characters modulo $p$,
+\begin{equation}\label{eq:theta-local-fourier}
+ \chi_p^j(x)=\sum_{h_p\in\OO/(p)}C_{p,j}(h_p)e(h_px/p),\qquad
+ C_{p,j}(h_p)=\frac1{\NK(p)}\sum_{y\bmod p}\chi_p^j(y)e(-h_py/p),
+\end{equation}
+and multiplying over $p\in\mathcal P$ writes $\Theta_\Psi$ as a finite combination of
+translates of $\overline\theta$:
+\begin{equation}\label{eq:theta-factorized-shifts}
+ \Theta_\Psi(z,v)=\sum_{\boldsymbol h}c_{\mathrm F}(\boldsymbol h)\overline{\theta(z+z_{\boldsymbol h},v)},\qquad
+ z_{\boldsymbol h}=\lambda^2\Bigl(\frac{h_0}L+\sum_{p\in\mathcal P}\frac{h_p}p\Bigr),\qquad
+ c_{\mathrm F}(\boldsymbol h)=\widehat\phi(h_0)\prod_{p\in\mathcal P}C_{p,j_p}(h_p).
+\end{equation}
+The constant terms cancel, since $\sum_{\boldsymbol h}c_{\mathrm F}(\boldsymbol h)=\phi(0)\prod\chi_p^{j_p}(0)=0$.
+Changing variables in the Gauss sums gives
+\begin{equation}\label{eq:ray-fourier}
+C_{p,j}(h_p)=
+ \begin{cases}
+ \NK(p)^{-1/2}\chi_p(-1)^j\gamma_j(p)\chi_p(h_p)^{-j},
+       &j\ne0,\ h_p\ne0,\\
+ 0,    &j\ne0,\ h_p=0,\\
+ -\NK(p)^{-1},&j=0,\ h_p\ne0,\\
+ 1-\NK(p)^{-1},&j=0,\ h_p=0.
+ \end{cases}
+\end{equation}
+Call $p$ \emph{active} if $h_p\ne0$. By \eqref{eq:ray-fourier}, every $p$ with $j_p\ne0$ is
+active in a nonzero term. At an active prime, $v_p(\lambda^2h_p/p)=-1$ while the other summands of
+$z_{\boldsymbol h}$ are $p$-integral, so the reduced denominator of $z_{\boldsymbol h}$ is
+$c=c_0r$ up to a unit, with $r=\prod_{p\text{ active}}p$ and $c_0$ the reduced denominator of
+$\lambda^2h_0/L$. This holds also when $(h_0,L)\ne1$. There are $O_L(2^{|\mathcal P|})$ groups
+of translates, indexed by $h_0$ and the active set.
+
+\emph{Step 2: the cusp and the multiplier.} Write $z_{\boldsymbol h}=a/c$ in lowest terms,
+with $a\equiv1\pmod3$ if $\lambda\mid c$ and $c\equiv1\pmod3$ otherwise. Choose
+$g=\bigl(\begin{smallmatrix}a&b_g\\c&\delta'\end{smallmatrix}\bigr)\in\mathrm{SL}_2(\OO)$ with
+$\delta'$ prescribed modulo a fixed power of $L$ and modulo $r$; this is possible by the Chinese
+remainder theorem, since $(a,c)=1$. Then factor $g=g_1H$, where $g_1\equiv I\pmod3$ and $H$ is
+
+\[
+ H=
+ \begin{cases}
+  I,&3\mid c,\\
+  \bigl(\begin{smallmatrix}1&0\\u_0&1\end{smallmatrix}\bigr),
+     &v_\lambda(c)=1,\quad u_0\in\{\lambda,-\lambda\},\quad u_0\equiv c\pmod3,\\
+  \bigl(\begin{smallmatrix}u_0&-1\\1&0\end{smallmatrix}\bigr),
+     &(c,\lambda)=1,\quad u_0\equiv a\pmod3,
+ \end{cases}
+\]
+as in \cite[\S5.1]{DR}, with $u_0$ from a fixed set of representatives modulo $3$ in the last
+case.\footnote{One checks $g_1\equiv I\pmod3$ in each case from these congruences on $u_0$ and the
+congruences imposed on $\delta'$, which give $\delta'\equiv1$, $b_g\equiv0\pmod3$ when
+$\lambda\mid c$ and $\delta'\equiv0$, $b_g\equiv-1\pmod3$ when $(c,\lambda)=1$.} The
+invariance of $\theta$ under $\mathrm{SL}_2(\mathbb Z)$ and under translations by $\mathbb Z+3\OO$
+reduces $\overline\theta(Hw)$ to one of the three cusp expansions
+\eqref{eq:cusp-coefficient-definition}, with representatives $\gamma_0,\gamma_+,\gamma_-$
+(numbered $\gamma_1,\gamma_{10},\gamma_{19}$ in \cite[\S5.1]{DR} and \cite[Table~II]{Pat77}).
+Writing $t_\sigma(\ell)$ for the coefficient of $vK_{1/3}(4\pi|\ell|v)\breve e(\ell z)$ in
+$\theta(\gamma_\sigma w)$, Patterson's cusp calculation \cite[Theorem~8.1 and Table~III]{Pat77},
+in the form of \cite[(5.13), (5.14)]{DR}, gives
+\begin{equation}\label{eq:cusp-fourier-coefficients}
+ t_0(\ell)=\tau(\ell),\qquad
+ t_-(\ell)=\omega^2\tau_1(\omega^2\ell)\breve e(\ell),
+ \qquad
+ t_+(\ell)=\omega\tau_2(\omega\ell)\breve e(\ell),
+\end{equation}
+and, since complex conjugation sends the frequency $\ell$ to $-\ell$,
+\begin{equation}\label{eq:conjugate-cusp-coefficients}
+ d_\sigma(\ell)=\overline{t_\sigma(-\ell)},\qquad \sigma\in\{0,+,-\}.
+\end{equation}
+The explicit formulas for $\tau,\tau_1,\tau_2$ give the support \eqref{eq:theta-support}. For
+$\ell=u\lambda^mnb^3$ they give
+$|t_0(\ell)|\le3^{k/2+2}|b|$ if $m=3k-4$ with $k\ge1$,
+$|t_0(\ell)|\le3^{k/2+5/2}|b|$ if $m=3k-3$ with $k\ge0$, and $|t_\pm(\ell)|\le9|b|$ at $m=-4$.
+This gives the bound \eqref{eq:theta-coefficient-bound}. For $d_\pm$ the coefficients are supported on
+$v_\lambda(\ell)=-4$, i.e. $m=-4$, so the bound is needed only there. This proves the
+coefficient assertions of Lemma~\ref{lem:theta-bounds}.
+
+The automorphy law of the cubic theta function is
+\begin{equation}\label{eq:theta-cusp-automorphy}
+ \theta(g_1w)=\kappa(g_1)\theta(w),\qquad
+ \kappa(g_1)=(c_1/a_1)_3,\qquad
+ g_1=\bigl(\begin{smallmatrix}a_1&b_1\\c_1&d_1\end{smallmatrix}\bigr)\equiv I\pmod3,
+\end{equation}
+where $\kappa$ is Kubota's cubic character in the normalization of
+\cite[(5.4), (5.6)]{DR}.\footnote{The convention matters. The exponent of $\chi_p$ produced by
+$\overline{\kappa}$ below is $-2$; it combines with the exponent $-1$ from the Fourier
+coefficient \eqref{eq:ray-fourier} to give the quadratic character $\chi_p^{-3}=\chi_p^3$.
+With the other common convention $(c_1/d_1)_3$ the exponent $-2$ from $\overline\kappa$ would
+become $+2$, the total exponent would be $+1$, and the dual twist would be the sextic character
+$\chi_p$ rather than a quadratic one.} Using the determinant equation and cubic reciprocity, one
+finds
+\begin{equation}\label{eq:ray-multiplier}
+ \kappa(g_1)=\kappa_0\,(a/r)_3=\kappa_0\prod_{p\mid r}\chi_p(a)^2,\qquad|\kappa_0|=1,
+\end{equation}
+where $\kappa_0$ depends only on the residues at the primes in $S$. These are fixed once $h_0$,
+the active set, and $r$ modulo a fixed power of $L$ are fixed. In the coordinates
+$(z',v')=g^{-1}(z+a/c,v)$, the Fourier mode of index $\ell$ at $z=0$ acquires the phase
+$\breve e(-\delta'\ell/c)$. By the additive Chinese remainder theorem this phase splits as
+\begin{equation}\label{eq:ray-additive-crt}
+\breve e(-\delta'\ell/c)
+ =\psi(\lambda^4\ell)\prod_{p\mid r}e(\epsilon_ph_p^{-1}\lambda^4\ell/p),
+\end{equation}
+where $\psi$ ranges over a fixed finite family of additive characters and $\epsilon_p\in(\OO/p)^\times$
+is determined by $c$ and $p$.
+
+\emph{Step 3: the local transformation.} For each active prime, combining
+\eqref{eq:ray-fourier}, the conjugate of \eqref{eq:ray-multiplier}, and
+\eqref{eq:ray-additive-crt}, and summing over $h_p\ne0$, gives
+\begin{equation}\label{eq:ray-local-transform}
+\sum_{h_p\ne0} C_{p,j}(h_p)\chi_p(a)^{-2}
+ e(\epsilon_ph_p^{-1}\lambda^4\ell/p)
+ =\chi_p(\sigma_p)^{-2}\omega_{p,j}B_{p,j}(\lambda^4\ell),\qquad|\omega_{p,j}|=1,
+\end{equation}
+with $\sigma_p=\lambda^2c/p$ and $B_{p,j}$ from \eqref{eq:theta-local-factors}. Indeed,
+$a\equiv\sigma_ph_p\pmod p$, so $\chi_p(h_p)^{-j}\chi_p(a)^{-2}=\chi_p(\sigma_p)^{-2}\chi_p(h_p)^{-j-2}$,
+and the sum over $y=h_p^{-1}$ is a Gauss sum of $\chi_p^{j+2}$. For $j\ne0,4$ this character is
+nontrivial and the sum is $\NK(p)^{1/2}$ times a unit times $\chi_p(\lambda^4\ell)^{-j-2}$. For
+$j=4$ the character is trivial on nonzero residues and the sum is $-1+\NK(p)\ind_{p\mid\lambda^4\ell}$.
+For active $j=0$ the coefficient $-\NK(p)^{-1}$ combines with a cubic Gauss sum. An inactive
+prime contributes only the scalar $1-\NK(p)^{-1}$. For $j=1$ we obtain
+$B_{p,1}(x)=\chi_p(x)^{-3}=\chi_p(x)^3$, the quadratic factor used in
+\eqref{eq:residual-quadratic-factor}.
+
+\emph{Step 4: the archimedean transform.} For $\Rea s>1$ let $\mathcal T(s,\Psi)$ be the
+Dirichlet series of the completed sum,
+\[
+ \mathcal T(s,\Psi)=
+ \sum_{\substack{n\equiv1\ (3)\\(n,S)=1}}^*
+   \overline{\alpha(n)}\gamma_2(n)\Psi(n)\NK(n)^{-s}
+ \sum_{\substack{b\equiv1\ (3)\\(b,S)=1}}\overline{\alpha(b)}^{\,3}
+   \Psi(b)^3\NK(b)^{-3s+1/2},
+\]
+so that, by Mellin inversion,
+\begin{equation}\label{eq:theta-mellin-inversion}
+ T(X;\Psi)=\frac1{2\pi \mathrm i}\int_{(\sigma)}
+ \widehat V_*(s-\tfrac12)\mathcal T(s,\Psi)X^{s-1/2}\dd s,
+ \qquad \sigma>1.
+\end{equation}
+Differentiating in $\bar z$ supplies a factor $\bar\ell$ in each Fourier mode. Together with
+the Bessel integral $\int_0^\infty v^{2s}K_{1/3}(4\pi|\ell|v)\dd v
+=2^{2s-1}\Gamma(s+1/3)\Gamma(s+2/3)(4\pi|\ell|)^{-2s-1}$ \cite[(10.43.19)]{DLMF} and the
+coefficient formula \eqref{eq:intro-theta-coefficients}, this gives
+\begin{equation}\label{eq:ray-mellin}
+\mathcal J(s):=\int_0^\infty\partial_{\bar z}\Theta_\Psi(z,v)\Bigr|_{z=0}v^{2s-1}\dd v
+=\frac{3^{5/2}}4
+       \Bigl(\frac{27}{(2\pi)^2}\Bigr)^s
+       \Gamma(s+1/3)\Gamma(s+2/3)\mathcal T(s,\Psi).
+\end{equation}
+The integral defining $\mathcal J(s)$ converges for every $s$. The defining Fourier series controls
+$v\to\infty$. As $v\to0$, the automorphy \eqref{eq:theta-cusp-automorphy} moves each translate
+to a cusp expansion at height $1/(\NK(c)v)\to\infty$, where the horizontal derivative removes the
+constant term. So $\mathcal J$ is entire, and so is $\mathcal T(s,\Psi)$. Substituting
+$v\mapsto(\NK(c)v)^{-1}$ in each translate gives the functional equation
+\begin{equation}\label{eq:theta-mellin-functional-equation}
+ \mathcal J(s)=-\sum_{\boldsymbol h} c_{\mathrm F}(\boldsymbol h)\overline{\kappa(g_{1,\boldsymbol h})}\,
+       \overline{\alpha(c_{\boldsymbol h})}^{\,2}\NK(c_{\boldsymbol h})^{1-2s}\mathcal J_{\boldsymbol h}^\vee(1-s),
+\end{equation}
+where $\mathcal J^\vee_{\boldsymbol h}(s)=\int_0^\infty\partial_z\{\overline{\theta(H_{\boldsymbol h}(z,v))}\}
+\big|_{z=-\delta'_{\boldsymbol h}/c_{\boldsymbol h}}v^{2s-1}\dd v$ is the corresponding Mellin
+transform of the cusp expansion; by the cusp coefficients and the Bessel integral,
+\begin{equation}\label{eq:dual-cusp-mellin-series}
+ \mathcal J_{\boldsymbol h}^\vee(s)=\frac{\mathrm i\,\Gamma(s+1/3)\Gamma(s+2/3)}{4(2\pi)^{2s}}
+ \sum_{0\ne\ell\in\lambda^{-4}\OO}
+ \frac{d_{\sigma_{\boldsymbol h}}(\ell)\alpha(\ell)}{\NK(\ell)^s}
+ \breve e(-\delta'_{\boldsymbol h}\ell/c_{\boldsymbol h}).
+\end{equation}
+Both $\mathcal T(s,\Psi)$ and the series \eqref{eq:dual-cusp-mellin-series} at $1-s$ converge
+absolutely on the outer sides of the strip $0\le\Rea s\le1$. The functional equation and
+Stirling's formula give polynomial bounds there, and inside the strip by
+Phragm\'en--Lindel\"of (compare \cite[Propositions~5.1--5.2]{DR}).\footnote{The formalization
+uses a Gaussian-regularized contour shift, which needs only exponential growth in the strip.}
+This justifies moving the contour in \eqref{eq:theta-mellin-inversion} to $\Rea s<0$. No pole is
+crossed, since $\mathcal T$ is entire. Now insert \eqref{eq:dual-cusp-mellin-series} into
+\eqref{eq:theta-mellin-functional-equation}, sum over the nonzero $h_p$ with
+\eqref{eq:ray-local-transform}, and set $t=\tfrac12-s$. This produces the gamma quotient and
+the weight $V_*^\sharp$ of \eqref{eq:theta-weight}, evaluated at $\NK(\ell)X/\NK(c)^2$, and the
+scalar
+\[
+ C=-\frac{\mathrm i}{81}\overline{\alpha(c)}^{\,2}
+ \widehat\phi(h_0)\overline{\kappa_0}
+ \prod_{p\ {\rm inactive}}(1-\NK(p)^{-1})
+ \prod_{p\ {\rm active}}\chi_p(\sigma_p)^{-2}\omega_{p,j_p},
+ \qquad |C|\le1/81 .
+\]
+The numerator gamma factors have their first pole at $t=-5/6$, so the kernel contour can be moved
+to $\Rea t=0$. This proves Proposition~\ref{lem:reflection}.
+
+\emph{Uniformity and weight decay.} For the family $\Psi_{k_0}$ of
+Lemma~\ref{lem:reflection-uniformity}, every prime dividing $k_0$ has exponent $j_p=1$ and is
+active. So $r=k_0\prod_{p\in\mathcal A_{\rm fix}}p$, and fixing $k_0$ modulo a fixed power of $L$
+fixes $H$, $c_0$, $\kappa_0$ and the residues in \eqref{eq:ray-additive-crt}. Hence $d$, $\psi$
+and $c_0$ depend on $k_0$ only through that residue class, which is
+Lemma~\ref{lem:reflection-uniformity}. Finally, shifting the kernel contour in
+\eqref{eq:theta-weight} to $\Rea t=-1/4$ for $x\le1$ and to $\Rea t=A$ for $x\ge1$, and using
+Stirling's formula, gives
+\begin{equation}\label{eq:ray-kernel}
+|(x\partial_x)^jV_*^\sharp(x)|
+ \ll_{A,j}\min\{x^{1/4},(1+x)^{-A}\}
+ \sup_{-A\le\eta\le1/4}\int_{\R}
+ (1+|u|)^{\lceil4A\rceil+j+2}|\widehat V_*(\eta+\mathrm i u)|\dd u.
+\end{equation}
+Since $V_*$ is supported in a fixed compact interval, repeated integration by parts bounds the
+integral by $\|V_*\|_{C^J(I)}$ for some $J=J(A,j)$. This proves \eqref{eq:theta-weight-decay}
+and completes the proof of Lemma~\ref{lem:theta-bounds}.

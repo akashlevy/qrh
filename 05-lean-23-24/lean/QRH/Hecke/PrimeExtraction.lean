@@ -1,0 +1,342 @@
+import QRH.Hecke.LocalEulerIdentities
+namespace OAI
+
+noncomputable section
+
+open scoped BigOperators
+open MulChar AddChar
+open Filter Asymptotics MeasureTheory
+open scoped Topology
+open Real
+open scoped FourierTransform SchwartzMap
+open Finset Complex
+open scoped Classical
+open ActualEisensteinCubic
+open RationalPrimeExtraction ShortDraftLatticeCount
+open EisensteinEmbedding ConcreteTraceCRT
+open scoped LSeries.notation ArithmeticFunction.Moebius
+
+namespace ShortDraftHeckeBridge
+
+end ShortDraftHeckeBridge
+open Ideal NumberField RingOfIntegers UniqueFactorizationMonoid
+
+namespace FiniteSFactor
+
+abbrev O := NumberField.RingOfIntegers (CyclotomicField 3 ℚ)
+
+theorem extract_prime_of_squarefree {I P : Ideal O}
+    (hI : I ≠ ⊥) (hP : Prime P) (hsq : Squarefree I) (hdvd : P ∣ I) :
+    ∃ J : Ideal O, IsRelPrime P J ∧ I = P * J := by
+  let : P.IsMaximal := (Ideal.isPrime_of_prime hP).isMaximal hP.ne_zero
+  obtain ⟨J, hcop, hfactor⟩ := Ideal.eq_prime_pow_mul_coprime hI P
+  have hmem : P ∈ normalizedFactors I := by
+    rw [Ideal.mem_normalizedFactors_iff hI]
+    exact ⟨Ideal.isPrime_of_prime hP, (Ideal.dvd_iff_le).mp hdvd⟩
+  have hpos : 0 < (normalizedFactors I).count P := Multiset.count_pos.mpr hmem
+  have hnodup : (normalizedFactors I).Nodup :=
+    (UniqueFactorizationMonoid.squarefree_iff_nodup_normalizedFactors hI).mp hsq
+  have hle : (normalizedFactors I).count P ≤ 1 :=
+    (Multiset.nodup_iff_count_le_one.mp hnodup) P
+  have he : (normalizedFactors I).count P = 1 := by omega
+  refine ⟨J, ?_, ?_⟩
+  · exact IsCoprime.isRelPrime ((Ideal.isCoprime_iff_gcd).mpr (by simpa using hcop))
+  · simpa [he] using hfactor
+
+noncomputable def outsideWeight (S : Finset (Ideal O))
+    (w : Ideal O → ℂ) (I : Ideal O) : ℂ := by
+  classical
+  exact if ∀ P ∈ S, ¬ P ∣ I then w I else 0
+
+theorem outsideWeight_mul (S : Finset (Ideal O))
+    (hprime : ∀ P ∈ S, Prime P) (w : Ideal O → ℂ)
+    (I J : Ideal O) (hweight : w (I * J) = w I * w J) :
+    outsideWeight S w (I * J) =
+      outsideWeight S w I * outsideWeight S w J := by
+  classical
+  let good (K : Ideal O) : Prop := ∀ P ∈ S, ¬ P ∣ K
+  have hleft : good (I * J) → good I := by
+    intro h P hP hd
+    exact h P hP (dvd_mul_of_dvd_left hd J)
+  have hright : good (I * J) → good J := by
+    intro h P hP hd
+    exact h P hP (dvd_mul_of_dvd_right hd I)
+  have hboth : good I → good J → good (I * J) := by
+    intro hI hJ P hP hd
+    rcases (hprime P hP).dvd_mul.mp hd with hdI | hdJ
+    · exact hI P hP hdI
+    · exact hJ P hP hdJ
+  change (if good (I * J) then w (I * J) else 0) =
+    (if good I then w I else 0) * (if good J then w J else 0)
+  by_cases hI : good I
+  · by_cases hJ : good J
+    · have hIJ := hboth hI hJ
+      simp [hI, hJ, hIJ, hweight]
+    · have hIJ : ¬good (I * J) := fun h => hJ (hright h)
+      simp [hI, hJ, hIJ]
+  · have hIJ : ¬good (I * J) := fun h => hI (hleft h)
+    simp [hI, hIJ]
+
+noncomputable def fiber (n : ℕ) : Finset (Ideal O) :=
+  (Ideal.finite_setOfPred_absNorm_eq (S := O) n).toFinset
+
+theorem mem_fiber {n : ℕ} {I : Ideal O} : I ∈ fiber n ↔ Ideal.absNorm I = n := by
+  simp [fiber]
+
+noncomputable def badFiber (P : Ideal O) (m : ℕ) : Finset (Ideal O) := by
+  classical
+  exact (fiber (Ideal.absNorm P * m)).filter (fun I => Squarefree I ∧ P ∣ I)
+
+noncomputable def goodFiber (P : Ideal O) (m : ℕ) : Finset (Ideal O) := by
+  classical
+  exact (fiber m).filter (fun J => Squarefree J ∧ ¬ P ∣ J)
+
+theorem mem_badFiber {P : Ideal O} {m : ℕ} {I : Ideal O} :
+    I ∈ badFiber P m ↔ Ideal.absNorm I = Ideal.absNorm P * m ∧ Squarefree I ∧ P ∣ I := by
+  classical
+  simp [badFiber, mem_fiber]
+
+theorem mem_goodFiber {P : Ideal O} {m : ℕ} {J : Ideal O} :
+    J ∈ goodFiber P m ↔ Ideal.absNorm J = m ∧ Squarefree J ∧ ¬P ∣ J := by
+  classical
+  simp [goodFiber, mem_fiber]
+
+private noncomputable def pick (P : Ideal O) (hP : Prime P) (m : ℕ)
+    (I : Ideal O) (hI : I ∈ badFiber P m) : Ideal O :=
+  Classical.choose (extract_prime_of_squarefree
+    ((mem_badFiber.mp hI).2.1.ne_zero) hP
+    (mem_badFiber.mp hI).2.1 (mem_badFiber.mp hI).2.2)
+
+private theorem pick_spec (P : Ideal O) (hP : Prime P) (m : ℕ)
+    (I : Ideal O) (hI : I ∈ badFiber P m) :
+    IsRelPrime P (pick P hP m I hI) ∧ I = P * pick P hP m I hI := by
+  unfold pick
+  exact Classical.choose_spec (extract_prime_of_squarefree
+    ((mem_badFiber.mp hI).2.1.ne_zero) hP
+    (mem_badFiber.mp hI).2.1 (mem_badFiber.mp hI).2.2)
+
+theorem squarefree_prime_fiber_sum (P : Ideal O) (hP : Prime P)
+    (m : ℕ) (w : Ideal O → ℂ) :
+    (∑ I ∈ badFiber P m, w I) =
+      ∑ J ∈ goodFiber P m, w (P * J) := by
+  classical
+  have hPnorm : Ideal.absNorm P ≠ 0 :=
+    (Ideal.absNorm_eq_zero_iff).not.mpr hP.ne_zero
+  refine Finset.sum_bij' (pick P hP m) (fun J _ => P * J) ?_ ?_ ?_ ?_ ?_
+  · intro I hI
+    have hinfo := pick_spec P hP m I hI
+    have hJnorm : Ideal.absNorm (pick P hP m I hI) = m := by
+      have hInorm := (mem_badFiber.mp hI).1
+      rw [hinfo.2, map_mul] at hInorm
+      exact Nat.eq_of_mul_eq_mul_left (Nat.pos_of_ne_zero hPnorm) hInorm
+    have hJsq : Squarefree (pick P hP m I hI) := by
+      have hsqI := (mem_badFiber.mp hI).2.1
+      rw [hinfo.2] at hsqI
+      exact hsqI.of_mul_right
+    have hJnot : ¬P ∣ pick P hP m I hI :=
+      hP.irreducible.isRelPrime_iff_not_dvd.mp hinfo.1
+    exact mem_goodFiber.mpr ⟨hJnorm, hJsq, hJnot⟩
+  · intro J hJ
+    have hJnorm := (mem_goodFiber.mp hJ).1
+    have hJsq := (mem_goodFiber.mp hJ).2.1
+    have hJnot := (mem_goodFiber.mp hJ).2.2
+    have hsq : Squarefree (P * J) :=
+      squarefree_mul_iff.mpr ⟨hP.irreducible.isRelPrime_iff_not_dvd.mpr hJnot,
+        hP.irreducible.squarefree, hJsq⟩
+    exact mem_badFiber.mpr ⟨by rw [map_mul, hJnorm], hsq, dvd_mul_right P J⟩
+  · intro I hI
+    exact (pick_spec P hP m I hI).2.symm
+  · intro J hJ
+    have hPJ : P * J ∈ badFiber P m := by
+      have hJnorm := (mem_goodFiber.mp hJ).1
+      have hJsq := (mem_goodFiber.mp hJ).2.1
+      have hJnot := (mem_goodFiber.mp hJ).2.2
+      exact mem_badFiber.mpr ⟨by rw [map_mul, hJnorm],
+        squarefree_mul_iff.mpr ⟨hP.irreducible.isRelPrime_iff_not_dvd.mpr hJnot,
+          hP.irreducible.squarefree, hJsq⟩, dvd_mul_right P J⟩
+    have hchosen := (pick_spec P hP m (P * J) hPJ).2
+    exact (mul_left_cancel₀ hP.ne_zero hchosen).symm
+  · intro I hI
+    exact congrArg w (pick_spec P hP m I hI).2
+
+open scoped Classical
+
+noncomputable def exceptPrimeCoeff (P : Ideal O) (w : Ideal O → ℂ) (n : ℕ) : ℂ := by
+  classical
+  exact ∑ I ∈ fiber n, if ¬P ∣ I then w I else 0
+
+private theorem sum_filter_squarefree (pred : Ideal O → Prop) (w : Ideal O → ℂ)
+    (hzero : ∀ I, ¬Squarefree I → w I = 0) (n : ℕ) :
+    (∑ I ∈ fiber n, if pred I then w I else 0) =
+      ∑ I ∈ (fiber n).filter (fun I => Squarefree I ∧ pred I), w I := by
+  classical
+  rw [Finset.sum_filter]
+  apply Finset.sum_congr rfl
+  intro I hI
+  by_cases hsq : Squarefree I
+  · simp [hsq]
+  · simp [hsq, hzero I hsq]
+
+theorem restore_one_prime (P : Ideal O) (hP : Prime P)
+    (w : Ideal O → ℂ)
+    (hzero : ∀ I, ¬Squarefree I → w I = 0)
+    (hmul : ∀ J, ¬P ∣ J → w (P * J) = w P * w J)
+    (m : ℕ) :
+    (∑ I ∈ fiber (Ideal.absNorm P * m), w I) =
+      exceptPrimeCoeff P w (Ideal.absNorm P * m) +
+        w P * exceptPrimeCoeff P w m := by
+  classical
+  let n := Ideal.absNorm P * m
+  have hsplit : (∑ I ∈ fiber n, w I) =
+      (∑ I ∈ fiber n, if ¬P ∣ I then w I else 0) +
+      (∑ I ∈ fiber n, if P ∣ I then w I else 0) := by
+    rw [← Finset.sum_add_distrib]
+    apply Finset.sum_congr rfl
+    intro I hI
+    by_cases h : P ∣ I <;> simp [h]
+  have hbad : (∑ I ∈ fiber n, if P ∣ I then w I else 0) =
+      ∑ I ∈ badFiber P m, w I := by
+    rw [badFiber]
+    exact sum_filter_squarefree (fun I => P ∣ I) w hzero n
+  have hgood : (∑ J ∈ goodFiber P m, w J) = exceptPrimeCoeff P w m := by
+    rw [goodFiber, exceptPrimeCoeff, Finset.sum_filter]
+    apply Finset.sum_congr rfl
+    intro J hJ
+    by_cases hsq : Squarefree J
+    · simp [hsq]
+    · simp [hsq, hzero J hsq]
+  calc
+    (∑ I ∈ fiber n, w I) =
+        (∑ I ∈ fiber n, if ¬P ∣ I then w I else 0) +
+          (∑ I ∈ fiber n, if P ∣ I then w I else 0) := hsplit
+    _ = exceptPrimeCoeff P w n + ∑ I ∈ badFiber P m, w I := by
+      rw [hbad]
+      rfl
+    _ = exceptPrimeCoeff P w n + ∑ J ∈ goodFiber P m, w (P * J) := by
+      rw [squarefree_prime_fiber_sum P hP m w]
+    _ = exceptPrimeCoeff P w n + w P * ∑ J ∈ goodFiber P m, w J := by
+      rw [Finset.mul_sum]
+      congr 1
+      apply Finset.sum_congr rfl
+      intro J hJ
+      exact hmul J (mem_goodFiber.mp hJ).2.2
+    _ = exceptPrimeCoeff P w n + w P * exceptPrimeCoeff P w m := by rw [hgood]
+
+theorem restore_one_prime_all (P : Ideal O) (hP : Prime P)
+    (w : Ideal O → ℂ)
+    (hzero : ∀ I, ¬Squarefree I → w I = 0)
+    (hmul : ∀ J, ¬P ∣ J → w (P * J) = w P * w J)
+    (n : ℕ) :
+    (∑ I ∈ fiber n, w I) = exceptPrimeCoeff P w n +
+      (if Ideal.absNorm P ∣ n then
+        w P * exceptPrimeCoeff P w (n / Ideal.absNorm P) else 0) := by
+  classical
+  by_cases hdiv : Ideal.absNorm P ∣ n
+  · have hn : Ideal.absNorm P * (n / Ideal.absNorm P) = n :=
+      Nat.mul_div_cancel' hdiv
+    rw [← hn]
+    have hPnorm : Ideal.absNorm P ≠ 0 :=
+      (Ideal.absNorm_eq_zero_iff).not.mpr hP.ne_zero
+    simpa [Nat.mul_div_cancel_left, hPnorm] using
+      restore_one_prime P hP w hzero hmul (n / Ideal.absNorm P)
+  · have hnone : ∀ I ∈ fiber n, ¬P ∣ I := by
+      intro I hI hd
+      apply hdiv
+      have hnorm : Ideal.absNorm I = n := mem_fiber.mp hI
+      rw [← hnorm]
+      exact Ideal.absNorm_dvd_absNorm_of_le (Ideal.dvd_iff_le.mp hd)
+    simp only [ite_eq_right hdiv, add_zero]
+    rw [exceptPrimeCoeff]
+    apply Finset.sum_congr rfl
+    intro I hI
+    simp [hnone I hI]
+
+noncomputable def outsideCoeff (S : Finset (Ideal O))
+    (w : Ideal O → ℂ) (n : ℕ) : ℂ :=
+  ∑ I ∈ fiber n, outsideWeight S w I
+
+private theorem outsideWeight_zero_of_not_squarefree (S : Finset (Ideal O))
+    (w : Ideal O → ℂ) (hzero : ∀ I, ¬Squarefree I → w I = 0)
+    (I : Ideal O) (hsq : ¬Squarefree I) : outsideWeight S w I = 0 := by
+  by_cases hg : ∀ P ∈ S, ¬P ∣ I
+  · simp [outsideWeight,  hzero I hsq]
+  · simp [outsideWeight, hg]
+
+private theorem outsideWeight_prime_of_not_mem (S : Finset (Ideal O))
+    (hprime : ∀ Q ∈ S, Prime Q) (P : Ideal O) (hP : Prime P)
+    (hPnot : P ∉ S) (w : Ideal O → ℂ) :
+    outsideWeight S w P = w P := by
+  have hgood : ∀ Q ∈ S, ¬Q ∣ P := by
+    intro Q hQ hd
+    have heq : Q = P :=
+      associated_iff_eq.mp ((hprime Q hQ).associated_of_dvd hP hd)
+    exact hPnot (heq ▸ hQ)
+  change (if ∀ Q ∈ S, ¬Q ∣ P then w P else 0) = w P
+  exact ite_eq_left hgood
+
+private theorem exceptPrimeCoeff_outsideWeight (S : Finset (Ideal O))
+    (P : Ideal O) (w : Ideal O → ℂ) (n : ℕ) :
+    exceptPrimeCoeff P (outsideWeight S w) n =
+      outsideCoeff (insert P S) w n := by
+  classical
+  unfold exceptPrimeCoeff outsideCoeff
+  apply Finset.sum_congr rfl
+  intro I hI
+  by_cases hd : P ∣ I
+  · simp [outsideWeight, hd]
+  · by_cases hs : ∀ Q ∈ S, ¬Q ∣ I
+    · simp [outsideWeight, hd]
+    · simp [outsideWeight, hd, hs]
+
+theorem restore_insert_prime (S : Finset (Ideal O))
+    (hprime : ∀ Q ∈ S, Prime Q) (P : Ideal O) (hP : Prime P)
+    (hPnot : P ∉ S) (w : Ideal O → ℂ)
+    (hzero : ∀ I, ¬Squarefree I → w I = 0)
+    (hmul : ∀ I J, IsRelPrime I J → w (I * J) = w I * w J)
+    (n : ℕ) :
+    outsideCoeff S w n = outsideCoeff (insert P S) w n +
+      (if Ideal.absNorm P ∣ n then
+        w P * outsideCoeff (insert P S) w (n / Ideal.absNorm P) else 0) := by
+  have hzeroS : ∀ I, ¬Squarefree I → outsideWeight S w I = 0 :=
+    outsideWeight_zero_of_not_squarefree S w hzero
+  have hmulS : ∀ J, ¬P ∣ J →
+      outsideWeight S w (P * J) = outsideWeight S w P * outsideWeight S w J := by
+    intro J hnot
+    apply outsideWeight_mul S hprime w P J
+    exact hmul P J (hP.irreducible.isRelPrime_iff_not_dvd.mpr hnot)
+  have hrest := restore_one_prime_all P hP (outsideWeight S w) hzeroS hmulS n
+  unfold outsideCoeff at hrest ⊢
+  rw [exceptPrimeCoeff_outsideWeight S P w n,
+    exceptPrimeCoeff_outsideWeight S P w (n / Ideal.absNorm P),
+    outsideWeight_prime_of_not_mem S hprime P hP hPnot w] at hrest
+  exact hrest
+
+end FiniteSFactor
+namespace ShortDraftHeckeBridge
+
+theorem baseChangeWeight_zero_of_not_squarefree {q : ℕ}
+    (χ : DirichletCharacter ℂ q) (I : Ideal O) (hsq : ¬Squarefree I) :
+    baseChangeWeight χ I = 0 := by
+  rw [baseChangeWeight, UniqueFactorizationMonoid.moebius_of_not_squarefree hsq]
+  simp
+
+theorem baseChangeWeight_mul_of_isRelPrime {q : ℕ}
+    (χ : DirichletCharacter ℂ q) (I J : Ideal O) (h : IsRelPrime I J) :
+    baseChangeWeight χ (I * J) =
+      baseChangeWeight χ I * baseChangeWeight χ J := by
+  simp only [baseChangeWeight, map_mul, h.moebius_mul, Int.cast_mul, Nat.cast_mul]
+  ring
+
+end ShortDraftHeckeBridge
+
+namespace DyadicTransfer
+
+end DyadicTransfer
+
+namespace FiniteSFactor
+
+end FiniteSFactor
+
+end
+
+end OAI

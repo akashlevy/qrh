@@ -1,0 +1,43 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{array,booktabs,tabularx,longtable}
+\usepackage[expansion=false]{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,hypertexnames=false]{hyperref}
+\hypersetup{pdftitle={A zero-free half-plane for the Riemann zeta function},pdfsubject={An exposition of a cubic theta argument, matched to a Lean formalization}}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{3em}
+\setcounter{tocdepth}{1}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{slogan}[theorem]{Slogan}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\NK}{\mathrm N_{K/\Q}}
+\newcommand{\C}{\mathbb C}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\E}{\mathcal E}
+\newcommand{\ind}{\mathbf1}
+\newcommand{\sfstar}{\sideset{}{^*}\sum}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\dd}{\,d}
+\newcommand{\precbd}{\preccurlyeq}
+
+
+\title{A zero-free half-plane for the Riemann zeta function:\\ $\zeta(s)\ne0$ for $\Rea s>23/24$}
+\author{An exposition of OpenAI's \emph{The Quasi-Riemann Hypothesis},\\ matched to a Lean formalization}
+\date{October 9, 2026}
+
