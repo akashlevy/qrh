@@ -1,0 +1,3 @@
+[Family] N0=20000 cols=5632  K=200 k's=57  L0=300 P's=44  rows=2508  (6.4s)
+[arith] k'=57 P'=44 cols=5632: ||G||=14788 (rows+cols=8140)  diag blocks 6785 (max 6794; K'+N'=5689)  off blocks mean 1040 max 1136 (2sqrt(K'N')=1133)  block-Schur sum 51783  ||G_off||=9292  [15s]
+[prod-random] k'=57 P'=44 cols=5632: ||G||=14880 (rows+cols=8140)  diag blocks 6461 (max 6472; K'+N'=5689)  off blocks mean 1044 max 1148 (2sqrt(K'N')=1133)  block-Schur sum 51838  ||G_off||=9336  [14s]

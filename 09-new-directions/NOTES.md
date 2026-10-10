@@ -637,3 +637,24 @@ Files: `agents/h2/{H2.md, model_h2.py, h2_kernel.py, h2_poisson_Z.py, h2_struct.
   - The low side is the same 11/12 − ℓ/4, so our structural analysis (wall, Gram, counts) applies unchanged.
 - openai/math HEAD is still fd4aeeb. Web search finds nothing new.
 - **The record to beat meaningfully is now 0.874887 (pending). The 27/31 target is unaffected.** Next scan no earlier than ~14:40 UTC.
+
+## 37. Agent report: hls (round 6, finished ~13:00 UTC) — (HLS) numerically true, unproved at the edge, worthless alone
+
+Files: `agents/hls/{HLS.md, hls_lib.py, gram_scan.py, sextic_kubota.c, block_decor.py, model_hls.py, runs/}`.
+- **Numerics:** λ_max/(rows+cols) = 1.64–1.90, flat in scale, the same as a random-product control. P78's sequential bound is 5–20× too big.
+  - Gauss-sum test vectors give no excess except the cubic theta on k = 1 rows, which is already bounded.
+  - The family is "theta-poor": sextic coefficients at cubes decay, |τ₆(p³h)| ≈ N(p)^{−1/6}|τ₆(ph)|. Calibrated against Patterson, |τ₃(p)|² = N(p)^{−1/3}.
+- **Proved:** D(N) ≪ min{L(K+N), K(L+N+(LN)^{2/3}), N + KL² + KL√N}. No better than sequential in K < N < KL; the loss N/K is exactly the wall.
+- **Why the edge is unreachable:**
+  - Poisson in n (N ↔ K²L²/N) and Poisson in k (K ↔ N²/K) are involutions with common fixed point N = KL.
+  - The full dual carries a sextic cocycle (a partial transpose of a rank-one matrix), so no Heath-Brown recursion closes.
+  - At the edge, (HLS) is equivalent to (H2)-type decorrelation across P-blocks, for characters.
+- **Model:**
+  - (HLS) alone, or (H2) alone: 0.8749568 (break-even).
+  - (HLS) + (H2): 19/22.
+  - A partial sieve KL + N·L^a with perfect (H2) gives 19/22, 0.8676, 27/31 and 0.874957 for a ≤ 1/3, 0.5, 0.687 and 1.
+- **No other P78 lemma improves** (reflected-energy, Lemma marked, DIAG all use coherent mark sums).
+
+**Round 6 conclusion:** both halves of the 19/22 conditional theorem reduce to the same decorrelation across mark blocks, once
+for characters (HLS) and once for theta coefficients (H2). Numerically each is exactly random-matrix-like. A proof needs a
+freeness/uncertainty principle for structured subspaces, which nothing in the literature supplies.
