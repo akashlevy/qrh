@@ -314,3 +314,24 @@ Files: `agents/diag/{DIAG_NOTES.md, model.py (+wz), verify.jsonl, sweep_*.jsonl,
 - **The Poisson dual of the energy** (via g(χ)g(χ²) = J(χ,χ²)g(χ³), with J multiplicative on squarefree A) is the second moment of
   sextic twists of 1/L(s, ξ) for a Grössencharacter ξ, in the diagonal regime. W(w) needs its asymptotic with relative error
   Z^{−w}: an "asymptotic large sieve" (cf. Conrey–Iwaniec–Soundararajan) for a thin (one-character-per-modulus) family.
+
+## 21. Agent report: wall-spectral (round 2, finished ~07:45 UTC) — NEGATIVE, conditional theorem
+
+Files: `agents/wall-spectral/{WALL_SPECTRAL.md, identity_check.py, fe_group.py, fe_group_compare.py, mds_reach.py, opnorm.py, model_ws.py}`.
+- **Identity (proved, 540/540 checks):** β(n)ψ_k(n)χ_P(n)^{−2} = μ(n)·G(n)·𝔯(n,k)·conj γ₁(n; k³P⁴). The Grössencharacter cancels but μ remains.
+  So E is a second moment of Möbius-twisted sextic Kubota sums on the thin index set h = k³P⁴. That is P78's own dual (§6).
+- **Rankin–Selberg / MDS:** the group is infinite with invariant form (x₁+x₂+y)², affine C̃₂. It is the same as Soundararajan–Young / Li for GL2
+  quadratic twists. Contrast: the David–de Faveri–Dunn–Stucky cubic-family second moment has a finite group (order 24/48).
+  The group fixes I = x₁+x₂+y, so Bochner hulls never go below the initial inf I = 1/2. The cross-mark terms need I ≤ 0.263 (proved no-go).
+- **Shifted convolutions (proved no-go).** A full character group containing every ψ_k (k ≤ K) has modulus ≥ lcm(k ≤ K) ≫ N, so
+  congruences become equalities and no shifted sums appear. Twist-averaging moves the wall the wrong way.
+- **Kuznetsov / amplification:** even Lindelöf for every individual twist gives E ≪ KLN, which is worse than the large sieve (KL/N = Z^{1−M} > 1).
+- **Conditional theorem:**
+  - (H1) Σ_{k≤K}|D_P(½+it,k)|² ≪ K^{1+ε}L^ε uniformly in the level L²;
+  - (H2) decorrelation across distinct marks, Σ_k D_{P₁}·conj D_{P₂} ≪ K^{1+ε}/L.
+  - Together they give E ≪ KN·Z^ε for all N ≤ KL, hence θ = 19/22 = 0.863636.
+  - 27/31 needs (H2) with saving ≥ L^{−0.93}.
+- **CORRECTION to earlier model values.** The Patterson bias of unweighted slots produces the (NL)^{2/3} branch of Lemma
+  hybrid-energy, of excess (M+4ℓ−2)/3. It is harmless up to wE ≈ 0.064 (0.8709554 either way). If it is kept, any W(w)
+  **saturates at 19/22 = 0.863636**, so energy-wall's large-wE values (0.86333, 0.85) were optimistic.
+  Numerics (opnorm): W holds uniformly in the slot coefficients (top singular value/K′D tracks the random control).

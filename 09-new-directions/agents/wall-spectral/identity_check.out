@@ -1,0 +1,3 @@
+paper identity gamma1*gamma2 = mu*alpha*G at 60 squarefree n: True
+twisted identity (*) : 540 tests, failures 0
+same identity WITHOUT mu(n): failures 351 (all tests with omega(n) odd fail)
