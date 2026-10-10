@@ -25,3 +25,4 @@ venv/
 10-below-41-47/agents/*/scratch/
 10-below-41-47/agents/*
 !10-below-41-47/agents/lit2/
+11-energy-wall/*/
