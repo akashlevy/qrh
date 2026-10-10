@@ -296,3 +296,21 @@ Files: `agents/diag/{DIAG_NOTES.md, model.py (+wz), verify.jsonl, sweep_*.jsonl,
 - OpenAI's moments-of-different-lengths technique cannot work for n = 6. Theta profiles satisfy every power and BHM constraint;
   near-orthogonality excludes them only when 1/n > 1/4, i.e. only for n = 3.
 - The β* bootstrap costs κ = 3/4 per unit of slot length against a gain ≤ 0.39.
+
+## 20. Why every lever is thin-family (coordinator synthesis, 07:40 UTC)
+
+- **Marks are intrinsically thin.** By twisted multiplicativity, τ(pA) = τ(p)τ(A)(p/A)₃^{±}, so a first-power mark is a twist of the
+  cubic theta by a cubic character of conductor p. That multiplies the reflection conductor by p² for length gain p. The P^{1/6}
+  amplification and the conductor cost come from the same cubic symbol.
+  - Cube marks p³ (Kazhdan–Patterson periodicity, no symbol) cost nothing but also amplify nothing (§9).
+  - Coherent amplification needs the slot sum inside the square, hence a family of fixed size Q with conductor (QP)².
+  - Summing the slots outside the square loses the coherence factor P (checked).
+- **One character per modulus.** The probe family {(·/m)_6 : m ~ Q} and its dual {(·/k)₂ : k ≤ K} have one character per modulus,
+  as in quadratic-twist families.
+  - For full families of all characters mod q, exact orthogonality turns beyond-the-edge energies into shifted convolutions
+    Σ τ(A)τ̄(A+hq). These are Fourier coefficients of |θ|², which is an ORDINARY (non-metaplectic) automorphic function on a Bianchi
+    congruence group, since the Kubota multipliers cancel. Ordinary spectral theory would then give power savings (BFKMM mechanism).
+  - The μ-absorption, however, needs the varying-modulus Gauss sums g(χ_A, ·), so a fixed-modulus family cannot carry the signal.
+- **The Poisson dual of the energy** (via g(χ)g(χ²) = J(χ,χ²)g(χ³), with J multiplicative on squarefree A) is the second moment of
+  sextic twists of 1/L(s, ξ) for a Grössencharacter ξ, in the diagonal regime. W(w) needs its asymptotic with relative error
+  Z^{−w}: an "asymptotic large sieve" (cf. Conrey–Iwaniec–Soundararajan) for a thin (one-character-per-modulus) family.
