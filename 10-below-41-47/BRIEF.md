@@ -44,7 +44,7 @@ exponent is σ ≤ 0.0857 vs σ_wt = 0.0995 (need −0.014 in U-units), or equiv
 **Single hypothetical inputs that WOULD reach 41/47 in the weighted model (all currently unproved):**
 | input | effect at ℓ = 0.1773 |
 |---|---|
-| numerator 6th moment Σ_u|S_u(n₀)|⁶ ≪ U^{1+0.10} (n₀ ≈ 0.44) | −0.012 (enough) |
+| numerator 6th moment Σ_u|S_u(n₀)|⁶ ≪ U^{1+η}, η ≲ 0.088 (corrected; η = 0 gives −0.012) | needs η ≲ 0.088 |
 | DIAG: lem:marked at r+z ≤ 1 and lem:plain at n₁+n₂+z ≤ 1 | −0.008 (enough) |
 | lem:marked capacity 0.8(1−r) + lem:plain capacity 0.4(1−2m) | −0.0001 (just enough) |
 | lem:marked capacity 0.75(1−r) + amplification slope α ≤ 0.75 | −0.0001 |

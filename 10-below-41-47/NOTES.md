@@ -114,3 +114,15 @@ yet to formalize; the Lean environment build (Mathlib + OAI + WeightedQRH) was s
   +0.0118. (d) coupled probes reduce to multi-scale weights; per-bin oracle geometry still +0.0113.
 - New sufficient condition (open): a restricted large sieve Σ_{u∈C}|S̃_u|² ≪ U^ε(#C + U^{l_y/d}) on the
   bad set closes 41/47 (θ ≈ 0.8663); minimal need at the worst bin U^{0.770} vs proved U^{0.805}.
+
+## 9. Agent `numerator` (finished; `agents/numerator/NOTES.md`) — negative, with a barrier
+- PROVED (exponent level): for every witness class there is a flat configuration satisfying ALL
+  available inputs at once (lem:plain at any lengths/capacities, the numerator × plain-witness moment,
+  lem:marked, amplification, the bin's pointwise bounds, the sextic large sieve, and every Hölder or
+  level-set combination of them) with the numerator exactly at σ_wt = min((1−R)/4 − q z_N/2, δn₀/2)
+  (`barrier_check.py`). So the weighted numerator bound is optimal for this black-box lemma set.
+- **Correction to BRIEF §2.4:** the N6 knob assumed excess η = 0. A sixth moment ≪ U^{1+η} closes 41/47
+  only for η ≲ 0.088 (b = 0, n₀ = 0.463); η = 0.10 leaves +0.0012. Best provable excess ≈ 0.34; the
+  general-coefficient truth is 3n₀ − 1 ≈ 0.39, so the d₃ structure (sixth-moment Lindelöf on average)
+  would be required. Mixed moments: |S|⁴|S_m|² needs η′ ≤ 0.086; numerator prime capacity rate ≈ 1.4.
+- Halász–Montgomery over C, even with Lindelöf for every pair character, only gives σ ≤ n₀/4 ≈ 0.11.
