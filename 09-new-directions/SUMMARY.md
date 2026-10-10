@@ -58,7 +58,24 @@ Dichotomy: **degree-2 rows ⇒ thin family; full family ⇒ degree-4 rows.** Bot
   - `agents/alt-detect/p78_cubic_lp.py` (cubic template).
 - Z[ω] numerics: `agents/edge-theta/edge_lib.py`, and `agents/cB-numerics/cubic_data.c` (exact cubic Gauss sums up to norm 10⁷).
 
+## The space of μ-absorbing probes is now fully mapped (NOTES §32)
+| split of the Jacobi triple | dual | GRH floor |
+|---|---|---|
+| P78: sextic, 1 Poisson + θ₃ row + quadratic ray | thin, degree 2 | 13/15 (7/8 with the proved counts) |
+| cubic, 1 Poisson + θ₃⊗θ₃ row | full, degree 4 (c_B = 4) | 10/11 |
+| cubic, 2 Poisson + θ₃ row | full, degree 2 | 13/12 (each Poisson costs Z^{-1/6}) |
+| cubic, 3 Poisson + Hecke row | full, degree 1 | 4/3 |
+| sextic multi-Poisson splits | — | > 1 |
+| higher-rank Kazhdan–Patterson thetas | degree r | wall (r−1)(M+ℓ) ≤ 1 |
+
+So P78's split is the unique viable member. Literature (NOTES §33): beyond-edge Lindelöf on average is known only for full
+character groups on powerful moduli or for full spectral families; μ-absorption forces squarefree, one-character-per-modulus
+families. (H1) ⇔ a subconvex bound C^{0.202} on the cubic cover, where no subconvexity is known. W(w) is a Conrey–Rodgers "2-swap"
+statement, uncontrolled for any thin family.
+
 ## Open leads, ranked
-1. Multi-variable splits of the cubic triple (two or three Poisson variables, degree-2 or degree-1 rows): being modelled (agent `twovar`).
-2. (H1)+(H2) for quadratic twists of the marked cubic theta: true numerically with big margin; needs a new spectral or amplification idea.
-3. A count mechanism beating Ingham-with-copies for sextic twists at σ ≈ 0.63–0.70.
+1. A lossless 2-swap or energy bound beyond the wall (W(0.064)) exploiting the theta coefficients' self-duality: the closest lever to
+   existing technology, though still open. Mark-design freedom is under study (agent `mark-design`).
+2. (H1)+(H2) for quadratic twists of the marked cubic theta (⇒ 19/22): true numerically with a big margin; needs a new spectral or
+   amplification idea on the cubic cover.
+3. A count mechanism beating Ingham-with-copies for sextic twists at σ ≈ 0.63–0.70. Ingham is unbeaten below 7/10 even for ζ, so this is deprioritised.
