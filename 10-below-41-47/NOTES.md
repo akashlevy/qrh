@@ -188,3 +188,17 @@ Every route to 41/47 in the weighted architecture needs one of these open inputs
 Two new proved lemmas came out (Lemma D: tuple-diagonal part of lem:marked is mark-free for
 r + z < 1; slot powers in lem:marked via elementary symmetric polarization), plus optimality results
 (numerator barrier; Theorem G for lem:plain; count LP completeness). None moves θ.
+
+## 14. Round 2, agent `xmark` (finished; `agents/xmark/NOTES.md`) — negative
+- Exact cross-term sum identified; P78 bookkeeping gives Z^{F+e}, e = max(0, r+2z−1, (2r+8z−3)/4); needed
+  saving along z = 0.744(1−r) is 0.488(1−r) (0.151 at r = 0.69).
+- PROVED: equivalent original-side form (twisted second moments T(p,p′) of the inverse witness by pair
+  characters); Prop X1 (pair large sieve, z ≤ 1/4): Σ_u|M_uQ_u|² ≪ U^ε(U + U^{1/2}(Σ|M_u|⁴)^{1/2}) — useless
+  because a Möbius fourth moment beyond the diagonal is needed (and Σ|M_u(Z^r)|⁴ ≪ U at 2r ≈ 1.4 would by
+  itself close 41/47).
+- Every tool (cubic/de Faveri sieve in the mark variable, Poisson in slot primes, bilinear (τ,τ′) structure,
+  Heath-Brown–Patterson, cubic first moment, Burgess, β*/Halász) fails at a stated step; common obstruction:
+  the mark lands inside the quadratic sieve beyond its edge, or is separated by Cauchy–Schwarz (trivial),
+  or moves into an inverse-witness moment beyond its diagonal. Numerics: cross terms random-size (within
+  3–17% of random-phase control), Möbius fourth moment Gaussian (ratio ≈ 2.06–2.10).
+- Model: a cross-mark saving δ improves the worst exponent by ≈ −0.07δ; 41/47 needs δ ≈ 0.159.
