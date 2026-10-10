@@ -224,3 +224,19 @@ Files: `agents/theta-pairing/{THETA_PAIRING.md, model_ext.py (knobs gram_s, gram
   - Petersson projection onto θ₆ is Bessel = Cauchy–Schwarz. The z = 5/6 residue *is* the signal.
 - **Precise obstruction:** a saving must come from the joint phases of π = ρ·conj(γ₂)⁴ and Patterson's column coefficients.
   That is a first moment of the A₂/4-node series. Evaluating it exposes the Möbius signal (circular), and its functional-equation images do no better than Cauchy–Schwarz.
+
+## 16. Functional-equation group of the (unmarked) energy MDS is AFFINE (coordinator)
+
+Z(s₁,s₂,w) = Σ_m m^{−w} Σ_{A₁,A₂} τ(A₁)τ̄(A₂)χ_{A₁}(m)χ̄_{A₂}(m)A₁^{−s₁}A₂^{−s₂} has three functional equations.
+Write x_i = s_i − 1/2 and y = w − 1/2.
+- σ_i: theta twisted by χ_·(m), conductor N(m)². It maps x_i ↦ −x_i, y ↦ y + 2x_i.
+- σ₃: L(w, χ_{A₁Ā₂}), conductor A₁A₂. It maps x_i ↦ x_i + y, y ↦ −y.
+
+Roots α₁ = (1,0,−1), α₂ = (0,1,−1), α₃ = (−½,−½,1); coroots 2x₁, 2x₂, 2y.
+Cartan matrix [[2,0,−1],[0,2,−1],[−2,−2,2]], **det = 0: affine (C̃₂-like)**.
+
+Lindelöf-on-average beyond the edge (W(w)) is therefore equivalent to a power-saving asymptotic in an affine MDS
+(Poisson in the family plus subtraction of the dual diagonal: §6 and the dual-diagonal argument). This is the same class
+as power-saving second moments of quadratic twists of GL2 forms at the edge. Li (2024) and Shen–Stucky reach that class
+only with log savings, and power savings there are open. BFKMM-type power savings at the edge exist for the family of
+ALL characters mod q (exact orthogonality and shifted convolutions), not for quadratic families.

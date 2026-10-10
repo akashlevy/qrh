@@ -2,7 +2,7 @@
 import json, glob, sys
 from fractions import Fraction
 TARGETS = [("27/31", 27/31), ("20/23", 20/23), ("13/15", 13/15), ("6/7", 6/7)]
-IGN = ("caseA", "delta0")
+IGN = ("caseA",)
 def load(pattern="runs/*.jsonl"):
     rows = []
     for f in sorted(glob.glob(pattern)):
@@ -11,7 +11,7 @@ def load(pattern="runs/*.jsonl"):
             r = json.loads(l)
             if "theta" in r: rows.append(r)
     return rows
-DEF = dict(wE=0.0, gram_b=1.0, kA=1.0, w1=0.0, cP=2/9, mk=0.5, perfect=False, grh=False, drop_avg=False, w2scale=0.125)
+DEF = dict(delta0=0.001, wE=0.0, gram_b=1.0, kA=1.0, w1=0.0, cP=2/9, mk=0.5, perfect=False, grh=False, drop_avg=False, w2scale=0.125)
 def norm(c):
     return {k: v for k, v in c.items() if k not in IGN and not (k in DEF and abs(float(v) - float(DEF[k])) < 1e-12)}
 def key(c, var):
