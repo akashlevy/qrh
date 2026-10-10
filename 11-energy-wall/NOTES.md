@@ -23,3 +23,30 @@ partner, identity (∗): 540/540; independent brute-force check to ≤ 1.4e-13).
   failure of the random-matrix law before K = Z^{0.85}, unmodelled P78 details (η ≠ 1, punctures, powerful rows, …).
 - **Conclusion:** W(w) — including the single-mark case and the rank-one wall — is true numerically with margin
   ≈ Z^{0.41} at the weighted geometry. This is evidence of truth only, not of provability.
+
+## Step 2 — single-mark wall SM(w) (finished; `single-mark/NOTES.md`) — no proof, failing step pinned
+- Statement: E_P = Σ_{k~K}|Σ_{n~N} β ψ_k χ_P^{−2}(n) W|² ≪ K N Z^ε for N = K²L/Z ∈ (K, K Z^w], L ≥ Z^w (weighted:
+  K = Z^{0.85}, N = Z^{0.89}, KL = Z^{1.04}). Kernel decay in lem:reflected-energy narrows the need [B] to
+  E_P(K, N′) ≪ K N′ (N/N′)^{1/2} on N′ ∈ [K Z^{w/3}, K Z^w], top rows, O < 2w, ℓ_b < w/3.
+- Current bound [P]: (K+N)N Z^ε; the N² is the Goldmakher–Louvel column term (P78 l.2644 / the NG/C² term of
+  lem:hybrid-energy l.7598), attained by flat vectors in span{ψ_k}. Lemma 2 [P]: reflection + P78's sextic sieve
+  is lossless only for N ≥ K^{3/2}L; maximal loss in between K^{1/5}L^{2/5} = Z^{0.246}.
+- **Prop U_P [P, same status as Prop U]:** for Z ≤ H ≤ Z^{3/2}, a = μḠ,
+  F_P(H) = Σ_{h~H}|Σ_{n~Z} a(n)χ_P(n)²(h/n)₆|² = Diag + O(Z^{2+ε}(1 + ZL/H)).
+  SM(w) ⟺ removing the factor ZL/H at H = ZL·Z^{−w} [B]. Exact failing step: Poisson in h, μ-absorption and the
+  completed reflection are exact; the only loss is the quadratic sieve at reflected length K²L/Z > K.
+- **Convention trap [P]:** the other cubic twist (χ_P⁴ in edge-theta's normalisation) is dual to the j = 2 theta,
+  with its wall at H = ZL²; a "χ_P⁴ family" run tests a different family. (Step 1 measured E_P directly in primal
+  form with χ_P^{−2}, so it tested the right object.)
+- Routes: (a) Perron/short (H1): the needed short-range statement is SM itself; Lindelöf for one twist gives SM(∞)
+  for that P, subconvexity helps only for δ > 0.2394; the T₀^{1/2} loss of height averaging sits in the high side
+  (signal lives in one O(1) Mellin window; the hybrid sieve returns exactly T_eff^{1/2}); Phragmén–Lindelöf
+  interpolation fails (Paley–Wiener, cost Z^{0.457σ}). (b) Hecke/Kazhdan–Patterson: the mark is invisible (Ψ³ = ψ_k);
+  Hecke amplifiers lengthen the sum. (c) **Correction: W needs only the P-average AVG-SM**, which follows from SM for
+  all but L·Z^{−w} primes. **New duality (Poisson in P, β·conj γ₂ = ᾱ):** AVG-SM ⟺ a Prop-U-type asymptotic for a
+  cubic family of GL(1) Hecke L-functions at H′ = N²/L — finite functional-equation group, but it needs a power
+  saving ≥ 0.44 uniformly in a twist of conductor H′^{0.53}: out of reach. (d) cubic first moment: beats theta terms
+  ((QN)^{2/3}), not the column term; flat configurations satisfy all its constraints. (e) spectral: no Kloosterman
+  sums arise (every Gauss sum is a character); θ⊗χ_P^{−2} is residual spectrum.
+- **Minimal missing input:** ‖Π_V b_P‖² ≪ K Z^ε for b_P = βχ_P^{−2}W and V = span{ψ_k} — Lindelöf on average for K
+  quadratic twists of one fixed theta of large level (theta analogue of an open GL(2) problem). True numerically (step 1).
