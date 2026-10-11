@@ -14,6 +14,7 @@ Local times are PDT and come from file modification times; UTC is marked where u
 | 2026-10-07 | openai/math `fd4aeeb2e`. Kintali posts a 47/48 short proof. |
 | 2026-10-08 | Baiying Liu posts 34999/40000 and (1507−2√921)/1653 (arXiv:2610.12234). Argonaut posts 3499999/4000000. |
 | 2026-10-08/09 | Several groups publish the cubic-root endpoint θ\* ≈ 0.874957019420 or rationals just above it: GPT-6 Astra & Shunia, Guo, Li Xiang (repo created Oct 9 02:43 UTC), ProofCouncil (Oct 9 11:37 UTC), Nielstron (Oct 9 17:21 UTC). The QRH Bounds tracker launches on Oct 9. |
+| 2026-10-10 | By 12:40 UTC, Hailey Collet's tracker PR #9 claims 0.87488664704, a re-optimization of our weighted numerator with variable κ. Nothing public below 0.8748; no 41/47 claim anywhere (checked at ~14:00 UTC). |
 
 ## Our work
 
@@ -34,3 +35,9 @@ Local times are PDT and come from file modification times; UTC is marked where u
 | Oct 10 01:53:26 UTC | [08](../08-weighted-numerator-10499-12000) | Three-kernel judge (con-ron, NanoDa, Lean) **PASS** |
 | Oct 10 03:22 UTC | [08](../08-weighted-numerator-10499-12000) | Submitted [GTimG/QuasiRiemannTracker#6](https://github.com/GTimG/QuasiRiemannTracker/pull/6) |
 | Oct 9 (evening, PDT) | — | This repository assembled from the working directories and session scratchpads |
+| Oct 10 06:41–13:12 UTC | [09](../09-new-directions) | Claude (Opus 5.5) session with 18 agents on every lever of the 7/8 architecture: Proposition U, edge-theta numerics (wall true numerically, margin ≈ Z^0.43), (H1)/(H2) ⇒ 19/22 (conditional). No improvement. Merged as akashlevy/qrh#1. |
+| Oct 10 14:08 UTC | — | Tracker PR #6 (10499/12000) merged; it is the tracker's best framework-verified record |
+| Oct 10 14:15–19:42 UTC | [10](../10-below-41-47) | Claude (Opus 5.5) session aiming at θ < 41/47. Weighted exponent model; nine agents in two rounds (one launch lost to an API spend limit), all negative. Best θ from proved inputs: 0.8748866. Single-input thresholds for 41/47; Lemma D, slot powers, Theorem G, numerator barrier. |
+| Oct 10 (evening UTC) | [08](../08-weighted-numerator-10499-12000) | The 10499/12000 Lean package rebuilt from source on Linux (Mathlib built from source; 11,847 jobs). All ten audited endpoints use only the standard axioms. |
+| Oct 10 21:31–23:39 UTC | [11](../11-energy-wall) | Energy-wall program. Step 1: exact Z[ω] numerics, margin ≈ Z^0.41. Step 2: single-mark reduction (Proposition U_P), no proof. Step 3: function-field analogue, wall true with random-matrix margin, no transferable mechanism. |
+| Oct 10 ~23:50 UTC | — | Sessions 10–11 merged into main (akashlevy/qrh#2). Expert note [MISSING_ESTIMATE_41_47.md](MISSING_ESTIMATE_41_47.md) and these docs updated. |

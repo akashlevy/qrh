@@ -71,3 +71,33 @@ Every route attempted, in rough chronological order, with its outcome and the re
 | Lean formalization: partial (GPT-6 Astra), then completion (Opus 5.5) | ✅ | The prior session stopped one compile error short (`NumeratorActualSource.lean:59`). The completion also fixed a stale-object import. | [08](../08-weighted-numerator-10499-12000) `history/` |
 | Projection onto ρ; angular modulation; Gauss-phase cancellation | ⏸ inconclusive | A reformulation only / needs a new high identity / τ₆(m³) unknown | [07](../07-method-barriers) `independent_low.txt` |
 | Signed dual of the P2 mean square | ⚠️ partial | The unit j-block gap | [07](../07-method-barriers) |
+
+## Toward θ < 41/47 (Oct 10 afternoon)
+
+Session 09 (`09-new-directions/`, Oct 10 morning) mapped the levers of the pointwise-numerator architecture; see its `SUMMARY.md`. Session 10 redid the analysis for the weighted architecture of 10499/12000. Everything here is in [10](../10-below-41-47); the conclusions are collected in [MISSING_ESTIMATE_41_47.md](MISSING_ESTIMATE_41_47.md).
+
+| Route | Outcome | Why | Where |
+|---|---|---|---|
+| Weighted exponent model of the high side | ✅ tool | Reproduces the 10499/12000 certificate; locates the 41/47 deficit (+0.011) at δ ≈ 0.47 with maximal prime amplitude; the numerator, not the counts, is the bottleneck | `model/`, `NOTES.md` §2 |
+| Numerator × plain witness; copies; sextic large sieve; β*-numerator; Halász–Montgomery; separate numerator/denominator bins | ❌ | Each reproduces the current bound or is worse | `NOTES.md` §3 |
+| Numerator contour Re w = c with moment convexity; low-side Cauchy–Schwarz on bad rows; multi-scale numerators | ❌ | Affine in c (an endpoint is optimal); needs an M_κ-type large-values bound; additive | `NOTES.md` §5 |
+| Probe redesign (s-weights, product numerators, annihilation, coupled probes) | ❌ | All worse or neutral; new open sufficient condition: a restricted large sieve on the bad rows | `agents/redesign/` |
+| Beat the fourth-moment numerator bound | ❌ with a barrier | A flat configuration meets every available input at σ_wt; a sixth moment would need excess ≤ 0.097 (provable: 0.34) | `agents/numerator/` |
+| Raise `lem:marked`'s capacity | ❌ (Lemma D ✅) | Reduces to cross-tuple terms, which need ≈ 60% of square-root cancellation across marks | `agents/marked-cap/` |
+| Exploit the prime amplitudes (slot powers, amplitude windows) | ❌ (slot-power lemma ✅) | Unlimited prime supply, but no exponent effect at the paper's capacities | `agents/amplitude/` |
+| Raise `lem:plain`'s capacity | ❌ (Theorem G ✅) | The region is optimal for the proof's moves; 41/47 needs a twisted fourth moment at the edge | `agents/plain-cap/` |
+| Cross-mark cancellation | ❌ (Prop X1 ✅) | Needs a Möbius fourth moment beyond the diagonal; cross terms are random-size numerically | `agents/xmark/` |
+| Combine small savings | ❌ | The levers are additive; best θ from proved inputs is 0.8748866 | `agents/combo/` |
+| Relax the energy wall | ❌ (rank-one reduction ✅, conditional) | W(w) reduces to one core sum; Lemma-D split, large-values dichotomy, slot groups and the cube part all fail | `agents/wall4/` |
+| Literature | ❌ | No published tool supplies any of the needed inputs; tracker PR #6 merged | `agents/lit2/` |
+| Gram exceptional factor g < 1 | ⚠️ g ≤ 0.739 would give 41/47 | Equivalent to the signal-circular pairing problem of 04/07 | `NOTES.md` §6 |
+
+## The energy-wall program (Oct 10 evening)
+
+The lossless wall W(w) was judged the least hopeless input, so it got a three-step program. Everything is in [11](../11-energy-wall).
+
+| Route | Outcome | Why | Where |
+|---|---|---|---|
+| Step 1: exact Z[ω] numerics at the weighted geometry | ✅ evidence only | W holds numerically: random-matrix off-diagonal, margin ≈ Z^0.41 | `numerics/` |
+| Step 2: the single-mark case (extend Proposition U to one twist) | ❌ (Proposition U_P ✅) | The only lossy step is the quadratic large sieve on the reflected dual; Perron, Hecke, spectral, first-moment and Poisson-in-P routes each fail at a stated step | `single-mark/` |
+| Step 3: function-field analogue over F_q[T] | ✅ evidence; ❌ for θ | W holds there with random-matrix margin and is provable at large q under hypotheses (Proposition A), but the mechanisms (Deligne, homological stability) have no number-field substitute; the C̃₂ functional-equation invariant explains why finite functional equations stop at the wall | `function-field/` |

@@ -13,11 +13,12 @@ The starting point was OpenAI's 7/8 paper and Lean development ([openai/math](ht
 
 | θ | Result | Evidence | Where |
 |---|---|---|---|
-| **10499/12000 ≈ 0.8749167** | **β\* ≤ 10499/12000.** ζ, all Dirichlet and all Q(ζ₃) Hecke L-functions are nonzero for Re s > 10499/12000. This is about 4·10⁻⁵ below every other public bound (the cubic-root endpoint ≈ 0.874957019). | **Lean**, standard axioms only. Isolated rebuild, Comparator, and a con-ron + NanoDa + Lean three-kernel PASS (author-side, unsandboxed). Submitted to the tracker as [GTimG/QuasiRiemannTracker#6](https://github.com/GTimG/QuasiRiemannTracker/pull/6). No human peer review yet. | [`08-weighted-numerator-10499-12000/`](08-weighted-numerator-10499-12000) |
+| **10499/12000 ≈ 0.8749167** | **β\* ≤ 10499/12000.** ζ, all Dirichlet and all Q(ζ₃) Hecke L-functions are nonzero for Re s > 10499/12000. This is about 4·10⁻⁵ below every other framework-verified bound (the cubic-root endpoint ≈ 0.874957019). Hailey Collet's pending tracker PR #9 (0.8748866) re-optimizes this construction. | **Lean**, standard axioms only. Isolated rebuild, Comparator, and a con-ron + NanoDa + Lean three-kernel PASS (author-side, unsandboxed). Merged into the tracker on 10 Oct as its best framework-verified record ([GTimG/QuasiRiemannTracker#6](https://github.com/GTimG/QuasiRiemannTracker/pull/6)). Rebuilt from source on Linux on 10 Oct (endpoints: standard axioms only). No human peer review yet. | [`08-weighted-numerator-10499-12000/`](08-weighted-numerator-10499-12000) |
 | 23/24 | **The shortest verified QRH proof:** ζ(s) ≠ 0 for Re s > 23/24. It is 121.5k code lines, 72% smaller than the 7/8 proof, with a paper-numbered spine and a matching 46-page paper. A Dirichlet version and an in-place pruning of openai/math (−25.7%) are in [akashlevy/math#1](https://github.com/akashlevy/math/pull/1). | **Lean**, Comparator (all 5 QRH challenges after pruning) | [`05-lean-23-24/`](05-lean-23-24) |
 | 34999/40000 | The 7/8 lemma set with re-optimized geometry. Liu found the same value independently the same day. | Exact rational certificate (paper-level) | [`01-seven-eighths-lemma-set/`](01-seven-eighths-lemma-set) |
 | 43747851/50000000 | κ-feedback bootstrap. **Superseded and not novel.** | Exact certificates; partial Lean | [`06-kappa-bootstrap/`](06-kappa-bootstrap) |
 | 6/7 (conditional) | Theorem C1: the below-diagonal mean square M_{6/7} ⇒ 6/7. Exact conditional certificates also give 6/7 under refined count + W(3/10), and under GRH-for-rows + Gram fix. | Proof + exact certificates | [`03-six-sevenths/`](03-six-sevenths) |
+| 41/47 ≈ 0.8723 (conditional, exponent model) | Any one of about ten estimates past a large-sieve edge would give θ < 41/47. The cleanest is a **lossless energy wall** W(0.041): a second-moment bound for quadratic twists of twisted cubic theta series. It holds numerically (margin ≈ Z^0.41) over Q(ω) and in an F_q[T] model, but no known method reaches it. With proved inputs the method stops at 0.8748866. | Exact LP exponent model; numerics; written up for experts in [docs/MISSING_ESTIMATE_41_47.md](docs/MISSING_ESTIMATE_41_47.md) | [`10-below-41-47/`](10-below-41-47), [`11-energy-wall/`](11-energy-wall) |
 
 ### Key obstructions
 
@@ -36,6 +37,10 @@ The full list is in [docs/OBSTRUCTIONS.md](docs/OBSTRUCTIONS.md).
 - **The quartic (Q(i)) transplant gives nothing (θ = 1).** The reflection conductor is N(h)³.
 - **θ = 1/2 is out of reach** for this method without GRH-strength input.
 
+**Below 41/47 (sessions 10–11)**
+- **Small savings don't add up.** The five power-saving levers of the weighted argument are additive to within 3%, so 41/47 needs about a 0.01 saving in five lemmas at once (or one large saving).
+- **The energy wall stops every known method.** Its loss is a single quadratic-large-sieve column term, sharp for general coefficients. Every finite functional equation preserves an invariant that the wall estimate needs to change. Function fields get past such walls with algebraic geometry, which has no number-field counterpart.
+
 ## Repository map
 
 | Directory | Date | Topic |
@@ -48,6 +53,9 @@ The full list is in [docs/OBSTRUCTIONS.md](docs/OBSTRUCTIONS.md).
 | [`06-kappa-bootstrap/`](06-kappa-bootstrap) | Oct 9 | κ ≥ 13/18 for `lem:plain`, then the feedback bootstrap (historical) |
 | [`07-method-barriers/`](07-method-barriers) | Oct 9 | κ-feedback cubic barrier, 13/15 low-majorant barrier, low-side and signed-dual no-gos |
 | [`08-weighted-numerator-10499-12000/`](08-weighted-numerator-10499-12000) | Oct 9–10 | **Headline result**: manuscript, Lean package, certificates, kernel evidence, audits, submission |
+| [`09-new-directions/`](09-new-directions) | Oct 10 | 18 agents on every lever of the 7/8 architecture: Proposition U, edge-theta numerics, (H1)/(H2) ⇒ 19/22 (conditional), why each lever needs a beyond-the-edge input |
+| [`10-below-41-47/`](10-below-41-47) | Oct 10 | Toward θ < 41/47: weighted exponent model, nine agents (all negative), proved-input frontier 0.8748866, single-input thresholds, Lemma D, slot powers, Theorem G |
+| [`11-energy-wall/`](11-energy-wall) | Oct 10 | The energy-wall program: exact Z[ω] numerics (margin Z^0.41), single-mark reduction (Proposition U_P), function-field analogue |
 | [`docs/`](docs) | — | Cross-cutting synthesis (below) |
 | [`tools/`](tools) | — | `render_pdf.swift` (PDF page renders for review) |
 
@@ -56,6 +64,7 @@ The full list is in [docs/OBSTRUCTIONS.md](docs/OBSTRUCTIONS.md).
 - [docs/OBSTRUCTIONS.md](docs/OBSTRUCTIONS.md): every barrier, with precise statements and status.
 - [docs/STRATEGIES.md](docs/STRATEGIES.md): every route tried and why it worked or failed.
 - [docs/OPEN_LEADS.md](docs/OPEN_LEADS.md): ranked next steps for mathematics, formalization and verification.
+- [docs/MISSING_ESTIMATE_41_47.md](docs/MISSING_ESTIMATE_41_47.md): a short note for experts: what would give θ < 41/47, the energy-wall estimate, the evidence, and why known methods stop.
 - [docs/PRIOR_WORK.md](docs/PRIOR_WORK.md): OpenAI's papers, the competing-claims table, and literature by topic.
 - [docs/RESOURCES.md](docs/RESOURCES.md): our repos and PRs, upstream sources, Lean pins, verification tools.
 - [docs/TIMELINE.md](docs/TIMELINE.md): what happened when.

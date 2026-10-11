@@ -12,6 +12,7 @@ Leads are ranked roughly by expected value per unit of effort within each sectio
    - On its own it appears saturated near 0.87489, from a coarse exploratory search.
    - **Untried lever** (`audits/independent_count.txt` item 4): factor the row-independent Euler term D·W = η(p)Np^{−s−w} to extract L_F^S(s + w, η), extending the Euler region across s + w = 1.
    - Combining the weighted numerator with κ-feedback (c > 2/9) is undocumented. **Caution:** κ-feedback is publicly Li Xiang's (and Guo's and Shunia's) mechanism; per the project rule, do not copy Li Xiang's work.
+   - **Update (session 10):** the weighted bound σ_wt is optimal for the available lemma set (numerator barrier, [10](../10-below-41-47) `agents/numerator/`), and with every proved input the method stops at 0.8748866. The Euler-term lever is still unexamined; it changes where the w-contour may move, not the fourth-moment step that sets σ_wt, so a gain looks unlikely [heuristic].
 3. **Prove M_κ for some κ < 1** ([02](../02-strengthening), [03](../03-six-sevenths)).
    - M_κ is square-root cancellation on average for Möbius sums over a family of sextic twists *smaller than the sum length*.
    - κ = 6/7 gives 6/7 by Theorem C1; κ = 3/5 gives 3/4.
@@ -21,12 +22,14 @@ Leads are ranked roughly by expected value per unit of effort within each sectio
      - a non-positive (sieve or spectral) treatment of the coprime-pair form Q_cop, whose cancellation is visible numerically;
      - a coefficient-sensitive O(D^{2+ε}) bound for the unit j-block of the signed dual ([07](../07-method-barriers)).
 4. **A lossless marked energy beyond the wall:** W(w) with w ≳ 0.285, plus the proved refined count, gives 6/7 ([03](../03-six-sevenths) R4). Numerically the energies stay flat to 8–128× past the wall.
+   - **Update (sessions 10–11):** in the weighted architecture W(0.041) alone gives θ < 41/47 (W(0.036) if it also feeds `lem:marked`). W is true numerically with margin ≈ Z^0.41 and in an F_q[T] model, and it reduces to a single-mark projection bound; every known method stops at it. See [MISSING_ESTIMATE_41_47.md](MISSING_ESTIMATE_41_47.md).
 5. **A lossless one-slot marked moment** at (r, z, m) = (7/12, 5/12, 1) gives 6/7. It is true under GRH ([03](../03-six-sevenths) R1, C4).
 6. **A power saving s₀ > 0 for (V′)** in the Gram split ([04](../04-gram-split)).
    - The saving must hold in the d = 0 block at M ∈ [0.80, 0.86].
    - (V′_LS) with η > 0.066, or LoA_π with θ_π ≲ 1.31, would beat 0.874957.
    - Smaller items there: write out Lemma C at all cusp pairs, so that Corollary D is unconditional; this gains structure, not θ. Try the finite-scale (V_X) double-Poisson route, which avoids metaplectic Voronoi.
 7. **A non-Cauchy–Schwarz treatment of the Gram sixth-power-frequency component**, plus M_{8/9}-strength amplification (vertex B in [03](../03-six-sevenths)).
+8. **The questions in [MISSING_ESTIMATE_41_47.md](MISSING_ESTIMATE_41_47.md) §6** (for experts): Lindelöf on average for quadratic twists of a twisted cubic theta series just past the large-sieve edge; the Poisson-in-P dual with a 0.44 saving; a restricted large sieve on the rows carrying zeros; a number-field analogue of stabilisation along the imaginary-root direction. Any one of them, in the stated strength, gives θ < 41/47 in the exponent model.
 
 ## Formalization
 
@@ -50,4 +53,4 @@ Leads are ranked roughly by expected value per unit of effort within each sectio
 2. Delete the 253 stale pruned `.olean` objects in the original fork workspace before any reuse.
 3. Re-certify W(2/7) with a real margin, or headline W(3/10). Run `certify.py 0 17/48 23/48 1/6 7/8` once without a timeout; the w = 0 sanity check is unverified.
 4. Fix the stale defaults in `02-strengthening/conditional_certificate.py`. Apply the errata listed in [RESULTS](RESULTS.md) §F to the working files, if those files are to be cited.
-5. Monitor [tracker PR #6](https://github.com/GTimG/QuasiRiemannTracker/pull/6) for maintainer review.
+5. [Tracker PR #6](https://github.com/GTimG/QuasiRiemannTracker/pull/6) was merged on 10 Oct. Monitor Collet's [PR #9](https://github.com/GTimG/QuasiRiemannTracker/pull/9) (0.8748866), which builds on the weighted numerator.

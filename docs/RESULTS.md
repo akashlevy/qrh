@@ -12,7 +12,7 @@ Notation follows OpenAI's 7/8 paper (P78) and its 11/12 companion (P2).
 
 | # | Statement | Evidence | Where |
 |---|---|---|---|
-| A1 | **β\* ≤ 10499/12000 = 0.8749166…** ζ, all Dirichlet and all Q(ζ₃) Hecke L-functions are nonzero on Re s > 10499/12000. This is 4.04·10⁻⁵ below the public cubic-root endpoint. | Isolated rebuild; Lake build; Comparator ×3 with negative control; con-ron + NanoDa + Lean three-kernel PASS (author-side, unsandboxed); submitted as [tracker PR #6](https://github.com/GTimG/QuasiRiemannTracker/pull/6) | [08](../08-weighted-numerator-10499-12000) |
+| A1 | **β\* ≤ 10499/12000 = 0.8749166…** ζ, all Dirichlet and all Q(ζ₃) Hecke L-functions are nonzero on Re s > 10499/12000. This is 4.04·10⁻⁵ below the public cubic-root endpoint. | Isolated rebuild; Lake build; Comparator ×3 with negative control; con-ron + NanoDa + Lean three-kernel PASS (author-side, unsandboxed); [tracker PR #6](https://github.com/GTimG/QuasiRiemannTracker/pull/6) merged 10 Oct (best framework-verified record); rebuilt from source on Linux on 10 Oct, all ten audited endpoints on the standard axioms | [08](../08-weighted-numerator-10499-12000) |
 | A2 | **ζ(s) ≠ 0 for Re s > 23/24.** A standalone, tree-shaken proof of 292 modules and 121,523 code lines, with a paper-numbered spine and a matching 46-page paper. | Comparator; import audit | [05](../05-lean-23-24) |
 | A3 | **L(s,χ) ≠ 0 for Re s > 23/24** for every Dirichlet χ (ζ as a corollary), on the pruned openai/math fork | Comparator | [05](../05-lean-23-24), [akashlevy/math#1](https://github.com/akashlevy/math/pull/1) |
 | A4 | OpenAI's 7/8 theorems (ζ, Dirichlet, Hecke) still verify after in-place pruning of `DirichletL` (−25.7% code lines) | Comparator, all 5 QRH challenges | [05](../05-lean-23-24) |
@@ -44,6 +44,9 @@ These reuse P78's analytic lemmas at new parameters. Those lemmas are unrefereed
 | C9 | **Corollary D** (clean Gram): ‖A − A^sig‖² ≪ (Q/Y)Z^ε. Proved modulo three unwritten lemmas of known type (Lemma C at all cusp pairs, the isotypic transfer, finite order). On its own it gains nothing: 0.874957. | [04](../04-gram-split) |
 | C10 | (V′) with saving s₀ ⇒ θ(s₀). Slotted: 0.8733 at s₀ = 0.002 … 0.8532 at s₀ = 0.04. Random rate ⇒ 0.851918. LoA_π(θ_π < M/(2M−1)) ⇒ (V′). | [04](../04-gram-split) |
 | C11 | Single-ingredient payoffs (float model): Gram exponent 0 ⇒ 0.86398; perfect counts ⇒ 0.86979; c_P = 1/3 ⇒ 0.87471; α = 2/3 ⇒ 0.87407 | [01](../01-seven-eighths-lemma-set) |
+| C12 | **Single inputs ⇒ θ < 41/47** (exponent model, exact count LP, κ = 35/47; sessions 10–11). Any one of: lossless energy wall W(0.0407) (W(0.0359) if the saving also enters `lem:marked`); rank-one wall W_θ + W(0.014); restricted large sieve on the bad rows (saving 0.0275); numerator sixth moment with excess η ≤ 0.097; power saving 0.060 at `lem:plain`'s edge; saving 0.059 beyond the diagonal in the amplified inverse moment; cross-mark saving 0.155; long-witness slope α ≤ 0.583; family zero density A ≤ 2.125 on σ ∈ [0.59, 0.80]; Gram factor g ≤ 0.739. These are model-level statements; no conditional proof is written out. | [10](../10-below-41-47) `agents/combo/`, [note](MISSING_ESTIMATE_41_47.md) |
+| C13 | **Proposition T** (rank-one wall): beyond the wall the low-side loss of the separated probe lies in the single theta direction ρ(m); the rest tolerates w ≤ b/6 with no new input. Conditional on 04's Corollary D (status R−). W_θ alone gives +0.0047 at 41/47. | [10](../10-below-41-47) `agents/wall4/` §7 |
+| C14 | **Proposition A** (function-field analogue, large q): under two hypotheses on the cohomology of the family (no classes of weight > ν; geometric irreducibility), E_P = τ_F·q^{κ+ν} + O(q^{κ+ν−1/2}) with τ_F a trace of Frobenius on the commutant of the geometric monodromy. Gives the single-mark wall at large q only; constants grow exponentially in the degree. | [11](../11-energy-wall) `function-field/` §4 |
 
 ## D. Partial results and new lemmas
 
@@ -61,6 +64,19 @@ These reuse P78's analytic lemmas at new parameters. Those lemmas are unrefereed
 - Zero-slot count R₀(δ) = (15−16δ)/(15−6δ).
 - Lemma D1, G3/G4 closure, Lemma H / Theorem 6.1 (probe rigidity).
 
+**Sessions 10–11: lemmas and optimality results toward 41/47** ([10](../10-below-41-47), [11](../11-energy-wall); all relative to P78's lemmas)
+- **Best θ from proved inputs = 0.8748866** (exponent model with an exact count LP; equals Collet's PR #9 value). No lemma proved in sessions 10–11 moves it. `10-below-41-47/agents/combo/`.
+- **Numerator barrier:** for every witness class a flat configuration satisfies all available inputs with the numerator exactly at the weighted bound σ_wt, so σ_wt is optimal for the black-box lemma set. `agents/numerator/`.
+- **Lemma D:** for r + z ≤ m − c, the tuple-diagonal part of `lem:marked`'s canonical energy is ≪ Z^{F+ε} with no mark cost; `lem:marked` reduces to its cross-tuple terms. `agents/marked-cap/`.
+- **Slot-power lemma:** polarised slot powers (elementary symmetric sums over random colourings) make the prime supply in the marked count unlimited. `agents/amplitude/`.
+- **Theorem G:** `lem:plain`'s region (capacity 1/(6κ)) is optimal for the proof's move set (exact dynamic program). `agents/plain-cap/`.
+- **Count-LP completeness:** multi-t witnesses, extra plain witnesses, slots beyond capacity, prime-only witnesses and per-class numerator contours add nothing. `agents/amplitude/`.
+- **Proposition X1** (pair large sieve, z ≤ 1/4): Σ_u|M_uQ_u|² ≪ U^ε(U + U^{1/2}(Σ|M_u|⁴)^{1/2}); useless without a Möbius fourth moment beyond the diagonal. `agents/xmark/`.
+- **Energy-wall localization:** past the wall only one branch of `lem:reflected-energy` loses; W(w) is equivalent to a lossless bound for one core sum. `agents/wall4/` §2.
+- **Proposition U_P:** for Z ≤ H ≤ Z^{3/2}, Σ_{h~H}|Σ_{n~Z} μḠ(n)χ_P(n)²(h/n)₆W|² = Diag + O(Z^{2+ε}(1 + ZL/H)). The single-mark wall is equivalent to removing ZL/H at H = ZL·Z^{−w}; the only lossy step is the quadratic large sieve on the reflected dual. `11-energy-wall/single-mark/` §3.
+- **Poisson-in-P duality:** the P-average of the single-mark energies equals a moment of a cubic family of GL(1) Hecke L-functions with a finite functional-equation group (needs a saving ≥ 0.44 to help). `single-mark/` §6.
+- **Function-field dictionary:** over F_q[T], q ≡ 1 mod 6, γ_j(n) = μ(n)(−τ_j/√q)^{deg n}(n′/n)₆^j and β(n) = c_{deg n}·χ̄₆(disc n) on squarefree n (brute-force checked at q = 7, 13, 19). `11-energy-wall/function-field/` §1.
+
 **Counting and exact identities** ([03](../03-six-sevenths))
 - Density exponents for distinct sextic rows: A(6/7) = 7/3, A(7/8) = 16/7, A(11/12) = 2.
 - A_{u₀} = A_{u₀p⁶} − ψ(p)A_{u₀p⁶}(D/Np); the fake-diagonal Möbius identity; μ(n)χ_n(u) = G(n)⁻¹ᾱ(n)γ₂(n)γ₁(n; u⁵).
@@ -71,6 +87,8 @@ These reuse P78's analytic lemmas at new parameters. Those lemmas are unrefereed
 - **W(w):** case-B energies stay diagonal 8–128× past the wall. [02](../02-strengthening)
 - **(V′_LS)** sits at the random rate up to Q = 9.6·10⁴, and saturation is excluded by a factor of 30–50. [04](../04-gram-split)/vls/E
 - **Fake-diagonal cancellation exists in the signs:** Q_cop ≈ 10⁻⁴–10⁻² of Q₁. [03](../03-six-sevenths) R1
+- **Energy wall at the weighted geometry** (exact Z[ω], 13 marks, N/K up to 181): single-mark off-diagonal ∝ rows^{−0.497±0.009}, no growth with N/K; coherent core sum at the random-phase level (ratio 1.003 ± 0.010); extrapolated margin ≈ Z^0.41. [11](../11-energy-wall) `numerics/`
+- **Function-field energy wall** (exact integers, q = 7–43): in the hard window (marks of degree 4–6) |E_P/Diag − 1| ≈ 0.9·q^{−κ/2}, the random-matrix size; all 588 quartic marks at q = 7 within 13% of the diagonal; at large q the approach is a deterministic O(1/q). [11](../11-energy-wall) `function-field/`
 - **Quartic:** the dual shift is h³ (spread 10⁻¹³, against 2.00 for h); no polar terms up to norm 2·10⁶. [03](../03-six-sevenths)/quartic-transplant
 
 ## F. Retracted claims and errata
@@ -93,4 +111,6 @@ Errata in working files, from the referee reports:
 - `04-gram-split/vls/B_bilinear.md` overclaims "(V′_β) ⇔ (V′_LS)"; only ⇐ holds.
 - `02-strengthening/conditional_certificate.py`'s defaults encode the retracted W(1/10) claim and fail when run directly.
 - `02-strengthening/optimize_w.py` uses the superseded model; use `audit/optimize_corrected.py`.
+- `10-below-41-47/BRIEF.md`: the sixth-moment threshold is η ≤ 0.097 (not 0.10 or 0.088), the joint plain/numerator capacity threshold is c* = 0.655 (not 0.73), and "marked 0.8(1−r) + plain 0.4(1−2m)" does not close 41/47 (a coarse-grid artefact; +0.0002). Use `agents/combo/`.
+- `11-energy-wall/BRIEF.md` and 09's wall-spectral notes give the twist θ ⊗ ψ_k ⊗ χ_P^{−2} conductor (q_kq_P)². The function-field computation shows conductor K²L (self-dual point KL^{1/2}); the hard window is N ∈ (K, KL).
 - `03-six-sevenths/SIX_SEVENTHS.md` §5 states the quartic closing threshold loosely as "H > D^{4/3}". The scripts give D^{15/11} (dF) and D^{11/8} (BGL), so the conclusion holds a fortiori.
